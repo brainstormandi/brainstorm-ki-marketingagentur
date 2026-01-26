@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import Image from 'next/image';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -58,8 +60,14 @@ export default function Home() {
                   <div className="flex items-center gap-6">
                     <div className="flex -space-x-4">
                       {customerFaces.map((src, i) => (
-                        <div key={i} className="w-14 h-14 rounded-full border-[3px] border-white overflow-hidden shadow-md">
-                          <img src={src} alt="Kunde" className="w-full h-full object-cover" />
+                        <div key={i} className="w-14 h-14 rounded-full border-[3px] border-white overflow-hidden shadow-md relative">
+                          <Image
+                            src={src}
+                            alt="Kunde"
+                            fill
+                            className="object-cover"
+                            unoptimized
+                          />
                         </div>
                       ))}
                     </div>

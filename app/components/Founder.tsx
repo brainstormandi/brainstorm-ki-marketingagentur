@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Image from 'next/image';
 import { Quote, Sparkles } from 'lucide-react';
 
 const Founder = () => {
@@ -18,10 +19,13 @@ const Founder = () => {
                             <div className="absolute inset-0 bg-accent rounded-[4rem] -rotate-2 opacity-10 translate-x-3 translate-y-3"></div>
 
                             <div className="relative rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border-[12px] border-white aspect-[4/5] lg:aspect-[4/5] group bg-white">
-                                <img
+                                <Image
                                     src="/bilder/andi-sturm.png"
                                     alt="Andi Sturm - BrainStorm Werbeagentur"
+                                    width={800}
+                                    height={1000}
                                     className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-110"
+                                    priority
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent"></div>
                                 <div className="absolute bottom-0 left-0 right-0 p-12 bg-gradient-to-t from-slate-900/90 to-transparent backdrop-blur-[2px]">
