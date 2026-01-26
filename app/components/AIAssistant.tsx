@@ -11,6 +11,7 @@ const AIAssistant = () => {
     const [mode, setMode] = useState(AssistantMode.CHAT);
     const [isConnecting, setIsConnecting] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [messages, setMessages] = useState<any[]>([
         { role: 'bot', text: 'Guten Tag! Willkommen bei Brainstorm. Wie kann ich Ihnen heute helfen, Ihr Unternehmen digital nach vorne zu bringen?' }
     ]);
@@ -23,13 +24,16 @@ const AIAssistant = () => {
     const inputAudioContextRef = useRef<AudioContext | null>(null);
     const processorRef = useRef<ScriptProcessorNode | null>(null);
     const micSourceRef = useRef<MediaStreamAudioSourceNode | null>(null);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const sessionPromiseRef = useRef<Promise<any> | null>(null);
     const sourcesRef = useRef<Set<AudioBufferSourceNode>>(new Set());
     const nextStartTimeRef = useRef(0);
     const gemini = useRef(new GeminiService());
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const chatSessionRef = useRef<any>(null);
     const micStreamRef = useRef<MediaStream | null>(null);
     const transcriptRef = useRef("");
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const activeSessionRef = useRef<any>(null);
 
     const stopAllAudio = useCallback(() => {
@@ -72,7 +76,8 @@ const AIAssistant = () => {
     }, [stopAllAudio]);
 
 
-    const executeFunctionCall = async (fc: any) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const executeFunctionCall = async (fc: { name: string; args: any }) => {
         if (fc.name === 'confirmAppointment') {
             const { clientName, clientEmail, appointmentDateTime, topic } = fc.args;
             const statusMsgId = Date.now().toString();
@@ -101,7 +106,7 @@ const AIAssistant = () => {
                         : msg
                 ));
                 return { status: "success", detail: "E-Mails wurden versendet." };
-            } catch (err: any) {
+            } catch (err: unknown) {
                 console.error("Fehler beim API Call:", err);
                 const subject = encodeURIComponent(`Terminanfrage: ${topic}`);
                 const body = encodeURIComponent(`Hallo Brainstorm Team,\n\nich möchte folgenden Termin bestätigen:\n\nName: ${clientName}\nZeit: ${appointmentDateTime}\nThema: ${topic}\n\nBitte um Bestätigung.\n\nViele Grüße,\n${clientName}`);
@@ -134,6 +139,7 @@ const AIAssistant = () => {
         try {
             setIsConnecting(true);
             if (!audioContextRef.current || audioContextRef.current.state === 'closed') {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
             }
             if (audioContextRef.current.state === 'suspended')

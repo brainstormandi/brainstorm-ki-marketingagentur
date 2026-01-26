@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import { Mail, Phone, MapPin, Calendar, ArrowRight } from 'lucide-react';
+import { Mail, Phone, Calendar, ArrowRight } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
 
 const Contact = () => {
@@ -31,6 +31,7 @@ const Contact = () => {
                             ].map((item, idx) => (
                                 <a key={idx} href={item.href} className="flex items-center gap-6 p-8 rounded-3xl bg-slate-50 hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-500 border border-slate-100 group">
                                     <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:bg-accent group-hover:text-primary transition-all shrink-0">
+                                        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                                         {React.cloneElement(item.icon as React.ReactElement<any>, { className: "w-6 h-6" })}
                                     </div>
                                     <div className="min-w-0 flex-1">

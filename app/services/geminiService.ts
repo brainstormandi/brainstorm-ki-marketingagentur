@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { GoogleGenAI, LiveServerMessage, Modality, Type, FunctionDeclaration } from "@google/genai";
 
 export const appointmentTools: FunctionDeclaration[] = [
@@ -71,7 +70,7 @@ export class GeminiService {
         4. Sobald du alle Daten hast, nutze confirmAppointment().
         
         WICHTIG: Buche den Termin direkt hier im Chat. Nur wenn der Kunde explizit einen Link will, nutze redirectToCalendly().`,
-                tools: [{ functionDeclarations: appointmentTools as any }],
+                tools: [{ functionDeclarations: appointmentTools as unknown as FunctionDeclaration[] }],
             },
         });
         return chat;
@@ -79,8 +78,8 @@ export class GeminiService {
 
     async connectVoice(callbacks: {
         onMessage: (message: LiveServerMessage) => void;
-        onError: (e: any) => void;
-        onOpen: (session: any) => void;
+        onError: (e: Error | unknown) => void;
+        onOpen: (session: unknown) => void;
     }) {
         const ai = new GoogleGenAI({ apiKey: this.getApiKey() });
 
@@ -117,7 +116,7 @@ export class GeminiService {
                     languageCode: 'de-DE',
                     voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Kore' } },
                 },
-                tools: [{ functionDeclarations: appointmentTools as any }],
+                tools: [{ functionDeclarations: appointmentTools as unknown as FunctionDeclaration[] }],
                 systemInstruction: `Du bist die sympathische Sprach-Assistentin "Brainstorm AI" (32+ Jahre Erfahrung).
         
         DEINE MISSION:

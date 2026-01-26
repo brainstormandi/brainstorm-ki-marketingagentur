@@ -69,9 +69,10 @@ export async function POST(req: Request) {
             console.log("Client email sent status:", clientMail.data?.id ? "SUCCESS" : "FAILED", clientMail);
 
             return NextResponse.json({ success: true, message: 'Emails processed' }, { status: 200 });
-        } catch (error: any) {
+        } catch (error: unknown) {
             console.error('Resend Exception:', error);
-            return NextResponse.json({ error: 'Mail delivery exception', details: error.message }, { status: 500 });
+            const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+            return NextResponse.json({ error: 'Mail delivery exception', details: errorMessage }, { status: 500 });
         }
     }
 
