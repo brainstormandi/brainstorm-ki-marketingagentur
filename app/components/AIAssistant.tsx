@@ -262,7 +262,16 @@ const AIAssistant = () => {
 
         try {
             if (!chatSessionRef.current) {
-                chatSessionRef.current = await gemini.current.startChat();
+                setIsConnecting(true);
+                try {
+                    chatSessionRef.current = await gemini.current.startChat();
+                } catch (connErr) {
+                    console.error("Gemini StartChat Error:", connErr);
+                    setMessages(prev => [...prev, { role: 'bot', text: 'Entschuldigung, ich konnte keine Verbindung zum AI-Service herstellen. Bitte prüfen Sie Ihre Internetverbindung oder API-Keys.' }]);
+                    setIsConnecting(false);
+                    return;
+                }
+                setIsConnecting(false);
             }
             const result = await chatSessionRef.current.sendMessage({ message: userText });
 

@@ -40,7 +40,7 @@ export class GeminiService {
     async startChat() {
         const ai = new GoogleGenAI({ apiKey: this.getApiKey() });
         const chat = ai.chats.create({
-            model: 'gemini-3-flash',
+            model: 'gemini-1.5-flash',
             config: {
                 systemInstruction: `Du bist "Brainstorm AI", eine freundliche und sympathische Beraterin der Brainstorm Werbeagentur (über 32 Jahre Erfahrung).
         
