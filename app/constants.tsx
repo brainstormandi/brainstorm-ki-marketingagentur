@@ -2,9 +2,9 @@ import React from 'react';
 import { Layout, Smartphone, Zap, Search, Megaphone, Target, Puzzle, Layers, TrendingUp } from 'lucide-react';
 
 export const CONTACT_INFO = {
-    email: "brainstorm.werbeagentur@gmail.com",
+    email: "info@brainstorm-werbeagentur.at",
     phone: "+43 660 520 3171",
-    address: "Am Ziegelfeld 8, 3353 Seitenstetten, Österreich",
+    address: "Am Ziegelfeld 8, 3353 Seitenstetten im schönen Mostviertel, Bezirk Amstetten in Niederösterreich",
     calendly: "https://calendly.com/brainstorm-werbeagentur/15min"
 };
 

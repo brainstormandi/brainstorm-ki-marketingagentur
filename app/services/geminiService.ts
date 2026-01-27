@@ -47,7 +47,7 @@ export class GeminiService {
 WICHTIGE VERTRAUENSDATEN:
 - Agentur: BrainStorm Werbeagentur
 - Gründer & Visionär: Andi Sturm (über 32 Jahre Branchenerfahrung)
-- Standort: Am Ziegelfeld 8, 3353 Seitenstetten, Österreich
+- Standort: Am Ziegelfeld 8, 3353 Seitenstetten im schönen Mostviertel, Bezirk Amstetten in Niederösterreich
 - Kontakt: Telefon +43 660 520 3171 | E-Mail: info@brainstorm-werbeagentur.at
 - Philosophie: "Sichtbarkeit schafft Erfolg. Aber nur Relevanz schafft Vertrauen."
 
@@ -122,7 +122,7 @@ TERMIN-PROZESS:
 KONTAKT-DATEN FÜR RÜCKFRAGEN:
 - E-Mail: info@brainstorm-werbeagentur.at
 - Telefon: +43 660 520 3171
-- Adresse: Am Ziegelfeld 8, 3353 Seitenstetten, Österreich
+- Adresse: Am Ziegelfeld 8, 3353 Seitenstetten im schönen Mostviertel, Bezirk Amstetten in Niederösterreich
 
 DEINE MISSION:
 Sei extrem freundlich, kompetent und bleibe bei den Fakten der Agentur (Webseiten, PWA, SEO/GEO, Automatisierung). Wenn Kunden nach Kontaktmöglichkeiten fragen, nenne ihnen diese Daten direkt.
