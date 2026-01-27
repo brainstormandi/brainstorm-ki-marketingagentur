@@ -50,7 +50,6 @@ export async function POST(req: Request) {
         const clientMailOptions = {
             from: `"${process.env.SMTP_FROM_NAME || 'Brainstorm Werbeagentur'}" <${process.env.SMTP_FROM}>`,
             to: clientEmail,
-            cc: 'brainstorm.werbeagentur@gmail.com',
             subject: `Terminbestätigung: Ihr Gespräch mit Brainstorm`,
             html: `
                 <div style="font-family: sans-serif; color: #111827; padding: 20px; border: 1px solid #eee; border-radius: 12px;">
