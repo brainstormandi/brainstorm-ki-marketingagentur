@@ -16,15 +16,12 @@ export async function POST(req: Request) {
     }
 
     // 1. Resend Flow (Preferred)
-    if (resend && process.env.RESEND_API_KEY && !process.env.RESEND_API_KEY.includes('your_key')) {
+    if (resend && process.env.RESEND_API_KEY) {
         try {
             console.log("Attempting to send emails via Resend...");
 
-            // Note: with onboarding@resend.dev you can only send to the email you signed up with.
-            // If the user wants to send to ANY email, they MUST verify a domain in Resend.
-
             // E-Mail an die Agentur (Sie)
-            const agencyMail = await resend.emails.send({
+            const agencyMailPromise = resend.emails.send({
                 from: 'Brainstorm AI <info@ki-marketingagentur.jetzt>',
                 to: 'brainstorm.werbeagentur@gmail.com',
                 subject: `📆 Neuer KI-Termin: ${clientName}`,
@@ -41,11 +38,8 @@ export async function POST(req: Request) {
                 `,
             });
 
-            console.log("Agency email status:", agencyMail);
-
             // Bestätigung an den Kunden 
-            // WICHTIG: Erfordert verifizierte Domain in Resend!
-            const clientMail = await resend.emails.send({
+            const clientMailPromise = resend.emails.send({
                 from: 'Brainstorm Werbeagentur <info@ki-marketingagentur.jetzt>',
                 to: clientEmail,
                 cc: 'brainstorm.werbeagentur@gmail.com', // Sicherheits-Kopie an Sie
@@ -66,13 +60,25 @@ export async function POST(req: Request) {
                 `,
             });
 
-            console.log("Client email sent status:", clientMail.data?.id ? "SUCCESS" : "FAILED", clientMail);
+            // Wait for both, but catch errors individually if needed
+            const results = await Promise.allSettled([agencyMailPromise, clientMailPromise]);
+            console.log("Email results:", results);
+
+            const allSuccessful = results.every(r => r.status === 'fulfilled' && !(r.value as any).error);
+
+            if (!allSuccessful) {
+                console.warn("Some emails might have failed to send due to domain verification status.");
+                return NextResponse.json({
+                    success: false,
+                    error: 'Domain not yet verified in Resend. Please check Resend dashboard or try later.',
+                    details: results
+                }, { status: 403 });
+            }
 
             return NextResponse.json({ success: true, message: 'Emails processed' }, { status: 200 });
         } catch (error: unknown) {
             console.error('Resend Exception:', error);
-            const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-            return NextResponse.json({ error: 'Mail delivery exception', details: errorMessage }, { status: 500 });
+            return NextResponse.json({ error: 'Mail delivery exception' }, { status: 500 });
         }
     }
 
