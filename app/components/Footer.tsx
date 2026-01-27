@@ -68,7 +68,7 @@ const Footer = () => {
                         <ul className="space-y-4">
                             <li><a href="/impressum" className="text-slate-500 hover:text-primary transition-colors">Impressum</a></li>
                             <li><a href="/datenschutz" className="text-slate-500 hover:text-primary transition-colors">Datenschutz</a></li>
-                            <li><a href="#" className="text-slate-500 hover:text-primary transition-colors">AGB</a></li>
+                            <li><a href="/bilder/AGB%20BrainStorm.pdf" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-primary transition-colors">AGB</a></li>
                         </ul>
                     </div>
                 </div>
