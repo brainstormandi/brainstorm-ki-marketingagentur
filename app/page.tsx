@@ -1,6 +1,9 @@
+"use client";
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import { GOOGLE_REVIEW_LINK } from './constants';
+import { ExternalLink } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -13,8 +16,6 @@ const AIAssistant = dynamic(() => import('./components/AIAssistant'), { ssr: fal
 const TestimonialSlider = dynamic(() => import('./components/TestimonialSlider'), { ssr: false });
 const FAQ = dynamic(() => import('./components/FAQ'), { ssr: false });
 const Contact = dynamic(() => import('./components/Contact'), { ssr: false });
-import { GOOGLE_REVIEW_LINK } from './constants';
-import { ExternalLink } from 'lucide-react';
 
 const customerFaces = [
   "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64&q=80",
