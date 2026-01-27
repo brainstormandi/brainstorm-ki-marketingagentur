@@ -36,7 +36,7 @@ const Contact = () => {
                                     </div>
                                     <div className="min-w-0 flex-1">
                                         <div className="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-1">{item.label}</div>
-                                        <div className="font-display font-black text-lg sm:text-xl text-slate-900 tracking-tight">
+                                        <div className="font-display font-black text-lg sm:text-xl text-slate-900 tracking-tight break-all">
                                             {item.val}
                                         </div>
                                     </div>
@@ -46,7 +46,7 @@ const Contact = () => {
                     </div>
 
                     <div className="relative animate-reveal-up reveal-delay-300 lg:sticky lg:top-32">
-                        <div className="absolute inset-0 bg-accent rounded-[3.5rem] rotate-2 opacity-5 translate-x-4 translate-y-4"></div>
+                        <div className="absolute inset-0 bg-accent rounded-[3.5rem] rotate-2 opacity-5 sm:translate-x-4 translate-y-4"></div>
                         <div className="relative bg-white rounded-[3.5rem] p-12 sm:p-16 text-center text-slate-900 overflow-hidden shadow-[0_40px_80px_-15px_rgba(0,0,0,0.08)] border border-slate-100">
                             <div className="relative z-10 flex flex-col items-center">
                                 <div className="w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center mb-10 border border-slate-100 shadow-sm animate-bounce-slow">

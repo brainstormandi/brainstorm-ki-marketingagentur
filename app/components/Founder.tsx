@@ -35,10 +35,10 @@ const Founder = () => {
                             </div>
 
                             {/* Experience Badge */}
-                            <div className="absolute -top-10 -right-10 bg-accent text-primary p-10 rounded-[2.5rem] shadow-[0_25px_50px_-12px_rgba(247,196,41,0.5)] rotate-12 hover:rotate-0 transition-all duration-500 cursor-default group">
+                            <div className="absolute -top-6 -right-4 sm:-top-10 sm:-right-10 bg-accent text-primary p-6 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] shadow-[0_25px_50px_-12px_rgba(247,196,41,0.5)] rotate-12 hover:rotate-0 transition-all duration-500 cursor-default group z-20">
                                 <div className="flex flex-col items-center leading-none">
-                                    <span className="text-6xl font-black tracking-tighter group-hover:scale-110 transition-transform">32+</span>
-                                    <span className="text-xs font-black uppercase tracking-[0.2em] mt-3 whitespace-nowrap">Jahre Erfahrung</span>
+                                    <span className="text-4xl sm:text-6xl font-black tracking-tighter group-hover:scale-110 transition-transform">32+</span>
+                                    <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] mt-2 sm:mt-3 whitespace-nowrap">Jahre Erfahrung</span>
                                 </div>
                             </div>
                         </div>

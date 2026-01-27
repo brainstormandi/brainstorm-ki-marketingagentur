@@ -37,7 +37,7 @@ const Hero = () => {
     }, [isActive]);
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-mesh-gradient pt-20">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-mesh-gradient pt-32 sm:pt-20">
             {/* Background blobs for depth */}
             <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] animate-pulse-slow"></div>
             <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] animate-pulse-slow delay-1000"></div>

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
@@ -9,26 +10,26 @@ const Navbar = () => {
         <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
             <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 mt-4">
                 <div className="glass-morphism rounded-[2rem] border border-white/40 shadow-2xl px-8 h-24 flex justify-between items-center premium-shadow">
-                    <div className="flex items-center gap-5">
+                    <Link href="/" className="flex items-center gap-5 hover:opacity-80 transition-opacity">
                         <img
                             src="/bilder/logo.png"
                             alt="BrainStorm Logo"
                             className="h-10 w-auto object-contain"
                         />
                         <div className="flex flex-col leading-none">
-                            <span className="font-display font-black text-3xl tracking-tighter text-slate-900 uppercase">
+                            <span className="font-display font-black text-2xl sm:text-3xl tracking-tighter text-slate-900 uppercase">
                                 BrainStorm
                             </span>
-                            <span className="text-[12px] font-black uppercase tracking-[0.2em] text-slate-500 mt-1">KI Werbeagentur</span>
+                            <span className="text-[10px] sm:text-[12px] font-black uppercase tracking-[0.2em] text-slate-500 mt-1">KI Werbeagentur</span>
                         </div>
-                    </div>
+                    </Link>
 
                     <div className="hidden lg:flex items-center gap-10">
-                        <a href="#services" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors">Leistungen</a>
-                        <a href="#process" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors">Ablauf</a>
-                        <a href="#faq" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors">FAQs</a>
-                        <a href="#contact" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors">Kontakt</a>
-                        <a href="#contact" className="px-8 py-4 bg-slate-900 text-sm text-white rounded-xl font-black uppercase tracking-widest hover:bg-slate-800 transition-all shadow-xl hover:scale-105 active:scale-95">Erstberatung</a>
+                        <a href="/#services" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors">Leistungen</a>
+                        <a href="/#process" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors">Ablauf</a>
+                        <a href="/#faq" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors">FAQs</a>
+                        <a href="/#contact" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors">Kontakt</a>
+                        <a href="/#contact" className="px-8 py-4 bg-slate-900 text-sm text-white rounded-xl font-black uppercase tracking-widest hover:bg-slate-800 transition-all shadow-xl hover:scale-105 active:scale-95">Erstberatung</a>
                     </div>
 
                     <button
@@ -70,10 +71,10 @@ const Navbar = () => {
 
                         <div className="flex flex-col gap-8">
                             {[
-                                { name: 'Leistungen', href: '#services' },
-                                { name: 'Ablauf', href: '#process' },
-                                { name: 'FAQs', href: '#faq' },
-                                { name: 'Kontakt', href: '#contact' }
+                                { name: 'Leistungen', href: '/#services' },
+                                { name: 'Ablauf', href: '/#process' },
+                                { name: 'FAQs', href: '/#faq' },
+                                { name: 'Kontakt', href: '/#contact' }
                             ].map((item) => (
                                 <a
                                     key={item.name}
@@ -88,7 +89,7 @@ const Navbar = () => {
 
                         <div className="mt-auto">
                             <a
-                                href="#contact"
+                                href="/#contact"
                                 className="inline-flex items-center justify-center w-full py-6 bg-slate-900 text-white text-lg rounded-2xl font-black uppercase tracking-widest shadow-xl hover:bg-slate-800 transition-all active:scale-95"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
