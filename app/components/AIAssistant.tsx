@@ -301,11 +301,11 @@ const AIAssistant = () => {
     };
 
     return (
-        <div className="fixed bottom-8 right-8 z-[100] font-sans">
+        <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-[100] font-sans flex flex-col items-end">
             {!isOpen && (
                 <button
                     onClick={() => { setIsOpen(true); startVoiceMode(false); }}
-                    className="w-20 h-20 bg-accent rounded-[2.5rem] shadow-[0_25px_50px_-12px_rgba(247,196,41,0.5)] flex items-center justify-center text-primary hover:scale-110 hover:rotate-3 transition-all relative group overflow-hidden"
+                    className="w-16 h-16 sm:w-20 sm:h-20 bg-accent rounded-[1.5rem] sm:rounded-[2.5rem] shadow-[0_25px_50px_-12px_rgba(247,196,41,0.5)] flex items-center justify-center text-primary hover:scale-110 hover:rotate-3 transition-all relative group overflow-hidden"
                 >
                     {(isListening || isConnecting) && (
                         <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
@@ -321,7 +321,7 @@ const AIAssistant = () => {
             )}
 
             {isOpen && (
-                <div className="w-[420px] sm:w-[480px] h-[720px] bg-white rounded-[3rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] border border-slate-100 flex flex-col overflow-hidden animate-reveal-up">
+                <div className="w-[calc(100vw-2rem)] sm:w-[480px] max-w-[480px] h-[min(600px,calc(100vh-6rem))] sm:h-[720px] bg-white rounded-[2rem] sm:rounded-[3rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] border border-slate-100 flex flex-col overflow-hidden animate-reveal-up origin-bottom-right">
                     {/* Header */}
                     <div className="p-8 bg-slate-900 text-white flex justify-between items-center relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-accent rounded-full blur-[100px] opacity-10 -mr-32 -mt-32"></div>
