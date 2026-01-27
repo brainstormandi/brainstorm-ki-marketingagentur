@@ -50,6 +50,7 @@ const Hero = () => {
                     height="100%"
                     className="w-full h-full scale-110"
                     title="3D Robot"
+                    loading="lazy"
                 />
             </div>
 

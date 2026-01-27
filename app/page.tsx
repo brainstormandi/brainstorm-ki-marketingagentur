@@ -1,16 +1,18 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
-import Process from './components/Process';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import AIAssistant from './components/AIAssistant';
-import TestimonialSlider from './components/TestimonialSlider';
 import WhyUs from './components/WhyUs';
 import Founder from './components/Founder';
-import FAQ from './components/FAQ';
+import Process from './components/Process';
+import Footer from './components/Footer';
+
+const AIAssistant = dynamic(() => import('./components/AIAssistant'), { ssr: false });
+const TestimonialSlider = dynamic(() => import('./components/TestimonialSlider'), { ssr: false });
+const FAQ = dynamic(() => import('./components/FAQ'), { ssr: false });
+const Contact = dynamic(() => import('./components/Contact'), { ssr: false });
 import { GOOGLE_REVIEW_LINK } from './constants';
 import { ExternalLink } from 'lucide-react';
 
@@ -66,7 +68,7 @@ export default function Home() {
                             alt="Kunde"
                             fill
                             className="object-cover"
-                            unoptimized
+                            sizes="56px"
                           />
                         </div>
                       ))}
