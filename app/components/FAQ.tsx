@@ -31,7 +31,7 @@ const FAQ = () => {
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                className="w-full px-10 py-8 flex items-center justify-between gap-6 text-left"
+                                className="w-full px-10 py-8 flex items-center justify-between gap-6 text-left cursor-pointer"
                             >
                                 <span className={`font-black text-2xl tracking-tight transition-colors duration-300 ${openIndex === index ? 'text-slate-900' : 'text-slate-700'}`}>{faq.question}</span>
                                 <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-500 ${openIndex === index ? 'bg-accent text-primary rotate-180' : 'bg-slate-50 text-slate-400'}`}>

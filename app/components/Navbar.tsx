@@ -10,7 +10,7 @@ const Navbar = () => {
         <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
             <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 mt-4">
                 <div className="glass-morphism rounded-[2rem] border border-white/40 shadow-2xl px-8 h-24 flex justify-between items-center premium-shadow">
-                    <Link href="/" className="flex items-center gap-5 hover:opacity-80 transition-opacity">
+                    <Link href="/" className="flex items-center gap-5 hover:opacity-80 transition-opacity cursor-pointer">
                         <img
                             src="/bilder/logo.png"
                             alt="BrainStorm Logo"
@@ -25,15 +25,15 @@ const Navbar = () => {
                     </Link>
 
                     <div className="hidden lg:flex items-center gap-10">
-                        <a href="/#services" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors">Leistungen</a>
-                        <a href="/#process" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors">Ablauf</a>
-                        <a href="/#faq" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors">FAQs</a>
-                        <a href="/#contact" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors">Kontakt</a>
-                        <a href="/#contact" className="px-8 py-4 bg-slate-900 text-sm text-white rounded-xl font-black uppercase tracking-widest hover:bg-slate-800 transition-all shadow-xl hover:scale-105 active:scale-95">Erstberatung</a>
+                        <a href="/#services" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors cursor-pointer">Leistungen</a>
+                        <a href="/#process" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors cursor-pointer">Ablauf</a>
+                        <a href="/#faq" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors cursor-pointer" >FAQs</a>
+                        <a href="/#contact" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors cursor-pointer">Kontakt</a>
+                        <a href="/#contact" className="px-8 py-4 bg-slate-900 text-sm text-white rounded-xl font-black uppercase tracking-widest hover:bg-slate-800 transition-all shadow-xl hover:scale-105 active:scale-95 cursor-pointer">Erstberatung</a>
                     </div>
 
                     <button
-                        className="lg:hidden p-3 text-slate-900 bg-slate-50 rounded-2xl transition-all z-50 border border-slate-100 shadow-sm"
+                        className="lg:hidden p-3 text-slate-900 bg-slate-50 rounded-2xl transition-all z-50 border border-slate-100 shadow-sm cursor-pointer"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     >
                         <Menu className="w-6 h-6" />
@@ -62,7 +62,7 @@ const Navbar = () => {
                                 </div>
                             </div>
                             <button
-                                className="p-3 text-slate-900 bg-slate-50 rounded-2xl border border-slate-100"
+                                className="p-3 text-slate-900 bg-slate-50 rounded-2xl border border-slate-100 cursor-pointer"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 <X className="w-6 h-6" />
@@ -79,7 +79,7 @@ const Navbar = () => {
                                 <a
                                     key={item.name}
                                     href={item.href}
-                                    className="text-2xl font-black text-slate-900 uppercase tracking-tighter hover:text-accent transition-colors"
+                                    className="text-2xl font-black text-slate-900 uppercase tracking-tighter hover:text-accent transition-colors cursor-pointer"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                     {item.name}
@@ -90,7 +90,7 @@ const Navbar = () => {
                         <div className="mt-auto">
                             <a
                                 href="/#contact"
-                                className="inline-flex items-center justify-center w-full py-6 bg-slate-900 text-white text-lg rounded-2xl font-black uppercase tracking-widest shadow-xl hover:bg-slate-800 transition-all active:scale-95"
+                                className="inline-flex items-center justify-center w-full py-6 bg-slate-900 text-white text-lg rounded-2xl font-black uppercase tracking-widest shadow-xl hover:bg-slate-800 transition-all active:scale-95 cursor-pointer"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 Erstberatung

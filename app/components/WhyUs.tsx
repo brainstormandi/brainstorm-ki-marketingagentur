@@ -11,8 +11,9 @@ const WhyUs = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-32 animate-reveal-up">
-                    <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white text-primary font-bold text-sm uppercase tracking-widest mb-6 border border-slate-200">
-                        ✨ Unsere Philosophie
+                    <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white text-primary font-bold text-sm uppercase tracking-widest mb-6 border border-slate-200 shadow-sm">
+                        <Sparkles className="w-4 h-4 text-accent" />
+                        Unsere Philosophie
                     </div>
                     <h2 className="text-5xl sm:text-8xl font-display font-black text-slate-900 mb-8 tracking-tighter">
                         Warum wir <br />
@@ -27,7 +28,7 @@ const WhyUs = () => {
                     {ADVANTAGES.map((advantage, index) => (
                         <div
                             key={index}
-                            className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-accent/5 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden animate-reveal-up"
+                            className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-accent/5 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden animate-reveal-up cursor-pointer"
                             style={{ animationDelay: `${(index + 1) * 150}ms` }}
                         >
                             <div className="relative z-10">

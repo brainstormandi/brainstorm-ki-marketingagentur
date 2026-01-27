@@ -39,7 +39,7 @@ const TestimonialSlider = () => {
                         href={GOOGLE_REVIEW_LINK}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block p-10 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-yellow-200 hover:-translate-y-1 transition-all duration-300 group/card relative"
+                        className="block p-10 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-yellow-200 hover:-translate-y-1 transition-all duration-300 group/card relative cursor-pointer focus-visible:ring-2 focus-visible:ring-accent outline-none"
                     >
                         <div className="flex justify-between items-start mb-6">
                             <div className="flex items-center gap-4">

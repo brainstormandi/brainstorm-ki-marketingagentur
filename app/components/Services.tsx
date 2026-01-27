@@ -27,7 +27,7 @@ const Services = () => {
                     {SERVICES.map((service, index) => (
                         <div
                             key={index}
-                            className={`premium-card p-12 flex flex-col h-full animate-reveal-up`}
+                            className={`premium-card p-12 flex flex-col h-full animate-reveal-up group cursor-pointer`}
                             style={{ animationDelay: `${(index + 1) * 150}ms` }}
                         >
                             <div className="w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center mb-10 group-hover:scale-110 transition-transform duration-500 shadow-sm border border-slate-100">
