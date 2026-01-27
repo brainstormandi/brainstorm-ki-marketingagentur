@@ -25,7 +25,7 @@ export async function POST(req: Request) {
 
             // E-Mail an die Agentur (Sie)
             const agencyMail = await resend.emails.send({
-                from: 'Brainstorm AI <onboarding@resend.dev>',
+                from: 'Brainstorm AI <info@ki-marketingagentur.jetzt>',
                 to: 'brainstorm.werbeagentur@gmail.com',
                 subject: `📆 Neuer KI-Termin: ${clientName}`,
                 html: `
@@ -44,9 +44,9 @@ export async function POST(req: Request) {
             console.log("Agency email status:", agencyMail);
 
             // Bestätigung an den Kunden 
-            // WICHTIG: Dies wird im Sandbox-Modus von Resend evtl. nicht an externe Adressen zugestellt!
+            // WICHTIG: Erfordert verifizierte Domain in Resend!
             const clientMail = await resend.emails.send({
-                from: 'Brainstorm Werbeagentur <onboarding@resend.dev>',
+                from: 'Brainstorm Werbeagentur <info@ki-marketingagentur.jetzt>',
                 to: clientEmail,
                 cc: 'brainstorm.werbeagentur@gmail.com', // Sicherheits-Kopie an Sie
                 subject: `Terminbestätigung: Ihr Gespräch mit Brainstorm`,
