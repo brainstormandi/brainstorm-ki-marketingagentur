@@ -157,18 +157,56 @@ const AIAssistant = () => {
                     setIsListening(true);
                 },
                 onMessage: async (message: any) => {
-                    if (message.serverContent?.outputTranscription) {
-                        transcriptRef.current += message.serverContent.outputTranscription.text;
-                        if (message.serverContent?.turnComplete) {
-                            setMessages(prev => [...prev, { role: 'bot', text: transcriptRef.current }]);
-                            transcriptRef.current = "";
+                    // Handle setup confirmation
+                    if (message.setupComplete) {
+                        console.log("Setup complete, ready for audio input");
+                        return;
+                    }
+
+                    // Handle server content
+                    const content = message.serverContent || message;
+
+                    // Handle transcription
+                    if (content.modelTurn?.parts) {
+                        for (const part of content.modelTurn.parts) {
+                            if (part.text) {
+                                transcriptRef.current += part.text;
+                            }
+                            // Handle audio
+                            if (part.inlineData?.mimeType?.startsWith('audio/') && part.inlineData?.data) {
+                                if (audioContextRef.current) {
+                                    setIsBotSpeaking(true);
+                                    const ctx = audioContextRef.current;
+                                    nextStartTimeRef.current = Math.max(nextStartTimeRef.current, ctx.currentTime);
+                                    const audioBuffer = await decodeAudioData(decode(part.inlineData.data), ctx, 24000, 1);
+                                    const source = ctx.createBufferSource();
+                                    source.buffer = audioBuffer;
+                                    source.connect(ctx.destination);
+                                    source.start(nextStartTimeRef.current);
+                                    nextStartTimeRef.current += audioBuffer.duration;
+                                    sourcesRef.current.add(source);
+                                    source.onended = () => {
+                                        sourcesRef.current.delete(source);
+                                        if (sourcesRef.current.size === 0) setIsBotSpeaking(false);
+                                    };
+                                }
+                            }
+                        }
+
+                        if (content.turnComplete) {
+                            if (transcriptRef.current) {
+                                setMessages(prev => [...prev, { role: 'bot', text: transcriptRef.current }]);
+                                transcriptRef.current = "";
+                            }
                         }
                     }
-                    if (message.toolCall) {
+
+                    // Handle tool calls
+                    if (content.toolCall?.functionCalls) {
                         const session = activeSessionRef.current;
                         if (session) {
                             const functionResponses = [];
-                            for (const fc of message.toolCall.functionCalls) {
+                            for (const fc of content.toolCall.functionCalls) {
                                 const result = await executeFunctionCall(fc);
                                 functionResponses.push({
                                     name: fc.name,
@@ -176,27 +214,14 @@ const AIAssistant = () => {
                                     response: { result }
                                 });
                             }
-                            session.sendToolResponse({ functionResponses });
+                            session.sendToolResponse({
+                                toolResponse: { functionResponses }
+                            });
                         }
                     }
-                    const base64Audio = message.serverContent?.modelTurn?.parts?.[0]?.inlineData?.data;
-                    if (base64Audio && audioContextRef.current) {
-                        setIsBotSpeaking(true);
-                        const ctx = audioContextRef.current;
-                        nextStartTimeRef.current = Math.max(nextStartTimeRef.current, ctx.currentTime);
-                        const audioBuffer = await decodeAudioData(decode(base64Audio), ctx, 24000, 1);
-                        const source = ctx.createBufferSource();
-                        source.buffer = audioBuffer;
-                        source.connect(ctx.destination);
-                        source.start(nextStartTimeRef.current);
-                        nextStartTimeRef.current += audioBuffer.duration;
-                        sourcesRef.current.add(source);
-                        source.onended = () => {
-                            sourcesRef.current.delete(source);
-                            if (sourcesRef.current.size === 0) setIsBotSpeaking(false);
-                        };
-                    }
-                    if (message.serverContent?.interrupted) {
+
+                    // Handle interruption
+                    if (content.interrupted) {
                         stopAllAudio();
                     }
                 },
@@ -227,7 +252,12 @@ const AIAssistant = () => {
 
                 try {
                     session.sendRealtimeInput({
-                        media: { data: encode(new Uint8Array(int16.buffer)), mimeType: 'audio/pcm;rate=16000' }
+                        realtimeInput: {
+                            mediaChunks: [{
+                                mimeType: 'audio/pcm;rate=16000',
+                                data: encode(new Uint8Array(int16.buffer))
+                            }]
+                        }
                     });
                 } catch (err) { }
             };
