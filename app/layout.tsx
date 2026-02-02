@@ -7,8 +7,8 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-plus-jakarta" });
 
 export const metadata: Metadata = {
-  title: "BrainStorm KI Werbeagentur | Smarte Webseiten & Apps für KMU Österreich",
-  description: "Österreichs führende KI-Werbeagentur für KMU. Wir verwandeln Ihre digitale Präsenz in einen Kundenmagneten. Experten für SEO, GEO und Automatisierung in Seitenstetten.",
+  title: "BrainStorm KI: Smarte Webseiten & Apps für KMU Österreich",
+  description: "Österreichs führende KI-Werbeagentur für KMU. Wir verwandeln Ihre digitale Präsenz in einen Kundenmagneten mit SEO, GEO & Automatisierung.",
   keywords: ["Werbeagentur Niederösterreich", "KI Werbeagentur Österreich", "SEO Seitenstetten", "GEO Marketing", "Website erstellen lassen KMU", "Generative Engine Optimization", "Prozessautomatisierung für Unternehmen"],
   authors: [{ name: "Andi Sturm" }],
   creator: "Andi Sturm",

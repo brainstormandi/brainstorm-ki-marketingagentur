@@ -66,7 +66,7 @@ export default function Home() {
                         <div key={i} className="w-14 h-14 rounded-full border-[3px] border-white overflow-hidden shadow-md relative">
                           <Image
                             src={src}
-                            alt="Kunde"
+                            alt="Zufriedener BrainStorm Kunde"
                             fill
                             className="object-cover"
                             sizes="56px"
