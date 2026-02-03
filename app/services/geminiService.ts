@@ -115,9 +115,9 @@ TERMIN-PROZESS:
                 // Send initial setup message
                 const setupMessage = {
                     setup: {
-                        model: "models/gemini-2.5-flash-native-audio-latest",
+                        model: "models/gemini-live-2.5-flash-native-audio",
                         generationConfig: {
-                            responseModalities: ["AUDIO"], // Must be an array
+                            responseModalities: ["AUDIO"],
                             speechConfig: {
                                 voiceConfig: {
                                     prebuiltVoiceConfig: {
@@ -154,7 +154,7 @@ TERMIN-BUCHUNG:
                         tools: [{
                             functionDeclarations: [{
                                 name: 'confirmAppointment',
-                                description: 'Bucht den Termin fest im System ein und versendet automatisch Bestätigungs-E-Mails an den Kunden und das BrainStorm-Team. Nutze dieses Tool erst, wenn du Name, E-Mail, Datum und Uhrzeit vom Kunden hast.',
+                                description: 'Bucht den Termin fest im System ein und versendet automatisch Bestätigungs-E-Mails an den Kunden und das BrainStorm-Team.',
                                 parameters: {
                                     type: "OBJECT",
                                     properties: {
@@ -167,7 +167,7 @@ TERMIN-BUCHUNG:
                                 }
                             }, {
                                 name: 'redirectToCalendly',
-                                description: 'Stellt dem Kunden den direkten Calendly-Link zur Verfügung, falls der Kunde dies ausdrücklich wünscht.',
+                                description: 'Stellt dem Kunden den direkten Calendly-Link zur Verfügung.',
                                 parameters: {
                                     type: "OBJECT",
                                     properties: {
@@ -176,7 +176,12 @@ TERMIN-BUCHUNG:
                                     required: ['reason'],
                                 }
                             }]
-                        }]
+                        }],
+                        toolConfig: {
+                            functionCallingConfig: {
+                                mode: "AUTO"
+                            }
+                        }
                     }
                 };
 
