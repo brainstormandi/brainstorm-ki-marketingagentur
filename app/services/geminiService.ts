@@ -115,7 +115,7 @@ TERMIN-PROZESS:
                 // Send initial setup message
                 const setupMessage = {
                     setup: {
-                        model: "models/gemini-2.0-flash-exp",
+                        model: "models/gemini-2.5-flash-native-audio-preview-12-2025",
                         generationConfig: {
                             responseModalities: ["AUDIO"],
                             speechConfig: {
