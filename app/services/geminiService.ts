@@ -176,12 +176,7 @@ TERMIN-BUCHUNG:
                                     required: ['reason'],
                                 }
                             }]
-                        }],
-                        toolConfig: {
-                            functionCallingConfig: {
-                                mode: "AUTO"
-                            }
-                        }
+                        }]
                     }
                 };
 
