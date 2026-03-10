@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
-import { ArrowRight, Star, Mic, Volume2, Brain, Target, Zap, Rocket, Search, Cpu, Globe, MousePointer2, Sparkles } from 'lucide-react';
+import { ArrowRight, Star, Mic, Volume2, Brain, Target, Zap, Rocket, Search, Cpu, Globe, MousePointer2, Sparkles, Layout, Smartphone } from 'lucide-react';
 import { GOOGLE_REVIEW_LINK } from '../constants';
 
 // Define types for window extensions
@@ -24,25 +24,25 @@ const Hero = () => {
             title: "Ihre Marketing-Zukunft, ist jetzt intelligent",
             text: "Wir bauen keine gewöhnlichen Websites. Wir erschaffen psychologisch optimierte Systeme, die dank KI-Präzision genau die Kunden anziehen, die Sie wirklich wollen.",
             keywords: [
+                { icon: <Layout className="w-4 h-4" />, label: "Premium Webseite" },
                 { icon: <Brain className="w-4 h-4" />, label: "KI-Präzision" },
-                { icon: <Target className="w-4 h-4" />, label: "Psychologie" },
-                { icon: <Zap className="w-4 h-4" />, label: "Performance" }
+                { icon: <Target className="w-4 h-4" />, label: "Psychologie" }
             ]
         },
         {
             title: "KI-Marketing gewinnt, Kunden automatisch",
             text: "Wir bauen Ihre verkaufsstarke Website, eigene App und automatisierte Prozesse. Sichtbar bei Google & ChatGPT.",
             keywords: [
-                { icon: <Rocket className="w-4 h-4" />, label: "Automation" },
+                { icon: <Zap className="w-4 h-4" />, label: "Verkaufs-Landingpage" },
                 { icon: <Search className="w-4 h-4" />, label: "SEO / GEO" },
-                { icon: <Cpu className="w-4 h-4" />, label: "App-Entwicklung" }
+                { icon: <Rocket className="w-4 h-4" />, label: "Automation" }
             ]
         },
         {
             title: "Schluss mit mühsamem, manuellem Marketing",
-            text: "Wir automatisieren Ihre Kundengewinnung mit intelligenten Websites, PWAs und KI-gestützter Suche.",
+            text: "Wir automatisieren Ihre kundengewinnung mit intelligenten Websites, PWAs und KI-gestützter Suche.",
             keywords: [
-                { icon: <Globe className="w-4 h-4" />, label: "Smart Web" },
+                { icon: <Globe className="w-4 h-4" />, label: "Intelligente Website" },
                 { icon: <MousePointer2 className="w-4 h-4" />, label: "Conversion" },
                 { icon: <Sparkles className="w-4 h-4" />, label: "KI-Suche" }
             ]
