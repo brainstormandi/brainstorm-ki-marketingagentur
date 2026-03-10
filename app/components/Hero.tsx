@@ -1,6 +1,6 @@
 "use client";
-import React, { useEffect, useState, useCallback } from 'react';
-import { ArrowRight, Star, Mic, Volume2 } from 'lucide-react';
+import React, { useEffect, useState, useCallback, useMemo } from 'react';
+import { ArrowRight, Star, Mic, Volume2, Brain, Target, Zap, Rocket, Search, Cpu, Globe, MousePointer2, Sparkles } from 'lucide-react';
 import { GOOGLE_REVIEW_LINK } from '../constants';
 
 // Define types for window extensions
@@ -17,6 +17,42 @@ const Hero = () => {
     const [isActive, setIsActive] = useState(false);
     const [isSpeaking, setIsSpeaking] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
+    const [variantIndex, setVariantIndex] = useState<number | null>(null);
+
+    const variants = useMemo(() => [
+        {
+            title: "Ihre Marketing-Zukunft, ist jetzt intelligent",
+            text: "Wir bauen keine gewöhnlichen Websites. Wir erschaffen psychologisch optimierte Systeme, die dank KI-Präzision genau die Kunden anziehen, die Sie wirklich wollen.",
+            keywords: [
+                { icon: <Brain className="w-4 h-4" />, label: "KI-Präzision" },
+                { icon: <Target className="w-4 h-4" />, label: "Psychologie" },
+                { icon: <Zap className="w-4 h-4" />, label: "Performance" }
+            ]
+        },
+        {
+            title: "KI-Marketing gewinnt, Kunden automatisch",
+            text: "Wir bauen Ihre verkaufsstarke Website, eigene App und automatisierte Prozesse. Sichtbar bei Google & ChatGPT.",
+            keywords: [
+                { icon: <Rocket className="w-4 h-4" />, label: "Automation" },
+                { icon: <Search className="w-4 h-4" />, label: "SEO / GEO" },
+                { icon: <Cpu className="w-4 h-4" />, label: "App-Entwicklung" }
+            ]
+        },
+        {
+            title: "Schluss mit mühsamem, manuellem Marketing",
+            text: "Wir automatisieren Ihre Kundengewinnung mit intelligenten Websites, PWAs und KI-gestützter Suche.",
+            keywords: [
+                { icon: <Globe className="w-4 h-4" />, label: "Smart Web" },
+                { icon: <MousePointer2 className="w-4 h-4" />, label: "Conversion" },
+                { icon: <Sparkles className="w-4 h-4" />, label: "KI-Suche" }
+            ]
+        }
+    ], []);
+
+    useEffect(() => {
+        // Set fixed random index on mount to avoid hydration mismatch while still being "random" per session
+        setVariantIndex(Math.floor(Math.random() * variants.length));
+    }, [variants.length]);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -36,26 +72,28 @@ const Hero = () => {
         }
     }, [isActive]);
 
-    return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-mesh-gradient pt-32 sm:pt-20">
-            {/* Background blobs for depth */}
-            <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] animate-pulse-slow"></div>
-            <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] animate-pulse-slow delay-1000"></div>
+    // Use current variant or fall back to silent default for SSR
+    const currentVariant = variantIndex !== null ? variants[variantIndex] : null;
 
-            <div className="hidden xl:block absolute -right-[138px] top-1/2 -translate-y-1/2 w-[600px] h-[600px] 2xl:w-[800px] 2xl:h-[800px] z-0 pointer-events-none animate-float">
-                <iframe
-                    src="https://my.spline.design/genkubgreetingrobot-ipOEalSv2ZcyzfVN9684visP/"
-                    frameBorder="0"
-                    width="100%"
-                    height="100%"
-                    className="w-full h-full scale-110"
-                    title="3D Robot"
-                    loading="lazy"
-                />
+    return (
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-48 sm:pt-40 pb-12">
+            {/* Background Video */}
+            <div className="absolute inset-0 z-0 overflow-hidden">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    aria-hidden="true"
+                    className="w-full h-full object-cover scale-[1.1] object-[60%_center] md:object-[0%_center]"
+                >
+                    <source src="/video/ki-werbeagentur-brainstorm-video.mp4" type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-white/60 sm:bg-white/20"></div>
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
-                <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/80 backdrop-blur-md border border-white/50 mb-8 animate-reveal-up shadow-lg">
+                <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/80 backdrop-blur-md border border-white/50 mb-6 animate-reveal-down shadow-lg">
                     <span className="relative flex h-3 w-3">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
@@ -63,16 +101,38 @@ const Hero = () => {
                     <span className="text-sm font-bold text-slate-800 uppercase tracking-widest">Premium Digital-Berater & KI-Pionier</span>
                 </div>
 
-                <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-black text-slate-900 leading-[0.95] mb-8 max-w-5xl tracking-tighter animate-reveal-up reveal-delay-100">
-                    Online-Erfolg,<br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm">der begeistert.</span>
-                </h1>
+                <div className="min-h-[220px] sm:min-h-[260px] lg:min-h-[300px] flex flex-col items-center justify-center mt-4">
+                    {currentVariant && (
+                        <>
+                            <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 leading-[0.95] mb-6 max-w-5xl tracking-tighter animate-reveal-up">
+                                {currentVariant.title.includes(',') ? (
+                                    currentVariant.title.split(',').map((part, i) => (
+                                        <React.Fragment key={i}>
+                                            {i === 0 ? part : <><br /><span className="text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm">{part.trim()}</span></>}
+                                        </React.Fragment>
+                                    ))
+                                ) : (
+                                    currentVariant.title
+                                )}
+                            </h1>
 
-                <p className="text-xl sm:text-2xl text-slate-600 mb-10 leading-relaxed max-w-3xl mx-auto animate-reveal-up reveal-delay-200">
-                    Wir verwandeln Ihre digitale Präsenz in einen Kundenmagneten. Modern, psychologisch optimiert und messbar erfolgreich.
-                </p>
+                            <p className="text-xl sm:text-2xl text-[#111827] mb-6 leading-relaxed max-w-2xl mx-auto animate-reveal-up reveal-delay-200">
+                                {currentVariant.text}
+                            </p>
 
-                <div className="relative w-full max-w-md h-56 sm:h-72 flex items-center justify-center mb-10 animate-reveal-up reveal-delay-300">
+                            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-8 animate-reveal-up reveal-delay-300">
+                                {currentVariant.keywords.map((kw, i) => (
+                                    <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/40 backdrop-blur-sm border border-white/60 shadow-sm text-slate-700 font-bold text-sm sm:text-base">
+                                        <div className="text-accent">{kw.icon}</div>
+                                        <span>{kw.label}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </>
+                    )}
+                </div>
+
+                <div className="relative w-full max-w-md h-40 sm:h-48 flex items-center justify-center mt-12 mb-12 animate-zoom-in reveal-delay-400">
                     <div className="absolute inset-0 flex items-center justify-center">
                         <div className="absolute w-48 h-48 border-[2px] border-accent/20 rounded-full animate-ripple-1"></div>
                         <div className="absolute w-48 h-48 border-[2px] border-accent/20 rounded-full animate-ripple-2"></div>
@@ -84,22 +144,23 @@ const Hero = () => {
                         onClick={handleToggle}
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
+                        aria-label={isActive ? "KI-Sprachassistent beenden" : "KI-Sprachassistent starten"}
                         className={`relative z-20 w-32 h-32 sm:w-40 sm:h-40 rounded-full flex items-center justify-center transition-all duration-700 ${isActive ? 'scale-110 shadow-[0_0_100px_-10px_rgba(247,196,41,0.6)]' : 'hover:scale-110 shadow-[0_30px_60px_-10px_rgba(247,196,41,0.4)]'}`}
                     >
                         <div className={`absolute inset-0 rounded-full transition-all duration-700 ${isActive ? 'bg-gradient-to-br from-accent to-[#e5b510]' : 'bg-accent'}`}></div>
                         <div className="absolute top-0 left-1/4 w-1/2 h-1/2 bg-gradient-to-b from-white/60 to-transparent rounded-full blur-[2px]"></div>
                         <div className={`relative text-primary transition-transform duration-500 ${isHovered ? 'scale-110' : ''}`}>
                             {isActive ? (
-                                isSpeaking ? <Volume2 className="w-14 h-14 animate-pulse" /> : (
-                                    <div className="flex gap-1.5 items-end h-8">
-                                        <div className="w-1.5 h-6 bg-primary rounded-full animate-[bounce_0.8s_infinite]"></div>
-                                        <div className="w-1.5 h-10 bg-primary rounded-full animate-[bounce_0.8s_0.1s_infinite]"></div>
-                                        <div className="w-1.5 h-8 bg-primary rounded-full animate-[bounce_0.8s_0.2s_infinite]"></div>
-                                        <div className="w-1.5 h-4 bg-primary rounded-full animate-[bounce_0.8s_0.3s_infinite]"></div>
+                                isSpeaking ? <Volume2 className="w-10 h-10 animate-pulse" /> : (
+                                    <div className="flex gap-1.5 items-end h-6">
+                                        <div className="w-1.5 h-4 bg-primary rounded-full animate-[bounce_0.8s_infinite]"></div>
+                                        <div className="w-1.5 h-6 bg-primary rounded-full animate-[bounce_0.8s_0.1s_infinite]"></div>
+                                        <div className="w-1.5 h-5 bg-primary rounded-full animate-[bounce_0.8s_0.2s_infinite]"></div>
+                                        <div className="w-1.5 h-3 bg-primary rounded-full animate-[bounce_0.8s_0.3s_infinite]"></div>
                                     </div>
                                 )
                             ) : (
-                                <Mic className="w-14 h-14" />
+                                <Mic className="w-10 h-10" />
                             )}
                         </div>
                     </button>
@@ -110,7 +171,7 @@ const Hero = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-6 items-center animate-reveal-up reveal-delay-400 w-full sm:w-auto px-4 mt-12">
+                <div className="flex flex-col sm:flex-row gap-6 items-center animate-reveal-up reveal-delay-500 w-full sm:w-auto px-4 mt-12">
                     <a href="#contact" className="w-full sm:w-auto px-16 py-8 bg-accent text-primary rounded-2xl font-black text-2xl hover:bg-[#e5b510] hover:scale-105 hover:-rotate-1 transition-all shadow-[0_20px_40px_-10px_rgba(247,196,41,0.5)] flex items-center justify-center gap-4 group">
                         Termin buchen
                         <ArrowRight className="w-7 h-7 group-hover:translate-x-2 transition-transform" />
@@ -121,9 +182,9 @@ const Hero = () => {
                     </a>
                 </div>
 
-                <div className="mt-12 pt-8 border-t border-slate-200/30 flex flex-wrap justify-center gap-10 md:gap-20 animate-reveal-up reveal-delay-500">
-                    <a href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group cursor-pointer hover:bg-white/40 p-3 rounded-2xl transition-all">
-                        <div className="flex -space-x-1.5">
+                <div className="mt-12 pt-8 border-t border-slate-200/30 flex flex-wrap justify-center gap-10 md:gap-20 animate-reveal-up reveal-delay-600">
+                    <a href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer" aria-label="5.0 Sterne auf Google Rezensionen ansehen" className="flex items-center gap-4 group cursor-pointer hover:bg-white/40 p-3 rounded-2xl transition-all animate-float">
+                        <div className="flex -space-x-1.5" aria-hidden="true">
                             {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-6 h-6 fill-accent text-accent" />)}
                         </div>
                         <div className="flex flex-col text-left">

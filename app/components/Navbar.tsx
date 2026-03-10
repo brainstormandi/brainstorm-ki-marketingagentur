@@ -8,35 +8,55 @@ const Navbar = () => {
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-            <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 mt-4">
-                <div className="glass-morphism rounded-[2rem] border border-white/40 shadow-2xl px-8 h-24 flex justify-between items-center premium-shadow">
-                    <Link href="/" className="flex items-center gap-5 hover:opacity-80 transition-opacity cursor-pointer">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 sm:mt-6">
+                <div className="bg-white/70 backdrop-blur-xl rounded-full border border-white/50 shadow-[0_8px_30px_rgb(0,0,0,0.06)] px-6 sm:px-8 h-16 sm:h-20 flex justify-between items-center transition-all duration-700 animate-reveal-down">
+                    <Link href="/" className="flex items-center gap-3 sm:gap-4 hover:opacity-80 transition-opacity cursor-pointer group">
                         <img
                             src="/bilder/logo.png"
                             alt="BrainStorm Logo"
-                            className="h-10 w-auto object-contain"
+                            className="h-8 sm:h-9 w-auto object-contain transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
                         />
                         <div className="flex flex-col leading-none">
-                            <span className="font-display font-black text-2xl sm:text-3xl tracking-tighter text-slate-900 uppercase">
+                            <span className="font-sans font-bold text-xl sm:text-2xl tracking-tighter text-slate-900 uppercase">
                                 BrainStorm
                             </span>
-                            <span className="text-[10px] sm:text-[12px] font-black uppercase tracking-[0.2em] text-slate-500 mt-1">KI Werbeagentur</span>
+                            <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 mt-0.5">KI Werbeagentur</span>
                         </div>
                     </Link>
 
-                    <div className="hidden lg:flex items-center gap-10">
-                        <a href="/#services" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors cursor-pointer">Leistungen</a>
-                        <a href="/#process" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors cursor-pointer">Ablauf</a>
-                        <a href="/#faq" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors cursor-pointer" >FAQs</a>
-                        <a href="/#contact" className="text-base font-black uppercase tracking-widest text-slate-600 hover:text-primary transition-colors cursor-pointer">Kontakt</a>
-                        <a href="/#contact" className="px-8 py-4 bg-slate-900 text-sm text-white rounded-xl font-black uppercase tracking-widest hover:bg-slate-800 transition-all shadow-xl hover:scale-105 active:scale-95 cursor-pointer">Erstberatung</a>
+                    <div className="hidden lg:flex items-center gap-8">
+                        {[
+                            { name: 'Leistungen', href: '/#services' },
+                            { name: 'Ablauf', href: '/#process' },
+                            { name: 'FAQs', href: '/#faq' },
+                            { name: 'Kontakt', href: '/#contact' }
+                        ].map((item, idx) => (
+                            <a
+                                key={item.name}
+                                href={item.href}
+                                className="text-[14px] font-bold uppercase tracking-widest text-slate-600 hover:text-slate-900 transition-all cursor-pointer relative group animate-reveal-down"
+                                style={{ animationDelay: `${(idx + 1) * 100 + 300}ms` }}
+                            >
+                                {item.name}
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        ))}
+                        <a
+                            href="/#contact"
+                            className="ml-2 px-6 py-2.5 bg-slate-900 text-[14px] text-white rounded-full font-bold uppercase tracking-widest hover:bg-slate-800 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 cursor-pointer animate-reveal-down"
+                            style={{ animationDelay: '800ms' }}
+                        >
+                            Erstberatung
+                        </a>
                     </div>
 
                     <button
-                        className="lg:hidden p-3 text-slate-900 bg-slate-50 rounded-2xl transition-all z-50 border border-slate-100 shadow-sm cursor-pointer"
+                        className="lg:hidden p-2 text-slate-900 bg-white/50 hover:bg-white/90 rounded-full transition-all border border-slate-200/50 shadow-sm cursor-pointer"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        aria-label="Menü öffnen"
+                        aria-expanded={isMobileMenuOpen}
                     >
-                        <Menu className="w-6 h-6" />
+                        <Menu className="w-5 h-5" />
                     </button>
                 </div>
             </div>
@@ -44,7 +64,7 @@ const Navbar = () => {
             {isMobileMenuOpen && (
                 <div className="fixed inset-0 z-50 md:hidden">
                     {/* Backdrop */}
-                    <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-md" onClick={() => setIsMobileMenuOpen(false)}></div>
+                    <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-md" onClick={() => setIsMobileMenuOpen(false)} aria-hidden="true"></div>
 
                     {/* Menu Content */}
                     <div className="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl flex flex-col p-10 animate-reveal-up border-l border-slate-100">
@@ -56,7 +76,7 @@ const Navbar = () => {
                                     className="h-8 w-auto object-contain"
                                 />
                                 <div className="flex flex-col leading-none">
-                                    <span className="font-display font-black text-xl tracking-tighter text-slate-900 uppercase">
+                                    <span className="font-sans font-black text-xl tracking-tighter text-slate-900 uppercase">
                                         BrainStorm
                                     </span>
                                 </div>
@@ -64,6 +84,7 @@ const Navbar = () => {
                             <button
                                 className="p-3 text-slate-900 bg-slate-50 rounded-2xl border border-slate-100 cursor-pointer"
                                 onClick={() => setIsMobileMenuOpen(false)}
+                                aria-label="Menü schließen"
                             >
                                 <X className="w-6 h-6" />
                             </button>

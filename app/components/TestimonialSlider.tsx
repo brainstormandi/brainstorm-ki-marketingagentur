@@ -30,7 +30,7 @@ const TestimonialSlider = () => {
 
     return (
         <div className="relative h-[800px] overflow-hidden group">
-            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white via-white/90 to-transparent pointer-events-none z-20"></div>
+            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white via-white/90 to-transparent pointer-events-none z-20" aria-hidden="true"></div>
 
             <div ref={scrollRef} className="h-full overflow-hidden space-y-8 px-4 py-8">
                 {doubledTestimonials.map((t, i) => (
@@ -40,6 +40,7 @@ const TestimonialSlider = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block p-10 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-yellow-200 hover:-translate-y-1 transition-all duration-300 group/card relative cursor-pointer focus-visible:ring-2 focus-visible:ring-accent outline-none"
+                        aria-label={`Bewertung von ${t.name} auf Google ansehen: ${t.quote}`}
                     >
                         <div className="flex justify-between items-start mb-6">
                             <div className="flex items-center gap-4">
@@ -51,7 +52,7 @@ const TestimonialSlider = () => {
                                     <span className="text-xs text-slate-500 font-medium">Local Guide</span>
                                 </div>
                             </div>
-                            <div className="flex items-center gap-1">
+                            <div className="flex items-center gap-1" aria-hidden="true">
                                 <svg className="w-6 h-6" viewBox="0 0 24 24">
                                     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
                                     <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
@@ -61,14 +62,14 @@ const TestimonialSlider = () => {
                             </div>
                         </div>
 
-                        <div className="flex gap-1 mb-6">
+                        <div className="flex gap-1 mb-6" aria-hidden="true">
                             {[...Array(5)].map((_, s) => (
                                 <Star key={s} className="w-5 h-5 fill-accent text-accent" />
                             ))}
                         </div>
 
                         <div className="relative">
-                            <Quote className="absolute -top-3 -left-3 w-8 h-8 text-slate-200 fill-slate-50 -z-10" />
+                            <Quote className="absolute -top-3 -left-3 w-8 h-8 text-slate-200 fill-slate-50 -z-10" aria-hidden="true" />
                             <p className="text-slate-800 leading-relaxed text-lg">{t.quote}</p>
                         </div>
 
@@ -85,7 +86,7 @@ const TestimonialSlider = () => {
                 ))}
             </div>
 
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/90 to-transparent pointer-events-none z-20"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/90 to-transparent pointer-events-none z-20" aria-hidden="true"></div>
         </div>
     );
 };

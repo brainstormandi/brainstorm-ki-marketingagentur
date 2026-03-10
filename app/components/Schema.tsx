@@ -70,6 +70,77 @@ export default function Schema() {
         }))
     };
 
+    const personSchema = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Andi Sturm",
+        "jobTitle": "Gründer & Visionär",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "BrainStorm Werbeagentur"
+        },
+        "url": "https://www.linkedin.com/in/andreas-sturm-b9282966/",
+        "image": "https://brainstorm-werbeagentur.at/bilder/andi-sturm.png",
+        "description": "Andi Sturm ist ein erfahrener Digital-Berater und Gründer der BrainStorm KI Werbeagentur mit über 32 Jahren Branchenerfahrung."
+    };
+
+    const serviceSchema = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "provider": {
+            "@id": "https://brainstorm-werbeagentur.at"
+        },
+        "serviceType": "KI-gestütztes Marketing, SEO, GEO, Webdesign, Automatisierung",
+        "areaServed": "AT",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Marketing Services",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item": {
+                        "@type": "Service",
+                        "name": "Webdesign & Entwicklung",
+                        "description": "Erstellung von modernen, psychologisch optimierten Webseiten."
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item": {
+                        "@type": "Service",
+                        "name": "GEO - Generative Engine Optimization",
+                        "description": "Sichtbarkeit in KI-basierten Suchmaschinen wie ChatGPT und Perplexity."
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "item": {
+                        "@type": "Service",
+                        "name": "SEO - Search Engine Optimization",
+                        "description": "Top-Platzierungen in Google durch datengetriebene Optimierung."
+                    }
+                }
+            ]
+        }
+    };
+
+    const reviewSchema = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://brainstorm-werbeagentur.at",
+        "name": "BrainStorm Werbeagentur",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "50",
+            "bestRating": "5",
+            "worstRating": "1"
+        }
+    };
+
     return (
         <>
             <script
@@ -83,6 +154,18 @@ export default function Schema() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
             />
         </>
     );

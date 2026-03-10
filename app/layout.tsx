@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Geist, Fraunces } from "next/font/google";
 import "./globals.css";
 import Schema from "./components/Schema";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-plus-jakarta" });
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
+const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" });
 
 export const metadata: Metadata = {
   title: "BrainStorm KI: Smarte Webseiten & Apps für KMU Österreich",
@@ -24,6 +24,18 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://brainstorm-werbeagentur.at",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BrainStorm KI | Web & KI aus Seitenstetten",
+    description: "Professionelle Webseiten und KI-Lösungen für maximale Sichtbarkeit Ihrer KMU.",
+    creator: "@andi_sturm",
+    images: ["https://brainstorm-werbeagentur.at/bilder/logo.png"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
   robots: {
     index: true,
@@ -46,7 +58,7 @@ export default function RootLayout({
   return (
     <html lang="de" className="scroll-smooth" suppressHydrationWarning={true}>
       <body
-        className={`${inter.variable} ${plusJakarta.variable} font-sans antialiased text-gray-900 bg-white`}
+        className={`${geist.variable} ${fraunces.variable} font-sans antialiased text-gray-900 bg-white`}
         suppressHydrationWarning={true}
       >
         <Schema />

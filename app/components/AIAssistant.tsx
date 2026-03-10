@@ -341,7 +341,7 @@ const AIAssistant = () => {
                         <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
                     )}
                     <div className="relative z-10">
-                        <Sparkles className={`w-10 h-10 transition-all duration-500 ${isListening || isConnecting ? 'scale-125 animate-pulse' : 'group-hover:scale-110'}`} />
+                        <Mic className={`w-10 h-10 transition-all duration-500 ${isListening || isConnecting ? 'scale-125 animate-pulse' : 'group-hover:scale-110'}`} />
                     </div>
                     {/* Tooltip */}
                     <div className="absolute right-24 top-1/2 -translate-y-1/2 bg-slate-900 text-white px-6 py-3 rounded-2xl whitespace-nowrap text-sm font-black tracking-wider opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl border border-white/10 uppercase">
@@ -351,42 +351,42 @@ const AIAssistant = () => {
             )}
 
             {isOpen && (
-                <div className="w-[calc(100vw-2rem)] sm:w-[480px] max-w-[480px] h-[min(600px,calc(100vh-6rem))] sm:h-[720px] bg-white rounded-[2rem] sm:rounded-[3rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] border border-slate-100 flex flex-col overflow-hidden animate-reveal-up origin-bottom-right">
+                <div className="w-[calc(100vw-2rem)] sm:w-[500px] max-w-[500px] h-[min(650px,calc(100vh-6rem))] sm:h-[780px] bg-white rounded-[2.5rem] sm:rounded-[4rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col overflow-hidden animate-reveal-up origin-bottom-right">
                     {/* Header */}
-                    <div className="p-8 bg-slate-900 text-white flex justify-between items-center relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-accent rounded-full blur-[100px] opacity-10 -mr-32 -mt-32"></div>
+                    <div className="p-10 pb-8 bg-white/90 backdrop-blur-xl flex justify-between items-center relative overflow-hidden border-b border-slate-50">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-accent rounded-full blur-[120px] opacity-10 -mr-32 -mt-32"></div>
                         <div className="flex items-center gap-5 relative z-10">
-                            <div className="w-14 h-14 bg-accent rounded-2xl flex items-center justify-center shadow-lg shadow-accent/20">
-                                <Sparkles className="w-8 h-8 text-primary" />
+                            <div className="w-16 h-16 bg-accent rounded-[1.5rem] flex items-center justify-center shadow-lg shadow-accent/20">
+                                <Mic className="w-9 h-9 text-primary" />
                             </div>
                             <div>
-                                <h4 className="font-display font-black text-2xl tracking-tighter leading-none mb-1.5">BrainStorm AI</h4>
+                                <h4 className="font-display font-black text-2xl tracking-tighter leading-none mb-2 text-slate-900">BrainStorm AI</h4>
                                 <div className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
-                                    <span className="text-[11px] opacity-70 uppercase font-black tracking-[0.15em]">Premium Berater Online</span>
+                                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+                                    <span className="text-[11px] text-slate-500 uppercase font-black tracking-[0.2em]">Premium Berater Online</span>
                                 </div>
                             </div>
                         </div>
-                        <button onClick={() => { cleanupVoice(); setIsOpen(false); }} className="bg-white/5 hover:bg-white/10 p-3 rounded-2xl transition-all border border-white/5 relative z-10">
-                            <X className="w-6 h-6 text-white" />
+                        <button onClick={() => { cleanupVoice(); setIsOpen(false); }} className="bg-slate-50 hover:bg-slate-100 p-4 rounded-2xl transition-all border border-slate-100 relative z-10 group">
+                            <X className="w-6 h-6 text-slate-400 group-hover:rotate-90 transition-transform" />
                         </button>
                     </div>
 
                     {/* Messages */}
-                    <div className="flex-1 overflow-y-auto p-8 space-y-6 bg-mesh-gradient">
+                    <div className="flex-1 overflow-y-auto p-10 space-y-10 bg-mesh-gradient">
                         {error && (
-                            <div className="p-6 bg-red-50 border border-red-100 rounded-[2rem] flex flex-col gap-3 text-red-700 shadow-sm animate-in fade-in zoom-in-95">
+                            <div className="p-8 bg-red-50 border border-red-100 rounded-[2.5rem] flex flex-col gap-4 text-red-700 shadow-sm animate-in fade-in zoom-in-95">
                                 <div className="flex items-center gap-2 font-black uppercase tracking-widest text-xs">
-                                    <AlertCircle className="w-4 h-4 shrink-0" /> System Fehlermeldung
+                                    <AlertCircle className="w-5 h-5 shrink-0" /> System Status
                                 </div>
-                                <span className="text-[15px] leading-relaxed">{error}</span>
-                                <button onClick={() => startVoiceMode(false)} className="mt-2 w-full py-4 bg-red-600 text-white rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-red-700 shadow-lg shadow-red-600/20 transition-all">Verbindung neu aufbauen</button>
+                                <span className="text-[16px] leading-relaxed">{error}</span>
+                                <button onClick={() => startVoiceMode(false)} className="mt-2 w-full py-5 bg-red-600 text-white rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-red-700 shadow-lg shadow-red-600/20 transition-all">Verbindung neu aufbauen</button>
                             </div>
                         )}
 
                         {messages.map((m, i) => (
                             <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                                <div className={`max-w-[90%] p-6 rounded-[2.2rem] text-[15px] shadow-sm leading-relaxed ${m.role === 'user' ? 'bg-slate-900 text-white rounded-tr-none' : 'bg-white border border-slate-100 text-slate-800 rounded-tl-none shadow-xl shadow-slate-200/40'}`}>
+                                <div className={`max-w-[85%] p-8 rounded-[2.5rem] text-[16px] leading-relaxed shadow-sm ${m.role === 'user' ? 'bg-slate-900 text-white rounded-tr-lg' : 'bg-white border border-slate-100 text-slate-800 rounded-tl-lg shadow-xl shadow-slate-200/40'}`}>
                                     <div className="whitespace-pre-wrap">{m.text}</div>
 
                                     {m.isSending && (
@@ -461,13 +461,13 @@ const AIAssistant = () => {
                     </div>
 
                     {/* Footer / Input */}
-                    <div className="p-8 bg-white border-t border-slate-100">
-                        <div className="flex gap-4">
+                    <div className="p-10 bg-white border-t border-slate-50 mt-auto">
+                        <div className="flex gap-4 items-center">
                             <button
                                 onClick={isListening || isConnecting ? cleanupVoice : () => startVoiceMode(false)}
-                                className={`w-16 h-16 rounded-2xl transition-all shadow-xl flex items-center justify-center relative overflow-hidden active:scale-95 ${isListening || isConnecting ? 'bg-emerald-600 text-white shadow-emerald-600/30 ring-4 ring-emerald-50' : 'bg-slate-50 text-slate-400 hover:text-slate-900 border border-slate-100'}`}
+                                className={`w-20 h-20 rounded-[1.8rem] transition-all flex items-center justify-center relative overflow-hidden active:scale-95 shadow-lg ${isListening || isConnecting ? 'bg-emerald-600 text-white shadow-emerald-600/30 ring-8 ring-emerald-50' : 'bg-slate-50 text-slate-400 hover:text-slate-900 border border-slate-100 hover:border-slate-200'}`}
                             >
-                                {isConnecting ? <Loader2 className="w-6 h-6 animate-spin" /> : <Mic className={`w-6 h-6 ${isListening ? 'animate-pulse' : ''}`} />}
+                                {isConnecting ? <Loader2 className="w-8 h-8 animate-spin" /> : <Mic className={`w-8 h-8 ${isListening ? 'animate-pulse' : ''}`} />}
                             </button>
                             <div className="flex-1 relative">
                                 <input
@@ -475,11 +475,11 @@ const AIAssistant = () => {
                                     value={input}
                                     onChange={(e) => setInput(e.target.value)}
                                     onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
-                                    placeholder="Frage stellen..."
-                                    className="w-full bg-slate-50 border-none rounded-2xl py-5 px-8 pr-16 text-base focus:ring-4 focus:ring-accent/20 transition-all placeholder:text-slate-300 text-slate-900"
+                                    placeholder="Nachfrage stellen..."
+                                    className="w-full bg-slate-50 border-none rounded-[1.8rem] py-7 px-10 pr-20 text-lg focus:ring-8 focus:ring-accent/10 transition-all placeholder:text-slate-300 text-slate-900 shadow-inner"
                                 />
-                                <button onClick={handleSendMessage} className="absolute right-2 top-2 bottom-2 px-4 bg-slate-900 text-white rounded-xl shadow-lg hover:bg-slate-800 transition-all">
-                                    <Send className="w-5 h-5" />
+                                <button onClick={handleSendMessage} className="absolute right-3 top-3 bottom-3 w-14 bg-slate-900 text-white rounded-[1.2rem] shadow-xl hover:bg-slate-800 transition-all flex items-center justify-center active:scale-90">
+                                    <Send className="w-6 h-6" />
                                 </button>
                             </div>
                         </div>

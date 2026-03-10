@@ -3,17 +3,73 @@
 @theme {
   --color-primary: #111827;
   --color-accent: #F7C429;
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-plus-jakarta);
+  --font-sans: var(--font-geist), sans-serif;
+  --font-display: var(--font-fraunces), "Fraunces", serif;
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-fraunces), "Fraunces", serif !important;
+  }
 }
 
 @keyframes revealUp {
   from {
-    transform: translateY(20px);
+    opacity: 0;
+    transform: translateY(30px);
   }
 
   to {
+    opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes revealDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes revealLeft {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes revealRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -29,12 +85,78 @@
   }
 }
 
+@keyframes pulse-gentle {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
 .animate-reveal-up {
-  animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-reveal-down {
+  animation: revealDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-reveal-left {
+  animation: revealLeft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-reveal-right {
+  animation: revealRight 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-zoom-in {
+  animation: zoomIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 4s ease-in-out infinite;
+}
+
+.reveal-delay-100 {
+  animation-delay: 100ms;
+}
+
+.reveal-delay-200 {
+  animation-delay: 200ms;
+}
+
+.reveal-delay-300 {
+  animation-delay: 300ms;
+}
+
+.reveal-delay-400 {
+  animation-delay: 400ms;
+}
+
+.reveal-delay-500 {
+  animation-delay: 500ms;
+}
+
+.reveal-delay-600 {
+  animation-delay: 600ms;
+}
+
+.reveal-delay-700 {
+  animation-delay: 700ms;
+}
+
+.reveal-delay-800 {
+  animation-delay: 800ms;
 }
 
 .bg-mesh-gradient {
@@ -58,32 +180,12 @@
   background: white;
   border-radius: 2rem;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .premium-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.1);
-}
-
-.reveal-delay-100 {
-  animation-delay: 100ms;
-}
-
-.reveal-delay-200 {
-  animation-delay: 200ms;
-}
-
-.reveal-delay-300 {
-  animation-delay: 300ms;
-}
-
-.reveal-delay-400 {
-  animation-delay: 400ms;
-}
-
-.reveal-delay-500 {
-  animation-delay: 500ms;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.12);
 }
 
 @keyframes ripple {
@@ -124,4 +226,27 @@
 
 .animate-bounce-slow {
   animation: bounce-slow 3s infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 120s linear infinite;
+}
+
+/* Scroll reveal utility - used with Intersection Observer */
+.reveal-on-scroll {
+  opacity: 0;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
 }

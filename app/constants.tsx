@@ -255,12 +255,12 @@ export const ADVANTAGES = [
     },
     {
         title: "Rundum-sorglos-Paket – von der Idee bis zur Umsetzung",
-        description: "Von der Analyse über Design bis SEO – wir managen Ihren kompletten digitalen Auftritt, damit Sie sich voll auf Ihr Kerngeschäft konzentrieren können.",
+        description: "Von der Analyse über Design bis SEO – wir managen Ihren kompletten digitalen Auftritt, damit Sie sich auf Ihr Geschäft konzentrieren können.",
         icon: <Layers className="w-10 h-10 text-primary" />
     },
     {
         title: "Nachhaltige Ergebnisse, die überzeugen",
-        description: "Langfristiger Erfolg durch messbare Strategien. Sichern Sie sich stabilere Umsätze, mehr Anfragen und klare Planungssicherheit für Ihren Betrieb.",
+        description: "Langfristiger Erfolg durch messbare Strategien. Sichern Sie sich stabilere Umsätze, mehr Anfragen und klare Planungssicherheit durch intelligente KI-Systeme für Ihren Betrieb.",
         icon: <TrendingUp className="w-10 h-10 text-primary" />
     }
 ];

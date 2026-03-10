@@ -6,11 +6,13 @@ import { GOOGLE_REVIEW_LINK } from './constants';
 import { ExternalLink } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import IndustryMarquee from './components/IndustryMarquee';
 import Services from './components/Services';
 import WhyUs from './components/WhyUs';
 import Founder from './components/Founder';
 import Process from './components/Process';
 import Footer from './components/Footer';
+import ScrollReveal from './components/ScrollReveal';
 
 const AIAssistant = dynamic(() => import('./components/AIAssistant'), { ssr: false });
 const TestimonialSlider = dynamic(() => import('./components/TestimonialSlider'), { ssr: false });
@@ -31,17 +33,10 @@ export default function Home() {
       <main>
         <Hero />
 
-        <section className="py-12 bg-slate-50 border-y border-slate-100">
-          <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-            <div className="font-bold text-3xl">Gastronomie</div>
-            <div className="font-bold text-3xl">Handwerk</div>
-            <div className="font-bold text-3xl">Handel</div>
-            <div className="font-bold text-3xl">Industrie</div>
-            <div className="font-bold text-3xl">Dienstleistung</div>
-          </div>
-        </section>
+        <IndustryMarquee />
 
         <Services />
+
         <WhyUs />
         <Founder />
         <Process />
@@ -49,7 +44,7 @@ export default function Home() {
         <section className="py-24 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div>
+              <ScrollReveal animation="reveal-right">
                 <h2 className="text-base font-bold text-primary uppercase tracking-widest mb-3">Erfolge</h2>
                 <h3 className="text-4xl sm:text-5xl font-display font-extrabold text-slate-900 mb-6">
                   Überzeugte KMUs <br />
@@ -60,18 +55,23 @@ export default function Home() {
                 </p>
 
                 <div className="flex flex-col items-start gap-8">
-                  <div className="flex items-center gap-6">
+                  <div className="flex items-center gap-6" aria-hidden="true">
                     <div className="flex -space-x-4">
                       {customerFaces.map((src, i) => (
-                        <div key={i} className="w-14 h-14 rounded-full border-[3px] border-white overflow-hidden shadow-md relative">
+                        <ScrollReveal
+                          key={i}
+                          animation="zoom-in"
+                          delay={i * 100}
+                          className="w-14 h-14 rounded-full border-[3px] border-white overflow-hidden shadow-md relative"
+                        >
                           <Image
                             src={src}
-                            alt="Zufriedener BrainStorm Kunde"
+                            alt=""
                             fill
                             className="object-cover"
                             sizes="56px"
                           />
-                        </div>
+                        </ScrollReveal>
                       ))}
                     </div>
                     <div className="text-base font-medium text-slate-500">
@@ -80,13 +80,15 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <a href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 bg-white border border-slate-200 rounded-xl font-bold text-lg text-slate-700 shadow-sm hover:bg-slate-50 hover:border-slate-300 transition-all group">
+                  <a href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 bg-white border border-slate-200 rounded-xl font-bold text-lg text-slate-700 shadow-sm hover:bg-slate-50 hover:border-slate-300 transition-all group scale-100 hover:scale-105">
                     Alle Rezensionen auf Google lesen
-                    <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-slate-600" />
+                    <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-slate-600 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                   </a>
                 </div>
-              </div>
-              <TestimonialSlider />
+              </ScrollReveal>
+              <ScrollReveal animation="reveal-left" delay={200}>
+                <TestimonialSlider />
+              </ScrollReveal>
             </div>
           </div>
         </section>
