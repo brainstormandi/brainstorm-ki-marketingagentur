@@ -4,8 +4,8 @@ import { Linkedin, Facebook, ArrowUpRight } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="bg-slate-50 pt-24 pb-12 border-t border-slate-200">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <footer className="bg-[#F8FAFC] pt-24 pb-12 border-t border-slate-200 relative overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid md:grid-cols-3 gap-12 lg:gap-20 mb-20">
                     <div className="col-span-1 md:col-span-1">
                         <div className="flex items-center gap-3 mb-8">
@@ -125,7 +125,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-sm font-medium">
+                <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-600 text-sm font-medium">
                     <p>&copy; {new Date().getFullYear()} BrainStorm KI Werbeagentur. Alle Rechte vorbehalten.</p>
                     <p>Hergestellt mit ❤️ in Seitenstetten, Österreich.</p>
                 </div>

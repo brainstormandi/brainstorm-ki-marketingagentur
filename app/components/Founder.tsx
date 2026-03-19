@@ -30,7 +30,7 @@ const Founder = () => {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent"></div>
                                 <div className="absolute bottom-0 left-0 right-0 p-12 bg-gradient-to-t from-slate-900/90 to-transparent backdrop-blur-[2px]">
-                                    <h4 className="text-white font-display font-black text-4xl tracking-tighter mb-2">Andi Sturm</h4>
+                                    <h4 className="text-white font-display font-black text-4xl tracking-normal mb-2">Andi Sturm</h4>
                                     <p className="text-accent text-lg uppercase tracking-[0.3em] font-black">Gründer & Visionär</p>
                                 </div>
                             </div>
@@ -50,13 +50,9 @@ const Founder = () => {
                             <Sparkles className="w-4 h-4 text-accent" />
                             Der Macher hinter BrainStorm
                         </div>
-                        <h2 className="text-5xl sm:text-7xl font-display font-black text-slate-900 mb-10 tracking-tighter leading-[1.05]">
+                        <h2 className="text-5xl sm:text-7xl font-display font-black text-slate-900 mb-10 tracking-normal leading-[1.05]">
                             Unsere Mission <br />
-                            ist <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#e5b510] relative">Ihr Erfolg.
-                                <svg className="absolute -bottom-2 left-0 w-full h-3 text-accent/30" viewBox="0 0 100 10" preserveAspectRatio="none">
-                                    <path d="M0 5 Q 50 10 100 5 L 100 10 L 0 10 Z" fill="currentColor" />
-                                </svg>
-                            </span>
+                            ist <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#e5b510] relative">Ihr Erfolg.</span>
                         </h2>
 
                         <div className="space-y-8 text-lg text-slate-500 leading-relaxed">
@@ -74,7 +70,7 @@ const Founder = () => {
                                     <Quote className="w-8 h-8 text-accent" />
                                 </div>
                                 <div className="space-y-4">
-                                    <p className="text-3xl font-display font-black text-slate-900 tracking-tight leading-snug">
+                                    <p className="text-3xl font-display font-black text-slate-900 tracking-normal leading-snug">
                                         &quot;Sichtbarkeit schafft Erfolg. Aber nur Relevanz schafft Vertrauen.&quot;
                                     </p>
                                     <div className="font-bold text-slate-400 text-xl tracking-tight">

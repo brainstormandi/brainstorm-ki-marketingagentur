@@ -17,10 +17,10 @@ const Navbar = () => {
                             className="h-8 sm:h-9 w-auto object-contain transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
                         />
                         <div className="flex flex-col leading-none">
-                            <span className="font-sans font-bold text-xl sm:text-2xl tracking-tighter text-slate-900 uppercase">
+                            <span className="font-sans font-black text-xl sm:text-2xl tracking-wide text-[#0E172B]">
                                 BrainStorm
                             </span>
-                            <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 mt-0.5">KI Werbeagentur</span>
+                            <span className="text-[12px] sm:text-[14px] font-medium tracking-[0.1em] text-[#0E172B] mt-1">KI Werbeagentur</span>
                         </div>
                     </Link>
 
@@ -76,9 +76,10 @@ const Navbar = () => {
                                     className="h-8 w-auto object-contain"
                                 />
                                 <div className="flex flex-col leading-none">
-                                    <span className="font-sans font-black text-xl tracking-tighter text-slate-900 uppercase">
+                                    <span className="font-sans font-black text-xl tracking-wide text-[#0E172B]">
                                         BrainStorm
                                     </span>
+                                    <span className="text-[12px] font-medium tracking-[0.1em] text-[#0E172B] mt-1">KI Werbeagentur</span>
                                 </div>
                             </div>
                             <button

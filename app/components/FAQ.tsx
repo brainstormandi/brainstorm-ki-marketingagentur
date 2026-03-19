@@ -15,7 +15,7 @@ const FAQ = () => {
                         <HelpCircle className="w-4 h-4 text-accent" />
                         Antworten
                     </div>
-                    <h2 className="text-5xl sm:text-7xl font-display font-black text-slate-900 mb-8 tracking-tighter leading-[0.95]">
+                    <h2 className="text-5xl sm:text-7xl font-display font-black text-slate-900 mb-8 tracking-normal leading-[0.95]">
                         Klarheit für <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#e5b510]">Ihren Erfolg.</span>
                     </h2>
@@ -68,7 +68,7 @@ const FAQ = () => {
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-64 bg-accent/5 rounded-[4rem] blur-3xl -z-10" aria-hidden="true"></div>
 
                         <div className="text-center max-w-2xl">
-                            <h3 className="text-3xl sm:text-4xl font-display font-black mb-6 tracking-tight text-slate-900">Noch mehr wissen?</h3>
+                            <h3 className="text-3xl sm:text-4xl font-display font-black mb-6 tracking-normal text-slate-900">Noch mehr wissen?</h3>
                             <p className="text-xl text-slate-500 mb-12 leading-relaxed">
                                 Unser KI-Experte Andi Sturm steht Ihnen für ein persönliches Strategie-Gespräch zur Verfügung. Überzeugen Sie sich selbst.
                             </p>

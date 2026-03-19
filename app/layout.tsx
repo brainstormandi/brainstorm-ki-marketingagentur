@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Fraunces } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import Schema from "./components/Schema";
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
-const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" });
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
 export const metadata: Metadata = {
   title: "BrainStorm KI: Smarte Webseiten & Apps für KMU Österreich",
@@ -58,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="de" className="scroll-smooth" suppressHydrationWarning={true}>
       <body
-        className={`${geist.variable} ${fraunces.variable} font-sans antialiased text-gray-900 bg-white`}
+        className={`${outfit.variable} font-sans antialiased text-gray-900 bg-white`}
         suppressHydrationWarning={true}
       >
         <Schema />

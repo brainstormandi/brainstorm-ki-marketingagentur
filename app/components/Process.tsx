@@ -6,14 +6,24 @@ import ScrollReveal from './ScrollReveal';
 
 const Process = () => {
     return (
-        <section id="process" className="py-40 bg-slate-50 relative overflow-hidden">
+        <section id="process" className="py-24 sm:py-40 relative overflow-hidden">
+            {/* Background Image with Overlay */}
+            <div className="absolute inset-0 z-0">
+                <img 
+                    src="/bilder/ki-agentur-hintergrund-wolken.webp" 
+                    alt="Hintergrund Wolken" 
+                    className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-white/90"></div>
+            </div>
+
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <ScrollReveal className="text-center mb-28">
                     <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white text-primary font-bold text-sm uppercase tracking-widest mb-6 border border-slate-200">
                         <Layout className="w-4 h-4 text-accent" />
                         Der Ablauf
                     </div>
-                    <h2 className="text-5xl sm:text-7xl font-display font-black text-slate-900 tracking-tighter mb-8 leading-[1.1]">
+                    <h2 className="text-5xl sm:text-7xl font-display font-black text-slate-900 tracking-normal mb-8 leading-[1.1]">
                         Ihr Weg zum <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-500">digitalen Vorsprung.</span>
                     </h2>

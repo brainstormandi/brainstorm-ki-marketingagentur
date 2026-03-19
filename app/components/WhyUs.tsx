@@ -16,7 +16,7 @@ const WhyUs = () => {
                         <Sparkles className="w-4 h-4 text-accent" />
                         Unsere Philosophie
                     </div>
-                    <h2 className="text-5xl sm:text-8xl font-display font-black text-slate-900 mb-8 tracking-tighter">
+                    <h2 className="text-5xl sm:text-7xl font-display font-black text-slate-900 mb-8 tracking-normal">
                         Warum wir <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#e5b510]">Ihre Agentur sind.</span>
                     </h2>

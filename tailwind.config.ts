@@ -16,8 +16,8 @@ const config: Config = {
         light: '#F3F4F6',
       },
       fontFamily: {
-        sans: ['var(--font-geist)', 'sans-serif'],
-        display: ['var(--font-fraunces)', 'Fraunces', 'serif'],
+        sans: ['var(--font-outfit)', 'sans-serif'],
+        display: ['var(--font-outfit)', 'sans-serif'],
       },
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',

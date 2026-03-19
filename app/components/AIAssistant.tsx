@@ -35,6 +35,17 @@ const AIAssistant = () => {
     const transcriptRef = useRef("");
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const activeSessionRef = useRef<any>(null);
+    const messagesEndRef = useRef<HTMLDivElement>(null);
+
+    const scrollToBottom = useCallback(() => {
+        if (messagesEndRef.current) {
+            messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+    }, []);
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages, isBotSpeaking, isConnecting, scrollToBottom]);
 
     const stopAllAudio = useCallback(() => {
         sourcesRef.current.forEach(source => {
@@ -351,19 +362,19 @@ const AIAssistant = () => {
             )}
 
             {isOpen && (
-                <div className="w-[calc(100vw-2rem)] sm:w-[500px] max-w-[500px] h-[min(650px,calc(100vh-6rem))] sm:h-[780px] bg-white rounded-[2.5rem] sm:rounded-[4rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col overflow-hidden animate-reveal-up origin-bottom-right">
+                <div className="w-[calc(100vw-2rem)] sm:w-[500px] max-w-[500px] h-[calc(100vh-8rem)] sm:h-[780px] bg-white rounded-[2.5rem] sm:rounded-[4rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col overflow-hidden animate-reveal-up origin-bottom-right">
                     {/* Header */}
-                    <div className="p-10 pb-8 bg-white/90 backdrop-blur-xl flex justify-between items-center relative overflow-hidden border-b border-slate-50">
+                    <div className="p-6 sm:p-10 pb-6 sm:pb-8 bg-white/90 backdrop-blur-xl flex justify-between items-center relative overflow-hidden border-b border-slate-50">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-accent rounded-full blur-[120px] opacity-10 -mr-32 -mt-32"></div>
                         <div className="flex items-center gap-5 relative z-10">
                             <div className="w-16 h-16 bg-accent rounded-[1.5rem] flex items-center justify-center shadow-lg shadow-accent/20">
                                 <Mic className="w-9 h-9 text-primary" />
                             </div>
                             <div>
-                                <h4 className="font-display font-black text-2xl tracking-tighter leading-none mb-2 text-slate-900">BrainStorm AI</h4>
+                                <h4 className="font-sans font-black text-2xl tracking-wide leading-none mb-2 text-[#0E172B]">Susi KI</h4>
                                 <div className="flex items-center gap-2">
                                     <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                                    <span className="text-[11px] text-slate-500 uppercase font-black tracking-[0.2em]">Premium Berater Online</span>
+                                    <span className="text-[11px] text-[#0E172B] font-medium tracking-[0.05em]">Ihre persönliche Assistentin</span>
                                 </div>
                             </div>
                         </div>
@@ -373,9 +384,9 @@ const AIAssistant = () => {
                     </div>
 
                     {/* Messages */}
-                    <div className="flex-1 overflow-y-auto p-10 space-y-10 bg-mesh-gradient">
+                    <div className="flex-1 overflow-y-auto p-6 sm:p-10 space-y-8 sm:space-y-10 bg-mesh-gradient">
                         {error && (
-                            <div className="p-8 bg-red-50 border border-red-100 rounded-[2.5rem] flex flex-col gap-4 text-red-700 shadow-sm animate-in fade-in zoom-in-95">
+                            <div className="p-6 sm:p-8 bg-red-50 border border-red-100 rounded-[2.5rem] flex flex-col gap-4 text-red-700 shadow-sm animate-in fade-in zoom-in-95">
                                 <div className="flex items-center gap-2 font-black uppercase tracking-widest text-xs">
                                     <AlertCircle className="w-5 h-5 shrink-0" /> System Status
                                 </div>
@@ -386,7 +397,7 @@ const AIAssistant = () => {
 
                         {messages.map((m, i) => (
                             <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                                <div className={`max-w-[85%] p-8 rounded-[2.5rem] text-[16px] leading-relaxed shadow-sm ${m.role === 'user' ? 'bg-slate-900 text-white rounded-tr-lg' : 'bg-white border border-slate-100 text-slate-800 rounded-tl-lg shadow-xl shadow-slate-200/40'}`}>
+                                <div className={`max-w-[90%] sm:max-w-[85%] p-6 sm:p-8 rounded-[2.5rem] text-[15px] sm:text-[16px] leading-relaxed shadow-sm ${m.role === 'user' ? 'bg-slate-900 text-white rounded-tr-lg' : 'bg-white border border-slate-100 text-slate-800 rounded-tl-lg shadow-xl shadow-slate-200/40'}`}>
                                     <div className="whitespace-pre-wrap">{m.text}</div>
 
                                     {m.isSending && (
@@ -458,14 +469,15 @@ const AIAssistant = () => {
                                 </div>
                             </div>
                         )}
+                        <div ref={messagesEndRef} />
                     </div>
 
                     {/* Footer / Input */}
-                    <div className="p-10 bg-white border-t border-slate-50 mt-auto">
-                        <div className="flex gap-4 items-center">
+                    <div className="p-6 sm:p-10 bg-white border-t border-slate-50 mt-auto">
+                        <div className="flex gap-3 sm:gap-4 items-center">
                             <button
                                 onClick={isListening || isConnecting ? cleanupVoice : () => startVoiceMode(false)}
-                                className={`w-20 h-20 rounded-[1.8rem] transition-all flex items-center justify-center relative overflow-hidden active:scale-95 shadow-lg ${isListening || isConnecting ? 'bg-emerald-600 text-white shadow-emerald-600/30 ring-8 ring-emerald-50' : 'bg-slate-50 text-slate-400 hover:text-slate-900 border border-slate-100 hover:border-slate-200'}`}
+                                className={`w-16 h-16 sm:w-20 sm:h-20 rounded-[1.5rem] sm:rounded-[1.8rem] transition-all flex items-center justify-center relative overflow-hidden active:scale-95 shadow-lg ${isListening || isConnecting ? 'bg-emerald-600 text-white shadow-emerald-600/30 ring-8 ring-emerald-50' : 'bg-slate-50 text-slate-400 hover:text-slate-900 border border-slate-100 hover:border-slate-200'}`}
                             >
                                 {isConnecting ? <Loader2 className="w-8 h-8 animate-spin" /> : <Mic className={`w-8 h-8 ${isListening ? 'animate-pulse' : ''}`} />}
                             </button>
@@ -476,10 +488,10 @@ const AIAssistant = () => {
                                     onChange={(e) => setInput(e.target.value)}
                                     onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
                                     placeholder="Nachfrage stellen..."
-                                    className="w-full bg-slate-50 border-none rounded-[1.8rem] py-7 px-10 pr-20 text-lg focus:ring-8 focus:ring-accent/10 transition-all placeholder:text-slate-300 text-slate-900 shadow-inner"
+                                    className="w-full bg-slate-50 border-none rounded-[1.5rem] sm:rounded-[1.8rem] py-4 sm:py-7 px-6 sm:px-10 pr-16 sm:pr-20 text-md sm:text-lg focus:ring-8 focus:ring-accent/10 transition-all placeholder:text-slate-300 text-slate-900 shadow-inner"
                                 />
-                                <button onClick={handleSendMessage} className="absolute right-3 top-3 bottom-3 w-14 bg-slate-900 text-white rounded-[1.2rem] shadow-xl hover:bg-slate-800 transition-all flex items-center justify-center active:scale-90">
-                                    <Send className="w-6 h-6" />
+                                <button onClick={handleSendMessage} className="absolute right-2 sm:right-3 top-2 sm:top-3 bottom-2 sm:bottom-3 w-12 sm:w-14 bg-slate-900 text-white rounded-[1rem] sm:rounded-[1.2rem] shadow-xl hover:bg-slate-800 transition-all flex items-center justify-center active:scale-90">
+                                    <Send className="w-5 h-5 sm:w-6 h-6" />
                                 </button>
                             </div>
                         </div>

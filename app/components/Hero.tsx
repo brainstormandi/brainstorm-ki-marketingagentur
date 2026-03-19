@@ -40,7 +40,7 @@ const Hero = () => {
         },
         {
             title: "Schluss mit mühsamem, manuellem Marketing",
-            text: "Wir automatisieren Ihre kundengewinnung mit intelligenten Websites, PWAs und KI-gestützter Suche.",
+            text: "Wir automatisieren Ihre Kundengewinnung mit intelligenten Websites, PWAs und KI-gestützter Suche.",
             keywords: [
                 { icon: <Globe className="w-4 h-4" />, label: "Intelligente Website" },
                 { icon: <MousePointer2 className="w-4 h-4" />, label: "Conversion" },
@@ -85,11 +85,11 @@ const Hero = () => {
                     muted
                     playsInline
                     aria-hidden="true"
-                    className="w-full h-full object-cover scale-[1.1] object-[60%_center] md:object-[0%_center]"
+                    className="w-full h-full object-cover scale-[1.25] object-[30%_center] md:object-[0%_center]"
                 >
-                    <source src="/video/ki-werbeagentur-brainstorm-video.mp4" type="video/mp4" />
+                    <source src="/video/ki-werbeagentur-brainstorm-hero-video.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-white/60 sm:bg-white/20"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#F8FAFC]/80 to-transparent"></div>
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
@@ -104,7 +104,7 @@ const Hero = () => {
                 <div className="min-h-[220px] sm:min-h-[260px] lg:min-h-[300px] flex flex-col items-center justify-center mt-4">
                     {currentVariant && (
                         <>
-                            <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 leading-[0.95] mb-6 max-w-5xl tracking-tighter animate-reveal-up">
+                            <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 leading-[0.95] mb-6 max-w-5xl tracking-normal animate-reveal-up">
                                 {currentVariant.title.includes(',') ? (
                                     currentVariant.title.split(',').map((part, i) => (
                                         <React.Fragment key={i}>
@@ -165,8 +165,8 @@ const Hero = () => {
                         </div>
                     </button>
                     <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                        <span className={`text-sm font-black tracking-[0.2em] uppercase transition-all duration-500 ${isActive ? 'text-accent opacity-100' : 'text-slate-400 opacity-60'}`}>
-                            {isActive ? (isSpeaking ? 'Agent spricht...' : 'Zuhören...') : 'Klicken zum Sprechen'}
+                        <span className={`text-sm font-black tracking-[0.2em] uppercase transition-all duration-500 ${isActive ? 'text-accent opacity-100' : 'text-[#111827] opacity-100'}`}>
+                            {isActive ? (isSpeaking ? 'Agent spricht...' : 'Zuhören...') : 'zum sprechen klicken'}
                         </span>
                     </div>
                 </div>

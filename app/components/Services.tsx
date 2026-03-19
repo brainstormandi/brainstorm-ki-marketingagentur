@@ -15,7 +15,7 @@ const Services = () => {
                         <Sparkles className="w-4 h-4 text-accent" />
                         Expertise
                     </div>
-                    <h2 className="text-5xl sm:text-7xl font-display font-black text-slate-900 tracking-tighter mb-8 leading-[1.1]">
+                    <h2 className="text-5xl sm:text-7xl font-display font-black text-slate-900 tracking-normal mb-8 leading-[1.1]">
                         Ganzheitliche <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-500">digitale Exzellenz.</span>
                     </h2>

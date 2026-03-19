@@ -6,10 +6,16 @@ import ScrollReveal from './ScrollReveal';
 
 const Contact = () => {
     return (
-        <section id="contact" className="py-40 bg-white relative overflow-hidden">
-            {/* Soft decorative elements */}
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[100px] -mr-48 -mt-48 opacity-60" aria-hidden="true"></div>
-            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] -ml-44 -mb-44 opacity-60" aria-hidden="true"></div>
+        <section id="contact" className="py-24 sm:py-40 relative overflow-hidden">
+            {/* Background Image with Gradient Overlay */}
+            <div className="absolute inset-0 z-0">
+                <img 
+                    src="/bilder/ki-agentur-hg-andi.webp" 
+                    alt="" 
+                    className="w-full h-full object-cover object-right"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#F8FAFC] via-[#F8FAFC]/95 to-[#F8FAFC]/20"></div>
+            </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 items-start">
@@ -55,7 +61,7 @@ const Contact = () => {
                                 <div className="w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center mb-10 border border-slate-100 shadow-sm animate-bounce-slow" aria-hidden="true">
                                     <Calendar className="w-10 h-10 text-accent" />
                                 </div>
-                                <h4 className="text-4xl font-display font-black mb-6 tracking-tighter">Strategie-Session</h4>
+                                <h4 className="text-4xl font-display font-black mb-6 tracking-normal">Strategie-Session</h4>
                                 <p className="text-lg text-slate-500 mb-12 leading-relaxed">
                                     Sichern Sie sich Ihr kostenloses 15-Minuten Erstgespräch und klären wir offene Fragen.
                                 </p>
