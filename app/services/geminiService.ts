@@ -41,7 +41,7 @@ export class GeminiService {
     async startChat() {
         const ai = new GoogleGenAI({ apiKey: this.getApiKey() });
         const chat = ai.chats.create({
-            model: 'gemini-2.5-flash', // Stable 2026 model
+            model: 'gemini-2.0-flash', // Stable GA model for chat
             config: {
                 systemInstruction: `Du bist "BrainStorm AI", die offizielle strategische Beraterin der BrainStorm Werbeagentur. Dein Ziel ist es, KMUs (kleine und mittlere Unternehmen) kompetent zu beraten und Termine für Andi Sturm zu vereinbaren.
 
@@ -72,7 +72,8 @@ TERMIN-PROZESS:
 1. Beratung steht an erster Stelle.
 2. Sobald Interesse besteht, schlage ein Strategie-Gespräch mit Andi Sturm vor.
 3. Benötigte Daten: Name, E-Mail, Wunschtermin (Tag/Uhrzeit) und das Thema.
-4. Nutze dann confirmAppointment().`,
+4. Nutze dann confirmAppointment().
+5. WICHTIG: Nutze NIEMALS Markdown-Formatierung wie ** für Fettschrift. Schreibe Namen wie BrainStorm Werbeagentur oder Andi Sturm einfach als normalen Text ohne Symbole.`,
                 tools: [{ functionDeclarations: appointmentTools as unknown as FunctionDeclaration[] }],
             },
         });
@@ -115,7 +116,7 @@ TERMIN-PROZESS:
                 // Send initial setup message
                 const setupMessage = {
                     setup: {
-                        model: "models/gemini-2.5-flash-native-audio-preview-12-2025",
+                        model: "models/gemini-2.5-flash-native-audio-preview-12-2025", // Confirmed available via ListModels
                         generationConfig: {
                             responseModalities: ["AUDIO"],
                             speechConfig: {

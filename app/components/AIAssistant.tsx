@@ -36,6 +36,7 @@ const AIAssistant = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const activeSessionRef = useRef<any>(null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
+    const isToolCallPendingRef = useRef(false);
 
     const scrollToBottom = useCallback(() => {
         if (messagesEndRef.current) {
@@ -63,6 +64,7 @@ const AIAssistant = () => {
         setIsConnecting(false);
         stopAllAudio();
         activeSessionRef.current = null;
+        isToolCallPendingRef.current = false;
 
         if (processorRef.current) {
             try { processorRef.current.disconnect(); } catch (e) { }
@@ -216,18 +218,24 @@ const AIAssistant = () => {
                     if (content.toolCall?.functionCalls) {
                         const session = activeSessionRef.current;
                         if (session) {
+                            isToolCallPendingRef.current = true;
                             const functionResponses = [];
-                            for (const fc of content.toolCall.functionCalls) {
-                                const result = await executeFunctionCall(fc);
-                                functionResponses.push({
-                                    name: fc.name,
-                                    id: fc.id,
-                                    response: { result }
+                            try {
+                                for (const fc of content.toolCall.functionCalls) {
+                                    const result = await executeFunctionCall(fc);
+                                    functionResponses.push({
+                                        name: fc.name,
+                                        id: fc.id,
+                                        response: { result }
+                                    });
+                                }
+                                session.sendToolResponse({
+                                    toolResponse: { functionResponses }
                                 });
+                            } finally {
+                                // Allow audio again after responses are sent
+                                isToolCallPendingRef.current = false;
                             }
-                            session.sendToolResponse({
-                                toolResponse: { functionResponses }
-                            });
                         }
                     }
 
@@ -262,14 +270,18 @@ const AIAssistant = () => {
                 for (let i = 0; i < inputData.length; i++) int16[i] = inputData[i] * 32768;
 
                 try {
-                    session.sendRealtimeInput({
-                        realtimeInput: {
-                            mediaChunks: [{
-                                mimeType: 'audio/pcm;rate=16000',
-                                data: encode(new Uint8Array(int16.buffer))
-                            }]
-                        }
-                    });
+                    // CRITICAL FIX: Only send audio if no tool call is pending
+                    // Otherwise server closes connection with 1008 (Policy Violation)
+                    if (!isToolCallPendingRef.current) {
+                        session.sendRealtimeInput({
+                            realtimeInput: {
+                                mediaChunks: [{
+                                    mimeType: 'audio/pcm;rate=16000',
+                                    data: encode(new Uint8Array(int16.buffer))
+                                }]
+                            }
+                        });
+                    }
                 } catch (err) { }
             };
             micSource.connect(processor);
