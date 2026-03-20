@@ -1,4 +1,4 @@
-import { GoogleGenAI, LiveServerMessage, Type, FunctionDeclaration } from "@google/genai";
+﻿import { GoogleGenAI, LiveServerMessage, Type, FunctionDeclaration } from "@google/genai";
 
 export const appointmentTools: FunctionDeclaration[] = [
     {
@@ -41,9 +41,9 @@ export class GeminiService {
     async startChat() {
         const ai = new GoogleGenAI({ apiKey: this.getApiKey() });
         const chat = ai.chats.create({
-            model: 'gemini-2.0-flash', // Stable GA model for chat
+            model: 'gemini-3-flash-preview', // Latest Gemini model for chat
             config: {
-                systemInstruction: `Du bist "BrainStorm AI", die offizielle strategische Beraterin der BrainStorm Werbeagentur. Dein Ziel ist es, KMUs (kleine und mittlere Unternehmen) kompetent zu beraten und Termine für Andi Sturm zu vereinbaren.
+                systemInstruction: `Du bist "Susi, Ihre KI Assistentin", die offizielle strategische Beraterin der BrainStorm Werbeagentur. Dein Ziel ist es, KMUs (kleine und mittlere Unternehmen) kompetent zu beraten und Termine für Andi Sturm zu vereinbaren.
 
 WICHTIGE VERTRAUENSDATEN:
 - Agentur: BrainStorm Werbeagentur
@@ -129,7 +129,7 @@ TERMIN-PROZESS:
                         },
                         systemInstruction: {
                             parts: [{
-                                text: `Du bist die sympathische Sprach-Assistentin "BrainStorm AI" der BrainStorm Werbeagentur (Gründer: Andi Sturm, 32+ Jahre Erfahrung).
+                                text: `Du bist die sympathische Sprach-Assistentin "Susi, Ihre KI Assistentin" der BrainStorm Werbeagentur (Gründer: Andi Sturm, 32+ Jahre Erfahrung).
 
 KONTAKT-DATEN FÜR RÜCKFRAGEN:
 - E-Mail: info@brainstorm-werbeagentur.at
