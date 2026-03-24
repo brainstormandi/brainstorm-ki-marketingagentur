@@ -14,32 +14,38 @@ export const SERVICES = [
     {
         title: "Moderne Website",
         description: "Ihr digitales Schaufenster – professionell, verkaufsstark und überzeugend. Verkaufspsychologisch optimiert, mobile-first, blitzschnell und SEO-optimiert für maximale Google-Sichtbarkeit.",
-        icon: <Layout className="w-8 h-8 text-primary" />
+        icon: <Layout className="w-8 h-8 text-primary" />,
+        stat: { value: "80%", label: "mehr Conversion" }
     },
     {
         title: "Eigene App (PWA)",
         description: "Ihre eigene App ohne App Store – direkt auf dem Smartphone Ihrer Kunden. Native App-Erlebnis mit Offline-Funktionalität, Push-Benachrichtigungen und automatischen Updates.",
-        icon: <Smartphone className="w-8 h-8 text-primary" />
+        icon: <Smartphone className="w-8 h-8 text-primary" />,
+        stat: { value: "3x", label: "höhere Bindung" }
     },
     {
         title: "Automatisierung",
         description: "Sparen Sie Zeit und Kosten durch intelligente Automatisierung. Wir erstellen automatisierte Terminbuchungen, Anfragen-Workflows und sorgen für messbare Effizienzsteigerung.",
-        icon: <Zap className="w-8 h-8 text-primary" />
+        icon: <Zap className="w-8 h-8 text-primary" />,
+        stat: { value: "15h", label: "Zeitersparnis pro Woche" }
     },
     {
         title: "SEO, GEO & KI Suche",
         description: "Sichtbarkeit der nächsten Generation. Wir bringen Sie auf Top-Plätze bei Google, ChatGPT & Co. – nachhaltig, effektiv und perfekt optimiert für KI-gestützte Suchanfragen.",
-        icon: <Search className="w-8 h-8 text-primary" />
+        icon: <Search className="w-8 h-8 text-primary" />,
+        stat: { value: "Top 3", label: "KI-Rankings" }
     },
     {
         title: "Social Media Marketing",
         description: "Bringen Sie Ihre Marke zum Strahlen auf Facebook, Instagram und LinkedIn. Zielgerichtete Kampagnen für erhöhte Reichweite und maximale Sichtbarkeit Ihrer Marke.",
-        icon: <Megaphone className="w-8 h-8 text-primary" />
+        icon: <Megaphone className="w-8 h-8 text-primary" />,
+        stat: { value: "+120%", label: "mehr Reichweite" }
     },
     {
         title: "Digital Advertising",
         description: "Präzises Google Ads und Social Media Advertising. Erreichen Sie genau die richtigen Kunden – kosteneffizient, messbar und durch optimierte Anzeigenkampagnen.",
-        icon: <Target className="w-8 h-8 text-primary" />
+        icon: <Target className="w-8 h-8 text-primary" />,
+        stat: { value: "5x", label: "höherer ROI" }
     }
 ];
 

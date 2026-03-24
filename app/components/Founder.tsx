@@ -5,8 +5,29 @@ import { Quote, Sparkles } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 const Founder = () => {
+    const personSchema = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Andi Sturm",
+        "jobTitle": "Gründer & Visionär",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "BrainStorm KI Werbeagentur"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/brainstorm-andi/"
+        ],
+        "knowsAbout": [
+            "Generative Engine Optimization (GEO)",
+            "Web Development",
+            "Digital Marketing",
+            "Automation"
+        ]
+    };
+
     return (
         <section className="py-40 bg-white relative overflow-hidden">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
             {/* Soft decorative background blobs */}
             <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-slate-50 rounded-full blur-[120px] -ml-48 -mt-48 opacity-50" aria-hidden="true"></div>
 

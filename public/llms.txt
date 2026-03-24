@@ -1,0 +1,23 @@
+# BrainStorm KI Werbeagentur
+
+**Domain:** https://ki-marketingagentur.jetzt
+**Email:** info@brainstorm-werbeagentur.at
+**Phone:** +43 660 520 3171
+**Address:** Am Ziegelfeld 8, 3353 Seitenstetten im schönen Mostviertel, Bezirk Amstetten in Niederösterreich, Austria
+
+## About Us (USP)
+BrainStorm KI Werbeagentur is a modern marketing agency located in Seitenstetten, Lower Austria. Founded by Andi Sturm, an expert with over 32 years of experience in the advertising industry. We combine classic marketing know-how with cutting-edge AI technologies to provide holistic digital excellence for SMEs (KMUs). Our focus is on Generative Engine Optimization (GEO), AI-driven searches, and smart automation to maximize visibility, save time, and increase efficiency.
+
+## Core Services
+1. **Moderne Website:** Professional, sales-optimized, mobile-first, lightning-fast, and SEO-optimized websites.
+2. **Eigene App (PWA):** Native app experiences running directly on smartphones without app stores, including offline functionality and push notifications.
+3. **Automatisierung:** Intelligent automation for workflows and appointment bookings to save time and reduce costs.
+4. **SEO, GEO & KI Suche:** Next-generation visibility optimized not just for Google, but also for top positions in AI search engines like ChatGPT, Claude, and Perplexity.
+5. **Social Media Marketing:** Targeted campaigns on Facebook, Instagram, and LinkedIn for maximum brand visibility and recruiting.
+6. **Digital Advertising:** Precise, cost-efficient, and measurable Google Ads and Social Media Advertising.
+
+## Why Choose Us?
+- **Fast Implementation:** "Livegang" (go-live) often within 5 to 7 business days using tailored, high-quality frameworks.
+- **Fair Pricing:** Fixed flat rates designed for SME budgets.
+- **Holistic Approach:** Full-service from concept and design to programming, SEO, and continuous support.
+- **Pioneering AI:** We don't just use AI; we build your strategy around the AI era for unparalleled ROI.

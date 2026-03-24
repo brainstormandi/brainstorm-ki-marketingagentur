@@ -3,19 +3,19 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
     return [
         {
-            url: 'https://brainstorm-werbeagentur.at',
+            url: 'https://ki-marketingagentur.jetzt',
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 1,
         },
         {
-            url: 'https://brainstorm-werbeagentur.at/impressum',
+            url: 'https://ki-marketingagentur.jetzt/impressum',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.3,
         },
         {
-            url: 'https://brainstorm-werbeagentur.at/datenschutz',
+            url: 'https://ki-marketingagentur.jetzt/datenschutz',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.3,

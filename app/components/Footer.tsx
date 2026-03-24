@@ -22,7 +22,7 @@ const Footer = () => {
                         </p>
                         <div className="flex gap-4">
                             <a
-                                href="https://www.linkedin.com/in/andreas-sturm-b9282966/"
+                                href="https://www.linkedin.com/in/brainstorm-andi/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="LinkedIn"
