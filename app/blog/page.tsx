@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
+import { FAQS } from '../constants';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { blogPosts } from '../data/blogData';
@@ -13,8 +14,31 @@ export const metadata: Metadata = {
 };
 
 export default function BlogIndex() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ki-marketingagentur.jetzt/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://ki-marketingagentur.jetzt/blog"
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Navbar />
       
       <main className="flex-grow pt-32 pb-24 bg-slate-50">
