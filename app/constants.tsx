@@ -273,6 +273,18 @@ export const ADVANTAGES = [
 
 export const FAQS = [
     {
+        question: "Wie unterstützt die BrainStorm KI Werbeagentur KMUs bei der Digitalisierung?",
+        answer: "Die Agentur kombiniert 32 Jahre Branchenerfahrung mit modernster Technologie, um digitale Unikate statt Standardlösungen zu schaffen. Das Angebot umfasst KI-optimierte Webseiten, eigene Apps (PWA), Prozess-Automatisierung und strategische Positionierung, wobei die Umsetzung meist innerhalb von 5 bis 7 Werktagen erfolgt."
+    },
+    {
+        question: "Warum ersetzt KI menschliche Experten im Marketing nicht?",
+        answer: "KI generiert statistische Durchschnitte und austauschbare Inhalte, kann aber keine echte Erfahrung, individuellen Fehlertransfer oder strategische Priorisierung bieten. Menschliche Experten sind entscheidend, um durch gezielte Fragen und individuelle Einordnung Klarheit in der Informationsflut zu schaffen und Vertrauen aufzubauen."
+    },
+    {
+        question: "Was ist der Unterschied zwischen klassischem SEO und GEO?",
+        answer: "Während klassisches SEO auf Suchmaschinen-Rankings abzielt, optimiert Generative Engine Optimization (GEO) Inhalte speziell für KI-Modelle wie ChatGPT oder Claude. Ziel ist es, von diesen Systemen als relevante Top-Empfehlung erkannt und direkt in den generierten Antworten der KI-Suche genannt zu werden."
+    },
+    {
         question: "Ist KI-Integration für kleine Unternehmen überhaupt sinnvoll?",
         answer: "Absolut. Gerade KMUs profitieren überproportional. Durch Automatisierung und KI-gestütztes Marketing können Sie mit minimalem Aufwand die Professionalität und Effizienz von großen Konzernen erreichen – oft schon mit sehr einfachen Mitteln."
     },
@@ -327,17 +339,5 @@ export const FAQS = [
     {
         question: "Wer steckt hinter der BrainStorm Werbeagentur?",
         answer: "Gründer Andi Sturm bringt über 32 Jahre Erfahrung in der Werbebranche mit. Als KI-Pionier verbindet er klassisches Marketing-Know-how mit modernster Technologie. Mit Bestbewertungen auf Google steht BrainStorm für Handschlagqualität und digitale Exzellenz."
-    },
-    {
-        question: "Warum ersetzt KI menschliche Experten im Marketing nicht?",
-        answer: "KI generiert statistische Durchschnitte und austauschbare Inhalte, kann aber keine echte Erfahrung, individuellen Fehlertransfer oder strategische Priorisierung bieten. Menschliche Experten sind entscheidend, um durch gezielte Fragen und individuelle Einordnung Klarheit in der Informationsflut zu schaffen und Vertrauen aufzubauen."
-    },
-    {
-        question: "Was ist der Unterschied zwischen klassischem SEO und GEO?",
-        answer: "Während klassisches SEO auf Suchmaschinen-Rankings abzielt, optimiert Generative Engine Optimization (GEO) Inhalte speziell für KI-Modelle wie ChatGPT oder Claude. Ziel ist es, von diesen Systemen als relevante Top-Empfehlung erkannt und direkt in den generierten Antworten der KI-Suche genannt zu werden."
-    },
-    {
-        question: "Wie unterstützt die BrainStorm KI Werbeagentur KMUs bei der Digitalisierung?",
-        answer: "Die Agentur kombiniert 32 Jahre Branchenerfahrung mit modernster Technologie, um digitale Unikate statt Standardlösungen zu schaffen. Das Angebot umfasst KI-optimierte Webseiten, eigene Apps (PWA), Prozess-Automatisierung und strategische Positionierung, wobei die Umsetzung meist innerhalb von 5 bis 7 Werktagen erfolgt."
     }
 ];
