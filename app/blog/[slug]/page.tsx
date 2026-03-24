@@ -115,23 +115,7 @@ export default async function BlogPostPage(props: Props) {
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
-          <hr className="my-16 border-slate-200" />
-          
-          {/* CTA Box am Ende des Artikels */}
-          <div className="bg-slate-50 p-8 sm:p-12 rounded-3xl border border-slate-200 text-center shadow-sm">
-            <h3 className="text-3xl font-display font-bold text-slate-900 mb-4">
-              Mehr als nur Lesen?
-            </h3>
-            <p className="text-slate-600 mb-8 max-w-xl mx-auto text-lg">
-              Lassen Sie uns gemeinsam prüfen, wie Sie KI für Ihr Marketing und Ihre Prozesse einsetzen können. Unverbindlich und direkt aus der Praxis.
-            </p>
-            <Link 
-              href="/#contact"
-              className="inline-flex py-4 px-10 bg-slate-900 text-white font-bold rounded-2xl hover:bg-slate-800 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 text-lg"
-            >
-              Erstgespräch buchen
-            </Link>
-          </div>
+
         </article>
       </main>
 
