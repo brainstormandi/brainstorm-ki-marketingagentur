@@ -17,6 +17,7 @@ import ScrollReveal from './components/ScrollReveal';
 const AIAssistant = dynamic(() => import('./components/AIAssistant'), { ssr: false });
 const TestimonialSlider = dynamic(() => import('./components/TestimonialSlider'), { ssr: false });
 const FAQ = dynamic(() => import('./components/FAQ'), { ssr: false });
+const Blog = dynamic(() => import('./components/Blog'), { ssr: false });
 const Contact = dynamic(() => import('./components/Contact'), { ssr: false });
 
 const customerFaces = [
@@ -94,6 +95,7 @@ export default function Home() {
         </section>
 
         <FAQ />
+        <Blog />
         <Contact />
       </main>
       <Footer />

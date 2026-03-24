@@ -29,6 +29,7 @@ const Navbar = () => {
                             { name: 'Leistungen', href: '/#services' },
                             { name: 'Ablauf', href: '/#process' },
                             { name: 'FAQs', href: '/#faq' },
+                            { name: 'Blog', href: '/#blog' },
                             { name: 'Kontakt', href: '/#contact' }
                         ].map((item, idx) => (
                             <a
@@ -96,6 +97,7 @@ const Navbar = () => {
                                 { name: 'Leistungen', href: '/#services' },
                                 { name: 'Ablauf', href: '/#process' },
                                 { name: 'FAQs', href: '/#faq' },
+                                { name: 'Blog', href: '/#blog' },
                                 { name: 'Kontakt', href: '/#contact' }
                             ].map((item) => (
                                 <a

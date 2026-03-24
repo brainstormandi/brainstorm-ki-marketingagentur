@@ -24,36 +24,34 @@ const FAQ = () => {
                     </p>
                 </ScrollReveal>
 
-                <div className="space-y-4">
+                <div className="space-y-2">
                     {FAQS.map((faq, index) => (
                         <ScrollReveal
                             key={index}
                             animation="reveal-up"
-                            delay={index * 100}
+                            delay={index * 50} // Faster staggered animation
                         >
-                            <div
-                                className={`group transition-all duration-500 rounded-[2.5rem] ${openIndex === index ? 'bg-slate-50/80 shadow-sm' : 'hover:bg-slate-50/50'}`}
-                            >
+                            <div className="group border-b border-slate-200/60 transition-colors hover:border-slate-300">
                                 <button
                                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                    className="w-full px-8 sm:px-12 py-8 sm:py-10 flex items-center justify-between gap-8 text-left cursor-pointer"
+                                    className="w-full py-6 sm:py-8 flex items-start justify-between gap-6 text-left cursor-pointer focus:outline-none"
                                     aria-expanded={openIndex === index}
                                     aria-controls={`faq-answer-${index}`}
                                 >
-                                    <h4 className={`font-bold text-xl sm:text-2xl tracking-tight transition-colors duration-300 ${openIndex === index ? 'text-slate-900' : 'text-slate-700 group-hover:text-primary'}`}>
+                                    <h4 className={`font-display font-bold text-xl sm:text-2xl tracking-tight leading-snug transition-colors duration-300 ${openIndex === index ? 'text-accent' : 'text-slate-900 group-hover:text-slate-700'}`}>
                                         {faq.question}
                                     </h4>
-                                    <div className={`shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-500 ${openIndex === index ? 'bg-accent text-primary rotate-180' : 'bg-slate-100 text-slate-400 group-hover:bg-slate-200'}`} aria-hidden="true">
-                                        <ChevronDown className="w-6 h-6" />
+                                    <div className={`shrink-0 flex items-center justify-center mt-1 transition-transform duration-500 ${openIndex === index ? 'rotate-180 text-accent' : 'text-slate-400 group-hover:text-slate-600'}`} aria-hidden="true">
+                                        <ChevronDown className="w-6 h-6 sm:w-7 sm:h-7" strokeWidth={2} />
                                     </div>
                                 </button>
                                 <div
                                     id={`faq-answer-${index}`}
                                     role="region"
-                                    className={`transition-all duration-700 ease-in-out overflow-hidden ${openIndex === index ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}
+                                    className={`grid transition-all duration-500 ease-in-out ${openIndex === index ? 'grid-rows-[1fr] opacity-100 mb-6' : 'grid-rows-[0fr] opacity-0 mb-0'}`}
                                 >
-                                    <div className="px-8 sm:px-12 pb-10 pt-0 text-slate-500 leading-relaxed text-lg sm:text-xl">
-                                        <div className="pt-6 border-t border-slate-200/30 whitespace-pre-line">
+                                    <div className="overflow-hidden">
+                                        <div className="text-slate-600 leading-relaxed text-lg sm:text-xl pr-4 sm:pr-14 whitespace-pre-line pb-2">
                                             {faq.answer}
                                         </div>
                                     </div>
