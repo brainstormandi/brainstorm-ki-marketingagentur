@@ -20,6 +20,6 @@ export default function robots(): MetadataRoute.Robots {
                 allow: '/',
             }
         ],
-        sitemap: 'https://brainstorm-werbeagentur.at/sitemap.xml',
+        sitemap: 'https://ki-marketingagentur.jetzt/sitemap.xml',
     }
 }

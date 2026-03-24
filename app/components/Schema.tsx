@@ -7,8 +7,14 @@ export default function Schema() {
         "@type": "AdvertisingAgency",
         "name": "BrainStorm Werbeagentur",
         "alternateName": "Brainstorm KI Werbeagentur",
-        "url": "https://brainstorm-werbeagentur.at",
-        "logo": "https://brainstorm-werbeagentur.at/bilder/logo.png",
+        "url": "https://ki-marketingagentur.jetzt",
+        "logo": "https://ki-marketingagentur.jetzt/bilder/logo.png",
+        "sameAs": [
+            "https://www.facebook.com/BrainStorm.Werbeagentur",
+            "https://www.linkedin.com/company/brainstorm-werbeagentur/",
+            "https://seitenstetten.gv.at/wirtschaft/company/brainstorm-werbeagentur",
+            "https://www.google.com/search?q=brainstorm+werbeagentur"
+        ],
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": CONTACT_INFO.phone,
@@ -23,9 +29,9 @@ export default function Schema() {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "BrainStorm Werbeagentur",
-        "image": "https://brainstorm-werbeagentur.at/bilder/logo.png",
-        "@id": "",
-        "url": "https://brainstorm-werbeagentur.at",
+        "image": "https://ki-marketingagentur.jetzt/bilder/logo.png",
+        "@id": "https://ki-marketingagentur.jetzt",
+        "url": "https://ki-marketingagentur.jetzt",
         "telephone": CONTACT_INFO.phone,
         "address": {
             "@type": "PostalAddress",
@@ -53,7 +59,10 @@ export default function Schema() {
         },
         "sameAs": [
             "https://www.facebook.com/BrainStorm.Werbeagentur",
-            "https://www.linkedin.com/in/andreas-sturm-b9282966/"
+            "https://www.linkedin.com/in/brainstorm-andi/",
+            "https://www.linkedin.com/company/brainstorm-werbeagentur/",
+            "https://seitenstetten.gv.at/wirtschaft/company/brainstorm-werbeagentur",
+            "https://www.google.com/search?q=brainstorm+werbeagentur"
         ]
     };
 
@@ -79,8 +88,8 @@ export default function Schema() {
             "@type": "Organization",
             "name": "BrainStorm Werbeagentur"
         },
-        "url": "https://www.linkedin.com/in/andreas-sturm-b9282966/",
-        "image": "https://brainstorm-werbeagentur.at/bilder/andi-sturm.png",
+        "url": "https://www.linkedin.com/in/brainstorm-andi/",
+        "image": "https://ki-marketingagentur.jetzt/bilder/andi-sturm.png",
         "description": "Andi Sturm ist ein erfahrener Digital-Berater und Gründer der BrainStorm KI Werbeagentur mit über 32 Jahren Branchenerfahrung."
     };
 
@@ -88,7 +97,7 @@ export default function Schema() {
         "@context": "https://schema.org",
         "@type": "Service",
         "provider": {
-            "@id": "https://brainstorm-werbeagentur.at"
+            "@id": "https://ki-marketingagentur.jetzt"
         },
         "serviceType": "KI-gestütztes Marketing, SEO, GEO, Webdesign, Automatisierung",
         "areaServed": "AT",
@@ -130,7 +139,7 @@ export default function Schema() {
     const reviewSchema = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "@id": "https://brainstorm-werbeagentur.at",
+        "@id": "https://ki-marketingagentur.jetzt",
         "name": "BrainStorm Werbeagentur",
         "aggregateRating": {
             "@type": "AggregateRating",

@@ -15,21 +15,21 @@ export const metadata: Metadata = {
   openGraph: {
     title: "BrainStorm KI Werbeagentur | Web & KI aus Seitenstetten",
     description: "Professionelle Webseiten und KI-Lösungen für maximale Sichtbarkeit und Effizienz Ihrer KMU.",
-    url: "https://brainstorm-werbeagentur.at",
+    url: "https://ki-marketingagentur.jetzt",
     siteName: "BrainStorm Werbeagentur",
     locale: "de_AT",
     type: "website",
-    images: ["https://brainstorm-werbeagentur.at/bilder/logo.png"],
+    images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
   },
   alternates: {
-    canonical: "https://brainstorm-werbeagentur.at",
+    canonical: "https://ki-marketingagentur.jetzt",
   },
   twitter: {
     card: "summary_large_image",
     title: "BrainStorm KI | Web & KI aus Seitenstetten",
     description: "Professionelle Webseiten und KI-Lösungen für maximale Sichtbarkeit Ihrer KMU.",
     creator: "@andi_sturm",
-    images: ["https://brainstorm-werbeagentur.at/bilder/logo.png"],
+    images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
   },
   icons: {
     icon: "/favicon.ico",
