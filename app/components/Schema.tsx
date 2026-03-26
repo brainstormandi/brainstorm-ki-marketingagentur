@@ -1,5 +1,5 @@
 import React from 'react';
-import { CONTACT_INFO } from '../constants';
+import { CONTACT_INFO, FAQS } from '../constants';
 
 export default function Schema() {
     const organizationSchema = {
@@ -146,6 +146,19 @@ export default function Schema() {
         "inLanguage": "de-AT"
     };
 
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": FAQS.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+            }
+        }))
+    };
+
     return (
         <>
             <script
@@ -177,6 +190,12 @@ export default function Schema() {
                 key="webpage-schema"
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+            />
+            <script
+                id="faq-schema-central"
+                key="faq-schema-central"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
         </>
     );
