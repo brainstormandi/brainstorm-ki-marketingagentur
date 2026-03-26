@@ -6,7 +6,7 @@ import ScrollReveal from './ScrollReveal';
 
 const WhyUs = () => {
     return (
-        <section className="py-40 bg-slate-50 relative overflow-hidden">
+        <section id="philosophie" className="py-40 bg-slate-50 relative overflow-hidden">
             {/* Soft decorative elements */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[600px] bg-accent/3 rounded-full blur-[160px] pointer-events-none"></div>
 
