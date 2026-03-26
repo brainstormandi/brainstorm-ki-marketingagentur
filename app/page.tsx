@@ -11,6 +11,7 @@ import Services from './components/Services';
 import WhyUs from './components/WhyUs';
 import Founder from './components/Founder';
 import Process from './components/Process';
+import LeadMagnet from './components/LeadMagnet';
 import Footer from './components/Footer';
 import ScrollReveal from './components/ScrollReveal';
 
@@ -44,6 +45,8 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <script
+        id="faq-schema"
+        key="faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
@@ -58,6 +61,8 @@ export default function Home() {
         <WhyUs />
         <Founder />
         <Process />
+        
+        <LeadMagnet />
 
         <section className="py-24 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -2,19 +2,20 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import Schema from "./components/Schema";
+import StickyCTA from "./components/StickyCTA";
 
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
 export const metadata: Metadata = {
-  title: "BrainStorm KI: Smarte Webseiten & Apps für KMU Österreich",
-  description: "Österreichs führende KI-Werbeagentur für KMU. Wir verwandeln Ihre digitale Präsenz in einen Kundenmagneten mit SEO, GEO & Automatisierung.",
-  keywords: ["Werbeagentur Niederösterreich", "KI Werbeagentur Österreich", "SEO Seitenstetten", "GEO Marketing", "Website erstellen lassen KMU", "Generative Engine Optimization", "Prozessautomatisierung für Unternehmen"],
+  title: "KI Werbeagentur Österreich | Profitabler durch Webseiten, Landingpages & Automatisierung",
+  description: "Österreichs Nr. 1 KI-Werbeagentur für KMU. Wir erstellen moderne Webseiten, verkaufsstarke Landingpages und machen Sie durch SEO & GEO zum Kundenmagneten.",
+  keywords: ["Werbeagentur Niederösterreich", "KI Werbeagentur Österreich", "SEO Seitenstetten", "GEO Marketing", "Webseite erstellen lassen KMU", "Landingpage erstellen lassen", "Website", "Prozessautomatisierung für Unternehmen"],
   authors: [{ name: "Andi Sturm" }],
   creator: "Andi Sturm",
   publisher: "BrainStorm Werbeagentur",
   openGraph: {
-    title: "BrainStorm KI Werbeagentur | Web & KI aus Seitenstetten",
-    description: "Professionelle Webseiten und KI-Lösungen für maximale Sichtbarkeit und Effizienz Ihrer KMU.",
+    title: "KI Werbeagentur Österreich | Webseiten, Landingpages & SEO",
+    description: "Wir erstellen moderne Webseiten, verkaufsstarke Landingpages und automatisierte KI-Lösungen für maximale Sichtbarkeit und Effizienz Ihrer KMU.",
     url: "https://ki-marketingagentur.jetzt",
     siteName: "BrainStorm Werbeagentur",
     locale: "de_AT",
@@ -32,9 +33,9 @@ export const metadata: Metadata = {
     images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: "/bilder/logo.png",
+    shortcut: "/bilder/logo.png",
+    apple: "/bilder/logo.png",
   },
   robots: {
     index: true,
@@ -62,6 +63,7 @@ export default function RootLayout({
       >
         <Schema />
         {children}
+        <StickyCTA />
       </body>
     </html>
   );

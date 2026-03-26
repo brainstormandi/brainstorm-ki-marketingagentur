@@ -24,7 +24,7 @@ const Services = () => {
     };
 
     return (
-        <section id="services" className="py-40 bg-white relative overflow-hidden">
+        <section id="services" className="scroll-mt-32 py-40 bg-white relative overflow-hidden">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }} />
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-slate-50 rounded-full blur-[120px] -mr-96 -mt-96 opacity-60"></div>
 

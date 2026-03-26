@@ -63,7 +63,14 @@ export default function Schema() {
             "https://www.linkedin.com/company/brainstorm-werbeagentur/",
             "https://seitenstetten.gv.at/wirtschaft/company/brainstorm-werbeagentur",
             "https://www.google.com/search?q=brainstorm+werbeagentur"
-        ]
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "50",
+            "bestRating": "5",
+            "worstRating": "1"
+        }
     };
 
 
@@ -121,14 +128,7 @@ export default function Schema() {
                     }
                 }
             ]
-        }
-    };
-
-    const reviewSchema = {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "@id": "https://ki-marketingagentur.jetzt",
-        "name": "BrainStorm Werbeagentur",
+        },
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5.0",
@@ -138,27 +138,52 @@ export default function Schema() {
         }
     };
 
+    const webPageSchema = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://ki-marketingagentur.jetzt/#webpage",
+        "url": "https://ki-marketingagentur.jetzt",
+        "name": "KI Werbeagentur Österreich | Webseiten, Landingpages & SEO",
+        "description": "Österreichs Nr. 1 KI-Werbeagentur für KMU. Wir erstellen moderne Webseiten, verkaufsstarke Landingpages und machen Sie durch SEO & GEO zum Kundenmagneten.",
+        "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://ki-marketingagentur.jetzt/bilder/logo.png"
+        },
+        "image": "https://ki-marketingagentur.jetzt/bilder/logo.png",
+        "inLanguage": "de-AT"
+    };
+
     return (
         <>
             <script
+                id="org-schema"
+                key="org-schema"
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
             />
             <script
+                id="biz-schema"
+                key="biz-schema"
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
             />
             <script
+                id="person-schema"
+                key="person-schema"
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
             />
             <script
+                id="service-schema"
+                key="service-schema"
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
             />
             <script
+                id="webpage-schema"
+                key="webpage-schema"
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
             />
         </>
     );

@@ -11,7 +11,7 @@ const Blog = () => {
   const recentPosts = blogPosts.slice(0, 2);
 
   return (
-    <section id="blog" className="py-24 bg-slate-50 relative border-t border-slate-200/50">
+    <section id="blog" className="scroll-mt-32 py-24 bg-slate-50 relative border-t border-slate-200/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal animation="reveal-up">
           <div className="text-center max-w-3xl mx-auto mb-16">

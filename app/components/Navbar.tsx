@@ -43,11 +43,11 @@ const Navbar = () => {
                             </a>
                         ))}
                         <a
-                            href="/#contact"
+                            href="/#website-check"
                             className="ml-2 px-6 py-2.5 bg-slate-900 text-[14px] text-white rounded-full font-bold uppercase tracking-widest hover:bg-slate-800 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 cursor-pointer animate-reveal-down"
                             style={{ animationDelay: '800ms' }}
                         >
-                            Erstberatung
+                            Gratis-Check
                         </a>
                     </div>
 
@@ -113,11 +113,11 @@ const Navbar = () => {
 
                         <div className="mt-auto">
                             <a
-                                href="/#contact"
+                                href="/#website-check"
                                 className="inline-flex items-center justify-center w-full py-6 bg-slate-900 text-white text-lg rounded-2xl font-black uppercase tracking-widest shadow-xl hover:bg-slate-800 transition-all active:scale-95 cursor-pointer"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
-                                Erstberatung
+                                Gratis-Check
                             </a>
                         </div>
                     </div>

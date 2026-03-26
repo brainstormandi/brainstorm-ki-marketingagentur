@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
-import { ArrowRight, Star, Mic, Volume2, Brain, Target, Zap, Rocket, Search, Cpu, Globe, MousePointer2, Sparkles, Layout, Smartphone } from 'lucide-react';
+import { ArrowRight, Star, Mic, Volume2, Brain, Target, Zap, Rocket, Search, Cpu, Globe, MousePointer2, Sparkles, Layout, Smartphone, ShieldCheck, Trophy } from 'lucide-react';
 import { GOOGLE_REVIEW_LINK } from '../constants';
 
 // Define types for window extensions
@@ -22,16 +22,16 @@ const Hero = () => {
     const variants = useMemo(() => [
         {
             title: "Ihre Marketing-Zukunft, ist jetzt intelligent",
-            text: "Wir bauen keine gewöhnlichen Websites. Wir erschaffen psychologisch optimierte Systeme, die dank KI-Präzision genau die Kunden anziehen, die Sie wirklich wollen.",
+            text: "Wir bauen keine gewöhnlichen Webseiten. Wir erschaffen psychologisch optimierte Vertriebs-Webseiten und Landingpages, die dank KI-Präzision genau die Kunden anziehen, die Sie wirklich wollen.",
             keywords: [
                 { icon: <Layout className="w-4 h-4" />, label: "Premium Webseite" },
-                { icon: <Brain className="w-4 h-4" />, label: "KI-Präzision" },
-                { icon: <Target className="w-4 h-4" />, label: "Psychologie" }
+                { icon: <Target className="w-4 h-4" />, label: "High-Converting Landingpage" },
+                { icon: <Brain className="w-4 h-4" />, label: "KI-Präzision" }
             ]
         },
         {
             title: "KI-Marketing gewinnt, Kunden automatisch",
-            text: "Wir bauen Ihre verkaufsstarke Website, eigene App und automatisierte Prozesse. Sichtbar bei Google & ChatGPT.",
+            text: "Wir bauen Ihre verkaufsstarke Webseite, Landingpage und automatisierte Prozesse. Sichtbar bei Google & ChatGPT.",
             keywords: [
                 { icon: <Zap className="w-4 h-4" />, label: "Verkaufs-Landingpage" },
                 { icon: <Search className="w-4 h-4" />, label: "SEO / GEO" },
@@ -40,10 +40,10 @@ const Hero = () => {
         },
         {
             title: "Schluss mit mühsamem, manuellem Marketing",
-            text: "Wir automatisieren Ihre Kundengewinnung mit intelligenten Websites, PWAs und KI-gestützter Suche.",
+            text: "Wir automatisieren Ihre Kundengewinnung mit intelligenten Webseiten, Landingpages und KI-gestützter Suche.",
             keywords: [
-                { icon: <Globe className="w-4 h-4" />, label: "Intelligente Website" },
-                { icon: <MousePointer2 className="w-4 h-4" />, label: "Conversion" },
+                { icon: <Globe className="w-4 h-4" />, label: "Smarte Webseite" },
+                { icon: <MousePointer2 className="w-4 h-4" />, label: "Landingpages" },
                 { icon: <Sparkles className="w-4 h-4" />, label: "KI-Suche" }
             ]
         }
@@ -172,8 +172,8 @@ const Hero = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-6 items-center animate-reveal-up reveal-delay-500 w-full sm:w-auto px-4 mt-12">
-                    <a href="#contact" className="w-full sm:w-auto px-16 py-8 bg-accent text-primary rounded-2xl font-black text-2xl hover:bg-[#e5b510] hover:scale-105 hover:-rotate-1 transition-all shadow-[0_20px_40px_-10px_rgba(247,196,41,0.5)] flex items-center justify-center gap-4 group">
-                        Termin buchen
+                    <a href="#contact" className="w-full sm:w-auto px-12 py-8 bg-accent text-primary rounded-2xl font-black text-xl sm:text-2xl hover:bg-[#e5b510] hover:scale-105 hover:-rotate-1 transition-all shadow-[0_20px_40px_-10px_rgba(247,196,41,0.5)] flex items-center justify-center gap-4 group">
+                        Kostenlose Potenzialanalyse
                         <ArrowRight className="w-7 h-7 group-hover:translate-x-2 transition-transform" />
                     </a>
                     <a href="#services" className="w-full sm:w-auto px-16 py-8 bg-white/50 backdrop-blur-md text-primary border-2 border-white rounded-2xl font-bold text-2xl hover:bg-white/80 hover:scale-105 transition-all flex items-center justify-center gap-4 shadow-sm group">
@@ -182,23 +182,38 @@ const Hero = () => {
                     </a>
                 </div>
 
-                <div className="mt-12 pt-8 border-t border-slate-200/30 flex flex-wrap justify-center gap-10 md:gap-20 animate-reveal-up reveal-delay-600">
-                    <a href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer" aria-label="5.0 Sterne auf Google Rezensionen ansehen" className="flex items-center gap-4 group cursor-pointer hover:bg-white/40 p-3 rounded-2xl transition-all animate-float">
-                        <div className="flex -space-x-1.5" aria-hidden="true">
-                            {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-6 h-6 fill-accent text-accent" />)}
-                        </div>
-                        <div className="flex flex-col text-left">
-                            <span className="text-xl font-black text-slate-900 group-hover:text-accent transition-colors">5.0 Sterne</span>
-                            <span className="text-xs text-slate-500 font-bold uppercase tracking-widest">Google Rezensionen</span>
+                <div className="mt-12 w-full max-w-5xl mx-auto bg-white/5 backdrop-blur-sm border border-white/20 shadow-sm rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 animate-reveal-up reveal-delay-600">
+                    
+                    <a href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 sm:gap-6 group hover:scale-105 transition-transform duration-300">
+                        <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                            <span className="text-slate-600 font-bold text-xs sm:text-sm tracking-widest uppercase mb-1">Google Rezensionen</span>
+                            <div className="flex items-center gap-2 sm:gap-3">
+                                <span className="text-3xl sm:text-4xl font-black text-slate-900 group-hover:text-accent transition-colors">5.0</span>
+                                <div className="flex gap-0.5 sm:gap-1">
+                                    {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-5 h-5 sm:w-6 sm:h-6 fill-accent text-accent drop-shadow-sm" />)}
+                                </div>
+                            </div>
                         </div>
                     </a>
-                    <div className="hidden sm:block w-px h-12 bg-slate-200"></div>
-                    <div className="flex items-center gap-4 py-3">
-                        <div className="text-4xl font-black text-slate-900 tracking-tighter">32+</div>
-                        <div className="flex flex-col text-left">
-                            <span className="text-xs text-slate-500 font-bold uppercase tracking-widest">Jahre</span>
-                            <span className="text-xl font-black text-slate-900 tracking-tight">Erfahrung</span>
-                        </div>
+
+                    <div className="hidden md:block w-px h-16 bg-slate-300/50"></div>
+
+                    <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                         <span className="text-slate-600 font-bold text-xs sm:text-sm tracking-widest uppercase mb-3">Zertifizierte Expertise</span>
+                         <div className="flex flex-wrap justify-center gap-6 sm:gap-8 items-center text-slate-800">
+                             <div className="flex items-center gap-2 font-black tracking-tight text-sm sm:text-base">
+                                 <ShieldCheck className="w-6 h-6 text-accent" />
+                                 100% DSGVO
+                             </div>
+                             <div className="flex items-center gap-2 font-black tracking-tight text-sm sm:text-base">
+                                 <Trophy className="w-6 h-6 text-accent" />
+                                 32 Jahre
+                             </div>
+                             <div className="flex items-center gap-2 font-black tracking-tight text-sm sm:text-base">
+                                 <Sparkles className="w-6 h-6 text-accent" />
+                                 Modernste KI
+                             </div>
+                         </div>
                     </div>
                 </div>
             </div>

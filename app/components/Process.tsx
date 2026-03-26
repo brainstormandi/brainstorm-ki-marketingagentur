@@ -6,7 +6,7 @@ import ScrollReveal from './ScrollReveal';
 
 const Process = () => {
     return (
-        <section id="process" className="py-24 sm:py-40 relative overflow-hidden">
+        <section id="process" className="scroll-mt-32 py-24 sm:py-40 relative overflow-hidden">
             {/* Background Image with Overlay */}
             <div className="absolute inset-0 z-0">
                 <img 

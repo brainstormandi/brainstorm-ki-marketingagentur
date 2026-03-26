@@ -12,8 +12,8 @@ export const GOOGLE_REVIEW_LINK = "https://www.google.com/search?q=Brainstorm+We
 
 export const SERVICES = [
     {
-        title: "Moderne Website",
-        description: "Ihr digitales Schaufenster – professionell, verkaufsstark und überzeugend. Verkaufspsychologisch optimiert, mobile-first, blitzschnell und SEO-optimiert für maximale Google-Sichtbarkeit.",
+        title: "Webseite & Landingpage",
+        description: "Wir erstellen Ihre moderne Webseite oder verkaufsstarke Landingpage. Verkaufspsychologisch optimiert, blitzschnell und SEO-optimiert für maximale Google-Sichtbarkeit.",
         icon: <Layout className="w-8 h-8 text-primary" />,
         stat: { value: "80%", label: "mehr Conversion" }
     },
@@ -273,71 +273,59 @@ export const ADVANTAGES = [
 
 export const FAQS = [
     {
-        question: "Wie unterstützt die BrainStorm KI Werbeagentur KMUs bei der Digitalisierung?",
-        answer: "Die Agentur kombiniert 32 Jahre Branchenerfahrung mit modernster Technologie, um digitale Unikate statt Standardlösungen zu schaffen. Das Angebot umfasst KI-optimierte Webseiten, eigene Apps (PWA), Prozess-Automatisierung und strategische Positionierung, wobei die Umsetzung meist innerhalb von 5 bis 7 Werktagen erfolgt."
+        question: "Welche KI ist die beste für Marketing?",
+        answer: "Für modernes Marketing gibt es nicht die EINE beste KI, sondern eine smarte Kombination aus Tools. ChatGPT und Claude eignen sich hervorragend für SEO-Texte, Midjourney für visuelle Inhalte. Als spezialisierte KI Marketing Agentur vernetzen wir diese Modelle durch clevere Automatisierungen für Ihren maximalen Erfolg."
+    },
+    {
+        question: "Wie viel kostet eine Marketing-Agentur?",
+        answer: "Die Kosten variieren stark nach Projektumfang. Durch unseren KI-gestützten Workflow arbeiten wir jedoch deutlich effizienter als klassische Agenturen. Dadurch können wir Ihnen Premium Webseiten, verkaufsstarke Landingpages und SEO-Kampagnen zu fairen, transparenten Fixpreisen für KMUs anbieten."
+    },
+    {
+        question: "Was kostet ein KI-Berater?",
+        answer: "Ein KI-Berater rechnet meist stundenweise ab und identifiziert Automatisierungspotenziale. Bei der BrainStorm KI Werbeagentur ist jedoch bereits das strategische Erstgespräch für Ihre KI-Transformation und Ihren neuen Web-Auftritt völlig kostenlos. Wir zeigen Ihnen sofort die größten Hebel für Ihre Zeitersparnis."
+    },
+    {
+        question: "Was genau ist der Unterschied zwischen SEO und GEO?",
+        answer: "SEO (Search Engine Optimization) optimiert Ihre Webseite für klassische Suchmaschinen wie Google. GEO (Generative Engine Optimization) hingegen stellt sicher, dass Ihre Inhalte auch von KI-Engines wie ChatGPT oder Perplexity verstanden und als direkte Top-Empfehlung zitiert werden."
+    },
+    {
+        question: "Warum ist eine Mobile-First Webseite heutzutage Pflicht?",
+        answer: "Mehr als 80 % aller Erstkontakte finden heute über das Smartphone statt. Mobile-First bedeutet, die Webseite primär für mobile Endgeräte zu planen. Das garantiert blitzschnelle Ladezeiten, perfekte Usability auf kleinen Bildschirmen und wird von Google im SEO-Ranking extrem positiv bewertet."
+    },
+    {
+        question: "Welche Vorteile bietet mir eine professionelle Landingpage?",
+        answer: "Eine Landingpage ist eine hochspezialisierte Webseite, die exakt an eine Werbekampagne anknüpft. Durch verkaufspsychologische Strukturen und das Fehlen ablenkender Menüs wandelt sie Webseitenbesucher extrem effizient in zahlende Kunden oder Anfragen um."
+    },
+    {
+        question: "Brauche ich technisches Vorwissen für KI, GEO und Automatisierung?",
+        answer: "Nein, überhaupt nicht. Als Full-Service KI Werbeagentur übernehmen wir die komplette technische Umsetzung. Sie erhalten am Ende schlüsselfertige, moderne Webseiten und vollautomatische Prozesse, die im Hintergrund einfach und reibungslos funktionieren."
     },
     {
         question: "Warum ersetzt KI menschliche Experten im Marketing nicht?",
-        answer: "KI generiert statistische Durchschnitte und austauschbare Inhalte, kann aber keine echte Erfahrung, individuellen Fehlertransfer oder strategische Priorisierung bieten. Menschliche Experten sind entscheidend, um durch gezielte Fragen und individuelle Einordnung Klarheit in der Informationsflut zu schaffen und Vertrauen aufzubauen."
+        answer: "KI generiert schnell Inhalte, kann aber echte, lokale Branchenerfahrung und psychologische Strategie nicht ersetzen. Wir steuern die KI präzise und veredeln die Ergebnisse zu einer authentischen Markenbotschaft, die bei Ihren regionalen Zielgruppen echtes Vertrauen aufbaut."
     },
     {
-        question: "Was ist der Unterschied zwischen klassischem SEO und GEO?",
-        answer: "Während klassisches SEO auf Suchmaschinen-Rankings abzielt, optimiert Generative Engine Optimization (GEO) Inhalte speziell für KI-Modelle wie ChatGPT oder Claude. Ziel ist es, von diesen Systemen als relevante Top-Empfehlung erkannt und direkt in den generierten Antworten der KI-Suche genannt zu werden."
+        question: "Welche Prozesse lassen sich heute schon einfach automatisieren?",
+        answer: "Besonders gut funktionieren digitale Terminbuchungen auf Ihrer Webseite, die Filterung und Beantwortung von Kundenanfragen via Chatbot, sowie die automatisierte Vorqualifizierung von Bewerbern. Das spart Ihnen jede Woche viele Stunden Handarbeit."
     },
     {
-        question: "Ist KI-Integration für kleine Unternehmen überhaupt sinnvoll?",
-        answer: "Absolut. Gerade KMUs profitieren überproportional. Durch Automatisierung und KI-gestütztes Marketing können Sie mit minimalem Aufwand die Professionalität und Effizienz von großen Konzernen erreichen – oft schon mit sehr einfachen Mitteln."
+        question: "Was zeichnet eine moderne Webseite heute aus?",
+        answer: "Eine moderne Webseite ist nicht nur eine digitale Visitenkarte, sondern Ihr bester Vertriebsmitarbeiter. Sie muss blitzschnell laden, strikt Mobile-First entwickelt sein und Besucher durch klare, verkaufspsychologische Strukturen direkt zur Kontaktaufnahme oder zum Kauf führen."
     },
     {
-        question: "Brauche ich technisches Vorwissen?",
-        answer: "Nein, überhaupt nicht. Wir kümmern uns um die komplette technische Umsetzung. Sie erhalten schlüsselfertige Lösungen (Webseite, App, Automatisierungen), die einfach funktionieren."
+        question: "Warum ist eine barrierefreie Webseite so wichtig?",
+        answer: "Barrierefreie Webseiten ermöglichen Menschen mit Einschränkungen die uneingeschränkte Nutzung. Dies wird ab Mitte 2025 in der EU durch das Barrierefreiheitsstärkungsgesetz (BFSG) für viele verpflichtend, erhöht zudem die Gesamtnutzerschaft und sorgt für deutlich bessere SEO-Rankings."
     },
     {
-        question: "Wie schnell kann ich mit Ergebnissen rechnen?",
-        answer: "Da wir auf bewährte Frameworks setzen, ist der 'Livegang' oft schon in 3-5 Tagen möglich. Erste spürbare Ergebnisse (mehr Anfragen, Zeitersparnis) stellen sich meist unmittelbar nach der Implementierung ein."
+        question: "Wie wichtig ist eine blitzschnelle Webseite für mein Geschäft?",
+        answer: "Massiv wichtig: Lädt eine Webseite länger als 3 Sekunden, verlassen bereits mehr als 50 % der mobilen Nutzer die Seite sofort wieder. Eine blitzschnelle Ladezeit verringert Absprungraten drastisch, steigert Ihre Anfragen und wird von Google mit absoluten Top-Platzierungen belohnt."
     },
     {
-        question: "Was kostet eine Zusammenarbeit?",
-        answer: "Wir arbeiten mit fairen Pauschalpreisen, die speziell auf KMU-Budgets zugeschnitten sind. Im kostenlosen Erstgespräch finden wir heraus, welches Paket für Ihre Ziele den besten ROI liefert."
-    },
-    {
-        question: "Sind die von Ihnen erstellten Webseiten SEO-optimiert?",
-        answer: "Ja, jede von uns erstellte Webseite ist grundsätzlich SEO-optimiert. Wir setzen wichtige Metatags, alternative Bildbeschreibungen und sorgen für schnelle Ladezeiten. Für langfristige SEO-Erfolge und eine kontinuierliche Verbesserung Ihrer Rankings bieten wir zudem weiterführende SEO-Strategien an."
+        question: "Was kostet es, eine professionelle Webseite erstellen zu lassen?",
+        answer: "Die Kosten hängen von Ihren Zielen ab. Ob kompakte Unternehmenspräsenz oder komplexe Baukasten mit KI-Automatisierungen – wir kalkulieren 100% transparent nach Leistungsumfang. Dank unseres extrem effizienten Workflows bieten wir KMUs erstklassige Premium-Webseiten zu unschlagbaren Festpreisen."
     },
     {
         question: "Wo befindet sich das Büro der BrainStorm Werbeagentur?",
-        answer: "Unser Büro befindet sich im schönen Seitenstetten (Bezirk Amstetten) im westlichen Niederösterreich. Wir sind verkehrsgünstig zwischen Linz und St. Pölten gelegen und betreuen Kunden in ganz Österreich."
-    },
-    {
-        question: "Was genau ist GEO (Generative Engine Optimization)?",
-        answer: "GEO ist die Optimierung Ihrer Inhalte für KI-Suchmaschinen wie ChatGPT, Claude und Perplexity. Während klassisches SEO für Google optimiert, sorgt GEO dafür, dass Ihr Unternehmen von KIs als Top-Empfehlung genannt wird. Eine lebenswichtige Strategie in der Ära der KI."
-    },
-    {
-        question: "Was ist eine Landingpage und welche Vorteile bietet sie?",
-        answer: "Eine Landingpage ist eine speziell optimierte Webseite, die nur ein Ziel hat: Den Besucher zu einer Handlung zu bewegen (z.B. eine Anfrage oder ein Kauf). Durch den Fokus auf ein einziges Angebot erzielen Landingpages deutlich höhere Conversion-Rates als klassische Webseiten."
-    },
-    {
-        question: "Sind Ihre Webseiten 'Responsive' und 'Mobile First'?",
-        answer: "Absolut. Heute finden über 80% der Erstkontakte auf dem Smartphone statt. Wir entwickeln nach dem 'Mobile First' Prinzip, sodass Ihre Seite auf dem Handy perfekt aussieht und blitzschnell lädt. 'Responsive' bedeutet, dass sie sich nahtlos an alle Bildschirmgrößen anpasst."
-    },
-    {
-        question: "Warum sollte mein Betrieb eine eigene App haben?",
-        answer: "Eine eigene App (als Progressive Web App) stärkt die Kundenbindung massiv. Sie erscheint direkt auf dem Homescreen des Kunden, ermöglicht Push-Benachrichtigungen und funktioniert auch offline. Ein Profi-Auftritt, der Sie von der Konkurrenz abhebt."
-    },
-    {
-        question: "Welche Prozesse lassen sich einfach automatisieren?",
-        answer: "Fast alles, was repetitiv ist: Terminbuchungen, die Beantwortung von Standardanfragen via KI-Chatbot, das Sammeln von Kundenfeedback oder die Vorqualifizierung von Bewerbern. Das spart Ihnen wöchentlich viele Stunden Zeit."
-    },
-    {
-        question: "Warum ist Social Media Marketing für KMUs wichtig?",
-        answer: "Es ist der direkteste Weg zu Ihrer Zielgruppe. Ob Fachkräfte-Recruiting oder Neukundengewinnung – über Instagram, Facebook und LinkedIn erreichen wir exakt die Menschen in Ihrer Region, die Sie brauchen."
-    },
-    {
-        question: "Wie schnell ist eine Landingpage fertig?",
-        answer: "In der Regel ist ein fertiges, verkaufsstarkes Konzept inklusive Design und Programmierung innerhalb von 3 bis 5 Werktagen einsatzbereit. Wir legen Wert auf maximale Geschwindigkeit ohne Qualitätsverlust."
-    },
-    {
-        question: "Wer steckt hinter der BrainStorm Werbeagentur?",
-        answer: "Gründer Andi Sturm bringt über 32 Jahre Erfahrung in der Werbebranche mit. Als KI-Pionier verbindet er klassisches Marketing-Know-how mit modernster Technologie. Mit Bestbewertungen auf Google steht BrainStorm für Handschlagqualität und digitale Exzellenz."
+        answer: "Zuhause sind wir im schönen Seitenstetten in Niederösterreich. Durch unsere digitale KI-Infrastruktur arbeiten wir jedoch für KMUs im gesamten deutschsprachigen Raum und bringen sie souverän in das digitale KI-Zeitalter."
     }
 ];
