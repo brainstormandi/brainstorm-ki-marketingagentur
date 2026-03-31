@@ -61,28 +61,8 @@ const FAQ = () => {
                     ))}
                 </div>
 
-                <ScrollReveal delay={500} className="mt-32">
-                    <div className="relative flex flex-col items-center">
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-64 bg-accent/5 rounded-[4rem] blur-3xl -z-10" aria-hidden="true"></div>
 
-                        <div className="text-center max-w-2xl">
-                            <h3 className="text-3xl sm:text-4xl font-display font-black mb-6 tracking-normal text-slate-900">Noch mehr wissen?</h3>
-                            <p className="text-xl text-slate-500 mb-12 leading-relaxed">
-                                Unser KI-Experte Andi Sturm steht Ihnen für ein persönliches Strategie-Gespräch zur Verfügung. Überzeugen Sie sich selbst.
-                            </p>
 
-                            <a
-                                href="#contact"
-                                className="inline-flex items-center gap-6 px-12 py-7 bg-white border-2 border-slate-100 text-slate-900 rounded-[2rem] font-black uppercase tracking-widest hover:border-accent hover:shadow-2xl hover:shadow-accent/10 hover:scale-[1.03] transition-all group"
-                            >
-                                <span className="relative z-10 font-bold">Erstgespräch buchen</span>
-                                <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center transition-transform group-hover:translate-x-1 group-hover:rotate-12">
-                                    <ChevronDown className="w-6 h-6 text-primary -rotate-90" />
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </ScrollReveal>
             </div>
         </section>
     );

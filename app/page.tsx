@@ -40,12 +40,6 @@ export default function Home() {
 
         <Services />
 
-        <WhyUs />
-        <Founder />
-        <Process />
-        
-        <LeadMagnet />
-
         <section className="py-24 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -97,6 +91,11 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <WhyUs />
+        <Founder />
+        <Process />
+        <LeadMagnet />
 
         <FAQ />
         <Blog />

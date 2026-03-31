@@ -1,6 +1,6 @@
 "use client";
-import React, { useEffect, useState, useCallback, useMemo } from 'react';
-import { ArrowRight, Star, Mic, Volume2, Brain, Target, Zap, Rocket, Search, Cpu, Globe, MousePointer2, Sparkles, Layout, Smartphone, ShieldCheck, Trophy } from 'lucide-react';
+import React, { useEffect, useState, useMemo } from 'react';
+import { ArrowRight, Star, Brain, Target, Zap, Rocket, Search, Cpu, Globe, MousePointer2, Sparkles, Layout, Smartphone, ShieldCheck, Trophy } from 'lucide-react';
 import { GOOGLE_REVIEW_LINK } from '../constants';
 
 // Define types for window extensions
@@ -14,9 +14,6 @@ declare global {
 }
 
 const Hero = () => {
-    const [isActive, setIsActive] = useState(false);
-    const [isSpeaking, setIsSpeaking] = useState(false);
-    const [isHovered, setIsHovered] = useState(false);
     const [variantIndex, setVariantIndex] = useState<number | null>(null);
 
     const variants = useMemo(() => [
@@ -54,23 +51,6 @@ const Hero = () => {
         setVariantIndex(Math.floor(Math.random() * variants.length));
     }, [variants.length]);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            const active = window.isVoiceAssistantActive?.() || false;
-            const speaking = window.isVoiceAssistantSpeaking?.() || false;
-            if (active !== isActive) setIsActive(active);
-            if (speaking !== isSpeaking) setIsSpeaking(speaking);
-        }, 150);
-        return () => clearInterval(interval);
-    }, [isActive, isSpeaking]);
-
-    const handleToggle = useCallback(async () => {
-        if (isActive) {
-            window.stopVoiceAssistant?.();
-        } else {
-            window.startVoiceAssistant?.(false);
-        }
-    }, [isActive]);
 
     // Use current variant or fall back to silent default for SSR
     const currentVariant = variantIndex !== null ? variants[variantIndex] : null;
@@ -132,55 +112,14 @@ const Hero = () => {
                     )}
                 </div>
 
-                <div className="relative w-full max-w-md h-40 sm:h-48 flex items-center justify-center mt-12 mb-12 animate-zoom-in reveal-delay-400">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="absolute w-48 h-48 border-[2px] border-accent/20 rounded-full animate-ripple-1"></div>
-                        <div className="absolute w-48 h-48 border-[2px] border-accent/20 rounded-full animate-ripple-2"></div>
-                        <div className="absolute w-48 h-48 border-[2px] border-accent/20 rounded-full animate-ripple-3"></div>
-                        <div className="absolute w-80 h-80 border border-slate-200/50 rounded-full opacity-30"></div>
-                    </div>
-
-                    <button
-                        onClick={handleToggle}
-                        onMouseEnter={() => setIsHovered(true)}
-                        onMouseLeave={() => setIsHovered(false)}
-                        aria-label={isActive ? "KI-Sprachassistent beenden" : "KI-Sprachassistent starten"}
-                        className={`relative z-20 w-32 h-32 sm:w-40 sm:h-40 rounded-full flex items-center justify-center transition-all duration-700 ${isActive ? 'scale-110 shadow-[0_0_100px_-10px_rgba(247,196,41,0.6)]' : 'hover:scale-110 shadow-[0_30px_60px_-10px_rgba(247,196,41,0.4)]'}`}
-                    >
-                        <div className={`absolute inset-0 rounded-full transition-all duration-700 ${isActive ? 'bg-gradient-to-br from-accent to-[#e5b510]' : 'bg-accent'}`}></div>
-                        <div className="absolute top-0 left-1/4 w-1/2 h-1/2 bg-gradient-to-b from-white/60 to-transparent rounded-full blur-[2px]"></div>
-                        <div className={`relative text-primary transition-transform duration-500 ${isHovered ? 'scale-110' : ''}`}>
-                            {isActive ? (
-                                isSpeaking ? <Volume2 className="w-10 h-10 animate-pulse" /> : (
-                                    <div className="flex gap-1.5 items-end h-6">
-                                        <div className="w-1.5 h-4 bg-primary rounded-full animate-[bounce_0.8s_infinite]"></div>
-                                        <div className="w-1.5 h-6 bg-primary rounded-full animate-[bounce_0.8s_0.1s_infinite]"></div>
-                                        <div className="w-1.5 h-5 bg-primary rounded-full animate-[bounce_0.8s_0.2s_infinite]"></div>
-                                        <div className="w-1.5 h-3 bg-primary rounded-full animate-[bounce_0.8s_0.3s_infinite]"></div>
-                                    </div>
-                                )
-                            ) : (
-                                <Mic className="w-10 h-10" />
-                            )}
-                        </div>
-                    </button>
-                    <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                        <span className={`text-sm font-black tracking-[0.2em] uppercase transition-all duration-500 ${isActive ? 'text-accent opacity-100' : 'text-[#111827] opacity-100'}`}>
-                            {isActive ? (isSpeaking ? 'Agent spricht...' : 'Zuhören...') : 'zum sprechen klicken'}
-                        </span>
-                    </div>
-                </div>
 
                 <div className="flex flex-col sm:flex-row gap-6 items-center animate-reveal-up reveal-delay-500 w-full sm:w-auto px-4 mt-12">
-                    <a href="#contact" className="w-full sm:w-auto px-12 py-8 bg-accent text-primary rounded-2xl font-black text-xl sm:text-2xl hover:bg-[#e5b510] hover:scale-105 hover:-rotate-1 transition-all shadow-[0_20px_40px_-10px_rgba(247,196,41,0.5)] flex items-center justify-center gap-4 group">
-                        Kostenlose Potenzialanalyse
+                    <a href="#website-check" className="w-full sm:w-auto px-12 py-8 bg-accent text-primary rounded-2xl font-black text-xl sm:text-2xl hover:bg-[#e5b510] hover:scale-105 hover:-rotate-1 transition-all shadow-[0_20px_40px_-10px_rgba(247,196,41,0.5)] flex items-center justify-center gap-4 group">
+                        Kostenloser Webseiten-Check
                         <ArrowRight className="w-7 h-7 group-hover:translate-x-2 transition-transform" />
                     </a>
-                    <a href="#services" className="w-full sm:w-auto px-16 py-8 bg-white/50 backdrop-blur-md text-primary border-2 border-white rounded-2xl font-bold text-2xl hover:bg-white/80 hover:scale-105 transition-all flex items-center justify-center gap-4 shadow-sm group">
-                        Leistungen
-                        <div className="w-2 h-2 rounded-full bg-accent group-hover:scale-150 transition-transform"></div>
-                    </a>
                 </div>
+
 
                 <div className="mt-12 w-full max-w-5xl mx-auto bg-white/5 backdrop-blur-sm border border-white/20 shadow-sm rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 animate-reveal-up reveal-delay-600">
                     
