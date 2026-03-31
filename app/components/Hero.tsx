@@ -78,7 +78,7 @@ const Hero = () => {
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
                     </span>
-                    <span className="text-sm font-bold text-slate-800 uppercase tracking-widest">Premium Digital-Berater & KI-Pionier</span>
+                    <span className="text-sm font-bold text-slate-800 uppercase tracking-widest">Ihre KI-Werbeagentur: Mehr Kunden, weniger Aufwand.</span>
                 </div>
 
                 <div className="min-h-[220px] sm:min-h-[260px] lg:min-h-[300px] flex flex-col items-center justify-center mt-4">
