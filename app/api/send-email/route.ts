@@ -1,17 +1,18 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { rateLimit, sanitize } from '../../lib/securityUtils';
 
 const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: Number(process.env.SMTP_PORT),
-    secure: Number(process.env.SMTP_PORT) === 465, // true for 465, false for 587
+    secure: Number(process.env.SMTP_PORT) === 465,
     auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
     },
+    // We should strictly require valid certs for production security
     tls: {
-        // Do not fail on invalid certs
-        rejectUnauthorized: false
+        rejectUnauthorized: process.env.NODE_ENV === 'development' ? false : true
     }
 });
 
@@ -21,8 +22,20 @@ export async function POST(req: Request) {
     }
 
     try {
+        // Get client IP for rate limiting
+        const ip = req.headers.get('x-forwarded-for') || 'unknown';
+        if (!rateLimit(ip, 3)) {
+            return NextResponse.json({ error: 'Too many requests. Please wait a minute.' }, { status: 429 });
+        }
+
         const body = await req.json();
-        const { clientName, clientEmail, appointmentDateTime, topic } = body;
+        const { clientName: rawName, clientEmail: rawEmail, appointmentDateTime: rawTime, topic: rawTopic } = body;
+
+        // Sanitize all inputs to prevent injection or XSS in email clients
+        const clientName = sanitize(rawName || '');
+        const clientEmail = sanitize(rawEmail || '');
+        const appointmentDateTime = sanitize(rawTime || '');
+        const topic = sanitize(rawTopic || '');
 
         if (!clientName || !clientEmail || !appointmentDateTime || !topic) {
             return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });

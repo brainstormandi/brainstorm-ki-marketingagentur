@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { rateLimit, sanitize } from '../../lib/securityUtils';
 
 const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -9,8 +10,9 @@ const transporter = nodemailer.createTransport({
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
     },
+    // Strictly require valid certs for production security
     tls: {
-        rejectUnauthorized: false
+        rejectUnauthorized: process.env.NODE_ENV === 'development' ? false : true
     }
 });
 
@@ -20,8 +22,18 @@ export async function POST(req: Request) {
     }
 
     try {
+        // Get client IP for rate limiting
+        const ip = req.headers.get('x-forwarded-for') || 'unknown';
+        if (!rateLimit(ip, 3)) {
+            return NextResponse.json({ error: 'Too many requests. Please wait a minute.' }, { status: 429 });
+        }
+
         const body = await req.json();
-        const { targetUrl, clientEmail } = body;
+        const { targetUrl: rawUrl, clientEmail: rawEmail } = body;
+
+        // Sanitize inputs
+        const targetUrl = sanitize(rawUrl || '');
+        const clientEmail = sanitize(rawEmail || '');
 
         if (!targetUrl || !clientEmail) {
             return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });

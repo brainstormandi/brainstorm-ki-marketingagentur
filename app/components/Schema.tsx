@@ -67,9 +67,10 @@ export default function Schema() {
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5.0",
-            "reviewCount": "50",
+            "reviewCount": "28",
             "bestRating": "5",
-            "worstRating": "1"
+            "worstRating": "1",
+            "url": "https://share.google/8UoKWrgoWbfFIPX"
         }
     };
 
