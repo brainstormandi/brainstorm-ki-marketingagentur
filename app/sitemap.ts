@@ -1,34 +1,50 @@
-import { MetadataRoute } from 'next'
-import { blogPosts } from './data/blogData'
+import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const staticPages: MetadataRoute.Sitemap = [
-        {
-            url: 'https://ki-marketingagentur.jetzt',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 1,
-        },
-        {
-            url: 'https://ki-marketingagentur.jetzt/impressum',
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.3,
-        },
-        {
-            url: 'https://ki-marketingagentur.jetzt/datenschutz',
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.3,
-        }
-    ];
-
-    const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-        url: `https://ki-marketingagentur.jetzt/blog/${post.slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.7,
-    }));
-
-    return [...staticPages, ...blogPages];
+  const baseUrl = "https://ki-marketingagentur.jetzt";
+  
+  return [
+    {
+      url: `${baseUrl}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/werbeagentur-amstetten`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/werbeagentur-steyr`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/werbeagentur-linz`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/werbeagentur-perg`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/werbeagentur-st-poelten`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/werbeagentur-wien`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+  ];
 }

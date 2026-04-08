@@ -90,12 +90,14 @@ const Footer = () => {
                             </a>
                         </div>
                         <div>
-                            <h5 className="font-bold text-slate-900 mb-4 text-sm uppercase tracking-widest">Region</h5>
+                            <h5 className="font-bold text-slate-900 mb-4 text-sm uppercase tracking-widest">Regionale Agentur</h5>
                             <ul className="text-slate-500 space-y-1">
-                                <li>Bezirk Amstetten</li>
-                                <li>Mostviertel</li>
-                                <li>Linz • St. Pölten</li>
-                                <li>Wien • Österreichweit</li>
+                                <li><a href="/werbeagentur-amstetten" className="hover:text-primary transition-colors">Amstetten & Mostviertel</a></li>
+                                <li><a href="/werbeagentur-steyr" className="hover:text-primary transition-colors">Steyr & Ennstal</a></li>
+                                <li><a href="/werbeagentur-linz" className="hover:text-primary transition-colors">Linz & Zentralraum OÖ</a></li>
+                                <li><a href="/werbeagentur-perg" className="hover:text-primary transition-colors">Perg & Machland</a></li>
+                                <li><a href="/werbeagentur-st-poelten" className="hover:text-primary transition-colors">St. Pölten & NÖ Mitte</a></li>
+                                <li><a href="/werbeagentur-wien" className="hover:text-primary transition-colors">Wien & Umgebung</a></li>
                             </ul>
                         </div>
                         <div>

@@ -28,11 +28,20 @@ export default function Schema() {
     const localBusinessSchema = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "name": "BrainStorm Werbeagentur",
-        "image": "https://ki-marketingagentur.jetzt/bilder/logo.png",
+        "name": "BrainStorm - KI Webdesign & Marketing",
+        "image": [
+            "https://ki-marketingagentur.jetzt/bilder/logo.png",
+            "https://ki-marketingagentur.jetzt/bilder/andreas-sturm-profil.jpg"
+        ],
         "@id": "https://ki-marketingagentur.jetzt",
         "url": "https://ki-marketingagentur.jetzt",
-        "telephone": CONTACT_INFO.phone,
+        "telephone": "+43 660 520 3171",
+        "founder": {
+            "@type": "Person",
+            "name": "Andreas Sturm",
+            "image": "https://ki-marketingagentur.jetzt/bilder/andreas-sturm-profil.jpg",
+            "jobTitle": "CEO & KI-Experte"
+        },
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Am Ziegelfeld 8",
