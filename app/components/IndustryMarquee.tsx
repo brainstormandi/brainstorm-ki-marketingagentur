@@ -24,35 +24,29 @@ const industries = [
 ];
 
 const IndustryMarquee = () => {
-    // Array verdoppeln, um einen nahtlosen Loop für die Marquee-Animation zu erzeugen
     const marqueeItems = [...industries, ...industries];
 
     return (
-        <ScrollReveal animation="zoom-in" className="py-6 sm:py-8 bg-slate-50 border-y border-slate-100 overflow-hidden relative flex flex-col items-center">
+        <div className="py-5 bg-white border-y border-slate-100 overflow-hidden relative flex flex-col items-center">
             <h2 id="marquee-heading" className="sr-only">Branchen, die wir betreuen</h2>
             <div className="sr-only">
                 Wir betreuen folgende Branchen: {industries.join(', ')}
             </div>
 
-            {/* Gradient Fades für weiche Übergänge an den Rändern */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-40 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-40 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
 
             <div aria-hidden="true" className="flex flex-nowrap w-max animate-marquee hover:[animation-play-state:paused] transition-all duration-300 items-center">
                 {marqueeItems.map((industry, index) => (
-                    <div
-                        key={index}
-                        className="flex items-center justify-center group"
-                    >
-                        <span className="font-sans font-black text-xl sm:text-2xl text-slate-300 uppercase tracking-widest whitespace-nowrap group-hover:text-accent transition-colors duration-300 cursor-default px-8 sm:px-12">
+                    <div key={index} className="flex items-center justify-center group">
+                        <span className="font-body font-bold text-sm sm:text-base text-slate-300 uppercase tracking-[0.2em] whitespace-nowrap group-hover:text-accent transition-colors duration-300 cursor-default px-6 sm:px-10">
                             {industry}
                         </span>
-                        {/* Dezenter Trenn-Punkt */}
-                        <span className="w-1.5 h-1.5 rounded-full bg-slate-200"></span>
+                        <span className="w-1 h-1 rounded-full bg-accent/30"></span>
                     </div>
                 ))}
             </div>
-        </ScrollReveal>
+        </div>
     );
 };
 

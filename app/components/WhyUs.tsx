@@ -1,49 +1,59 @@
 "use client";
 import React from 'react';
 import { ADVANTAGES } from '../constants';
-import { Sparkles } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import { CheckCircle2 } from 'lucide-react';
+
+const stats = [
+    { value: "492+", label: "Zufriedene KMUs" },
+    { value: "32", label: "Jahre Erfahrung" },
+    { value: "5.0", label: "Google Rating" },
+    { value: "<7", label: "Tage Launch" },
+];
 
 const WhyUs = () => {
     return (
-        <section id="philosophie" className="py-40 bg-slate-50 relative overflow-hidden">
-            {/* Soft decorative elements */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[600px] bg-accent/3 rounded-full blur-[160px] pointer-events-none"></div>
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <ScrollReveal className="text-center mb-32">
-                    <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white text-primary font-bold text-sm uppercase tracking-widest mb-6 border border-slate-200 shadow-sm">
-                        <Sparkles className="w-4 h-4 text-accent" />
-                        Unsere Philosophie
-                    </div>
-                    <h2 className="text-5xl sm:text-7xl font-display font-black text-slate-900 mb-8 tracking-normal">
-                        Warum wir <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#e5b510]">Ihre Agentur sind.</span>
+        <section id="philosophie" className="scroll-mt-32 py-32 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <ScrollReveal className="text-center mb-20 max-w-3xl mx-auto">
+                    <div className="inline-flex items-center px-6 py-2 rounded-full bg-slate-50 text-slate-800 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-slate-100">Warum wir</div>
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[0.95]">
+                        <span className="font-sans block">Ihre Agentur</span>
+                        <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">für Wachstum.</span>
                     </h2>
-                    <p className="text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed">
-                        Wir verbinden 32 Jahre Branchen-Know-how mit dem Pioniergeist von morgen.
-                    </p>
                 </ScrollReveal>
 
-                <div className="grid lg:grid-cols-3 gap-8">
-                    {ADVANTAGES.map((advantage, index) => (
-                        <ScrollReveal
-                            key={index}
-                            animation="reveal-up"
-                            delay={index * 150}
-                            className="group"
-                        >
-                            <div className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-accent/5 hover:-translate-y-2 transition-all duration-700 relative overflow-hidden group">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-2xl -mr-16 -mt-16 group-hover:bg-accent/10 transition-colors"></div>
-                                <div className="relative z-10">
-                                    <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mb-8 group-hover:rotate-12 transition-transform duration-700 shadow-lg shadow-accent/20" aria-hidden="true">
-                                        <div className="text-primary [&>svg]:w-7 [&>svg]:h-7 transition-transform duration-500 group-hover:scale-110">
-                                            {advantage.icon}
-                                        </div>
-                                    </div>
-                                    <h3 className="text-2xl font-black text-slate-900 mb-4 tracking-tight leading-tight group-hover:text-primary transition-colors">{advantage.title}</h3>
-                                    <p className="text-slate-500 leading-relaxed text-lg">
-                                        {advantage.description}
+                {/* Stats simple row */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24">
+                    {stats.map((s, i) => (
+                        <ScrollReveal key={i} delay={i * 100} animation="reveal-up">
+                            <div className="text-center border-l-2 border-slate-100 pl-4 py-2">
+                                <div className="font-sans text-4xl sm:text-5xl font-black text-slate-900 tracking-tighter mb-2">
+                                    {s.value}
+                                </div>
+                                <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+                                    {s.label}
+                                </div>
+                            </div>
+                        </ScrollReveal>
+                    ))}
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {ADVANTAGES.map((adv, i) => (
+                        <ScrollReveal key={i} delay={i * 100} animation="reveal-up" className="h-full">
+                            <div className="relative bg-[#F8FAFC] rounded-3xl p-10 sm:p-12 border border-slate-200 group hover:border-slate-300 hover:shadow-xl transition-all duration-500 h-full flex flex-col overflow-hidden">
+                                {/* Large number watermark */}
+                                <div className="absolute right-0 bottom-0 pointer-events-none translate-x-[20%] translate-y-[20%] font-sans text-[12rem] font-black leading-none text-white group-hover:text-amber-50 group-hover:translate-x-[15%] transition-all duration-700">
+                                    {i + 1}
+                                </div>
+
+                                <div className="flex flex-col relative z-10 flex-grow">
+                                    <h3 className="font-sans text-2xl font-black text-slate-900 mb-4 tracking-tight leading-tight">
+                                        {adv.title}
+                                    </h3>
+                                    <p className="text-[#111827] text-lg leading-relaxed font-body">
+                                        {adv.description}
                                     </p>
                                 </div>
                             </div>

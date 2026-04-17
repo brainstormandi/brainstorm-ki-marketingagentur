@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Outfit, Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Schema from "./components/Schema";
 import StickyCTA from "./components/StickyCTA";
 
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair", weight: ["700", "800", "900"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", weight: ["400", "500", "600", "700", "800"] });
 
 export const metadata: Metadata = {
   title: "KI Werbeagentur Österreich | Profitabler durch Webseiten, Landingpages & Automatisierung",
@@ -58,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang="de" className="scroll-smooth" suppressHydrationWarning={true}>
       <body
-        className={`${outfit.variable} font-sans antialiased text-gray-900 bg-white`}
+        className={`${outfit.variable} ${playfair.variable} ${inter.variable} font-sans antialiased text-gray-900 bg-white`}
         suppressHydrationWarning={true}
       >
         <Schema />

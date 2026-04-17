@@ -107,13 +107,13 @@ export default async function BlogPostPage(props: Props) {
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full translate-y-8 sm:translate-y-12">
               <Link 
                 href="/blog" 
-                className="inline-flex items-center text-white/80 hover:text-white font-semibold transition-colors mb-6 group"
+                className="inline-flex items-center text-white/80 hover:text-white font-sans font-bold uppercase tracking-widest text-xs transition-colors mb-6 group"
               >
                 <ArrowLeft className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" />
                 Zurück zur Übersicht
               </Link>
               
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight drop-shadow-md">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-black text-white mb-6 leading-[0.95] drop-shadow-md tracking-tight">
                 {post.title}
               </h1>
               
@@ -135,12 +135,7 @@ export default async function BlogPostPage(props: Props) {
         {/* Article Content */}
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div 
-            className="prose prose-lg prose-slate sm:prose-xl max-w-none 
-                       prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 
-                       prose-a:text-accent prose-a:no-underline hover:prose-a:underline
-                       prose-strong:text-slate-900 prose-strong:font-bold
-                       prose-li:marker:text-accent
-                       selection:bg-accent/20 selection:text-slate-900"
+            className="max-w-none"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 

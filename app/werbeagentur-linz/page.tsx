@@ -68,33 +68,34 @@ export default function WerbeagenturLinz() {
                 <span className="text-sm font-bold text-slate-800 uppercase tracking-widest">Die Webagentur der Zukunft</span>
             </div>
             
-            <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 leading-[1.05] mb-6 max-w-5xl tracking-tight animate-reveal-up">
-               Modernes Webdesign für den Zentralraum <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-500">Linz</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[0.95] mb-6 max-w-5xl animate-reveal-up">
+               <span className="font-sans font-black block">Modernes Webdesign für den Zentralraum </span>
+               <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">Linz</span>
             </h1>
             
-            <p className="text-xl sm:text-2xl text-slate-700 mb-8 leading-relaxed max-w-3xl mx-auto animate-reveal-up reveal-delay-200">
+            <p className="font-body text-[#111827] text-lg leading-relaxed mb-8 max-w-3xl mx-auto animate-reveal-up reveal-delay-200">
                Von der Industriezeile bis Urfahr: Wir bauen hochmoderne Homepages, die für Ihre digitale Sichtbarkeit am OÖ-Markt den Unterschied machen.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-10 animate-reveal-up reveal-delay-300">
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/80 backdrop-blur-md border border-white border-b-2 shadow-sm text-slate-800 font-bold text-sm sm:text-base">
-                    <Globe className="w-4 h-4 text-accent" />
+                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-slate-700 font-bold text-[13px] sm:text-sm">
+                    <Globe className="w-5 h-5 text-accent" />
                     <span>Konvertierende Websites</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/80 backdrop-blur-md border border-white border-b-2 shadow-sm text-slate-800 font-bold text-sm sm:text-base">
-                    <Monitor className="w-4 h-4 text-accent" />
+                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-slate-700 font-bold text-[13px] sm:text-sm">
+                    <Monitor className="w-5 h-5 text-accent" />
                     <span>B2B Landingpages</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/80 backdrop-blur-md border border-white border-b-2 shadow-sm text-slate-800 font-bold text-sm sm:text-base">
-                    <Rocket className="w-4 h-4 text-accent" />
+                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-slate-700 font-bold text-[13px] sm:text-sm">
+                    <Rocket className="w-5 h-5 text-accent" />
                     <span>Local SEO Leads</span>
                 </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-6 items-center w-full sm:w-auto animate-reveal-up reveal-delay-500">
-                <a href="#contact" className="w-full sm:w-auto px-10 py-5 bg-accent text-primary rounded-xl font-bold text-xl hover:bg-[#e5b510] hover:-translate-y-1 transition-all shadow-xl flex items-center justify-center gap-3">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-reveal-up reveal-delay-500 w-full sm:w-auto">
+                <a href="#contact" className="w-full sm:w-auto px-12 py-6 bg-accent text-primary rounded-2xl font-black text-lg sm:text-xl hover:bg-[#e5b510] hover:scale-105 transition-all shadow-[0_20px_40px_-10px_rgba(247,196,41,0.5)] flex items-center justify-center gap-4 group">
                    Linzer Webprojekt starten
-                   <ArrowRight className="w-6 h-6" />
+                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </a>
             </div>
           </div>
@@ -137,11 +138,14 @@ export default function WerbeagenturLinz() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
                <ScrollReveal animation="reveal-right">
-                  <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-6 leading-tight">Ihre Online-Auslage <br/>in der Stahlstadt</h2>
-                  <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[0.95] mb-8">
+<span className="font-sans block">Ihre Online-Auslage </span>
+<span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">in der Stahlstadt</span>
+</h2>
+                  <p className="font-body text-[#111827] text-lg leading-relaxed mb-6">
                      Linz ist ein Knotenpunkt für Innovation und Technologie. Sich hier digital zu behaupten, erfordert mehr als nette Bilder. Es erfordert eine intelligente, zielgerichtete Web-Infrastruktur, die aus puren Webseitenbesuchern tatsächliche Anfragen macht.
                   </p>
-                  <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                  <p className="font-body text-[#111827] text-lg leading-relaxed mb-8">
                      Über die A1 sind wir rasch in Linz vor Ort. Wir wissen, was der oberösterreichische Zentralraum braucht: Verlässlichkeit, Schnelligkeit und ein digitales Branding, das Vertrauen ausstrahlt. Ob KI-Integrationen, Recruting-Landingpages oder der komplette Relaunch Ihrer Unternehmenswebsite – wir sind Ihr starker Umsetzungspartner.
                   </p>
                   
@@ -151,8 +155,8 @@ export default function WerbeagenturLinz() {
                            <TrendingUp className="w-7 h-7 text-primary" />
                         </div>
                         <div>
-                           <h4 className="font-bold text-slate-900 text-lg">Konvertierendes Webdesign</h4>
-                           <span className="text-slate-600 text-sm">Psychologisch durchdachte Nutzerführung (UX/UI).</span>
+                           <h4 className="font-bold text-slate-900 text-lg font-sans">Konvertierendes Webdesign</h4>
+                           <span className="font-body text-[#111827] text-sm">Psychologisch durchdachte Nutzerführung (UX/UI).</span>
                         </div>
                      </div>
                      <div className="flex items-center gap-4">
@@ -160,15 +164,15 @@ export default function WerbeagenturLinz() {
                            <Globe className="w-7 h-7 text-primary" />
                         </div>
                         <div>
-                           <h4 className="font-bold text-slate-900 text-lg">Regionale Dominanz</h4>
-                           <span className="text-slate-600 text-sm">Präzises Geo-SEO für Top-Platzierungen im Linzer Suchraum.</span>
+                           <h4 className="font-bold text-slate-900 text-lg font-sans">Regionale Dominanz</h4>
+                           <span className="font-body text-[#111827] text-sm">Präzises Geo-SEO für Top-Platzierungen im Linzer Suchraum.</span>
                         </div>
                      </div>
                   </div>
                </ScrollReveal>
 
                <ScrollReveal animation="reveal-left" delay={200}>
-                  <div className="bg-slate-50 rounded-3xl p-8 sm:p-10 border border-slate-100 shadow-xl relative">
+                  <div className="bg-slate-50/80 backdrop-blur-md rounded-3xl p-8 sm:p-10 border border-slate-200/60 shadow-xl relative">
                      <Quote className="w-16 h-16 text-accent/20 absolute top-6 right-8 rotate-180" />
                      
                      <div className="flex items-center gap-4 mb-6">
@@ -188,7 +192,7 @@ export default function WerbeagenturLinz() {
                          </div>
                      </div>
 
-                     <blockquote className="text-slate-700 leading-relaxed relative z-10 italic">
+                     <blockquote className="font-body text-[#111827] text-lg leading-relaxed relative z-10">
                         "Tolle, kompetente und zeitnahe Umsetzung unserer neuen Homepage mit der wir sehr zufrieden sind. Hat uns sehr professionell bei der Weiterentwicklung unserer Etiketten unterstützt. Waren mit der kundenorientierten Zusammenarbeit sehr zufrieden."
                      </blockquote>
                   </div>

@@ -23,7 +23,7 @@ export default function ImpressumPage() {
                     </div>
 
                     <header className="mb-16">
-                        <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-slate-900 mb-4">
+                        <h1 className="text-4xl sm:text-5xl font-sans font-extrabold text-slate-900 mb-4">
                             Impressum
                         </h1>
                         <p className="text-xl text-slate-500">
@@ -34,7 +34,7 @@ export default function ImpressumPage() {
                     <div className="space-y-16">
                         {/* Kontakt Sektion */}
                         <section className="premium-card p-8 sm:p-12">
-                            <h2 className="text-2xl font-display font-bold text-slate-900 mb-8">Kontakt</h2>
+                            <h2 className="text-2xl font-sans font-bold text-slate-900 mb-8">Kontakt</h2>
                             <div className="grid sm:grid-cols-2 gap-10">
                                 <div>
                                     <h3 className="text-sm font-black text-slate-400 uppercase tracking-widest mb-4">Unternehmen</h3>
@@ -58,21 +58,21 @@ export default function ImpressumPage() {
                         {/* Rechtliche Hinweise */}
                         <section className="space-y-12">
                             <div>
-                                <h2 className="text-xl font-display font-bold text-slate-900 mb-4">Haftungsausschluss</h2>
+                                <h2 className="text-xl font-sans font-bold text-slate-900 mb-4">Haftungsausschluss</h2>
                                 <p className="text-slate-600 leading-relaxed">
                                     Die bereitgestellten Informationen auf dieser Website wurden sorgfältig geprüft und werden regelmäßig aktualisiert. Jedoch kann keine Garantie dafür übernommen werden, dass alle Angaben zu jeder Zeit vollständig, richtig und in letzter Aktualität dargestellt sind. Alle Angaben können ohne Ankündigung ergänzt, entfernt oder geändert werden.
                                 </p>
                             </div>
 
                             <div>
-                                <h2 className="text-xl font-display font-bold text-slate-900 mb-4">Hinweis zum Gleichbehandlungsgesetz</h2>
+                                <h2 className="text-xl font-sans font-bold text-slate-900 mb-4">Hinweis zum Gleichbehandlungsgesetz</h2>
                                 <p className="text-slate-600 leading-relaxed">
                                     Aus Gründen der leichteren Lesbarkeit wird auf dieser Website die geschlechtsspezifische Differenzierung, wie z.B. TeilnehmerInnen, nicht durchgehend berücksichtigt. Entsprechende Begriffe gelten im Sinne der Gleichbehandlung für beide Geschlechter.
                                 </p>
                             </div>
 
                             <div>
-                                <h2 className="text-xl font-display font-bold text-slate-900 mb-4">Copyright – Hinweis</h2>
+                                <h2 className="text-xl font-sans font-bold text-slate-900 mb-4">Copyright – Hinweis</h2>
                                 <p className="text-slate-600 leading-relaxed">
                                     Inhalt, Gestaltung, Texte und Bildmaterial dieser Website unterliegen dem Copyright. Reproduktion aller Inhalte, auch auszugsweise, ausschließlich nur mit formeller Zustimmung durch den Websitebetreiber.
                                     <br /><br />
@@ -81,7 +81,7 @@ export default function ImpressumPage() {
                             </div>
 
                             <div>
-                                <h2 className="text-xl font-display font-bold text-slate-900 mb-4">Rechtlicher Hinweis zur Streitbeilegung</h2>
+                                <h2 className="text-xl font-sans font-bold text-slate-900 mb-4">Rechtlicher Hinweis zur Streitbeilegung</h2>
                                 <p className="text-slate-600 leading-relaxed">
                                     Die EU hat ein Online-Verfahren zur Beilegung von Streitigkeiten zwischen Unternehmern und Verbrauchern geschaffen. Informationen dazu finden Sie unter <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">https://ec.europa.eu/consumers/odr/</a>.
                                     <br /><br />

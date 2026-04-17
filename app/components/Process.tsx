@@ -1,53 +1,41 @@
 "use client";
 import React from 'react';
 import { PROCESS_STEPS } from '../constants';
-import { Layout } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import { ArrowRight } from 'lucide-react';
 
 const Process = () => {
     return (
-        <section id="process" className="scroll-mt-32 py-24 sm:py-40 relative overflow-hidden">
-            {/* Background Image with Overlay */}
-            <div className="absolute inset-0 z-0">
-                <img 
-                    src="/bilder/ki-agentur-hintergrund-wolken.webp" 
-                    alt="Hintergrund Wolken" 
-                    className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-white/90"></div>
-            </div>
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <ScrollReveal className="text-center mb-28">
-                    <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white text-primary font-bold text-sm uppercase tracking-widest mb-6 border border-slate-200">
-                        <Layout className="w-4 h-4 text-accent" />
-                        Der Ablauf
-                    </div>
-                    <h2 className="text-5xl sm:text-7xl font-display font-black text-slate-900 tracking-normal mb-8 leading-[1.1]">
-                        Ihr Weg zum <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-500">digitalen Vorsprung.</span>
+        <section id="process" className="scroll-mt-32 py-32 bg-[#F8FAFC]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <ScrollReveal className="mb-20">
+                    <div className="inline-flex items-center px-6 py-2 rounded-full bg-slate-50 text-slate-800 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-slate-100">Der Ablauf</div>
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[0.95]">
+                        <span className="font-sans block">Ihr Projektstart</span>
+                        <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">in 7 Tagen.</span>
                     </h2>
-                    <p className="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
-                        Schnell, unkompliziert und auf nachhaltiges Wachstum ausgelegt.
-                    </p>
                 </ScrollReveal>
 
-                <div className="grid lg:grid-cols-3 gap-16 relative">
-                    {/* Decorative path line */}
-                    <div className="hidden lg:block absolute top-12 left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-transparent via-accent/30 to-transparent"></div>
-
+                <div className="grid lg:grid-cols-3 gap-8">
                     {PROCESS_STEPS.map((step, index) => (
                         <ScrollReveal
                             key={index}
                             animation="reveal-up"
-                            delay={index * 200}
+                            delay={index * 150}
                         >
-                            <div className="relative z-10 flex flex-col items-center text-center group">
-                                <div className="w-24 h-24 bg-white rounded-3xl flex items-center justify-center font-black text-3xl mb-10 shadow-xl shadow-slate-200/50 group-hover:scale-110 group-hover:bg-accent group-hover:text-primary transition-all duration-700 border border-white">
+                            <div className="relative bg-white rounded-3xl p-10 sm:p-12 border border-slate-200 group hover:border-slate-300 hover:shadow-xl transition-all duration-500 h-full flex flex-col overflow-hidden">
+                                {/* Large number watermark */}
+                                <div className="absolute right-0 bottom-0 pointer-events-none translate-x-[20%] translate-y-[20%] font-sans text-[12rem] font-black leading-none text-slate-50 group-hover:text-amber-50 group-hover:translate-x-[15%] transition-all duration-700">
                                     {index + 1}
                                 </div>
-                                <h3 className="text-3xl font-black text-slate-900 mb-6 tracking-tight group-hover:text-accent transition-colors">{step.title}</h3>
-                                <p className="text-lg text-slate-500 leading-relaxed max-w-sm">
+
+                                <h3 className="font-sans text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-5 relative z-10 flex items-center gap-4">
+                                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-accent text-primary text-sm tracking-normal">
+                                        {index + 1}
+                                    </span>
+                                    {step.title}
+                                </h3>
+                                <p className="text-[#111827] text-lg leading-relaxed font-body flex-grow relative z-10">
                                     {step.description}
                                 </p>
                             </div>

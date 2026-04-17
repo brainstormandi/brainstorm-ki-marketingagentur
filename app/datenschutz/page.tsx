@@ -23,7 +23,7 @@ export default function DatenschutzPage() {
                     </div>
 
                     <header className="mb-16">
-                        <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-slate-900 mb-4">
+                        <h1 className="text-4xl sm:text-5xl font-sans font-extrabold text-slate-900 mb-4">
                             Datenschutzerklärung
                         </h1>
                         <p className="text-xl text-slate-500">
@@ -45,7 +45,7 @@ export default function DatenschutzPage() {
                         </section>
 
                         <section className="premium-card p-8 sm:p-12 not-prose">
-                            <h2 className="text-2xl font-display font-bold text-slate-900 mb-8 border-b border-slate-100 pb-4">Verantwortlicher</h2>
+                            <h2 className="text-2xl font-sans font-bold text-slate-900 mb-8 border-b border-slate-100 pb-4">Verantwortlicher</h2>
                             <div className="grid sm:grid-cols-2 gap-10">
                                 <div>
                                     <h3 className="text-sm font-black text-slate-400 uppercase tracking-widest mb-4">Anschrift</h3>
@@ -66,7 +66,7 @@ export default function DatenschutzPage() {
                         </section>
 
                         <section>
-                            <h2 className="text-2xl font-display font-bold text-slate-900 mb-6">1. Begriffsbestimmungen</h2>
+                            <h2 className="text-2xl font-sans font-bold text-slate-900 mb-6">1. Begriffsbestimmungen</h2>
                             <p className="mb-6">Die Datenschutzerklärung der "BrainStorm Werbeagentur" beruht auf den Begrifflichkeiten, die durch den Europäischen Richtlinien- und Verordnungsgeber beim Erlass der Datenschutz-Grundverordnung (DS-GVO) verwendet wurden. Wir verwenden unter anderem die folgenden Begriffe:</p>
 
                             <div className="space-y-6">
@@ -90,7 +90,7 @@ export default function DatenschutzPage() {
                         </section>
 
                         <section>
-                            <h2 className="text-2xl font-display font-bold text-slate-900 mb-6">2. Cookies</h2>
+                            <h2 className="text-2xl font-sans font-bold text-slate-900 mb-6">2. Cookies</h2>
                             <p>
                                 Die Internetseiten der "BrainStorm Werbeagentur" verwenden Cookies. Cookies sind Textdateien, welche über einen Internetbrowser auf einem Computersystem abgelegt und gespeichert werden. Durch den Einsatz von Cookies kann BrainStorm Werbeagentur den Nutzern dieser Internetseite nutzerfreundlichere Services bereitstellen.
                             </p>
@@ -100,21 +100,21 @@ export default function DatenschutzPage() {
                         </section>
 
                         <section>
-                            <h2 className="text-2xl font-display font-bold text-slate-900 mb-6">3. Erfassung von allgemeinen Daten und Informationen</h2>
+                            <h2 className="text-2xl font-sans font-bold text-slate-900 mb-6">3. Erfassung von allgemeinen Daten und Informationen</h2>
                             <p>
                                 Unsere Internetseite erfasst mit jedem Aufruf eine Reihe von allgemeinen Daten und Informationen, die in den Logfiles des Servers gespeichert werden. Erfasst werden können Browsertypen, Betriebssystem, IP-Adresse, Datum und Uhrzeit des Zugriffs sowie sonstige ähnliche Daten zur Gefahrenabwehr im Falle von Angriffen.
                             </p>
                         </section>
 
                         <section>
-                            <h2 className="text-2xl font-display font-bold text-slate-900 mb-6">4. Kontaktmöglichkeit</h2>
+                            <h2 className="text-2xl font-sans font-bold text-slate-900 mb-6">4. Kontaktmöglichkeit</h2>
                             <p>
                                 Sofern eine betroffene Person per E-Mail oder über ein Kontaktformular den Kontakt mit uns aufnimmt, werden die übermittelten personenbezogenen Daten automatisch gespeichert. Diese Daten werden für Zwecke der Bearbeitung oder der Kontaktaufnahme gespeichert. Es erfolgt keine Weitergabe dieser Daten an Dritte.
                             </p>
                         </section>
 
                         <section>
-                            <h2 className="text-2xl font-display font-bold text-slate-900 mb-6">5. Rechte der betroffenen Person</h2>
+                            <h2 className="text-2xl font-sans font-bold text-slate-900 mb-6">5. Rechte der betroffenen Person</h2>
                             <div className="grid sm:grid-cols-2 gap-8">
                                 <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
                                     <h3 className="font-bold text-slate-900 mb-2">Recht auf Auskunft</h3>
@@ -136,7 +136,7 @@ export default function DatenschutzPage() {
                         </section>
 
                         <section>
-                            <h2 className="text-2xl font-display font-bold text-slate-900 mb-6">6. Analyse-Tools & Drittanbieter</h2>
+                            <h2 className="text-2xl font-sans font-bold text-slate-900 mb-6">6. Analyse-Tools & Drittanbieter</h2>
                             <div className="space-y-8">
                                 <div>
                                     <h3 className="text-lg font-bold text-slate-900 mb-2">Google Analytics</h3>

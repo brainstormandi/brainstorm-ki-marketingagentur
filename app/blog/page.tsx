@@ -44,8 +44,9 @@ export default function BlogIndex() {
       <main className="flex-grow pt-32 pb-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-slate-900 mb-6">
-              BrainStorm <span className="text-accent">Blog</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[0.95] mb-6">
+              <span className="font-sans block">BrainStorm</span>
+              <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2 sm:pb-4">Blog.</span>
             </h1>
             <p className="text-xl text-slate-600">
               Insights, Strategien & Expertenwissen für Ihren digitalen Vorsprung durch KI.
@@ -76,15 +77,15 @@ export default function BlogIndex() {
                     <span>{post.date}</span>
                   </div>
                   
-                  <h2 className="text-2xl font-bold text-slate-900 mb-4 font-display group-hover:text-accent transition-colors line-clamp-2">
+                  <h2 className="text-2xl font-bold text-slate-900 mb-4 font-sans tracking-tight leading-[1] group-hover:opacity-80 transition-opacity line-clamp-2">
                     {post.title}
                   </h2>
                   
-                  <p className="text-slate-600 mb-8 flex-grow line-clamp-3">
+                  <p className="text-[#111827] text-lg font-sans mb-8 flex-grow line-clamp-3 leading-relaxed">
                     {post.excerpt}
                   </p>
                   
-                  <div className="mt-auto flex items-center text-primary font-bold group-hover:text-accent transition-colors">
+                  <div className="mt-auto flex items-center text-[#111827] font-sans font-bold tracking-widest uppercase text-xs group-hover:opacity-70 transition-opacity">
                     Artikel lesen
                     <ArrowRight className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
                   </div>

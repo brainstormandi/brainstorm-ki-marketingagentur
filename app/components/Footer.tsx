@@ -1,135 +1,140 @@
 "use client";
 import React from 'react';
-import { Linkedin, Facebook, ArrowUpRight } from 'lucide-react';
+import { Linkedin, Facebook, ArrowUpRight, Mail, Phone, MapPin } from 'lucide-react';
+import { CONTACT_INFO } from '../constants';
 
 const Footer = () => {
+    const year = new Date().getFullYear();
+
     return (
-        <footer className="bg-[#F8FAFC] pt-24 pb-12 border-t border-slate-200 relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="grid md:grid-cols-3 gap-12 lg:gap-20 mb-20">
-                    <div className="col-span-1 md:col-span-1">
+        <footer className="bg-white relative overflow-hidden border-t border-slate-200">
+            {/* Main footer content */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 xl:gap-12 mb-16">
+                    
+                    {/* Brand Col */}
+                    <div className="flex flex-col">
                         <div className="flex items-center gap-3 mb-8">
                             <img
                                 src="/bilder/logo.png"
-                                alt=""
-                                aria-hidden="true"
-                                className="h-10 w-auto object-contain grayscale opacity-80"
+                                alt="BrainStorm Logo"
+                                className="h-10 w-auto object-contain"
                             />
-                            <span className="font-sans font-bold text-2xl tracking-tight text-slate-900">BrainStorm</span>
+                            <div className="flex flex-col leading-none text-left">
+                                <span className="font-body font-black text-lg sm:text-xl tracking-wide text-[#0E172B] leading-none mb-1">
+                                    BrainStorm
+                                </span>
+                                <span className="font-body text-xs sm:text-sm font-medium tracking-[0.15em] text-[#0E172B]">KI Werbeagentur</span>
+                            </div>
                         </div>
-                        <p className="text-lg text-slate-500 max-w-sm mb-8 leading-relaxed">
-                            Wir begleiten österreichische KMUs in die digitale Zukunft. Mit Herz, Verstand und modernster Technologie.
+                        <p className="text-slate-600 text-base leading-relaxed mb-8 font-body">
+                            Wir begleiten österreichische KMUs in die digitale Zukunft. Mit Herz, Verstand und modernster Technologie für maximale Sichtbarkeit.
                         </p>
-                        <div className="flex gap-4">
-                            <a
-                                href="https://www.linkedin.com/in/brainstorm-andi/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="LinkedIn"
-                                className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"
-                            >
-                                <Linkedin className="w-5 h-5" aria-hidden="true" />
-                            </a>
-                            <a
-                                href="https://www.facebook.com/BrainStorm.Werbeagentur"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Facebook"
-                                className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"
-                            >
-                                <Facebook className="w-5 h-5" aria-hidden="true" />
-                            </a>
+                        <div className="flex gap-4 items-center mt-auto">
+                            {[
+                                { href: "https://www.linkedin.com/in/brainstorm-andi/", label: "LinkedIn", icon: <Linkedin className="w-5 h-5" /> },
+                                { href: "https://www.facebook.com/BrainStorm.Werbeagentur", label: "Facebook", icon: <Facebook className="w-5 h-5" /> }
+                            ].map((s) => (
+                                <a
+                                    key={s.label}
+                                    href={s.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={s.label}
+                                    className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-400 hover:text-primary hover:bg-accent hover:border-accent shadow-sm transition-all duration-300"
+                                >
+                                    {s.icon}
+                                </a>
+                            ))}
                         </div>
                     </div>
 
-                    <div>
-                        <h4 className="font-display font-bold text-slate-900 mb-6 text-lg">Agentur</h4>
+                    {/* Nav Cols */}
+                    <div className="lg:pl-8 xl:pl-16">
+                        <h4 className="text-sm font-black text-slate-900 mb-6 font-sans">Navigation</h4>
                         <ul className="space-y-4">
-                            <li>
-                                <a href="#services" className="text-slate-500 hover:text-primary transition-colors flex items-center gap-1 group">
-                                    Leistungen
-                                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#process" className="text-slate-500 hover:text-primary transition-colors flex items-center gap-1 group">
-                                    Ablauf
-                                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#contact" className="text-slate-500 hover:text-primary transition-colors flex items-center gap-1 group">
-                                    Kontakt
-                                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                                </a>
-                            </li>
+                            {[
+                                { name: 'Leistungen', href: '#services' },
+                                { name: 'Philosophie', href: '#philosophie' },
+                                { name: 'Ablauf', href: '#process' },
+                                { name: 'FAQ', href: '#faq' },
+                                { name: 'Kontakt', href: '#contact' }
+                            ].map((l) => (
+                                <li key={l.name}>
+                                    <a href={l.href} className="text-base text-slate-600 hover:text-accent font-medium transition-colors inline-flex items-center gap-1 group font-body">
+                                        {l.name}
+                                    </a>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
+                    {/* Regions Col */}
                     <div>
-                        <h4 className="font-display font-bold text-slate-900 mb-6 text-lg">Rechtliches</h4>
+                        <h4 className="text-sm font-black text-slate-900 mb-6 font-sans">Regionale Agentur</h4>
                         <ul className="space-y-4">
-                            <li><a href="/impressum" className="text-slate-500 hover:text-primary transition-colors">Impressum</a></li>
-                            <li><a href="/datenschutz" className="text-slate-500 hover:text-primary transition-colors">Datenschutz</a></li>
-                            <li><a href="/bilder/AGB%20BrainStorm.pdf" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-primary transition-colors">AGB</a></li>
+                            {[
+                                { name: 'Amstetten & Mostviertel', href: '/werbeagentur-amstetten' },
+                                { name: 'Steyr & Ennstal', href: '/werbeagentur-steyr' },
+                                { name: 'Linz & Zentralraum OÖ', href: '/werbeagentur-linz' },
+                                { name: 'Perg & Machland', href: '/werbeagentur-perg' },
+                                { name: 'St. Pölten & NÖ Mitte', href: '/werbeagentur-st-poelten' },
+                                { name: 'Wien & Umgebung', href: '/werbeagentur-wien' }
+                            ].map((r) => (
+                                <li key={r.name}>
+                                    <a href={r.href} className="text-base text-slate-600 hover:text-accent font-medium transition-colors group font-body">
+                                        {r.name}
+                                    </a>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
-                    <div className="md:col-span-3 pt-12 mt-12 border-t border-slate-100 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div>
-                            <h5 className="font-bold text-slate-900 mb-4 text-sm uppercase tracking-widest">Standort</h5>
-                            <a
-                                href="https://www.google.com/maps/search/?api=1&query=Am+Ziegelfeld+8,+3353+Seitenstetten"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-slate-500 hover:text-primary transition-colors leading-neutral block"
-                            >
-                                Am Ziegelfeld 8<br />
-                                3353 Seitenstetten<br />
-                                Niederösterreich, AT
-                            </a>
-                        </div>
-                        <div>
-                            <h5 className="font-bold text-slate-900 mb-4 text-sm uppercase tracking-widest">Regionale Agentur</h5>
-                            <ul className="text-slate-500 space-y-1">
-                                <li><a href="/werbeagentur-amstetten" className="hover:text-primary transition-colors">Amstetten & Mostviertel</a></li>
-                                <li><a href="/werbeagentur-steyr" className="hover:text-primary transition-colors">Steyr & Ennstal</a></li>
-                                <li><a href="/werbeagentur-linz" className="hover:text-primary transition-colors">Linz & Zentralraum OÖ</a></li>
-                                <li><a href="/werbeagentur-perg" className="hover:text-primary transition-colors">Perg & Machland</a></li>
-                                <li><a href="/werbeagentur-st-poelten" className="hover:text-primary transition-colors">St. Pölten & NÖ Mitte</a></li>
-                                <li><a href="/werbeagentur-wien" className="hover:text-primary transition-colors">Wien & Umgebung</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h5 className="font-bold text-slate-900 mb-4 text-sm uppercase tracking-widest">Kontakt</h5>
-                            <ul className="text-slate-500 space-y-1">
-                                <li>
-                                    <a href="mailto:info@brainstorm-werbeagentur.at" className="hover:text-primary transition-colors">
-                                        info@brainstorm-werbeagentur.at
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="tel:+436605203171" className="hover:text-primary transition-colors">
-                                        +43 660 520 3171
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h5 className="font-bold text-slate-900 mb-4 text-sm uppercase tracking-widest">Spezialisierung</h5>
-                            <ul className="text-slate-500 space-y-1">
-                                <li>KI Werbeagentur</li>
-                                <li>SEO & GEO</li>
-                                <li>Website KMU</li>
-                                <li>Automatisierung</li>
-                            </ul>
-                        </div>
+                    {/* Contact Info Col */}
+                    <div>
+                        <h4 className="text-sm font-black text-slate-900 mb-6 font-sans">Kontakt</h4>
+                        <ul className="space-y-5">
+                            <li>
+                                <a href={`mailto:${CONTACT_INFO.email}`} className="flex items-start gap-4 text-slate-600 hover:text-accent transition-colors group">
+                                    <Mail className="w-5 h-5 mt-0.5 text-slate-400 group-hover:text-accent transition-colors shrink-0" />
+                                    <span className="text-base font-medium font-body break-words leading-snug">{CONTACT_INFO.email}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`} className="flex items-center gap-4 text-slate-600 hover:text-accent transition-colors group">
+                                    <Phone className="w-5 h-5 text-slate-400 group-hover:text-accent transition-colors shrink-0" />
+                                    <span className="text-base font-medium font-body">{CONTACT_INFO.phone}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Am+Ziegelfeld+8,+3353+Seitenstetten" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 text-slate-600 hover:text-accent transition-colors group">
+                                    <MapPin className="w-5 h-5 mt-1 text-slate-400 group-hover:text-accent transition-colors shrink-0" />
+                                    <span className="text-base font-medium leading-relaxed font-body">
+                                        Am Ziegelfeld 8<br />
+                                        3353 Seitenstetten, AT
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
-                <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-600 text-sm font-medium">
-                    <p>&copy; {new Date().getFullYear()} BrainStorm KI Werbeagentur. Alle Rechte vorbehalten.</p>
-                    <p>Hergestellt mit ❤️ in Seitenstetten, Österreich.</p>
+                {/* Bottom Legal bar */}
+                <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-slate-100">
+                    <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
+                        <p className="text-sm text-slate-500 font-medium font-body">
+                            © {year} BrainStorm KI Werbeagentur. Alle Rechte vorbehalten.
+                        </p>
+                        <span className="hidden md:inline text-slate-300">•</span>
+                        <p className="text-sm text-slate-500 font-medium font-body">
+                            Hergestellt mit ❤️ in Seitenstetten, Österreich.
+                        </p>
+                    </div>
+                    <div className="flex gap-6 items-center">
+                        <a href="/impressum" className="text-sm text-slate-500 hover:text-slate-900 font-medium transition-colors font-body">Impressum</a>
+                        <a href="/datenschutz" className="text-sm text-slate-500 hover:text-slate-900 font-medium transition-colors font-body">Datenschutz</a>
+                        <a href="/bilder/AGB%20BrainStorm.pdf" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-500 hover:text-slate-900 font-medium transition-colors font-body">AGB</a>
+                    </div>
                 </div>
             </div>
         </footer>

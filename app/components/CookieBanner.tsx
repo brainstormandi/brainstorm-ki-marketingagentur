@@ -40,7 +40,7 @@ export default function CookieBanner() {
                         <Cookie className="w-6 h-6 text-accent" />
                     </div>
                     <div className="flex-1 pr-6">
-                        <h3 className="text-lg font-display font-bold text-primary mb-1">
+                        <h3 className="text-lg font-sans font-bold text-primary mb-1">
                             Cookie-Einstellungen
                         </h3>
                         <p className="text-sm text-gray-600 leading-relaxed">
