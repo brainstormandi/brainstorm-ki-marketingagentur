@@ -77,6 +77,7 @@ const Footer = () => {
                                 { name: 'Amstetten & Mostviertel', href: '/werbeagentur-amstetten' },
                                 { name: 'Steyr & Ennstal', href: '/werbeagentur-steyr' },
                                 { name: 'Linz & Zentralraum OÖ', href: '/werbeagentur-linz' },
+                                { name: 'Salzburg & Umland', href: '/werbeagentur-salzburg' },
                                 { name: 'Perg & Machland', href: '/werbeagentur-perg' },
                                 { name: 'St. Pölten & NÖ Mitte', href: '/werbeagentur-st-poelten' },
                                 { name: 'Wien & Umgebung', href: '/werbeagentur-wien' }
