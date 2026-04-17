@@ -68,7 +68,7 @@ export default function WerbeagenturLinz() {
                 <span className="text-sm font-bold text-slate-800 uppercase tracking-widest">Die Webagentur der Zukunft</span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[0.95] mb-6 max-w-5xl animate-reveal-up">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-slate-900 tracking-tight leading-tight py-1 mb-6 max-w-5xl animate-reveal-up">
                <span className="font-sans font-black block">Modernes Webdesign für den Zentralraum </span>
                <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">Linz</span>
             </h1>
@@ -138,7 +138,7 @@ export default function WerbeagenturLinz() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
                <ScrollReveal animation="reveal-right">
-                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[0.95] mb-8">
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight py-1 mb-8">
 <span className="font-sans block">Ihre Online-Auslage </span>
 <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">in der Stahlstadt</span>
 </h2>

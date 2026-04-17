@@ -18,7 +18,7 @@ const Blog = () => {
             <div className="inline-flex items-center px-6 py-2 rounded-full bg-white text-slate-800 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-slate-200">
               BrainStorm Blog
             </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[0.95] mb-6">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight py-1 mb-6">
               <span className="font-sans block">Insights &</span>
               <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2 sm:pb-4">KI-Trends.</span>
             </h2>
