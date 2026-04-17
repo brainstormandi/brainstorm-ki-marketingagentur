@@ -3,37 +3,50 @@ import React from 'react';
 import { CONTACT_INFO } from '../constants';
 import { Mail, Phone, Calendar, ArrowRight, CheckCircle2 } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import Image from 'next/image';
 
 const Contact = () => {
     return (
-        <section id="contact" className="scroll-mt-32 py-32 relative bg-[#F8FAFC]">
+        <section id="contact" className="scroll-mt-32 py-32 relative overflow-hidden bg-slate-900 shadow-2xl">
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+                <Image
+                    src="/bilder/ki-agentur-hg-andi.webp"
+                    alt="BrainStorm KI Agentur Hintergrund"
+                    fill
+                    className="object-cover opacity-20 grayscale"
+                    priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-transparent to-slate-900"></div>
+            </div>
+            
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-20 items-center">
                     <ScrollReveal animation="reveal-right">
-                        <div className="inline-flex items-center px-6 py-2 rounded-full bg-slate-50 text-slate-800 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-slate-100">Kontakt</div>
-                        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[0.95] mb-8">
+                        <div className="inline-flex items-center px-6 py-2 rounded-full bg-white/10 text-white font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-white/20 backdrop-blur-sm">Kontakt</div>
+                        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight py-1 mb-8">
                             <span className="font-sans block">Bereit für</span>
-                            <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2 sm:pb-4">Ihren Erfolg?</span>
+                            <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-white via-white/90 to-slate-400 drop-shadow-sm pb-2 sm:pb-4">Ihren Erfolg?</span>
                         </h2>
                         
-                        <p className="text-[#111827] text-lg leading-relaxed mb-12 max-w-lg font-body">
+                        <p className="text-slate-300 text-lg leading-relaxed mb-12 max-w-lg font-body">
                             Ob Erstgespräch oder konkretes Projekt – in einem kurzen Call klären wir Ihre Potenziale. Kein Druck, nur ehrliche Beratung.
                         </p>
 
                         <div className="space-y-6 mb-12">
                             <a href={`mailto:${CONTACT_INFO.email}`} className="flex items-center gap-5 group">
-                                <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-slate-700 bg-white group-hover:bg-accent group-hover:border-accent transition-all duration-300 shrink-0">
+                                <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white bg-white/5 backdrop-blur-sm group-hover:bg-accent group-hover:border-accent transition-all duration-300 shrink-0">
                                     <Mail className="w-5 h-5 group-hover:text-primary transition-colors" />
                                 </div>
-                                <div className="text-lg font-bold text-slate-900 group-hover:text-accent transition-colors">
+                                <div className="text-lg font-bold text-white group-hover:text-accent transition-colors">
                                     {CONTACT_INFO.email}
                                 </div>
                             </a>
                             <a href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`} className="flex items-center gap-5 group">
-                                <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-slate-700 bg-white group-hover:bg-accent group-hover:border-accent transition-all duration-300 shrink-0">
+                                <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white bg-white/5 backdrop-blur-sm group-hover:bg-accent group-hover:border-accent transition-all duration-300 shrink-0">
                                     <Phone className="w-5 h-5 group-hover:text-primary transition-colors" />
                                 </div>
-                                <div className="text-lg font-bold text-slate-900 group-hover:text-accent transition-colors">
+                                <div className="text-lg font-bold text-white group-hover:text-accent transition-colors">
                                     {CONTACT_INFO.phone}
                                 </div>
                             </a>
@@ -42,7 +55,7 @@ const Contact = () => {
                         {/* Trust signals */}
                         <div className="flex flex-wrap gap-5">
                             {["Kostenfreie Potenzialanalyse", "Persönliche Beratung"].map((t, i) => (
-                                <div key={i} className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-widest">
+                                <div key={i} className="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-widest">
                                     <CheckCircle2 className="w-4 h-4 text-accent" />
                                     {t}
                                 </div>
