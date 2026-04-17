@@ -177,8 +177,8 @@ export default function WerbeagenturSteyr() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
                <ScrollReveal animation="reveal-right">
                   <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1] py-1 mb-8">
-<span className="font-sans block">Digitaler Erfolg rund </span>
-<span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">um die Eisenstadt</span>
+<span className="font-sans block">Digitaler Erfolg</span>
+<span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">rund um die Eisenstadt</span>
 </h2>
                   <p className="font-body text-[#111827] text-lg leading-relaxed mb-6">
                      Steyr ist ein traditionsreiches Wirtschaftszentrum. Vom Stadtplatz bis nach Garsten spürt man die hohe Innovationskraft dieser Region. Mit uns haben Sie nicht einfach "nur" eine Agentur, die schönen Code schreibt – sondern einen Partner, der Homepages kreiert, die Besucher magisch anziehen und in treue Kunden verwandeln.
