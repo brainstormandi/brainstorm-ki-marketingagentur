@@ -80,8 +80,8 @@ export default function WerbeagenturPerg() {
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.1] py-1 mb-6 animate-reveal-up">
-                       <span className="font-sans font-black block">Ihr starker Partner</span>
-                       <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">für Webdesign in Perg</span>
+                       <span className="font-sans font-black block">High-End Webdesign</span>
+                       <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">für Perg & Machland</span>
                     </h1>
 
                     <p className="font-body text-[#111827] text-lg leading-relaxed max-w-lg mb-8 animate-reveal-up reveal-delay-200">
@@ -145,7 +145,7 @@ export default function WerbeagenturPerg() {
                             Regionale Sichtbarkeit
                         </div>
                         <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight mb-6">
-                            Ihr Partner für <br />
+                            Ihr Partner für <br className="hidden sm:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600">Webseiten im Machland</span>
                         </h2>
                         <p className="text-slate-600 text-lg leading-relaxed mb-8 font-body">

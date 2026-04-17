@@ -145,7 +145,7 @@ export default function WerbeagenturWien() {
                             Local Expertise
                         </div>
                         <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight mb-6">
-                            Ihr Webdesign-Partner <br />
+                            Ihr Webdesign-Partner <br className="hidden sm:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600">für den Standort Wien</span>
                         </h2>
                         <p className="text-slate-600 text-lg leading-relaxed mb-8 font-body">
