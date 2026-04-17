@@ -80,8 +80,8 @@ export default function WerbeagenturWien() {
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.1] py-1 mb-6 animate-reveal-up">
-                       <span className="font-sans font-black block">High-End Webdesign für</span>
-                       <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">Wien & Umgebung</span>
+                       <span className="font-sans font-black block">High-End Webdesign</span>
+                       <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">für Wien & Umgebung</span>
                     </h1>
 
                     <p className="font-body text-[#111827] text-lg leading-relaxed max-w-lg mb-8 animate-reveal-up reveal-delay-200">
