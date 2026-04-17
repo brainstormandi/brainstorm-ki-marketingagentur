@@ -1,11 +1,13 @@
 import { Metadata } from 'next';
-import { ArrowRight, MapPin, Building2, TrendingUp, Handshake, Globe, Monitor, Rocket, Star, CheckCircle2, Quote, ExternalLink } from 'lucide-react';
+import { ArrowRight, MapPin, Building2, TrendingUp, Handshake, Globe, Monitor, Rocket, Star, CheckCircle2, Quote, ExternalLink, ShieldCheck, Trophy, Brain, Zap } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Services from '../components/Services';
 import Footer from '../components/Footer';
 import ScrollReveal from '../components/ScrollReveal';
+import IndustryMarquee from '../components/IndustryMarquee';
 import { AIAssistant, Contact } from './DynamicComponents';
 import PergFAQ from './PergFAQ';
+import { GOOGLE_REVIEW_LINK } from '../constants';
 
 export const metadata: Metadata = {
   title: "Werbeagentur Perg | Premium Webdesign & Webseiten für das Mühlviertel",
@@ -51,84 +53,120 @@ export default function WerbeagenturPerg() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC]">
+    <div className="min-h-screen bg-white">
       <Navbar />
       <main>
-        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-32 pb-12">
-          <div className="absolute inset-0 z-0 overflow-hidden">
-             <video autoPlay loop muted playsInline aria-hidden="true" className="w-full h-full object-cover scale-[1.25] object-[30%_center] md:object-[0%_center]">
-                <source src="/video/ki-werbeagentur-brainstorm-hero-video.mp4" type="video/mp4" />
-             </video>
-             <div className="absolute inset-0 bg-gradient-to-r from-[#F8FAFC]/90 via-white/80 to-transparent"></div>
-          </div>
-          
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center mt-8">
-            <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/90 backdrop-blur-md border border-slate-200 mb-6 shadow-sm animate-reveal-down">
-                <MapPin className="w-5 h-5 text-accent" />
-                <span className="text-sm font-bold text-slate-800 uppercase tracking-widest">Die Webagentur Ihres Vertrauens</span>
+        <section className="relative min-h-screen flex items-center overflow-hidden pt-32 sm:pt-28 pb-20">
+            <div className="absolute inset-0 z-0 overflow-hidden">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    aria-hidden="true"
+                    className="w-full h-full object-cover scale-[1.25] object-[30%_center] md:object-[0%_center]"
+                >
+                    <source src="/video/ki-werbeagentur-brainstorm-hero-video.mp4" type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#F8FAFC]/80 via-white/80 to-white/30 sm:to-white/10"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent"></div>
             </div>
-            
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.1] py-1 mb-6 max-w-5xl animate-reveal-up">
-               <span className="font-sans font-black block">Ihr starker Webdesign-Partner in </span>
-               <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">Perg</span>
-            </h1>
-            
-            <p className="font-body text-[#111827] text-lg leading-relaxed mb-8 max-w-3xl mx-auto animate-reveal-up reveal-delay-200">
-               Machland und Mühlviertel digital. Holen Sie sich mit einer modernen Webseite den entscheidenden Marktvorteil für Kundengewinnung und Recruiting.
-            </p>
 
-            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-10 animate-reveal-up reveal-delay-300">
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-slate-700 font-bold text-[13px] sm:text-sm">
-                    <Globe className="w-5 h-5 text-accent" />
-                    <span>Verkaufsstarke Landingpages</span>
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-slate-700 font-bold text-[13px] sm:text-sm">
-                    <Monitor className="w-5 h-5 text-accent" />
-                    <span>Business Webseiten</span>
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-slate-700 font-bold text-[13px] sm:text-sm">
-                    <Rocket className="w-5 h-5 text-accent" />
-                    <span>Lokales SEO & KI</span>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div className="max-w-2xl xl:max-w-3xl">
+                    <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/80 backdrop-blur-sm text-slate-800 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-slate-200 shadow-sm animate-reveal-down">
+                        <MapPin className="w-4 h-4 text-accent" />
+                        Webdesign & KI-Marketing für Perg
+                    </div>
+
+                    <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.1] py-1 mb-6 animate-reveal-up">
+                       <span className="font-sans font-black block">Ihr starker Partner für</span>
+                       <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">Webdesign in Perg</span>
+                    </h1>
+
+                    <p className="font-body text-[#111827] text-lg leading-relaxed max-w-lg mb-8 animate-reveal-up reveal-delay-200">
+                       Machland und Mühlviertel digital. Holen Sie sich mit einer modernen Webseite den entscheidenden Marktvorteil für Kundengewinnung und Recruiting.
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 mb-10 animate-reveal-up reveal-delay-300">
+                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-slate-700 font-bold text-[13px] sm:text-sm">
+                            <Globe className="w-5 h-5 text-accent" />
+                            <span>Verkaufsstarke Landingpages</span>
+                        </div>
+                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-slate-700 font-bold text-[13px] sm:text-sm">
+                            <Monitor className="w-5 h-5 text-accent" />
+                            <span>Business Webseiten</span>
+                        </div>
+                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-slate-700 font-bold text-[13px] sm:text-sm">
+                            <Rocket className="w-5 h-5 text-accent" />
+                            <span>Lokales SEO & KI</span>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 animate-reveal-up reveal-delay-500">
+                         <a href="#contact" className="w-full sm:w-auto px-12 py-6 bg-accent text-primary rounded-2xl font-black text-lg sm:text-xl hover:bg-[#e5b510] hover:scale-105 transition-all shadow-[0_20px_40px_-10px_rgba(247,196,41,0.5)] flex items-center justify-center gap-4 group">
+                             Projekt in Perg starten
+                             <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                         </a>
+                    </div>
+
+                    <div className="mt-14 flex flex-wrap items-center gap-6 sm:gap-10 animate-reveal-up reveal-delay-600">
+                        <a href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 group">
+                            <div className="flex gap-0.5">
+                                {[...Array(5)].map((_, s) => (
+                                    <Star key={s} className="w-4 h-4 fill-accent text-accent" />
+                                ))}
+                            </div>
+                            <span className="text-sm font-bold text-slate-900 group-hover:text-accent transition-colors">
+                                <strong>5.0</strong> Google-Rating
+                            </span>
+                        </a>
+                        <div className="w-px h-4 bg-slate-300 hidden sm:block"></div>
+                        <div className="flex items-center gap-2 text-[13px] font-semibold text-slate-800">
+                            <ShieldCheck className="w-4 h-4 text-accent" />
+                            100% DSGVO
+                        </div>
+                        <div className="flex items-center gap-2 text-[13px] font-semibold text-slate-800">
+                            <Trophy className="w-4 h-4 text-accent" />
+                            32 Jahre Erfahrung
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-reveal-up reveal-delay-500 w-full sm:w-auto">
-                <a href="#contact" className="w-full sm:w-auto px-12 py-6 bg-accent text-primary rounded-2xl font-black text-lg sm:text-xl hover:bg-[#e5b510] hover:scale-105 transition-all shadow-[0_20px_40px_-10px_rgba(247,196,41,0.5)] flex items-center justify-center gap-4 group">
-                   Webprojekt Perg starten
-                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-                </a>
-            </div>
-          </div>
         </section>
 
-        <section className="bg-white/50 backdrop-blur-sm border-y border-slate-200/60 py-12">
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 md:p-10">
-                    <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                        <Star className="w-6 h-6 text-accent fill-accent" />
-                        BrainStorm KI Webagentur für Perg
-                    </h2>
-                    <div className="grid md:grid-cols-2 gap-4 text-slate-600">
-                        <ul className="space-y-3">
-                            <li className="flex items-start gap-3">
-                                <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
-                                <span><strong>Fokus:</strong> Premium Homepages und performante Landingpages für den Mittelstand.</span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
-                                <span><strong>Geografie:</strong> Speziallisiert auf das Machland, Donauraum und Strudengau.</span>
-                            </li>
-                        </ul>
-                        <ul className="space-y-3">
-                            <li className="flex items-start gap-3">
-                                <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
-                                <span><strong>Technologie:</strong> Next-Gen Webdesign (extrem schnellladend) kombiniert mit KI.</span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
-                                <span><strong>Nähe:</strong> Ein fester, naher Ansprechpartner anstatt anonymer Call-Center.</span>
-                            </li>
-                        </ul>
+        <IndustryMarquee />
+
+        <section className="py-20 bg-slate-50 border-y border-slate-100">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-accent/10 text-accent font-bold text-[10px] uppercase tracking-widest mb-4 border border-accent/20">
+                            Regionale Sichtbarkeit
+                        </div>
+                        <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight mb-6">
+                            Ihr Partner für <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600">Webseiten im Machland</span>
+                        </h2>
+                        <p className="text-slate-600 text-lg leading-relaxed mb-8 font-body">
+                            Wir fokussieren uns auf Premium Homepages und performante Landingpages für den Mittelstand im Bezirk Perg.
+                        </p>
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                        {[
+                            { title: "Premium Design", desc: "Homepages, die Ihre Qualität im Mühlviertel widerspiegeln.", icon: <Building2 className="w-5 h-5 text-accent" /> },
+                            { title: "Mühlviertel Fokus", desc: "Spezialisiert auf das Machland, Donauraum und Strudengau.", icon: <MapPin className="w-5 h-5 text-accent" /> },
+                            { title: "High-Tech", desc: "Next-Gen Webdesign kombiniert mit KI-Sichtbarkeit.", icon: <Zap className="w-5 h-5 text-accent" /> },
+                            { title: "Persönlich", desc: "Ein fester, naher Ansprechpartner anstatt anonymer Call-Center.", icon: <Handshake className="w-5 h-5 text-accent" /> },
+                        ].map((item, i) => (
+                            <div key={i} className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-accent/30 transition-colors group">
+                                <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors">
+                                    {item.icon}
+                                </div>
+                                <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
+                                <p className="text-sm text-slate-500 leading-relaxed font-body">{item.desc}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
