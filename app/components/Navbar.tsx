@@ -31,7 +31,7 @@ const Navbar = () => {
                         </div>
                     </Link>
 
-                    <div className="hidden lg:flex items-center gap-8">
+                    <div className="hidden lg:flex items-center gap-6">
                         {[
                             { name: 'Leistungen', href: '/#services' },
                             { name: 'Erfolge', href: '/#success' },
@@ -50,7 +50,7 @@ const Navbar = () => {
                             </a>
                         ))}
                         
-                        <div className="w-[1px] h-6 bg-slate-200/80 mx-2"></div>
+                        <div className="w-[1px] h-6 bg-slate-200/80 mx-1"></div>
 
                         <a
                             href="/#website-check"
