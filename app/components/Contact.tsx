@@ -18,8 +18,8 @@ const Contact = () => {
                     priority
                     unoptimized
                 />
-                {/* Gradient overlap */}
-                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent"></div>
+                {/* Gradient overlap: White on the right, transparent on the left */}
+                <div className="absolute inset-0 bg-gradient-to-l from-white via-white/30 to-transparent"></div>
             </div>
             
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
