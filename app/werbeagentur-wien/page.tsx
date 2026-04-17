@@ -177,8 +177,8 @@ export default function WerbeagenturWien() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
                <ScrollReveal animation="reveal-right">
                   <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1] py-1 mb-8">
-<span className="font-sans block">Digital erfolgreich im</span>
-<span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">Großraum Wien</span>
+<span className="font-sans block">Digital erfolgreich</span>
+<span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">im Großraum Wien</span>
 </h2>
                   <p className="font-body text-[#111827] text-lg leading-relaxed mb-6">
                      Egal ob in der Stadt selber, oder dem vitalen Speckgürtel im Wiener Becken: Sie konkurrieren digital um die besten Fachkräfte und die lukrativsten Kundenaufträge. Eine gewöhnliche Firmenwebseite fällt hier sofort durchs Raster.
