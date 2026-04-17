@@ -230,7 +230,7 @@ export default function WerbeagenturPerg() {
                          </div>
                      </div>
 
-                     <blockquote className="font-body text-[#111827] text-lg leading-relaxed relative z-10">
+                     <blockquote className="font-body text-[#111827] text-base leading-relaxed relative z-10">
                         "Die Jobpage und die dazugehörigen Bewerbungen funktionieren perfekt! Immer schnell und professionell!"
                      </blockquote>
                   </div>

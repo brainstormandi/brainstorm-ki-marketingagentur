@@ -253,7 +253,7 @@ export default function WerbeagenturAmstetten() {
                          </div>
                      </div>
 
-                     <blockquote className="font-body text-[#111827] text-lg leading-relaxed relative z-10">
+                     <blockquote className="font-body text-[#111827] text-base leading-relaxed relative z-10">
                         "Bei der Brainstorm Werbeagentur ist man in besten Händen was Webseite und Social Media betrifft.
                         Meine Webseite muss funktionieren, gefunden werden, den rechtlichen Richtlinien entsprechen und dabei noch richtig toll aussehen! Und dafür ist Andreas Sturm der perfekte Partner. Er weiß mit KI umzugehen, kennt stets die aktuell notwendigen Anpassungen und setzt diese verlässlich um. - und ich kann mich um die Aufträge kümmern, die aufgrund meines guten Außenauftritts hereintrudeln ;-) Danke!"
                      </blockquote>

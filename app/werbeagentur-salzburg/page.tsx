@@ -230,7 +230,7 @@ export default function WerbeagenturSalzburg() {
                          </div>
                      </div>
 
-                     <blockquote className="font-body text-[#111827] text-lg leading-relaxed relative z-10">
+                     <blockquote className="font-body text-[#111827] text-base leading-relaxed relative z-10">
                         "Brainstorm KI Werbeagentur zählt zu den TOP Adressen wenn es um innovative Lösungen geht. 100% zuverlässig und 100% am neuesten Stand. Zudem äußerst serviceorientiert, was für mich den selben Stellenwert hat wie technisches Know how. Bei Brainstorm kann man sich entspannt zurücklehnen und sicher sein, dass die beste individuelle Lösung gefunden wird. 100 Prozent Weiterempfehlung :-)"
                      </blockquote>
                   </div>

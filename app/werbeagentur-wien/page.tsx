@@ -230,7 +230,7 @@ export default function WerbeagenturWien() {
                          </div>
                      </div>
 
-                     <blockquote className="font-body text-[#111827] text-lg leading-relaxed relative z-10">
+                     <blockquote className="font-body text-[#111827] text-base leading-relaxed relative z-10">
                         "Andreas Sturm ist sehr kompetent, erledigt Aufträge zu meiner größten Zufriedenheit und rasch. Er gibt Auskunft so, dass es auch ein Laie versteht, ist sehr unterstützend und hat immer gute Ideen für eine Lösung. Das war ich bisher nicht gewohnt. Deshalb habe ich volles Vertrauen zu ihm und kann bestens weiter empfehlen!"
                      </blockquote>
                   </div>

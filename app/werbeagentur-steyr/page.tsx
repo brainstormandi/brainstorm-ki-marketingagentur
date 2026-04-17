@@ -230,7 +230,7 @@ export default function WerbeagenturSteyr() {
                          </div>
                      </div>
 
-                     <blockquote className="font-body text-[#111827] text-lg leading-relaxed relative z-10">
+                     <blockquote className="font-body text-[#111827] text-base leading-relaxed relative z-10">
                         "Da versteht jemand etwas von seinem Handwerk! Vor allem gibt es auch Dienstleistungen über die 'normale' Website hinaus, wie beispielsweise eCommerce und Social Media sowie deren Verbindung. BrainStorm kann ich weiterempfehlen!"
                      </blockquote>
                   </div>
