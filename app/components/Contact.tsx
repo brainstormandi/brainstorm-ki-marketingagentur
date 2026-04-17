@@ -14,7 +14,7 @@ const Contact = () => {
                     src="/bilder/ki-agentur-hg-andi.webp"
                     alt="BrainStorm KI Agentur Hintergrund"
                     fill
-                    className="object-cover opacity-[0.03]"
+                    className="object-cover opacity-[0.1]"
                     priority
                 />
             </div>
@@ -23,7 +23,7 @@ const Contact = () => {
                 <div className="grid lg:grid-cols-2 gap-20 items-center">
                     <ScrollReveal animation="reveal-right">
                         <div className="inline-flex items-center px-6 py-2 rounded-full bg-slate-50 text-slate-800 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-slate-100">Kontakt</div>
-                        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight py-1 mb-8">
+                        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1] py-1 mb-8">
                             <span className="font-sans block">Bereit für</span>
                             <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2 sm:pb-4">Ihren Erfolg?</span>
                         </h2>

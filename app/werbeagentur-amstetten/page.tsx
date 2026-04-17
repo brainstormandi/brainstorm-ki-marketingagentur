@@ -96,7 +96,7 @@ export default function WerbeagenturAmstetten() {
                 <span className="text-sm font-bold text-slate-800 uppercase tracking-widest">Webdesign & Werbeagentur lokal</span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-slate-900 tracking-tight leading-tight py-1 mb-6 max-w-5xl animate-reveal-up">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.1] py-1 mb-6 max-w-5xl animate-reveal-up">
                <span className="font-sans font-black block">Ihre neue Homepage & Webseite für </span>
                <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">Amstetten</span>
             </h1>
@@ -168,7 +168,7 @@ export default function WerbeagenturAmstetten() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
                <ScrollReveal animation="reveal-right">
-                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight py-1 mb-8">
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1] py-1 mb-8">
 <span className="font-sans block">Ihre lokale Webagentur </span>
 <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">im Wirtschaftszentrum</span>
 </h2>

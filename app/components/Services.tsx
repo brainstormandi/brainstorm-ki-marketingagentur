@@ -32,7 +32,7 @@ const Services = () => {
                 <ScrollReveal className="flex flex-col sm:flex-row sm:items-end justify-between gap-8 mb-20">
                     <div>
                         <div className="inline-flex items-center px-6 py-2 rounded-full bg-slate-50 text-slate-800 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-slate-100">Was wir für Sie tun</div>
-                        <h2 className="text-4xl sm:text-5xl lg:text-6xl text-slate-900 font-black tracking-tight leading-tight py-1">
+                        <h2 className="text-4xl sm:text-5xl lg:text-6xl text-slate-900 font-black tracking-tight leading-[1.1] py-1">
                             <span className="font-sans block">Digitale</span>
                             <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">Lösungen.</span>
                         </h2>

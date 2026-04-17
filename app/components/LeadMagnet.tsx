@@ -42,7 +42,7 @@ const LeadMagnet = () => {
           Kostenloser Webseiten-Check
         </div>
         
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight py-1 mb-6">
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] py-1 mb-6">
           <span className="font-sans block">Verliert Ihre aktuelle Webseite</span>
           <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-white via-slate-100 to-slate-400 drop-shadow-sm pb-2">täglich Kunden?</span>
         </h2>

@@ -113,7 +113,7 @@ export default async function BlogPostPage(props: Props) {
                 Zurück zur Übersicht
               </Link>
               
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-black text-white mb-6 leading-tight py-1 drop-shadow-md tracking-tight">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-black text-white mb-6 leading-[1.1] py-1 drop-shadow-md tracking-tight">
                 {post.title}
               </h1>
               

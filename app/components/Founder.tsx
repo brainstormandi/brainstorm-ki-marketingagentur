@@ -63,7 +63,7 @@ const Founder = () => {
                         <div className="inline-flex items-center px-6 py-2 rounded-full bg-slate-50 text-slate-800 font-bold text-xs mb-8 uppercase tracking-widest border border-slate-100">
                             Der Macher hinter BrainStorm
                         </div>
-                        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 mb-10 tracking-tight leading-tight py-1">
+                        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 mb-10 tracking-tight leading-[1.1] py-1">
                             <span className="font-sans block">Unsere Mission</span>
                             <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#e5b510] pb-2">ist Ihr Erfolg.</span>
                         </h2>

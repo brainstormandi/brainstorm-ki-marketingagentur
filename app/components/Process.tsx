@@ -10,7 +10,7 @@ const Process = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <ScrollReveal className="mb-20">
                     <div className="inline-flex items-center px-6 py-2 rounded-full bg-slate-50 text-slate-800 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-slate-100">Der Ablauf</div>
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight py-1">
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1] py-1">
                         <span className="font-sans block">Ihr Projektstart</span>
                         <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">in 7 Tagen.</span>
                     </h2>

@@ -21,47 +21,47 @@ export const blogPosts: BlogPost[] = [
       
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">In diesem ultimativen Guide zeigen wir von der BrainStorm KI Werbeagentur aus Seitenstetten genau auf, worauf es 2026 bei modernen KMU-Webseiten ankommt.</p>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">1. Performance ist King: Die Ladezeit entscheidet</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">1. Performance ist King: Die Ladezeit entscheidet</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Eine schöne Webseite bringt nichts, wenn niemand wartet, bis sie geladen ist. Eine Ladezeit von über 3 Sekunden führt dazu, dass Sie über 50% Ihrer mobilen Besucher sofort verlieren. Schnelligkeit ist das Fundament jeder Profitabilität.</p>
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Vertiefender Artikel: <a href="/blog/warum-ladezeit-wichtig-ist" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Warum die Ladezeit deiner Webseite über deinen Umsatz entscheidet</a></blockquote>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">2. Mobile-First: Desktop ist zweitrangig</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">2. Mobile-First: Desktop ist zweitrangig</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Es ist ein häufiger Fehler von regionalen Unternehmern: Die neue Firmenwebseite wird primär auf einem großen PC-Monitor im Büro abgenommen. Doch Ihre Kunden sitzen abends auf dem Sofa und suchen auf dem Smartphone nach Ihrem Angebot. Über 80% des heutigen Traffics ist mobil!</p>
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Vertiefender Artikel: <a href="/blog/mobile-first-design-kmu" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Mobile-First Design: Warum der Fokus auf Desktop-Webseiten KMUs schadet</a></blockquote>
 
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">3. Sichtbarkeit aufbauen: SEO & GEO</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">3. Sichtbarkeit aufbauen: SEO & GEO</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Wenn Ihre top-optimierte Mobile-First Webseite niemand findet, verfehlt sie ihren Zweck. Klassische Suchmaschinenoptimierung (SEO) für Google ist Pflicht. Doch 2026 gewinnt eine zweite Kategorie rasant an Bedeutung: Generative Engine Optimization (GEO). Dabei optimieren Sie Ihre Inhalte so, dass auch KIs wie ChatGPT und Claude Sie als beste lokale Agentur / Dienstleister empfehlen.</p>
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Vertiefender Artikel: <a href="/blog/wie-viel-kostet-seo-oesterreich" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Kostenfalle oder Investment? Wie viel SEO in Österreich wirklich kostet</a></blockquote>
 
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">4. Verkaufspsychologie (Conversion-Rate-Optimierung)</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">4. Verkaufspsychologie (Conversion-Rate-Optimierung)</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Ihre Webseite ist kein digitales Lexikon, sondern Ihr bester Vertriebler. Echte Handlungsaufforderungen (Calls to Action), messerscharfe Angebote und psychologisch optimierte Texte machen aus einem bloßen Besucher eine qualifizierte Anfrage. Als spezialisierte KI-Werbeagentur bauen wir genau diese Elemente in den Kern Ihrer Architektur ein.</p>
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Vertiefender Artikel: <a href="/blog/verkaufspsychologie-conversion-rate-optimierung" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Verkaufspsychologie: Warum Ihre Webseite keine Lexikon-Seite sein darf</a></blockquote>
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">5. Markenbindung durch Storytelling (Emotionen verkaufen)</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">5. Markenbindung durch Storytelling (Emotionen verkaufen)</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Technische Perfektion und SEO bringen Besucher auf Ihre Seite. Doch was bringt sie dazu, bei Ihnen zu kaufen anstatt beim Mitbewerber? Es sind authentische, emotionale Geschichten. Unternehmen, die nahbar ihre Werte und Erfolge kommunizieren, bauen ein Vertrauen auf, das durch Preise allein nicht gebrochen wird.</p>
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Vertiefender Artikel: <a href="/blog/emotionale-geschichten-schluessel-zu-mehr-kaeufen" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Emotionale Geschichten: Der Schlüssel zu mehr Käufen!</a></blockquote>
 
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">6. KI & Positionierung: Echtes Vertrauen im Zeitalter der KI</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">6. KI & Positionierung: Echtes Vertrauen im Zeitalter der KI</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Da heute jeder mit einem 20-Euro Abo einer KI reinen Informations-Content generieren kann, flutet austauschbarer Massenbrei das Internet. Echte, verifizierte Erfahrung wird in Zukunft das wichtigste Unterscheidungsmerkmal sein. Eine persönliche Positionierung ist kein Luxus mehr, sondern überlebenswichtig.</p>
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Vertiefender Artikel: <a href="/blog/warum-ki-im-marketing-dich-nicht-ersetzt" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Warum KI im Marketing dich nicht ersetzt – sondern unersetzlich macht</a></blockquote>
 
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">7. Barrierefreiheit (European Accessibility Act)</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">7. Barrierefreiheit (European Accessibility Act)</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Eine moderne Webseite muss für alle Menschen zugänglich sein. Ab Mitte 2025 tritt der "European Accessibility Act (EAA)" in Kraft. Kontrastreiche Farben, Vorlesbarkeit und Tastatur-Steuerung sind nicht nur rechtlich relevant, sondern beweisen soziale Verantwortung und pushen Ihr Google-Ranking enorm.</p>
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Vertiefender Artikel: <a href="/blog/web-barrierefreiheit-eaa-2025" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Pflicht oder Chance? Warum Barrierefreiheit (EAA) 2025 jede Webseite betrifft</a></blockquote>
 
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">8. Die Webseite als Recruiting-Maschine (Employer Branding)</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">8. Die Webseite als Recruiting-Maschine (Employer Branding)</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Das größte Problem vieler KMUs ist momentan der Fachkräftemangel. Eine moderne Webseite ist nicht nur für Kunden da, sondern Ihre beste 24/7-Recruiting-Maschine. Wenn Sie sich digital als extrem attraktiver Arbeitgeber ("Employer Branding") mit reibungslosen Online-Bewerbungsprozessen präsentieren, ziehen Sie die besten Talente Ihrer Region an.</p>
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Vertiefender Artikel: <a href="/blog/die-webseite-als-recruiting-maschine" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Die Webseite als Recruiting-Maschine: Wie KMUs dem Fachkräftemangel entkommen</a></blockquote>
 
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">9. Schluss mit der Abmahn-Angst (DSGVO & Sicherheit)</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">9. Schluss mit der Abmahn-Angst (DSGVO & Sicherheit)</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Die Angst vor rechtlichen Abmahnungen (wie bei Google-Fonts oder falschen Cookie-Bannern) lähmt viele Unternehmer. Eine strategische Webseite muss zu 100 % DSGVO-konform, rechtssicher und durch starke Wartungssysteme gegen Hackerangriffe geschützt sein. Das nimmt Ihnen jeglichen Druck und stellt sicher, dass Sie nachts ruhig schlafen können.</p>
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Vertiefender Artikel: <a href="/blog/schluss-mit-abmahn-angst-datenschutz-kmu" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Schluss mit Abmahn-Angst: Datenschutz und Sicherheit für KMUs leicht gemacht</a></blockquote>
 
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">10. Lokale Dominanz (Google Business Profile & Local SEO)</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">10. Lokale Dominanz (Google Business Profile & Local SEO)</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Die schönste Seite nützt nichts, wenn der Handwerker nicht auf Google Maps gefunden wird. Lokales SEO (also optimierte Google Business Profile, Apple Maps, Navigationen) ist für Friseure, Gastro, Anwälte und Handwerker oft der allererste Berührungspunkt. Das gehört zwingend zu einer holistischen Web-Strategie.</p>
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Vertiefender Artikel: <a href="/blog/lokale-dominanz-google-maps" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Lokale Dominanz: Warum dein Google Maps Eintrag genauso wichtig ist wie deine Webseite</a></blockquote>
 
       <div class="not-prose bg-[#111827] p-8 sm:p-12 rounded-3xl mt-16 mb-8 relative overflow-hidden shadow-2xl">
-        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-tight py-1">Möchten Sie eine solche Website für Ihr KMU?</p>
+        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-[1.1] py-1">Möchten Sie eine solche Website für Ihr KMU?</p>
         <p class="text-slate-300 font-body mb-8 text-base">Buchen Sie jetzt eine kostenlose Strategie-Beratung mit uns und wir analysieren Ihr aktuelles Potenzial. Wir bauen High-Performance Webseiten und PWA Apps, die messbare Ergebnisse liefern.</p>
         <a href="/#services" class="inline-block mt-4 bg-white text-[#111827] font-semibold font-sans tracking-widest text-xs uppercase py-4 px-8 rounded-full hover:bg-slate-100 transition-all">Unsere Leistungen ansehen</a>
       </div>
@@ -77,12 +77,12 @@ export const blogPosts: BlogPost[] = [
     content: `
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Wir alle kennen es: Du klickst auf ein Suchergebnis bei Google und dann passiert... nichts. Der Bildschirm bleibt für zwei, drei Sekunden weiß. Was tust du? Du klickst höchstwahrscheinlich auf "Zurück" und gehst zum Konkurrenten. Genau das tun auch deine Kunden!</p>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">Die magische 3-Sekunden-Grenze</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">Die magische 3-Sekunden-Grenze</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Statistiken belegen glasklar: Wenn eine Seite am Smartphone länger als 3 Sekunden lädt, springen 53% der Nutzer sofort wieder ab. Jede weitere Sekunde senkt die finale Conversion Rate (Kauf oder Anfrage) um bis zu 20%.</p>
       
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Aber das ist noch nicht alles: Google bestraft langsame Webseiten. Die sogenannten Core Web Vitals sind einer der stärksten Ranking-Faktoren von Google. Wenn deine Seite unter der Last von riesigen Bildern und alten Plugins leidet, wird sie im Suchergebnis gnadenlos nach unten gereicht.</p>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">Wie wir bei BrainStorm blitzschnelle Performance garantieren</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">Wie wir bei BrainStorm blitzschnelle Performance garantieren</h2>
       <ul class="list-disc pl-6 sm:pl-8 mb-8 space-y-4 font-body text-[#111827] marker:text-slate-400 text-lg sm:text-xl">
         <li><strong>Moderne Architektur:</strong> Wir verzichten auf träge Baukasten-Systeme mit hunderten unnötigen Skripten.</li>
         <li><strong>Next-Gen Bilder:</strong> Alle Bilder werden automatisch in rasend schnelle Formate wie WebP komprimiert.</li>
@@ -92,7 +92,7 @@ export const blogPosts: BlogPost[] = [
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Zusammengefasst: Ein schnelles Setup ist die Grundvoraussetzung. Mehr zur ganzheitlichen Strategie beim Webdesign liest du in unserem Hauptartikel: <a href="/blog/ultimativer-guide-kmu-webseiten-oesterreich" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Der ultimative Guide für KMU-Webseiten in Österreich</a>.</blockquote>
       
       <div class="not-prose bg-[#111827] p-8 sm:p-12 rounded-3xl mt-16 mb-8 relative overflow-hidden shadow-2xl">
-        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-tight py-1">Teste deine eigene Seite jetzt!</p>
+        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-[1.1] py-1">Teste deine eigene Seite jetzt!</p>
         <p class="text-slate-300 font-body mb-8 text-base">Gefühlt ist deine Seite schnell, aber wie sieht Google sie wirklich? Lass uns zusammen deine Performance-Werte durchgehen.</p>
         <a href="/#contact" class="inline-block mt-4 bg-white text-[#111827] font-semibold font-sans tracking-widest text-xs uppercase py-4 px-8 rounded-full hover:bg-slate-100 transition-all">Zum kostenlosen Website Check</a>
       </div>
@@ -108,19 +108,19 @@ export const blogPosts: BlogPost[] = [
     content: `
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Wenn KMUs aus Österreich bei einer SEO-Agentur anfragen, klaffen die Preisangebote oft meilenweit auseinander. Während manche Anbieter "Platz 1 bei Google für 200€" versprechen, veranschlagen andere Agenturen monatlich 3.000€. Wo liegt die Wahrheit?</p>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">Das Märchen vom "Einmaligen SEO"</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">Das Märchen vom "Einmaligen SEO"</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">SEO ist kein Knopf, den man einmal drückt. Seriöse Suchmaschinenoptimierung umfasst ständige Keyword-Recherche, Texterstellung, das Optimieren von Ladezeiten (Technisches SEO) und vor allem den Aufbau echter Autorität (Backlinks und PR).</p>
       
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Für ein handfestes regionales SEO-Paket (Local SEO) für einen Österreichischen Betrieb müssen Sie bei traditionellen Agenturen oft mit Investitionen ab 600 bis 1.500 Euro pro Monat rechnen. Bei der BrainStorm KI Werbeagentur beginnen hochgradig effiziente SEO & GEO Kampagnen dank KI-Unterstützung und Automatisierung jedoch bereits ab 200 bis 500 Euro pro Monat. So bleibt mehr Budget für Ihr eigentliches Kerngeschäft.</p>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">Die Evolution: Von SEO zu GEO</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">Die Evolution: Von SEO zu GEO</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Die Welt steht nicht still. Heute suchen Nutzer ihre Handwerker, Berater und Dienstleister zunehmend nicht mehr über klassische 10 blaue Links, sondern fragen KIs wie ChatGPT: <em>"Weißt du eine gute Marketing-Agentur in Niederösterreich?"</em>.</p>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Dies erfordert Generative Engine Optimization (GEO). Das bedeutet, nicht nur Keywords zu spammen, sondern unmissverständliche, hochstrukturierte Fakten (E-E-A-T) auf der Website so anzubieten, dass KI-Systeme sie referenzieren können.</p>
       
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Warum reines SEO nicht mehr reicht und warum wir oft als erster Baustein überhaupt auf moderne Architekturen setzen, erfährst du in unserem <a href="/blog/ultimativer-guide-kmu-webseiten-oesterreich" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Ultimativen Guide für KMU-Webseiten</a>.</blockquote>
 
       <div class="not-prose bg-[#111827] p-8 sm:p-12 rounded-3xl mt-16 mb-8 relative overflow-hidden shadow-2xl">
-        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-tight py-1">Lassen Sie uns Ihre SEO-Chancen prüfen!</p>
+        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-[1.1] py-1">Lassen Sie uns Ihre SEO-Chancen prüfen!</p>
         <p class="text-slate-300 font-body mb-8 text-base">Buchen Sie jetzt eine vollkommen kostenlose Erstanalyse. Wir zeigen Ihnen schonungslos ehrlich, wo Sie bei Google & KI stehen und wie wir Sie zur lokalen Nummer 1 machen.</p>
         <a href="/#contact" class="inline-block mt-4 bg-white text-[#111827] font-semibold font-sans tracking-widest text-xs uppercase py-4 px-8 rounded-full hover:bg-slate-100 transition-all">Jetzt kostenloses Strategiegespräch sichern</a>
       </div>
@@ -136,16 +136,16 @@ export const blogPosts: BlogPost[] = [
     content: `
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Wir erleben es im Erstgespräch mit KMU-Inhabern fast immer: Die Webseite wird auf dem großen Büro-Bildschirm betrachtet. "Sieht toll aus!", heißt es dann. Doch das ist fatal. Denn Ihre echten Kunden sitzen am Bahnhof, auf der Couch oder im Wartezimmer und betrachten Ihre Seite auf einem 6-Zoll Smartphone-Display.</p>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">Was "Mobile-First" wirklich bedeutet</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">Was "Mobile-First" wirklich bedeutet</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Mobile-First bedeutet nicht, dass eine Desktop-Website irgendwie "zusammengeschoben" wird, damit sie nicht völlig kaputt auf dem Handy aussieht (das nennt man nur "Responsive"). Mobile-First bedeutet, dass die gesamte Struktur, die Buttons, die Schriftgrößen und die Benutzerführung primär für den Daumen und den kleinen Bildschirm eines Smartphones entwickelt werden. Der Dekstop ist nur noch Beiwerk.</p>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">Googles "Mobile-First Indexing"</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">Googles "Mobile-First Indexing"</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Sogar Google hat das längst verstanden. Durch die Einführung des "Mobile-First-Indexes" ignoriert Google Ihre Desktop-Seite nahezu vollständig. Für Ihr Google-Ranking wird ausschließlich herangezogen, wie gut, schnell und relevant Ihre mobile Ansicht ist.</p>
       
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Mobile-First ist zusammen mit dem schnellen Page-Speed einer der Grundpfeiler, den wir in unserem <a href="/blog/ultimativer-guide-kmu-webseiten-oesterreich" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Ultimativen KMU-Webseiten Guide</a> in den Fokus stellen.</blockquote>
 
       <div class="not-prose bg-[#111827] p-8 sm:p-12 rounded-3xl mt-16 mb-8 relative overflow-hidden shadow-2xl">
-        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-tight py-1">Lust auf ein mobiles Upgrade?</p>
+        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-[1.1] py-1">Lust auf ein mobiles Upgrade?</p>
         <p class="text-slate-300 font-body mb-8 text-base">Wir bauen Landingpages und Webseiten, die auf dem Smartphone extrem konvertieren und Ihre Umsätze massiv steigern.</p>
         <a href="/#services" class="inline-block mt-4 bg-white text-[#111827] font-semibold font-sans tracking-widest text-xs uppercase py-4 px-8 rounded-full hover:bg-slate-100 transition-all">Unsere Vorgehensweise ansehen</a>
       </div>
@@ -161,10 +161,10 @@ export const blogPosts: BlogPost[] = [
     content: `
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Stellen Sie sich vor, ein Kunde betritt Ihr Geschäft. Sie drehen sich um, halten ihm schweigend eine 50-seitige Unternehmensbroschüre hin und gehen weg. Genau das tun 90% aller KMU-Webseiten heute im digitalen Raum.</p>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">Das Lexikon-Syndrom</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">Das Lexikon-Syndrom</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Die klassische "Über Uns" Seite, umständlich verschachtelte Menüs und endlose Textwüsten ohne klares Ziel ("Hier finden Sie unsere Leistungen"). Das Problem: Nutzer lesen heute nicht mehr, sie scannen. Und wenn das Gehirn nach 3 Sekunden nicht exakt versteht, welches konkrete Problem Sie lösen und was der nächste Schritt ist, klickt der Kunde weg.</p>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">Conversion-Rate-Optimierung (CRO): Der digitale Vertriebler</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">Conversion-Rate-Optimierung (CRO): Der digitale Vertriebler</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Verkaufspsychologisches Webdesign lenkt den Blick des Besuchers gezielt. Es beantwortet drei Fragen in den ersten drei Sekunden:</p>
       
       <ul class="list-disc pl-6 sm:pl-8 mb-8 space-y-4 font-body text-[#111827] marker:text-slate-400 text-lg sm:text-xl">
@@ -176,7 +176,7 @@ export const blogPosts: BlogPost[] = [
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Die Verkaufspsychologie ist neben SEO und Performance der entscheidende Baustein für Ihren Erfolg. Lesen Sie den kompletten Hub dazu in unserem <a href="/blog/ultimativer-guide-kmu-webseiten-oesterreich" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Ultimativen KMU-Webseiten Guide</a>.</blockquote>
 
       <div class="not-prose bg-[#111827] p-8 sm:p-12 rounded-3xl mt-16 mb-8 relative overflow-hidden shadow-2xl">
-        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-tight py-1">Verliert Ihre Webseite Kunden?</p>
+        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-[1.1] py-1">Verliert Ihre Webseite Kunden?</p>
         <p class="text-slate-300 font-body mb-8 text-base">Wir analysieren Ihre aktuelle Webseite völlig kostenlos auf blinde Flecken in der Verkaufslogik und bauen digitale Kundenmagneten.</p>
         <a href="/#contact" class="inline-block mt-4 bg-white text-[#111827] font-semibold font-sans tracking-widest text-xs uppercase py-4 px-8 rounded-full hover:bg-slate-100 transition-all">Kostenlosen Website-Check anfordern</a>
       </div>
@@ -196,12 +196,12 @@ export const blogPosts: BlogPost[] = [
       
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Als BrainStorm KI Werbeagentur wissen wir nach über 32 Jahren Branchen-Erfahrung genau: KI ist nicht Ihr Feind. Sie ist das Werkzeug, das den Unterschied zwischen Durchschnitt und Einzigartigkeit heute sichtbarer macht denn je.</p>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">KI ist das Schießpulver unserer Zeit</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">KI ist das Schießpulver unserer Zeit</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Um zu verstehen, was KI mit dem Marketing macht, hilft ein Blick in die Geschichte. Als im 9. Jahrhundert das Schießpulver erfunden wurde, veränderte das alles. Vorher war der bestens ausgerüstete Ritter unbesiegbar – er war die personifizierte Eintrittsbarriere. Plötzlich konnte jeder Bauer mit einer einfachen Muskete das Machtgefüge stürzen.</p>
       
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">KI ist das Schießpulver unserer Zeit. Die Eintrittsbarriere für Content-Erstellung und Strategie ist weg. Jeder kann heute mit einem 20-Euro-Abo eine Marketingstrategie oder Blogartikel generieren. Das Angebot an austauschbaren Inhalten explodiert. Aber KI liefert am Ende oft nur einen statistischen Durchschnitt – und ein statistischer Durchschnitt ist per Definition austauschbar. Genau hier liegt Ihre größte Chance.</p>
 
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">Die Illusion von "Mehrwert": Was Kunden heute wirklich brauchen</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">Die Illusion von "Mehrwert": Was Kunden heute wirklich brauchen</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Wenn Informationen an jeder Ecke verfügbar sind, werden Kunden nicht schlauer, sondern handlungsunfähig. Die Flut an widersprüchlichen Ratschlägen führt zur sogenannten Entscheidungsparalyse.</p>
       
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Echter Mehrwert besteht heute nicht mehr aus generischen Tipps. Er besteht aus Dingen, die keine KI der Welt replizieren kann:</p>
@@ -211,7 +211,7 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Erfahrungstransfer:</strong> Eine KI hat die Rezepte, aber sie hört nicht, wie die Pfanne klingt. Wahre Expertise besteht aus Feinheiten, Fehlern und Abkürzungen, die in keinem Ratgeber stehen.</li>
       </ul>
 
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">Wie die BrainStorm KI Werbeagentur Sie unkopierbar macht</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">Wie die BrainStorm KI Werbeagentur Sie unkopierbar macht</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Wer heute versucht, im reinen "Schneller und Billiger"-Spiel der KI mitzuhalten, wird verlieren. Darum schaffen wir bei BrainStorm keine Standardlösungen, sondern digitale Unikate, die Ihre Auftragslage sichern. Unser Gründer Andi Sturm bringt es auf den Punkt: <em>"Sichtbarkeit schafft Erfolg. Aber nur Relevanz schafft Vertrauen."</em></p>
       
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Wir verbinden den Pioniergeist von morgen mit 32 Jahren handfester Branchen-Erfahrung. Wir nutzen KI als unseren Sous-Chef für die Fleißarbeit, während wir gemeinsam mit Ihnen als Sternekoch Ihre einzigartige Positionierung erarbeiten. Unser Ziel ist es, österreichische KMUs in die digitale Zukunft zu begleiten – mit Herz, Verstand und modernster Technologie.</p>
@@ -226,7 +226,7 @@ export const blogPosts: BlogPost[] = [
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Wie Sie sich mit echtem Expertenwissen und modernster Technologie als Marktführer positionieren, lesen Sie detailliert in unserem <a href="/blog/ultimativer-guide-kmu-webseiten-oesterreich" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Ultimativen KMU-Webseiten Guide</a>.</blockquote>
 
       <div class="not-prose bg-[#111827] p-8 sm:p-12 rounded-3xl mt-16 mb-8 relative overflow-hidden shadow-2xl">
-        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-tight py-1">Bereit für Ihren KI-Fahrplan in nur 7 Tagen?</p>
+        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-[1.1] py-1">Bereit für Ihren KI-Fahrplan in nur 7 Tagen?</p>
         <p class="text-slate-300 font-body mb-8 text-base">Wir machen keine langwierigen Theorie-Projekte: Nach unserem Strategie-Check setzen wir Ihren neuen KI-Fahrplan in der Regel innerhalb von 5 bis 7 Werktagen um. Sichern Sie sich jetzt Ihr kostenloses Erstgespräch!</p>
         <a href="/#contact" class="inline-block mt-4 bg-white text-[#111827] font-semibold font-sans tracking-widest text-xs uppercase py-4 px-8 rounded-full hover:bg-slate-100 transition-all">Jetzt Erstgespräch vereinbaren</a>
       </div>
@@ -246,7 +246,7 @@ export const blogPosts: BlogPost[] = [
       
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Emotionen sind der Schlüssel zu einer erfolgreichen Markenkommunikation. Sie helfen dir, eine tiefere Verbindung zu deiner Zielgruppe aufzubauen. Wenn du die Emotionen deiner Kunden ansprichst, schaffst du nicht nur Interesse, sondern auch Vertrauen. Dies ist besonders wichtig in einer Zeit, in der Verbraucher nach Authentizität und Transparenz suchen.</p>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">Wie kannst du Storytelling effektiv in dein Marketing integrieren? Hier sind einige Tipps:</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">Wie kannst du Storytelling effektiv in dein Marketing integrieren? Hier sind einige Tipps:</h2>
       
       <ol class="list-decimal pl-6 sm:pl-8 mb-8 space-y-4 font-body text-[#111827] text-lg sm:text-xl">
         <li><strong>Identifiziere deine Zielgruppe:</strong> Verstehe, wer deine Kunden sind und welche Emotionen sie ansprechen. Dies ermöglicht es dir, zielgerichtete Geschichten zu entwickeln, die ihre Bedürfnisse und Wünsche widerspiegeln.</li>
@@ -265,7 +265,7 @@ export const blogPosts: BlogPost[] = [
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Die vollständige Strategie für eine umsatzstarke und psychologisch optimierte Seite finden Sie in unserem <a href="/blog/ultimativer-guide-kmu-webseiten-oesterreich" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Ultimativen KMU-Webseiten Guide</a>.</blockquote>
       
       <div class="not-prose bg-[#111827] p-8 sm:p-12 rounded-3xl mt-16 mb-8 relative overflow-hidden shadow-2xl">
-        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-tight py-1">Fazit: Emotionale Geschichten sind der Schlüssel zu mehr Käufen.</p>
+        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-[1.1] py-1">Fazit: Emotionale Geschichten sind der Schlüssel zu mehr Käufen.</p>
         <p class="text-slate-300 font-body mb-8 text-base">Sie schaffen Vertrauen, fördern die Markenidentität und beeinflussen die Kaufentscheidung deiner Kunden. Nutze die Kraft des Storytellings, um deine Marke erfolgreich im digitalen Raum zu positionieren.</p>
         <a href="/#contact" class="inline-block mt-4 bg-white text-[#111827] font-semibold font-sans tracking-widest text-xs uppercase py-4 px-8 rounded-full hover:bg-slate-100 transition-all">Jetzt Erstgespräch vereinbaren</a>
       </div>
@@ -281,7 +281,7 @@ export const blogPosts: BlogPost[] = [
     content: `
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Das Internet ist für alle da – so die Theorie. Praktisch scheitern Menschen mit Sehschwächen oder Einschränkungen der Motorik täglich an Webseiten, die schlecht designt sind. Ab dem 28. Juni 2025 greift der <strong>European Accessibility Act (EAA)</strong>, der viele Betriebe in der EU erstmals rechtlich dazu verpflichtet, eine barrierefreie Webpräsenz bereitzustellen.</p>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">Was genau bedeutet digitale Barrierefreiheit?</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">Was genau bedeutet digitale Barrierefreiheit?</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Eine barrierefreie Webseite (Accessibility) erfüllt spezielle technische und visuelle Standards, sodass sie auch mit Screenreadern, per Spracheingabe oder reiner Tastatur problemlos nutzbar ist.</p>
       
       <ul class="list-disc pl-6 sm:pl-8 mb-8 space-y-4 font-body text-[#111827] marker:text-slate-400 text-lg sm:text-xl">
@@ -291,13 +291,13 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Klare Semantik:</strong> Die Hierarchie (H1, H2, H3) und Label von Formularen müssen für KIs und Screenreader glasklar aufgebaut sein.</li>
       </ul>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">Warum Barrierefreiheit dein größter SEO-Verbündeter wird</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">Warum Barrierefreiheit dein größter SEO-Verbündeter wird</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Wer glaubt, Barrierefreiheit sei nur eine ärgerliche Pflichtaufgabe, ignoriert das enorme Potenzial: Genau dieselben Maßnahmen, die Screenreadern das Analysieren der Seite erleichtern, erleichtern auch dem Google-Mitarbeiter-Bot das Auslesen! Google belohnt technisch lupenreine Seiten mit signifikant höheren Positionen. Barrierefreiheit und SEO gehen Hand in Hand.</p>
       
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Zusammen mit Mobile-First und Performance bildet Barrierefreiheit das Fundament der Zukunft. Die ganze Strategie lesen Sie in unserem <a href="/blog/ultimativer-guide-kmu-webseiten-oesterreich" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Ultimativen KMU-Webseiten Guide</a>.</blockquote>
 
       <div class="not-prose bg-[#111827] p-8 sm:p-12 rounded-3xl mt-16 mb-8 relative overflow-hidden shadow-2xl">
-        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-tight py-1">Ist Ihre Webseite bereit für 2025?</p>
+        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-[1.1] py-1">Ist Ihre Webseite bereit für 2025?</p>
         <p class="text-slate-300 font-body mb-8 text-base">Unser Expertenteam führt einen kompletten Accessibility-Check durch und baut inklusive, hochperformante digitale Lösungen, die bei allen Zielgruppen überzeugen.</p>
         <a href="/#contact" class="inline-block mt-4 bg-white text-[#111827] font-semibold font-sans tracking-widest text-xs uppercase py-4 px-8 rounded-full hover:bg-slate-100 transition-all">Accessibility Check vereinbaren</a>
       </div>
@@ -313,10 +313,10 @@ export const blogPosts: BlogPost[] = [
     content: `
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Sprechen Sie mit zehn beliebigen KMU-Geschäftsführern in Österreich, und neun von ihnen werden sagen: <em>"Unser größtes Problem sind nicht fehlende Kunden, sondern fehlende Mitarbeiter!"</em> Der Fachkräftemangel ist real, aber die Art und Weise, wie Unternehmen nach Personal suchen, ist oft völlig veraltet.</p>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">Warum klassische Stellenanzeigen tot sind</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">Warum klassische Stellenanzeigen tot sind</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Die besten Talente suchen nicht aktiv nach Jobs auf Portalen. Sie arbeiten bereits bei der Konkurrenz. Um sie abzuwerben, müssen Sie als Arbeitgeber magnetisch wirken (Employer Branding). Wenn ein potenzieller Bewerber von Ihnen hört und Ihre Webseite besucht, entscheidet er in Millisekunden, ob er in Ihrer Firma arbeiten möchte oder nicht.</p>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">Die Anatomie einer perfekten Karriere-Seite</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">Die Anatomie einer perfekten Karriere-Seite</h2>
       <ul class="list-disc pl-6 sm:pl-8 mb-8 space-y-4 font-body text-[#111827] marker:text-slate-400 text-lg sm:text-xl">
         <li><strong>Echte Einblicke:</strong> Vermeiden Sie gekaufte Stockfotos von lachenden Menschen im Anzug. Zeigen Sie Ihr echtes Team, Ihre echten Maschinen und Ihren echten Firmenalltag.</li>
         <li><strong>Bewerbung in 60 Sekunden:</strong> Niemand möchte 2026 am Smartphone noch einen 5-seitigen Lebenslauf hochladen. Bieten Sie einen extrem kurzen, mobil-optimierten Bewerbungs-Funnel an (z.B. Name, Nummer, 2 Klicks zur Vorerfahrung).</li>
@@ -326,7 +326,7 @@ export const blogPosts: BlogPost[] = [
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Zusammen mit den technischen Pfeilern wie Ladezeit und Mobile-First baut eine hervorragende Karriere-Seite extremes Vertrauen auf. Wie das technisch funktioniert, lesen Sie in unserem umfassenden <a href="/blog/ultimativer-guide-kmu-webseiten-oesterreich" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Ultimativen KMU-Webseiten Guide</a>.</blockquote>
 
       <div class="not-prose bg-[#111827] p-8 sm:p-12 rounded-3xl mt-16 mb-8 relative overflow-hidden shadow-2xl">
-        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-tight py-1">Lassen Sie uns Ihre Recruiting-Probleme lösen!</p>
+        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-[1.1] py-1">Lassen Sie uns Ihre Recruiting-Probleme lösen!</p>
         <p class="text-slate-300 font-body mb-8 text-base">Wir verwandeln Ihre Webseite in einen Mitarbeiter-Magneten mit automatisierten Bewerbungs-Funnels. Sprechen Sie jetzt mit unserem Team in Seitenstetten.</p>
         <a href="/#contact" class="inline-block mt-4 bg-white text-[#111827] font-semibold font-sans tracking-widest text-xs uppercase py-4 px-8 rounded-full hover:bg-slate-100 transition-all">Erstgespräch zum Thema Recruiting buchen</a>
       </div>
@@ -342,7 +342,7 @@ export const blogPosts: BlogPost[] = [
     content: `
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Es war der Schock für zehntausende kleine Unternehmen in Österreich und Deutschland: Abmahnwellen wegen nicht lokal eingebundener Google-Fonts. Von heute auf morgen flatterten massenhaft Zahlungsaufforderungen in die Büros. Wer heute eine Business-Webseite betreibt, bewegt sich auf einem juristischen Minenfeld.</p>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">Die häufigsten Gefahrenquellen für KMUs</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">Die häufigsten Gefahrenquellen für KMUs</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Die DSGVO (Datenschutz-Grundverordnung) ist streng, aber wenn man einmal ein sauberes Setup hat, muss man sich nicht mehr den Kopf zerbrechen. Hier die größten Fallen:</p>
       
       <ul class="list-disc pl-6 sm:pl-8 mb-8 space-y-4 font-body text-[#111827] marker:text-slate-400 text-lg sm:text-xl">
@@ -351,13 +351,13 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Veraltete Systeme (Hacking):</strong> Veraltete CMS-Installationen oder verwaiste Plugins sind das Einfallstor Nummer 1 für automatisierte Hacker-Bots.</li>
       </ul>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">Wie die BrainStorm KI Werbeagentur Sie beschützt</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">Wie die BrainStorm KI Werbeagentur Sie beschützt</h2>
       <p class="text-slate-300 font-body mb-8 text-base">Wir bauen von Grund auf rechtskonforme digitale Produkte. Unsere zukunftssicheren Infrastrukturen (die wir auch auf dieser Seite nutzen) minimieren extrem die potenziellen Sicherheitslücken und laden keine ungewollten Tracker.</p>
       
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Sicherheit und Ladezeiten bedingen einander. Wer technisch sauber arbeitet, ist schnell und sicher unterwegs. Lesen Sie dazu unser gesamtes Architekturbild in unserem <a href="/blog/ultimativer-guide-kmu-webseiten-oesterreich" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Ultimativen Guide für KMU-Webseiten</a>.</blockquote>
 
       <div class="not-prose bg-[#111827] p-8 sm:p-12 rounded-3xl mt-16 mb-8 relative overflow-hidden shadow-2xl">
-        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-tight py-1">Möchten Sie wieder ruhig schlafen können?</p>
+        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-[1.1] py-1">Möchten Sie wieder ruhig schlafen können?</p>
         <p class="text-slate-300 font-body mb-8 text-base">Wir befreien Sie von der Abmahn-Angst und übernehmen die technische Verantwortung für Ihr Online-Business. Holen Sie sich jetzt die Gewissheit für Ihre Seite.</p>
         <a href="/#contact" class="inline-block mt-4 bg-white text-[#111827] font-semibold font-sans tracking-widest text-xs uppercase py-4 px-8 rounded-full hover:bg-slate-100 transition-all">Sicherheits-Check anfragen</a>
       </div>
@@ -373,12 +373,12 @@ export const blogPosts: BlogPost[] = [
     content: `
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Denken Sie an Ihr eigenes Suchverhalten: "Installateur in der Nähe", "Guter Italiener Amstetten", "Steuerberater Seitenstetten". Was zeigt Google Ihnen als Erstes? Nicht die klassischen blauen Links zu Webseiten, sondern das sogenannte "Local Pack" – eine Karte mit exakt drei Google Business Profilen. Wer hier nicht steht, verliert täglich warme Kundenanfragen an die Konkurrenz.</p>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">Die Macht des Local SEOs</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">Die Macht des Local SEOs</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Die schönste Seite nützt wenig, wenn der grundlegende Hausverstand vor Ort ignoriert wird. Lokales SEO (also optimierte Google Business Profile, Apple Maps, Firmenverzeichnisse und Navigationen) ist für Dienstleister mit echtem Standortbetrieb oft der allererste und wichtigste Berührungspunkt mit dem Kunden.</p>
       
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Das Problem: Fast 80 % der KMU-Einträge auf Google Maps sind unvollständig, verwaist oder weisen abweichende Öffnungszeiten auf. Google hasst nichts mehr als inkonsistente Daten. Wenn Ihre Telefonnummer auf Google Maps anders formatiert ist als im Impressum Ihrer Webseite, verliert der Algorithmus das Vertrauen und straft Sie in der Sichtbarkeit ab.</p>
       
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-tight py-1 mt-12">Die Anatomie eines perfekten Google Business Profils</h2>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">Die Anatomie eines perfekten Google Business Profils</h2>
       <ul class="list-disc pl-6 sm:pl-8 mb-8 space-y-4 font-body text-[#111827] marker:text-slate-400 text-lg sm:text-xl">
         <li><strong>Vollständigkeit:</strong> Alle Kategorien, Attribute (z. B. "Barrierefreier Eingang") und Leistungsseiten müssen exakt mit Ihrer Webseite synchronisiert sein.</li>
         <li><strong>Rezensionen & Trust:</strong> 5-Sterne Bewertungen sind die neue Mundpropaganda. Automatisierte Workflows, um echte Kundenbewertungen einzuholen, sind ein unglaublicher Wettbewerbsvorteil.</li>
@@ -388,7 +388,7 @@ export const blogPosts: BlogPost[] = [
       <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Local SEO und Ihre Webseite sind keine zwei getrennten Dinge, sondern ein gigantischer Kreislauf. Das Google Business Profil fängt den Kunden ab, und die Webseite (oder Landingpage) verwandelt ihn mit Verkaufspsychologie in einen Käufer. Mehr zum Gesamtkonzept finden Sie im <a href="/blog/ultimativer-guide-kmu-webseiten-oesterreich" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Ultimativen KMU-Webseiten Guide</a>.</blockquote>
 
       <div class="not-prose bg-[#111827] p-8 sm:p-12 rounded-3xl mt-16 mb-8 relative overflow-hidden shadow-2xl">
-        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-tight py-1">Möchten Sie den "Local Pack" in Ihrer Region dominieren?</p>
+        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-[1.1] py-1">Möchten Sie den "Local Pack" in Ihrer Region dominieren?</p>
         <p class="text-slate-300 font-body mb-8 text-base">Wir bringen Ihr Google Maps Profil auf Vordermann und verknüpfen es mit einer hochperformanten Web-Architektur, um Ihnen die absolute Vorherrschaft in Ihrer Region zu sichern.</p>
         <a href="/#contact" class="inline-block mt-4 bg-white text-[#111827] font-semibold font-sans tracking-widest text-xs uppercase py-4 px-8 rounded-full hover:bg-slate-100 transition-all">Jetzt lokales SEO-Audit anfordern</a>
       </div>

@@ -84,7 +84,7 @@ const Hero = () => {
                         {v && (
                             <>
                                 {/* Headline - Inter first part, Playfair italic second part */}
-                                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight py-1 mb-6 animate-reveal-up">
+                                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1] py-1 mb-6 animate-reveal-up">
                                     <span className="font-sans font-black block">{v.line1},</span>
                                     <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">{v.line2}</span>
                                 </h1>
