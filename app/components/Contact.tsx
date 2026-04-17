@@ -14,7 +14,7 @@ const Contact = () => {
                     src="/bilder/ki-agentur-hg-andi.webp"
                     alt="Andi Sturm BrainStorm KI"
                     fill
-                    className="object-cover object-right opacity-[0.6]"
+                    className="object-cover object-right opacity-[0.45]"
                     priority
                     unoptimized
                 />
