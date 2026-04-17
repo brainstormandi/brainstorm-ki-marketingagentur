@@ -9,16 +9,17 @@ const Contact = () => {
     return (
         <section id="contact" className="scroll-mt-32 py-32 relative overflow-hidden bg-white">
             {/* Background Image Container */}
-            <div className="absolute inset-y-0 right-0 w-full lg:w-3/4 z-0">
+            <div className="absolute inset-y-0 right-0 w-full lg:w-[60%] z-0">
                 <Image
                     src="/bilder/ki-agentur-hg-andi.webp"
-                    alt="BrainStorm KI Agentur Hintergrund"
+                    alt="Andi Sturm BrainStorm KI"
                     fill
                     className="object-cover object-right"
                     priority
+                    unoptimized
                 />
-                {/* Gradient for text readability on the left */}
-                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
+                {/* Gradient overlap */}
+                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent"></div>
             </div>
             
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
