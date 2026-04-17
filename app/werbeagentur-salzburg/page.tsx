@@ -214,8 +214,12 @@ export default function WerbeagenturSalzburg() {
                      <Quote className="w-16 h-16 text-accent/20 absolute top-6 right-8 rotate-180" />
                      
                      <div className="flex items-center gap-4 mb-6">
-                         <div className="w-20 h-20 rounded-full bg-indigo-100 overflow-hidden shrink-0 border-4 border-white shadow-md relative flex items-center justify-center">
-                              <span className="text-2xl font-black text-indigo-400">MB</span>
+                         <div className="w-20 h-20 rounded-full bg-slate-200 overflow-hidden shrink-0 border-4 border-white shadow-md relative">
+                             <img 
+                                src="/bilder/testimonial-salzbug.png" 
+                                alt="Marion Bald Kundenstimme" 
+                                className="w-full h-full object-cover"
+                             />
                          </div>
                          <div>
                              <div className="flex text-accent mb-1">
