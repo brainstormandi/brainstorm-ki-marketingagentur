@@ -22,10 +22,12 @@ const Blog = dynamic(() => import('./components/Blog'), { ssr: false });
 const Contact = dynamic(() => import('./components/Contact'), { ssr: false });
 
 const customerFaces = [
-  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64&q=80",
-  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64&q=80",
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=64&h=64&q=80",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64&q=80"
+  "/bilder/testimonial-salzbug.png",
+  "/bilder/testimonial-linz.jpg",
+  "/bilder/testimonial-wien.jpg",
+  "/bilder/testimonial-steyr.jpg",
+  "/bilder/testimonial-amstetten.jpg",
+  "/bilder/testimonial-perg.jpg"
 ];
 
 export default function Home() {
@@ -69,7 +71,7 @@ export default function Home() {
                             src={src}
                             alt=""
                             fill
-                            className="object-cover"
+                            className="object-cover object-top"
                             sizes="44px"
                           />
                         </ScrollReveal>
