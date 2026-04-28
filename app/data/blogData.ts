@@ -69,7 +69,7 @@ export const blogPosts: BlogPost[] = [
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Ein reflektierter Umgang mit KI ist die Voraussetzung für langfristigen Erfolg. Wir adressieren die Herausforderungen proaktiv:</p>
       <ul class="list-disc pl-6 sm:pl-8 mb-8 space-y-4 font-body text-[#111827] marker:text-slate-400 text-lg sm:text-xl">
         <li><strong>Datenschutz (DSGVO):</strong> Wir arbeiten zu 100 % DSGVO-konform. KI-Tools werden so implementiert, dass Ihre Daten und die Ihrer Kunden in Europa geschützt bleiben.</li>
-        <li><strong>Qualitätskontrolle:</strong> KI kann „halluzinieren" oder generisch wirken. Jedes Ergebnis, das unsere Agentur verlässt, wird von Experten geprüft und veredelt.</li>
+        <li><strong>Qualitätskontrolle:</strong> KI kann „halluzinieren" oder generisch wirken. Jedes Ergebnis, das unsere Agentur verlässt, wird von uns geprüft und angepasst.</li>
         <li><strong>Datenqualität:</strong> Eine KI ist nur so gut wie die Daten, mit denen sie arbeitet. Wir unterstützen Sie dabei, Ihre Datenstruktur so aufzubereiten, dass die Ergebnisse präzise und wertvoll sind.</li>
       </ul>
 
