@@ -56,7 +56,7 @@ export const blogPosts: BlogPost[] = [
 
       <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 mt-8">Massive Effizienzsteigerung durch Automatisierung</h3>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Einer der größten Hebel für KMU ist die Zeitersparnis. Durch intelligente Workflows lassen sich repetitive Aufgaben vollständig automatisieren.</p>
-      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl italic">Insight: Kunden der BrainStorm KI Werbeagentur sparen durch automatisierte Terminbuchungen und digitale Anfragen-Workflows im Schnitt 15 Stunden pro Woche. Das ist Zeit, die Sie direkt in Ihr Kerngeschäft investieren können.</p>
+      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl italic">Insight: Kunden der BrainStorm KI Werbeagentur sparen durch automatisierte Terminbuchungen und digitale Anfragen-Workflows im Schnitt 5 Stunden pro Woche. Das ist Zeit, die Sie direkt in Ihr Kerngeschäft investieren können.</p>
 
       <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 mt-8">Verkaufspsychologie trifft auf KI-Präzision</h3>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">KI erlaubt es uns, Webseiten nicht mehr „nach Bauchgefühl" zu gestalten. Durch die Analyse von Millionen Nutzerinteraktionen schaffen wir Strukturen, die Besucher gezielt zur Handlung führen.</p>
