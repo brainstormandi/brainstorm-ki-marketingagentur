@@ -25,8 +25,8 @@ export const blogPosts: BlogPost[] = [
         <p class="text-base font-bold text-slate-900 uppercase tracking-widest mb-4">Inhaltsverzeichnis</p>
         <ol class="space-y-2 text-[#111827] font-body text-base sm:text-lg">
           <li>1. <a href="#was-ist-ki" class="underline decoration-slate-300 hover:decoration-[#111827]">Was versteht man unter KI im Marketing?</a></li>
-          <li>2. <a href="#vorteile" class="underline decoration-slate-300 hover:decoration-[#111827]">Die Webseite als KI-Basis: Vorteile (Stand 2026)</a></li>
-          <li>3. <a href="#risiken" class="underline decoration-slate-300 hover:decoration-[#111827]">Nachteile &amp; Risiken (Stand 2026)</a></li>
+          <li>2. <a href="#vorteile" class="underline decoration-slate-300 hover:decoration-[#111827]">Die Webseite als KI-Basis: Vorteile</a></li>
+          <li>3. <a href="#risiken" class="underline decoration-slate-300 hover:decoration-[#111827]">Nachteile &amp; Risiken</a></li>
           <li>4. <a href="#praxisbeispiele" class="underline decoration-slate-300 hover:decoration-[#111827]">Praxisbeispiele: Landingpages im realen Einsatz</a></li>
           <li>5. <a href="#brainstorm" class="underline decoration-slate-300 hover:decoration-[#111827]">Wie wir KI bei BrainStorm einsetzen</a></li>
           <li>6. <a href="#fazit" class="underline decoration-slate-300 hover:decoration-[#111827]">Fazit</a></li>
@@ -65,7 +65,7 @@ export const blogPosts: BlogPost[] = [
         <li><strong>High-Speed-Performance:</strong> Eine moderne Webseite muss in weniger als 3 Sekunden laden. Unsere KI-Workflows optimieren den Code und die Bilder im Hintergrund für maximale Geschwindigkeit.</li>
       </ul>
 
-      <h2 id="risiken" class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">3. Nachteile &amp; Risiken (Stand 2026)</h2>
+      <h2 id="risiken" class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">3. Nachteile &amp; Risiken</h2>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Ein reflektierter Umgang mit KI auf der eigenen Webseite ist die Voraussetzung für Erfolg:</p>
       <ul class="list-disc pl-6 sm:pl-8 mb-8 space-y-4 font-body text-[#111827] marker:text-slate-400 text-lg sm:text-xl">
         <li><strong>Datenschutz (DSGVO):</strong> Jede Datenerhebung auf der Webseite muss zu 100 % rechtskonform sein. Wir implementieren KI-Tools so, dass Nutzerdaten in Europa geschützt bleiben.</li>
