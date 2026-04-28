@@ -48,7 +48,7 @@ export const blogPosts: BlogPost[] = [
       <ul class="list-disc pl-6 sm:pl-8 mb-8 space-y-4 font-body text-[#111827] marker:text-slate-400 text-lg sm:text-xl">
         <li><strong>Generative KI:</strong> Systeme wie ChatGPT, Claude oder Midjourney erstellen auf Basis von „Prompts" (Befehlen) hochwertige Texte, Bilder oder sogar Programmiercode. Bei BrainStorm nutzen wir diese Tools, um psychologisch fundierte Inhalte in Rekordzeit zu skalieren.</li>
         <li><strong>GEO (Generative Engine Optimization):</strong> Der Nachfolger der klassischen Suchmaschinenoptimierung (SEO). GEO stellt sicher, dass Ihr Unternehmen von KI-gestützten Suchmaschinen (wie ChatGPT oder Perplexity) als Experte erkannt und direkt als Top-Lösung empfohlen wird.</li>
-        <li><strong>Predictive Analytics (Prädiktive Analyse):</strong> Hierbei analysiert die KI das Verhalten Ihrer Webseitenbesucher, um vorherzusagen, welche Nutzer mit der höchsten Wahrscheinlichkeit eine Anfrage stellen werden.</li>
+        <li><strong>KI-gestützte Workflow-Automatisierung:</strong> Hierbei vernetzen wir verschiedene Systeme (wie Ihre Webseite, Ihr CRM und E-Mail-Tools) zu einem intelligenten Kreislauf. Die KI erkennt eingehende Anfragen, kategorisiert diese und stößt sofort die passenden Prozesse an – von der Terminbuchung bis zur personalisierten Antwort. Das sorgt für eine 24/7-Erreichbarkeit ohne manuellen Aufwand.</li>
       </ul>
 
       <h2 id="vorteile" class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">2. Vorteile von KI im Marketing (Stand 2026)</h2>
