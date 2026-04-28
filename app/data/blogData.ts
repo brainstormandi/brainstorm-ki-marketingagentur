@@ -56,7 +56,7 @@ export const blogPosts: BlogPost[] = [
 
       <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 mt-8">Massive Effizienzsteigerung durch Automatisierung</h3>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Durch intelligente Workflows auf Ihrer Webseite lassen sich wiederholende Aufgaben vollständig automatisieren.</p>
-      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl italic">Insight: Kunden der BrainStorm KI Werbeagentur sparen durch automatisierte Anfragen-Workflows auf ihren Landingpages im Schnitt 15 Stunden pro Woche.</p>
+      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl italic">Insight: Kunden der BrainStorm KI Werbeagentur sparen durch automatisierte Anfragen-Workflows auf ihren Landingpages im Schnitt 5 Stunden pro Woche.</p>
 
       <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 mt-8">Verkaufspsychologie auf Landingpages</h3>
       <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">KI erlaubt es uns, Landingpages nicht mehr „nach Bauchgefühl" zu gestalten. Durch die Analyse von Nutzerinteraktionen schaffen wir Strukturen, die Besucher gezielt zur Handlung führen.</p>
