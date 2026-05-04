@@ -60,13 +60,12 @@ const Hero = () => {
             <div className="absolute inset-0 z-0 overflow-hidden">
                 <video
                     autoPlay
-                    loop
                     muted
                     playsInline
                     aria-hidden="true"
-                    className="w-full h-full object-cover scale-[1.25] object-[30%_center] md:object-[0%_center]"
+                    className="w-full h-full object-cover scale-[1.25] object-center md:object-[0%_center]"
                 >
-                    <source src="/video/ki-werbeagentur-brainstorm-hero-video.mp4" type="video/mp4" />
+                    <source src="/video/werbeagentur-ki-video-3.mp4" type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#F8FAFC]/80 via-white/80 to-white/30 sm:to-white/10"></div>
                 <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent"></div>
