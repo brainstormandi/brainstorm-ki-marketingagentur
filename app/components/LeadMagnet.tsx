@@ -77,11 +77,14 @@ const LeadMagnet = () => {
                 className="flex-1 w-full bg-white/8 rounded-xl text-white px-5 py-3.5 outline-none placeholder:text-slate-500 font-medium border border-white/10 focus:border-accent/50 transition-colors text-sm font-body"
               />
             </div>
-            <button disabled={isSubmitting} type="submit" className="w-full bg-accent text-primary font-black px-8 py-4 rounded-xl hover:bg-[#e5b510] transition-all flex items-center justify-center gap-2 group shadow-[0_12px_24px_rgba(247,196,41,0.25)] disabled:opacity-70 text-sm uppercase tracking-wider">
-              {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : (
+            <button disabled={isSubmitting} type="submit" className="w-full bg-accent text-primary font-black px-8 py-6 rounded-xl hover:bg-[#e5b510] transition-all flex items-center justify-center gap-4 group shadow-[0_12px_24px_rgba(247,196,41,0.25)] disabled:opacity-70">
+              {isSubmitting ? <Loader2 className="w-6 h-6 animate-spin" /> : (
                 <>
-                  Kostenlosen Check anfordern
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <span className="flex flex-col items-start text-left leading-tight">
+                    <span className="text-xl">Holen Sie sich Ihren Gratis-Webseiten-Check</span>
+                    <span className="text-sm font-bold opacity-80 mt-0.5">✦ Kostenlos — Wert: 197€</span>
+                  </span>
+                  <ArrowRight className="w-6 h-6 shrink-0 group-hover:translate-x-1 transition-transform" />
                 </>
               )}
             </button>

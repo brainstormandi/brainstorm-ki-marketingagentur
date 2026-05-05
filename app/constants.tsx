@@ -307,6 +307,10 @@ export const FAQS = [
         answer: "Nein, überhaupt nicht. Als Full-Service KI Werbeagentur übernehmen wir die komplette technische Umsetzung. Sie erhalten am Ende schlüsselfertige, moderne Webseiten und vollautomatische Prozesse, die im Hintergrund einfach und reibungslos funktionieren."
     },
     {
+        question: "Muss ich technisch versiert sein, um die KI-Automatisierungen in meinem Betrieb zu nutzen?",
+        answer: "Nein, überhaupt nicht \u2013 das ist ja mein Job für Sie. Ich richte die Systeme so ein, dass sie im Hintergrund für Sie arbeiten, während Sie und Ihr Team ganz normal weiterarbeiten können. Sie bekommen eine Lösung, die einfach funktioniert und Ihnen den Rücken frei hält, damit Sie sich wieder auf Ihr Kerngeschäft konzentrieren können."
+    },
+    {
         question: "Warum ersetzt KI menschliche Experten im Marketing nicht?",
         answer: "KI generiert schnell Inhalte, kann aber echte, lokale Branchenerfahrung und psychologische Strategie nicht ersetzen. Wir steuern die KI präzise und veredeln die Ergebnisse zu einer authentischen Markenbotschaft, die bei Ihren regionalen Zielgruppen echtes Vertrauen aufbaut."
     },
@@ -315,8 +319,16 @@ export const FAQS = [
         answer: "Besonders gut funktionieren digitale Terminbuchungen auf Ihrer Webseite, die Filterung und Beantwortung von Kundenanfragen via Chatbot, sowie die automatisierte Vorqualifizierung von Bewerbern. Das spart Ihnen jede Woche viele Stunden Handarbeit."
     },
     {
+        question: "Löst KI wirklich mein Problem mit fehlenden Fachkräften?",
+        answer: "Ja, absolut – indem die KI als Ihr effizientester \u201Edigitaler Mitarbeiter\u201C fungiert, der Routineaufgaben wie die Sortierung von Anfragen, Terminbuchungen und Standard-Antworten übernimmt. Dadurch wird Ihr vorhandenes Team massiv entlastet und gewinnt genau die Zeit zurück, die für wertvolle Facharbeit und persönlichen Kundenservice nötig ist. So bekämpfen wir den Fachkräftemangel nicht durch mehr Personal, sondern durch intelligente Entlastung mit 32 Jahren Marketing-Expertise im Hintergrund."
+    },
+    {
         question: "Was zeichnet eine moderne Webseite heute aus?",
         answer: "Eine moderne Webseite ist nicht nur eine digitale Visitenkarte, sondern Ihr bester Vertriebsmitarbeiter. Sie muss blitzschnell laden, strikt Mobile-First entwickelt sein und Besucher durch klare, verkaufspsychologische Strukturen direkt zur Kontaktaufnahme oder zum Kauf führen."
+    },
+    {
+        question: "Wie kann eine neue Webseite in unter 7 Tagen fertig sein, ohne an Qualität zu verlieren?",
+        answer: "Durch die Kombination meiner jahrzehntelangen Marketing-Erfahrung mit hocheffizienten KI-Tools überspringen wir langwierige manuelle Prozesse, ohne beim Design oder der Strategie zu sparen. Wir konzentrieren uns sofort auf das, was für Ihren Erfolg im Mostviertel zählt: Klarheit, Schnelligkeit und eine Seite, die Ihre Kunden wirklich überzeugt."
     },
     {
         question: "Warum ist eine barrierefreie Webseite so wichtig?",
@@ -329,6 +341,10 @@ export const FAQS = [
     {
         question: "Was kostet es, eine professionelle Webseite erstellen zu lassen?",
         answer: "Die Kosten hängen von Ihren Zielen ab. Ob kompakte Unternehmenspräsenz oder komplexe Baukasten mit KI-Automatisierungen – wir kalkulieren 100% transparent nach Leistungsumfang. Dank unseres extrem effizienten Workflows bieten wir KMUs erstklassige Premium-Webseiten zu unschlagbaren Festpreisen."
+    },
+    {
+        question: "Warum sollte ich eine Agentur aus der Region wählen statt einer großen Online-Agentur?",
+        answer: "Ganz einfach: Weil ich die Region zwischen Amstetten, Steyr, dem Mostviertel und darüber hinaus in Niederösterreich und Oberösterreich kenne. Mit 32 Jahren Erfahrung weiß ich, wie die Menschen hier ticken und worauf es beim lokalen Marketing ankommt. Bei mir gibt es keine anonyme Hotline, sondern echte Handschlagqualität direkt vor Ort \u2013 ich bin für Sie greifbar, wenn Sie Unterstützung bei Ihrer Webseite oder Ihren KI-Automatisierungen brauchen."
     },
     {
         question: "Wo befindet sich das Büro der BrainStorm Werbeagentur?",

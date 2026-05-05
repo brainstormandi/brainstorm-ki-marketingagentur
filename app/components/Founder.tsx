@@ -70,10 +70,11 @@ const Founder = () => {
 
                         <div className="space-y-6 text-[#111827] text-lg lg:text-xl leading-relaxed font-body">
                             <p>
-                                Seit über drei Jahrzehnten begleite ich Unternehmer dabei, ihre Visionen in messbare Erfolge zu verwandeln. Bei BrainStorm verbinden wir diese tiefe Erfahrung mit modernster KI-Technologie.
+                                KI ist ein Werkzeug, aber Marketing ist Handwerk. Seit 32 Jahren begleite ich Betriebe in Österreich dabei, sichtbarer und erfolgreicher zu werden.
                             </p>
                             <p>
-                                Wir schaffen keine Standardlösungen, sondern digitale Unikate, die Ihre Auftragslage sichern und Ihnen wieder mehr Freiheit für Ihr Kerngeschäft geben. Ehrlich, direkt und mit echter Handschlagqualität.
+                                Mit meiner Werbeagentur BrainStorm bringe ich heute das Beste aus zwei Welten zusammen:<br />
+                                Die Verlässlichkeit eines erfahrenen Partners und die enorme Geschwindigkeit moderner KI-Automatisierung. Ich nenne das: KI mit Handschlagqualität.
                             </p>
                         </div>
 
