@@ -23,6 +23,9 @@ export async function generateMetadata(props: Props, parent: ResolvingMetadata):
   return {
     title: `${post.title} | BrainStorm KI Werbeagentur`,
     description: post.excerpt,
+    alternates: {
+      canonical: `https://ki-marketingagentur.jetzt/blog/${post.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -85,15 +88,11 @@ export default async function BlogPostPage(props: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      {/* 
-        Die Navbar hat standardmäßig eine Hintergrundunschärfe, 
-        sodass sie auch über dem Hero-Bild gut aussieht.
-      */}
-      <Navbar />
+      <Navbar theme="dark" />
 
       <main className="flex-grow">
         {/* Article Header & Hero Image */}
-        <div className="relative w-full h-[50vh] min-h-[400px] sm:h-[60vh]">
+        <div className="relative w-full h-[50vh] min-h-[420px] sm:h-[60vh]">
           <Image 
             src={post.imageUrl}
             alt={post.title}
@@ -101,31 +100,36 @@ export default async function BlogPostPage(props: Props) {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-slate-900/60 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-gray-900/75 mix-blend-multiply"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
           
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full translate-y-8 sm:translate-y-12">
+              <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent text-white/70 font-bold text-xs uppercase tracking-widest border border-white/20 mb-8">
+                Blog Artikel
+              </div>
+
               <Link 
                 href="/blog" 
-                className="inline-flex items-center text-white/80 hover:text-white font-sans font-bold uppercase tracking-widest text-xs transition-colors mb-6 group"
+                className="flex items-center text-[#F7C429] hover:text-white font-bold uppercase tracking-widest text-[11px] transition-colors mb-6 group w-fit"
               >
-                <ArrowLeft className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" />
+                <ArrowLeft className="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform" />
                 Zurück zur Übersicht
               </Link>
               
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-black text-white mb-6 leading-[1.1] py-1 drop-shadow-md tracking-tight">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-white mb-6 leading-[1.1] py-1 drop-shadow-md uppercase tracking-tight">
                 {post.title}
               </h1>
               
-              <div className="flex flex-wrap items-center gap-4 text-white/90 text-sm sm:text-base font-medium">
+              <div className="flex flex-wrap items-center gap-4 text-white/80 text-sm sm:text-base font-semibold uppercase tracking-wider">
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-5 h-5" />
+                  <Calendar className="w-4 h-4 text-[#F7C429]" />
                   <time>{post.date}</time>
                 </div>
-                <div className="hidden sm:block text-white/40">•</div>
+                <div className="hidden sm:block text-white/20">|</div>
                 <div className="flex items-center gap-2">
-                  <User className="w-5 h-5" />
-                  <span>{post.author}</span>
+                  <User className="w-4 h-4 text-[#F7C429]" />
+                  <span>Von {post.author}</span>
                 </div>
               </div>
             </div>
@@ -135,7 +139,10 @@ export default async function BlogPostPage(props: Props) {
         {/* Article Content */}
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div 
-            className="max-w-none"
+            className="prose prose-lg prose-gray max-w-none font-body text-gray-800 
+                       prose-headings:font-[var(--font-playfair)] prose-headings:font-medium prose-headings:text-gray-900
+                       prose-a:text-[#F7C429] prose-a:font-bold hover:prose-a:text-black prose-a:no-underline prose-a:transition-colors
+                       prose-strong:text-gray-900 prose-strong:font-bold"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 

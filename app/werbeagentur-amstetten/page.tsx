@@ -88,20 +88,25 @@ export default function WerbeagenturAmstetten() {
                 >
                     <source src="/video/ki-werbeagentur-brainstorm-hero-video.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#F8FAFC]/80 via-white/80 to-white/30 sm:to-white/10"></div>
-                <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent"></div>
+                {/* Clean Horizontal Blending Gradient */}
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,0.6) 55%, rgba(255,255,255,0) 75%)' }} />
+                {/* Gentle Bottom Fade */}
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 15%, rgba(255,255,255,0) 75%, rgba(255,255,255,0.95) 100%)' }} />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
                 <div className="max-w-2xl xl:max-w-3xl">
-                    <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/80 backdrop-blur-sm text-slate-800 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-slate-200 shadow-sm animate-reveal-down">
+                    <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/80 backdrop-blur-sm text-gray-800 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-gray-200 shadow-sm animate-reveal-down">
                         <MapPin className="w-4 h-4 text-accent" />
                         Webdesign & KI-Marketing für Amstetten
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.1] py-1 mb-6 animate-reveal-up">
-                       <span className="font-sans font-black block">High-End Webdesign</span>
-                       <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">für Amstetten & Region</span>
+                    <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.05] mb-6 animate-reveal-up">
+                       High-End Webdesign <br />
+                       <span className="text-[#F7C429] relative inline-block">
+                           für Amstetten & Region
+                           <span className="absolute bottom-[10%] left-0 right-0 h-[25%] bg-[#F7C429]/20 -z-10 skew-x-[-15deg]" />
+                       </span>
                     </h1>
 
                     <p className="font-body text-[#111827] text-lg leading-relaxed max-w-lg mb-8 animate-reveal-up reveal-delay-200">
@@ -109,24 +114,24 @@ export default function WerbeagenturAmstetten() {
                     </p>
 
                     <div className="flex flex-wrap gap-2 mb-10 animate-reveal-up reveal-delay-300">
-                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-slate-700 font-bold text-[13px] sm:text-sm">
+                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-gray-700 font-bold text-[13px] sm:text-sm">
                             <Globe className="w-5 h-5 text-accent" />
                             <span>Moderne Homepage</span>
                         </div>
-                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-slate-700 font-bold text-[13px] sm:text-sm">
+                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-gray-700 font-bold text-[13px] sm:text-sm">
                             <Monitor className="w-5 h-5 text-accent" />
                             <span>Professionelle Webseiten</span>
                         </div>
-                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-slate-700 font-bold text-[13px] sm:text-sm">
+                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-gray-700 font-bold text-[13px] sm:text-sm">
                             <Rocket className="w-5 h-5 text-accent" />
                             <span>Regionale Werbeagentur</span>
                         </div>
                     </div>
 
                     <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 animate-reveal-up reveal-delay-500">
-                         <a href="#contact" className="w-full sm:w-auto px-12 py-6 bg-accent text-primary rounded-2xl font-black text-lg sm:text-xl hover:bg-[#e5b510] hover:scale-105 transition-all shadow-[0_20px_40px_-10px_rgba(247,196,41,0.5)] flex items-center justify-center gap-4 group">
+                         <a href="#contact" className="group flex items-center justify-center gap-3 bg-[#F7C429] text-black px-8 py-[22px] rounded-full font-bold uppercase tracking-[0.15em] text-[15px] shadow-[0_10px_30px_rgba(247,196,41,0.4)] transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-black hover:text-[#F7C429] hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:-translate-y-0.5">
                              Webseite & Homepage anfragen
-                             <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                          </a>
                     </div>
 
@@ -137,16 +142,16 @@ export default function WerbeagenturAmstetten() {
                                     <Star key={s} className="w-4 h-4 fill-accent text-accent" />
                                 ))}
                             </div>
-                            <span className="text-sm font-bold text-slate-900 group-hover:text-accent transition-colors">
+                            <span className="text-sm font-bold text-gray-900 group-hover:text-accent transition-colors">
                                 <strong>5.0</strong> Google-Rating
                             </span>
                         </a>
-                        <div className="w-px h-4 bg-slate-300 hidden sm:block"></div>
-                        <div className="flex items-center gap-2 text-[13px] font-semibold text-slate-800">
+                        <div className="w-px h-4 bg-gray-300 hidden sm:block"></div>
+                        <div className="flex items-center gap-2 text-[13px] font-semibold text-gray-800">
                             <ShieldCheck className="w-4 h-4 text-accent" />
                             100% DSGVO
                         </div>
-                        <div className="flex items-center gap-2 text-[13px] font-semibold text-slate-800">
+                        <div className="flex items-center gap-2 text-[13px] font-semibold text-gray-800">
                             <Trophy className="w-4 h-4 text-accent" />
                             32 Jahre Erfahrung
                         </div>
@@ -157,18 +162,18 @@ export default function WerbeagenturAmstetten() {
 
         <IndustryMarquee />
 
-        <section className="py-20 bg-slate-50 border-y border-slate-100">
+        <section className="py-20 bg-gray-50 border-y border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-accent/10 text-accent font-bold text-[10px] uppercase tracking-widest mb-4 border border-accent/20">
                             Mostviertel Hub
                         </div>
-                        <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight mb-6">
+                        <h2 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-6">
                             Ihr Partner für <br className="hidden sm:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600">Webdesign in Amstetten</span>
                         </h2>
-                        <p className="text-slate-600 text-lg leading-relaxed mb-8 font-body">
+                        <p className="text-gray-600 text-lg leading-relaxed mb-8 font-body">
                             Agentur-Expertise direkt aus dem Herzen des Mostviertels. Wir konzipieren Webseiten für Firmen aus Amstetten, die wirklich Ergebnisse liefern.
                         </p>
                     </div>
@@ -179,12 +184,12 @@ export default function WerbeagenturAmstetten() {
                             { title: "KI-Technologie", desc: "Moderne Webseiten mit psychologisch fundierten KI-Inhalten.", icon: <Brain className="w-5 h-5 text-accent" /> },
                             { title: "High Performance", desc: "Top Google-Ratings von echten Unternehmen aus der Region.", icon: <TrendingUp className="w-5 h-5 text-accent" /> },
                         ].map((item, i) => (
-                            <div key={i} className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-accent/30 transition-colors group">
-                                <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors">
+                            <div key={i} className="p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:border-accent/30 transition-colors group">
+                                <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors">
                                     {item.icon}
                                 </div>
-                                <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
-                                <p className="text-sm text-slate-500 leading-relaxed font-body">{item.desc}</p>
+                                <h4 className="font-bold text-gray-900 mb-2">{item.title}</h4>
+                                <p className="text-sm text-gray-500 leading-relaxed font-body">{item.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -197,7 +202,7 @@ export default function WerbeagenturAmstetten() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
                <ScrollReveal animation="reveal-right">
-                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1] py-1 mb-8">
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight leading-[1.1] py-1 mb-8">
 <span className="font-sans block">Ihr Partner im</span>
 <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">Wirtschaftszentrum</span>
 </h2>
@@ -214,7 +219,7 @@ export default function WerbeagenturAmstetten() {
                            <Monitor className="w-7 h-7 text-primary" />
                         </div>
                         <div>
-                           <h4 className="font-bold text-slate-900 text-lg font-sans">Individuelles Webdesign</h4>
+                           <h4 className="font-bold text-gray-900 text-lg font-sans">Individuelles Webdesign</h4>
                            <span className="font-body text-[#111827] text-sm">Perfekte Darstellung auf allen Geräten im Mostviertel.</span>
                         </div>
                      </div>
@@ -223,7 +228,7 @@ export default function WerbeagenturAmstetten() {
                            <Handshake className="w-7 h-7 text-primary" />
                         </div>
                         <div>
-                           <h4 className="font-bold text-slate-900 text-lg font-sans">Persönliche KI-Betreuung</h4>
+                           <h4 className="font-bold text-gray-900 text-lg font-sans">Persönliche KI-Betreuung</h4>
                            <span className="font-body text-[#111827] text-sm">Andreas Sturm persönlich berät Sie bei Ihnen vor Ort.</span>
                         </div>
                      </div>
@@ -232,11 +237,11 @@ export default function WerbeagenturAmstetten() {
 
                <ScrollReveal animation="reveal-left" delay={200}>
                   {/* Real Case Study / Social Proof Block */}
-                  <div className="bg-slate-50/80 backdrop-blur-md rounded-3xl p-8 sm:p-10 border border-slate-200/60 shadow-xl relative">
+                  <div className="bg-gray-50/80 backdrop-blur-md rounded-3xl p-8 sm:p-10 border border-gray-200/60 shadow-xl relative">
                      <Quote className="w-16 h-16 text-accent/20 absolute top-6 right-8 rotate-180" />
                      
                      <div className="flex items-center gap-4 mb-6">
-                         <div className="w-20 h-20 rounded-full bg-slate-200 overflow-hidden shrink-0 border-4 border-white shadow-md relative">
+                         <div className="w-20 h-20 rounded-full bg-gray-200 overflow-hidden shrink-0 border-4 border-white shadow-md relative">
                              {/* Anweisung für den User: Lade das hochgeladene Bild als testimonial-amstetten.jpg in den /public/bilder Ordner */}
                              <img 
                                 src="/bilder/testimonial-amstetten.jpg" 
@@ -248,8 +253,8 @@ export default function WerbeagenturAmstetten() {
                              <div className="flex text-accent mb-1">
                                  {[1,2,3,4,5].map(star => <Star key={star} className="w-4 h-4 fill-accent" />)}
                              </div>
-                             <h4 className="font-bold text-slate-900 leading-tight">Karin Metz</h4>
-                             <span className="text-sm text-slate-500">Verifizierte Kundenbewertung</span>
+                             <h4 className="font-bold text-gray-900 leading-tight">Karin Metz</h4>
+                             <span className="text-sm text-gray-500">Verifizierte Kundenbewertung</span>
                          </div>
                      </div>
 
@@ -265,10 +270,10 @@ export default function WerbeagenturAmstetten() {
                        href="https://www.google.com/search?sca_esv=aa402220b09531da&rlz=1C1GCEA_enAT1147AT1147&sxsrf=ANbL-n5Y019RsMMV4zFvzaOz6TcN24Jf6A:1775638701370&q=BrainStorm+KI+Werbeagentur+-+Webseite,+Landingpage,+App,+SEO+-+Nieder%C3%B6sterreich+-+Ober%C3%B6sterreich&si=AL3DRZGNtcdgKOqVhotcr-UG2kkYpwR2WO4qu3O00NmpwBmLneQQgo_5XD4-PPBTYmEkcMuO9TkuepHJc1oypsfBkcSHKpNhgJybIStEB-JM3R09eKm0Yj0rBeyRP2ehFFZrgTFSuEBvEZfsTl8hRnMQZa4vjesT9kCEfEyVMl83jQoPcr1SGD_uGJTvyB97pfrlD1eRcnhS4S64JtTgnx_dwpToRp5z9l-XXKgjOrkJn1CNZabnYDQ%3D&sa=X&ved=2ahUKEwi_rK3Q8d2TAxWwYPEDHZMuNrIQ_coHegQINxAB&biw=1145&bih=1270&dpr=1"
                        target="_blank" 
                        rel="noopener noreferrer"
-                       className="inline-flex w-full justify-center items-center gap-2 px-8 py-4 bg-white border border-slate-200 rounded-xl font-bold text-lg text-slate-700 shadow-sm hover:bg-slate-50 hover:border-slate-300 hover:text-accent transition-all group scale-100 hover:scale-[1.02]"
+                       className="inline-flex w-full justify-center items-center gap-2 px-8 py-4 bg-white border border-gray-200 rounded-xl font-bold text-lg text-gray-700 shadow-sm hover:bg-gray-50 hover:border-gray-300 hover:text-accent transition-all group scale-100 hover:scale-[1.02]"
                      >
                         Besuchen Sie unser Google Profil
-                        <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-accent transition-transform group-hover:translate-x-1" />
+                        <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-accent transition-transform group-hover:translate-x-1" />
                      </a>
                   </div>
                </ScrollReveal>

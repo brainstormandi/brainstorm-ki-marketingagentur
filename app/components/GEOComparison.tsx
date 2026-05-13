@@ -4,49 +4,49 @@ import { Check, X } from 'lucide-react';
 
 const GEOComparison = () => {
     return (
-        <section className="py-32 bg-slate-900 text-white overflow-hidden relative">
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,rgba(247,196,41,0.05),transparent)] pointer-events-none"></div>
+        <section className="py-32 bg-white text-gray-900 overflow-hidden relative">
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,rgba(247, 196, 41,0.05),transparent)] pointer-events-none"></div>
 
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-20 animate-reveal-up">
-                    <h2 className="text-4xl sm:text-5xl font-sans font-black mb-6 tracking-normal">
-                        Was ist <span className="text-accent">GEO</span> & warum brauchen Sie es?
+                    <h2 className="text-4xl sm:text-5xl font-[var(--font-playfair)] font-medium mb-6 tracking-wide bg-gradient-to-br from-white to-[#404040] bg-clip-text text-transparent">
+                        Was ist <span className="text-[#F7C429] [-webkit-text-fill-color:#F7C429]">GEO</span> & warum brauchen Sie es?
                     </h2>
-                    <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-xl text-gray-600 font-body max-w-3xl mx-auto leading-relaxed">
                         Die Welt der Suche verändert sich. Während klassisches SEO für Google optimiert, sorgt GEO (Generative Engine Optimization) dafür, dass Sie von KIs wie ChatGPT und Perplexity empfohlen werden.
                     </p>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-sm rounded-[3rem] border border-white/10 overflow-hidden animate-reveal-up transition-all hover:border-accent/30">
+                <div className="bg-gray-50/50 backdrop-blur-sm rounded-[3rem] border border-gray-200 overflow-hidden animate-reveal-up transition-all hover:border-[#F7C429]/50 hover:shadow-[0_0_30px_rgba(247, 196, 41,0.05)]">
                     <div className="overflow-x-auto">
                         <table className="w-full text-left">
                             <thead>
-                                <tr className="border-b border-white/10">
-                                    <th className="px-8 py-10 font-bold text-lg text-slate-400">Strategie</th>
-                                    <th className="px-8 py-10 font-black text-2xl tracking-tight">Klassisches Marketing</th>
-                                    <th className="px-8 py-10 font-black text-2xl tracking-tight text-accent">BrainStorm KI & GEO</th>
+                                <tr className="border-b border-gray-200">
+                                    <th className="px-8 py-10 font-bold font-sans text-lg text-gray-600">Strategie</th>
+                                    <th className="px-8 py-10 font-bold font-sans text-2xl tracking-normal text-gray-900">Klassisches Marketing</th>
+                                    <th className="px-8 py-10 font-bold font-[var(--font-playfair)] text-2xl tracking-wide text-[#F7C429]">BrainStorm KI & GEO</th>
                                 </tr>
                             </thead>
                             <tbody className="text-lg">
-                                <tr className="border-b border-white/5">
-                                    <td className="px-8 py-8 font-bold text-slate-300">Zielgruppe</td>
-                                    <td className="px-8 py-8 text-slate-500">Breite Streuung</td>
-                                    <td className="px-8 py-8 flex items-center gap-3"><Check className="text-emerald-400 shrink-0" /> Exakt vor-qualifizierte Leads</td>
+                                <tr className="border-b border-gray-200">
+                                    <td className="px-8 py-8 font-bold font-sans text-[#e4e4e7]">Zielgruppe</td>
+                                    <td className="px-8 py-8 text-gray-500 font-body">Breite Streuung</td>
+                                    <td className="px-8 py-8 flex items-center gap-3 font-body"><Check className="text-[#F7C429] shrink-0" /> Exakt vor-qualifizierte Leads</td>
                                 </tr>
-                                <tr className="border-b border-white/5">
-                                    <td className="px-8 py-8 font-bold text-slate-300">Sichtbarkeit</td>
-                                    <td className="px-8 py-8 text-slate-500">Hoffen auf Google-Klicks</td>
-                                    <td className="px-8 py-8 flex items-center gap-3"><Check className="text-emerald-400 shrink-0" /> Top-Empfehlung in KI-Antworten</td>
+                                <tr className="border-b border-gray-200">
+                                    <td className="px-8 py-8 font-bold font-sans text-[#e4e4e7]">Sichtbarkeit</td>
+                                    <td className="px-8 py-8 text-gray-500 font-body">Hoffen auf Google-Klicks</td>
+                                    <td className="px-8 py-8 flex items-center gap-3 font-body"><Check className="text-[#F7C429] shrink-0" /> Top-Empfehlung in KI-Antworten</td>
                                 </tr>
-                                <tr className="border-b border-white/5">
-                                    <td className="px-8 py-8 font-bold text-slate-300">Geschwindigkeit</td>
-                                    <td className="px-8 py-8 text-slate-500">Monatelange Projekte</td>
-                                    <td className="px-8 py-8 flex items-center gap-3"><Check className="text-emerald-400 shrink-0" /> Live-Gang in 5 - 7 Werktagen</td>
+                                <tr className="border-b border-gray-200">
+                                    <td className="px-8 py-8 font-bold font-sans text-[#e4e4e7]">Geschwindigkeit</td>
+                                    <td className="px-8 py-8 text-gray-500 font-body">Monatelange Projekte</td>
+                                    <td className="px-8 py-8 flex items-center gap-3 font-body"><Check className="text-[#F7C429] shrink-0" /> Live-Gang in 5 - 7 Werktagen</td>
                                 </tr>
                                 <tr>
-                                    <td className="px-8 py-8 font-bold text-slate-300">Effizienz</td>
-                                    <td className="px-8 py-8 text-slate-500 flex items-center gap-3"><X className="text-rose-400 shrink-0" /> Manuelle Prozesse</td>
-                                    <td className="px-8 py-8 flex items-center gap-3"><Check className="text-emerald-400 shrink-0" /> Intelligente Automatisierung</td>
+                                    <td className="px-8 py-8 font-bold font-sans text-[#e4e4e7]">Effizienz</td>
+                                    <td className="px-8 py-8 text-gray-500 font-body flex items-center gap-3"><X className="text-gray-500 shrink-0" /> Manuelle Prozesse</td>
+                                    <td className="px-8 py-8 flex items-center gap-3 font-body"><Check className="text-[#F7C429] shrink-0" /> Intelligente Automatisierung</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -54,13 +54,13 @@ const GEOComparison = () => {
                 </div>
 
                 <div className="mt-16 grid sm:grid-cols-2 gap-8 animate-reveal-up reveal-delay-300">
-                    <div className="p-8 rounded-[2rem] bg-white/5 border border-white/10">
-                        <h4 className="font-bold text-xl mb-4 text-white">Entity Recognition</h4>
-                        <p className="text-slate-400">Durch saubere Schema.org Daten erkennt die KI Ihr Unternehmen als vertrauenswürdige Autorität in Ihrer Region.</p>
+                    <div className="p-8 rounded-[2rem] bg-gray-50/50 border border-gray-200">
+                        <h4 className="font-[var(--font-playfair)] font-medium text-2xl tracking-wide mb-4 text-gray-900">Entity Recognition</h4>
+                        <p className="text-gray-600 font-body leading-relaxed">Durch saubere Schema.org Daten erkennt die KI Ihr Unternehmen als vertrauenswürdige Autorität in Ihrer Region.</p>
                     </div>
-                    <div className="p-8 rounded-[2rem] bg-white/5 border border-white/10">
-                        <h4 className="font-bold text-xl mb-4 text-white">Citation Strategy</h4>
-                        <p className="text-slate-400">Wir optimieren Ihre Inhalte so, dass sie von KI-Modellen als Primärdatenquelle zitiert werden.</p>
+                    <div className="p-8 rounded-[2rem] bg-gray-50/50 border border-gray-200">
+                        <h4 className="font-[var(--font-playfair)] font-medium text-2xl tracking-wide mb-4 text-gray-900">Citation Strategy</h4>
+                        <p className="text-gray-600 font-body leading-relaxed">Wir optimieren Ihre Inhalte so, dass sie von KI-Modellen als Primärdatenquelle zitiert werden.</p>
                     </div>
                 </div>
             </div>

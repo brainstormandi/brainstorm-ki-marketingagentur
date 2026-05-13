@@ -339,3 +339,15 @@
 .reveal-on-scroll.revealed {
   opacity: 1;
 }
+
+/* Explicit fix for Light Premium Theme */
+:root {
+  color-scheme: light !important;
+  background-color: #ffffff !important;
+  color: #111827 !important;
+}
+
+html, body {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+}

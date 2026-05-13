@@ -66,12 +66,6 @@ export const PROCESS_STEPS = [
 
 export const TESTIMONIALS = [
     {
-        name: "Marion Bald",
-        company: "Google Rezension",
-        quote: "Brainstorm KI Werbeagentur zählt zu den TOP Adressen wenn es um innovative Lösungen geht. 100% zuverlässig und 100% am neuesten Stand. Zudem äußerst serviceorientiert, was für mich den selben Stellenwert hat wie technisches Know how. Bei Brainstorm kann man sich entspannt zurücklehnen und sicher sein, dass die beste individuelle Lösung gefunden wird. 100 Prozent Weiterempfehlung :-)",
-        rating: 5
-    },
-    {
         name: "Andreas Hofer",
         company: "Google Rezension",
         quote: "Andreas Sturm ist sehr kompetent. Er gibt Auskunft so, dass es auch ein Laie versteht, ist sehr unterstützend und hat immer gute Ideen für eine Lösung. Das war ich bisher nicht gewohnt. Deshalb habe ich volles Vertrauen zu ihm und kann ist bestens weiter empfehlen!",
@@ -81,6 +75,12 @@ export const TESTIMONIALS = [
         name: "Karin Metz",
         company: "Google Rezension",
         quote: "Bei der Brainstorm Werbeagentur ist man in besten Händen was Webseite und Social Media betrifft. Meine Webseite muss funktionieren, gefunden werden, den rechtlichen Richtlinien entsprechen und dabei noch richtig toll aussehen! Und dafür ist Andreas Sturm der perfekte Partner.",
+        rating: 5
+    },
+    {
+        name: "Marion Bald",
+        company: "Google Rezension",
+        quote: "Brainstorm KI Werbeagentur zählt zu den TOP Adressen wenn es um innovative Lösungen geht. 100% zuverlässig und 100% am neuesten Stand. Zudem äußerst serviceorientiert, was für mich den selben Stellenwert hat wie technisches Know how. Bei Brainstorm kann man sich entspannt zurücklehnen und sicher sein, dass die beste individuelle Lösung gefunden wird. 100 Prozent Weiterempfehlung :-)",
         rating: 5
     },
     {

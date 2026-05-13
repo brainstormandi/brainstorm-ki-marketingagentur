@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { GOOGLE_REVIEW_LINK } from './constants';
-import { ExternalLink } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import IndustryMarquee from './components/IndustryMarquee';
@@ -32,8 +32,7 @@ const customerFaces = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
-
+    <div className="min-h-screen relative bg-white">
       <Navbar />
       <main>
         <Hero />
@@ -42,18 +41,18 @@ export default function Home() {
 
         <Services />
 
-        <section id="success" className="scroll-mt-32 py-32 bg-white overflow-hidden">
+        <section id="success" className="scroll-mt-32 py-32 bg-white overflow-hidden border-t border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <ScrollReveal animation="reveal-right">
-                <div className="inline-flex items-center px-6 py-2 rounded-full bg-slate-50 text-slate-800 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-slate-100">
+                <div className="inline-flex items-center px-6 py-2 rounded-full bg-white text-gray-500 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-gray-200">
                   Erfolge
                 </div>
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1] py-1 mb-5">
-                  <span className="font-sans block">Überzeugte KMUs</span>
-                  <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">in ganz Österreich</span>
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.1] py-1 mb-5 uppercase">
+                  <span className="block">Überzeugte KMUs</span>
+                  <span className="block text-transparent bg-clip-text pb-2" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>in ganz Österreich</span>
                 </h2>
-                <p className="text-[#111827] text-lg sm:text-xl mb-10 leading-relaxed font-body max-w-md">
+                <p className="text-gray-600 text-lg sm:text-xl mb-10 leading-relaxed font-body max-w-md">
                   Wir sind stolz darauf, lokale Betriebe bei ihrer digitalen Transformation zu begleiten. Unsere Lösungen sind praxiserprobt und psychologisch optimiert für maximale Conversion.
                 </p>
 
@@ -78,14 +77,14 @@ export default function Home() {
                       ))}
                     </div>
                     <div className="text-sm font-body">
-                      <span className="text-slate-900 font-black text-base block">50+ zufriedene Betriebe</span>
-                      <span className="text-slate-400 font-medium">in den letzten 12 Monaten</span>
+                      <span className="text-gray-900 font-[var(--font-playfair)] text-xl block">50+ zufriedene Betriebe</span>
+                      <span className="text-gray-500 font-medium">in den letzten 12 Monaten</span>
                     </div>
                   </div>
 
-                  <a href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-7 py-4 bg-white border border-slate-200 rounded-2xl font-bold text-sm text-slate-700 shadow-sm hover:border-accent hover:shadow-[0_8px_24px_rgba(247,196,41,0.15)] transition-all group ct-card">
+                  <a href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-3 w-max bg-[#F7C429] text-black px-8 py-[22px] rounded-full font-bold uppercase tracking-[0.15em] text-[14px] sm:text-[15px] shadow-[0_10px_30px_rgba(247,196,41,0.4)] transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-black hover:text-[#F7C429] hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 cursor-pointer">
                     Alle Rezensionen auf Google lesen
-                    <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-accent transition-colors group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
+                    <ArrowUpRight className="w-[20px] h-[20px] transition-transform duration-400 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
                   </a>
                 </div>
               </ScrollReveal>

@@ -6,6 +6,14 @@ import { AssistantMode } from '../types';
 import { GeminiService, encode, decode, decodeAudioData } from '../services/geminiService';
 import { CONTACT_INFO } from '../constants';
 
+declare global {
+  interface Window {
+    startVoiceAssistant?: (silent?: boolean) => void;
+    stopVoiceAssistant?: () => void;
+    isVoiceAssistantActive?: () => boolean;
+    isVoiceAssistantSpeaking?: () => boolean;
+  }
+}
 const AIAssistant = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [mode, setMode] = useState(AssistantMode.CHAT);
@@ -168,6 +176,13 @@ const AIAssistant = () => {
                     activeSessionRef.current = session;
                     setIsConnecting(false);
                     setIsListening(true);
+                    // Sende ein initiales "Hallo", damit der Bot sofort antwortet und das Gespräch beginnt
+                    session.sendRealtimeInput({
+                        clientContent: {
+                            turns: [{ role: "user", parts: [{ text: "Hallo! Bitte begrüße mich kurz und frage, wie du mir heute helfen kannst." }] }],
+                            turnComplete: true
+                        }
+                    });
                 },
                 onMessage: async (message: any) => {
                     // Handle setup confirmation
@@ -358,7 +373,7 @@ const AIAssistant = () => {
             {!isOpen && (
                 <button
                     onClick={() => { setIsOpen(true); startVoiceMode(false); }}
-                    className="w-16 h-16 sm:w-20 sm:h-20 bg-accent rounded-[1.5rem] sm:rounded-[2.5rem] shadow-[0_25px_50px_-12px_rgba(247,196,41,0.5)] flex items-center justify-center text-primary hover:scale-110 hover:rotate-3 transition-all relative group overflow-hidden"
+                    className="w-16 h-16 sm:w-20 sm:h-20 bg-white border border-[#F7C429] rounded-[1.5rem] sm:rounded-[2.5rem] shadow-[0_0_20px_rgba(247, 196, 41,0.3)] flex items-center justify-center text-[#F7C429] hover:scale-110 hover:rotate-3 transition-all relative group overflow-hidden"
                 >
                     {(isListening || isConnecting) && (
                         <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
@@ -367,61 +382,61 @@ const AIAssistant = () => {
                         <Mic className={`w-10 h-10 transition-all duration-500 ${isListening || isConnecting ? 'scale-125 animate-pulse' : 'group-hover:scale-110'}`} />
                     </div>
                     {/* Tooltip */}
-                    <div className="absolute right-24 top-1/2 -translate-y-1/2 bg-slate-900 text-white px-6 py-3 rounded-2xl whitespace-nowrap text-sm font-black tracking-wider opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl border border-white/10 uppercase">
+                    <div className="absolute right-24 top-1/2 -translate-y-1/2 bg-white text-[#F7C429] px-6 py-3 rounded-2xl whitespace-nowrap text-[10px] font-bold tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-[0_4px_20px_rgba(247,196,41,0.3)] border border-[#F7C429] uppercase">
                         Berater rufen
                     </div>
                 </button>
             )}
 
             {isOpen && (
-                <div className="w-[calc(100vw-2rem)] sm:w-[500px] max-w-[500px] h-[calc(100vh-8rem)] sm:h-[780px] bg-white rounded-[2.5rem] sm:rounded-[4rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col overflow-hidden animate-reveal-up origin-bottom-right">
+                <div className="w-[calc(100vw-2rem)] sm:w-[500px] max-w-[500px] h-[calc(100vh-8rem)] sm:h-[780px] bg-white rounded-[2.5rem] sm:rounded-[4rem] shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-gray-200 flex flex-col overflow-hidden animate-reveal-up origin-bottom-right">
                     {/* Header */}
-                    <div className="p-6 sm:p-10 pb-6 sm:pb-8 bg-white/90 backdrop-blur-xl flex justify-between items-center relative overflow-hidden border-b border-slate-50">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-accent rounded-full blur-[120px] opacity-10 -mr-32 -mt-32"></div>
+                    <div className="p-6 sm:p-10 pb-6 sm:pb-8 bg-white/90 backdrop-blur-xl flex justify-between items-center relative overflow-hidden border-b border-gray-200">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-[#F7C429] rounded-full blur-[120px] opacity-10 -mr-32 -mt-32"></div>
                         <div className="flex items-center gap-5 relative z-10">
-                            <div className="w-16 h-16 bg-accent rounded-[1.5rem] flex items-center justify-center shadow-lg shadow-accent/20">
-                                <Mic className="w-9 h-9 text-primary" />
+                            <div className="w-16 h-16 bg-gray-50 border border-gray-200 rounded-[1.5rem] flex items-center justify-center shadow-lg shadow-[#F7C429]/10">
+                                <Mic className="w-9 h-9 text-[#F7C429]" />
                             </div>
                             <div>
-                                <h4 className="font-sans font-black text-2xl tracking-wide leading-none mb-2 text-[#0E172B]">Susi KI</h4>
+                                <h4 className="font-[var(--font-playfair)] font-medium text-2xl tracking-wide leading-none mb-2 text-gray-900">Susi KI</h4>
                                 <div className="flex items-center gap-2">
                                     <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                                    <span className="text-[11px] text-[#0E172B] font-medium tracking-[0.05em]">Ihre persönliche Assistentin</span>
+                                    <span className="text-[11px] text-gray-600 font-body tracking-[0.05em]">Ihre persönliche Assistentin</span>
                                 </div>
                             </div>
                         </div>
-                        <button onClick={() => { cleanupVoice(); setIsOpen(false); }} className="bg-slate-50 hover:bg-slate-100 p-4 rounded-2xl transition-all border border-slate-100 relative z-10 group">
-                            <X className="w-6 h-6 text-slate-400 group-hover:rotate-90 transition-transform" />
+                        <button onClick={() => { cleanupVoice(); setIsOpen(false); }} className="bg-transparent hover:bg-gray-50 p-4 rounded-2xl transition-all border border-gray-200 relative z-10 group">
+                            <X className="w-6 h-6 text-gray-500 group-hover:rotate-90 transition-transform" />
                         </button>
                     </div>
 
                     {/* Messages */}
-                    <div className="flex-1 overflow-y-auto p-6 sm:p-10 space-y-8 sm:space-y-10 bg-mesh-gradient">
+                    <div className="flex-1 overflow-y-auto p-6 sm:p-10 space-y-8 sm:space-y-10 bg-white">
                         {error && (
                             <div className="p-6 sm:p-8 bg-red-50 border border-red-100 rounded-[2.5rem] flex flex-col gap-4 text-red-700 shadow-sm animate-in fade-in zoom-in-95">
                                 <div className="flex items-center gap-2 font-black uppercase tracking-widest text-xs">
                                     <AlertCircle className="w-5 h-5 shrink-0" /> System Status
                                 </div>
                                 <span className="text-[16px] leading-relaxed">{error}</span>
-                                <button onClick={() => startVoiceMode(false)} className="mt-2 w-full py-5 bg-red-600 text-white rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-red-700 shadow-lg shadow-red-600/20 transition-all">Verbindung neu aufbauen</button>
+                                <button onClick={() => startVoiceMode(false)} className="mt-2 w-full py-5 bg-red-600 text-gray-900 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-red-700 shadow-lg shadow-red-600/20 transition-all">Verbindung neu aufbauen</button>
                             </div>
                         )}
 
                         {messages.map((m, i) => (
                             <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                                <div className={`max-w-[90%] sm:max-w-[85%] p-6 sm:p-8 rounded-[2.5rem] text-[15px] sm:text-[16px] leading-relaxed shadow-sm ${m.role === 'user' ? 'bg-slate-900 text-white rounded-tr-lg' : 'bg-white border border-slate-100 text-slate-800 rounded-tl-lg shadow-xl shadow-slate-200/40'}`}>
+                                <div className={`max-w-[90%] sm:max-w-[85%] p-6 sm:p-8 rounded-[2.5rem] text-[15px] sm:text-[16px] leading-relaxed shadow-sm font-body ${m.role === 'user' ? 'bg-[#F7C429] text-black rounded-tr-lg font-medium' : 'bg-gray-50 border border-gray-200 text-gray-900 rounded-tl-lg'}`}>
                                     <div className="whitespace-pre-wrap">{m.text}</div>
 
                                     {m.isSending && (
-                                        <div className="mt-6 p-6 bg-slate-50 rounded-2xl flex flex-col items-center justify-center gap-4 border border-slate-100 shadow-inner">
-                                            <Loader2 className="w-6 h-6 text-accent animate-spin" />
-                                            <span className="font-black text-slate-400 text-xs uppercase tracking-[0.15em]">Synchronisierung...</span>
+                                        <div className="mt-6 p-6 bg-white rounded-2xl flex flex-col items-center justify-center gap-4 border border-gray-200 shadow-inner">
+                                            <Loader2 className="w-6 h-6 text-[#F7C429] animate-spin" />
+                                            <span className="font-bold text-gray-500 text-[10px] uppercase tracking-[0.2em]">Synchronisierung...</span>
                                         </div>
                                     )}
 
                                     {m.isFallback && m.fallbackLink && (
                                         <div className="mt-6 animate-in fade-in zoom-in-95 duration-500">
-                                            <a href={m.fallbackLink} className="flex items-center justify-center gap-3 w-full py-6 bg-accent text-primary rounded-2xl font-black shadow-[0_20px_40px_-10px_rgba(247,196,41,0.5)] hover:scale-[1.02] transition-all text-sm border border-accent/20 uppercase tracking-widest">
+                                            <a href={m.fallbackLink} className="flex items-center justify-center gap-3 w-full py-6 bg-[#F7C429] text-black rounded-2xl font-bold shadow-[0_4px_20px_rgba(247,196,41,0.3)] hover:bg-[#b08d20] transition-all text-[11px] uppercase tracking-[0.2em]">
                                                 <Mail className="w-5 h-5" /> Manuell Bestätigen <ArrowUpRight className="w-4 h-4" />
                                             </a>
                                         </div>
@@ -450,14 +465,14 @@ const AIAssistant = () => {
                                                 </div>
                                             </div>
                                             <div className="py-5 bg-emerald-600 rounded-2xl flex items-center justify-center gap-3 shadow-xl shadow-emerald-600/20">
-                                                <ShieldCheck className="w-5 h-5 text-white" />
-                                                <span className="font-black text-white text-xs uppercase tracking-[0.2em]">Buchung bestätigt</span>
+                                                <ShieldCheck className="w-5 h-5 text-gray-900" />
+                                                <span className="font-black text-gray-900 text-xs uppercase tracking-[0.2em]">Buchung bestätigt</span>
                                             </div>
                                         </div>
                                     )}
 
                                     {m.isCalendly && (
-                                        <a href={CONTACT_INFO.calendly} target="_blank" rel="noopener noreferrer" className="mt-4 w-full py-6 bg-slate-900 text-white rounded-2xl font-black flex items-center justify-center gap-3 shadow-2xl hover:bg-slate-800 transition-all text-sm tracking-widest uppercase">
+                                        <a href={CONTACT_INFO.calendly} target="_blank" rel="noopener noreferrer" className="mt-4 w-full py-6 bg-slate-900 text-gray-900 rounded-2xl font-black flex items-center justify-center gap-3 shadow-2xl hover:bg-slate-800 transition-all text-sm tracking-widest uppercase">
                                             <Calendar className="w-5 h-5 text-accent" /> Kalender öffnen <ArrowUpRight className="w-4 h-4" />
                                         </a>
                                     )}
@@ -467,17 +482,17 @@ const AIAssistant = () => {
 
                         {(isBotSpeaking || isConnecting) && (
                             <div className="flex justify-start">
-                                <div className="bg-white border border-slate-100 p-6 rounded-[2rem] flex gap-2 items-center shadow-xl shadow-slate-200/50">
+                                <div className="bg-gray-50 border border-gray-200 p-6 rounded-[2rem] flex gap-2 items-center shadow-xl shadow-black/50">
                                     {isBotSpeaking ? (
                                         <div className="flex items-end gap-1.5 h-6 mr-3">
-                                            <div className="w-1 h-3 bg-accent rounded-full animate-[bounce_0.8s_infinite]"></div>
-                                            <div className="w-1 h-5 bg-accent rounded-full animate-[bounce_0.8s_0.1s_infinite]"></div>
-                                            <div className="w-1 h-4 bg-accent rounded-full animate-[bounce_0.8s_0.2s_infinite]"></div>
+                                            <div className="w-1 h-3 bg-[#F7C429] rounded-full animate-[bounce_0.8s_infinite]"></div>
+                                            <div className="w-1 h-5 bg-[#F7C429] rounded-full animate-[bounce_0.8s_0.1s_infinite]"></div>
+                                            <div className="w-1 h-4 bg-[#F7C429] rounded-full animate-[bounce_0.8s_0.2s_infinite]"></div>
                                         </div>
                                     ) : (
-                                        <Loader2 className="w-5 h-5 text-slate-300 animate-spin mr-3" />
+                                        <Loader2 className="w-5 h-5 text-[#52525b] animate-spin mr-3" />
                                     )}
-                                    <span className="text-xs font-black text-slate-400 uppercase tracking-widest">{isBotSpeaking ? 'Spricht...' : 'Verbindet...'}</span>
+                                    <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">{isBotSpeaking ? 'Spricht...' : 'Verbindet...'}</span>
                                 </div>
                             </div>
                         )}
@@ -485,11 +500,11 @@ const AIAssistant = () => {
                     </div>
 
                     {/* Footer / Input */}
-                    <div className="p-6 sm:p-10 bg-white border-t border-slate-50 mt-auto">
+                    <div className="p-6 sm:p-10 bg-white border-t border-gray-200 mt-auto">
                         <div className="flex gap-3 sm:gap-4 items-center">
                             <button
                                 onClick={isListening || isConnecting ? cleanupVoice : () => startVoiceMode(false)}
-                                className={`w-16 h-16 sm:w-20 sm:h-20 rounded-[1.5rem] sm:rounded-[1.8rem] transition-all flex items-center justify-center relative overflow-hidden active:scale-95 shadow-lg ${isListening || isConnecting ? 'bg-emerald-600 text-white shadow-emerald-600/30 ring-8 ring-emerald-50' : 'bg-slate-50 text-slate-400 hover:text-slate-900 border border-slate-100 hover:border-slate-200'}`}
+                                className={`w-16 h-16 sm:w-20 sm:h-20 rounded-[1.5rem] sm:rounded-[1.8rem] transition-all flex items-center justify-center relative overflow-hidden active:scale-95 shadow-lg ${isListening || isConnecting ? 'bg-[#F7C429] text-black shadow-[#F7C429]/30 ring-8 ring-[#F7C429]/10' : 'bg-gray-50 text-gray-600 hover:text-gray-900 border border-gray-200 hover:border-[#F7C429]'}`}
                             >
                                 {isConnecting ? <Loader2 className="w-8 h-8 animate-spin" /> : <Mic className={`w-8 h-8 ${isListening ? 'animate-pulse' : ''}`} />}
                             </button>
@@ -500,9 +515,9 @@ const AIAssistant = () => {
                                     onChange={(e) => setInput(e.target.value)}
                                     onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
                                     placeholder="Nachfrage stellen..."
-                                    className="w-full bg-slate-50 border-none rounded-[1.5rem] sm:rounded-[1.8rem] py-4 sm:py-7 px-6 sm:px-10 pr-16 sm:pr-20 text-md sm:text-lg focus:ring-8 focus:ring-accent/10 transition-all placeholder:text-slate-300 text-slate-900 shadow-inner"
+                                    className="w-full bg-gray-50 border border-gray-200 rounded-[1.5rem] sm:rounded-[1.8rem] py-4 sm:py-7 px-6 sm:px-10 pr-16 sm:pr-20 text-md sm:text-lg focus:outline-none focus:border-[#F7C429] transition-all placeholder:text-[#52525b] text-gray-900 shadow-inner font-body"
                                 />
-                                <button onClick={handleSendMessage} className="absolute right-2 sm:right-3 top-2 sm:top-3 bottom-2 sm:bottom-3 w-12 sm:w-14 bg-slate-900 text-white rounded-[1rem] sm:rounded-[1.2rem] shadow-xl hover:bg-slate-800 transition-all flex items-center justify-center active:scale-90">
+                                <button onClick={handleSendMessage} className="absolute right-2 sm:right-3 top-2 sm:top-3 bottom-2 sm:bottom-3 w-12 sm:w-14 bg-[#F7C429] text-black rounded-[1rem] sm:rounded-[1.2rem] shadow-[0_4px_20px_rgba(247,196,41,0.3)] hover:bg-[#b08d20] transition-all flex items-center justify-center active:scale-90">
                                     <Send className="w-5 h-5 sm:w-6 h-6" />
                                 </button>
                             </div>

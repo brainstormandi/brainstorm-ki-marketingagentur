@@ -53,19 +53,19 @@ const TestimonialSlider = () => {
                         href={GOOGLE_REVIEW_LINK}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block p-8 sm:p-10 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group/card relative focus-visible:ring-2 focus-visible:ring-accent outline-none"
+                        className="block p-8 sm:p-10 rounded-[2rem] bg-white border border-gray-200 shadow-sm hover:shadow-[0_4px_20px_rgba(247,196,41,0.3)] hover:border-[#F7C429]/50 hover:-translate-y-1 transition-all duration-300 group/card relative focus-visible:ring-2 focus-visible:ring-[#F7C429] outline-none"
                         aria-label={`Bewertung von ${t.name} auf Google ansehen: ${t.quote}`}
                     >
-                        <div className="flex justify-between items-start mb-6">
-                            <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-full bg-slate-50 text-slate-700 font-bold flex items-center justify-center border border-slate-200 text-lg">
-                                    {t.name.charAt(0)}
+                            <div className="flex justify-between items-start mb-6">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-12 h-12 rounded-full bg-gray-50 text-[#F7C429] font-bold flex items-center justify-center border border-gray-200 text-lg">
+                                        {t.name.charAt(0)}
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <span className="text-base font-[var(--font-playfair)] font-medium text-gray-900 tracking-wide leading-tight">{t.name}</span>
+                                        <span className="text-xs text-gray-600 font-medium">Local Guide</span>
+                                    </div>
                                 </div>
-                                <div className="flex flex-col">
-                                    <span className="text-base font-bold text-slate-900 leading-tight font-sans">{t.name}</span>
-                                    <span className="text-xs text-slate-500 font-medium">Local Guide</span>
-                                </div>
-                            </div>
                             <div className="flex items-center gap-1" aria-hidden="true">
                                 {/* Google "G" standard star icon colors */}
                                 <svg className="w-6 h-6" viewBox="0 0 24 24">
@@ -79,18 +79,18 @@ const TestimonialSlider = () => {
 
                         <div className="flex gap-1 mb-6" aria-hidden="true">
                             {[...Array(5)].map((_, s) => (
-                                <Star key={s} className="w-5 h-5 fill-accent text-accent" />
+                                <Star key={s} className="w-5 h-5 fill-[#F7C429] text-[#F7C429]" />
                             ))}
                         </div>
 
                         <div className="relative">
-                            <Quote className="absolute -top-3 -left-3 w-8 h-8 text-slate-100 fill-slate-50 -z-10" aria-hidden="true" />
-                            <p className="text-[#111827] leading-relaxed font-body text-lg">{t.quote}</p>
+                            <Quote className="absolute -top-3 -left-3 w-8 h-8 text-gray-200 fill-gray-100 -z-10" aria-hidden="true" />
+                            <p className="text-gray-600 leading-relaxed font-body text-lg">{t.quote}</p>
                         </div>
 
-                        <div className="mt-8 pt-6 border-t border-slate-50 flex justify-between items-center">
-                            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Google Rezension</span>
-                            <span className="text-sm font-medium text-accent opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center gap-1">
+                        <div className="mt-8 pt-6 border-t border-gray-200 flex justify-between items-center">
+                            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">Google Rezension</span>
+                            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#F7C429] opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center gap-1">
                                 Öffnen
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />

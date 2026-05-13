@@ -1,4 +1,5 @@
 import { LiveServerMessage, Type, FunctionDeclaration } from "@google/genai";
+import { buildSystemInstruction } from '../utils/knowledgeBase';
 
 export const appointmentTools: FunctionDeclaration[] = [
     {
@@ -87,13 +88,13 @@ export class GeminiService {
             ws.onopen = () => {
                 const setupMessage = {
                     setup: {
-                        model: "models/gemini-2.5-flash-native-audio-preview-12-2025",
+                        model: "models/gemini-2.5-flash-native-audio-latest",
                         generationConfig: {
                             responseModalities: ["AUDIO"],
                             speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: "Kore" } } }
                         },
                         systemInstruction: {
-                            parts: [{ text: `Du bist die sympathische Sprach-Assistentin "Susi, Ihre KI Assistentin" der BrainStorm Werbeagentur (Gründer: Andi Sturm, 32+ Jahre Erfahrung). Kontakt: info@brainstorm-werbeagentur.at | +43 660 520 31 71 | Am Ziegelfeld 8, 3353 Seitenstetten. Sei freundlich und kompetent. Telefonnummern immer Ziffer für Ziffer aussprechen. Fachgebiet: Marketing, Web, KI – out-of-scope Fragen höflich ablehnen.` }]
+                            parts: [{ text: buildSystemInstruction() }]
                         },
                         tools: [{
                             functionDeclarations: [{
@@ -171,7 +172,8 @@ export async function decodeAudioData(
     sampleRate: number,
     numChannels: number,
 ): Promise<AudioBuffer> {
-    const dataInt16 = new Int16Array(data.buffer);
+    const len = Math.floor(data.byteLength / 2) * 2;
+    const dataInt16 = new Int16Array(data.buffer, data.byteOffset, len / 2);
     const frameCount = dataInt16.length / numChannels;
     const buffer = ctx.createBuffer(numChannels, frameCount, sampleRate);
 

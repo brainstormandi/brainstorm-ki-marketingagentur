@@ -15,7 +15,7 @@ export default function DatenschutzPage() {
                     <div className="mb-12">
                         <Link
                             href="/"
-                            className="inline-flex items-center gap-2 text-slate-500 hover:text-primary transition-colors font-bold uppercase tracking-widest text-sm"
+                            className="inline-flex items-center gap-2 text-gray-500 hover:text-[#F7C429] transition-colors font-bold uppercase tracking-widest text-sm"
                         >
                             <ArrowLeft className="w-4 h-4" />
                             Zurück zur Startseite
@@ -23,10 +23,13 @@ export default function DatenschutzPage() {
                     </div>
 
                     <header className="mb-16">
-                        <h1 className="text-4xl sm:text-5xl font-sans font-extrabold text-slate-900 mb-4">
-                            Datenschutzerklärung
+                        <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent text-gray-600 font-bold text-xs mb-8 uppercase tracking-widest border border-gray-200">
+                            Rechtliches
+                        </div>
+                        <h1 className="text-4xl sm:text-5xl font-[var(--font-playfair)] font-medium text-gray-900 mb-4 uppercase tracking-tight">
+                            Datenschutz&shy;erklärung
                         </h1>
-                        <p className="text-xl text-slate-500">
+                        <p className="text-xl text-gray-500 font-body">
                             Informationen über die Verarbeitung Ihrer personenbezogenen Daten
                         </p>
                     </header>

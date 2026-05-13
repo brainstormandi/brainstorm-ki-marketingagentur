@@ -68,20 +68,25 @@ export default function WerbeagenturSalzburg() {
                 >
                     <source src="/video/ki-werbeagentur-brainstorm-hero-video.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#F8FAFC]/80 via-white/80 to-white/30 sm:to-white/10"></div>
-                <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent"></div>
+                {/* Clean Horizontal Blending Gradient */}
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,0.6) 55%, rgba(255,255,255,0) 75%)' }} />
+                {/* Gentle Bottom Fade */}
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 15%, rgba(255,255,255,0) 75%, rgba(255,255,255,0.95) 100%)' }} />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
                 <div className="max-w-2xl xl:max-w-3xl">
-                    <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/80 backdrop-blur-sm text-slate-800 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-slate-200 shadow-sm animate-reveal-down">
+                    <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/80 backdrop-blur-sm text-gray-800 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-gray-200 shadow-sm animate-reveal-down">
                         <MapPin className="w-4 h-4 text-accent" />
                         Webdesign & KI-Marketing für Salzburg
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.1] py-1 mb-6 animate-reveal-up">
-                       <span className="font-sans font-black block">High-End Webdesign</span>
-                       <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">für Salzburg & Region</span>
+                    <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.05] mb-6 animate-reveal-up">
+                       High-End Webdesign <br />
+                       <span className="text-[#F7C429] relative inline-block">
+                           für Salzburg & Region
+                           <span className="absolute bottom-[10%] left-0 right-0 h-[25%] bg-[#F7C429]/20 -z-10 skew-x-[-15deg]" />
+                       </span>
                     </h1>
 
                     <p className="font-body text-[#111827] text-lg leading-relaxed max-w-lg mb-8 animate-reveal-up reveal-delay-200">
@@ -89,24 +94,24 @@ export default function WerbeagenturSalzburg() {
                     </p>
 
                     <div className="flex flex-wrap gap-2 mb-10 animate-reveal-up reveal-delay-300">
-                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-slate-700 font-bold text-[13px] sm:text-sm">
+                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-gray-700 font-bold text-[13px] sm:text-sm">
                             <Globe className="w-5 h-5 text-accent" />
                             <span>Konvertierende Websites</span>
                         </div>
-                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-slate-700 font-bold text-[13px] sm:text-sm">
+                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-gray-700 font-bold text-[13px] sm:text-sm">
                             <Monitor className="w-5 h-5 text-accent" />
                             <span>Business Homepages</span>
                         </div>
-                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-slate-700 font-bold text-[13px] sm:text-sm">
+                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-gray-700 font-bold text-[13px] sm:text-sm">
                             <Rocket className="w-5 h-5 text-accent" />
                             <span>SEO & KI-Sichtbarkeit</span>
                         </div>
                     </div>
 
                     <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 animate-reveal-up reveal-delay-500">
-                         <a href="#contact" className="w-full sm:w-auto px-12 py-6 bg-accent text-primary rounded-2xl font-black text-lg sm:text-xl hover:bg-[#e5b510] hover:scale-105 transition-all shadow-[0_20px_40px_-10px_rgba(247,196,41,0.5)] flex items-center justify-center gap-4 group">
+                         <a href="#contact" className="group flex items-center justify-center gap-3 bg-[#F7C429] text-black px-8 py-[22px] rounded-full font-bold uppercase tracking-[0.15em] text-[15px] shadow-[0_10px_30px_rgba(247,196,41,0.4)] transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-black hover:text-[#F7C429] hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:-translate-y-0.5">
                              Projekt in Salzburg starten
-                             <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                          </a>
                     </div>
 
@@ -117,16 +122,16 @@ export default function WerbeagenturSalzburg() {
                                     <Star key={s} className="w-4 h-4 fill-accent text-accent" />
                                 ))}
                             </div>
-                            <span className="text-sm font-bold text-slate-900 group-hover:text-accent transition-colors">
+                            <span className="text-sm font-bold text-gray-900 group-hover:text-accent transition-colors">
                                 <strong>5.0</strong> Google-Rating
                             </span>
                         </a>
-                        <div className="w-px h-4 bg-slate-300 hidden sm:block"></div>
-                        <div className="flex items-center gap-2 text-[13px] font-semibold text-slate-800">
+                        <div className="w-px h-4 bg-gray-300 hidden sm:block"></div>
+                        <div className="flex items-center gap-2 text-[13px] font-semibold text-gray-800">
                             <ShieldCheck className="w-4 h-4 text-accent" />
                             100% DSGVO
                         </div>
-                        <div className="flex items-center gap-2 text-[13px] font-semibold text-slate-800">
+                        <div className="flex items-center gap-2 text-[13px] font-semibold text-gray-800">
                             <Trophy className="w-4 h-4 text-accent" />
                             32 Jahre Erfahrung
                         </div>
@@ -137,18 +142,18 @@ export default function WerbeagenturSalzburg() {
 
         <IndustryMarquee />
 
-        <section className="py-20 bg-slate-50 border-y border-slate-100">
+        <section className="py-20 bg-gray-50 border-y border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-accent/10 text-accent font-bold text-[10px] uppercase tracking-widest mb-4 border border-accent/20">
                             Innovationsstandort Salzburg
                         </div>
-                        <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight mb-6">
+                        <h2 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-6">
                             Ihr Partner für <br className="hidden sm:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600">Webdesign in Salzburg</span>
                         </h2>
-                        <p className="text-slate-600 text-lg leading-relaxed mb-8 font-body">
+                        <p className="text-gray-600 text-lg leading-relaxed mb-8 font-body">
                             Wir bringen moderne Werbeagentur-Expertise direkt in die Mozartstadt. Premium Webdesign, psychologisch optimiert für Ihren Unternehmenserfolg in Salzburg.
                         </p>
                     </div>
@@ -159,12 +164,12 @@ export default function WerbeagenturSalzburg() {
                             { title: "Smart SEO", desc: "KI-gestützte Optimierung für messbare regionale Sichtbarkeit.", icon: <TrendingUp className="w-5 h-5 text-accent" /> },
                             { title: "Partnerschaft", desc: "Persönliche Betreuung und nahtlose Kommunikation via Video-Call.", icon: <Handshake className="w-5 h-5 text-accent" /> },
                         ].map((item, i) => (
-                            <div key={i} className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-accent/30 transition-colors group">
-                                <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors">
+                            <div key={i} className="p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:border-accent/30 transition-colors group">
+                                <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors">
                                     {item.icon}
                                 </div>
-                                <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
-                                <p className="text-sm text-slate-500 leading-relaxed font-body">{item.desc}</p>
+                                <h4 className="font-bold text-gray-900 mb-2">{item.title}</h4>
+                                <p className="text-sm text-gray-500 leading-relaxed font-body">{item.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -176,7 +181,7 @@ export default function WerbeagenturSalzburg() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
                <ScrollReveal animation="reveal-right">
-                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1] py-1 mb-8">
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight leading-[1.1] py-1 mb-8">
 <span className="font-sans block">Digital erfolgreich</span>
 <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">in der Festspielstadt</span>
 </h2>
@@ -193,7 +198,7 @@ export default function WerbeagenturSalzburg() {
                            <Brain className="w-7 h-7 text-primary" />
                         </div>
                         <div>
-                           <h4 className="font-bold text-slate-900 text-lg font-sans">KI-Vorsprung</h4>
+                           <h4 className="font-bold text-gray-900 text-lg font-sans">KI-Vorsprung</h4>
                            <span className="font-body text-[#111827] text-sm">Nutzen Sie modernste Algorithmen für Ihr regionales Marketing in Salzburg.</span>
                         </div>
                      </div>
@@ -202,7 +207,7 @@ export default function WerbeagenturSalzburg() {
                            <Globe className="w-7 h-7 text-primary" />
                         </div>
                         <div>
-                           <h4 className="font-bold text-slate-900 text-lg font-sans">Regionale Dominanz</h4>
+                           <h4 className="font-bold text-gray-900 text-lg font-sans">Regionale Dominanz</h4>
                            <span className="font-body text-[#111827] text-sm">Targeting-Strategien, die Sie exakt in Ihrer Zielgruppe platzieren.</span>
                         </div>
                      </div>
@@ -210,11 +215,11 @@ export default function WerbeagenturSalzburg() {
                </ScrollReveal>
 
                <ScrollReveal animation="reveal-left" delay={200}>
-                  <div className="bg-slate-50/80 backdrop-blur-md rounded-3xl p-8 sm:p-10 border border-slate-200/60 shadow-xl relative">
+                  <div className="bg-gray-50/80 backdrop-blur-md rounded-3xl p-8 sm:p-10 border border-gray-200/60 shadow-xl relative">
                      <Quote className="w-16 h-16 text-accent/20 absolute top-6 right-8 rotate-180" />
                      
                      <div className="flex items-center gap-4 mb-6">
-                         <div className="w-20 h-20 rounded-full bg-slate-200 overflow-hidden shrink-0 border-4 border-white shadow-md relative">
+                         <div className="w-20 h-20 rounded-full bg-gray-200 overflow-hidden shrink-0 border-4 border-white shadow-md relative">
                              <img 
                                 src="/bilder/testimonial-salzbug.png" 
                                 alt="Marion Bald Kundenstimme" 
@@ -225,8 +230,8 @@ export default function WerbeagenturSalzburg() {
                              <div className="flex text-accent mb-1">
                                  {[1,2,3,4,5].map(star => <Star key={star} className="w-4 h-4 fill-accent" />)}
                              </div>
-                             <h4 className="font-bold text-slate-900 leading-tight">Marion Bald</h4>
-                             <span className="text-sm text-slate-500">Verifizierte Kundenbewertung</span>
+                             <h4 className="font-bold text-gray-900 leading-tight">Marion Bald</h4>
+                             <span className="text-sm text-gray-500">Verifizierte Kundenbewertung</span>
                          </div>
                      </div>
 
@@ -236,9 +241,9 @@ export default function WerbeagenturSalzburg() {
                   </div>
 
                   <div className="mt-8 flex justify-center w-full">
-                     <a href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex w-full justify-center items-center gap-2 px-8 py-4 bg-white border border-slate-200 rounded-xl font-bold text-lg text-slate-700 shadow-sm hover:bg-slate-50 hover:border-slate-300 hover:text-accent transition-all group scale-100 hover:scale-[1.02]">
+                     <a href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex w-full justify-center items-center gap-2 px-8 py-4 bg-white border border-gray-200 rounded-xl font-bold text-lg text-gray-700 shadow-sm hover:bg-gray-50 hover:border-gray-300 hover:text-accent transition-all group scale-100 hover:scale-[1.02]">
                         Besuchen Sie unser Google Profil
-                        <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-accent transition-transform group-hover:translate-x-1" />
+                        <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-accent transition-transform group-hover:translate-x-1" />
                      </a>
                   </div>
                </ScrollReveal>
