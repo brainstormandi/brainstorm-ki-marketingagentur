@@ -74,6 +74,7 @@ export class GeminiService {
         return new Promise((resolve, reject) => {
             const ws = new WebSocket(wsUrl);
             let sessionActive = false;
+            let heartbeatInterval: any = null;
 
             const session = {
                 sendRealtimeInput: (data: any) => {
@@ -82,13 +83,19 @@ export class GeminiService {
                 sendToolResponse: (data: any) => {
                     if (ws.readyState === WebSocket.OPEN) ws.send(JSON.stringify(data));
                 },
-                close: () => ws.close()
+                close: () => {
+                    if (heartbeatInterval) {
+                        clearInterval(heartbeatInterval);
+                        heartbeatInterval = null;
+                    }
+                    ws.close();
+                }
             };
 
             ws.onopen = () => {
                 const setupMessage = {
                     setup: {
-                        model: "models/gemini-2.0-flash-exp",
+                        model: "models/gemini-2.5-flash-native-audio-latest",
                         generationConfig: {
                             responseModalities: ["AUDIO"],
                             speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: "Kore" } } }
@@ -116,6 +123,21 @@ export class GeminiService {
                 };
                 ws.send(JSON.stringify(setupMessage));
                 sessionActive = true;
+
+                // Start heartbeat interval to keep the WebSocket active
+                heartbeatInterval = setInterval(() => {
+                    if (ws.readyState === WebSocket.OPEN) {
+                        try {
+                            ws.send(JSON.stringify({
+                                clientContent: {
+                                    turnComplete: false
+                                }
+                            }));
+                        } catch (e) {
+                            console.error("Keep-alive heartbeat failed:", e);
+                        }
+                    }
+                }, 15000); // 15 seconds interval
             };
 
             ws.onmessage = async (event) => {
@@ -134,11 +156,19 @@ export class GeminiService {
             };
 
             ws.onerror = (error) => {
+                if (heartbeatInterval) {
+                    clearInterval(heartbeatInterval);
+                    heartbeatInterval = null;
+                }
                 callbacks.onError(new Error("WebSocket Verbindungsfehler"));
                 reject(error);
             };
 
             ws.onclose = (event) => {
+                if (heartbeatInterval) {
+                    clearInterval(heartbeatInterval);
+                    heartbeatInterval = null;
+                }
                 if (event.code !== 1000 && sessionActive) {
                     callbacks.onError(new Error(`${event.reason || "Verbindung unterbrochen"} (Code ${event.code})`));
                 }
