@@ -44,8 +44,8 @@ export default function CookieBanner() {
                             Cookie-Einstellungen
                         </h3>
                         <p className="text-sm text-gray-600 font-body leading-relaxed">
-                            Wir nutzen Cookies, um unsere Website für Sie optimal zu gestalten und fortlaufend zu verbessern.
-                            Weitere Informationen finden Sie in unserer{" "}
+                            Wir nutzen Cookies, um unsere Website für dich optimal zu gestalten und fortlaufend zu verbessern.
+                            Weitere Informationen findest du in unserer{" "}
                             <Link href="/datenschutz" className="text-[#F7C429] hover:underline font-medium">
                                 Datenschutzerklärung
                             </Link>.

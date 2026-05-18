@@ -10,10 +10,10 @@ const GEOComparison = () => {
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-20 animate-reveal-up">
                     <h2 className="text-4xl sm:text-5xl font-[var(--font-playfair)] font-medium mb-6 tracking-wide bg-gradient-to-br from-white to-[#404040] bg-clip-text text-transparent">
-                        Was ist <span className="text-[#F7C429] [-webkit-text-fill-color:#F7C429]">GEO</span> & warum brauchen Sie es?
+                        Was ist <span className="text-[#F7C429] [-webkit-text-fill-color:#F7C429]">GEO</span> & warum brauchst du es?
                     </h2>
                     <p className="text-xl text-gray-600 font-body max-w-3xl mx-auto leading-relaxed">
-                        Die Welt der Suche verändert sich. Während klassisches SEO für Google optimiert, sorgt GEO (Generative Engine Optimization) dafür, dass Sie von KIs wie ChatGPT und Perplexity empfohlen werden.
+                        Die Welt der Suche verändert sich. Während klassisches SEO für Google optimiert, sorgt GEO (Generative Engine Optimization) dafür, dass du von KIs wie ChatGPT und Perplexity empfohlen wirst.
                     </p>
                 </div>
 
@@ -56,11 +56,11 @@ const GEOComparison = () => {
                 <div className="mt-16 grid sm:grid-cols-2 gap-8 animate-reveal-up reveal-delay-300">
                     <div className="p-8 rounded-[2rem] bg-gray-50/50 border border-gray-200">
                         <h4 className="font-[var(--font-playfair)] font-medium text-2xl tracking-wide mb-4 text-gray-900">Entity Recognition</h4>
-                        <p className="text-gray-600 font-body leading-relaxed">Durch saubere Schema.org Daten erkennt die KI Ihr Unternehmen als vertrauenswürdige Autorität in Ihrer Region.</p>
+                        <p className="text-gray-600 font-body leading-relaxed">Durch saubere Schema.org Daten erkennt die KI dein Unternehmen als vertrauenswürdige Autorität in deiner Region.</p>
                     </div>
                     <div className="p-8 rounded-[2rem] bg-gray-50/50 border border-gray-200">
                         <h4 className="font-[var(--font-playfair)] font-medium text-2xl tracking-wide mb-4 text-gray-900">Citation Strategy</h4>
-                        <p className="text-gray-600 font-body leading-relaxed">Wir optimieren Ihre Inhalte so, dass sie von KI-Modellen als Primärdatenquelle zitiert werden.</p>
+                        <p className="text-gray-600 font-body leading-relaxed">Wir optimieren deine Inhalte so, dass sie von KI-Modellen als Primärdatenquelle zitiert werden.</p>
                     </div>
                 </div>
             </div>

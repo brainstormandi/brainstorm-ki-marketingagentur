@@ -10,14 +10,14 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", weight: ["40
 
 export const metadata: Metadata = {
   title: "KI Werbeagentur Österreich | Profitabler durch Webseiten, Landingpages & Automatisierung",
-  description: "Österreichs Nr. 1 KI-Werbeagentur für KMU. Wir erstellen moderne Webseiten, verkaufsstarke Landingpages und machen Sie durch SEO & GEO zum Kundenmagneten.",
+  description: "Österreichs Nr. 1 KI-Werbeagentur für KMU. Wir erstellen moderne Webseiten, verkaufsstarke Landingpages und machen dich durch SEO & GEO zum Kundenmagneten.",
   keywords: ["Werbeagentur Niederösterreich", "KI Werbeagentur Österreich", "SEO Seitenstetten", "GEO Marketing", "Webseite erstellen lassen KMU", "Landingpage erstellen lassen", "Website", "Prozessautomatisierung für Unternehmen"],
   authors: [{ name: "Andi Sturm" }],
   creator: "Andi Sturm",
   publisher: "BrainStorm Werbeagentur",
   openGraph: {
     title: "KI Werbeagentur Österreich | Webseiten, Landingpages & SEO",
-    description: "Wir erstellen moderne Webseiten, verkaufsstarke Landingpages und automatisierte KI-Lösungen für maximale Sichtbarkeit und Effizienz Ihrer KMU.",
+    description: "Wir erstellen moderne Webseiten, verkaufsstarke Landingpages und automatisierte KI-Lösungen für maximale Sichtbarkeit und Effizienz deines KMUs.",
     url: "https://ki-marketingagentur.jetzt",
     siteName: "BrainStorm Werbeagentur",
     locale: "de_AT",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "BrainStorm KI | Web & KI aus Seitenstetten",
-    description: "Professionelle Webseiten und KI-Lösungen für maximale Sichtbarkeit Ihrer KMU.",
+    description: "Professionelle Webseiten und KI-Lösungen für maximale Sichtbarkeit deines KMUs.",
     creator: "@andi_sturm",
     images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
   },

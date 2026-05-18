@@ -55,7 +55,7 @@ export default function BlogIndex() {
               <span className="block text-transparent bg-clip-text pb-2 sm:pb-4" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>Blog.</span>
             </h1>
             <p className="text-xl text-gray-600 font-body">
-              Insights, Strategien & Expertenwissen für Ihren digitalen Vorsprung durch KI.
+              Insights, Strategien & Expertenwissen für deinen digitalen Vorsprung durch KI.
             </p>
           </div>
 

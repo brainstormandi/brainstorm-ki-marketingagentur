@@ -63,19 +63,19 @@ export async function POST(req: Request) {
         const clientMailOptions = {
             from: `"${process.env.SMTP_FROM_NAME || 'Brainstorm Werbeagentur'}" <${process.env.SMTP_FROM}>`,
             to: clientEmail,
-            subject: `Terminbestätigung: Ihr Gespräch mit Brainstorm`,
+            subject: `Terminbestätigung: Dein Gespräch mit BrainStorm`,
             html: `
                 <div style="font-family: sans-serif; color: #111827; padding: 20px; border: 1px solid #eee; border-radius: 12px;">
                     <h2 style="margin-bottom: 24px;">Hallo ${clientName},</h2>
-                    <p style="font-size: 16px; line-height: 1.6;">vielen Dank für das Gespräch mit unserem AI Assistant.</p>
-                    <p style="font-size: 16px; line-height: 1.6;">Hiermit bestätigen wir Ihren Termin:</p>
+                    <p style="font-size: 16px; line-height: 1.6;">vielen Dank für das Gespräch mit unserer KI-Assistentin Susi.</p>
+                    <p style="font-size: 16px; line-height: 1.6;">Hiermit bestätigen wir deinen Termin:</p>
                     <div style="background: #f9fafb; padding: 16px; border-radius: 8px; margin: 20px 0;">
                         <p style="margin: 8px 0;"><strong>Wann:</strong> ${appointmentDateTime}</p>
                         <p style="margin: 8px 0;"><strong>Thema:</strong> ${topic}</p>
                     </div>
-                    <p style="font-size: 16px; line-height: 1.6;">Wir freuen uns darauf, Sie digital nach vorne zu bringen.</p>
+                    <p style="font-size: 16px; line-height: 1.6;">Wir freuen uns darauf, dich digital nach vorne zu bringen.</p>
                     <br>
-                    <p style="font-size: 16px;">Mit freundlichen Grüßen,<br><strong>Ihr Brainstorm Team</strong></p>
+                    <p style="font-size: 16px;">Mit freundlichen Grüßen,<br><strong>Dein BrainStorm Team</strong></p>
                 </div>
             `,
         };

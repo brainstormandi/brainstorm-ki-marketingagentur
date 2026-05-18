@@ -18,12 +18,17 @@ const Blog = () => {
             <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent text-gray-600 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-gray-200">
               BrainStorm Blog
             </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.1] py-1 mb-6 uppercase">
-              <span className="block">Insights &</span>
-              <span className="block text-transparent bg-clip-text pb-2 sm:pb-4" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>KI-Trends.</span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.1] py-1 mb-4 uppercase">
+              <span className="block">Das Werkzeug für</span>
+              <span className="block text-transparent bg-clip-text pb-2 sm:pb-4" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>deinen Vorsprung.</span>
             </h2>
-            <p className="text-gray-600 text-lg sm:text-xl leading-relaxed font-body">
-              Wissen, das Sie weiterbringt. Lesen Sie die neuesten Artikel über KI im Marketing, Automatisierung und digitale Strategien.
+            
+            <p className="text-xl sm:text-2xl font-[var(--font-playfair)] font-medium text-[#F7C429] mb-6 uppercase tracking-wide">
+              Insights & KI-Strategien direkt aus der Praxis.
+            </p>
+            
+            <p className="text-gray-600 text-lg sm:text-xl leading-relaxed font-body max-w-4xl mx-auto">
+              Der Weg an die Spitze erfordert nicht nur Mut, sondern das richtige Wissen. In unserem Blog teilen wir als deine Strategen genau die Erkenntnisse, die regionale Betriebe stark machen. Hier erfährst du aus erster Hand, wie du modernste KI-Automatisierung für dich arbeiten lässt, psychologische Verkaufsstrategien anwendest und dich souverän gegen übermächtige Konkurrenz behauptest.
             </p>
           </div>
         </ScrollReveal>

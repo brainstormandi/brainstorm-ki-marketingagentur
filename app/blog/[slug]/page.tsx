@@ -82,11 +82,44 @@ export default async function BlogPostPage(props: Props) {
     ]
   };
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "image": [post.imageUrl],
+    "datePublished": post.date,
+    "dateModified": post.date,
+    "author": {
+      "@type": "Person",
+      "name": post.author,
+      "url": "https://www.linkedin.com/in/brainstorm-andi/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "BrainStorm Werbeagentur",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ki-marketingagentur.jetzt/bilder/logo.png"
+      }
+    },
+    "description": post.excerpt,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://ki-marketingagentur.jetzt/blog/${post.slug}`
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <script
+        id="blog-breadcrumb-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        id="blog-article-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <Navbar theme="dark" />
 

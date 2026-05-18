@@ -85,13 +85,13 @@ const Hero = () => {
                     maxWidth: '850px',
                     letterSpacing: '-0.02em'
                 }}>
-                    Ihre Webseite ist jetzt <br />
+                    Gewinne deine Zeit zurück und <br className="hidden sm:inline" />
                     <span style={{ 
                         color: '#F7C429',
                         display: 'inline-block',
                         position: 'relative'
                     }}>
-                        intelligent.
+                        dominiere
                         <span style={{
                             content: '""',
                             position: 'absolute',
@@ -103,7 +103,7 @@ const Hero = () => {
                             zIndex: -1,
                             transform: 'skewX(-15deg)'
                         }} />
-                    </span>
+                    </span> deinen lokalen Markt.
                 </h1>
                 
                 {/* Subtext */}
@@ -116,32 +116,36 @@ const Hero = () => {
                     maxWidth: '650px',
                     fontWeight: 400
                 }}>
-                    Wir bauen keine gewöhnlichen Webseiten. Wir erschaffen psychologisch optimierte Vertriebs-Webseiten und Landingpages, die dank KI-Präzision und Suchmaschinenoptimierung genau die Kunden anziehen, die Sie wirklich wollen.
+                    Große Konzerne haben riesige Abteilungen. Du hast jetzt Künstliche Intelligenz. Wir rüsten deinen Betrieb mit intelligenten, automatisierten Webseiten aus, die wie ein digitaler Top-Verkäufer rund um die Uhr für dich arbeiten – ohne Technik-Chaos, mit echter Handschlagqualität. <strong>Finde heraus, wie viel Zeit du verlierst.</strong>
                 </p>
 
-                {/* CTA Button */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
-                    <Link href="/#website-check" 
-                        onMouseEnter={() => setIsHovered(true)}
-                        onMouseLeave={() => setIsHovered(false)}
-                        style={{
-                        display: 'flex', alignItems: 'center', gap: 12,
-                        padding: '18px 36px', borderRadius: 9999,
-                        backgroundColor: isHovered ? '#000000' : '#F7C429',
-                        color: isHovered ? '#F7C429' : '#000000', textDecoration: 'none',
-                        fontFamily: 'var(--font-inter), sans-serif', fontSize: 13,
-                        fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase',
-                        boxShadow: isHovered ? '0 10px 30px rgba(0,0,0,0.2)' : '0 10px 30px rgba(247, 196, 41, 0.4)',
-                        transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                        transform: isHovered ? 'translateY(-2px)' : 'translateY(0)'
-                    }}>
-                        Kostenloser Webseiten-Check
-                        <ArrowUpRight style={{ 
-                            width: 18, height: 18,
-                            transform: isHovered ? 'translate(2px, -2px)' : 'translate(0, 0)',
-                            transition: 'transform 0.4s ease'
-                        }} />
-                    </Link>
+                {/* CTA Area */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'flex-start' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+                        <Link href="/#website-check" 
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
+                            style={{
+                            display: 'flex', alignItems: 'center', gap: 12,
+                            padding: '18px 36px', borderRadius: 9999,
+                            backgroundColor: isHovered ? '#000000' : '#F7C429',
+                            color: isHovered ? '#F7C429' : '#000000', textDecoration: 'none',
+                            fontFamily: 'var(--font-inter), sans-serif', fontSize: 13,
+                            fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase',
+                            boxShadow: isHovered ? '0 10px 30px rgba(0,0,0,0.2)' : '0 10px 30px rgba(247, 196, 41, 0.4)',
+                            transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                            transform: isHovered ? 'translateY(-2px)' : 'translateY(0)',
+                            textAlign: 'center'
+                        }}>
+                            Hol dir den kostenlosen Webseiten-Check
+                            <ArrowUpRight style={{ 
+                                width: 18, height: 18,
+                                flexShrink: 0,
+                                transform: isHovered ? 'translate(2px, -2px)' : 'translate(0, 0)',
+                                transition: 'transform 0.4s ease'
+                            }} />
+                        </Link>
+                    </div>
                 </div>
 
                 {/* Trust Elements */}

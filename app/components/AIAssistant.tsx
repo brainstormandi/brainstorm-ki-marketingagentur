@@ -21,7 +21,7 @@ const AIAssistant = () => {
     const [error, setError] = useState<string | null>(null);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [messages, setMessages] = useState<any[]>([
-        { role: 'bot', text: 'Guten Tag! Willkommen bei Brainstorm. Wie kann ich Ihnen heute helfen, Ihr Unternehmen digital nach vorne zu bringen?' }
+        { role: 'bot', text: 'Hallo! Willkommen bei Brainstorm. Wie kann ich dir heute helfen, dein Unternehmen digital nach vorne zu bringen?' }
     ]);
     const [input, setInput] = useState('');
     const [isListening, setIsListening] = useState(false);
@@ -122,7 +122,7 @@ const AIAssistant = () => {
                             isSending: false,
                             isSuccess: true,
                             appointmentData: { clientName, clientEmail, appointmentDateTime, topic },
-                            text: `Termin erfolgreich bestätigt! ✓\n\nIch habe die Bestätigungs-Emails soeben an Sie (${clientEmail}) und an unser Team versendet.`,
+                            text: `Termin erfolgreich bestätigt! ✓\n\nIch habe die Bestätigungs-Emails soeben an dich (${clientEmail}) und an unser Team versendet.`,
                         }
                         : msg
                 ));
@@ -132,7 +132,7 @@ const AIAssistant = () => {
                 const subject = encodeURIComponent(`Terminanfrage: ${topic}`);
                 const body = encodeURIComponent(`Hallo Brainstorm Team,\n\nich möchte folgenden Termin bestätigen:\n\nName: ${clientName}\nZeit: ${appointmentDateTime}\nThema: ${topic}\n\nBitte um Bestätigung.\n\nViele Grüße,\n${clientName}`);
                 const mailtoLink = `mailto:${CONTACT_INFO.email}?subject=${subject}&body=${body}&cc=${clientEmail}`;
-
+ 
                 setMessages(prev => prev.map(msg =>
                     msg.id === statusMsgId
                         ? {
@@ -140,7 +140,7 @@ const AIAssistant = () => {
                             isSending: false,
                             isFallback: true,
                             fallbackLink: mailtoLink,
-                            text: "Der automatische Server-Versand konnte nicht abgeschlossen werden. Aber keine Sorge! Bitte klicken Sie unten, um die Bestätigung manuell abzusenden:"
+                            text: "Der automatische Server-Versand konnte nicht abgeschlossen werden. Aber keine Sorge! Bitte klicke unten, um die Bestätigung manuell abzusenden:"
                         }
                         : msg
                 ));
@@ -335,7 +335,7 @@ const AIAssistant = () => {
                     chatSessionRef.current = await gemini.current.startChat();
                 } catch (connErr) {
                     console.error("Gemini StartChat Error:", connErr);
-                    setMessages(prev => [...prev, { role: 'bot', text: 'Entschuldigung, ich konnte keine Verbindung zum AI-Service herstellen. Bitte prüfen Sie Ihre Internetverbindung oder API-Keys.' }]);
+                    setMessages(prev => [...prev, { role: 'bot', text: 'Entschuldigung, ich konnte keine Verbindung zum AI-Service herstellen. Bitte prüfe deine Internetverbindung oder API-Keys.' }]);
                     setIsConnecting(false);
                     return;
                 }
@@ -401,7 +401,7 @@ const AIAssistant = () => {
                                 <h4 className="font-[var(--font-playfair)] font-medium text-2xl tracking-wide leading-none mb-2 text-gray-900">Susi KI</h4>
                                 <div className="flex items-center gap-2">
                                     <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                                    <span className="text-[11px] text-gray-600 font-body tracking-[0.05em]">Ihre persönliche Assistentin</span>
+                                    <span className="text-[11px] text-gray-600 font-body tracking-[0.05em]">Deine persönliche Assistentin</span>
                                 </div>
                             </div>
                         </div>

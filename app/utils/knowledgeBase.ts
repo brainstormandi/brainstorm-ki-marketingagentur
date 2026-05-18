@@ -1,16 +1,15 @@
-import { CONTACT_INFO, SERVICES, PROCESS_STEPS, TESTIMONIALS, ADVANTAGES, FAQS } from '../constants';
+import { CONTACT_INFO, SERVICES, PROCESS_STEPS, TESTIMONIALS, FAQS } from '../constants';
 import { blogPosts } from '../data/blogData';
 
 export const buildSystemInstruction = (): string => {
     const servicesKB = SERVICES.map(s => `- ${s.title}: ${s.description} (${s.stat?.label || ''}: ${s.stat?.value || ''})`).join('\n');
-    const advantagesKB = ADVANTAGES.map(a => `- ${a.title}: ${a.description}`).join('\n');
     const processKB = PROCESS_STEPS.map((p, i) => `Schritt ${i + 1}. ${p.title}: ${p.description}`).join('\n');
     const faqsKB = FAQS.map((f, i) => `Frage ${i + 1}: ${f.question}\nAntwort: ${f.answer}`).join('\n\n');
     const reviewsKB = TESTIMONIALS.slice(0, 15).map(t => `- ${t.name} (${t.company}): "${t.quote}"`).join('\n');
     // Include publication date explicitly so the AI understands chronological order
     const blogsKB = blogPosts.map(b => `- Blog: "${b.title}" [Veröffentlicht: ${b.date}] (Slug: ${b.slug}) | Vorschau: ${b.excerpt}`).join('\n');
 
-    return `Du bist "Susi, Ihre KI Assistentin", die offizielle strategische Beraterin der BrainStorm Werbeagentur. Dein Ziel ist es, KMUs (kleine und mittlere Unternehmen) kompetent zu beraten und Termine für Andi Sturm zu vereinbaren.
+    return `Du bist "Susi, deine KI-Assistentin", die offizielle strategische Beraterin der BrainStorm Werbeagentur. Dein Ziel ist es, KMUs (kleine und mittlere Unternehmen) kompetent zu beraten und Termine für Andi Sturm zu vereinbaren.
 
 WICHTIGE VERTRAUENSDATEN:
 - Agentur: BrainStorm Werbeagentur / Brainstorm KI Werbeagentur
@@ -23,6 +22,7 @@ WICHTIGE VERTRAUENSDATEN:
 VERHALTENSREGELN & SCOPE:
 - Antworte AUSSCHLIESSLICH auf Deutsch.
 - Sei sympathisch, kompetent und direkt (Handschlagqualität).
+- WICHTIG: Sprich den Benutzer IMMER und AUSNAHMSLOS in der informellen "Du"-Form an (z.B. "du", "dein", "dir", "dich"). Nutze NIEMALS die Höflichkeitsform "Sie", "Ihr" oder "Ihnen".
 - TELEFONNUMMERN: Nenne Telefonnummern immer Ziffer für Ziffer (z.B. "plus vier drei, sechs sechs null..."), niemals als eine zusammenhängende große Zahl.
 - BLEIBE STRIKT BEI DEN FAKTEN: Nutze für alle deine fachlichen Aussagen und Firmeninfos ausschließlich das Wissen aus der unten stehenden Knowledge Base der Website.
 - OUT-OF-SCOPE: Wenn User Fragen stellen, die absolut nichts mit Marketing, Web, KI oder der Agentur zu tun haben (z.B. Kochen, Wetter, Politik), antworte höflich aber weise darauf hin, dass dein Fokus auf digitalem Erfolg liegt.
@@ -40,9 +40,6 @@ DYNAMISCHE WEBSITE-KNOWLEDGE-BASE (DEIN ZENTRALES WISSEN DER AGENTUR)
 
 UNSERE LEISTUNGEN (SERVICES):
 ${servicesKB}
-
-UNSERE VORTEILE (WHY US):
-${advantagesKB}
 
 UNSER UMSETZUNGS-PROZESS:
 ${processKB}

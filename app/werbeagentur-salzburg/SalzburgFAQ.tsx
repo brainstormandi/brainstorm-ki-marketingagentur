@@ -6,7 +6,7 @@ import ScrollReveal from '../components/ScrollReveal';
 const SALZBURG_FAQS = [
   {
     question: "Warum eine Webagentur für Salzburg aus der Ferne wählen?",
-    answer: "In der digitalen Welt von heute zählt Kompetenz vor Postleitzahl. Wir kombinieren die Agilität und Innovationskraft einer KI-fokussierten Agentur mit der Zuverlässigkeit, die Salzburger Traditionsunternehmen schätzen. Durch effiziente Video-Calls sparen Sie Zeit und erhalten Ergebnisse auf Weltklasse-Niveau."
+    answer: "In der digitalen Welt von heute zählt Kompetenz vor Postleitzahl. Wir kombinieren die Agilität und Innovationskraft einer KI-fokussierten Agentur mit der Zuverlässigkeit, die Salzburger Traditionsunternehmen schätzen. Durch effiziente Video-Calls sparst du Zeit und erhalten Ergebnisse auf Weltklasse-Niveau."
   },
   {
     question: "Ist Vor-Ort-Betreuung in Salzburg möglich?",
@@ -14,11 +14,11 @@ const SALZBURG_FAQS = [
   },
   {
     question: "Wie hilft KI meinem Salzburger Unternehmen konkret?",
-    answer: "Ob automatisierte Kundenanfragen, KI-generierte Fachartikel für Ihr SEO oder smarte Chatbots – wir implementieren Technologien, die Ihre Betriebskosten senken und gleichzeitig die Kundenerfahrung verbessern. Salzburg ist ein Innovations-Hub, und wir liefern die passenden Werkzeuge dazu."
+    answer: "Ob automatisierte Kundenanfragen, KI-generierte Fachartikel für dein SEO oder smarte Chatbots – wir implementieren Technologien, die deine Betriebskosten senken und gleichzeitig die Kundenerfahrung verbessern. Salzburg ist ein Innovations-Hub, und wir liefern die passenden Werkzeuge dazu."
   },
   {
-    question: "Bieten Sie spezielles SEO für die Region Salzburg an?",
-    answer: "Absolut. Wir optimieren Ihre Webseite gezielt auf lokale Suchanfragen (Local SEO), damit Sie in Salzburg und Umgebung von Ihrer Zielgruppe gefunden werden, wenn diese nach Ihren Dienstleistungen sucht. Dazu nutzen wir modernste Schema-Daten und KI-gestützte Content-Strategien."
+    question: "Bietest du spezielles SEO für die Region Salzburg an?",
+    answer: "Absolut. Wir optimieren deine Webseite gezielt auf lokale Suchanfragen (Local SEO), damit du in Salzburg und Umgebung von deiner Zielgruppe gefunden wirst, wenn diese nach deinen Dienstleistungen sucht. Dazu nutzen wir modernste Schema-Daten und KI-gestützte Content-Strategien."
   }
 ];
 

@@ -11,7 +11,7 @@ import { GOOGLE_REVIEW_LINK } from '../constants';
 
 export const metadata: Metadata = {
   title: "Werbeagentur Salzburg | High-End Webdesign & KI-Marketing",
-  description: "Ihre Experten für Webseiten und Landingpages in Salzburg. Wir kombinieren innovatives KI-Marketing mit erstklassigem Webdesign für maximale Resultate. Jetzt anfragen!",
+  description: "deine Experten für Webseiten und Landingpages in Salzburg. Wir kombinieren innovatives KI-Marketing mit erstklassigem Webdesign für maximale Resultate. Jetzt anfragen!",
   alternates: {
     canonical: "https://ki-marketingagentur.jetzt/werbeagentur-salzburg",
   },
@@ -139,9 +139,6 @@ export default function WerbeagenturSalzburg() {
                 </div>
             </div>
         </section>
-
-        <IndustryMarquee />
-
         <section className="py-20 bg-gray-50 border-y border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -150,11 +147,11 @@ export default function WerbeagenturSalzburg() {
                             Innovationsstandort Salzburg
                         </div>
                         <h2 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-6">
-                            Ihr Partner für <br className="hidden sm:block" />
+                            dein Partner für <br className="hidden sm:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600">Webdesign in Salzburg</span>
                         </h2>
                         <p className="text-gray-600 text-lg leading-relaxed mb-8 font-body">
-                            Wir bringen moderne Werbeagentur-Expertise direkt in die Mozartstadt. Premium Webdesign, psychologisch optimiert für Ihren Unternehmenserfolg in Salzburg.
+                            Wir bringen moderne Werbeagentur-Expertise direkt in die Mozartstadt. Premium Webdesign, psychologisch optimiert für deinen Unternehmenserfolg in Salzburg.
                         </p>
                     </div>
                     <div className="grid sm:grid-cols-2 gap-4">
@@ -186,10 +183,10 @@ export default function WerbeagenturSalzburg() {
 <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">in der Festspielstadt</span>
 </h2>
                   <p className="font-body text-[#111827] text-lg leading-relaxed mb-6">
-                     Salzburg steht für Weltklasse – und genau diesen Anspruch sollte auch Ihre digitale Präsenz widerspiegeln. In einem Markt, der Tradition und Innovation so eng verknüpft wie kaum ein anderer, benötigen Sie eine Webseite, die beides beherrscht: Vertrauenswürdigkeit und modernste Conversion-Technik.
+                     Salzburg steht für Weltklasse – und genau diesen Anspruch sollte auch deine digitale Präsenz widerspiegeln. In einem Markt, der Tradition und Innovation so eng verknüpft wie kaum ein anderer, benötigen du eine Webseite, die beides beherrscht: Vertrauenswürdigkeit und modernste Conversion-Technik.
                   </p>
                   <p className="font-body text-[#111827] text-lg leading-relaxed mb-8">
-                     Ob KMU am Nonntal, innovative Startups in der Science City oder etablierte Betriebe im Umland – wir sind Ihr Partner für den digitalen Vorsprung. Durch unseren KI-fokussierten Ansatz erstellen wir Inhalte, die nicht nur Google, sondern vor allem Ihre Kunden in Salzburg überzeugen. Flexibel, schnell und absolut präzise in der Umsetzung.
+                     Ob KMU am Nonntal, innovative Startups in der Science City oder etablierte Betriebe im Umland – wir sind dein Partner für den digitalen Vorsprung. Durch unseren KI-fokussierten Ansatz erstellen wir Inhalte, die nicht nur Google, sondern vor allem deine Kunden in Salzburg überzeugen. Flexibel, schnell und absolut präzise in der Umsetzung.
                   </p>
                   
                   <div className="flex flex-col gap-4 mb-10">
@@ -199,7 +196,7 @@ export default function WerbeagenturSalzburg() {
                         </div>
                         <div>
                            <h4 className="font-bold text-gray-900 text-lg font-sans">KI-Vorsprung</h4>
-                           <span className="font-body text-[#111827] text-sm">Nutzen Sie modernste Algorithmen für Ihr regionales Marketing in Salzburg.</span>
+                           <span className="font-body text-[#111827] text-sm">Nutze modernste Algorithmen für dein regionales Marketing in Salzburg.</span>
                         </div>
                      </div>
                      <div className="flex items-center gap-4">
@@ -208,7 +205,7 @@ export default function WerbeagenturSalzburg() {
                         </div>
                         <div>
                            <h4 className="font-bold text-gray-900 text-lg font-sans">Regionale Dominanz</h4>
-                           <span className="font-body text-[#111827] text-sm">Targeting-Strategien, die Sie exakt in Ihrer Zielgruppe platzieren.</span>
+                           <span className="font-body text-[#111827] text-sm">Targeting-Strategien, die du exakt in deiner Zielgruppe platzieren.</span>
                         </div>
                      </div>
                   </div>
@@ -242,7 +239,7 @@ export default function WerbeagenturSalzburg() {
 
                   <div className="mt-8 flex justify-center w-full">
                      <a href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex w-full justify-center items-center gap-2 px-8 py-4 bg-white border border-gray-200 rounded-xl font-bold text-lg text-gray-700 shadow-sm hover:bg-gray-50 hover:border-gray-300 hover:text-accent transition-all group scale-100 hover:scale-[1.02]">
-                        Besuchen Sie unser Google Profil
+                        Besuche unser Google Profil
                         <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-accent transition-transform group-hover:translate-x-1" />
                      </a>
                   </div>
@@ -254,6 +251,7 @@ export default function WerbeagenturSalzburg() {
         <Services />
         <SalzburgFAQ />
         <Contact />
+        <IndustryMarquee />
       </main>
       <Footer />
       <AIAssistant />

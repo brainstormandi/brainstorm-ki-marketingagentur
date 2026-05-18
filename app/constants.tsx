@@ -1,5 +1,4 @@
-import React from 'react';
-import { Layout, Smartphone, Zap, Search, Megaphone, Target, Puzzle, Layers, TrendingUp } from 'lucide-react';
+import { Layout, Smartphone, Zap, Search, Megaphone, Target } from 'lucide-react';
 
 export const CONTACT_INFO = {
     email: "info@brainstorm-werbeagentur.at",
@@ -13,37 +12,37 @@ export const GOOGLE_REVIEW_LINK = "https://www.google.com/search?q=Brainstorm+We
 export const SERVICES = [
     {
         title: "Webseite & Landingpage",
-        description: "Wir erstellen Ihre moderne Webseite oder verkaufsstarke Landingpage. Verkaufspsychologisch optimiert, blitzschnell und SEO-optimiert für maximale Google-Sichtbarkeit.",
+        description: "Wir erschaffen psychologisch optimierte Webseiten, die aus anonymen Besuchern exakt die Kunden machen, die du wirklich willst",
         icon: <Layout className="w-8 h-8 text-primary" />,
         stat: { value: "80%", label: "mehr Conversion" }
     },
     {
-        title: "Eigene App (PWA)",
-        description: "Ihre eigene App ohne App Store – direkt auf dem Smartphone Ihrer Kunden. Native App-Erlebnis mit Offline-Funktionalität, Push-Benachrichtigungen und automatischen Updates.",
-        icon: <Smartphone className="w-8 h-8 text-primary" />,
-        stat: { value: "3x", label: "höhere Bindung" }
-    },
-    {
-        title: "Automatisierung",
-        description: "Sparen Sie Zeit und Kosten durch intelligente Automatisierung. Wir erstellen automatisierte Terminbuchungen, Anfragen-Workflows und sorgen für messbare Effizienzsteigerung.",
+        title: "KI-Automatisierung",
+        description: "Befreie dich von Routineaufgaben. Wir implementieren intelligente Termin- und Anfragen-Workflows, die leise im Hintergrund arbeiten",
         icon: <Zap className="w-8 h-8 text-primary" />,
         stat: { value: "15h", label: "Zeitersparnis pro Woche" }
     },
     {
         title: "SEO, GEO & KI Suche",
-        description: "Sichtbarkeit der nächsten Generation. Wir bringen Sie auf Top-Plätze bei Google, ChatGPT & Co. – nachhaltig, effektiv und perfekt optimiert für KI-gestützte Suchanfragen.",
+        description: "Wir bringen dich auf die absoluten Top-Plätze bei Google und ChatGPT. Zieh an den Großen vorbei – nachhaltig und effektiv",
         icon: <Search className="w-8 h-8 text-primary" />,
         stat: { value: "Top 3", label: "KI-Rankings" }
     },
     {
+        title: "Eigene App / PWA",
+        description: "Binde Kunden direkt an dich – mit einer eigenen App auf ihrem Smartphone, ganz ohne App Store. Nutze modernste Features wie Push-Benachrichtigungen, um immer im Alltag deiner Zielgruppe präsent zu sein.",
+        icon: <Smartphone className="w-8 h-8 text-primary" />,
+        stat: { value: "3x", label: "höhere Bindung" }
+    },
+    {
         title: "Social Media Marketing",
-        description: "Bringen Sie Ihre Marke zum Strahlen auf Facebook, Instagram und LinkedIn. Zielgerichtete Kampagnen für erhöhte Reichweite und maximale Sichtbarkeit Ihrer Marke.",
+        description: "Wir bringen deine Marke auf Facebook, Instagram und LinkedIn zum Strahlen. Durch zielgerichtete Kampagnen baust du eine echte Verbindung zu deiner Zielgruppe auf und ziehst genau die Menschen an, die deinen Betrieb schätzen",
         icon: <Megaphone className="w-8 h-8 text-primary" />,
         stat: { value: "+120%", label: "mehr Reichweite" }
     },
     {
         title: "Digital Advertising",
-        description: "Präzises Google Ads und Social Media Advertising. Erreichen Sie genau die richtigen Kunden – kosteneffizient, messbar und durch optimierte Anzeigenkampagnen.",
+        description: "Überlass den Kundenstrom nicht dem Zufall. Mit zielgenauen Kampagnen auf Google und Social Media erreichen wir exakt die richtigen Kunden für dich – absolut kosteneffizient und auf messbaren Gewinn optimiert",
         icon: <Target className="w-8 h-8 text-primary" />,
         stat: { value: "5x", label: "höherer ROI" }
     }
@@ -51,16 +50,16 @@ export const SERVICES = [
 
 export const PROCESS_STEPS = [
     {
-        title: "Erstgespräch",
-        description: "Wir analysieren Ihre aktuellen Prozesse und finden das größte Potenzial."
+        title: "Das kostenlose Erstgespräch",
+        description: "Wir lernen uns kennen, analysieren deine Engpässe und finden das größte Potenzial für deinen Betrieb."
     },
     {
-        title: "Strategie-Check",
-        description: "Entwicklung eines individuellen KI-Fahrplans für Ihr KMU."
+        title: "Dein individueller KI-Fahrplan",
+        description: "Du erhältst eine maßgeschneiderte Strategie, die genau auf deine Branche und Zielgruppe zugeschnitten ist."
     },
     {
-        title: "Livegang in 5 - 7 Werktagen",
-        description: "Schnelle Umsetzung ohne monatelange Projektlaufzeiten."
+        title: "Livegang in 5-7 Werktagen",
+        description: "Lehn dich zurück. Wir setzen alles um. Nach wenigen Tagen beginnt die KI für dich zu arbeiten."
     }
 ];
 
@@ -259,40 +258,22 @@ export const TESTIMONIALS = [
     }
 ];
 
-export const ADVANTAGES = [
-    {
-        title: "Maßgeschneiderte Lösungen für Ihren Erfolg",
-        description: "Individuelle Strategien für Ihre Branche und Zielgruppe. Wir verbinden psychologische Trigger mit modernem Design, um Ihre Kunden emotional zu überzeugen.",
-        icon: <Puzzle className="w-10 h-10 text-primary" />
-    },
-    {
-        title: "Rundum-sorglos-Paket – von der Idee bis zur Umsetzung",
-        description: "Von der Analyse über Design bis SEO – wir managen Ihren kompletten digitalen Auftritt, damit Sie sich auf Ihr Geschäft konzentrieren können.",
-        icon: <Layers className="w-10 h-10 text-primary" />
-    },
-    {
-        title: "Nachhaltige Ergebnisse, die überzeugen",
-        description: "Langfristiger Erfolg durch messbare Strategien. Sichern Sie sich stabilere Umsätze, mehr Anfragen und klare Planungssicherheit durch intelligente KI-Systeme für Ihren Betrieb.",
-        icon: <TrendingUp className="w-10 h-10 text-primary" />
-    }
-];
-
 export const FAQS = [
     {
         question: "Welche KI ist die beste für Marketing?",
-        answer: "Für modernes Marketing gibt es nicht die EINE beste KI, sondern eine smarte Kombination aus Tools. ChatGPT und Claude eignen sich hervorragend für SEO-Texte, Midjourney für visuelle Inhalte. Als spezialisierte KI Marketing Agentur vernetzen wir diese Modelle durch clevere Automatisierungen für Ihren maximalen Erfolg."
+        answer: "Für modernes Marketing gibt es nicht die EINE beste KI, sondern eine smarte Kombination aus Tools. ChatGPT und Claude eignen sich hervorragend für SEO-Texte, Midjourney für visuelle Inhalte. Als spezialisierte KI Marketing Agentur vernetzen wir diese Modelle durch clevere Automatisierungen für deinen maximalen Erfolg."
     },
     {
         question: "Wie viel kostet eine Marketing-Agentur?",
-        answer: "Die Kosten variieren stark nach Projektumfang. Durch unseren KI-gestützten Workflow arbeiten wir jedoch deutlich effizienter als klassische Agenturen. Dadurch können wir Ihnen Premium Webseiten, verkaufsstarke Landingpages und SEO-Kampagnen zu fairen, transparenten Fixpreisen für KMUs anbieten."
+        answer: "Die Kosten variieren stark nach Projektumfang. Durch unseren KI-gestützten Workflow arbeiten wir jedoch deutlich effizienter als klassische Agenturen. Dadurch können wir dir Premium Webseiten, verkaufsstarke Landingpages und SEO-Kampagnen zu fairen, transparenten Fixpreisen für KMUs anbieten."
     },
     {
         question: "Was kostet ein KI-Berater?",
-        answer: "Ein KI-Berater rechnet meist stundenweise ab und identifiziert Automatisierungspotenziale. Bei der BrainStorm KI Werbeagentur ist jedoch bereits das strategische Erstgespräch für Ihre KI-Transformation und Ihren neuen Web-Auftritt völlig kostenlos. Wir zeigen Ihnen sofort die größten Hebel für Ihre Zeitersparnis."
+        answer: "Ein KI-Berater rechnet meist stundenweise ab und identifiziert Automatisierungspotenziale. Bei der BrainStorm KI Werbeagentur ist jedoch bereits das strategische Erstgespräch für deine KI-Transformation und deinen neuen Web-Auftritt völlig kostenlos. Wir zeigen dir sofort die größten Hebel für deine Zeitersparnis."
     },
     {
         question: "Was genau ist der Unterschied zwischen SEO und GEO?",
-        answer: "SEO (Search Engine Optimization) optimiert Ihre Webseite für klassische Suchmaschinen wie Google. GEO (Generative Engine Optimization) hingegen stellt sicher, dass Ihre Inhalte auch von KI-Engines wie ChatGPT oder Perplexity verstanden und als direkte Top-Empfehlung zitiert werden."
+        answer: "SEO (Search Engine Optimization) optimiert deine Webseite für klassische Suchmaschinen wie Google. GEO (Generative Engine Optimization) hingegen stellt sicher, dass deine Inhalte auch von KI-Engines wie ChatGPT oder Perplexity verstanden und als direkte Top-Empfehlung zitiert werden."
     },
     {
         question: "Warum ist eine Mobile-First Webseite heutzutage Pflicht?",
@@ -304,31 +285,31 @@ export const FAQS = [
     },
     {
         question: "Brauche ich technisches Vorwissen für KI, GEO und Automatisierung?",
-        answer: "Nein, überhaupt nicht. Als Full-Service KI Werbeagentur übernehmen wir die komplette technische Umsetzung. Sie erhalten am Ende schlüsselfertige, moderne Webseiten und vollautomatische Prozesse, die im Hintergrund einfach und reibungslos funktionieren."
+        answer: "Nein, überhaupt nicht. Als Full-Service KI Werbeagentur übernehmen wir die komplette technische Umsetzung. Du erhältst am Ende schlüsselfertige, moderne Webseiten und vollautomatische Prozesse, die im Hintergrund einfach und reibungslos funktionieren."
     },
     {
         question: "Muss ich technisch versiert sein, um die KI-Automatisierungen in meinem Betrieb zu nutzen?",
-        answer: "Nein, überhaupt nicht \u2013 das ist ja mein Job für Sie. Ich richte die Systeme so ein, dass sie im Hintergrund für Sie arbeiten, während Sie und Ihr Team ganz normal weiterarbeiten können. Sie bekommen eine Lösung, die einfach funktioniert und Ihnen den Rücken frei hält, damit Sie sich wieder auf Ihr Kerngeschäft konzentrieren können."
+        answer: "Nein, überhaupt nicht – das ist ja mein Job für dich. Ich richte die Systeme so ein, dass sie im Hintergrund für dich arbeiten, während du und dein Team ganz normal weiterarbeiten könnt. Du bekommst eine Lösung, die einfach funktioniert und dir den Rücken frei hält, damit du dich wieder auf dein Kerngeschäft konzentrieren kannst."
     },
     {
         question: "Warum ersetzt KI menschliche Experten im Marketing nicht?",
-        answer: "KI generiert schnell Inhalte, kann aber echte, lokale Branchenerfahrung und psychologische Strategie nicht ersetzen. Wir steuern die KI präzise und veredeln die Ergebnisse zu einer authentischen Markenbotschaft, die bei Ihren regionalen Zielgruppen echtes Vertrauen aufbaut."
+        answer: "KI generiert schnell Inhalte, kann aber echte, lokale Branchenerfahrung und psychologische Strategie nicht ersetzen. Wir steuern die KI präzise und veredeln die Ergebnisse zu einer authentischen Markenbotschaft, die bei deinen regionalen Zielgruppen echtes Vertrauen aufbaut."
     },
     {
         question: "Welche Prozesse lassen sich heute schon einfach automatisieren?",
-        answer: "Besonders gut funktionieren digitale Terminbuchungen auf Ihrer Webseite, die Filterung und Beantwortung von Kundenanfragen via Chatbot, sowie die automatisierte Vorqualifizierung von Bewerbern. Das spart Ihnen jede Woche viele Stunden Handarbeit."
+        answer: "Besonders gut funktionieren digitale Terminbuchungen auf deiner Webseite, die Filterung und Beantwortung von Kundenanfragen via Chatbot, sowie die automatisierte Vorqualifizierung von Bewerbern. Das spart dir jede Woche viele Stunden Handarbeit."
     },
     {
         question: "Löst KI wirklich mein Problem mit fehlenden Fachkräften?",
-        answer: "Ja, absolut – indem die KI als Ihr effizientester \u201Edigitaler Mitarbeiter\u201C fungiert, der Routineaufgaben wie die Sortierung von Anfragen, Terminbuchungen und Standard-Antworten übernimmt. Dadurch wird Ihr vorhandenes Team massiv entlastet und gewinnt genau die Zeit zurück, die für wertvolle Facharbeit und persönlichen Kundenservice nötig ist. So bekämpfen wir den Fachkräftemangel nicht durch mehr Personal, sondern durch intelligente Entlastung mit 32 Jahren Marketing-Expertise im Hintergrund."
+        answer: "Ja, absolut – indem die KI als dein effizientester „digitaler Mitarbeiter“ fungiert, der Routineaufgaben wie die Sortierung von Anfragen, Terminbuchungen und Standard-Antworten übernimmt. Dadurch wird dein vorhandenes Team massiv entlastet und gewinnt genau die Zeit zurück, die für wertvolle Facharbeit und persönlichen Kundenservice nötig ist. So bekämpfen wir den Fachkräftemangel nicht durch mehr Personal, sondern durch intelligente Entlastung mit 32 Jahren Marketing-Expertise im Hintergrund."
     },
     {
         question: "Was zeichnet eine moderne Webseite heute aus?",
-        answer: "Eine moderne Webseite ist nicht nur eine digitale Visitenkarte, sondern Ihr bester Vertriebsmitarbeiter. Sie muss blitzschnell laden, strikt Mobile-First entwickelt sein und Besucher durch klare, verkaufspsychologische Strukturen direkt zur Kontaktaufnahme oder zum Kauf führen."
+        answer: "Eine moderne Webseite ist nicht nur eine digitale Visitenkarte, sondern dein bester Vertriebsmitarbeiter. Sie muss blitzschnell laden, strikt Mobile-First entwickelt sein und Besucher durch klare, verkaufspsychologische Strukturen direkt zur Kontaktaufnahme oder zum Kauf führen."
     },
     {
         question: "Wie kann eine neue Webseite in unter 7 Tagen fertig sein, ohne an Qualität zu verlieren?",
-        answer: "Durch die Kombination meiner jahrzehntelangen Marketing-Erfahrung mit hocheffizienten KI-Tools überspringen wir langwierige manuelle Prozesse, ohne beim Design oder der Strategie zu sparen. Wir konzentrieren uns sofort auf das, was für Ihren Erfolg im Mostviertel zählt: Klarheit, Schnelligkeit und eine Seite, die Ihre Kunden wirklich überzeugt."
+        answer: "Durch die Kombination meiner jahrzehntelangen Marketing-Erfahrung mit hocheffizienten KI-Tools überspringen wir langwierige manuelle Prozesse, ohne beim Design oder der Strategie zu sparen. Wir konzentrieren uns sofort auf das, was für deinen Erfolg im Mostviertel zählt: Klarheit, Schnelligkeit und eine Seite, die deine Kunden wirklich überzeugt."
     },
     {
         question: "Warum ist eine barrierefreie Webseite so wichtig?",
@@ -336,15 +317,15 @@ export const FAQS = [
     },
     {
         question: "Wie wichtig ist eine blitzschnelle Webseite für mein Geschäft?",
-        answer: "Massiv wichtig: Lädt eine Webseite länger als 3 Sekunden, verlassen bereits mehr als 50 % der mobilen Nutzer die Seite sofort wieder. Eine blitzschnelle Ladezeit verringert Absprungraten drastisch, steigert Ihre Anfragen und wird von Google mit absoluten Top-Platzierungen belohnt."
+        answer: "Massiv wichtig: Lädt eine Webseite länger als 3 Sekunden, verlassen bereits mehr als 50 % der mobilen Nutzer die Seite sofort wieder. Eine blitzschnelle Ladezeit verringert Absprungraten drastisch, steigert deine Anfragen und wird von Google mit absoluten Top-Platzierungen belohnt."
     },
     {
         question: "Was kostet es, eine professionelle Webseite erstellen zu lassen?",
-        answer: "Die Kosten hängen von Ihren Zielen ab. Ob kompakte Unternehmenspräsenz oder komplexe Baukasten mit KI-Automatisierungen – wir kalkulieren 100% transparent nach Leistungsumfang. Dank unseres extrem effizienten Workflows bieten wir KMUs erstklassige Premium-Webseiten zu unschlagbaren Festpreisen."
+        answer: "Die Kosten hängen von deinen Zielen ab. Ob kompakte Unternehmenspräsenz oder komplexer Baukasten mit KI-Automatisierungen – wir kalkulieren 100% transparent nach Leistungsumfang. Dank unseres extrem effizienten Workflows bieten wir KMUs erstklassige Premium-Webseiten zu unschlagbaren Festpreisen."
     },
     {
         question: "Warum sollte ich eine Agentur aus der Region wählen statt einer großen Online-Agentur?",
-        answer: "Ganz einfach: Weil ich die Region zwischen Amstetten, Steyr, dem Mostviertel und darüber hinaus in Niederösterreich und Oberösterreich kenne. Mit 32 Jahren Erfahrung weiß ich, wie die Menschen hier ticken und worauf es beim lokalen Marketing ankommt. Bei mir gibt es keine anonyme Hotline, sondern echte Handschlagqualität direkt vor Ort \u2013 ich bin für Sie greifbar, wenn Sie Unterstützung bei Ihrer Webseite oder Ihren KI-Automatisierungen brauchen."
+        answer: "Ganz einfach: Weil ich die Region zwischen Amstetten, Steyr, dem Mostviertel und darüber hinaus in Niederösterreich und Oberösterreich kenne. Mit 32 Jahren Erfahrung weiß ich, wie die Menschen hier ticken und worauf es beim lokalen Marketing ankommt. Bei mir gibt es keine anonyme Hotline, sondern echte Handschlagqualität direkt vor Ort – ich bin für dich greifbar, wenn du Unterstützung bei deiner Webseite oder deinen KI-Automatisierungen brauchst."
     },
     {
         question: "Wo befindet sich das Büro der BrainStorm Werbeagentur?",

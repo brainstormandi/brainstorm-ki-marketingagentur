@@ -29,16 +29,16 @@ const Services = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section header */}
-                <ScrollReveal className="flex flex-col sm:flex-row sm:items-end justify-between gap-8 mb-20">
+                <ScrollReveal className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20">
                     <div>
-                        <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent text-gray-600 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-gray-200">Was wir für Sie tun</div>
-                        <h2 className="text-4xl sm:text-5xl lg:text-6xl text-gray-900 font-[var(--font-playfair)] font-medium tracking-tight leading-[1.1] py-1 uppercase">
-                            <span className="block">Digitale</span>
-                            <span className="block text-transparent bg-clip-text pb-2" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>Lösungen.</span>
+                        <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent text-gray-600 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-gray-200">Was wir für dich tun</div>
+                        <h2 className="text-4xl sm:text-5xl lg:text-6xl text-gray-900 font-[var(--font-playfair)] font-medium tracking-tight leading-[1.1] py-1 uppercase max-w-[800px]">
+                            <span className="block">Dein digitales Rüstzeug</span>
+                            <span className="block text-transparent bg-clip-text pb-2" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>für messbares Wachstum.</span>
                         </h2>
                     </div>
-                    <p className="text-gray-600 text-lg sm:text-xl leading-relaxed max-w-[400px] font-body">
-                        Zukunftsweisende Technologien, kombiniert mit 32 Jahren Erfahrung im Marketing – für Ergebnisse, die messbar sind.
+                    <p className="text-gray-600 text-lg sm:text-xl leading-relaxed max-w-[500px] font-body">
+                        Zukunftsweisende KI-Technologien, kombiniert mit 32 Jahren Handwerk. So eroberst du deinen Markt:
                     </p>
                 </ScrollReveal>
 

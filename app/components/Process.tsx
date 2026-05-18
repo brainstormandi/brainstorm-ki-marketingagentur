@@ -10,10 +10,13 @@ const Process = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <ScrollReveal className="mb-20">
                     <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent text-gray-600 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-gray-200">Der Ablauf</div>
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.1] py-1 uppercase">
-                        <span className="block">Ihr Projektstart</span>
-                        <span className="block text-transparent bg-clip-text pb-2" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>in 7 Tagen.</span>
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.1] py-1 mb-6 uppercase">
+                        <span className="block">Dein Weg aus dem Chaos</span>
+                        <span className="block text-transparent bg-clip-text pb-2" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>– in nur 7 Tagen.</span>
                     </h2>
+                    <p className="text-gray-600 text-lg sm:text-xl leading-relaxed font-body max-w-2xl mt-4">
+                        Der Start in deine digitale Zukunft ist einfacher, als du denkst. Keine monatelangen Projektlaufzeiten, keine versteckten Hürden.
+                    </p>
                 </ScrollReveal>
 
                 <div className="grid lg:grid-cols-3 gap-8">

@@ -11,7 +11,7 @@ import { GOOGLE_REVIEW_LINK } from '../constants';
 
 export const metadata: Metadata = {
   title: "Werbeagentur Amstetten | Webseite & Homepage vom Vollprofi",
-  description: "Professionelle Homepage und Webseite in Amstetten erstellen lassen. BrainStorm KI Werbeagentur: Ihr lokaler Partner im Mostviertel für maximalen Digitalserfolg.",
+  description: "Professionelle Homepage und Webseite in Amstetten erstellen lassen. BrainStorm KI Werbeagentur: dein lokaler Partner im Mostviertel für maximalen Digitalserfolg.",
   alternates: {
     canonical: "https://ki-marketingagentur.jetzt/werbeagentur-amstetten",
   },
@@ -159,9 +159,6 @@ export default function WerbeagenturAmstetten() {
                 </div>
             </div>
         </section>
-
-        <IndustryMarquee />
-
         <section className="py-20 bg-gray-50 border-y border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -170,7 +167,7 @@ export default function WerbeagenturAmstetten() {
                             Mostviertel Hub
                         </div>
                         <h2 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-6">
-                            Ihr Partner für <br className="hidden sm:block" />
+                            dein Partner für <br className="hidden sm:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600">Webdesign in Amstetten</span>
                         </h2>
                         <p className="text-gray-600 text-lg leading-relaxed mb-8 font-body">
@@ -180,7 +177,7 @@ export default function WerbeagenturAmstetten() {
                     <div className="grid sm:grid-cols-2 gap-4">
                         {[
                             { title: "Wirtschafts-Fokus", desc: "Professionelle Homepages für Industrie & Mittelstand in Amstetten.", icon: <Building2 className="w-5 h-5 text-accent" /> },
-                            { title: "Lokale Nähe", desc: "Direkt aus Seitenstetten – schnell bei Ihnen im Betrieb.", icon: <MapPin className="w-5 h-5 text-accent" /> },
+                            { title: "Lokale Nähe", desc: "Direkt aus Seitenstetten – schnell bei dir im Betrieb.", icon: <MapPin className="w-5 h-5 text-accent" /> },
                             { title: "KI-Technologie", desc: "Moderne Webseiten mit psychologisch fundierten KI-Inhalten.", icon: <Brain className="w-5 h-5 text-accent" /> },
                             { title: "High Performance", desc: "Top Google-Ratings von echten Unternehmen aus der Region.", icon: <TrendingUp className="w-5 h-5 text-accent" /> },
                         ].map((item, i) => (
@@ -203,14 +200,14 @@ export default function WerbeagenturAmstetten() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
                <ScrollReveal animation="reveal-right">
                   <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight leading-[1.1] py-1 mb-8">
-<span className="font-sans block">Ihr Partner im</span>
+<span className="font-sans block">dein Partner im</span>
 <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">Wirtschaftszentrum</span>
 </h2>
                   <p className="font-body text-[#111827] text-lg leading-relaxed mb-6">
                      Amstetten ist mit dem Wirtschaftspark, dem CCA und seiner starken Industrie der pulsierende Knotenpunkt im Herzen des Mostviertels. Für erfolgreiche Unternehmen vor Ort reicht eine einfache Visitenkarte im Netz schon lange nicht mehr aus. Es bedarf einer hochkonvertierenden Webseite und starken Homepage-Infrastruktur, um Mitarbeiter zu gewinnen und Kunden zu überzeugen.
                   </p>
                   <p className="font-body text-[#111827] text-lg leading-relaxed mb-8">
-                     Als Ihre Werbeagentur sitzen wir quasi direkt nebenan in Seitenstetten. Ob bei einem strategischen Vor-Ort-Termin rund um Amstetten, das Ybbstal und Mauthausen oder zeitsparend und unkompliziert per Video-Call – wir richten uns flexibel nach Ihrem Kalender, um Ihre neue Website gemeinsam zu planen und erfolgreich umzusetzen.
+                     Als deine Werbeagentur sitzen wir quasi direkt nebenan in Seitenstetten. Ob bei einem strategischen Vor-Ort-Termin rund um Amstetten, das Ybbstal und Mauthausen oder zeitsparend und unkompliziert per Video-Call – wir richten uns flexibel nach deinem Kalender, um deine neue Website gemeinsam zu planen und erfolgreich umzusetzen.
                   </p>
                   
                   <div className="flex flex-col gap-4 mb-10">
@@ -229,7 +226,7 @@ export default function WerbeagenturAmstetten() {
                         </div>
                         <div>
                            <h4 className="font-bold text-gray-900 text-lg font-sans">Persönliche KI-Betreuung</h4>
-                           <span className="font-body text-[#111827] text-sm">Andreas Sturm persönlich berät Sie bei Ihnen vor Ort.</span>
+                           <span className="font-body text-[#111827] text-sm">Andreas Sturm persönlich berät du bei dir vor Ort.</span>
                         </div>
                      </div>
                   </div>
@@ -272,7 +269,7 @@ export default function WerbeagenturAmstetten() {
                        rel="noopener noreferrer"
                        className="inline-flex w-full justify-center items-center gap-2 px-8 py-4 bg-white border border-gray-200 rounded-xl font-bold text-lg text-gray-700 shadow-sm hover:bg-gray-50 hover:border-gray-300 hover:text-accent transition-all group scale-100 hover:scale-[1.02]"
                      >
-                        Besuchen Sie unser Google Profil
+                        Besuche unser Google Profil
                         <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-accent transition-transform group-hover:translate-x-1" />
                      </a>
                   </div>
@@ -285,6 +282,7 @@ export default function WerbeagenturAmstetten() {
         <Services />
         <AmstettenFAQ />
         <Contact />
+        <IndustryMarquee />
       </main>
 
       <Footer />

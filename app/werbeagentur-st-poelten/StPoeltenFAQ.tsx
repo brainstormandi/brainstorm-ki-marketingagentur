@@ -6,19 +6,19 @@ import ScrollReveal from '../components/ScrollReveal';
 const STPOELTEN_FAQS = [
   {
     question: "Was bringt kleinen Unternehmen aus dem Raum St. Pölten eine KI-gestützte Website?",
-    answer: "Künstliche Intelligenz kann teure Arbeitszeit sparen. Ob automatisierte Landingpages, die regionale Suchintentionen in St. Pölten abfangen, oder smarte Chatbots, die auf der Website als digitaler Verkäufer fungieren – wir rüsten Ihr KMU technisch an der obersten Liga aus."
+    answer: "Künstliche Intelligenz kann teure Arbeitszeit sparen. Ob automatisierte Landingpages, die regionale Suchintentionen in St. Pölten abfangen, oder smarte Chatbots, die auf der Website als digitaler Verkäufer fungieren – wir rüsten dein KMU technisch an der obersten Liga aus."
   },
   {
-    question: "Kennen Sie den Markt im Zentralraum Niederösterreich?",
-    answer: "Ja, als Werbeagentur mit Basis an der Mostviertler Grenze sind wir geografisch optimal positioniert. Wir kennen die Strukturen – vom weiten Traisental bis direkt in das Regierungsviertel der Landeshauptstadt – und gestalten passgenaues Webdesign für Ihre Zielgruppen."
+    question: "Kennst du den Markt im Zentralraum Niederösterreich?",
+    answer: "Ja, als Werbeagentur mit Basis an der Mostviertler Grenze sind wir geografisch optimal positioniert. Wir kennen die Strukturen – vom weiten Traisental bis direkt in das Regierungsviertel der Landeshauptstadt – und gestalten passgenaues Webdesign für deine Zielgruppen."
   },
   {
-    question: "Bieten Sie neben der Website auch laufende Suchmaschinenoptimierung an?",
-    answer: "Unbedingt. Eine schöne Seite bringt nichts, wenn sie auf Google nicht gefunden wird. Wir sichern Ihre Website technisch und redaktionell so ab, dass Firmen aus St. Pölten und Umgebung ideal für die passenden Dienstleistungssuchen ranken."
+    question: "Bietest du neben der Website auch laufende Suchmaschinenoptimierung an?",
+    answer: "Unbedingt. Eine schöne Seite bringt nichts, wenn sie auf Google nicht gefunden wird. Wir sichern deine Website technisch und redaktionell so ab, dass Firmen aus St. Pölten und Umgebung ideal für die passenden Dienstleistungssuchen ranken."
   },
   {
     question: "Wie finden Termine vor Ort in St. Pölten statt?",
-    answer: "Wir arbeiten hybrid. Erste Touchpoints wickeln wir oft hoch-effizient per Zoom oder Teams ab. Für das Kick-Off des Website-Relaunches kommen wir selbstverständlich auch sehr gerne zu Ihnen ins Unternehmen nach St. Pölten."
+    answer: "Wir arbeiten hybrid. Erste Touchpoints wickeln wir oft hoch-effizient per Zoom oder Teams ab. Für das Kick-Off des Website-Relaunches kommen wir selbstverständlich auch sehr gerne zu dir ins Unternehmen nach St. Pölten."
   }
 ];
 
@@ -29,7 +29,7 @@ const StPoeltenFAQ = () => {
         <section id="faq" className="scroll-mt-32 py-32 bg-white border-t border-gray-200 relative overflow-hidden">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <ScrollReveal className="mb-20 text-center sm:text-left flex flex-col items-center sm:items-start max-w-2xl mx-auto sm:mx-0">
-                    <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent text-gray-600 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-gray-200">Ihr NÖ-Digitalpartner
+                    <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent text-gray-600 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-gray-200">dein NÖ-Digitalpartner
                     </div>
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.1] py-1 uppercase">
                         <span className="block">Fragen & Antworten</span>

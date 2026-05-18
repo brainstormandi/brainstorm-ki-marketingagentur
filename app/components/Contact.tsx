@@ -27,12 +27,12 @@ const Contact = () => {
                     <ScrollReveal animation="reveal-right">
                         <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent text-gray-600 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-gray-200">Kontakt</div>
                         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.1] py-1 mb-8 uppercase">
-                            <span className="block">Bereit für</span>
-                            <span className="block text-transparent bg-clip-text pb-2 sm:pb-4" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>Ihren Erfolg?</span>
+                            <span className="block">Bereit, die Spielregeln</span>
+                            <span className="block text-transparent bg-clip-text pb-2 sm:pb-4" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>in deiner Branche zu ändern?</span>
                         </h2>
                         
                         <p className="text-gray-600 text-lg leading-relaxed mb-12 max-w-lg font-body">
-                            Ob Erstgespräch oder konkretes Projekt – in einem kurzen Call klären wir Ihre Potenziale. Kein Druck, nur ehrliche Beratung.
+                            Lass uns in einem kurzen, absolut ehrlichen Gespräch herausfinden, wo dein größtes, ungenutztes Potenzial liegt. Kein Druck, nur handfeste Beratung von Experten aus dem Mostviertel.
                         </p>
 
                         <div className="space-y-6 mb-12">
@@ -71,19 +71,42 @@ const Contact = () => {
                                 <Calendar className="w-8 h-8 text-[#F7C429]" />
                             </div>
                             
-                            <h3 className="font-[var(--font-playfair)] text-3xl font-medium text-gray-900 mb-4 tracking-normal">Strategie-Session</h3>
-                            <p className="text-gray-600 text-lg leading-relaxed mb-10 font-body">
-                                Sichern Sie sich Ihr kostenloses 15-Minuten Erstgespräch. Wir analysieren Ihren Status quo und zeigen konkrete Wachstumspotenziale.
+                            <h3 className="font-[var(--font-playfair)] text-3xl font-medium text-gray-900 mb-3 tracking-normal leading-[1.15]">
+                                Der Wendepunkt für dein Business: Deine 15-Minuten-Strategie-Session
+                            </h3>
+
+                            <p className="text-sm font-bold text-[#F7C429] mb-6 uppercase tracking-wider">
+                                Finde deinen stärksten Wachstumshebel – kompakt, ehrlich und auf den Punkt.
                             </p>
+                            
+                            <p className="text-gray-600 text-lg leading-relaxed mb-8 font-body">
+                                Du spürst, dass in deinem Betrieb mehr Potenzial steckt, aber der tägliche Kampf im Hamsterrad lässt dir keine Zeit, die richtige digitale Abzweigung zu finden. Lass uns diesen Nebel lichten. In einem kurzen, intensiven Erstgespräch blicken wir gemeinsam auf deinen Status quo. Wir zeigen dir punktgenau, wo du aktuell wertvolle Zeit oder Kunden an die Konkurrenz verlierst – und mit welchen smarten KI-Werkzeugen du das sofort ändern kannst. Kein Fachchinesisch, nur absolute Klarheit und ein greifbarer Plan für deinen nächsten Schritt.
+                            </p>
+
+                            <div className="space-y-4 mb-10">
+                                {[
+                                    { bold: "15 Minuten, die deinen Fokus verändern:", text: " Kompakt und respektvoll gegenüber deiner Zeit." },
+                                    { bold: "Dein Status quo im Röntgenblick:", text: " Wir enttarnen deine größten, ungenutzten Wachstumspotenziale." },
+                                    { bold: "Expertenrat mit Handschlagqualität:", text: " 100 % kostenlos, unverbindlich und direkt aus dem Mostviertel." }
+                                ].map((bullet, i) => (
+                                    <div key={i} className="flex items-start gap-3 text-sm text-gray-700 leading-relaxed font-body">
+                                        <CheckCircle2 className="w-5 h-5 text-[#F7C429] shrink-0 mt-0.5" />
+                                        <span>
+                                            <strong className="text-gray-900">{bullet.bold}</strong>
+                                            {bullet.text}
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
 
                             <a
                                 href={CONTACT_INFO.calendly}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="group flex items-center justify-center gap-3 w-full bg-[#F7C429] text-black px-8 py-[22px] rounded-full font-bold uppercase tracking-[0.15em] text-[14px] sm:text-[15px] shadow-[0_10px_30px_rgba(247,196,41,0.4)] transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-black hover:text-[#F7C429] hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 cursor-pointer"
-                                aria-label="Termin buchen"
+                                aria-label="Jetzt Fahrplan holen"
                             >
-                                Termin buchen
+                                Jetzt Fahrplan holen
                                 <ArrowUpRight className="w-[20px] h-[20px] transition-transform duration-400 group-hover:translate-x-1 group-hover:-translate-y-1" />
                             </a>
 

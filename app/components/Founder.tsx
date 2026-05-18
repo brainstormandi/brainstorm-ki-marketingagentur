@@ -4,6 +4,13 @@ import Image from 'next/image';
 import { Quote, Sparkles } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
+const stats = [
+    { value: "492+", label: "Zufriedene KMUs" },
+    { value: "32", label: "Jahre Erfahrung" },
+    { value: "5.0", label: "Google Rating" },
+    { value: "<7", label: "Tage Launch" },
+];
+
 const Founder = () => {
     const personSchema = {
         "@context": "https://schema.org",
@@ -65,17 +72,16 @@ const Founder = () => {
                             Der Macher hinter BrainStorm
                         </div>
                         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 mb-10 tracking-tight leading-[1.1] py-1 uppercase">
-                            <span className="block">Unsere Mission</span>
-                            <span className="block text-transparent bg-clip-text pb-2" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>ist Ihr Erfolg.</span>
+                            <span className="block">KI ist das Werkzeug,</span>
+                            <span className="block text-transparent bg-clip-text pb-2" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>Marketing bleibt unser Handwerk.</span>
                         </h2>
 
                         <div className="space-y-6 text-gray-600 text-lg lg:text-xl leading-relaxed font-body">
                             <p>
-                                KI ist ein Werkzeug, aber Marketing ist Handwerk. Seit 32 Jahren begleite ich Betriebe in Österreich dabei, sichtbarer und erfolgreicher zu werden.
+                                Hallo, ich bin Andi Sturm. Seit über 32 Jahren begleite ich Betriebe in Österreich dabei, sichtbarer und erfolgreicher zu werden.
                             </p>
                             <p>
-                                Mit meiner Werbeagentur BrainStorm bringe ich heute das Beste aus zwei Welten zusammen:<br />
-                                Die Verlässlichkeit eines erfahrenen Partners und die enorme Geschwindigkeit moderner KI-Automatisierung. Ich nenne das: KI mit Handschlagqualität.
+                                Künstliche Intelligenz wirkt oft komplex oder gar bedrohlich. Doch du brauchst absolut kein technisches Vorwissen. Mein Team und ich übersetzen diese komplexe Technologie für dich in einfache, reibungslose Abläufe. Wir bringen das Beste aus zwei Welten zusammen: Die atemberaubende Geschwindigkeit modernster KI-Systeme und die Verlässlichkeit einer regionalen Agentur. Ich nenne das: KI mit Handschlagqualität.
                             </p>
                         </div>
 
@@ -95,6 +101,22 @@ const Founder = () => {
                             </div>
                         </div>
                     </ScrollReveal>
+                </div>
+
+                {/* Stats row relocated from WhyUs */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 border-t border-gray-100 pt-16">
+                    {stats.map((s, i) => (
+                        <ScrollReveal key={i} delay={i * 100} animation="reveal-up">
+                            <div className="text-center border-l border-gray-200 pl-4 py-2">
+                                <div className="font-[var(--font-playfair)] text-4xl sm:text-5xl font-medium text-gray-900 tracking-tight mb-2">
+                                    {s.value}
+                                </div>
+                                <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">
+                                    {s.label}
+                                </div>
+                            </div>
+                        </ScrollReveal>
+                    ))}
                 </div>
             </div>
         </section>

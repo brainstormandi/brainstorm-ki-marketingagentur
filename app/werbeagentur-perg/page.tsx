@@ -11,7 +11,7 @@ import { GOOGLE_REVIEW_LINK } from '../constants';
 
 export const metadata: Metadata = {
   title: "Werbeagentur Perg | Premium Webdesign & Webseiten für das Mühlviertel",
-  description: "Ihre Werbeagentur für das Machland und Perg! KI-Sichtbarkeit und Webdesign, das Mitarbeiter und Kunden auf Knopfdruck anzieht. Jetzt anfragen!",
+  description: "deine Werbeagentur für das Machland und Perg! KI-Sichtbarkeit und Webdesign, das Mitarbeiter und Kunden auf Knopfdruck anzieht. Jetzt anfragen!",
   alternates: {
     canonical: "https://ki-marketingagentur.jetzt/werbeagentur-perg",
   },
@@ -90,7 +90,7 @@ export default function WerbeagenturPerg() {
                     </h1>
 
                     <p className="font-body text-[#111827] text-lg leading-relaxed max-w-lg mb-8 animate-reveal-up reveal-delay-200">
-                       Machland und Mühlviertel digital. Holen Sie sich mit einer modernen Webseite den entscheidenden Marktvorteil für Kundengewinnung und Recruiting.
+                       Machland und Mühlviertel digital. Hol dir mit einer modernen Webseite den entscheidenden Marktvorteil für Kundengewinnung und Recruiting.
                     </p>
 
                     <div className="flex flex-wrap gap-2 mb-10 animate-reveal-up reveal-delay-300">
@@ -139,9 +139,6 @@ export default function WerbeagenturPerg() {
                 </div>
             </div>
         </section>
-
-        <IndustryMarquee />
-
         <section className="py-20 bg-gray-50 border-y border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -150,7 +147,7 @@ export default function WerbeagenturPerg() {
                             Regionale Sichtbarkeit
                         </div>
                         <h2 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-6">
-                            Ihr Partner für <br className="hidden sm:block" />
+                            dein Partner für <br className="hidden sm:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600">Webseiten im Machland</span>
                         </h2>
                         <p className="text-gray-600 text-lg leading-relaxed mb-8 font-body">
@@ -159,7 +156,7 @@ export default function WerbeagenturPerg() {
                     </div>
                     <div className="grid sm:grid-cols-2 gap-4">
                         {[
-                            { title: "Premium Design", desc: "Homepages, die Ihre Qualität im Mühlviertel widerspiegeln.", icon: <Building2 className="w-5 h-5 text-accent" /> },
+                            { title: "Premium Design", desc: "Homepages, die deine Qualität im Mühlviertel widerspiegeln.", icon: <Building2 className="w-5 h-5 text-accent" /> },
                             { title: "Mühlviertel Fokus", desc: "Spezialisiert auf das Machland, Donauraum und Strudengau.", icon: <MapPin className="w-5 h-5 text-accent" /> },
                             { title: "High-Tech", desc: "Next-Gen Webdesign kombiniert mit KI-Sichtbarkeit.", icon: <Zap className="w-5 h-5 text-accent" /> },
                             { title: "Persönlich", desc: "Ein fester, naher Ansprechpartner anstatt anonymer Call-Center.", icon: <Handshake className="w-5 h-5 text-accent" /> },
@@ -186,10 +183,10 @@ export default function WerbeagenturPerg() {
 <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">Bezirkshauptstadt</span>
 </h2>
                   <p className="font-body text-[#111827] text-lg leading-relaxed mb-6">
-                     Der Bezirk Perg ist wirtschaftlich florierend und enorm wettbewerbsintensiv. Egal ob Sie Handwerker aus Schwertberg, Dienstleister am Perger Hauptplatz oder ein Industriezulieferer aus Grein sind – Ihre digitale Visitenkarte muss makellos sitzen.
+                     Der Bezirk Perg ist wirtschaftlich florierend und enorm wettbewerbsintensiv. Egal ob du Handwerker aus Schwertberg, Dienstleister am Perger Hauptplatz oder ein Industriezulieferer aus Grein sind – deine digitale Visitenkarte muss makellos sitzen.
                   </p>
                   <p className="font-body text-[#111827] text-lg leading-relaxed mb-8">
-                     Ob bei einem Vor-Ort-Termin direkt im Raum Perg, oder völlig flexibel via Video-Call – wir widmen uns Ihrem Web-Projekt mit Herzblut und KI-Unterstützung. Ihr Webdesign muss heute nicht nur ästhetisch glänzen, es muss in erster Linie Kunden und Bewerber generieren. Dafür sorgen wir.
+                     Ob bei einem Vor-Ort-Termin direkt im Raum Perg, oder völlig flexibel via Video-Call – wir widmen uns deinem Web-Projekt mit Herzblut und KI-Unterstützung. dein Webdesign muss heute nicht nur ästhetisch glänzen, es muss in erster Linie Kunden und Bewerber generieren. Dafür sorgen wir.
                   </p>
                   
                   <div className="flex flex-col gap-4 mb-10">
@@ -199,7 +196,7 @@ export default function WerbeagenturPerg() {
                         </div>
                         <div>
                            <h4 className="font-bold text-gray-900 text-lg font-sans">Wettbewerbsvorteil</h4>
-                           <span className="font-body text-[#111827] text-sm">Überflügeln Sie Ihre Konkurrenz mit exzellentem UI/UX Design.</span>
+                           <span className="font-body text-[#111827] text-sm">Überflügeln du deine Konkurrenz mit exzellentem UI/UX Design.</span>
                         </div>
                      </div>
                      <div className="flex items-center gap-4">
@@ -208,7 +205,7 @@ export default function WerbeagenturPerg() {
                         </div>
                         <div>
                            <h4 className="font-bold text-gray-900 text-lg font-sans">Regionale SEO</h4>
-                           <span className="font-body text-[#111827] text-sm">Werden Sie exakt dort gefunden, wo Ihre Zielgruppe nach Ihnen sucht.</span>
+                           <span className="font-body text-[#111827] text-sm">Werde exakt dort gefunden, wo deine Zielgruppe nach dir sucht.</span>
                         </div>
                      </div>
                   </div>
@@ -242,7 +239,7 @@ export default function WerbeagenturPerg() {
 
                   <div className="mt-8 flex justify-center w-full">
                      <a href="https://www.google.com/search?q=BrainStorm+KI+Werbeagentur" target="_blank" rel="noopener noreferrer" className="inline-flex w-full justify-center items-center gap-2 px-8 py-4 bg-white border border-gray-200 rounded-xl font-bold text-lg text-gray-700 shadow-sm hover:bg-gray-50 hover:border-gray-300 hover:text-accent transition-all group scale-100 hover:scale-[1.02]">
-                        Besuchen Sie unser Google Profil
+                        Besuche unser Google Profil
                         <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-accent transition-transform group-hover:translate-x-1" />
                      </a>
                   </div>
@@ -254,6 +251,7 @@ export default function WerbeagenturPerg() {
         <Services />
         <PergFAQ />
         <Contact />
+        <IndustryMarquee />
       </main>
       <Footer />
       <AIAssistant />

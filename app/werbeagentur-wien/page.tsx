@@ -11,7 +11,7 @@ import { GOOGLE_REVIEW_LINK } from '../constants';
 
 export const metadata: Metadata = {
   title: "Webagentur & Webdesign Wien | Innovative Homepages & KI",
-  description: "Webseiten auf Großstadtniveau für Wien & Umgebung. Innovative KI-Strategien, konvertierende Premium-Landingpages. Stechen Sie in Wien heraus!",
+  description: "Webseiten auf Großstadtniveau für Wien & Umgebung. Innovative KI-Strategien, konvertierende Premium-Landingpages. Stich in Wien heraus!",
   alternates: {
     canonical: "https://ki-marketingagentur.jetzt/werbeagentur-wien",
   },
@@ -90,7 +90,7 @@ export default function WerbeagenturWien() {
                     </h1>
 
                     <p className="font-body text-[#111827] text-lg leading-relaxed max-w-lg mb-8 animate-reveal-up reveal-delay-200">
-                       Der Markt in der Hauptstadt verzeiht keine Fehler. Beeindrucken Sie Ihre Wiener Zielgruppe mit Webseiten, die messbar besser performen.
+                       Der Markt in der Hauptstadt verzeiht keine Fehler. Beeindrucke deine Wiener Zielgruppe mit Webseiten, die messbar besser performen.
                     </p>
 
                     <div className="flex flex-wrap gap-2 mb-10 animate-reveal-up reveal-delay-300">
@@ -139,9 +139,6 @@ export default function WerbeagenturWien() {
                 </div>
             </div>
         </section>
-
-        <IndustryMarquee />
-
         <section className="py-20 bg-gray-50 border-y border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -150,7 +147,7 @@ export default function WerbeagenturWien() {
                             Local Expertise
                         </div>
                         <h2 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-6">
-                            Ihr Webdesign-Partner <br className="hidden sm:block" />
+                            dein Webdesign-Partner <br className="hidden sm:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600">für den Standort Wien</span>
                         </h2>
                         <p className="text-gray-600 text-lg leading-relaxed mb-8 font-body">
@@ -186,10 +183,10 @@ export default function WerbeagenturWien() {
 <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">im Großraum Wien</span>
 </h2>
                   <p className="font-body text-[#111827] text-lg leading-relaxed mb-6">
-                     Egal ob in der Stadt selber, oder dem vitalen Speckgürtel im Wiener Becken: Sie konkurrieren digital um die besten Fachkräfte und die lukrativsten Kundenaufträge. Eine gewöhnliche Firmenwebseite fällt hier sofort durchs Raster.
+                     Egal ob in der Stadt selber, oder dem vitalen Speckgürtel im Wiener Becken: du konkurrierst digital um die besten Fachkräfte und die lukrativsten Kundenaufträge. Eine gewöhnliche Firmenwebseite fällt hier sofort durchs Raster.
                   </p>
                   <p className="font-body text-[#111827] text-lg leading-relaxed mb-8">
-                     Als schlagkräftige, KI-getriebene Werbeagentur haben wir perfekten Service digitalisiert. Von der Planung in Videocalls bis zum messerscharfen Design – wir sorgen dafür, dass Ihr Unternehmen im Großraum Wien durch atemberaubende Websites und smarte Landingpages sofort ins Auge sticht.
+                     Als schlagkräftige, KI-getriebene Werbeagentur haben wir perfekten Service digitalisiert. Von der Planung in Videocalls bis zum messerscharfen Design – wir sorgen dafür, dass dein Unternehmen im Großraum Wien durch atemberaubende Websites und smarte Landingpages sofort ins Auge sticht.
                   </p>
                   
                   <div className="flex flex-col gap-4 mb-10">
@@ -208,7 +205,7 @@ export default function WerbeagenturWien() {
                         </div>
                         <div>
                            <h4 className="font-bold text-gray-900 text-lg font-sans">Lokales SEO</h4>
-                           <span className="font-body text-[#111827] text-sm">Machen Sie Ihren Betrieb im passenden Wiener Bezirk online zum Platzhirsch.</span>
+                           <span className="font-body text-[#111827] text-sm">Mach deinen Betrieb im passenden Wiener Bezirk online zum Platzhirsch.</span>
                         </div>
                      </div>
                   </div>
@@ -242,7 +239,7 @@ export default function WerbeagenturWien() {
 
                   <div className="mt-8 flex justify-center w-full">
                      <a href="https://www.google.com/search?q=BrainStorm+KI+Werbeagentur" target="_blank" rel="noopener noreferrer" className="inline-flex w-full justify-center items-center gap-2 px-8 py-4 bg-white border border-gray-200 rounded-xl font-bold text-lg text-gray-700 shadow-sm hover:bg-gray-50 hover:border-gray-300 hover:text-accent transition-all group scale-100 hover:scale-[1.02]">
-                        Besuchen Sie unser Google Profil
+                        Besuche unser Google Profil
                         <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-accent transition-transform group-hover:translate-x-1" />
                      </a>
                   </div>
@@ -254,6 +251,7 @@ export default function WerbeagenturWien() {
         <Services />
         <WienFAQ />
         <Contact />
+        <IndustryMarquee />
       </main>
       <Footer />
       <AIAssistant />

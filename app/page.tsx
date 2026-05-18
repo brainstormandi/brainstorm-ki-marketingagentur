@@ -6,9 +6,9 @@ import { GOOGLE_REVIEW_LINK } from './constants';
 import { ArrowUpRight } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import ChallengeSection from './components/ChallengeSection';
 import IndustryMarquee from './components/IndustryMarquee';
 import Services from './components/Services';
-import WhyUs from './components/WhyUs';
 import Founder from './components/Founder';
 import Process from './components/Process';
 import LeadMagnet from './components/LeadMagnet';
@@ -36,10 +36,10 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-
-        <IndustryMarquee />
+        <ChallengeSection />
 
         <Services />
+        <Founder />
 
         <section id="success" className="scroll-mt-32 py-32 bg-white overflow-hidden border-t border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,11 +49,11 @@ export default function Home() {
                   Erfolge
                 </div>
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.1] py-1 mb-5 uppercase">
-                  <span className="block">Überzeugte KMUs</span>
-                  <span className="block text-transparent bg-clip-text pb-2" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>in ganz Österreich</span>
+                  <span className="block">Kunden aus deiner Region,</span>
+                  <span className="block text-transparent bg-clip-text pb-2" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>die bereits gewonnen haben.</span>
                 </h2>
                 <p className="text-gray-600 text-lg sm:text-xl mb-10 leading-relaxed font-body max-w-md">
-                  Wir sind stolz darauf, lokale Betriebe bei ihrer digitalen Transformation zu begleiten. Unsere Lösungen sind praxiserprobt und psychologisch optimiert für maximale Conversion.
+                  Über 50 kleine und mittlere Betriebe haben sich in den letzten 12 Monaten mit uns an die Spitze gesetzt.
                 </p>
 
                 <div className="flex flex-col items-start gap-6">
@@ -77,8 +77,8 @@ export default function Home() {
                       ))}
                     </div>
                     <div className="text-sm font-body">
-                      <span className="text-gray-900 font-[var(--font-playfair)] text-xl block">50+ zufriedene Betriebe</span>
-                      <span className="text-gray-500 font-medium">in den letzten 12 Monaten</span>
+                      <span className="text-gray-900 font-[var(--font-playfair)] text-xl block">Echte Partnerschaften</span>
+                      <span className="text-gray-500 font-medium">für messbaren Erfolg</span>
                     </div>
                   </div>
 
@@ -95,15 +95,13 @@ export default function Home() {
           </div>
         </section>
 
-
-        <WhyUs />
-        <Founder />
         <Process />
         <LeadMagnet />
 
         <FAQ />
         <Blog />
         <Contact />
+        <IndustryMarquee />
       </main>
       <Footer />
       <AIAssistant />

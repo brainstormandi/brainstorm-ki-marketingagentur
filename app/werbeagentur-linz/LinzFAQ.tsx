@@ -9,16 +9,16 @@ const LINZ_FAQS = [
     answer: "In Linz gibt es viele klassische Agenturen. Was uns unterscheidet, ist die konsequente Einbindung von künstlicher Intelligenz in den Webdesign-Prozess. Dadurch sind wir nicht nur schneller, sondern bauen Homepages, die bei Google extrem gut ranken und durch konvertierungsoptimerte Texte mehr Anfragen generieren als klassische Websites."
   },
   {
-    question: "Wo liegt der Schwerpunkt Ihrer Webprojekte im Raum Linz?",
+    question: "Wo liegt der Schwerpunkt deiner Webprojekte im Raum Linz?",
     answer: "Wir betreuen vom hochspezialisierten KMU in der Linzer Industriezeile bis hin zum modernen Dienstleister in Urfahr. Jeder Betrieb braucht heute eine digitale Infrastruktur, die Leads qualifiziert und Mitarbeiter anzieht. Genau das bauen wir."
   },
   {
-    question: "Bieten Sie auch regelmäßige Vor-Ort-Meetings im Zentralraum OÖ?",
+    question: "Bietest du auch regelmäßige Vor-Ort-Meetings im Zentralraum OÖ?",
     answer: "Ja. Dank unserer Nähe (aus dem Mostviertel via A1) sind wir rasch in Linz. Viele unserer Kunden schätzen die Kombination aus effizienten Video-Calls für das Tagesgeschäft und strategischen, tiefgreifenden Terminen direkt an deren Firmenstandort."
   },
   {
     question: "Was bringt mir eine KI-Agentur bei der Suche nach Fachkräften in Linz?",
-    answer: "Der Fachkräftemangel in Linz ist massiv. Wir konzipieren dezidierte Recruiting-Funnel und Karriere-Websites. Durch psychologisch fundiertes Copwriting und moderne Bewerbungsprozesse (z.B. One-Click-Bewerber-Bots) holen wir Ihre Traumkandidaten direkt auf Ihr Smartphone."
+    answer: "Der Fachkräftemangel in Linz ist massiv. Wir konzipieren dezidierte Recruiting-Funnel und Karriere-Websites. Durch psychologisch fundiertes Copwriting und moderne Bewerbungsprozesse (z.B. One-Click-Bewerber-Bots) holen wir deine Traumkandidaten direkt auf dein Smartphone."
   }
 ];
 
@@ -29,7 +29,7 @@ const LinzFAQ = () => {
         <section id="faq" className="scroll-mt-32 py-32 bg-white border-t border-gray-200 relative overflow-hidden">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <ScrollReveal className="mb-20 text-center sm:text-left flex flex-col items-center sm:items-start max-w-2xl mx-auto sm:mx-0">
-                    <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent text-gray-600 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-gray-200">Ihr Vorsprung in OÖ
+                    <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent text-gray-600 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-gray-200">dein Vorsprung in OÖ
                     </div>
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.1] py-1 uppercase">
                         <span className="block">Häufige Fragen</span>

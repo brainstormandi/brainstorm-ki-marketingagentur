@@ -22,10 +22,10 @@ const LeadMagnet = () => {
         setUrl('');
         setEmail('');
       } else {
-        alert('Ein Fehler ist aufgetreten. Bitte senden Sie uns eine klassische E-Mail.');
+        alert('Ein Fehler ist aufgetreten. Bitte sende uns eine klassische E-Mail.');
       }
     } catch {
-      alert('Sende-Fehler. Bitte prüfen Sie Ihre Verbindung.');
+      alert('Sende-Fehler. Bitte prüfe deine Verbindung.');
     } finally {
       setIsSubmitting(false);
     }
@@ -42,20 +42,24 @@ const LeadMagnet = () => {
           Kostenloser Webseiten-Check
         </div>
         
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.1] py-1 mb-6 uppercase">
-          <span className="block">Verliert Ihre aktuelle Webseite</span>
-          <span className="block text-transparent bg-clip-text pb-2" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>täglich Kunden?</span>
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.1] py-1 mb-4 uppercase">
+          <span className="block">Ist deine aktuelle Webseite</span>
+          <span className="block text-transparent bg-clip-text pb-2" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>dein bester Verkäufer – oder dein teuerster Fehler?</span>
         </h2>
         
-        <p className="text-lg sm:text-xl text-gray-600 mb-12 leading-relaxed max-w-2xl mx-auto font-body">
-          Nutzen Sie unseren kostenlosen Webseiten-Check. Wir senden Ihnen in 24 Stunden eine technische und verkaufspsychologische Analyse Ihrer aktuellen Seite und decken klare Conversion-Bremsen auf.
+        <p className="text-xl sm:text-2xl font-[var(--font-playfair)] font-medium text-[#F7C429] mb-6 uppercase tracking-wide">
+          Enttarne die unsichtbaren Bremsen.
+        </p>
+        
+        <p className="text-lg sm:text-xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto font-body">
+          Viele Betriebe kämpfen täglich härter als nötig, weil ihre Webseite zwar gut aussieht, im Hintergrund aber heimlich Kunden an die Konkurrenz verliert. Lass uns Licht ins Dunkel bringen. Wir analysieren deinen aktuellen Auftritt in 24 Stunden tiefgehend auf technische und verkaufspsychologische Hürden. Du erhältst klare Fakten und den ersten taktischen Vorteil für dein Wachstum – ohne Risiko, ohne Fachchinesisch.
         </p>
 
         {success ? (
           <div className="max-w-xl mx-auto bg-emerald-50 text-emerald-900 p-8 rounded-2xl border border-emerald-200 mb-8 text-center">
              <CheckCircle2 className="w-12 h-12 text-emerald-500 mx-auto mb-4" />
              <h3 className="text-xl font-black mb-2 text-emerald-900">Anfrage erfolgreich!</h3>
-             <p className="font-medium text-sm text-emerald-800">Wir haben Ihre Daten erhalten und melden uns in Kürze mit Ihrer Analyse.</p>
+             <p className="font-medium text-sm text-emerald-800">Wir haben deine Daten erhalten und melden uns in Kürze mit deiner Analyse.</p>
           </div>
         ) : (
           <form className="max-w-xl mx-auto bg-transparent backdrop-blur-md p-4 rounded-2xl border border-gray-200 flex flex-col gap-3 mb-8" onSubmit={handleSubmit}>
@@ -64,7 +68,7 @@ const LeadMagnet = () => {
                 type="url" 
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
-                placeholder="Ihre Webseite (https://...)" 
+                placeholder="Deine Webseite (https://...)" 
                 required
                 className="flex-1 w-full bg-transparent rounded-xl text-gray-900 px-5 py-3.5 outline-none placeholder:text-gray-500 font-medium border border-gray-200 focus:border-[#F7C429] transition-colors text-sm font-body"
               />
@@ -72,7 +76,7 @@ const LeadMagnet = () => {
                 type="email" 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Ihre E-Mail für die Analyse" 
+                placeholder="Deine E-Mail für die Analyse" 
                 required
                 className="flex-1 w-full bg-transparent rounded-xl text-gray-900 px-5 py-3.5 outline-none placeholder:text-gray-500 font-medium border border-gray-200 focus:border-[#F7C429] transition-colors text-sm font-body"
               />
@@ -96,10 +100,10 @@ const LeadMagnet = () => {
           </form>
         )}
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs text-gray-500 font-bold uppercase tracking-widest">
-          <span className="flex items-center gap-2 justify-center"><CheckCircle2 className="w-3.5 h-3.5 text-[#F7C429]" /> 100% kostenlos</span>
-          <span className="flex items-center gap-2 justify-center"><CheckCircle2 className="w-3.5 h-3.5 text-[#F7C429]" /> Detailversierte Analyse</span>
-          <span className="flex items-center gap-2 justify-center"><CheckCircle2 className="w-3.5 h-3.5 text-[#F7C429]" /> Keine versteckten Kosten</span>
+        <div className="flex flex-wrap items-center justify-center gap-y-3 gap-x-6 sm:gap-x-10 text-[10px] sm:text-xs text-gray-500 font-bold uppercase tracking-widest mt-6">
+          <span className="flex items-center gap-2 whitespace-nowrap"><CheckCircle2 className="w-3.5 h-3.5 text-[#F7C429] shrink-0" /> 100 % kostenlos und unverbindlich</span>
+          <span className="flex items-center gap-2 whitespace-nowrap"><CheckCircle2 className="w-3.5 h-3.5 text-[#F7C429] shrink-0" /> Detailversierte, verständliche Analyse</span>
+          <span className="flex items-center gap-2 whitespace-nowrap"><CheckCircle2 className="w-3.5 h-3.5 text-[#F7C429] shrink-0" /> Keine versteckten Hürden oder Kosten</span>
         </div>
       </div>
     </section>

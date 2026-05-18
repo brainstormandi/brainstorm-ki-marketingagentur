@@ -6,19 +6,19 @@ import ScrollReveal from '../components/ScrollReveal';
 const WIEN_FAQS = [
   {
     question: "Warum eine Werbeagentur aus Niederösterreich für ein Wiener Unternehmen?",
-    answer: "Viele Webagenturen in Wien rufen hohe Großstadt-Stundensätze auf, bei gleichzeitig träger Projektbetreuung. Bei uns profitieren Sie vom perfekten Mix: Wir sind schnell, extrem innovativ durch KI-Technologien und bieten Ihnen oberste Qualität zu fairen Konditionen."
+    answer: "Viele Webagenturen in Wien rufen hohe Großstadt-Stundensätze auf, bei gleichzeitig träger Projektbetreuung. Bei uns profitierst du vom perfekten Mix: Wir sind schnell, extrem innovativ durch KI-Technologien und bieten dir oberste Qualität zu fairen Konditionen."
   },
   {
     question: "Können Web-Projekte rein digital abgewickelt werden?",
     answer: "Absolut. Unsere Video-Calls und digitalen Abstimmungstools laufen derart reibungslos, dass viele unserer Kunden – sei es in der Inneren Stadt, in Floridsdorf oder im Speckgürtel Mödling – unsere Performance schätzen, ohne zeitraubende Jour-Fixe Termine vor Ort in Wien wahrnehmen zu müssen. Dennoch stehen wir auf Wunsch für Kick-Offs physisch bereit."
   },
   {
-    question: "Wie optimieren Sie für den umkämpften Wiener Suchmaschinen-Markt?",
-    answer: "In Wien reicht 'ein bisschen SEO' nicht. Wir konzipieren Webseiten mit perfekter technischer Performance, Schema.org Local Business Implementierungen und semantisch extrem starken Inhalten. Ihre Seite kommuniziert direkt mit KIs wie ChatGPT und den Google Algorithmen, um Sie lokal sichtbar zu machen."
+    question: "Wie optimierst du für den umkämpften Wiener Suchmaschinen-Markt?",
+    answer: "In Wien reicht 'ein bisschen SEO' nicht. Wir konzipieren Webseiten mit perfekter technischer Performance, Schema.org Local Business Implementierungen und semantisch extrem starken Inhalten. deine Seite kommuniziert direkt mit KIs wie ChatGPT und den Google Algorithmen, um dich lokal sichtbar zu machen."
   },
   {
-    question: "Bieten Sie auch die Erstellung von KI-Chatbots für Wiener KMUs an?",
-    answer: "Ja, smarte Automatisierungen wie KI-Chatbots gehören zu unserer Kernkompetenz. Damit qualifizieren Sie Besucher Ihrer Homepage vor, beantworten Standardfragen automatisch und holen qualifizierte Leads für Ihr Unternehmen rein."
+    question: "Bietest du auch die Erstellung von KI-Chatbots für Wiener KMUs an?",
+    answer: "Ja, smarte Automatisierungen wie KI-Chatbots gehören zu unserer Kernkompetenz. Damit qualifizierst du Besucher deiner Homepage vor, beantworten Standardfragen automatisch und holen qualifizierte Leads für dein Unternehmen rein."
   }
 ];
 

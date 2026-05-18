@@ -11,7 +11,7 @@ import { GOOGLE_REVIEW_LINK } from '../constants';
 
 export const metadata: Metadata = {
   title: "Werbeagentur Linz | High-Performance Webdesign & Landingpages",
-  description: "Ihre KI-Webagentur für den Wirtschaftsraum Linz. Wir kreieren Business-Webseiten, die Besucher in Kunden und Fachkräfte verwandeln. Jetzt anfragen!",
+  description: "deine KI-Webagentur für den Wirtschaftsraum Linz. Wir kreieren Business-Webseiten, die Besucher in Kunden und Fachkräfte verwandeln. Jetzt anfragen!",
   alternates: {
     canonical: "https://ki-marketingagentur.jetzt/werbeagentur-linz",
   },
@@ -90,7 +90,7 @@ export default function WerbeagenturLinz() {
                     </h1>
 
                     <p className="font-body text-[#111827] text-lg leading-relaxed max-w-lg mb-8 animate-reveal-up reveal-delay-200">
-                       Von der Industriezeile bis Urfahr: Wir bauen hochmoderne Homepages, die für Ihre digitale Sichtbarkeit am OÖ-Markt den Unterschied machen.
+                       Von der Industriezeile bis Urfahr: Wir bauen hochmoderne Homepages, die für deine digitale Sichtbarkeit am OÖ-Markt den Unterschied machen.
                     </p>
 
                     <div className="flex flex-wrap gap-2 mb-10 animate-reveal-up reveal-delay-300">
@@ -139,9 +139,6 @@ export default function WerbeagenturLinz() {
                 </div>
             </div>
         </section>
-
-        <IndustryMarquee />
-
         <section className="py-20 bg-gray-50 border-y border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -182,14 +179,14 @@ export default function WerbeagenturLinz() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
                <ScrollReveal animation="reveal-right">
                   <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight leading-[1.1] py-1 mb-8">
-<span className="font-sans block">Ihre Online-Auslage </span>
+<span className="font-sans block">deine Online-Auslage </span>
 <span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">in der Stahlstadt</span>
 </h2>
                   <p className="font-body text-[#111827] text-lg leading-relaxed mb-6">
                      Linz ist ein Knotenpunkt für Innovation und Technologie. Sich hier digital zu behaupten, erfordert mehr als nette Bilder. Es erfordert eine intelligente, zielgerichtete Web-Infrastruktur, die aus puren Webseitenbesuchern tatsächliche Anfragen macht.
                   </p>
                   <p className="font-body text-[#111827] text-lg leading-relaxed mb-8">
-                     Über die A1 sind wir rasch in Linz vor Ort. Wir wissen, was der oberösterreichische Zentralraum braucht: Verlässlichkeit, Schnelligkeit und ein digitales Branding, das Vertrauen ausstrahlt. Ob KI-Integrationen, Recruting-Landingpages oder der komplette Relaunch Ihrer Unternehmenswebsite – wir sind Ihr starker Umsetzungspartner.
+                     Über die A1 sind wir rasch in Linz vor Ort. Wir wissen, was der oberösterreichische Zentralraum braucht: Verlässlichkeit, Schnelligkeit und ein digitales Branding, das Vertrauen ausstrahlt. Ob KI-Integrationen, Recruting-Landingpages oder der komplette Relaunch deiner Unternehmenswebsite – wir sind dein starker Umsetzungspartner.
                   </p>
                   
                   <div className="flex flex-col gap-4 mb-10">
@@ -242,7 +239,7 @@ export default function WerbeagenturLinz() {
 
                   <div className="mt-8 flex justify-center w-full">
                      <a href="https://www.google.com/search?q=BrainStorm+KI+Werbeagentur" target="_blank" rel="noopener noreferrer" className="inline-flex w-full justify-center items-center gap-2 px-8 py-4 bg-white border border-gray-200 rounded-xl font-bold text-lg text-gray-700 shadow-sm hover:bg-gray-50 hover:border-gray-300 hover:text-accent transition-all group scale-100 hover:scale-[1.02]">
-                        Besuchen Sie unser Google Profil
+                        Besuche unser Google Profil
                         <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-accent transition-transform group-hover:translate-x-1" />
                      </a>
                   </div>
@@ -254,6 +251,7 @@ export default function WerbeagenturLinz() {
         <Services />
         <LinzFAQ />
         <Contact />
+        <IndustryMarquee />
       </main>
       <Footer />
       <AIAssistant />

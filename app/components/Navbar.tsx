@@ -11,13 +11,14 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const menuItems = [
-        { name: 'Leistungen', href: '/#services' },
-        { name: 'Erfolge', href: '/#success' },
-        { name: 'Ablauf', href: '/#process' },
-        { name: 'Wir', href: '/#philosophie' },
-        { name: 'FAQs', href: '/#faq' },
-        { name: 'Blog', href: '/#blog' },
-        { name: 'Kontakt', href: '/#contact' }
+        { name: 'Herausforderungen', href: '/#spielregeln' },
+        { name: 'Lösungen', href: '/#services' },
+        { name: 'Dein Partner', href: '/#about' },
+        { name: 'Erfolgsgeschichten', href: '/#success' },
+        { name: 'Fahrplan', href: '/#process' },
+        { name: 'Gratis Check', href: '/#website-check' },
+        { name: 'Wissen', href: '/#blog' },
+        { name: 'Erstgespräch', href: '/#contact' }
     ];
 
     const isDark = theme === 'dark';
@@ -33,7 +34,7 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
                 >
                     <div className={`hidden sm:block w-[30px] h-[1px] transition-colors ${
                         isDark ? 'bg-white/30 group-hover:bg-[#F7C429]' : 'bg-gray-300 group-hover:bg-[#F7C429]'
-                    }`} />
+                     }`} />
                     <span className={`font-[var(--font-inter),sans-serif] font-bold text-[13px] sm:text-[15px] tracking-[0.2em] sm:tracking-[0.25em] uppercase transition-colors ${
                         isDark ? 'text-white' : 'text-[#374151]'
                     }`}>
@@ -42,12 +43,12 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
                 </Link>
 
                 {/* Right Side: Desktop Links */}
-                <div className="hidden lg:flex gap-5 xl:gap-6 items-center">
+                <div className="hidden lg:flex gap-2 xl:gap-4 2xl:gap-5 items-center">
                     {menuItems.map(item => (
                         <Link 
                             key={item.name} 
                             href={item.href} 
-                            className={`font-[var(--font-inter),sans-serif] font-semibold text-[13px] sm:text-[14px] tracking-[0.2em] uppercase no-underline transition-colors cursor-pointer ${
+                            className={`font-[var(--font-inter),sans-serif] font-semibold text-[10px] xl:text-[12px] 2xl:text-[13px] tracking-[0.05em] xl:tracking-[0.1em] 2xl:tracking-[0.2em] uppercase no-underline transition-colors cursor-pointer ${
                                 isDark 
                                     ? 'text-white/90 hover:text-[#F7C429]' 
                                     : 'text-[#374151] hover:text-[#F7C429]'

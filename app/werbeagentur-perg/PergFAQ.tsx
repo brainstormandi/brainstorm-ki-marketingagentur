@@ -6,19 +6,19 @@ import ScrollReveal from '../components/ScrollReveal';
 const PERG_FAQS = [
   {
     question: "Warum reicht eine günstige Baukasten-Homepage in der Region Perg heute oft nicht mehr?",
-    answer: "Weil der Markt im Machland und Mühlviertel hart umkämpft ist. Potenzielle Kunden oder neue Mitarbeiter entscheiden online in Millisekunden. Wenn Ihre Webseite langsam lädt, auf Smartphones schlecht funktioniert oder unprofessionell wirkt, wechseln Besucher im Raum Perg sofort und unwiederbringlich zu Ihren Mitbewerbern."
+    answer: "Weil der Markt im Machland und Mühlviertel hart umkämpft ist. Potenzielle Kunden oder neue Mitarbeiter entscheiden online in Millisekunden. Wenn deine Webseite langsam lädt, auf Smartphones schlecht funktioniert oder unprofessionell wirkt, wechseln Besucher im Raum Perg sofort und unwiederbringlich zu deinen Mitbewerbern."
   },
   {
-    question: "Arbeiten Sie als Online Agentur auch persönlich mit Betrieben im Bezirk?",
-    answer: "Ja! Virtuelle Effizienz ist gut, echte Nähe ist besser. Unser Außendienst ist im Gebiet Machland, Perg und bis nach Grein flexibel unterwegs. Wir lieben es, Webdesign-Ziele bei einem Kaffee direkt mit Ihnen am Tisch zu skizzieren oder effizient via Video-Call abzuklären."
+    question: "Arbeitest du als Online Agentur auch persönlich mit Betrieben im Bezirk?",
+    answer: "Ja! Virtuelle Effizienz ist gut, echte Nähe ist besser. Unser Außendienst ist im Gebiet Machland, Perg und bis nach Grein flexibel unterwegs. Wir lieben es, Webdesign-Ziele bei einem Kaffee direkt mit dir am Tisch zu skizzieren oder effizient via Video-Call abzuklären."
   },
   {
     question: "Müssen wir die Texte für die neue Homepage selbst schreiben?",
-    answer: "Nein, ganz im Gegenteil. Als KI-Vorreiter nutzen wir als Werbeagentur modernste Technologien, um verkaufspsychologisch optimierte und branchenspezifische Inhalte für Ihre Region zu kreieren. Wir nehmen Ihnen also die lästige Textarbeit vollständig ab."
+    answer: "Nein, ganz im Gegenteil. Als KI-Vorreiter nutzen wir als Werbeagentur modernste Technologien, um verkaufspsychologisch optimierte und branchenspezifische Inhalte für deine Region zu kreieren. Wir nehmen dir also die lästige Textarbeit vollständig ab."
   },
   {
-    question: "Ich haben bereits eine in die Jahre gekommene Webseite. Bieten Sie Relaunches an?",
-    answer: "Selbstverständlich. Wir analysieren Ihre alte Homepage, retten was für Google wichtig ist (Rankings), und verpacken den Rest in ein extrem schnelles, völlig neues und vor allem konvertierendes Web-Gewand."
+    question: "Ich haben bereits eine in die Jahre gekommene Webseite. Bietest du Relaunches an?",
+    answer: "Selbstverständlich. Wir analysieren deine alte Homepage, retten was für Google wichtig ist (Rankings), und verpacken den Rest in ein extrem schnelles, völlig neues und vor allem konvertierendes Web-Gewand."
   }
 ];
 
@@ -33,7 +33,7 @@ const PergFAQ = () => {
                     </div>
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.1] py-1 uppercase">
                         <span className="block">Fragen & Antworten</span>
-                        <span className="block text-transparent bg-clip-text pb-2 sm:pb-4" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>zu Ihrer neuen Homepage.</span>
+                        <span className="block text-transparent bg-clip-text pb-2 sm:pb-4" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>zu deiner neuen Homepage.</span>
                     </h2>
                     
                 </ScrollReveal>

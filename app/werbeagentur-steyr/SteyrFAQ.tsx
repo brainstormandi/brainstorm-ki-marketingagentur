@@ -6,7 +6,7 @@ import ScrollReveal from '../components/ScrollReveal';
 const STEYR_FAQS = [
   {
     question: "Warum sollte ein Steyrer Unternehmen auf eine professionelle Homepage setzen?",
-    answer: "Weil die Konkurrenz im Raum Steyr extrem stark ist. Von der Eisenstraße über Garsten bis zum Stadtplatz: Konsumenten suchen online. Nur wenn Ihre Webseite modern ist und sofort überzeugt, konvertieren Sie hier Suchanfragen in echte Laufkundschaft oder B2B-Aufträge."
+    answer: "Weil die Konkurrenz im Raum Steyr extrem stark ist. Von der Eisenstraße über Garsten bis zum Stadtplatz: Konsumenten suchen online. Nur wenn deine Webseite modern ist und sofort überzeugt, konvertierst du hier Suchanfragen in echte Laufkundschaft oder B2B-Aufträge."
   },
   {
     question: "Können wir uns für das Web-Projekt in Steyr persönlich treffen?",
@@ -18,7 +18,7 @@ const STEYR_FAQS = [
   },
   {
     question: "Wie läuft der Support nach Live-Gang der Website ab?",
-    answer: "Mit uns haben Sie aus der nahen Region einen verlässlichen Ansprechpartner. Wir kümmern uns um alle Updates, DSGVO-Anpassungen (Google Fonts, Cookies) und sind bei Rückfragen per kurzen Wegen in Steyr für Sie da."
+    answer: "Mit uns hast du aus der nahen Region einen verlässlichen Ansprechpartner. Wir kümmern uns um alle Updates, DSGVO-Anpassungen (Google Fonts, Cookies) und sind bei Rückfragen per kurzen Wegen in Steyr für dich da."
   }
 ];
 
@@ -33,7 +33,7 @@ const SteyrFAQ = () => {
                     </div>
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.1] py-1 uppercase">
                         <span className="block">Klarheit für</span>
-                        <span className="block text-transparent bg-clip-text pb-2 sm:pb-4" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>Ihr Webprojekt.</span>
+                        <span className="block text-transparent bg-clip-text pb-2 sm:pb-4" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>dein Webprojekt.</span>
                     </h2>
                     
                 </ScrollReveal>

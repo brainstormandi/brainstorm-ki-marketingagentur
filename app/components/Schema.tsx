@@ -147,7 +147,7 @@ export default function Schema() {
         "@id": "https://ki-marketingagentur.jetzt/#webpage",
         "url": "https://ki-marketingagentur.jetzt",
         "name": "KI Werbeagentur Österreich | Webseiten, Landingpages & SEO",
-        "description": "Österreichs Nr. 1 KI-Werbeagentur für KMU. Wir erstellen moderne Webseiten, verkaufsstarke Landingpages und machen Sie durch SEO & GEO zum Kundenmagneten.",
+        "description": "Österreichs Nr. 1 KI-Werbeagentur für KMU. Wir erstellen moderne Webseiten, verkaufsstarke Landingpages und machen dich durch SEO & GEO zum Kundenmagneten.",
         "primaryImageOfPage": {
             "@type": "ImageObject",
             "url": "https://ki-marketingagentur.jetzt/bilder/logo.png"

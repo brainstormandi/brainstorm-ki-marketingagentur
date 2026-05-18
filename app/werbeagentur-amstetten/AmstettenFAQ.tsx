@@ -6,7 +6,7 @@ import ScrollReveal from '../components/ScrollReveal';
 const AMSTETTEN_FAQS = [
   {
     question: "Warum eine fokussierte Agentur für den Raum Amstetten beauftragen?",
-    answer: "Regionale Nähe schafft Vertrauen. Ein persönliches Treffen vor Ort in Amstetten oder Umgebung ist für die strategische Planung enorm wichtig – speziell, wenn es um ein essenzielles Aushängeschild wie Ihre neue Firmen-Homepage geht."
+    answer: "Regionale Nähe schafft Vertrauen. Ein persönliches Treffen vor Ort in Amstetten oder Umgebung ist für die strategische Planung enorm wichtig – speziell, wenn es um ein essenzielles Aushängeschild wie deine neue Firmen-Homepage geht."
   },
   {
     question: "Erstellt ihr 'nur' Landingpages oder gesamte Firmen-Webseiten?",
@@ -14,7 +14,7 @@ const AMSTETTEN_FAQS = [
   },
   {
     question: "Sind Beratungen vor Ort im Mostviertel möglich?",
-    answer: "Ja, absolut. Wir sind regelmäßig von Linz über Amstetten bis St. Pölten unterwegs. Wir kommen dorthin, wo unsere Kunden sind, um Ihr Webseiten-Projekt direkt vor Ort optimal zu besprechen."
+    answer: "Ja, absolut. Wir sind regelmäßig von Linz über Amstetten bis St. Pölten unterwegs. Wir kommen dorthin, wo unsere Kunden sind, um dein Webseiten-Projekt direkt vor Ort optimal zu besprechen."
   },
   {
     question: "Bis wann ist meine neue Webseite oder Homepage online?",
@@ -33,7 +33,7 @@ const AmstettenFAQ = () => {
                     </div>
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.1] py-1 uppercase">
                         <span className="block">Klarheit für</span>
-                        <span className="block text-transparent bg-clip-text pb-2 sm:pb-4" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>Ihre neue Website.</span>
+                        <span className="block text-transparent bg-clip-text pb-2 sm:pb-4" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>deine neue Website.</span>
                     </h2>
                     
                 </ScrollReveal>
