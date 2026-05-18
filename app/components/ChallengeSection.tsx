@@ -84,10 +84,10 @@ const ChallengeSection = () => {
                                 </p>
                                 <Link 
                                     href="/#contact" 
-                                    className="group flex items-center justify-center gap-3 w-max bg-[#F7C429] text-black px-8 py-[22px] rounded-full font-bold uppercase tracking-[0.15em] text-[14px] sm:text-[15px] shadow-[0_10px_30px_rgba(247,196,41,0.25)] transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-black hover:text-[#F7C429] hover:shadow-[0_10px_30px_rgba(0,0,0,0.15)] hover:-translate-y-0.5 cursor-pointer relative z-10"
+                                    className="group flex items-center justify-center gap-3 w-full sm:w-max bg-[#F7C429] text-black px-6 sm:px-8 py-[22px] rounded-full font-bold uppercase tracking-[0.12em] sm:tracking-[0.15em] text-[13px] sm:text-[15px] shadow-[0_10px_30px_rgba(247,196,41,0.25)] transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-black hover:text-[#F7C429] hover:shadow-[0_10px_30px_rgba(0,0,0,0.15)] hover:-translate-y-0.5 cursor-pointer relative z-10 text-center"
                                 >
                                     Finde heraus wie
-                                    <ArrowRight className="w-5 h-5 transition-transform duration-400 group-hover:translate-x-1" />
+                                    <ArrowRight className="w-5 h-5 transition-transform duration-400 group-hover:translate-x-1 flex-shrink-0" />
                                 </Link>
                             </div>
                         </ScrollReveal>
@@ -97,15 +97,15 @@ const ChallengeSection = () => {
                     <div className="lg:col-span-7 space-y-8">
                         {cards.map((card, index) => (
                             <ScrollReveal key={index} delay={index * 100} animation="reveal-left">
-                                <div className="relative bg-transparent rounded-3xl p-8 sm:p-10 border border-gray-200 backdrop-blur-sm group hover:border-[#F7C429]/50 hover:shadow-[0_4px_20px_rgba(247,196,41,0.2)] transition-all duration-500 flex flex-col overflow-hidden">
+                                <div className="relative bg-transparent rounded-3xl p-6 sm:p-10 border border-gray-200 backdrop-blur-sm group hover:border-[#F7C429]/50 hover:shadow-[0_4px_20px_rgba(247,196,41,0.2)] transition-all duration-500 flex flex-col overflow-hidden">
                                     {/* Large watermark number */}
                                     <div className="absolute right-0 bottom-0 pointer-events-none translate-x-[20%] translate-y-[20%] font-sans text-[10rem] font-black leading-none text-[#00000003] group-hover:text-[#F7C429]/5 transition-all duration-700">
                                         {card.number}
                                     </div>
                                     
-                                    <div className="flex items-center justify-between gap-4 mb-4 relative z-10">
+                                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 relative z-10">
                                         <div className="flex items-center gap-4">
-                                            <div className="flex items-center justify-center w-12 h-12 rounded-xl border border-gray-200 group-hover:border-[#F7C429] transition-colors bg-white">
+                                            <div className="flex items-center justify-center w-12 h-12 rounded-xl border border-gray-200 group-hover:border-[#F7C429] transition-colors bg-white flex-shrink-0">
                                                 <div className="[&>svg]:w-6 [&>svg]:h-6 text-[#F7C429] transition-colors">
                                                     {card.icon}
                                                 </div>
@@ -114,7 +114,7 @@ const ChallengeSection = () => {
                                                 {card.title}
                                             </h3>
                                         </div>
-                                        <span className="text-[10px] font-mono tracking-widest text-gray-500 uppercase px-3 py-1 rounded-full bg-gray-50 border border-gray-200">
+                                        <span className="text-[10px] w-max font-mono tracking-widest text-gray-500 uppercase px-3 py-1 rounded-full bg-gray-50 border border-gray-200">
                                             {card.badge}
                                         </span>
                                     </div>

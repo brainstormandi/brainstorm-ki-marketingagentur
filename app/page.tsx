@@ -56,9 +56,9 @@ export default function Home() {
                   Über 50 kleine und mittlere Betriebe haben sich in den letzten 12 Monaten mit uns an die Spitze gesetzt.
                 </p>
 
-                <div className="flex flex-col items-start gap-6">
-                  <div className="flex items-center gap-5" aria-hidden="true">
-                    <div className="flex -space-x-3">
+                <div className="flex flex-col items-start gap-6 w-full">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 w-full" aria-hidden="true">
+                    <div className="flex -space-x-3 flex-shrink-0">
                       {customerFaces.map((src, i) => (
                         <ScrollReveal
                           key={i}
@@ -82,9 +82,9 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <a href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-3 w-max bg-[#F7C429] text-black px-8 py-[22px] rounded-full font-bold uppercase tracking-[0.15em] text-[14px] sm:text-[15px] shadow-[0_10px_30px_rgba(247,196,41,0.4)] transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-black hover:text-[#F7C429] hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 cursor-pointer">
+                  <a href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-3 w-full sm:w-max bg-[#F7C429] text-black px-6 sm:px-8 py-[22px] rounded-full font-bold uppercase tracking-[0.12em] sm:tracking-[0.15em] text-[13px] sm:text-[15px] shadow-[0_10px_30px_rgba(247,196,41,0.4)] transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-black hover:text-[#F7C429] hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 cursor-pointer text-center">
                     Alle Rezensionen auf Google lesen
-                    <ArrowUpRight className="w-[20px] h-[20px] transition-transform duration-400 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
+                    <ArrowUpRight className="w-[20px] h-[20px] transition-transform duration-400 group-hover:translate-x-1 group-hover:-translate-y-1 flex-shrink-0" aria-hidden="true" />
                   </a>
                 </div>
               </ScrollReveal>

@@ -53,12 +53,12 @@ const TestimonialSlider = () => {
                         href={GOOGLE_REVIEW_LINK}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block p-8 sm:p-10 rounded-[2rem] bg-white border border-gray-200 shadow-sm hover:shadow-[0_4px_20px_rgba(247,196,41,0.3)] hover:border-[#F7C429]/50 hover:-translate-y-1 transition-all duration-300 group/card relative focus-visible:ring-2 focus-visible:ring-[#F7C429] outline-none"
+                        className="block p-5 sm:p-10 rounded-[2rem] bg-white border border-gray-200 shadow-sm hover:shadow-[0_4px_20px_rgba(247,196,41,0.3)] hover:border-[#F7C429]/50 hover:-translate-y-1 transition-all duration-300 group/card relative focus-visible:ring-2 focus-visible:ring-[#F7C429] outline-none"
                         aria-label={`Bewertung von ${t.name} auf Google ansehen: ${t.quote}`}
                     >
-                            <div className="flex justify-between items-start mb-6">
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                                 <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-full bg-gray-50 text-[#F7C429] font-bold flex items-center justify-center border border-gray-200 text-lg">
+                                    <div className="w-12 h-12 rounded-full bg-gray-50 text-[#F7C429] font-bold flex items-center justify-center border border-gray-200 text-lg flex-shrink-0">
                                         {t.name.charAt(0)}
                                     </div>
                                     <div className="flex flex-col">
@@ -66,7 +66,7 @@ const TestimonialSlider = () => {
                                         <span className="text-xs text-gray-600 font-medium">Local Guide</span>
                                     </div>
                                 </div>
-                            <div className="flex items-center gap-1" aria-hidden="true">
+                            <div className="flex items-center gap-1 flex-shrink-0" aria-hidden="true">
                                 {/* Google "G" standard star icon colors */}
                                 <svg className="w-6 h-6" viewBox="0 0 24 24">
                                     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
