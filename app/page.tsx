@@ -49,8 +49,8 @@ export default function Home() {
                   Erfolge
                 </div>
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.1] py-1 mb-5 uppercase">
-                  <span className="block">Kunden aus deiner Region,</span>
-                  <span className="block text-transparent bg-clip-text pb-2" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>die bereits gewonnen haben.</span>
+                  <span className="block">Reale Projekte. Echte Ergebnisse.</span>
+                  <span className="block text-transparent bg-clip-text pb-2" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>Direkt aus der Region.</span>
                 </h2>
                 <p className="text-gray-600 text-lg sm:text-xl mb-10 leading-relaxed font-body max-w-md">
                   Über 50 kleine und mittlere Betriebe haben sich in den letzten 12 Monaten mit uns an die Spitze gesetzt.
