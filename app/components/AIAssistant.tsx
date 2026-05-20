@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { MessageCircle, X, Mic, Send, Mail, Loader2, Sparkles, Volume2, Calendar, ExternalLink, CheckCircle2, AlertCircle, User, Clock, ShieldCheck, ArrowUpRight } from 'lucide-react';
+import { X, Mic, Send, Mail, Loader2, Calendar, CheckCircle2, AlertCircle, ShieldCheck, ArrowUpRight } from 'lucide-react';
 import { AssistantMode } from '../types';
 import { GeminiService, encode, decode, decodeAudioData } from '../services/geminiService';
 import { CONTACT_INFO } from '../constants';
+import SusiSphere from './SusiSphere';
 
 declare global {
   interface Window {
@@ -370,38 +371,127 @@ const AIAssistant = () => {
 
     return (
         <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-[100] font-sans flex flex-col items-end">
+            <style>{`
+                @keyframes susi-rotate {
+                    0%   { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+                @keyframes susi-rotate-reverse {
+                    0%   { transform: rotate(360deg); }
+                    100% { transform: rotate(0deg); }
+                }
+                @keyframes susi-pulse-ring {
+                    0%, 100% { opacity: 0.15; transform: scale(1); }
+                    50%       { opacity: 0.35; transform: scale(1.12); }
+                }
+                @keyframes susi-pulse-ring2 {
+                    0%, 100% { opacity: 0.08; transform: scale(1); }
+                    50%       { opacity: 0.22; transform: scale(1.22); }
+                }
+                @keyframes susi-float {
+                    0%, 100% { transform: translateY(0px) scale(1); }
+                    50%       { transform: translateY(-5px) scale(1.02); }
+                }
+                @keyframes susi-shimmer {
+                    0%   { opacity: 0.5; transform: rotate(0deg) scale(1); }
+                    50%  { opacity: 0.9; transform: rotate(180deg) scale(1.05); }
+                    100% { opacity: 0.5; transform: rotate(360deg) scale(1); }
+                }
+                @keyframes susi-active-ring {
+                    0%, 100% { transform: scale(1);   opacity: 0.6; }
+                    50%       { transform: scale(1.3); opacity: 0; }
+                }
+                .susi-sphere-btn { animation: susi-float 4s ease-in-out infinite; }
+                .susi-sphere-btn:hover { animation: none; transform: scale(1.08); }
+                .susi-ring1 { animation: susi-pulse-ring 3s ease-in-out infinite; }
+                .susi-ring2 { animation: susi-pulse-ring2 3s ease-in-out infinite 0.8s; }
+                .susi-aurora { animation: susi-rotate 8s linear infinite; }
+                .susi-aurora2 { animation: susi-rotate-reverse 12s linear infinite; }
+                .susi-active .susi-ring1 { animation: susi-active-ring 1.2s ease-out infinite; }
+                .susi-active .susi-ring2 { animation: susi-active-ring 1.2s ease-out infinite 0.4s; }
+            `}</style>
+
             {!isOpen && (
-                <button
-                    onClick={() => { setIsOpen(true); startVoiceMode(false); }}
-                    className="w-16 h-16 sm:w-20 sm:h-20 bg-white border border-[#F7C429] rounded-[1.5rem] sm:rounded-[2.5rem] shadow-[0_0_20px_rgba(247, 196, 41,0.3)] flex items-center justify-center text-[#F7C429] hover:scale-110 hover:rotate-3 transition-all relative group overflow-hidden"
-                >
-                    {(isListening || isConnecting) && (
-                        <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
-                    )}
-                    <div className="relative z-10">
-                        <Mic className={`w-10 h-10 transition-all duration-500 ${isListening || isConnecting ? 'scale-125 animate-pulse' : 'group-hover:scale-110'}`} />
-                    </div>
+                <div className="relative flex items-center justify-end group">
+                    {/* Ambient glow rings */}
+                    <div
+                        className="absolute rounded-full pointer-events-none"
+                        style={{
+                            inset: -20,
+                            background: 'radial-gradient(circle, rgba(247,196,41,0.22) 0%, transparent 68%)',
+                            animation: isListening || isConnecting
+                                ? 'susi-active-ring 1.2s ease-out infinite'
+                                : 'susi-pulse-ring 3s ease-in-out infinite',
+                        }}
+                    />
+                    <div
+                        className="absolute rounded-full pointer-events-none"
+                        style={{
+                            inset: -34,
+                            background: 'radial-gradient(circle, rgba(247,196,41,0.1) 0%, transparent 72%)',
+                            animation: isListening || isConnecting
+                                ? 'susi-active-ring 1.2s ease-out infinite 0.4s'
+                                : 'susi-pulse-ring2 3s ease-in-out infinite 0.8s',
+                        }}
+                    />
+
                     {/* Tooltip */}
-                    <div className="absolute right-24 top-1/2 -translate-y-1/2 bg-white text-[#F7C429] px-6 py-3 rounded-2xl whitespace-nowrap text-[10px] font-bold tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-[0_4px_20px_rgba(247,196,41,0.3)] border border-[#F7C429] uppercase">
-                        Berater rufen
+                    <div className="absolute right-[calc(100%+16px)] top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-sm text-gray-800 px-5 py-2.5 rounded-2xl whitespace-nowrap text-[11px] font-bold tracking-[0.15em] opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none shadow-lg border border-[#F7C429]/30 uppercase">
+                        <span className="text-[#F7C429]">✦</span> Susi fragen
                     </div>
-                </button>
+
+                    {/* Sphere trigger button */}
+                    <button
+                        onClick={() => { setIsOpen(true); startVoiceMode(false); }}
+                        className="susi-sphere-btn relative rounded-full border-0 outline-none cursor-pointer active:scale-95 transition-transform duration-150"
+                        style={{
+                            width: 96, height: 96,
+                            boxShadow: isListening || isConnecting
+                                ? '0 0 0 4px rgba(247,196,41,0.5), 0 0 40px rgba(247,196,41,0.6), 0 12px 48px rgba(0,0,0,0.2)'
+                                : '0 0 0 1px rgba(247,196,41,0.25), 0 0 24px rgba(247,196,41,0.3), 0 10px 36px rgba(0,0,0,0.15)'
+                        }}
+                    >
+                        <SusiSphere
+                            size={96}
+                            isListening={isListening}
+                            isSpeaking={isBotSpeaking}
+                            isConnecting={isConnecting}
+                        />
+                    </button>
+                </div>
             )}
 
             {isOpen && (
                 <div className="w-[calc(100vw-2rem)] sm:w-[500px] max-w-[500px] h-[calc(100vh-8rem)] sm:h-[780px] bg-white rounded-[2.5rem] sm:rounded-[4rem] shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-gray-200 flex flex-col overflow-hidden animate-reveal-up origin-bottom-right">
                     {/* Header */}
-                    <div className="p-6 sm:p-10 pb-6 sm:pb-8 bg-white/90 backdrop-blur-xl flex justify-between items-center relative overflow-hidden border-b border-gray-200">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-[#F7C429] rounded-full blur-[120px] opacity-10 -mr-32 -mt-32"></div>
-                        <div className="flex items-center gap-5 relative z-10">
-                            <div className="w-16 h-16 bg-gray-50 border border-gray-200 rounded-[1.5rem] flex items-center justify-center shadow-lg shadow-[#F7C429]/10">
-                                <Mic className="w-9 h-9 text-[#F7C429]" />
+                    <div className="px-6 sm:px-10 pt-6 sm:pt-8 pb-5 sm:pb-7 bg-white/90 backdrop-blur-xl flex justify-between items-center relative overflow-hidden border-b border-gray-200">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-[#F7C429] rounded-full blur-[120px] opacity-10 -mr-32 -mt-32" />
+                        <div className="flex items-center gap-4 sm:gap-5 relative z-10">
+                            {/* Sphere in header */}
+                            <div
+                                className="relative flex-shrink-0"
+                                style={{
+                                    filter: isBotSpeaking
+                                        ? 'drop-shadow(0 0 14px rgba(247,196,41,0.7))'
+                                        : isListening || isConnecting
+                                        ? 'drop-shadow(0 0 10px rgba(247,196,41,0.5))'
+                                        : 'drop-shadow(0 4px 12px rgba(0,0,0,0.2))'
+                                }}
+                            >
+                                <SusiSphere
+                                    size={56}
+                                    isListening={isListening}
+                                    isSpeaking={isBotSpeaking}
+                                    isConnecting={isConnecting}
+                                />
                             </div>
                             <div>
                                 <h4 className="font-[var(--font-playfair)] font-medium text-2xl tracking-wide leading-none mb-2 text-gray-900">Susi KI</h4>
                                 <div className="flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                                    <span className="text-[11px] text-gray-600 font-body tracking-[0.05em]">Deine persönliche Assistentin</span>
+                                    <div className={`w-2 h-2 rounded-full ${isBotSpeaking ? 'bg-amber-400 animate-pulse' : isListening ? 'bg-emerald-500 animate-pulse' : isConnecting ? 'bg-yellow-400 animate-pulse' : 'bg-emerald-500 animate-pulse'}`} />
+                                    <span className="text-[11px] text-gray-600 font-body tracking-[0.05em]">
+                                        {isConnecting ? 'Verbindet...' : isBotSpeaking ? 'Spricht gerade...' : isListening ? 'Hört zu...' : 'Deine persönliche Assistentin'}
+                                    </span>
                                 </div>
                             </div>
                         </div>
