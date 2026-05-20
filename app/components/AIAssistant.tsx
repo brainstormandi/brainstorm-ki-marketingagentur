@@ -27,6 +27,16 @@ const AIAssistant = () => {
     const [input, setInput] = useState('');
     const [isListening, setIsListening] = useState(false);
     const [isBotSpeaking, setIsBotSpeaking] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 640);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     // Refs
     const audioContextRef = useRef<AudioContext | null>(null);
@@ -369,6 +379,10 @@ const AIAssistant = () => {
         }
     };
 
+    const sphereSize = isMobile ? 64 : 96;
+    const innerGlowInset = isMobile ? -14 : -20;
+    const outerGlowInset = isMobile ? -24 : -34;
+
     return (
         <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-[100] font-sans flex flex-col items-end">
             <style>{`
@@ -417,7 +431,7 @@ const AIAssistant = () => {
                     <div
                         className="absolute rounded-full pointer-events-none"
                         style={{
-                            inset: -20,
+                            inset: innerGlowInset,
                             background: 'radial-gradient(circle, rgba(247,196,41,0.22) 0%, transparent 68%)',
                             animation: isListening || isConnecting
                                 ? 'susi-active-ring 1.2s ease-out infinite'
@@ -427,7 +441,7 @@ const AIAssistant = () => {
                     <div
                         className="absolute rounded-full pointer-events-none"
                         style={{
-                            inset: -34,
+                            inset: outerGlowInset,
                             background: 'radial-gradient(circle, rgba(247,196,41,0.1) 0%, transparent 72%)',
                             animation: isListening || isConnecting
                                 ? 'susi-active-ring 1.2s ease-out infinite 0.4s'
@@ -445,14 +459,14 @@ const AIAssistant = () => {
                         onClick={() => { setIsOpen(true); startVoiceMode(false); }}
                         className="susi-sphere-btn relative rounded-full border-0 outline-none cursor-pointer active:scale-95 transition-transform duration-150"
                         style={{
-                            width: 96, height: 96,
+                            width: sphereSize, height: sphereSize,
                             boxShadow: isListening || isConnecting
                                 ? '0 0 0 4px rgba(247,196,41,0.5), 0 0 40px rgba(247,196,41,0.6), 0 12px 48px rgba(0,0,0,0.2)'
                                 : '0 0 0 1px rgba(247,196,41,0.25), 0 0 24px rgba(247,196,41,0.3), 0 10px 36px rgba(0,0,0,0.15)'
                         }}
                     >
                         <SusiSphere
-                            size={96}
+                            size={sphereSize}
                             isListening={isListening}
                             isSpeaking={isBotSpeaking}
                             isConnecting={isConnecting}
