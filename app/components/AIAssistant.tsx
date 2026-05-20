@@ -406,6 +406,16 @@ const AIAssistant = () => {
                     0%, 100% { transform: translateY(0px) scale(1); }
                     50%       { transform: translateY(-5px) scale(1.02); }
                 }
+                @keyframes susi-btn-glow {
+                    0%, 100% {
+                        box-shadow: 0 0 0 1px rgba(247,196,41,0.25), 0 0 24px rgba(247,196,41,0.3), 0 10px 36px rgba(0,0,0,0.15);
+                        transform: translateY(0px) scale(1);
+                    }
+                    50% {
+                        box-shadow: 0 0 0 5px rgba(247,196,41,0.45), 0 0 45px rgba(247,196,41,0.6), 0 10px 36px rgba(0,0,0,0.15);
+                        transform: translateY(-6px) scale(1.03);
+                    }
+                }
                 @keyframes susi-shimmer {
                     0%   { opacity: 0.5; transform: rotate(0deg) scale(1); }
                     50%  { opacity: 0.9; transform: rotate(180deg) scale(1.05); }
@@ -415,8 +425,15 @@ const AIAssistant = () => {
                     0%, 100% { transform: scale(1);   opacity: 0.6; }
                     50%       { transform: scale(1.3); opacity: 0; }
                 }
-                .susi-sphere-btn { animation: susi-float 4s ease-in-out infinite; }
-                .susi-sphere-btn:hover { animation: none; transform: scale(1.08); }
+                .susi-sphere-btn {
+                    animation: susi-btn-glow 3s ease-in-out infinite;
+                    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+                }
+                .susi-sphere-btn:hover {
+                    animation-play-state: paused;
+                    transform: translateY(-4px) scale(1.08) !important;
+                    box-shadow: 0 0 0 6px rgba(247,196,41,0.5), 0 0 45px rgba(247,196,41,0.65), 0 12px 48px rgba(0,0,0,0.25) !important;
+                }
                 .susi-ring1 { animation: susi-pulse-ring 3s ease-in-out infinite; }
                 .susi-ring2 { animation: susi-pulse-ring2 3s ease-in-out infinite 0.8s; }
                 .susi-aurora { animation: susi-rotate 8s linear infinite; }
@@ -432,20 +449,16 @@ const AIAssistant = () => {
                         className="absolute rounded-full pointer-events-none"
                         style={{
                             inset: innerGlowInset,
-                            background: 'radial-gradient(circle, rgba(247,196,41,0.22) 0%, transparent 68%)',
-                            animation: isListening || isConnecting
-                                ? 'susi-active-ring 1.2s ease-out infinite'
-                                : 'susi-pulse-ring 3s ease-in-out infinite',
+                            background: 'radial-gradient(circle, rgba(247,196,41,0.25) 0%, transparent 68%)',
+                            animation: 'susi-active-ring 2s ease-out infinite',
                         }}
                     />
                     <div
                         className="absolute rounded-full pointer-events-none"
                         style={{
                             inset: outerGlowInset,
-                            background: 'radial-gradient(circle, rgba(247,196,41,0.1) 0%, transparent 72%)',
-                            animation: isListening || isConnecting
-                                ? 'susi-active-ring 1.2s ease-out infinite 0.4s'
-                                : 'susi-pulse-ring2 3s ease-in-out infinite 0.8s',
+                            background: 'radial-gradient(circle, rgba(247,196,41,0.12) 0%, transparent 72%)',
+                            animation: 'susi-active-ring 2s ease-out infinite 0.6s',
                         }}
                     />
 
@@ -459,15 +472,12 @@ const AIAssistant = () => {
                         onClick={() => { setIsOpen(true); startVoiceMode(false); }}
                         className="susi-sphere-btn relative rounded-full border-0 outline-none cursor-pointer active:scale-95 transition-transform duration-150"
                         style={{
-                            width: sphereSize, height: sphereSize,
-                            boxShadow: isListening || isConnecting
-                                ? '0 0 0 4px rgba(247,196,41,0.5), 0 0 40px rgba(247,196,41,0.6), 0 12px 48px rgba(0,0,0,0.2)'
-                                : '0 0 0 1px rgba(247,196,41,0.25), 0 0 24px rgba(247,196,41,0.3), 0 10px 36px rgba(0,0,0,0.15)'
+                            width: sphereSize, height: sphereSize
                         }}
                     >
                         <SusiSphere
                             size={sphereSize}
-                            isListening={isListening}
+                            isListening={true}
                             isSpeaking={isBotSpeaking}
                             isConnecting={isConnecting}
                         />
