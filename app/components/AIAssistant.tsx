@@ -464,7 +464,7 @@ const AIAssistant = () => {
 
                     {/* Tooltip */}
                     <div className="absolute right-[calc(100%+16px)] top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-sm text-gray-800 px-5 py-2.5 rounded-2xl whitespace-nowrap text-[11px] font-bold tracking-[0.15em] opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none shadow-lg border border-[#F7C429]/30 uppercase">
-                        <span className="text-[#F7C429]">✦</span> Susi fragen
+                        <span className="text-[#F7C429]">✦</span> Susi fragen (Neu)
                     </div>
 
                     {/* Sphere trigger button */}
