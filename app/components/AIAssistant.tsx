@@ -22,7 +22,7 @@ const AIAssistant = () => {
     const [error, setError] = useState<string | null>(null);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [messages, setMessages] = useState<any[]>([
-        { role: 'bot', text: 'Hallo! Willkommen bei Brainstorm. Wie kann ich dir heute helfen, dein Unternehmen digital nach vorne zu bringen?' }
+        { role: 'bot', text: 'Hallo! Ich bin Susi, die KI-Assistentin von BrainStorm. Wie kann ich dir heute helfen, dein Unternehmen digital nach vorne zu bringen?' }
     ]);
     const [input, setInput] = useState('');
     const [isListening, setIsListening] = useState(false);
@@ -190,7 +190,7 @@ const AIAssistant = () => {
                     // Sende ein initiales "Hallo", damit der Bot sofort antwortet und das Gespräch beginnt
                     session.sendRealtimeInput({
                         clientContent: {
-                            turns: [{ role: "user", parts: [{ text: "Hallo! Bitte begrüße mich kurz und frage, wie du mir heute helfen kannst." }] }],
+                            turns: [{ role: "user", parts: [{ text: "Hallo! Bitte begrüße mich kurz als KI-Assistentin von Brainstorm und frage, wie du mir heute helfen kannst." }] }],
                             turnComplete: true
                         }
                     });

@@ -154,6 +154,10 @@ export default function DatenschutzPage() {
                                     <p className="text-sm">Auf dieser Seite sind Komponenten von Facebook integriert. Durch den Aufruf von Seiten mit Facebook-Plugins kann Facebook Informationen über Ihren Besuch erhalten.</p>
                                 </div>
                                 <div>
+                                    <h3 className="text-lg font-bold text-slate-900 mb-2">KI-Assistentin "Susi KI" (Google Gemini API)</h3>
+                                    <p className="text-sm">Wir nutzen auf unserer Website den interaktiven KI-Assistenten "Susi KI" (Text- und Voice-Chat) zur Beantwortung von Anfragen und zur automatisierten Terminbuchung. Bei Nutzung dieses Dienstes werden Ihre eingegebenen Texte, Audiodaten (bei Nutzung des Voice-Assistentens) sowie eventuell angegebene Termindaten (Name, E-Mail-Adresse, Terminwunsch) an die Google Gemini API übertragen, um die Anfrage zu verarbeiten. Betreibergesellschaft ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) und unseres berechtigten Interesses an einem effizienten Kundenservice (Art. 6 Abs. 1 lit. f DSGVO). Die übermittelten Daten werden laut Google nicht zur Verbesserung oder zum Training der Modelle verwendet, wenn der Zugriff über die geschäftliche Programmierschnittstelle (API) erfolgt.</p>
+                                </div>
+                                <div>
                                     <h3 className="text-lg font-bold text-slate-900 mb-2">Weitere Dienste</h3>
                                     <p className="text-sm">Wir setzen zur Optimierung unserer Services Dienste wie Agendize (Terminvereinbarung), Wipe Analytics (Web-Analyse) sowie golocal/Meinungsmeister (Reputations-Widget) ein.</p>
                                 </div>
