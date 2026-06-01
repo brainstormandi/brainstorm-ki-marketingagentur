@@ -10,6 +10,131 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'ai-act-eu-transparenzregeln-kmu',
+    title: 'AI Act 2026: Neue, strenge Transparenzregeln der EU – Was KMUs jetzt wissen müssen',
+    excerpt: 'Ab August 2026 gelten die strengen Transparenzregeln des EU AI Acts. Wer künstliche Intelligenz für Marketing, Medien oder Text nutzt, muss kennzeichnen – andernfalls drohen Bußgelder bis zu 15 Mio. €.',
+    date: '1. Juni 2026',
+    author: 'Andi Sturm',
+    imageUrl: '/bilder/ai-act-blog.png',
+    content: `
+      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Ab dem 2. August 2026 gelten in der EU die neuen, strengen Transparenzregeln des sogenannten AI Acts (KI-Verordnung). Wenn du künstliche Intelligenz für dein Business, deinen Blog oder Social Media nutzt, solltest du die neuen Pflichten kennen. Bei Fehlern drohen drastische Bußgelder von bis zu 15 Millionen Euro (oder 3 % des weltweiten Jahresumsatzes).</p>
+
+      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Als BrainStorm KI Werbeagentur wissen wir nach über 32 Jahren Erfahrung im Marketing und Webdesign: Neue Regulierungen klingen oft nach viel Bürokratie und Angst. Doch mit der richtigen Vorbereitung wird das Ganze im Alltag leicht beherrschbar – und schafft durch Transparenz sogar neues Vertrauen bei deinen Kunden. Dieser Überblick zeigt dir unkompliziert, was du ab Sommer 2026 beim Einsatz von KI-Tools beachten musst.</p>
+
+      <div class="not-prose bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 my-10">
+        <p class="text-base font-bold text-slate-900 uppercase tracking-widest mb-4">Inhaltsverzeichnis</p>
+        <ol class="space-y-2 text-[#111827] font-body text-base sm:text-lg">
+          <li>1. <a href="#4-saeulen" class="underline decoration-slate-300 hover:decoration-[#111827]">Die 4 Säulen der KI-Kennzeichnung</a></li>
+          <li>2. <a href="#wer-wann" class="underline decoration-slate-300 hover:decoration-[#111827]">Wer muss kennzeichnen – und wann gilt es?</a></li>
+          <li>3. <a href="#deepfakes" class="underline decoration-slate-300 hover:decoration-[#111827]">Deepfakes und Medien: Was genau musst du markieren?</a></li>
+          <li>4. <a href="#texte-marketing" class="underline decoration-slate-300 hover:decoration-[#111827]">Wann müssen KI-Texte und Marketing-Inhalte gekennzeichnet werden?</a></li>
+          <li>5. <a href="#korrekte-kennzeichnung" class="underline decoration-slate-300 hover:decoration-[#111827]">Wie sieht eine korrekte Kennzeichnung aus?</a></li>
+          <li>6. <a href="#risiko-verstoss" class="underline decoration-slate-300 hover:decoration-[#111827]">Das Risiko: Was passiert bei Verstößen?</a></li>
+          <li>7. <a href="#checkliste-alltag" class="underline decoration-slate-300 hover:decoration-[#111827]">Checkliste für deinen Redaktionsalltag</a></li>
+          <li>8. <a href="#fazit" class="underline decoration-slate-300 hover:decoration-[#111827]">Fazit: Keine Panik, aber rechtzeitig vorbereiten</a></li>
+        </ol>
+      </div>
+
+      <div class="not-prose bg-slate-900 rounded-2xl p-6 sm:p-8 my-10">
+        <p class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-5">Keypoints des Inhalts</p>
+        <ul class="space-y-4">
+          <li class="flex gap-3"><span class="text-white mt-1">→</span><p class="text-slate-300 font-body text-base leading-relaxed"><strong class="text-white">Die 4 Transparenz-Säulen:</strong> Kennzeichnungspflichten gelten vor allem für KI-Interaktionen (Chatbots), täuschend echte Deepfakes (Bilder/Video/Audio), unredigierte KI-Texte zur Information der Öffentlichkeit und biometrische Spezialsysteme.</p></li>
+          <li class="flex gap-3"><span class="text-white mt-1">→</span><p class="text-slate-300 font-body text-base leading-relaxed"><strong class="text-white">Das Schlupfloch „Redaktionelle Kontrolle“:</strong> Wenn ein Mensch einen KI-generierten Text gründlich prüft, korrigiert und die inhaltliche Verantwortung übernimmt, entfällt die Kennzeichnungspflicht für diesen Text.</p></li>
+          <li class="flex gap-3"><span class="text-white mt-1">→</span><p class="text-slate-300 font-body text-base leading-relaxed"><strong class="text-white">Wann Medien markiert werden müssen:</strong> Bilder, Videos und Audios, die täuschend echt wirken, aber künstlich sind, müssen gut sichtbar deklariert werden. Ausnahmen gibt es eingeschränkt für Kunst und Satire.</p></li>
+          <li class="flex gap-3"><span class="text-white mt-1">→</span><p class="text-slate-300 font-body text-base leading-relaxed"><strong class="text-white">Rechtzeitiges Handeln schützt:</strong> Bußgelder bis zu 15 Mio. € und teure Abmahnungen durch Konkurrenten wegen unlauteren Wettbewerbs sind real. Nutze die Frist bis August 2026 zur Anpassung deiner Prozesse.</p></li>
+        </ul>
+      </div>
+
+      <h2 id="4-saeulen" class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">1. Die 4 Säulen der KI-Kennzeichnung</h2>
+      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Die neue EU-KI-Verordnung (AI Act) teilt die Transparenzregeln in vier Kernbereiche auf. Je nachdem, ob du KI-Inhalte veröffentlichst (als Betreiber) oder selbst KI-Software entwickelst (als Anbieter), greifen unterschiedliche Pflichten:</p>
+      
+      <ul class="list-disc pl-6 sm:pl-8 mb-8 space-y-4 font-body text-[#111827] marker:text-slate-400 text-lg sm:text-xl">
+        <li><strong>KI-Interaktionen offenlegen:</strong> Wenn Kunden mit einem Chatbot oder KI-Assistenten auf deiner Website kommunizieren, müssen sie sofort merken, dass sie nicht mit einem echten Menschen sprechen.</li>
+        <li><strong>Deepfakes kennzeichnen:</strong> Erstellst du KI-Bilder, Videos oder Audios, die täuschend echt wirken und reale Personen, Orte oder Ereignisse zeigen, musst du das unmissverständlich sichtbar machen.</li>
+        <li><strong>KI-Texte deklarieren:</strong> Veröffentlichst du KI-generierte Texte, die der Information der Öffentlichkeit dienen (z. B. Blogbeiträge oder News), ohne dass ein Mensch den Text gründlich gegengelesen und redaktionell überarbeitet hat, gehört ein Hinweis dazu.</li>
+        <li><strong>Spezialsysteme melden:</strong> Nutzt du Systeme zur Emotionserkennung oder biometrischen Kategorisierung, musst du die betroffenen Personen vorab klar darüber informieren.</li>
+      </ul>
+
+      <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Verwandter Artikel: <a href="/blog/ki-marketing-grundlagen-chancen-kmu" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">KI im Marketing: Grundlagen, strategische Chancen und Effizienz-Revolution für KMU</a></blockquote>
+
+      <h2 id="wer-wann" class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">2. Wer muss kennzeichnen – und wann gilt es?</h2>
+      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Die Pflichten treffen jeden, der KI beruflich, geschäftlich oder im Rahmen einer Behörde nutzt – vom Großkonzern über Onlineshops bis hin zu selbstständigen Freelancern und Bloggern. Reine private Spielereien (z. B. ein KI-Bild für die private Familien-WhatsApp-Gruppe) sind von den Regeln ausgenommen.</p>
+      
+      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl"><strong>Wichtige Deadlines im Überblick:</strong></p>
+      <ul class="list-disc pl-6 sm:pl-8 mb-8 space-y-4 font-body text-[#111827] marker:text-slate-400 text-lg sm:text-xl">
+        <li><strong>Ab 2. August 2026:</strong> Start der Kennzeichnungspflicht für Deepfakes und öffentliche Informationstexte durch die Nutzer/Betreiber der Tools.</li>
+        <li><strong>Ab 2. Dezember 2026:</strong> Entwickler und Anbieter von KI-Systemen müssen sicherstellen, dass KI-Inhalte automatisch maschinenlesbar (z. B. durch versteckte Metadaten oder digitale Wasserzeichen) markiert werden.</li>
+      </ul>
+
+      <h2 id="deepfakes" class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">3. Deepfakes und Medien: Was genau musst du markieren?</h2>
+      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Ein Deepfake im Sinne des Gesetzes liegt vor, wenn Medien (Bild, Ton, Video) durch KI so manipuliert oder erstellt wurden, dass sie für das menschliche Auge oder Ohr täuschend echt wirken, obwohl die gezeigten Personen, Orte oder Situationen so nie existiert haben.</p>
+      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Dabei ist es völlig egal, ob du jemanden absichtlich täuschen wolltest oder das Bild nur zur Veranschaulichung dient. Sobald Verwechslungsgefahr mit der Realität besteht, greift die Pflicht.</p>
+      
+      <ul class="list-disc pl-6 sm:pl-8 mb-8 space-y-4 font-body text-[#111827] marker:text-slate-400 text-lg sm:text-xl">
+        <li><strong>Ausnahme für Kunst & Satire:</strong> Wenn deine KI-Bilder eindeutig künstlerisch, humoristisch oder als Satire gedacht sind, entfällt die strenge Kennzeichnungspflicht – allerdings musst du den KI-Ursprung trotzdem so vermerken, dass der kreative Zweck erkennbar bleibt und die Würde Dritter geschützt wird.</li>
+        <li><strong>Produktbilder in der Werbung:</strong> Ein rein künstliches Werbefoto (z. B. eine perfekte Kaffeetasse vor einem KI-Hintergrund) muss in der Regel nicht zwingend als Deepfake markiert werden, solange es nicht vorgibt, eine reale, historische Situation oder eine echte Person abzubilden. Aber Vorsicht: Täuscht das Bild Eigenschaften vor, die das Produkt gar nicht hat, droht Ärger wegen irreführender Werbung nach dem Wettbewerbsrecht.</li>
+      </ul>
+
+      <h2 id="texte-marketing" class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">4. Wann müssen KI-Texte und Marketing-Inhalte gekennzeichnet werden?</h2>
+      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Die Text-Kennzeichnungspflicht betrifft vor allem Inhalte, die die Öffentlichkeit informieren sollen (Nachrichten, Fachartikel, Ratgeber).</p>
+      
+      <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 mt-8">Das Schlupfloch: Die redaktionelle Kontrolle</h3>
+      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Wenn du einen Text von ChatGPT schreiben lässt, ihn danach aber als Redakteur gründlich prüfst, korrigierst, mit eigenen Gedanken anreicherst und die Verantwortung für den Inhalt übernimmst, gilt das als <strong>redaktionelle Kontrolle</strong>. In diesem Fall musst du den Text nicht als KI-generiert kennzeichnen. Es empfiehlt sich jedoch, diesen Arbeitsschritt intern kurz zu dokumentieren, um im Zweifelsfall abgesichert zu sein.</p>
+
+      <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-4 mt-8">Was gilt für Social Media und Werbung?</h3>
+      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Reine Werbesprüche, Social-Media-Postings, Produktbeschreibungen oder Marketingtexte müssen nach der KI-Verordnung meistens nicht zwingend gekennzeichnet werden, weil sie primär dem Verkauf und weniger der sachlichen Information der Öffentlichkeit dienen.</p>
+      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl italic">Achtung Plattformrichtlinien: Unabhängig vom Gesetz verbieten viele Plattformen (wie TikTok, Meta oder YouTube) unmarkierte KI-Inhalte in ihren eigenen Richtlinien. Ignorierst du diese, drohen Reichweiten-Sperren oder die Löschung deines Accounts.</p>
+
+      <h2 id="korrekte-kennzeichnung" class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">5. Wie sieht eine korrekte Kennzeichnung aus?</h2>
+      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Die Verordnung schreibt keine exakte Formulierung vor, verlangt aber, dass der Hinweis klar, sichtbar, leicht verständlich und barrierefrei ist.</p>
+      
+      <ul class="list-disc pl-6 sm:pl-8 mb-8 space-y-4 font-body text-[#111827] marker:text-slate-400 text-lg sm:text-xl">
+        <li><strong>Der Text:</strong> Nutze eindeutige Formulierungen wie <em>„Dieses Bild wurde mit Unterstützung von KI erstellt“</em> oder <em>„KI-generierter Inhalt“</em>. Vermeide schwammige Begriffe.</li>
+        <li><strong>Die Platzierung:</strong> Der Hinweis muss direkt beim Inhalt stehen (z. B. als Wasserzeichen im Bild, gut sichtbare Bildunterschrift oder gut lesbarer Textbaustein direkt über oder unter dem Artikel). Er darf nicht im Kleingedruckten oder im Impressum versteckt werden.</li>
+        <li><strong>Die Sprache:</strong> Wähle die Sprache, in der auch der restliche Inhalt verfasst ist, damit deine Zielgruppe den Hinweis versteht.</li>
+      </ul>
+
+      <h2 id="risiko-verstoss" class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">6. Das Risiko: Was passiert bei Verstößen?</h2>
+      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Wer die Augen vor den neuen Regeln verschließt, geht erhebliche finanzielle und rechtliche Risiken ein:</p>
+
+      <div class="not-prose bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 my-8">
+        <p class="text-lg font-bold text-slate-900 mb-4">🚨 Die Risiken des AI Acts im Überblick:</p>
+        <ul class="space-y-4 font-body text-[#111827] text-base sm:text-lg">
+          <li class="border-b border-slate-200 pb-2"><strong>Astronomische Bußgelder:</strong> Die Behörden können Strafen von bis zu 15 Millionen Euro oder 3 % des weltweiten Jahresumsatzes verhängen.</li>
+          <li class="border-b border-slate-200 pb-2"><strong>Abmahnwellen durch Konkurrenten:</strong> Konkurrenten oder Verbraucherschutzverbände können dich wegen unlauteren Wettbewerbs (UWG) abmahnen, weil das Verschweigen des KI-Einsatzes als Irreführung gewertet werden kann.</li>
+          <li class="border-b border-slate-200 pb-2"><strong>Zivilrechtliche Klagen:</strong> Verletzt ein unmarkiertes Deepfake die Persönlichkeitsrechte einer echten Person, drohen teure Schadensersatz- und Unterlassungsklagen.</li>
+          <li><strong>Strafbarkeit im Extremfall:</strong> Nutzt du die KI, um den Ruf von Personen zu schädigen (z. B. durch gefälschte Audio-Aufnahmen), landest du schnell im Bereich von Straftaten wie Beleidigung (§ 185 StGB), übler Nachrede oder Verleumdung.</li>
+        </ul>
+      </div>
+
+      <blockquote class="border-l-4 border-slate-200 pl-6 my-8 font-body text-slate-600">Verwandter Artikel: <a href="/blog/web-barrierefreiheit-eaa-2025" class="font-semibold text-[#111827] underline decoration-slate-300 hover:decoration-[#111827]">Pflicht oder Chance? Warum Barrierefreiheit (EAA) 2025 jede Webseite betrifft</a></blockquote>
+
+      <h2 id="checkliste-alltag" class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">7. Checkliste für deinen Redaktionsalltag</h2>
+      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Damit du ab August 2026 auf der sicheren Seite bist, solltest du folgende Abläufe etablieren:</p>
+      
+      <ul class="space-y-3 font-body text-[#111827] text-lg sm:text-xl">
+        <li class="flex gap-3"><span>✅</span><p><strong>Inventar machen:</strong> Welche KI-Tools (ChatGPT, Midjourney, Chatbots) nutzen wir aktuell im Unternehmen und wofür?</p></li>
+        <li class="flex gap-3"><span>✅</span><p><strong>Prozesse definieren:</strong> Wer übernimmt bei Texten die redaktionelle Kontrolle? Wird dieser Prüfprozess dokumentiert?</p></li>
+        <li class="flex gap-3"><span>✅</span><p><strong>Grafik-Guidelines anpassen:</strong> Jedes täuschend echte KI-Bild und Video standardmäßig mit einer klaren Bildunterschrift oder einem sichtbaren Hinweis versehen.</p></li>
+        <li class="flex gap-3"><span>✅</span><p><strong>Plattformregeln prüfen:</strong> Die KI-Richtlinien der genutzten Social-Media-Kanäle im Auge behalten und die plattformeigenen Kennzeichnungs-Buttons aktivieren.</p></li>
+        <li class="flex gap-3"><span>✅</span><p><strong>Software-Updates einfordern:</strong> Bei Chatbots und KI-Assistenten auf der eigenen Website sicherstellen, dass die Entwickler bis Dezember 2026 die automatischen Transparenzhinweise integrieren.</p></li>
+      </ul>
+
+      <h2 id="fazit" class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 font-sans tracking-tight leading-[1.1] py-1 mt-12">8. Fazit: Keine Panik, aber rechtzeitig vorbereiten</h2>
+      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Die neuen Transparenzregeln des AI Acts klingen im ersten Moment nach einer menge Bürokratie und das Bußgeldrisiko ist real. Doch für die meisten Selbstständigen und Unternehmen lässt sich das Ganze im Alltag gut abbilden, ohne dass der Workflow leidet.</p>
+      
+      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Das wichtigste Learning: Reine Text-Generierung für Blogs oder Webseiten bleibt ohne Kennzeichnung erlaubt, solange ein Mensch am Ende die redaktionelle Hoheit behält. Richtig aufpassen musst du vor allem bei täuschend echten Bildern, Audio-Files und Videos (Deepfakes) sowie bei automatisierten Website-Chatbots.</p>
+      
+      <p class="font-body text-[#111827] leading-relaxed mb-6 text-lg sm:text-xl">Nutze die Zeit bis August 2026, um deine Prozesse anzupassen und deine Grafiken oder Medien standardmäßig und gut sichtbar zu markieren. So bist du rechtlich abgesichert und baust gleichzeitig durch Transparenz zusätzliches Vertrauen bei deiner Zielgruppe auf.</p>
+
+      <div class="not-prose bg-[#111827] p-8 sm:p-12 rounded-3xl mt-16 mb-8 relative overflow-hidden shadow-2xl">
+        <p class="text-2xl sm:text-3xl font-black text-white font-sans tracking-tight mb-4 leading-[1.1] py-1">Sicher durch das Zeitalter der KI-Regulierungen</p>
+        <p class="text-slate-300 font-body mb-8 text-base">Möchtest du sicherstellen, dass deine Webseite und dein KI-gestütztes Marketing zu 100 % rechtskonform sind? Wir bei BrainStorm prüfen deine Systeme und Webprojekte und machen sie fit für den AI Act und den European Accessibility Act.</p>
+        <a href="/#contact" class="inline-block mt-4 bg-white text-[#111827] font-semibold font-sans tracking-widest text-xs uppercase py-4 px-8 rounded-full hover:bg-slate-100 transition-all">Jetzt kostenlose Erstberatung sichern</a>
+      </div>
+    `
+  },
+  {
     slug: 'mythos-billig-website-foerderung-kostenfalle-kmu',
     title: 'Der Mythos der teuren „Billig-Website“: Warum geförderte Webseitenprojekte für KMU die wahre Kostenfalle sind',
     excerpt: 'Ein Rechenbeispiel räumt mit Vorurteilen auf: Warum staatlich geförderte Webprojekte durch zwingende Vorab-Beratungen am Ende oft teurer sind als eine effiziente Direktinvestition.',

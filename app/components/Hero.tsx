@@ -69,7 +69,7 @@ const Hero = () => {
                 whiteSpace: 'nowrap',
                 zIndex: 35
             }}>
-                KI getrieben, Mensch gemacht.
+                KI-generierter Inhalt
             </div>
 
             {/* ── MAIN HERO CONTENT ── */}
