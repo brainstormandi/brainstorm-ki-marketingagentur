@@ -330,5 +330,9 @@ export const FAQS = [
     {
         question: "Wo befindet sich das Büro der BrainStorm Werbeagentur?",
         answer: "Zuhause sind wir im schönen Seitenstetten in Niederösterreich. Durch unsere digitale KI-Infrastruktur arbeiten wir jedoch für KMUs im gesamten deutschsprachigen Raum und bringen sie souverän in das digitale KI-Zeitalter."
+    },
+    {
+        question: "Welche Pflichten bringt der EU AI Act (KI-Verordnung) für meine Webseite mit sich?",
+        answer: "Ab dem 2. August 2026 gelten strenge Kennzeichnungspflichten in der EU. Du musst automatisierte Chatbots offenlegen und täuschend echte KI-Bilder, Videos oder Audios (Deepfakes) als solche markieren. KI-generierte Blogtexte oder News müssen ebenfalls gekennzeichnet werden – es sei denn, ein Mensch führt eine gründliche redaktionelle Kontrolle durch und übernimmt die inhaltliche Verantwortung. Wir integrieren deine KI-Systeme abmahnsicher und rechtskonform."
     }
 ];
