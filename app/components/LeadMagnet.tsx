@@ -28,21 +28,18 @@ const LeadMagnet = () => {
     return (
         <section id="website-check" className="scroll-mt-20 bg-[#1C1C1C] py-20 md:py-28 lg:py-0 lg:min-h-screen lg:flex lg:flex-col lg:justify-center">
             <div className="max-w-6xl mx-auto px-6 md:px-12">
-
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-14">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     <div className="lg:col-span-6">
                         <span className="font-[var(--font-inter)] text-[11px] font-bold uppercase tracking-[0.18em] text-[#F7C429] mb-4 block">
                             Kostenloser Webseiten-Check
                         </span>
                         <h2
-                            className="font-[var(--font-vollkorn)] font-semibold text-white leading-[1.1]"
+                            className="font-[var(--font-vollkorn)] font-semibold text-white leading-[1.1] mb-8"
                             style={{ fontSize: 'clamp(2rem, 4.5vw, 3.75rem)' }}
                         >
                             Ist deine Webseite dein bester{' '}
                             <span className="text-underline-yellow">Verkäufer</span> – oder dein teuerster Fehler?
                         </h2>
-                    </div>
-                    <div className="lg:col-span-6 lg:pt-12">
                         <p className="font-[var(--font-inter)] text-white/50 text-base leading-relaxed mb-4">
                             Viele Betriebe kämpfen täglich härter als nötig, weil ihre Webseite im Hintergrund heimlich Kunden an die Konkurrenz verliert.
                         </p>
@@ -50,45 +47,44 @@ const LeadMagnet = () => {
                             Wir analysieren deinen aktuellen Auftritt in 24 Stunden tiefgehend auf technische und verkaufspsychologische Hürden. Du erhältst klare Fakten – ohne Risiko, ohne Fachchinesisch.
                         </p>
                     </div>
-                </div>
 
-                {/* Form */}
-                {success ? (
-                    <div className="border border-[#F7C429]/30 bg-[#F7C429]/10 p-10 text-center max-w-xl mx-auto rounded-2xl">
-                        <CheckCircle2 className="w-10 h-10 text-[#F7C429] mx-auto mb-4" />
-                        <h3 className="font-[var(--font-vollkorn)] text-xl font-semibold text-white mb-2">Anfrage erfolgreich!</h3>
-                        <p className="font-[var(--font-inter)] text-white/60 text-sm">Wir haben deine Daten erhalten und melden uns in Kürze mit deiner Analyse.</p>
+                    <div className="lg:col-span-6 w-full">
+                        {success ? (
+                            <div className="border border-[#F7C429]/30 bg-[#F7C429]/10 p-10 text-center max-w-xl mx-auto rounded-2xl">
+                                <CheckCircle2 className="w-10 h-10 text-[#F7C429] mx-auto mb-4" />
+                                <h3 className="font-[var(--font-vollkorn)] text-xl font-semibold text-white mb-2">Anfrage erfolgreich!</h3>
+                                <p className="font-[var(--font-inter)] text-white/60 text-sm">Wir haben deine Daten erhalten und melden uns in Kürze mit deiner Analyse.</p>
+                            </div>
+                        ) : (
+                            <form className="bg-white/5 border border-white/10 p-8 md:p-10 rounded-3xl" onSubmit={handleSubmit}>
+                                <div className="space-y-4 mb-6">
+                                    <input
+                                        type="url" value={url} onChange={(e) => setUrl(e.target.value)}
+                                        placeholder="Deine Webseite (https://...)" required
+                                        className="w-full bg-white/5 border border-white/15 text-white px-5 py-4 outline-none placeholder:text-white/25 font-[var(--font-inter)] text-sm focus:border-[#F7C429] transition-colors rounded-xl"
+                                    />
+                                    <input
+                                        type="email" value={email} onChange={(e) => setEmail(e.target.value)}
+                                        placeholder="Deine E-Mail für die Analyse" required
+                                        className="w-full bg-white/5 border border-white/15 text-white px-5 py-4 outline-none placeholder:text-white/25 font-[var(--font-inter)] text-sm focus:border-[#F7C429] transition-colors rounded-xl"
+                                    />
+                                </div>
+                                <button disabled={isSubmitting} type="submit" className="w-full btn-primary text-[15px] xl:text-[17px] py-4 px-6 flex justify-center items-center gap-2 disabled:opacity-60">
+                                    {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : (
+                                        <>Kostenlosen Webseiten-Check anfragen <ArrowRight className="w-4 h-4" /></>
+                                    )}
+                                </button>
+                                <div className="flex flex-col gap-3 mt-8 pt-6 border-t border-white/10">
+                                    {['100% kostenlos', 'Analyse in 24 Stunden', 'Keine versteckten Kosten'].map((item) => (
+                                        <span key={item} className="flex items-center gap-2 font-[var(--font-inter)] text-[11px] font-bold text-white/35 uppercase tracking-[0.12em]">
+                                            <CheckCircle2 className="w-3.5 h-3.5 text-[#F7C429]" /> {item}
+                                        </span>
+                                    ))}
+                                </div>
+                            </form>
+                        )}
                     </div>
-                ) : (
-                    <form className="p-8 md:p-10" onSubmit={handleSubmit}>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
-                            <input
-                                type="url" value={url} onChange={(e) => setUrl(e.target.value)}
-                                placeholder="Deine Webseite (https://...)" required
-                                className="w-full bg-white/5 border border-white/15 text-white px-5 py-4 outline-none placeholder:text-white/25 font-[var(--font-inter)] text-sm focus:border-[#F7C429] transition-colors rounded-xl"
-                            />
-                            <input
-                                type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-                                placeholder="Deine E-Mail für die Analyse" required
-                                className="w-full bg-white/5 border border-white/15 text-white px-5 py-4 outline-none placeholder:text-white/25 font-[var(--font-inter)] text-sm focus:border-[#F7C429] transition-colors rounded-xl"
-                            />
-                        </div>
-                        <div className="flex justify-center">
-                            <button disabled={isSubmitting} type="submit" className="btn-primary text-[15px] xl:text-[17px] py-4 px-6 disabled:opacity-60">
-                                {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : (
-                                    <>Kostenlosen Webseiten-Check anfragen <ArrowRight className="w-4 h-4" /></>
-                                )}
-                            </button>
-                        </div>
-                        <div className="flex flex-wrap justify-center gap-6 mt-8 pt-6">
-                            {['100% kostenlos', 'Analyse in 24 Stunden', 'Keine versteckten Kosten'].map((item) => (
-                                <span key={item} className="flex items-center gap-2 font-[var(--font-inter)] text-[11px] font-bold text-white/35 uppercase tracking-[0.12em]">
-                                    <CheckCircle2 className="w-3.5 h-3.5 text-[#F7C429]" /> {item}
-                                </span>
-                            ))}
-                        </div>
-                    </form>
-                )}
+                </div>
             </div>
         </section>
     );
