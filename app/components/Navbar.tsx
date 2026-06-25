@@ -112,7 +112,7 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
                             <Link 
                                 href="/"
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className="relative h-10 w-36 select-none shrink-0"
+                                className="relative h-12 w-44 select-none shrink-0"
                             >
                                 <Image 
                                     src="/logo/logo.webp" 

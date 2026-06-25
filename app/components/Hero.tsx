@@ -12,7 +12,7 @@ const Hero = () => {
                 <video
                     autoPlay muted playsInline
                     aria-hidden="true"
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-[25%_center] sm:object-center"
                 >
                     <source src="/video/werbeagentur-ki-video-3.mp4" type="video/mp4" />
                 </video>
@@ -40,7 +40,7 @@ const Hero = () => {
                     </p>
                     
                     <div className="flex flex-wrap gap-4">
-                        <Link href="/#website-check" className="btn-primary text-center whitespace-normal sm:whitespace-nowrap text-[15px] xl:text-[17px] py-4 px-6 sm:px-8 flex items-center justify-center gap-3 w-full sm:w-auto">
+                        <Link href="/#website-check" className="btn-primary text-center !whitespace-normal sm:!whitespace-nowrap text-sm sm:text-base py-4 px-6 sm:px-8 flex items-center justify-center gap-3 w-full sm:w-auto">
                             <span>Hol dir den kostenlosen Webseiten-Check</span> <ArrowRight className="w-5 h-5 shrink-0" />
                         </Link>
                     </div>
