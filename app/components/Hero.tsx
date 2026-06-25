@@ -5,10 +5,10 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section className="relative w-full overflow-hidden bg-[#F5EFE6]" style={{ height: 'calc(100vh - 80px)', minHeight: '650px' }}>
+        <section className="w-full bg-[#F5EFE6] overflow-hidden flex flex-col relative lg:h-[calc(100vh-80px)] lg:min-h-[650px]">
             
-            {/* Video Background */}
-            <div className="absolute inset-0 w-full h-full z-0">
+            {/* Video Background - full screen on desktop, flows under text on mobile */}
+            <div className="relative w-full aspect-video lg:absolute lg:inset-0 lg:w-full lg:h-full lg:aspect-auto z-0 order-2 lg:order-none">
                 <video
                     autoPlay muted playsInline
                     aria-hidden="true"
@@ -17,17 +17,17 @@ const Hero = () => {
                     <source src="/video/werbeagentur-ki-video-3.webm" type="video/webm" />
                     <source src="/video/werbeagentur-ki-video-3.mp4" type="video/mp4" />
                 </video>
-                {/* linear gradient overlay: left solid cream #F5EFE5 fading to transparent right */}
+                {/* linear gradient overlay: left solid cream #F5EFE5 fading to transparent right (desktop only) */}
                 <div 
-                    className="absolute inset-0" 
+                    className="hidden lg:block absolute inset-0" 
                     style={{ 
                         background: 'linear-gradient(to right, #F5EFE5 0%, #F5EFE5 30%, rgba(245, 239, 229, 0.95) 45%, rgba(245, 239, 229, 0.6) 70%, transparent 100%)' 
                     }} 
                 />
             </div>
 
-            {/* Content Container (vertically centered on desktop, pushed down on mobile to avoid logo overlap) */}
-            <div className="relative z-10 w-full h-full px-6 md:px-12 flex flex-col justify-start pt-28 sm:pt-36 lg:pt-0 lg:justify-center">
+            {/* Content Container (vertically centered on desktop, flows naturally on mobile) */}
+            <div className="relative z-10 w-full px-6 md:px-12 flex flex-col justify-start pt-28 sm:pt-36 pb-12 lg:absolute lg:inset-0 lg:h-full lg:justify-center lg:py-0 order-1 lg:order-none">
                 <div className="max-w-4xl lg:pl-16 xl:pl-24">
                     <h1
                         className="font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] leading-[1.05] mb-6"
