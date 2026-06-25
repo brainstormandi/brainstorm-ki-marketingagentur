@@ -48,7 +48,7 @@ const ChallengeSection = () => {
                 <ScrollReveal animation="reveal-up">
                     <h2
                         className="font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] leading-[1.05] mb-16"
-                        style={{ fontSize: 'clamp(2.75rem, 7vw, 6rem)' }}
+                        style={{ fontSize: 'clamp(2rem, 7vw, 6rem)' }}
                     >
                         Weil <span className="text-underline-yellow">Wachstum</span> zählt.
                     </h2>
@@ -128,7 +128,7 @@ const ChallengeSection = () => {
                             <div className="flex flex-col items-center text-center">
                                 <div
                                     className="font-[var(--font-vollkorn)] font-bold text-[#1C1C1C] leading-none mb-3 flex items-baseline justify-center gap-1.5"
-                                    style={{ fontSize: 'clamp(3.5rem, 7vw, 5.5rem)' }}
+                                    style={{ fontSize: 'clamp(2.25rem, 7vw, 5.5rem)' }}
                                 >
                                     {s.value}<sup className="text-[0.4em] align-super">{s.sup}</sup>
                                 </div>

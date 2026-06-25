@@ -30,7 +30,7 @@ const Hero = () => {
                 <div className="max-w-4xl lg:pl-16 xl:pl-24">
                     <h1
                         className="font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] leading-[1.05] mb-6"
-                        style={{ fontSize: 'clamp(2.75rem, 7vw, 6rem)' }}
+                        style={{ fontSize: 'clamp(1.85rem, 7vw, 6rem)' }}
                     >
                         Gewinne deine Zeit zurück und <br className="hidden sm:inline" />
                         <span className="text-underline-yellow">dominiere</span> deinen lokalen Markt.
@@ -40,8 +40,8 @@ const Hero = () => {
                     </p>
                     
                     <div className="flex flex-wrap gap-4">
-                        <Link href="/#website-check" className="btn-primary text-[15px] xl:text-[17px] py-4 px-8 flex items-center gap-3">
-                            Hol dir den kostenlosen Webseiten-Check <ArrowRight className="w-5 h-5" />
+                        <Link href="/#website-check" className="btn-primary text-center whitespace-normal sm:whitespace-nowrap text-[15px] xl:text-[17px] py-4 px-6 sm:px-8 flex items-center justify-center gap-3 w-full sm:w-auto">
+                            <span>Hol dir den kostenlosen Webseiten-Check</span> <ArrowRight className="w-5 h-5 shrink-0" />
                         </Link>
                     </div>
 

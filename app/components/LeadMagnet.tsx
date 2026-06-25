@@ -69,9 +69,11 @@ const LeadMagnet = () => {
                                         className="w-full bg-white/5 border border-white/15 text-white px-5 py-4 outline-none placeholder:text-white/25 font-[var(--font-inter)] text-sm focus:border-[#F7C429] transition-colors rounded-xl"
                                     />
                                 </div>
-                                <button disabled={isSubmitting} type="submit" className="w-full btn-primary text-[15px] xl:text-[17px] py-4 px-6 flex justify-center items-center gap-2 disabled:opacity-60">
+                                <button disabled={isSubmitting} type="submit" className="w-full btn-primary text-[15px] xl:text-[17px] py-4 px-6 flex justify-center items-center gap-2 disabled:opacity-60 whitespace-normal sm:whitespace-nowrap">
                                     {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : (
-                                        <>Kostenlosen Webseiten-Check anfragen <ArrowRight className="w-4 h-4" /></>
+                                        <span className="flex items-center gap-2">
+                                            <span>Kostenlosen Webseiten-Check anfragen</span> <ArrowRight className="w-4 h-4 shrink-0" />
+                                        </span>
                                     )}
                                 </button>
                                 <div className="flex flex-col gap-3 mt-8 pt-6 border-t border-white/10">
