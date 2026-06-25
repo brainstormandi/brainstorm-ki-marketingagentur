@@ -12,6 +12,7 @@ import { GOOGLE_REVIEW_LINK } from '../constants';
 export const metadata: Metadata = {
   title: "Werbeagentur Linz | High-Performance Webdesign & Landingpages",
   description: "deine KI-Webagentur für den Wirtschaftsraum Linz. Wir kreieren Business-Webseiten, die Besucher in Kunden und Fachkräfte verwandeln. Jetzt anfragen!",
+  keywords: ["werbeagentur", "web agentur", "webagentur", "werbeagentur website", "seo agentur niederösterreich", "suchmaschinenoptimierung niederösterreich", "website werbeagentur", "werbeagentur linz", "webdesign linz", "homepage linz"],
   alternates: {
     canonical: "https://ki-marketingagentur.jetzt/werbeagentur-linz",
   },
@@ -53,7 +54,7 @@ export default function WerbeagenturLinz() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F5EFE6] text-[#1C1C1C]">
       <Navbar />
       <main>
         <section className="relative min-h-screen flex items-center overflow-hidden pt-32 sm:pt-28 pb-20">
@@ -69,19 +70,19 @@ export default function WerbeagenturLinz() {
                     <source src="/video/ki-werbeagentur-brainstorm-hero-video.mp4" type="video/mp4" />
                 </video>
                 {/* Clean Horizontal Blending Gradient */}
-                <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,0.6) 55%, rgba(255,255,255,0) 75%)' }} />
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, #F5EFE6 0%, #F5EFE6 30%, rgba(245, 239, 230, 0.95) 45%, rgba(245, 239, 230, 0.6) 70%, transparent 100%)' }} />
                 {/* Gentle Bottom Fade */}
-                <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 15%, rgba(255,255,255,0) 75%, rgba(255,255,255,0.95) 100%)' }} />
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(245, 239, 230, 0.6) 0%, rgba(245, 239, 230, 0) 15%, rgba(245, 239, 230, 0) 75%, #F5EFE6 100%)' }} />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
                 <div className="max-w-2xl xl:max-w-3xl">
-                    <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/80 backdrop-blur-sm text-gray-800 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-gray-200 shadow-sm animate-reveal-down">
-                        <MapPin className="w-4 h-4 text-accent" />
+                    <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/80 backdrop-blur-sm text-[#1C1C1C] font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-[#1C1C1C]/10 shadow-sm animate-reveal-down">
+                        <MapPin className="w-4 h-4 text-[#F7C429]" />
                         Webdesign & KI-Marketing für Linz
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.05] mb-6 animate-reveal-up">
+                    <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-[var(--font-vollkorn)] font-medium text-[#1C1C1C] tracking-tight leading-[1.05] mb-6 animate-reveal-up">
                        Premium Webdesign <br />
                        <span className="text-[#F7C429] relative inline-block">
                            für Linz & OÖ
@@ -89,27 +90,27 @@ export default function WerbeagenturLinz() {
                        </span>
                     </h1>
 
-                    <p className="font-body text-[#111827] text-lg leading-relaxed max-w-lg mb-8 animate-reveal-up reveal-delay-200">
+                    <p className="font-[var(--font-inter)] text-[#111827] text-lg leading-relaxed max-w-lg mb-8 animate-reveal-up reveal-delay-200">
                        Von der Industriezeile bis Urfahr: Wir bauen hochmoderne Homepages, die für deine digitale Sichtbarkeit am OÖ-Markt den Unterschied machen.
                     </p>
 
                     <div className="flex flex-wrap gap-2 mb-10 animate-reveal-up reveal-delay-300">
-                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-gray-700 font-bold text-[13px] sm:text-sm">
-                            <Globe className="w-5 h-5 text-accent" />
+                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-[#1C1C1C]/80 font-bold text-[13px] sm:text-sm">
+                            <Globe className="w-5 h-5 text-[#F7C429]" />
                             <span>Konvertierende Landingpages</span>
                         </div>
-                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-gray-700 font-bold text-[13px] sm:text-sm">
-                            <Monitor className="w-5 h-5 text-accent" />
+                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-[#1C1C1C]/80 font-bold text-[13px] sm:text-sm">
+                            <Monitor className="w-5 h-5 text-[#F7C429]" />
                             <span>B2B Webseiten</span>
                         </div>
-                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-gray-700 font-bold text-[13px] sm:text-sm">
-                            <Rocket className="w-5 h-5 text-accent" />
+                        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm text-[#1C1C1C]/80 font-bold text-[13px] sm:text-sm">
+                            <Rocket className="w-5 h-5 text-[#F7C429]" />
                             <span>Local SEO Leads</span>
                         </div>
                     </div>
 
                     <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 animate-reveal-up reveal-delay-500">
-                         <a href="#contact" className="group flex items-center justify-center gap-3 bg-[#F7C429] text-black px-8 py-[22px] rounded-full font-bold uppercase tracking-[0.15em] text-[15px] shadow-[0_10px_30px_rgba(247,196,41,0.4)] transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-black hover:text-[#F7C429] hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:-translate-y-0.5">
+                         <a href="#contact" className="btn-primary py-4 px-8 group">
                              Projekt in Linz starten
                              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                          </a>
@@ -119,54 +120,54 @@ export default function WerbeagenturLinz() {
                         <a href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 group">
                             <div className="flex gap-0.5">
                                 {[...Array(5)].map((_, s) => (
-                                    <Star key={s} className="w-4 h-4 fill-accent text-accent" />
+                                    <Star key={s} className="w-4 h-4 fill-[#F7C429] text-[#F7C429]" />
                                 ))}
                             </div>
-                            <span className="text-sm font-bold text-gray-900 group-hover:text-accent transition-colors">
+                            <span className="text-sm font-bold text-[#1C1C1C] group-hover:text-[#F7C429] transition-colors">
                                 <strong>5.0</strong> Google-Rating
                             </span>
                         </a>
                         <div className="w-px h-4 bg-gray-300 hidden sm:block"></div>
-                        <div className="flex items-center gap-2 text-[13px] font-semibold text-gray-800">
-                            <ShieldCheck className="w-4 h-4 text-accent" />
+                        <div className="flex items-center gap-2 text-[13px] font-semibold text-[#1C1C1C]/90">
+                            <ShieldCheck className="w-4 h-4 text-[#F7C429]" />
                             100% DSGVO
                         </div>
-                        <div className="flex items-center gap-2 text-[13px] font-semibold text-gray-800">
-                            <Trophy className="w-4 h-4 text-accent" />
+                        <div className="flex items-center gap-2 text-[13px] font-semibold text-[#1C1C1C]/90">
+                            <Trophy className="w-4 h-4 text-[#F7C429]" />
                             32 Jahre Erfahrung
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section className="py-20 bg-gray-50 border-y border-gray-100">
+        <section className="py-20 bg-[#EDE7DB] border-y border-[#1C1C1C]/10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
-                        <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-accent/10 text-accent font-bold text-[10px] uppercase tracking-widest mb-4 border border-accent/20">
+                        <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#F7C429]/10 text-[#F7C429] font-bold text-[10px] uppercase tracking-widest mb-4 border border-accent/20">
                             Digital Growth
                         </div>
-                        <h2 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-6">
+                        <h2 className="text-3xl sm:text-4xl font-black text-[#1C1C1C] tracking-tight leading-tight mb-6">
                             BrainStorm <br className="hidden sm:block" />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600">Webagentur für Linz</span>
+                            <span className="text-transparent text-[#1C1C1C]">Webagentur für Linz</span>
                         </h2>
-                        <p className="text-gray-600 text-lg leading-relaxed mb-8 font-body">
+                        <p className="text-[#1C1C1C]/70 text-lg leading-relaxed mb-8 font-[var(--font-inter)]">
                             Wir wissen, was der oberösterreichische Zentralraum braucht: Verlässlichkeit, Schnelligkeit und ein digitales Branding, das Vertrauen ausstrahlt.
                         </p>
                     </div>
                     <div className="grid sm:grid-cols-2 gap-4">
                         {[
-                            { title: "B2B Fokus", desc: "Spezialisiert auf anspruchsvolle Kunden im Linzer Wirtschaftsraum.", icon: <Building2 className="w-5 h-5 text-accent" /> },
-                            { title: "Page Speed", desc: "Ultraschnelle Ladezeiten als massives SEO-Doping für Google.", icon: <Zap className="w-5 h-5 text-accent" /> },
-                            { title: "KI-Texte", desc: "Verkaufspsychologisch optimierte Inhalte statt leerer Phrasen.", icon: <Brain className="w-5 h-5 text-accent" /> },
-                            { title: "Support", desc: "Nahtlose Kommunikation über Video-Calls oder Vor-Ort.", icon: <Handshake className="w-5 h-5 text-accent" /> },
+                            { title: "B2B Fokus", desc: "Spezialisiert auf anspruchsvolle Kunden im Linzer Wirtschaftsraum.", icon: <Building2 className="w-5 h-5 text-[#F7C429]" /> },
+                            { title: "Page Speed", desc: "Ultraschnelle Ladezeiten als massives SEO-Doping für Google.", icon: <Zap className="w-5 h-5 text-[#F7C429]" /> },
+                            { title: "KI-Texte", desc: "Verkaufspsychologisch optimierte Inhalte statt leerer Phrasen.", icon: <Brain className="w-5 h-5 text-[#F7C429]" /> },
+                            { title: "Support", desc: "Nahtlose Kommunikation über Video-Calls oder Vor-Ort.", icon: <Handshake className="w-5 h-5 text-[#F7C429]" /> },
                         ].map((item, i) => (
-                            <div key={i} className="p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:border-accent/30 transition-colors group">
-                                <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors">
+                            <div key={i} className="p-6 bg-white rounded-2xl border border-[#1C1C1C]/10 shadow-sm hover:border-accent/30 transition-colors group">
+                                <div className="w-10 h-10 rounded-xl bg-[#F5EFE6] flex items-center justify-center mb-4 group-hover:bg-[#F7C429]/10 transition-colors">
                                     {item.icon}
                                 </div>
-                                <h4 className="font-bold text-gray-900 mb-2">{item.title}</h4>
-                                <p className="text-sm text-gray-500 leading-relaxed font-body">{item.desc}</p>
+                                <h4 className="font-bold text-[#1C1C1C] mb-2">{item.title}</h4>
+                                <p className="text-sm text-[#1C1C1C]/60 leading-relaxed font-[var(--font-inter)]">{item.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -174,49 +175,49 @@ export default function WerbeagenturLinz() {
             </div>
         </section>
 
-        <section className="py-24 bg-white relative">
+        <section className="py-24 bg-[#F5EFE6] relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
                <ScrollReveal animation="reveal-right">
-                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight leading-[1.1] py-1 mb-8">
+                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#1C1C1C] tracking-tight leading-[1.1] py-1 mb-8">
 <span className="font-sans block">deine Online-Auslage </span>
-<span className="font-sans block text-transparent bg-clip-text bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 drop-shadow-sm pb-2">in der Stahlstadt</span>
+<span className="font-sans block text-transparent text-[#1C1C1C] pb-2">in der Stahlstadt</span>
 </h2>
-                  <p className="font-body text-[#111827] text-lg leading-relaxed mb-6">
+                  <p className="font-[var(--font-inter)] text-[#111827] text-lg leading-relaxed mb-6">
                      Linz ist ein Knotenpunkt für Innovation und Technologie. Sich hier digital zu behaupten, erfordert mehr als nette Bilder. Es erfordert eine intelligente, zielgerichtete Web-Infrastruktur, die aus puren Webseitenbesuchern tatsächliche Anfragen macht.
                   </p>
-                  <p className="font-body text-[#111827] text-lg leading-relaxed mb-8">
+                  <p className="font-[var(--font-inter)] text-[#111827] text-lg leading-relaxed mb-8">
                      Über die A1 sind wir rasch in Linz vor Ort. Wir wissen, was der oberösterreichische Zentralraum braucht: Verlässlichkeit, Schnelligkeit und ein digitales Branding, das Vertrauen ausstrahlt. Ob KI-Integrationen, Recruting-Landingpages oder der komplette Relaunch deiner Unternehmenswebsite – wir sind dein starker Umsetzungspartner.
                   </p>
                   
                   <div className="flex flex-col gap-4 mb-10">
                      <div className="flex items-center gap-4">
-                        <div className="w-14 h-14 rounded-xl bg-accent/20 border border-accent/30 flex items-center justify-center shrink-0">
+                        <div className="w-14 h-14 rounded-xl bg-[#F7C429]/20 border border-accent/30 flex items-center justify-center shrink-0">
                            <TrendingUp className="w-7 h-7 text-primary" />
                         </div>
                         <div>
-                           <h4 className="font-bold text-gray-900 text-lg font-sans">Konvertierendes Webdesign</h4>
-                           <span className="font-body text-[#111827] text-sm">Psychologisch durchdachte Nutzerführung (UX/UI).</span>
+                           <h4 className="font-bold text-[#1C1C1C] text-lg font-sans">Konvertierendes Webdesign</h4>
+                           <span className="font-[var(--font-inter)] text-[#111827] text-sm">Psychologisch durchdachte Nutzerführung (UX/UI).</span>
                         </div>
                      </div>
                      <div className="flex items-center gap-4">
-                        <div className="w-14 h-14 rounded-xl bg-accent/20 border border-accent/30 flex items-center justify-center shrink-0">
+                        <div className="w-14 h-14 rounded-xl bg-[#F7C429]/20 border border-accent/30 flex items-center justify-center shrink-0">
                            <Globe className="w-7 h-7 text-primary" />
                         </div>
                         <div>
-                           <h4 className="font-bold text-gray-900 text-lg font-sans">Regionale Dominanz</h4>
-                           <span className="font-body text-[#111827] text-sm">Präzises Geo-SEO für Top-Platzierungen im Linzer Suchraum.</span>
+                           <h4 className="font-bold text-[#1C1C1C] text-lg font-sans">Regionale Dominanz</h4>
+                           <span className="font-[var(--font-inter)] text-[#111827] text-sm">Präzises Geo-SEO für Top-Platzierungen im Linzer Suchraum.</span>
                         </div>
                      </div>
                   </div>
                </ScrollReveal>
 
                <ScrollReveal animation="reveal-left" delay={200}>
-                  <div className="bg-gray-50/80 backdrop-blur-md rounded-3xl p-8 sm:p-10 border border-gray-200/60 shadow-xl relative">
-                     <Quote className="w-16 h-16 text-accent/20 absolute top-6 right-8 rotate-180" />
+                  <div className="bg-white rounded-3xl p-8 sm:p-10 border border-[#1C1C1C]/10 shadow-sm relative">
+                     <Quote className="w-16 h-16 text-[#F7C429]/20 absolute top-6 right-8 rotate-180" />
                      
                      <div className="flex items-center gap-4 mb-6">
-                         <div className="w-20 h-20 rounded-full bg-gray-200 overflow-hidden shrink-0 border-4 border-white shadow-md relative">
+                         <div className="w-20 h-20 rounded-full bg-[#EDE7DB] overflow-hidden shrink-0 border-4 border-white shadow-md relative">
                              <img 
                                 src="/bilder/testimonial-linz.jpg" 
                                 alt="Thomas Jungreuthmayer Kundenstimme" 
@@ -224,23 +225,23 @@ export default function WerbeagenturLinz() {
                              />
                          </div>
                          <div>
-                             <div className="flex text-accent mb-1">
+                             <div className="flex text-[#F7C429] mb-1">
                                  {[1,2,3,4,5].map(star => <Star key={star} className="w-4 h-4 fill-accent" />)}
                              </div>
-                             <h4 className="font-bold text-gray-900 leading-tight">Thomas Jungreuthmayer</h4>
-                             <span className="text-sm text-gray-500">Verifizierte Kundenbewertung</span>
+                             <h4 className="font-bold text-[#1C1C1C] leading-tight">Thomas Jungreuthmayer</h4>
+                             <span className="text-sm text-[#1C1C1C]/60">Verifizierte Kundenbewertung</span>
                          </div>
                      </div>
 
-                     <blockquote className="font-body text-[#111827] text-base leading-relaxed relative z-10">
+                     <blockquote className="font-[var(--font-inter)] text-[#111827] text-base leading-relaxed relative z-10">
                         "Tolle, kompetente und zeitnahe Umsetzung unserer neuen Homepage mit der wir sehr zufrieden sind. Hat uns sehr professionell bei der Weiterentwicklung unserer Etiketten unterstützt. Waren mit der kundenorientierten Zusammenarbeit sehr zufrieden."
                      </blockquote>
                   </div>
 
                   <div className="mt-8 flex justify-center w-full">
-                     <a href="https://www.google.com/search?q=BrainStorm+KI+Werbeagentur" target="_blank" rel="noopener noreferrer" className="inline-flex w-full justify-center items-center gap-2 px-8 py-4 bg-white border border-gray-200 rounded-xl font-bold text-lg text-gray-700 shadow-sm hover:bg-gray-50 hover:border-gray-300 hover:text-accent transition-all group scale-100 hover:scale-[1.02]">
+                     <a href="https://www.google.com/search?q=BrainStorm+KI+Werbeagentur" target="_blank" rel="noopener noreferrer" className="inline-flex w-full justify-center items-center gap-2 px-8 py-4 bg-white border border-[#1C1C1C]/10 rounded-xl font-bold text-lg text-[#1C1C1C]/80 shadow-sm hover:bg-gray-50 hover:border-gray-300 hover:text-[#F7C429] transition-all group scale-100 hover:scale-[1.02]">
                         Besuche unser Google Profil
-                        <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-accent transition-transform group-hover:translate-x-1" />
+                        <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-[#F7C429] transition-transform group-hover:translate-x-1" />
                      </a>
                   </div>
                </ScrollReveal>

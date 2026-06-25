@@ -1,9 +1,8 @@
 "use client";
-import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { GOOGLE_REVIEW_LINK } from './constants';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ChallengeSection from './components/ChallengeSection';
@@ -32,7 +31,7 @@ const customerFaces = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen relative bg-white">
+    <div className="min-h-screen relative bg-[#F5EFE6]">
       <Navbar />
       <main>
         <Hero />
@@ -41,63 +40,64 @@ export default function Home() {
         <Services />
         <Founder />
 
-        <section id="success" className="scroll-mt-32 py-32 bg-white overflow-hidden border-t border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <ScrollReveal animation="reveal-right">
-                <div className="inline-flex items-center px-6 py-2 rounded-full bg-white text-gray-500 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-gray-200">
-                  Erfolge
-                </div>
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.1] py-1 mb-5 uppercase">
-                  <span className="block">Reale Projekte. Echte Ergebnisse.</span>
-                  <span className="block text-transparent bg-clip-text pb-2" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>Direkt aus der Region.</span>
+        {/* ── ERFOLGE SECTION (ally: "Trusted by Industry Leaders") ── */}
+        <section id="success" className="scroll-mt-20 bg-[#F5EFE6] pt-20 md:pt-28 pb-10 md:pb-14">
+          <div className="max-w-6xl mx-auto px-6 md:px-12">
+
+            {/* Header row */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-14">
+              <ScrollReveal animation="reveal-right" className="lg:col-span-6">
+                <span className="font-[var(--font-inter)] text-[11px] font-bold uppercase tracking-[0.18em] text-[#1C1C1C]/40 mb-4 block">
+                  Erfolgsgeschichten
+                </span>
+                <h2
+                  className="font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] leading-tight"
+                  style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
+                >
+                  Reale Projekte.{" "}
+                  <span className="font-[var(--font-vollkorn)] italic font-normal text-[#1C1C1C]/50">
+                    Echte Ergebnisse.
+                  </span>
                 </h2>
-                <p className="text-gray-600 text-lg sm:text-xl mb-10 leading-relaxed font-body max-w-md">
+              </ScrollReveal>
+              <ScrollReveal animation="reveal-left" delay={100} className="lg:col-span-6 flex flex-col justify-end gap-6">
+                <p className="font-[var(--font-inter)] text-[#1C1C1C]/55 text-base leading-relaxed">
                   Über 50 kleine und mittlere Betriebe haben sich in den letzten 12 Monaten mit uns an die Spitze gesetzt.
                 </p>
 
-                <div className="flex flex-col items-start gap-6 w-full">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 w-full" aria-hidden="true">
-                    <div className="flex -space-x-3 flex-shrink-0">
-                      {customerFaces.map((src, i) => (
-                        <ScrollReveal
-                          key={i}
-                          animation="zoom-in"
-                          delay={i * 100}
-                          className="w-11 h-11 rounded-full border-[3px] border-white overflow-hidden shadow-md relative"
-                        >
-                          <Image
-                            src={src}
-                            alt=""
-                            fill
-                            className="object-cover object-top"
-                            sizes="44px"
-                          />
-                        </ScrollReveal>
-                      ))}
-                    </div>
-                    <div className="text-sm font-body">
-                      <span className="text-gray-900 font-[var(--font-playfair)] text-xl block">Echte Partnerschaften</span>
-                      <span className="text-gray-500 font-medium">für messbaren Erfolg</span>
-                    </div>
+                {/* Testimonial faces + CTA */}
+                <div className="flex flex-wrap items-center gap-5">
+                  <div className="flex -space-x-3" aria-hidden="true">
+                    {customerFaces.map((src, i) => (
+                      <div key={i} className="w-9 h-9 rounded-full border-2 border-[#F5EFE6] overflow-hidden relative shrink-0">
+                        <Image
+                          src={src} alt=""
+                          fill className="object-cover object-top"
+                          sizes="36px"
+                        />
+                      </div>
+                    ))}
                   </div>
-
-                  <a href={GOOGLE_REVIEW_LINK} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-3 w-full sm:w-max bg-[#F7C429] text-black px-6 sm:px-8 py-[22px] rounded-full font-bold uppercase tracking-[0.12em] sm:tracking-[0.15em] text-[13px] sm:text-[15px] shadow-[0_10px_30px_rgba(247,196,41,0.4)] transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-black hover:text-[#F7C429] hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 cursor-pointer text-center">
-                    Alle Rezensionen auf Google lesen
-                    <ArrowUpRight className="w-[20px] h-[20px] transition-transform duration-400 group-hover:translate-x-1 group-hover:-translate-y-1 flex-shrink-0" aria-hidden="true" />
+                  <a
+                    href={GOOGLE_REVIEW_LINK}
+                    target="_blank" rel="noopener noreferrer"
+                    className="btn-secondary text-[15px] xl:text-[17px] py-2 px-5"
+                  >
+                    Google Rezensionen <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
               </ScrollReveal>
-              <ScrollReveal animation="reveal-left" delay={200}>
-                <TestimonialSlider />
-              </ScrollReveal>
             </div>
+
+            {/* Testimonial slider */}
+            <ScrollReveal animation="reveal-up" delay={100}>
+              <TestimonialSlider />
+            </ScrollReveal>
           </div>
         </section>
 
         <Process />
         <LeadMagnet />
-
         <FAQ />
         <Blog />
         <Contact />

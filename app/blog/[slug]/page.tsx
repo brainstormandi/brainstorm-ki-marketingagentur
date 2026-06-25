@@ -110,7 +110,7 @@ export default async function BlogPostPage(props: Props) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-[#F5EFE6] text-[#1C1C1C]">
       <script
         id="blog-breadcrumb-schema"
         type="application/ld+json"
@@ -133,8 +133,8 @@ export default async function BlogPostPage(props: Props) {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gray-900/75 mix-blend-multiply"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
+          <div className="absolute inset-0 bg-[#1C1C1C]/80 mix-blend-multiply"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F5EFE6] to-transparent"></div>
           
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full translate-y-8 sm:translate-y-12">
@@ -150,7 +150,7 @@ export default async function BlogPostPage(props: Props) {
                 Zurück zur Übersicht
               </Link>
               
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-white mb-6 leading-[1.1] py-1 drop-shadow-md uppercase tracking-tight">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-[var(--font-vollkorn)] font-semibold text-white mb-6 leading-[1.1] py-1 drop-shadow-md uppercase tracking-tight">
                 {post.title}
               </h1>
               
@@ -172,10 +172,10 @@ export default async function BlogPostPage(props: Props) {
         {/* Article Content */}
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div 
-            className="prose prose-lg prose-gray max-w-none font-body text-gray-800 
-                       prose-headings:font-[var(--font-playfair)] prose-headings:font-medium prose-headings:text-gray-900
-                       prose-a:text-[#F7C429] prose-a:font-bold hover:prose-a:text-black prose-a:no-underline prose-a:transition-colors
-                       prose-strong:text-gray-900 prose-strong:font-bold"
+            className="prose prose-lg max-w-none font-[var(--font-inter)] text-[#1C1C1C]/85 
+                       prose-headings:font-[var(--font-vollkorn)] prose-headings:font-bold prose-headings:text-[#1C1C1C]
+                       prose-a:text-[#F7C429] prose-a:font-bold hover:prose-a:text-[#1C1C1C] prose-a:no-underline prose-a:transition-colors
+                       prose-strong:text-[#1C1C1C] prose-strong:font-bold"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 

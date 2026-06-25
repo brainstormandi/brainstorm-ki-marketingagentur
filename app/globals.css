@@ -1,353 +1,320 @@
 @import "tailwindcss";
 
+/* ──────────────────────────────────────────────
+   ALLY.CO DESIGN SYSTEM — BRAINSTORM KI EDITION
+   Colors: Cream #F5EFE6 · Dark #1C1C1C · Yellow #F7C429
+   Font: Vollkorn (display) · Inter (body)
+────────────────────────────────────────────── */
+
 @theme {
-  --color-primary: #111827;
-  --color-accent: #F7C429;
-  --color-surface: #F8FAFC;
-  --font-sans: var(--font-inter), var(--font-outfit), sans-serif;
-  --font-display: var(--font-playfair), var(--font-outfit), serif;
+  --color-cream:  #F5EFE6;
+  --color-dark:   #1C1C1C;
+  --color-yellow: #F7C429;
+  --color-sand:   #EDE7DB;
+  --color-border: #D6CFC5;
+  --font-display: var(--font-vollkorn), Georgia, serif;
+  --font-body:    var(--font-inter), system-ui, sans-serif;
 }
 
-@layer utilities {
-  .font-display {
-    font-family: var(--font-playfair), var(--font-outfit), serif !important;
+/* ── GLOBAL BASE ── */
+:root {
+  color-scheme: light;
+  background-color: #F5EFE6;
+  color: #1C1C1C;
+}
+
+html, body {
+  background-color: #F5EFE6 !important;
+  color: #1C1C1C !important;
+}
+
+/* ── SECTION BACKGROUNDS ── */
+.section-cream  { background-color: #F5EFE6; }
+.section-dark   { background-color: #1C1C1C; color: #fff; }
+.section-yellow { background-color: #F7C429; color: #1C1C1C; }
+.section-sand   { background-color: #EDE7DB; }
+.section-white  { background-color: #ffffff; }
+
+/* ── ALLY-STYLE PILL BUTTONS ── */
+/* Primary: yellow fill, dark text */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.75rem;
+  background-color: #F7C429;
+  color: #1C1C1C;
+  border-radius: 1rem;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  @media (min-width: 1280px) {
+    font-size: 17px;
   }
-  .font-body {
-    font-family: var(--font-inter), var(--font-outfit), sans-serif !important;
+  letter-spacing: 0.02em;
+  border: 2px solid #F7C429;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-primary:hover {
+  background-color: #1C1C1C;
+  border-color: #1C1C1C;
+  color: #F7C429;
+  transform: translateY(-1px);
+}
+
+/* Secondary: dark pill outline */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.75rem;
+  background-color: transparent;
+  color: #1C1C1C;
+  border-radius: 1rem;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  @media (min-width: 1280px) {
+    font-size: 17px;
   }
-  /* Corporate-Tech section alternating */
-  .section-white { background-color: #FFFFFF; }
-  .section-surface { background-color: #F8FAFC; }
-  /* Yellow CTA pill label */
-  .label-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.25rem 1rem;
-    border-radius: 9999px;
-    background-color: #F7C429;
-    color: #111827;
-    font-weight: 700;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+  letter-spacing: 0.02em;
+  border: 2px solid #1C1C1C;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  background-color: #1C1C1C;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Dark section secondary: white outline */
+.btn-secondary-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.75rem;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 1rem;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  @media (min-width: 1280px) {
+    font-size: 17px;
   }
-  /* Clean outline chip */
-  .label-chip-outline {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.25rem 1rem;
-    border-radius: 9999px;
-    background-color: transparent;
-    color: #111827;
-    font-weight: 700;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    border: 1.5px solid #E2E8F0;
+  letter-spacing: 0.02em;
+  border: 2px solid rgba(255,255,255,0.4);
+  transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.btn-secondary-light:hover {
+  background-color: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.7);
+  transform: translateY(-1px);
+}
+
+/* Yellow section button: dark fill */
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.75rem;
+  background-color: #1C1C1C;
+  color: #fff;
+  border-radius: 1rem;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  @media (min-width: 1280px) {
+    font-size: 17px;
   }
-  /* 32px cards */
-  .ct-card {
-    border-radius: 2rem;
-    background: #ffffff;
-    border: 1px solid #E2E8F0;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.02em;
+  border: 2px solid #1C1C1C;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.btn-dark:hover {
+  background-color: #333;
+  transform: translateY(-1px);
+}
+
+/* Backward compat — old btn-accent maps to new pill primary */
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.75rem;
+  background-color: #F7C429;
+  color: #1C1C1C;
+  border-radius: 1rem;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  @media (min-width: 1280px) {
+    font-size: 17px;
   }
-  .ct-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 48px -12px rgba(0,0,0,0.08);
-    border-color: #F7C429;
-  }
-  /* Yellow CTA button */
-  .btn-accent {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2.5rem;
-    background-color: #F7C429;
-    color: #111827;
-    font-weight: 800;
-    font-size: 1rem;
-    border-radius: 2rem;
-    font-family: var(--font-inter), sans-serif;
-    letter-spacing: 0.02em;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .btn-accent:hover {
-    background-color: #e5b510;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 32px -8px rgba(247,196,41,0.5);
-  }
-  /* Dark outline button */
-  .btn-dark {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2.5rem;
-    background-color: #111827;
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 0.875rem;
-    border-radius: 9999px;
-    font-family: var(--font-inter), sans-serif;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-  }
-  .btn-dark:hover {
-    background-color: #1f2937;
-    transform: translateY(-1px);
-  }
+  letter-spacing: 0.02em;
+  border: 2px solid #F7C429;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.btn-accent:hover {
+  background-color: #1C1C1C;
+  border-color: #1C1C1C;
+  color: #F7C429;
+  transform: translateY(-1px);
 }
 
-
-@keyframes revealUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ── TYPOGRAPHY UTILITIES ── */
+.font-display {
+  font-family: var(--font-vollkorn), Georgia, serif !important;
+}
+.font-body {
+  font-family: var(--font-inter), system-ui, sans-serif !important;
 }
 
-@keyframes revealDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Yellow underline on accent words (ally.co style) */
+.text-underline-yellow {
+  text-decoration: underline;
+  text-decoration-color: #F7C429;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
 }
 
-@keyframes revealLeft {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* ── ALLY-STYLE CARDS (minimal, no shadows) ── */
+.ally-card {
+  background: #fff;
+  border: 1px solid #D6CFC5;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.ally-card:hover {
+  border-color: #F7C429;
+  transform: translateY(-2px);
 }
 
-@keyframes revealRight {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* Dark section card */
+.ally-card-dark {
+  background: #2A2A2A;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: border-color 0.2s;
+}
+.ally-card-dark:hover {
+  border-color: rgba(247,196,41,0.5);
 }
 
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-15px);
-  }
-}
-
-@keyframes pulse-gentle {
-
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: 0.8;
-    transform: scale(1.02);
-  }
-}
-
-.animate-reveal-up {
-  animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-reveal-down {
-  animation: revealDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-reveal-left {
-  animation: revealLeft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-reveal-right {
-  animation: revealRight 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-zoom-in {
-  animation: zoomIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-pulse-gentle {
-  animation: pulse-gentle 4s ease-in-out infinite;
-}
-
-.reveal-delay-100 {
-  animation-delay: 100ms;
-}
-
-.reveal-delay-200 {
-  animation-delay: 200ms;
-}
-
-.reveal-delay-300 {
-  animation-delay: 300ms;
-}
-
-.reveal-delay-400 {
-  animation-delay: 400ms;
-}
-
-.reveal-delay-500 {
-  animation-delay: 500ms;
-}
-
-.reveal-delay-600 {
-  animation-delay: 600ms;
-}
-
-.reveal-delay-700 {
-  animation-delay: 700ms;
-}
-
-.reveal-delay-800 {
-  animation-delay: 800ms;
-}
-
-.bg-mesh-gradient {
-  background-color: #ffffff;
-  background-image:
-    radial-gradient(at 0% 0%, hsla(45, 92%, 56%, 0.1) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, hsla(210, 20%, 95%, 0.1) 0px, transparent 50%);
-}
-
-.glass-morphism {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-.premium-shadow {
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
-}
-
-.premium-card {
-  background: white;
-  border-radius: 2rem;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.premium-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.12);
-}
-
-@keyframes ripple {
-  0% {
-    transform: scale(0.8);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(2.5);
-    opacity: 0;
-  }
-}
-
-.animate-ripple-1 {
-  animation: ripple 3s linear infinite;
-}
-
-.animate-ripple-2 {
-  animation: ripple 3s linear infinite 1s;
-}
-
-.animate-ripple-3 {
-  animation: ripple 3s linear infinite 2s;
-}
-
-@keyframes bounce-slow {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.animate-bounce-slow {
-  animation: bounce-slow 3s infinite;
-}
-
+/* ── INDUSTRY MARQUEE ── */
 @keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
-
 .animate-marquee {
   animation: marquee 120s linear infinite;
 }
 
-/* Scroll reveal utility - used with Intersection Observer */
-.reveal-on-scroll {
-  opacity: 0;
+/* ── SCROLL REVEAL ANIMATIONS ── */
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes revealLeft {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes revealRight {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes revealDown {
+  from { opacity: 0; transform: translateY(-24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
 }
 
-.reveal-on-scroll.revealed {
-  opacity: 1;
-}
+.animate-reveal-up    { animation: revealUp    0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-reveal-left  { animation: revealLeft  0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-reveal-right { animation: revealRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-reveal-down  { animation: revealDown  0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-zoom-in      { animation: zoomIn      0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
-/* Explicit fix for Light Premium Theme */
-:root {
-  color-scheme: light !important;
-  background-color: #ffffff !important;
-  color: #111827 !important;
-}
+.reveal-delay-100 { animation-delay: 100ms; }
+.reveal-delay-200 { animation-delay: 200ms; }
+.reveal-delay-300 { animation-delay: 300ms; }
+.reveal-delay-400 { animation-delay: 400ms; }
+.reveal-delay-500 { animation-delay: 500ms; }
+.reveal-delay-600 { animation-delay: 600ms; }
+.reveal-delay-700 { animation-delay: 700ms; }
 
-html, body {
-  background-color: #ffffff !important;
-  color: #111827 !important;
+/* scroll reveal utility */
+.reveal-on-scroll         { opacity: 0; }
+.reveal-on-scroll.revealed { opacity: 1; }
+
+/* Float animation for misc decorative elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+.animate-float { animation: float 5s ease-in-out infinite; }
+
+/* Pulse */
+@keyframes pulse-gentle {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.7; }
+}
+.animate-pulse-gentle { animation: pulse-gentle 3s ease-in-out infinite; }
+
+/* Bounce slow */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+.animate-bounce-slow { animation: bounce-slow 3s ease-in-out infinite; }
+
+/* ── LEGACY COMPAT (used by some sub-pages) ── */
+.ct-card {
+  background: #fff;
+  border: 1px solid #D6CFC5;
+  border-radius: 4px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.ct-card:hover {
+  border-color: #F7C429;
+  transform: translateY(-2px);
+}
+.glass-morphism {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.4);
+}
+.label-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.875rem;
+  border-radius: 9999px;
+  background-color: #F7C429;
+  color: #1C1C1C;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.label-chip-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.875rem;
+  border-radius: 9999px;
+  background-color: transparent;
+  color: #1C1C1C;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1.5px solid #D6CFC5;
 }

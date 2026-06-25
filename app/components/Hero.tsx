@@ -1,174 +1,73 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
-    const [isHovered, setIsHovered] = React.useState(false);
     return (
-        <section className="relative w-full flex flex-col lg:block bg-white lg:h-screen lg:min-h-[640px] lg:overflow-hidden text-[#111827]">
+        <section className="relative w-full overflow-hidden bg-[#F5EFE6]" style={{ height: 'calc(100vh - 80px)', minHeight: '650px' }}>
             
-            {/* ── BACKGROUND VIDEO & GRADIENTS ── */}
-            <div className="relative w-full lg:absolute lg:inset-0 lg:z-0">
-                {/* On mobile: show full landscape aspect ratio. On desktop: cover the entire viewport */}
-                <div className="relative w-full aspect-video lg:w-full lg:h-full lg:aspect-none overflow-hidden bg-gray-100">
-                    <video
-                        src="/video/werbeagentur-ki-video-3.mp4"
-                        autoPlay
-                        muted
-                        playsInline
-                        aria-hidden="true"
-                        className="w-full h-full object-cover"
-                        style={{ objectPosition: 'center' }}
-                    />
-                </div>
-                
-                {/* Desktop horizontal blend gradient */}
-                <div className="hidden lg:block absolute inset-0" style={{
-                    background: 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,0.6) 55%, rgba(255,255,255,0) 75%)',
-                }} />
-                
-                {/* Desktop and Mobile bottom fade (gentle blend to white background below) */}
-                <div className="absolute bottom-0 left-0 right-0 h-20 lg:h-full bg-gradient-to-t from-white to-transparent lg:from-transparent lg:to-transparent" />
-                <div className="hidden lg:block absolute inset-0" style={{
-                    background: 'linear-gradient(to bottom, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 15%, rgba(255,255,255,0) 75%, rgba(255,255,255,0.95) 100%)',
-                }} />
+            {/* Video Background */}
+            <div className="absolute inset-0 w-full h-full z-0">
+                <video
+                    autoPlay muted playsInline
+                    aria-hidden="true"
+                    className="w-full h-full object-cover object-center"
+                >
+                    <source src="/video/werbeagentur-ki-video-3.mp4" type="video/mp4" />
+                </video>
+                {/* linear gradient overlay: left solid cream #F5EFE5 fading to transparent right */}
+                <div 
+                    className="absolute inset-0" 
+                    style={{ 
+                        background: 'linear-gradient(to right, #F5EFE5 0%, #F5EFE5 30%, rgba(245, 239, 229, 0.95) 45%, rgba(245, 239, 229, 0.6) 70%, transparent 100%)' 
+                    }} 
+                />
             </div>
 
-            {/* ── VERTICAL TEXT LEFT ── */}
-            <div className="hidden lg:block" style={{
-                position: 'absolute', 
-                left: 32, 
-                top: '55%', 
-                transform: 'translate(-50%, -50%) rotate(-90deg)',
-                fontFamily: 'var(--font-inter), sans-serif', 
-                fontSize: 10,
-                fontWeight: 600, 
-                letterSpacing: '0.35em', 
-                textTransform: 'uppercase',
-                color: '#6b7280', 
-                whiteSpace: 'nowrap',
-                zIndex: 20
-            }}>
-                Kreativität ist unsere Intelligenz.
-            </div>
-
-            {/* ── VERTICAL TEXT RIGHT ── */}
-            <div className="hidden lg:block" style={{
-                position: 'absolute', 
-                right: 32, 
-                top: '30%', 
-                transform: 'translate(50%, -50%) rotate(90deg)',
-                fontFamily: 'var(--font-inter), sans-serif', 
-                fontSize: 11,
-                fontWeight: 700, 
-                letterSpacing: '0.35em', 
-                textTransform: 'uppercase',
-                color: '#111827', 
-                textShadow: '0px 0px 8px rgba(255, 255, 255, 0.9), 0px 0px 4px rgba(255, 255, 255, 0.9)',
-                whiteSpace: 'nowrap',
-                zIndex: 35
-            }}>
-                KI-generierter Inhalt
-            </div>
-
-            {/* ── MAIN HERO CONTENT ── */}
-            <div className="relative z-10 flex flex-col justify-center px-6 py-12 sm:px-12 lg:px-[8%] w-full max-w-[1200px] lg:absolute lg:inset-0 lg:mt-10">
-                {/* Headline */}
-                <h1 style={{
-                    fontFamily: 'var(--font-playfair), Didot, "Bodoni MT", serif',
-                    fontSize: 'clamp(44px, 6vw, 84px)',
-                    fontWeight: 500,
-                    lineHeight: 1.05,
-                    color: '#111827',
-                    marginBottom: '32px',
-                    maxWidth: '850px',
-                    letterSpacing: '-0.02em'
-                }}>
-                    Gewinne deine Zeit zurück und <br className="hidden sm:inline" />
-                    <span style={{ 
-                        color: '#F7C429',
-                        display: 'inline-block',
-                        position: 'relative'
-                    }}>
-                        dominiere
-                        <span style={{
-                            content: '""',
-                            position: 'absolute',
-                            bottom: '10%',
-                            left: 0,
-                            right: 0,
-                            height: '25%',
-                            backgroundColor: 'rgba(247, 196, 41, 0.2)',
-                            zIndex: -1,
-                            transform: 'skewX(-15deg)'
-                        }} />
-                    </span> deinen lokalen Markt.
-                </h1>
-                
-                {/* Subtext */}
-                <p style={{
-                    fontFamily: 'var(--font-inter), sans-serif',
-                    fontSize: 'clamp(16px, 1.5vw, 20px)',
-                    lineHeight: 1.6,
-                    color: '#4b5563',
-                    marginBottom: '48px',
-                    maxWidth: '650px',
-                    fontWeight: 400
-                }}>
-                    Große Konzerne haben riesige Abteilungen. Du hast jetzt Künstliche Intelligenz. Wir rüsten deinen Betrieb mit intelligenten, automatisierten Webseiten aus, die wie ein digitaler Top-Verkäufer rund um die Uhr für dich arbeiten – ohne Technik-Chaos, mit echter Handschlagqualität. <strong>Finde heraus, wie viel Zeit du verlierst.</strong>
-                </p>
-
-                {/* CTA Area */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'flex-start' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
-                        <Link href="/#website-check" 
-                            onMouseEnter={() => setIsHovered(true)}
-                            onMouseLeave={() => setIsHovered(false)}
-                            style={{
-                            display: 'flex', alignItems: 'center', gap: 12,
-                            padding: '18px 36px', borderRadius: 9999,
-                            backgroundColor: isHovered ? '#000000' : '#F7C429',
-                            color: isHovered ? '#F7C429' : '#000000', textDecoration: 'none',
-                            fontFamily: 'var(--font-inter), sans-serif', fontSize: 13,
-                            fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase',
-                            boxShadow: isHovered ? '0 10px 30px rgba(0,0,0,0.2)' : '0 10px 30px rgba(247, 196, 41, 0.4)',
-                            transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                            transform: isHovered ? 'translateY(-2px)' : 'translateY(0)',
-                            textAlign: 'center'
-                        }}>
-                            Hol dir den kostenlosen Webseiten-Check
-                            <ArrowUpRight style={{ 
-                                width: 18, height: 18,
-                                flexShrink: 0,
-                                transform: isHovered ? 'translate(2px, -2px)' : 'translate(0, 0)',
-                                transition: 'transform 0.4s ease'
-                            }} />
+            {/* Content Container (vertically centered, left-aligned to the screen padding, shifted slightly right on desktop) */}
+            <div className="relative z-10 w-full h-full px-6 md:px-12 flex flex-col justify-center">
+                <div className="max-w-4xl lg:pl-16 xl:pl-24">
+                    <h1
+                        className="font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] leading-[1.05] mb-6"
+                        style={{ fontSize: 'clamp(2.75rem, 7vw, 6rem)' }}
+                    >
+                        Gewinne deine Zeit zurück und <br className="hidden sm:inline" />
+                        <span className="text-underline-yellow">dominiere</span> deinen lokalen Markt.
+                    </h1>
+                    <p className="font-[var(--font-inter)] text-[#1C1C1C]/80 text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed mb-10 max-w-2xl">
+                        Große Konzerne haben riesige Abteilungen. Du hast jetzt Künstliche Intelligenz. Wir rüsten deinen Betrieb mit intelligenten, automatisierten Webseiten aus, die wie ein digitaler Top-Verkäufer rund um die Uhr für dich arbeiten – ohne Technik-Chaos, mit echter Handschlagqualität. <strong className="text-[#1C1C1C] font-bold">Finde heraus, wie viel Zeit du verlierst.</strong>
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-4">
+                        <Link href="/#website-check" className="btn-primary text-[15px] xl:text-[17px] py-4 px-8 flex items-center gap-3">
+                            Hol dir den kostenlosen Webseiten-Check <ArrowRight className="w-5 h-5" />
                         </Link>
                     </div>
-                </div>
 
-                {/* Trust Elements */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center flex-wrap gap-5 sm:gap-8 mt-12 sm:mt-16 font-[var(--font-inter),sans-serif] text-[12px] font-semibold text-[#6b7280] uppercase tracking-[0.05em]">
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <div style={{ display: 'flex', color: '#F7C429', gap: '2px', fontSize: '14px' }}>
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    {/* Trust Elements */}
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center flex-wrap gap-5 sm:gap-6 mt-10 pt-6 border-t border-[#1C1C1C]/10 font-[var(--font-inter)] text-[13px] xl:text-[14px] font-bold uppercase tracking-[0.08em] text-[#1C1C1C]/60">
+                        <div className="flex items-center gap-2.5">
+                            <div className="flex text-[#F7C429] gap-0.5 text-[15px]">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <span className="text-[#1C1C1C] font-extrabold text-[15px]">5.0</span>
+                            <span>Google Rezensionen</span>
                         </div>
-                        <span style={{ color: '#111827', fontWeight: 800 }}>5.0</span>
-                        <span>Google Rezensionen</span>
-                    </div>
-                    
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <div style={{ width: 16, height: 16, borderRadius: '50%', backgroundColor: '#10b981', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: 10 }}>✓</div>
-                        <span>100% DSGVO</span>
-                    </div>
-                    
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <span style={{ color: '#111827', fontWeight: 800 }}>32</span>
-                        <span>Jahre Erfahrung</span>
+                        
+                        <div className="flex items-center gap-2">
+                            <div className="w-5 h-5 rounded-full bg-[#10b981] flex items-center justify-center text-white text-[11px] shrink-0 font-sans">✓</div>
+                            <span>100% DSGVO</span>
+                        </div>
+                        
+                        <div className="flex items-center gap-2">
+                            <span className="text-[#1C1C1C] font-extrabold text-[15px]">32</span>
+                            <span>Jahre Erfahrung</span>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </section>
     );
 };

@@ -1,9 +1,11 @@
 "use client";
 import React from 'react';
 import { SERVICES } from '../constants';
-import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 import ScrollReveal from './ScrollReveal';
+import { ArrowRight } from 'lucide-react';
 
+// ally.co Section 3: "We handle Everything for you." — dark section, numbered cards
 const Services = () => {
     const servicesSchema = {
         "@context": "https://schema.org",
@@ -24,65 +26,85 @@ const Services = () => {
     };
 
     return (
-        <section id="services" className="scroll-mt-32 py-32 bg-white">
+        <section id="services" className="scroll-mt-20 bg-[#1C1C1C] text-white py-20 md:py-28 lg:py-0 lg:min-h-screen lg:flex lg:flex-col lg:justify-center">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }} />
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Section header */}
-                <ScrollReveal className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20">
-                    <div>
-                        <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent text-gray-600 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-gray-200">Was wir für dich tun</div>
-                        <h2 className="text-4xl sm:text-5xl lg:text-6xl text-gray-900 font-[var(--font-playfair)] font-medium tracking-tight leading-[1.1] py-1 uppercase max-w-[800px]">
-                            <span className="block">Dein digitales Rüstzeug</span>
-                            <span className="block text-transparent bg-clip-text pb-2" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>für messbares Wachstum.</span>
+            <div className="max-w-6xl mx-auto px-6 md:px-12">
+
+                {/* ── HEADER ROW (ally: headline left, CTA right) ── */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
+                    <ScrollReveal animation="reveal-right" className="lg:col-span-7">
+                        <span className="font-[var(--font-inter)] text-[11px] font-bold uppercase tracking-[0.18em] text-white/40 mb-4 block">
+                            Was wir für dich tun
+                        </span>
+                        <h2
+                            className="font-[var(--font-vollkorn)] font-semibold text-white leading-tight"
+                            style={{ fontSize: 'clamp(2rem, 4.5vw, 3.75rem)' }}
+                        >
+                            Wir erledigen <span className="text-underline-yellow">alles</span> für dich.
                         </h2>
-                    </div>
-                    <p className="text-gray-600 text-lg sm:text-xl leading-relaxed max-w-[500px] font-body">
-                        Zukunftsweisende KI-Technologien, kombiniert mit 32 Jahren Handwerk. So eroberst du deinen Markt:
-                    </p>
-                </ScrollReveal>
-
-                {/* Service Grid - Same style as Process */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {SERVICES.map((service, index) => (
-                        <ScrollReveal key={index} delay={index * 100} animation="reveal-up">
-                            <div className="relative bg-transparent rounded-3xl p-10 sm:p-12 border border-gray-200 backdrop-blur-sm group hover:border-[#F7C429]/50 hover:shadow-[0_4px_20px_rgba(247,196,41,0.3)] transition-all duration-500 h-full flex flex-col overflow-hidden">
-                                {/* Large number watermark */}
-                                <div className="absolute right-0 bottom-0 pointer-events-none translate-x-[20%] translate-y-[20%] font-sans text-[12rem] font-black leading-none text-[#00000005] group-hover:text-[#F7C429]/10 transition-all duration-700">
-                                    {index + 1}
-                                </div>
-
-                                {/* Icon + Title Row */}
-                                <div className="flex items-center gap-4 mb-5 relative z-10">
-                                    <div className="flex items-center justify-center w-12 h-12 rounded-xl border border-gray-200 group-hover:border-[#F7C429] transition-colors">
-                                        <div className="[&>svg]:w-6 [&>svg]:h-6 [&>svg]:text-[#F7C429] transition-colors">
-                                           {service.icon}
-                                        </div>
-                                    </div>
-                                    <h3 className="font-[var(--font-playfair)] text-2xl font-medium text-gray-900 tracking-normal leading-tight">
-                                        {service.title}
-                                    </h3>
-                                </div>
-
-                                <p className="text-gray-600 text-lg leading-relaxed font-body flex-grow relative z-10">
-                                    {service.description}
-                                </p>
-
-                                {/* Metric Bottom Row */}
-                                {service.stat && (
-                                    <div className="mt-8 pt-6 border-t border-gray-200 relative z-10">
-                                        <div className="font-[var(--font-playfair)] font-medium text-3xl text-gray-900 tracking-tight leading-none mb-1">
-                                            {service.stat.value}
-                                        </div>
-                                        <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mt-2">
-                                            {service.stat.label}
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-                        </ScrollReveal>
-                    ))}
+                    </ScrollReveal>
+                    <ScrollReveal animation="reveal-left" delay={150} className="lg:col-span-5 flex flex-col justify-end gap-6">
+                        <p className="font-[var(--font-inter)] text-white/55 text-base leading-relaxed">
+                            Zukunftsweisende KI-Technologien, kombiniert mit 32 Jahren Marketing-Handwerk. So eroberst du deinen Markt.
+                        </p>
+                        <Link href="/#contact" className="btn-secondary-light text-[15px] xl:text-[17px] py-2 px-5 w-max">
+                            Finde heraus wie <ArrowRight className="w-4 h-4" />
+                        </Link>
+                    </ScrollReveal>
                 </div>
+                           {/* ── NUMBERED SERVICE CARDS (3 columns, 1 and 3 highlighted subtly, giant numbers bottom-right) ── */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                    {SERVICES.map((service, index) => {
+                        const isHighlighted = index === 0 || index === 2;
+                        return (
+                            <ScrollReveal key={index} delay={index * 80} animation="reveal-up">
+                                <div className={`relative overflow-hidden p-7 md:p-8 flex flex-col h-full min-h-[250px] rounded-2xl transition-all duration-200 ${
+                                    isHighlighted
+                                        ? 'bg-[#2D2D2D] border border-transparent text-white hover:bg-[#363636]'
+                                        : 'bg-[#242424] border border-white/5 text-white hover:bg-[#2A2A2A] hover:border-white/10'
+                                }`}>
+                                    {/* Faint giant background number in bottom-right */}
+                                    <span className="absolute -bottom-10 -right-6 font-[var(--font-vollkorn)] text-[220px] font-black pointer-events-none select-none leading-none z-0 text-white/[0.02]">
+                                        {index + 1}
+                                    </span>
+ 
+                                    {/* Card Header with Icon & Title */}
+                                    <div className="flex items-center gap-3.5 mb-5 relative z-10">
+                                        <div className={`w-11 h-11 rounded-xl border flex items-center justify-center shrink-0 [&>svg]:w-5.5 [&>svg]:h-5.5 [&>svg]:text-[#F7C429] ${
+                                            isHighlighted ? 'border-transparent bg-[#F7C429]/10' : 'border-white/10 bg-white/5'
+                                        }`}>
+                                            {service.icon}
+                                        </div>
+                                        <h3 className="font-[var(--font-vollkorn)] text-[17px] sm:text-lg font-bold leading-snug text-white">
+                                            {service.title}
+                                        </h3>
+                                    </div>
+ 
+                                    {/* Description */}
+                                    <p className={`font-[var(--font-inter)] text-[15px] sm:text-base leading-relaxed flex-grow relative z-10 ${
+                                        isHighlighted ? 'text-white/75' : 'text-white/60'
+                                    }`}>
+                                        {service.description}
+                                    </p>
+ 
+                                    {/* Stat Footer */}
+                                    {service.stat && (
+                                        <div className="mt-6 pt-4 border-t border-white/10 relative z-10">
+                                            <span className="font-[var(--font-vollkorn)] text-2xl sm:text-3xl font-bold block text-[#F7C429]">
+                                                {service.stat.value}
+                                            </span>
+                                            <span className={`font-[var(--font-inter)] text-xs sm:text-sm font-bold uppercase tracking-wider block mt-1 ${isHighlighted ? 'text-white/60' : 'text-white/50'}`}>
+                                                {service.stat.label}
+                                            </span>
+                                        </div>
+                                    )}
+                                </div>
+                            </ScrollReveal>
+                        );
+                    })}
+                </div>
+
             </div>
         </section>
     );

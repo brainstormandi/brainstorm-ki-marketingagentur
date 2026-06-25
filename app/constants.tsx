@@ -334,5 +334,13 @@ export const FAQS = [
     {
         question: "Welche Pflichten bringt der EU AI Act (KI-Verordnung) für meine Webseite mit sich?",
         answer: "Ab dem 2. August 2026 gelten strenge Kennzeichnungspflichten in der EU. Du musst automatisierte Chatbots offenlegen und täuschend echte KI-Bilder, Videos oder Audios (Deepfakes) als solche markieren. KI-generierte Blogtexte oder News müssen ebenfalls gekennzeichnet werden – es sei denn, ein Mensch führt eine gründliche redaktionelle Kontrolle durch und übernimmt die inhaltliche Verantwortung. Wir integrieren deine KI-Systeme abmahnsicher und rechtskonform."
+    },
+    {
+        question: "Was unterscheidet eine moderne Werbeagentur Website von einer einfachen Visitenkarte?",
+        answer: "Eine professionelle Werbeagentur Website (oft auch als Website Werbeagentur bezeichnet) ist verkaufspsychologisch und technisch so aufgebaut, dass sie automatisiert Neukunden gewinnt. Als moderne Webagentur und Werbeagentur erstellen wir keine einfachen Seiten, sondern digitale Vertriebskanäle. Durch unsere Spezialisierung als Web agentur vereinen wir kreatives Webdesign mit modernster künstlicher Intelligenz für deinen messbaren Geschäftserfolg."
+    },
+    {
+        question: "Wie finde ich die passende SEO Agentur Niederösterreich für dauerhafte Suchmaschinenoptimierung Niederösterreich?",
+        answer: "Die ideale SEO Agentur Niederösterreich zeichnet sich durch echte Ergebnisse und tiefe Kenntnis des regionalen Marktes aus. Bei unserer Suchmaschinenoptimierung Niederösterreich setzen wir auf ein zukunftssicheres Zusammenspiel aus klassischem SEO und zukunftsweisendem GEO (Generative Engine Optimization). Dadurch wird deine Website nicht nur bei Google erstklassig positioniert, sondern auch von KI-Suchmaschinen wie ChatGPT und Perplexity als Top-Empfehlung genannt."
     }
 ];

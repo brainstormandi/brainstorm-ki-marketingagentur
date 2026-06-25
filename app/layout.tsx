@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Playfair_Display, Inter } from "next/font/google";
+import { Outfit, Playfair_Display, Inter, Vollkorn } from "next/font/google";
 import "./globals.css";
 import Schema from "./components/Schema";
 import StickyCTA from "./components/StickyCTA";
@@ -7,11 +7,12 @@ import StickyCTA from "./components/StickyCTA";
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair", weight: ["400", "500", "600", "700", "800", "900"] });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", weight: ["400", "500", "600", "700", "800"] });
+const vollkorn = Vollkorn({ subsets: ["latin"], variable: "--font-vollkorn", weight: ["400", "500", "600", "700", "800", "900"], style: ["normal", "italic"] });
 
 export const metadata: Metadata = {
-  title: "KI Werbeagentur Österreich | Profitabler durch Webseiten, Landingpages & Automatisierung",
-  description: "Österreichs Nr. 1 KI-Werbeagentur für KMU. Wir erstellen moderne Webseiten, verkaufsstarke Landingpages und machen dich durch SEO & GEO zum Kundenmagneten.",
-  keywords: ["Werbeagentur Niederösterreich", "KI Werbeagentur Österreich", "SEO Seitenstetten", "GEO Marketing", "Webseite erstellen lassen KMU", "Landingpage erstellen lassen", "Website", "Prozessautomatisierung für Unternehmen"],
+  title: "Werbeagentur & Webagentur | SEO Agentur & Suchmaschinenoptimierung Niederösterreich",
+  description: "Als führende Webagentur und Werbeagentur erstellen wir deine verkaufsstarke Website. Deine SEO Agentur für Suchmaschinenoptimierung in Niederösterreich.",
+  keywords: ["werbeagentur", "web agentur", "webagentur", "werbeagentur website", "seo agentur niederösterreich", "suchmaschinenoptimierung niederösterreich", "website werbeagentur", "KI Werbeagentur Österreich", "Webseite erstellen lassen KMU", "SEO Seitenstetten", "GEO Marketing"],
   authors: [{ name: "Andi Sturm" }],
   creator: "Andi Sturm",
   publisher: "BrainStorm Werbeagentur",
@@ -60,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang="de" className="scroll-smooth" suppressHydrationWarning={true}>
       <body
-        className={`${outfit.variable} ${playfair.variable} ${inter.variable} font-sans antialiased text-gray-900 bg-white`}
+        className={`${outfit.variable} ${playfair.variable} ${inter.variable} ${vollkorn.variable} font-sans antialiased text-[#1C1C1C] bg-[#F5EFE6]`}
         suppressHydrationWarning={true}
       >
         <Schema />

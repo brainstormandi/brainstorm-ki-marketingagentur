@@ -1,50 +1,100 @@
 "use client";
 import React from 'react';
-import { PROCESS_STEPS } from '../constants';
+import { MessageSquare, Compass, Rocket } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
-import { ArrowRight } from 'lucide-react';
 
 const Process = () => {
+    const steps = [
+        {
+            title: "Das kostenlose Erstgespräch",
+            description: "Wir lernen uns kennen, analysieren deine Engpässe und finden das größte Potenzial für deinen Betrieb.",
+            icon: <MessageSquare className="w-5.5 h-5.5 text-[#F7C429]" />
+        },
+        {
+            title: "Dein individueller KI-Fahrplan",
+            description: "Du erhältst eine maßgeschneiderte Strategie, die genau auf deine Branche und Zielgruppe zugeschnitten ist.",
+            icon: <Compass className="w-5.5 h-5.5 text-[#F7C429]" />
+        },
+        {
+            title: "Livegang in 5-7 Werktagen",
+            description: "Lehn dich zurück. Wir setzen alles um. Nach wenigen Tagen beginnt die KI für dich zu arbeiten.",
+            icon: <Rocket className="w-5.5 h-5.5 text-[#F7C429]" />
+        }
+    ];
+
     return (
-        <section id="process" className="scroll-mt-32 py-32 bg-white border-t border-gray-200">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <ScrollReveal className="mb-20">
-                    <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent text-gray-600 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-gray-200">Der Ablauf</div>
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.1] py-1 mb-6 uppercase">
-                        <span className="block">Dein Weg aus dem Chaos</span>
-                        <span className="block text-transparent bg-clip-text pb-2" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>– in nur 7 Tagen.</span>
-                    </h2>
-                    <p className="text-gray-600 text-lg sm:text-xl leading-relaxed font-body max-w-2xl mt-4">
-                        Der Start in deine digitale Zukunft ist einfacher, als du denkst. Keine monatelangen Projektlaufzeiten, keine versteckten Hürden.
-                    </p>
-                </ScrollReveal>
+        <section id="process" className="scroll-mt-20 bg-[#F5EFE6] pt-10 md:pt-14 pb-20 md:pb-28">
+            <div className="max-w-6xl mx-auto px-6 md:px-12 w-full">
 
-                <div className="grid lg:grid-cols-3 gap-8">
-                    {PROCESS_STEPS.map((step, index) => (
-                        <ScrollReveal
-                            key={index}
-                            animation="reveal-up"
-                            delay={index * 150}
+                {/* ── HEADER ── */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
+                    <ScrollReveal animation="reveal-right" className="lg:col-span-6">
+                        <span className="font-[var(--font-inter)] text-[11px] font-bold uppercase tracking-[0.18em] text-[#1C1C1C]/40 mb-4 block">
+                            Der Ablauf
+                        </span>
+                        <h2
+                            className="font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] leading-tight"
+                            style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
                         >
-                            <div className="relative bg-transparent rounded-3xl p-10 sm:p-12 border border-gray-200 backdrop-blur-sm group hover:border-[#F7C429]/50 hover:shadow-[0_4px_20px_rgba(247,196,41,0.3)] transition-all duration-500 h-full flex flex-col overflow-hidden">
-                                {/* Large number watermark */}
-                                <div className="absolute right-0 bottom-0 pointer-events-none translate-x-[20%] translate-y-[20%] font-sans text-[12rem] font-black leading-none text-[#00000005] group-hover:text-[#F7C429]/10 transition-all duration-700">
-                                    {index + 1}
-                                </div>
-
-                                <h3 className="font-[var(--font-playfair)] text-2xl sm:text-3xl font-medium text-gray-900 tracking-normal mb-5 relative z-10 flex items-center gap-4">
-                                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#F7C429] border border-[#F7C429] text-black font-sans text-sm tracking-normal">
-                                        {index + 1}
-                                    </span>
-                                    {step.title}
-                                </h3>
-                                <p className="text-gray-600 text-lg leading-relaxed font-body flex-grow relative z-10">
-                                    {step.description}
-                                </p>
-                            </div>
-                        </ScrollReveal>
-                    ))}
+                            Dein Weg aus dem Chaos –{" "}
+                            <span className="font-[var(--font-vollkorn)] italic font-normal text-[#1C1C1C]/50">
+                                in nur 7 Tagen.
+                            </span>
+                        </h2>
+                    </ScrollReveal>
+                    <ScrollReveal animation="reveal-left" delay={100} className="lg:col-span-6 flex items-end">
+                        <p className="font-[var(--font-inter)] text-[#1C1C1C]/60 text-base leading-relaxed">
+                            Der Start in deine digitale Zukunft ist einfacher, als du denkst. Keine monatelangen Projektlaufzeiten, keine versteckten Hürden.
+                        </p>
+                    </ScrollReveal>
                 </div>
+
+                {/* ── TIMELINE CARDS DECK ── */}
+                <div className="relative">
+                    {/* Connecting Line (Desktop) */}
+                    <div className="hidden md:block absolute top-14 left-[12%] right-[12%] h-[1px] border-t-2 border-dashed border-[#D6CFC5]" aria-hidden="true" />
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                        {steps.map((step, index) => {
+                            const isMiddle = index === 1;
+                            return (
+                                <ScrollReveal key={index} delay={index * 120} animation="reveal-up" className="h-full">
+                                    <div className={`group relative h-full flex flex-col justify-between p-8 md:p-9 rounded-2xl border transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[#F7C429] hover:shadow-[0_20px_40px_-15px_rgba(28,28,28,0.05)] ${
+                                        isMiddle 
+                                            ? 'bg-[#EDE7DB]/80 border-[#D6CFC5]' 
+                                            : 'bg-white border-[#D6CFC5]'
+                                    }`}>
+                                        {/* Giant watermark number in bottom-right */}
+                                        <span className="absolute -bottom-10 -right-4 font-[var(--font-vollkorn)] text-[180px] font-black pointer-events-none select-none leading-none z-0 text-[#1C1C1C]/[0.02]">
+                                            {index + 1}
+                                        </span>
+
+                                        <div className="relative z-10">
+                                            {/* Card Top Row */}
+                                            <div className="mb-8">
+                                                {/* Icon container */}
+                                                <div className="w-12 h-12 rounded-xl bg-white border border-[#D6CFC5]/40 flex items-center justify-center shadow-sm shrink-0">
+                                                    {step.icon}
+                                                </div>
+                                            </div>
+
+                                            {/* Step Title */}
+                                            <h3 className="font-[var(--font-vollkorn)] text-xl md:text-2xl font-bold text-[#1C1C1C] leading-snug mb-4">
+                                                {step.title}
+                                            </h3>
+
+                                            {/* Step Description */}
+                                            <p className="font-[var(--font-inter)] text-[#1C1C1C] text-base leading-relaxed">
+                                                {step.description}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </ScrollReveal>
+                            );
+                        })}
+                    </div>
+                </div>
+
             </div>
         </section>
     );

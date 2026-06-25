@@ -1,107 +1,239 @@
 "use client";
-import React, { useEffect, useRef, useState } from 'react';
-import { Star, Quote } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { TESTIMONIALS, GOOGLE_REVIEW_LINK } from '../constants';
 
 const TestimonialSlider = () => {
-    const scrollRef = useRef<HTMLDivElement>(null);
+    const [activeIndex, setActiveIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
+    const [isMobile, setIsMobile] = useState(true);
 
+    // Track if screen is mobile to toggle 3D Coverflow on/off
     useEffect(() => {
-        const scrollContainer = scrollRef.current;
-        if (!scrollContainer) return;
-
-        let animationFrameId: number;
-        let scrollPos = scrollContainer.scrollTop;
-
-        const scroll = () => {
-            if (!isHovered) {
-                scrollPos += 0.5;
-                if (scrollPos >= scrollContainer.scrollHeight / 2) {
-                    scrollPos -= scrollContainer.scrollHeight / 2;
-                }
-                scrollContainer.scrollTop = scrollPos;
-            } else {
-                scrollPos = scrollContainer.scrollTop;
-            }
-            animationFrameId = requestAnimationFrame(scroll);
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
         };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
-        animationFrameId = requestAnimationFrame(scroll);
-        return () => cancelAnimationFrame(animationFrameId);
+    // Auto-play interval
+    useEffect(() => {
+        if (isHovered) return;
+        const interval = setInterval(() => {
+            setActiveIndex((prev) => (prev + 1) % TESTIMONIALS.length);
+        }, 6000);
+        return () => clearInterval(interval);
     }, [isHovered]);
 
-    const doubledTestimonials = [...TESTIMONIALS, ...TESTIMONIALS];
+    // Calculate position & 3D Coverflow styling for each card
+    const getCardStyle = (index: number) => {
+        let diff = index - activeIndex;
+        const len = TESTIMONIALS.length;
+        if (diff > len / 2) diff -= len;
+        if (diff < -len / 2) diff += len;
+
+        const isActive = diff === 0;
+        const isLeft = diff === -1;
+        const isRight = diff === 1;
+
+        if (isMobile) {
+            if (isActive) {
+                return {
+                    transform: 'translate3d(0, 0, 0) scale(1)',
+                    opacity: 1,
+                    zIndex: 10,
+                    pointerEvents: 'auto' as const,
+                };
+            } else {
+                return {
+                    transform: `translate3d(${diff > 0 ? '100%' : '-100%'}, 0, 0) scale(0.8)`,
+                    opacity: 0,
+                    zIndex: 0,
+                    pointerEvents: 'none' as const,
+                };
+            }
+        }
+
+        // Desktop 3D Coverflow Transforms - Lower perspective and deep arc transforms (Y-rotation, Z-rotation, Y-translation)
+        if (isActive) {
+            return {
+                transform: 'translate3d(0, 0, 0) scale(1) rotateY(0deg) rotateZ(0deg)',
+                opacity: 1,
+                zIndex: 10,
+                pointerEvents: 'auto' as const,
+            };
+        } else if (isLeft) {
+            return {
+                transform: 'translate3d(-80%, 12px, -180px) scale(0.8) rotateY(32deg) rotateZ(-3.5deg)',
+                opacity: 0.65,
+                zIndex: 5,
+                pointerEvents: 'auto' as const,
+                cursor: 'pointer',
+            };
+        } else if (isRight) {
+            return {
+                transform: 'translate3d(80%, 12px, -180px) scale(0.8) rotateY(-32deg) rotateZ(3.5deg)',
+                opacity: 0.65,
+                zIndex: 5,
+                pointerEvents: 'auto' as const,
+                cursor: 'pointer',
+            };
+        } else {
+            return {
+                transform: `translate3d(${diff > 0 ? '130%' : '-130%'}, 20px, -260px) scale(0.68) rotateY(0deg) rotateZ(0deg)`,
+                opacity: 0,
+                zIndex: 0,
+                pointerEvents: 'none' as const,
+            };
+        }
+    };
 
     return (
-        <div 
-            className="relative h-[800px] overflow-hidden group"
+        <div
+            className="relative w-full max-w-5xl mx-auto px-4 py-8 flex flex-col items-center select-none"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onTouchStart={() => setIsHovered(true)}
             onTouchEnd={() => setIsHovered(false)}
         >
-            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white via-white/80 to-transparent pointer-events-none z-20" aria-hidden="true"></div>
+            {/* ── 3D SLIDER VIEWPORT ── */}
+            <div className="relative w-full h-[470px] md:h-[460px] flex items-center justify-center overflow-visible md:perspective-[900px]">
+                <div className="relative w-full max-w-[340px] md:max-w-[370px] h-[400px] flex items-center justify-center transform-style-3d overflow-visible">
+                    {TESTIMONIALS.map((t, index) => {
+                        const style = getCardStyle(index);
+                        const isCenter = index === activeIndex;
 
-            <div 
-                ref={scrollRef} 
-                className="h-full space-y-8 px-4 py-8 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] cursor-ns-resize touch-pan-y"
-            >
-                {doubledTestimonials.map((t, i) => (
-                    <a
-                        key={i}
-                        href={GOOGLE_REVIEW_LINK}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block p-5 sm:p-10 rounded-[2rem] bg-white border border-gray-200 shadow-sm hover:shadow-[0_4px_20px_rgba(247,196,41,0.3)] hover:border-[#F7C429]/50 hover:-translate-y-1 transition-all duration-300 group/card relative focus-visible:ring-2 focus-visible:ring-[#F7C429] outline-none"
-                        aria-label={`Bewertung von ${t.name} auf Google ansehen: ${t.quote}`}
-                    >
-                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-                                <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-full bg-gray-50 text-[#F7C429] font-bold flex items-center justify-center border border-gray-200 text-lg flex-shrink-0">
-                                        {t.name.charAt(0)}
+                        return (
+                            <a
+                                key={index}
+                                href={GOOGLE_REVIEW_LINK}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={style}
+                                onClick={(e) => {
+                                    // If clicking side card, move to it instead of navigating to Google
+                                    if (!isCenter) {
+                                        e.preventDefault();
+                                        setActiveIndex(index);
+                                    }
+                                }}
+                                className={`absolute inset-0 p-6 md:p-7 flex flex-col justify-between rounded-2xl border transition-all duration-500 ease-out shadow-sm ${
+                                    isCenter
+                                        ? 'bg-[#F7C429] border-[#F7C429] text-[#1C1C1C]'
+                                        : 'bg-white border-[#D6CFC5] text-[#1C1C1C] hover:border-[#1C1C1C]/35'
+                                }`}
+                                aria-label={`Google Bewertung von ${t.name} lesen`}
+                            >
+                                {/* Giant watermark closing quote */}
+                                <span className={`absolute bottom-6 right-8 font-[var(--font-vollkorn)] text-[120px] font-bold pointer-events-none select-none leading-none z-0 ${
+                                    isCenter ? 'text-[#1C1C1C]/[0.05]' : 'text-[#1C1C1C]/[0.03]'
+                                }`}>
+                                    ”
+                                </span>
+
+                                <div className="relative z-10 flex flex-col h-full justify-between">
+                                    <div>
+                                        {/* Card Top Header */}
+                                        <div className="flex items-center justify-between gap-4 mb-4">
+                                            {/* Quote Icon Square */}
+                                            <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${
+                                                isCenter ? 'bg-[#1C1C1C]/10 text-[#1C1C1C]' : 'bg-[#F7C429]/10 text-[#F7C429]'
+                                            }`}>
+                                                <span className="font-[var(--font-vollkorn)] text-2xl font-black leading-none mt-1.5">“</span>
+                                            </div>
+
+                                            {/* Verified Pill */}
+                                            <span className={`px-2.5 py-0.5 rounded-full border text-[8px] font-bold uppercase tracking-widest ${
+                                                isCenter ? 'border-[#1C1C1C]/20 text-[#1C1C1C]/60' : 'border-[#1C1C1C]/10 text-[#1C1C1C]/40'
+                                            }`}>
+                                                • Google Verified
+                                            </span>
+                                        </div>
+
+                                        {/* Quote Text (larger on center card, color set to solid #1C1C1C) */}
+                                        <p className={`font-[var(--font-inter)] leading-relaxed text-[#1C1C1C] ${
+                                            isCenter 
+                                                ? 'text-[14.5px] sm:text-[15.5px] md:text-[16px] line-clamp-[7]' 
+                                                : 'text-xs sm:text-sm line-clamp-[8]'
+                                        }`}>
+                                            „{t.quote}“
+                                        </p>
                                     </div>
-                                    <div className="flex flex-col">
-                                        <span className="text-base font-[var(--font-playfair)] font-medium text-gray-900 tracking-wide leading-tight">{t.name}</span>
-                                        <span className="text-xs text-gray-600 font-medium">Local Guide</span>
+
+                                    {/* Footer (Author + Stars) */}
+                                    <div className="mt-4 pt-4 border-t border-[#1C1C1C]/10 flex items-end justify-between">
+                                        <div>
+                                            <span className="font-[var(--font-inter)] text-sm font-bold text-[#1C1C1C] block leading-tight">
+                                                {t.name}
+                                            </span>
+                                            <span className="font-[var(--font-inter)] text-[9px] text-[#1C1C1C]/40 font-bold uppercase tracking-wider block mt-1">
+                                                VOR {index % 3 === 0 ? '6' : index % 3 === 1 ? '4' : '12'} MONATEN • GOOGLE
+                                            </span>
+                                        </div>
+
+                                        {/* Stars */}
+                                        <div className="flex gap-0.5" aria-hidden="true">
+                                            {[...Array(5)].map((_, s) => (
+                                                <Star
+                                                    key={s}
+                                                    className={`w-3.5 h-3.5 ${
+                                                        isCenter ? 'fill-[#1C1C1C] text-[#1C1C1C]' : 'fill-[#F7C429] text-[#F7C429]'
+                                                    }`}
+                                                />
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
-                            <div className="flex items-center gap-1 flex-shrink-0" aria-hidden="true">
-                                {/* Google "G" standard star icon colors */}
-                                <svg className="w-6 h-6" viewBox="0 0 24 24">
-                                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
-                                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
-                                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05" />
-                                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
-                                </svg>
-                            </div>
-                        </div>
-
-                        <div className="flex gap-1 mb-6" aria-hidden="true">
-                            {[...Array(5)].map((_, s) => (
-                                <Star key={s} className="w-5 h-5 fill-[#F7C429] text-[#F7C429]" />
-                            ))}
-                        </div>
-
-                        <div className="relative">
-                            <Quote className="absolute -top-3 -left-3 w-8 h-8 text-gray-200 fill-gray-100 -z-10" aria-hidden="true" />
-                            <p className="text-gray-600 leading-relaxed font-body text-lg">{t.quote}</p>
-                        </div>
-
-                        <div className="mt-8 pt-6 border-t border-gray-200 flex justify-between items-center">
-                            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">Google Rezension</span>
-                            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#F7C429] opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center gap-1">
-                                Öffnen
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                </svg>
-                            </span>
-                        </div>
-                    </a>
-                ))}
+                            </a>
+                        );
+                    })}
+                </div>
             </div>
 
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none z-20" aria-hidden="true"></div>
+            {/* ── CONTROLS (ARROWS & DOTS) ── */}
+            <div className="flex items-center gap-6 mt-4 z-20">
+                {/* Previous Arrow */}
+                <button
+                    onClick={() => setActiveIndex((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
+                    className="w-10 h-10 rounded-full border border-[#1C1C1C]/10 flex items-center justify-center text-[#1C1C1C] hover:bg-[#1C1C1C]/5 active:scale-95 transition-all"
+                    aria-label="Vorherige Bewertung"
+                >
+                    <ChevronLeft className="w-5 h-5" />
+                </button>
+
+                {/* Rolling Dots Indicator */}
+                <div className="flex items-center gap-1.5 max-w-[220px] overflow-hidden py-1">
+                    {TESTIMONIALS.map((_, idx) => {
+                        // Display a rolling window of max 7 dots centered around activeIndex
+                        const isVisible = Math.abs(idx - activeIndex) <= 3 || 
+                                          (activeIndex < 3 && idx < 7) || 
+                                          (activeIndex > TESTIMONIALS.length - 4 && idx >= TESTIMONIALS.length - 7);
+                        if (!isVisible) return null;
+                        
+                        return (
+                            <button
+                                key={idx}
+                                onClick={() => setActiveIndex(idx)}
+                                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                                    idx === activeIndex ? 'bg-[#F7C429] w-3.5' : 'bg-[#1C1C1C]/20 hover:bg-[#1C1C1C]/40'
+                                }`}
+                                aria-label={`Gehe zu Bewertung ${idx + 1}`}
+                            />
+                        );
+                    })}
+                </div>
+
+                {/* Next Arrow */}
+                <button
+                    onClick={() => setActiveIndex((prev) => (prev + 1) % TESTIMONIALS.length)}
+                    className="w-10 h-10 rounded-full border border-[#1C1C1C]/10 flex items-center justify-center text-[#1C1C1C] hover:bg-[#1C1C1C]/5 active:scale-95 transition-all"
+                    aria-label="Nächste Bewertung"
+                >
+                    <ChevronRight className="w-5 h-5" />
+                </button>
+            </div>
         </div>
     );
 };

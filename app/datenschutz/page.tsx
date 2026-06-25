@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 
 export default function DatenschutzPage() {
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-[#F5EFE6] font-[var(--font-inter)] text-[#1C1C1C]">
             <Navbar />
 
             <main className="pt-40 pb-20">
@@ -15,7 +15,7 @@ export default function DatenschutzPage() {
                     <div className="mb-12">
                         <Link
                             href="/"
-                            className="inline-flex items-center gap-2 text-gray-500 hover:text-[#F7C429] transition-colors font-bold uppercase tracking-widest text-sm"
+                            className="inline-flex items-center gap-2 text-[#1C1C1C]/60 hover:text-[#1C1C1C] transition-colors font-bold uppercase tracking-widest text-sm"
                         >
                             <ArrowLeft className="w-4 h-4" />
                             Zurück zur Startseite
@@ -23,18 +23,18 @@ export default function DatenschutzPage() {
                     </div>
 
                     <header className="mb-16">
-                        <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent text-gray-600 font-bold text-xs mb-8 uppercase tracking-widest border border-gray-200">
+                        <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent text-[#1C1C1C]/60 font-bold text-xs mb-8 uppercase tracking-widest border border-[#1C1C1C]/10">
                             Rechtliches
                         </div>
-                        <h1 className="text-4xl sm:text-5xl font-[var(--font-playfair)] font-medium text-gray-900 mb-4 uppercase tracking-tight">
+                        <h1 className="text-4xl sm:text-5xl font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-4 uppercase tracking-tight">
                             Datenschutz&shy;erklärung
                         </h1>
-                        <p className="text-xl text-gray-500 font-body">
+                        <p className="text-xl text-[#1C1C1C]/60 font-body">
                             Informationen über die Verarbeitung Ihrer personenbezogenen Daten
                         </p>
                     </header>
 
-                    <div className="prose prose-slate max-w-none space-y-12 text-slate-600 leading-relaxed">
+                    <div className="prose prose-slate max-w-none space-y-12 text-[#1C1C1C]/70 leading-relaxed prose-headings:font-[var(--font-vollkorn)] prose-headings:text-[#1C1C1C] prose-p:text-[#1C1C1C]/70 prose-a:text-[#1C1C1C] prose-a:underline hover:prose-a:text-[#1C1C1C]/80 prose-strong:text-[#1C1C1C] prose-headings:font-semibold">
                         <section>
                             <p>
                                 Wir freuen uns sehr über Ihr Interesse an unserer Webseite. Datenschutz hat einen besonders hohen Stellenwert für BrainStorm Werbeagentur. Eine Nutzung der Internetseiten ist grundsätzlich ohne jede Angabe personenbezogener Daten möglich. Sofern eine betroffene Person besondere Services unseres Vereins über unsere Internetseite in Anspruch nehmen möchte, könnte jedoch eine Verarbeitung personenbezogener Daten erforderlich werden. Ist die Verarbeitung personenbezogener Daten erforderlich und besteht für eine solche Verarbeitung keine gesetzliche Grundlage, holen wir generell eine Einwilligung der betroffenen Person ein.
@@ -47,53 +47,53 @@ export default function DatenschutzPage() {
                             </p>
                         </section>
 
-                        <section className="premium-card p-8 sm:p-12 not-prose">
-                            <h2 className="text-2xl font-sans font-bold text-slate-900 mb-8 border-b border-slate-100 pb-4">Verantwortlicher</h2>
+                        <section className="bg-white border border-[#1C1C1C]/10 p-8 sm:p-12 rounded-[1.5rem] not-prose text-[#1C1C1C]">
+                            <h2 className="text-2xl font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-8 border-b border-[#1C1C1C]/10 pb-4">Verantwortlicher</h2>
                             <div className="grid sm:grid-cols-2 gap-10">
                                 <div>
-                                    <h3 className="text-sm font-black text-slate-400 uppercase tracking-widest mb-4">Anschrift</h3>
-                                    <p className="text-lg text-slate-700 leading-relaxed font-medium">
+                                    <h3 className="text-[11px] font-bold text-[#1C1C1C]/40 uppercase tracking-widest mb-4">Anschrift</h3>
+                                    <p className="text-lg text-[#1C1C1C]/75 leading-relaxed font-medium">
                                         BrainStorm Werbeagentur<br />
                                         Am Ziegelfeld 8<br />
                                         3353 Seitenstetten
                                     </p>
                                 </div>
                                 <div>
-                                    <h3 className="text-sm font-black text-slate-400 uppercase tracking-widest mb-4">Kontakt</h3>
-                                    <p className="text-lg text-slate-700 leading-relaxed">
-                                        E-Mail: <a href="mailto:info@brainstorm-werbeagentur.at" className="text-primary font-bold hover:underline">info@brainstorm-werbeagentur.at</a><br />
-                                        Tel: <a href="tel:+436605203171" className="text-primary font-bold hover:underline">0660/5203171</a>
+                                    <h3 className="text-[11px] font-bold text-[#1C1C1C]/40 uppercase tracking-widest mb-4">Kontakt</h3>
+                                    <p className="text-lg text-[#1C1C1C]/75 leading-relaxed">
+                                        E-Mail: <a href="mailto:info@brainstorm-werbeagentur.at" className="text-[#1C1C1C] underline font-bold hover:text-[#1C1C1C]/80">info@brainstorm-werbeagentur.at</a><br />
+                                        Tel: <a href="tel:+436605203171" className="text-[#1C1C1C] underline font-bold hover:text-[#1C1C1C]/80">0660/5203171</a>
                                     </p>
                                 </div>
                             </div>
                         </section>
 
                         <section>
-                            <h2 className="text-2xl font-sans font-bold text-slate-900 mb-6">1. Begriffsbestimmungen</h2>
+                            <h2 className="text-2xl font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-6">1. Begriffsbestimmungen</h2>
                             <p className="mb-6">Die Datenschutzerklärung der "BrainStorm Werbeagentur" beruht auf den Begrifflichkeiten, die durch den Europäischen Richtlinien- und Verordnungsgeber beim Erlass der Datenschutz-Grundverordnung (DS-GVO) verwendet wurden. Wir verwenden unter anderem die folgenden Begriffe:</p>
 
                             <div className="space-y-6">
                                 <div>
-                                    <h3 className="text-lg font-bold text-slate-900 mb-2">a) Personenbezogene Daten</h3>
+                                    <h3 className="text-lg font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-2">a) Personenbezogene Daten</h3>
                                     <p>Alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen.</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-bold text-slate-900 mb-2">b) Betroffene Person</h3>
+                                    <h3 className="text-lg font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-2">b) Betroffene Person</h3>
                                     <p>Jede identifizierte oder identifizierbare natürliche Person, deren personenbezogene Daten verarbeitet werden.</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-bold text-slate-900 mb-2">c) Verarbeitung</h3>
+                                    <h3 className="text-lg font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-2">c) Verarbeitung</h3>
                                     <p>Jeder mit oder ohne Hilfe automatisierter Verfahren ausgeführte Vorgang im Zusammenhang mit personenbezogenen Daten.</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-bold text-slate-900 mb-2">d) Einwilligung</h3>
+                                    <h3 className="text-lg font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-2">d) Einwilligung</h3>
                                     <p>Jede freiwillig für den bestimmten Fall in informierter Weise und unmissverständlich abgegebene Willensbekundung.</p>
                                 </div>
                             </div>
                         </section>
 
                         <section>
-                            <h2 className="text-2xl font-sans font-bold text-slate-900 mb-6">2. Cookies</h2>
+                            <h2 className="text-2xl font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-6">2. Cookies</h2>
                             <p>
                                 Die Internetseiten der "BrainStorm Werbeagentur" verwenden Cookies. Cookies sind Textdateien, welche über einen Internetbrowser auf einem Computersystem abgelegt und gespeichert werden. Durch den Einsatz von Cookies kann BrainStorm Werbeagentur den Nutzern dieser Internetseite nutzerfreundlichere Services bereitstellen.
                             </p>
@@ -103,63 +103,63 @@ export default function DatenschutzPage() {
                         </section>
 
                         <section>
-                            <h2 className="text-2xl font-sans font-bold text-slate-900 mb-6">3. Erfassung von allgemeinen Daten und Informationen</h2>
+                            <h2 className="text-2xl font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-6">3. Erfassung von allgemeinen Daten und Informationen</h2>
                             <p>
                                 Unsere Internetseite erfasst mit jedem Aufruf eine Reihe von allgemeinen Daten und Informationen, die in den Logfiles des Servers gespeichert werden. Erfasst werden können Browsertypen, Betriebssystem, IP-Adresse, Datum und Uhrzeit des Zugriffs sowie sonstige ähnliche Daten zur Gefahrenabwehr im Falle von Angriffen.
                             </p>
                         </section>
 
                         <section>
-                            <h2 className="text-2xl font-sans font-bold text-slate-900 mb-6">4. Kontaktmöglichkeit</h2>
+                            <h2 className="text-2xl font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-6">4. Kontaktmöglichkeit</h2>
                             <p>
                                 Sofern eine betroffene Person per E-Mail oder über ein Kontaktformular den Kontakt mit uns aufnimmt, werden die übermittelten personenbezogenen Daten automatisch gespeichert. Diese Daten werden für Zwecke der Bearbeitung oder der Kontaktaufnahme gespeichert. Es erfolgt keine Weitergabe dieser Daten an Dritte.
                             </p>
                         </section>
 
                         <section>
-                            <h2 className="text-2xl font-sans font-bold text-slate-900 mb-6">5. Rechte der betroffenen Person</h2>
+                            <h2 className="text-2xl font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-6">5. Rechte der betroffenen Person</h2>
                             <div className="grid sm:grid-cols-2 gap-8">
-                                <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                                    <h3 className="font-bold text-slate-900 mb-2">Recht auf Auskunft</h3>
-                                    <p className="text-sm italic">Sie haben das Recht, jederzeit unentgeltliche Auskunft über Ihre gespeicherten Daten zu erhalten.</p>
+                                <div className="p-6 bg-white rounded-2xl border border-[#1C1C1C]/10">
+                                    <h3 className="font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-2">Recht auf Auskunft</h3>
+                                    <p className="text-sm italic text-[#1C1C1C]/70">Sie haben das Recht, jederzeit unentgeltliche Auskunft über Ihre gespeicherten Daten zu erhalten.</p>
                                 </div>
-                                <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                                    <h3 className="font-bold text-slate-900 mb-2">Recht auf Berichtigung</h3>
-                                    <p className="text-sm italic">Sie können die unverzügliche Berichtigung unrichtiger Daten verlangen.</p>
+                                <div className="p-6 bg-white rounded-2xl border border-[#1C1C1C]/10">
+                                    <h3 className="font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-2">Recht auf Berichtigung</h3>
+                                    <p className="text-sm italic text-[#1C1C1C]/70">Sie können die unverzügliche Berichtigung unrichtiger Daten verlangen.</p>
                                 </div>
-                                <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                                    <h3 className="font-bold text-slate-900 mb-2">Recht auf Löschung</h3>
-                                    <p className="text-sm italic">Sie haben das Recht auf Löschung Ihrer Daten (Recht auf Vergessenwerden).</p>
+                                <div className="p-6 bg-white rounded-2xl border border-[#1C1C1C]/10">
+                                    <h3 className="font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-2">Recht auf Löschung</h3>
+                                    <p className="text-sm italic text-[#1C1C1C]/70">Sie haben das Recht auf Löschung Ihrer Daten (Recht auf Vergessenwerden).</p>
                                 </div>
-                                <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                                    <h3 className="font-bold text-slate-900 mb-2">Recht auf Widerspruch</h3>
-                                    <p className="text-sm italic">Sie können jederzeit gegen die Verarbeitung Widerspruch einlegen.</p>
+                                <div className="p-6 bg-white rounded-2xl border border-[#1C1C1C]/10">
+                                    <h3 className="font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-2">Recht auf Widerspruch</h3>
+                                    <p className="text-sm italic text-[#1C1C1C]/70">Sie können jederzeit gegen die Verarbeitung Widerspruch einlegen.</p>
                                 </div>
                             </div>
                         </section>
 
                         <section>
-                            <h2 className="text-2xl font-sans font-bold text-slate-900 mb-6">6. Analyse-Tools & Drittanbieter</h2>
+                            <h2 className="text-2xl font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-6">6. Analyse-Tools & Drittanbieter</h2>
                             <div className="space-y-8">
                                 <div>
-                                    <h3 className="text-lg font-bold text-slate-900 mb-2">Google Analytics</h3>
-                                    <p className="text-sm">Wir nutzen Google Analytics (mit Anonymisierungsfunktion) zur Analyse der Besucherströme. Betreibergesellschaft ist Google Inc., USA. Sie können die Erfassung durch Installation eines Browser-Add-Ons verhindern.</p>
+                                    <h3 className="text-lg font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-2">Google Analytics</h3>
+                                    <p className="text-sm text-[#1C1C1C]/70">Wir nutzen Google Analytics (mit Anonymisierungsfunktion) zur Analyse der Besucherströme. Betreibergesellschaft ist Google Inc., USA. Sie können die Erfassung durch Installation eines Browser-Add-Ons verhindern.</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-bold text-slate-900 mb-2">Google AdWords</h3>
-                                    <p className="text-sm">Wir setzen Google AdWords zur Bewerbung unserer Seite ein. Dabei werden Conversion-Cookies verwendet, die nach 30 Tagen verfallen.</p>
+                                    <h3 className="text-lg font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-2">Google AdWords</h3>
+                                    <p className="text-sm text-[#1C1C1C]/70">Wir setzen Google AdWords zur Bewerbung unserer Seite ein. Dabei werden Conversion-Cookies verwendet, die nach 30 Tagen verfallen.</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-bold text-slate-900 mb-2">Facebook</h3>
-                                    <p className="text-sm">Auf dieser Seite sind Komponenten von Facebook integriert. Durch den Aufruf von Seiten mit Facebook-Plugins kann Facebook Informationen über Ihren Besuch erhalten.</p>
+                                    <h3 className="text-lg font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-2">Facebook</h3>
+                                    <p className="text-sm text-[#1C1C1C]/70">Auf dieser Seite sind Komponenten von Facebook integriert. Durch den Aufruf von Seiten mit Facebook-Plugins kann Facebook Informationen über Ihren Besuch erhalten.</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-bold text-slate-900 mb-2">KI-Assistentin "Susi KI" (Google Gemini API)</h3>
-                                    <p className="text-sm">Wir nutzen auf unserer Website den interaktiven KI-Assistenten "Susi KI" (Text- und Voice-Chat) zur Beantwortung von Anfragen und zur automatisierten Terminbuchung. Bei Nutzung dieses Dienstes werden Ihre eingegebenen Texte, Audiodaten (bei Nutzung des Voice-Assistentens) sowie eventuell angegebene Termindaten (Name, E-Mail-Adresse, Terminwunsch) an die Google Gemini API übertragen, um die Anfrage zu verarbeiten. Betreibergesellschaft ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) und unseres berechtigten Interesses an einem effizienten Kundenservice (Art. 6 Abs. 1 lit. f DSGVO). Die übermittelten Daten werden laut Google nicht zur Verbesserung oder zum Training der Modelle verwendet, wenn der Zugriff über die geschäftliche Programmierschnittstelle (API) erfolgt.</p>
+                                    <h3 className="text-lg font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-2">KI-Assistentin "Susi KI" (Google Gemini API)</h3>
+                                    <p className="text-sm text-[#1C1C1C]/70">Wir nutzen auf unserer Website den interaktiven KI-Assistenten "Susi KI" (Text- und Voice-Chat) zur Beantwortung von Anfragen und zur automatisierten Terminbuchung. Bei Nutzung dieses Dienstes werden Ihre eingegebenen Texte, Audiodaten (bei Nutzung des Voice-Assistentens) sowie eventuell angegebene Termindaten (Name, E-Mail-Adresse, Terminwunsch) an die Google Gemini API übertragen, um die Anfrage zu verarbeiten. Betreibergesellschaft ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) und unseres berechtigten Interesses an einem effizienten Kundenservice (Art. 6 Abs. 1 lit. f DSGVO). Die übermittelten Daten werden laut Google nicht zur Verbesserung oder zum Training der Modelle verwendet, wenn der Zugriff über die geschäftliche Programmierschnittstelle (API) erfolgt.</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-bold text-slate-900 mb-2">Weitere Dienste</h3>
-                                    <p className="text-sm">Wir setzen zur Optimierung unserer Services Dienste wie Agendize (Terminvereinbarung), Wipe Analytics (Web-Analyse) sowie golocal/Meinungsmeister (Reputations-Widget) ein.</p>
+                                    <h3 className="text-lg font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-2">Weitere Dienste</h3>
+                                    <p className="text-sm text-[#1C1C1C]/70">Wir setzen zur Optimierung unserer Services Dienste wie Agendize (Terminvereinbarung), Wipe Analytics (Web-Analyse) sowie golocal/Meinungsmeister (Reputations-Widget) ein.</p>
                                 </div>
                             </div>
                         </section>

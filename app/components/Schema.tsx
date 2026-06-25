@@ -6,7 +6,13 @@ export default function Schema() {
         "@context": "https://schema.org",
         "@type": "AdvertisingAgency",
         "name": "BrainStorm Werbeagentur",
-        "alternateName": "Brainstorm KI Werbeagentur",
+        "alternateName": [
+            "Brainstorm KI Werbeagentur", 
+            "BrainStorm Webagentur", 
+            "BrainStorm Web agentur", 
+            "Brainstorm Website Werbeagentur",
+            "Werbeagentur Seitenstetten"
+        ],
         "url": "https://ki-marketingagentur.jetzt",
         "logo": "https://ki-marketingagentur.jetzt/bilder/logo.png",
         "sameAs": [
@@ -22,13 +28,32 @@ export default function Schema() {
             "email": CONTACT_INFO.email,
             "areaServed": "AT",
             "availableLanguage": "German"
-        }
+        },
+        "knowsAbout": [
+            "Werbeagentur",
+            "Webagentur",
+            "Webdesign",
+            "Suchmaschinenoptimierung",
+            "Search Engine Optimization (SEO)",
+            "Generative Engine Optimization (GEO)",
+            "KI-Marketing",
+            "SEO Agentur Niederösterreich",
+            "Werbeagentur Website",
+            "Website Werbeagentur"
+        ]
     };
 
     const localBusinessSchema = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "BrainStorm - KI Webdesign & Marketing",
+        "alternateName": [
+            "BrainStorm KI Webdesign & Marketing",
+            "SEO Agentur Niederösterreich",
+            "Suchmaschinenoptimierung Niederösterreich",
+            "Website Werbeagentur Niederösterreich",
+            "Web agentur"
+        ],
         "image": [
             "https://ki-marketingagentur.jetzt/bilder/logo.png",
             "https://ki-marketingagentur.jetzt/bilder/andreas-sturm-profil.jpg"
@@ -80,7 +105,19 @@ export default function Schema() {
             "bestRating": "5",
             "worstRating": "1",
             "url": "https://share.google/8UoKWrgoWbfFIPX"
-        }
+        },
+        "knowsAbout": [
+            "Werbeagentur",
+            "Web agentur",
+            "Webagentur",
+            "Werbeagentur Website",
+            "SEO Agentur Niederösterreich",
+            "Suchmaschinenoptimierung Niederösterreich",
+            "Website Werbeagentur",
+            "Webdesign",
+            "KI-Marketing",
+            "GEO"
+        ]
     };
 
 
@@ -146,8 +183,8 @@ export default function Schema() {
         "@type": "WebPage",
         "@id": "https://ki-marketingagentur.jetzt/#webpage",
         "url": "https://ki-marketingagentur.jetzt",
-        "name": "KI Werbeagentur Österreich | Webseiten, Landingpages & SEO",
-        "description": "Österreichs Nr. 1 KI-Werbeagentur für KMU. Wir erstellen moderne Webseiten, verkaufsstarke Landingpages und machen dich durch SEO & GEO zum Kundenmagneten.",
+        "name": "Werbeagentur & Webagentur | SEO Agentur & Suchmaschinenoptimierung Niederösterreich",
+        "description": "Als führende Webagentur und Werbeagentur erstellen wir deine verkaufsstarke Website. Deine SEO Agentur für Suchmaschinenoptimierung in Niederösterreich.",
         "primaryImageOfPage": {
             "@type": "ImageObject",
             "url": "https://ki-marketingagentur.jetzt/bilder/logo.png"

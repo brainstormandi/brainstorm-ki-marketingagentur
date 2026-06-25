@@ -24,7 +24,7 @@ export default function BlogIndex() {
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Home",
+        "name": "Startseite",
         "item": "https://ki-marketingagentur.jetzt/"
       },
       {
@@ -37,24 +37,24 @@ export default function BlogIndex() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[#F5EFE6] text-[#1C1C1C]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Navbar />
       
-      <main className="flex-grow pt-32 pb-24 bg-white">
+      <main className="flex-grow pt-32 pb-24 bg-[#F5EFE6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent text-gray-600 font-bold text-xs mb-8 uppercase tracking-widest border border-gray-200">
+            <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent text-[#1C1C1C]/40 font-bold text-xs mb-8 uppercase tracking-widest border border-[#1C1C1C]/15">
               Wissen & Insights
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.1] py-1 mb-6 uppercase">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] tracking-tight leading-[1.1] py-1 mb-6 uppercase">
               <span className="block">BrainStorm</span>
-              <span className="block text-transparent bg-clip-text pb-2 sm:pb-4" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>Blog.</span>
+              <span className="block text-[#F7C429] pb-2 sm:pb-4">Blog.</span>
             </h1>
-            <p className="text-xl text-gray-600 font-body">
+            <p className="text-xl text-[#1C1C1C]/70 font-[var(--font-inter)]">
               Insights, Strategien & Expertenwissen für deinen digitalen Vorsprung durch KI.
             </p>
           </div>
@@ -64,36 +64,36 @@ export default function BlogIndex() {
               <Link 
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group flex flex-col h-full bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-200 transition-all duration-300 hover:-translate-y-1"
+                className="group flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md border border-[#1C1C1C]/10 transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="relative h-60 w-full overflow-hidden">
                   <Image 
                     src={post.imageUrl} 
                     alt={post.title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 group-hover:scale-102"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C1C]/50 via-transparent to-transparent opacity-60"></div>
                 </div>
                 
                 <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex items-center gap-2 text-sm text-gray-500 font-medium mb-4">
-                    <Calendar className="w-4 h-4 text-[#F7C429]" />
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#1C1C1C]/50 mb-3 font-[var(--font-inter)]">
+                    <Calendar className="w-3.5 h-3.5 text-[#F7C429]" />
                     <span>{post.date}</span>
                   </div>
                   
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4 tracking-tight leading-tight group-hover:opacity-80 transition-opacity line-clamp-2">
+                  <h2 className="text-xl font-[var(--font-vollkorn)] font-bold text-[#1C1C1C] mb-3 tracking-tight leading-snug group-hover:text-[#1C1C1C]/80 transition-colors line-clamp-2">
                     {post.title}
                   </h2>
                   
-                  <p className="text-gray-600 text-base font-body mb-8 flex-grow line-clamp-3 leading-relaxed">
+                  <p className="text-[#1C1C1C]/70 text-sm font-[var(--font-inter)] mb-6 flex-grow line-clamp-3 leading-relaxed">
                     {post.excerpt}
                   </p>
                   
-                  <div className="mt-auto flex items-center text-gray-900 text-base font-semibold group-hover:opacity-70 transition-opacity">
+                  <div className="mt-auto flex items-center text-[#1C1C1C] text-sm font-bold uppercase tracking-wider group-hover:text-[#F7C429] transition-colors">
                     Artikel lesen
-                    <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform text-[#F7C429]" />
+                    <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1.5 transition-transform text-[#F7C429]" />
                   </div>
                 </div>
               </Link>

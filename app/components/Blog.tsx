@@ -4,95 +4,82 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ScrollReveal from './ScrollReveal';
 import { blogPosts } from '../data/blogData';
-import { ArrowRight, ArrowUpRight, Calendar } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
+// ally.co: "Trusted by Industry Leaders" — cream section with editorial cards
 const Blog = () => {
-  // Zeige nur die 2 neuesten Beiträge (wir nehmen einfach die ersten beiden aus dem Array)
-  const recentPosts = blogPosts.slice(0, 2);
+    const recentPosts = blogPosts.slice(0, 2);
 
-  return (
-    <section id="blog" className="scroll-mt-32 py-24 bg-white border-t border-gray-200 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal animation="reveal-up">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent text-gray-600 font-bold text-xs mb-6 sm:mb-8 uppercase tracking-widest border border-gray-200">
-              BrainStorm Blog
+    return (
+        <section id="blog" className="scroll-mt-20 bg-[#F5EFE6] py-20 md:py-28 lg:py-0 lg:min-h-screen lg:flex lg:flex-col lg:justify-center">
+            <div className="max-w-6xl mx-auto px-6 md:px-12">
+
+                {/* ── HEADER ROW ── */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-14">
+                    <ScrollReveal animation="reveal-right" className="lg:col-span-6">
+                        <span className="font-[var(--font-inter)] text-[11px] font-bold uppercase tracking-[0.18em] text-[#1C1C1C]/40 mb-4 block">
+                            BrainStorm Blog
+                        </span>
+                        <h2
+                            className="font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] leading-tight"
+                            style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
+                        >
+                            Das Werkzeug für{" "}
+                            <span className="text-underline-yellow">deinen Vorsprung.</span>
+                        </h2>
+                    </ScrollReveal>
+                    <ScrollReveal animation="reveal-left" delay={100} className="lg:col-span-6 flex flex-col justify-end gap-5">
+                        <p className="font-[var(--font-inter)] text-[#1C1C1C]/55 text-base leading-relaxed">
+                            Insights &amp; KI-Strategien direkt aus der Praxis – genau die Erkenntnisse, die regionale Betriebe stark machen.
+                        </p>
+                        <Link href="/blog" className="btn-secondary text-[15px] xl:text-[17px] py-2 px-5 w-max">
+                            Alle Artikel <ArrowRight className="w-4 h-4" />
+                        </Link>
+                    </ScrollReveal>
+                </div>
+
+                {/* ── BLOG CARDS (minimal ally-style) ── */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 bg-transparent">
+                    {recentPosts.map((post, index) => (
+                        <ScrollReveal key={post.slug} animation="reveal-up" delay={index * 120}>
+                            <Link href={`/blog/${post.slug}`}
+                                className="group flex flex-col h-full bg-[#F5EFE6] border border-[#D6CFC5] rounded-2xl overflow-hidden hover:bg-[#EDE7DB] hover:border-[#1C1C1C]/25 transition-all duration-200">
+                                {/* Image */}
+                                <div className="relative h-52 w-full overflow-hidden">
+                                    <Image
+                                        src={post.imageUrl} alt={post.title} fill
+                                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                    />
+                                </div>
+
+                                <div className="p-8 flex flex-col flex-grow">
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <span className="font-[var(--font-inter)] text-[10px] font-bold uppercase tracking-[0.15em] text-[#1C1C1C]/40">
+                                            {post.date}
+                                        </span>
+                                        <span className="w-1 h-1 rounded-full bg-[#1C1C1C]/20" />
+                                        <span className="font-[var(--font-inter)] text-[10px] font-bold uppercase tracking-[0.15em] text-[#1C1C1C]/40">
+                                            {post.author}
+                                        </span>
+                                    </div>
+                                    <h4 className="font-[var(--font-vollkorn)] text-xl font-semibold text-[#1C1C1C] mb-3 leading-snug line-clamp-2 flex-grow">
+                                        {post.title}
+                                    </h4>
+                                    <p className="font-[var(--font-inter)] text-[#1C1C1C]/55 text-sm mb-5 line-clamp-2 leading-relaxed">
+                                        {post.excerpt}
+                                    </p>
+                                    <div className="flex items-center font-[var(--font-inter)] text-[12px] font-bold uppercase tracking-[0.1em] text-[#1C1C1C] border-t border-[#1C1C1C]/10 pt-4">
+                                        Artikel lesen <ArrowRight className="w-3.5 h-3.5 ml-2 transition-transform group-hover:translate-x-1 text-[#F7C429]" />
+                                    </div>
+                                </div>
+                            </Link>
+                        </ScrollReveal>
+                    ))}
+                </div>
             </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-[var(--font-playfair)] font-medium text-gray-900 tracking-tight leading-[1.1] py-1 mb-4 uppercase">
-              <span className="block">Das Werkzeug für</span>
-              <span className="block text-transparent bg-clip-text pb-2 sm:pb-4" style={{backgroundImage: 'linear-gradient(180deg, #111827 0%, #374151 28%, #111827 48%, #4b5563 75%, #000000 100%)'}}>deinen Vorsprung.</span>
-            </h2>
-            
-            <p className="text-xl sm:text-2xl font-[var(--font-playfair)] font-medium text-[#F7C429] mb-6 uppercase tracking-wide">
-              Insights & KI-Strategien direkt aus der Praxis.
-            </p>
-            
-            <p className="text-gray-600 text-lg sm:text-xl leading-relaxed font-body max-w-4xl mx-auto">
-              Der Weg an die Spitze erfordert nicht nur Mut, sondern das richtige Wissen. In unserem Blog teilen wir als deine Strategen genau die Erkenntnisse, die regionale Betriebe stark machen. Hier erfährst du aus erster Hand, wie du modernste KI-Automatisierung für dich arbeiten lässt, psychologische Verkaufsstrategien anwendest und dich souverän gegen übermächtige Konkurrenz behauptest.
-            </p>
-          </div>
-        </ScrollReveal>
-
-        <div className="grid md:grid-cols-2 gap-10">
-          {recentPosts.map((post, index) => (
-            <ScrollReveal 
-              key={post.slug} 
-              animation="reveal-up" 
-              delay={index * 150}
-            >
-              <Link 
-                href={`/blog/${post.slug}`}
-                className="group flex flex-col h-full bg-transparent rounded-3xl overflow-hidden backdrop-blur-sm border border-gray-200 hover:border-[#F7C429]/50 hover:shadow-[0_4px_20px_rgba(247,196,41,0.3)] transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="relative h-64 w-full overflow-hidden">
-                  <Image 
-                    src={post.imageUrl} 
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent opacity-60"></div>
-                </div>
-                
-                <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex items-center gap-2 text-sm text-gray-500 font-medium mb-4">
-                    <Calendar className="w-4 h-4 text-[#F7C429]" />
-                    <span>{post.date}</span>
-                    <span className="mx-2 text-[#52525b]">•</span>
-                    <span>{post.author}</span>
-                  </div>
-                  
-                  <h4 className="text-2xl font-[var(--font-playfair)] font-medium text-gray-900 mb-4 tracking-normal leading-[1.1] group-hover:opacity-80 transition-opacity line-clamp-2">
-                    {post.title}
-                  </h4>
-                  
-                  <p className="text-gray-600 text-lg font-body mb-8 flex-grow line-clamp-3 leading-relaxed">
-                    {post.excerpt}
-                  </p>
-                  
-                  <div className="mt-auto flex items-center text-gray-900 text-base font-semibold group-hover:opacity-70 transition-opacity">
-                    Artikel lesen
-                    <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform text-[#F7C429]" />
-                  </div>
-                </div>
-              </Link>
-            </ScrollReveal>
-          ))}
-        </div>
-        
-        <ScrollReveal animation="reveal-up" delay={400} className="mt-16 text-center">
-          <Link 
-            href="/blog"
-            className="group inline-flex items-center justify-center gap-3 px-8 py-5 rounded-full bg-[#F7C429] text-black font-[var(--font-inter)] text-[13px] font-bold tracking-[0.15em] uppercase shadow-[0_10px_30px_rgba(247,196,41,0.4)] transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-black hover:text-[#F7C429] hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 cursor-pointer"
-          >
-            Alle Artikel ansehen
-            <ArrowUpRight className="w-[18px] h-[18px] transition-transform duration-400 group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </Link>
-        </ScrollReveal>
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
 
 export default Blog;
