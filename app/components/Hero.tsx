@@ -14,6 +14,7 @@ const Hero = () => {
                     aria-hidden="true"
                     className="w-full h-full object-cover object-[75%_center] sm:object-center"
                 >
+                    <source src="/video/werbeagentur-ki-video-3.webm" type="video/webm" />
                     <source src="/video/werbeagentur-ki-video-3.mp4" type="video/mp4" />
                 </video>
                 {/* linear gradient overlay: left solid cream #F5EFE5 fading to transparent right */}
