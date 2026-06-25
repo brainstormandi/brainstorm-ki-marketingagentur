@@ -25,8 +25,8 @@ const Hero = () => {
                 />
             </div>
 
-            {/* Content Container (vertically centered, left-aligned to the screen padding, shifted slightly right on desktop) */}
-            <div className="relative z-10 w-full h-full px-6 md:px-12 flex flex-col justify-center">
+            {/* Content Container (vertically centered on desktop, pushed down on mobile to avoid logo overlap) */}
+            <div className="relative z-10 w-full h-full px-6 md:px-12 flex flex-col justify-start pt-28 sm:pt-36 lg:pt-0 lg:justify-center">
                 <div className="max-w-4xl lg:pl-16 xl:pl-24">
                     <h1
                         className="font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] leading-[1.05] mb-6"

@@ -109,14 +109,19 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
                         
                         {/* Top Area: Logo and Close */}
                         <div className="flex justify-between items-center pb-6 border-b border-[#1C1C1C]/10">
-                            <div className="flex items-center gap-2 select-none">
-                                <div className="w-6 h-6 rounded-full bg-[#1C1C1C] flex items-center justify-center">
-                                    <span className="font-[var(--font-vollkorn)] font-bold text-[#F7C429] text-xs">B</span>
-                                </div>
-                                <span className="font-[var(--font-inter)] font-black text-[12px] tracking-[0.2em] uppercase text-[#1C1C1C]">
-                                    Brainstorm KI
-                                </span>
-                            </div>
+                            <Link 
+                                href="/"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="relative h-10 w-36 select-none shrink-0"
+                            >
+                                <Image 
+                                    src="/logo/logo.webp" 
+                                    alt="Brainstorm KI" 
+                                    fill 
+                                    className="object-contain object-left" 
+                                    priority
+                                />
+                            </Link>
                             <button 
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="p-2 text-[#1C1C1C] rounded-full border border-[#1C1C1C]/15 hover:bg-[#F7C429] hover:border-[#F7C429] transition-all cursor-pointer"
@@ -138,6 +143,24 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
                                     {item.name}
                                 </Link>
                             ))}
+                        </div>
+
+                        {/* Contact Info (email & phone links) */}
+                        <div className="flex flex-col gap-3 py-6 border-t border-[#1C1C1C]/10 font-[var(--font-inter)] text-[14px]">
+                            <a 
+                                href={`mailto:${CONTACT_INFO.email}`} 
+                                className="flex items-center gap-2.5 text-[#1C1C1C] hover:text-[#1C1C1C]/75 transition-colors no-underline font-semibold"
+                            >
+                                <span className="text-[#F7C429] text-[15px]">✉</span>
+                                <span>{CONTACT_INFO.email}</span>
+                            </a>
+                            <a 
+                                href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`} 
+                                className="flex items-center gap-2.5 text-[#1C1C1C] hover:text-[#1C1C1C]/75 transition-colors no-underline font-semibold"
+                            >
+                                <span className="text-[#F7C429] text-[15px]">📞</span>
+                                <span>{CONTACT_INFO.phone}</span>
+                            </a>
                         </div>
 
                         {/* Bottom Area: Ally-inspired headshot card */}
