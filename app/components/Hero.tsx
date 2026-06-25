@@ -10,7 +10,7 @@ const Hero = () => {
             {/* Video Background - full screen on desktop, flows above text on mobile */}
             <div className="relative w-full aspect-video lg:absolute lg:inset-0 lg:w-full lg:h-full lg:aspect-auto z-0 order-1 lg:order-none">
                 <video
-                    autoPlay muted playsInline loop preload="auto"
+                    autoPlay muted playsInline preload="auto"
                     aria-hidden="true"
                     className="w-full h-full object-cover object-[75%_center] sm:object-center"
                 >
