@@ -471,6 +471,8 @@ const AIAssistant = () => {
                     <button
                         onClick={() => { setIsOpen(true); startVoiceMode(false); }}
                         className="susi-sphere-btn relative rounded-full border-0 outline-none cursor-pointer active:scale-95 transition-transform duration-150"
+                        aria-label="KI-Assistentin Susi öffnen"
+                        title="KI-Assistentin Susi öffnen"
                         style={{
                             width: sphereSize, height: sphereSize
                         }}
