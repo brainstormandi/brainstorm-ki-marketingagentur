@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
 
 interface NavbarProps {
@@ -68,14 +68,12 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
 
                         {/* Call to Action */}
                         <div className="hidden sm:flex items-center">
-                            <a 
-                                href={CONTACT_INFO.calendly} 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
+                            <Link 
+                                href="/#contact" 
                                 className="btn-primary py-2 px-6 text-[15px] xl:text-[17px] whitespace-nowrap"
                             >
-                                Erstgespräch
-                            </a>
+                                Kontakt
+                            </Link>
                         </div>
 
                         {/* Hamburger menu */}
@@ -143,6 +141,13 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
                                     {item.name}
                                 </Link>
                             ))}
+                            <Link 
+                                href="/#contact"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="font-[var(--font-vollkorn)] font-semibold text-2xl tracking-tight text-[#1C1C1C] hover:text-[#F7C429] hover:translate-x-1 transition-all cursor-pointer"
+                            >
+                                Kontakt
+                            </Link>
                         </div>
 
                         {/* Contact Info (email & phone links) - Enlarged size */}

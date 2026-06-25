@@ -56,7 +56,7 @@ const LeadMagnet = () => {
                                 <p className="font-[var(--font-inter)] text-white/60 text-sm">Wir haben deine Daten erhalten und melden uns in Kürze mit deiner Analyse.</p>
                             </div>
                         ) : (
-                            <form className="bg-white/5 border border-white/10 p-8 md:p-10 rounded-3xl" onSubmit={handleSubmit}>
+                            <form className="bg-white/5 border border-white/10 p-5 sm:p-8 md:p-10 rounded-3xl" onSubmit={handleSubmit}>
                                 <div className="space-y-4 mb-6">
                                     <input
                                         type="url" value={url} onChange={(e) => setUrl(e.target.value)}
@@ -69,10 +69,10 @@ const LeadMagnet = () => {
                                         className="w-full bg-white/5 border border-white/15 text-white px-5 py-4 outline-none placeholder:text-white/25 font-[var(--font-inter)] text-sm focus:border-[#F7C429] transition-colors rounded-xl"
                                     />
                                 </div>
-                                <button disabled={isSubmitting} type="submit" className="w-full btn-primary text-[15px] xl:text-[17px] py-4 px-6 flex justify-center items-center gap-2 disabled:opacity-60 whitespace-normal sm:whitespace-nowrap">
+                                <button disabled={isSubmitting} type="submit" className="w-full btn-primary text-sm sm:text-base py-4 px-6 flex justify-center items-center gap-2 disabled:opacity-60 !whitespace-normal">
                                     {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : (
-                                        <span className="flex items-center gap-2">
-                                            <span>Kostenlosen Webseiten-Check anfragen</span> <ArrowRight className="w-4 h-4 shrink-0" />
+                                        <span className="flex items-center justify-center gap-2 flex-wrap text-center">
+                                            <span className="text-center">Kostenloser Webseiten-Check anfragen</span> <ArrowRight className="w-4 h-4 shrink-0" />
                                         </span>
                                     )}
                                 </button>
