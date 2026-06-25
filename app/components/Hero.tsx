@@ -12,7 +12,7 @@ const Hero = () => {
                 <video
                     autoPlay muted playsInline
                     aria-hidden="true"
-                    className="w-full h-full object-cover object-[25%_center] sm:object-center"
+                    className="w-full h-full object-cover object-[75%_center] sm:object-center"
                 >
                     <source src="/video/werbeagentur-ki-video-3.mp4" type="video/mp4" />
                 </video>
