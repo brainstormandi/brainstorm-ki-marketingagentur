@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { TESTIMONIALS, GOOGLE_REVIEW_LINK } from '../constants';
 
@@ -7,6 +7,32 @@ const TestimonialSlider = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
     const [isMobile, setIsMobile] = useState(true);
+    
+    const touchStartXRef = useRef<number | null>(null);
+
+    const handleTouchStart = (e: React.TouchEvent) => {
+        touchStartXRef.current = e.touches[0].clientX;
+        setIsHovered(true);
+    };
+
+    const handleTouchEnd = (e: React.TouchEvent) => {
+        setIsHovered(false);
+        if (touchStartXRef.current === null) return;
+        
+        const touchEndX = e.changedTouches[0].clientX;
+        const diffX = touchStartXRef.current - touchEndX;
+        const minSwipeDistance = 50; // min distance in px
+        
+        if (diffX > minSwipeDistance) {
+            // Swipe left -> Next
+            setActiveIndex((prev) => (prev + 1) % TESTIMONIALS.length);
+        } else if (diffX < -minSwipeDistance) {
+            // Swipe right -> Prev
+            setActiveIndex((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+        }
+        
+        touchStartXRef.current = null;
+    };
 
     // Track if screen is mobile to toggle 3D Coverflow on/off
     useEffect(() => {
@@ -95,8 +121,8 @@ const TestimonialSlider = () => {
             className="relative w-full max-w-5xl mx-auto px-4 py-8 flex flex-col items-center select-none"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            onTouchStart={() => setIsHovered(true)}
-            onTouchEnd={() => setIsHovered(false)}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
         >
             {/* ── 3D SLIDER VIEWPORT ── */}
             <div className="relative w-full h-[470px] md:h-[460px] flex items-center justify-center overflow-visible md:perspective-[900px]">
