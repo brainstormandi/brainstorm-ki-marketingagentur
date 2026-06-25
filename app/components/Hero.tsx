@@ -10,12 +10,11 @@ const Hero = () => {
             {/* Video Background - full screen on desktop, flows above text on mobile */}
             <div className="relative w-full aspect-video lg:absolute lg:inset-0 lg:w-full lg:h-full lg:aspect-auto z-0 order-1 lg:order-none">
                 <video
-                    autoPlay muted playsInline
+                    autoPlay muted playsInline loop preload="auto"
                     aria-hidden="true"
                     className="w-full h-full object-cover object-[75%_center] sm:object-center"
                 >
                     <source src="/video/werbeagentur-ki-video-3.webm" type="video/webm" />
-                    <source src="/video/werbeagentur-ki-video-3.mp4" type="video/mp4" />
                 </video>
                 {/* linear gradient overlay: left solid cream #F5EFE5 fading to transparent right (desktop only) */}
                 <div 

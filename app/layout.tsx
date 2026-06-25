@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Outfit, Playfair_Display, Inter, Vollkorn } from "next/font/google";
+import { Playfair_Display, Inter, Vollkorn } from "next/font/google";
 import "./globals.css";
 import Schema from "./components/Schema";
 import StickyCTA from "./components/StickyCTA";
 
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair", weight: ["400", "500", "600", "700", "800", "900"] });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", weight: ["400", "500", "600", "700", "800"] });
 const vollkorn = Vollkorn({ subsets: ["latin"], variable: "--font-vollkorn", weight: ["400", "500", "600", "700", "800", "900"], style: ["normal", "italic"] });
@@ -61,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang="de" className="scroll-smooth" suppressHydrationWarning={true}>
       <body
-        className={`${outfit.variable} ${playfair.variable} ${inter.variable} ${vollkorn.variable} font-sans antialiased text-[#1C1C1C] bg-[#F5EFE6]`}
+        className={`${playfair.variable} ${inter.variable} ${vollkorn.variable} font-sans antialiased text-[#1C1C1C] bg-[#F5EFE6]`}
         suppressHydrationWarning={true}
       >
         <Schema />
