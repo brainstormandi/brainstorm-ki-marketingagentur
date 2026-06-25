@@ -5,10 +5,10 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section className="w-full bg-[#F5EFE6] overflow-hidden flex flex-col relative lg:h-[calc(100vh-80px)] lg:min-h-[650px]">
+        <section className="w-full bg-[#F5EFE6] overflow-hidden flex flex-col relative pt-28 sm:pt-32 lg:pt-0 lg:h-[calc(100vh-80px)] lg:min-h-[650px]">
             
-            {/* Video Background - full screen on desktop, flows under text on mobile */}
-            <div className="relative w-full aspect-video lg:absolute lg:inset-0 lg:w-full lg:h-full lg:aspect-auto z-0 order-2 lg:order-none">
+            {/* Video Background - full screen on desktop, flows above text on mobile */}
+            <div className="relative w-full aspect-video lg:absolute lg:inset-0 lg:w-full lg:h-full lg:aspect-auto z-0 order-1 lg:order-none">
                 <video
                     autoPlay muted playsInline
                     aria-hidden="true"
@@ -27,7 +27,7 @@ const Hero = () => {
             </div>
 
             {/* Content Container (vertically centered on desktop, flows naturally on mobile) */}
-            <div className="relative z-10 w-full px-6 md:px-12 flex flex-col justify-start pt-28 sm:pt-36 pb-12 lg:absolute lg:inset-0 lg:h-full lg:justify-center lg:py-0 order-1 lg:order-none">
+            <div className="relative z-10 w-full px-6 md:px-12 flex flex-col justify-start pt-8 pb-16 lg:absolute lg:inset-0 lg:h-full lg:justify-center lg:py-0 order-2 lg:order-none">
                 <div className="max-w-4xl lg:pl-16 xl:pl-24">
                     <h1
                         className="font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] leading-[1.05] mb-6"
