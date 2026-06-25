@@ -19,7 +19,8 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
         { name: 'Erfolgsgeschichten', href: '/#success' },
         { name: 'Fahrplan', href: '/#process' },
         { name: 'Gratis Check', href: '/#website-check' },
-        { name: 'Wissen', href: '/#blog' }
+        { name: 'FAQ', href: '/#faq' },
+        { name: 'Blog', href: '/#blog' }
     ];
 
     const isDark = theme === 'dark';
