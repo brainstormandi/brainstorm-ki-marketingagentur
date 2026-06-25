@@ -28,7 +28,7 @@ const LeadMagnet = () => {
     return (
         <section id="website-check" className="scroll-mt-20 bg-[#1C1C1C] py-20 md:py-28 lg:py-0 lg:min-h-screen lg:flex lg:flex-col lg:justify-center">
             <div className="max-w-6xl mx-auto px-6 md:px-12">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
                     <div className="lg:col-span-6">
                         <span className="font-[var(--font-inter)] text-[11px] font-bold uppercase tracking-[0.18em] text-[#F7C429] mb-4 block">
                             Kostenloser Webseiten-Check
