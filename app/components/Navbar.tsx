@@ -112,7 +112,7 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
                             <Link 
                                 href="/"
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className="relative h-12 w-44 select-none shrink-0"
+                                className="relative h-20 w-72 select-none shrink-0"
                             >
                                 <Image 
                                     src="/logo/logo.webp" 
@@ -124,7 +124,7 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
                             </Link>
                             <button 
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className="p-2 text-[#1C1C1C] rounded-full border border-[#1C1C1C]/15 hover:bg-[#F7C429] hover:border-[#F7C429] transition-all cursor-pointer"
+                                className="p-2 text-[#1C1C1C] rounded-full border border-[#1C1C1C]/15 hover:bg-[#F7C429] hover:border-[#F7C429] transition-all cursor-pointer shrink-0"
                                 aria-label="Menü schließen"
                             >
                                 <X className="w-4 h-4" />
@@ -145,51 +145,22 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
                             ))}
                         </div>
 
-                        {/* Contact Info (email & phone links) */}
-                        <div className="flex flex-col gap-3 py-6 border-t border-[#1C1C1C]/10 font-[var(--font-inter)] text-[14px]">
+                        {/* Contact Info (email & phone links) - Enlarged size */}
+                        <div className="flex flex-col gap-4 py-8 border-t border-[#1C1C1C]/10 font-[var(--font-inter)] text-[16px] sm:text-[18px]">
                             <a 
                                 href={`mailto:${CONTACT_INFO.email}`} 
-                                className="flex items-center gap-2.5 text-[#1C1C1C] hover:text-[#1C1C1C]/75 transition-colors no-underline font-semibold"
+                                className="flex items-center gap-3 text-[#1C1C1C] hover:text-[#1C1C1C]/75 transition-colors no-underline font-semibold"
                             >
-                                <span className="text-[#F7C429] text-[15px]">✉</span>
+                                <span className="text-[#F7C429] text-[18px] sm:text-[20px]">✉</span>
                                 <span>{CONTACT_INFO.email}</span>
                             </a>
                             <a 
                                 href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`} 
-                                className="flex items-center gap-2.5 text-[#1C1C1C] hover:text-[#1C1C1C]/75 transition-colors no-underline font-semibold"
+                                className="flex items-center gap-3 text-[#1C1C1C] hover:text-[#1C1C1C]/75 transition-colors no-underline font-semibold"
                             >
-                                <span className="text-[#F7C429] text-[15px]">📞</span>
+                                <span className="text-[#F7C429] text-[18px] sm:text-[20px]">📞</span>
                                 <span>{CONTACT_INFO.phone}</span>
                             </a>
-                        </div>
-
-                        {/* Bottom Area: Ally-inspired headshot card */}
-                        <div className="border border-[#1C1C1C]/10 bg-[#EDE7DB] p-5">
-                            <div className="flex gap-4 items-center">
-                                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#F7C429] flex-shrink-0">
-                                    <Image 
-                                        src="/bilder/andi-sturm.png" 
-                                        alt="Andi Sturm" 
-                                        fill
-                                        className="object-cover object-top"
-                                        sizes="48px"
-                                    />
-                                    <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-white" />
-                                </div>
-                                <div className="flex flex-col">
-                                    <h3 className="font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] text-base leading-snug">
-                                        Sprich direkt mit Andi Sturm
-                                    </h3>
-                                    <a 
-                                        href={CONTACT_INFO.calendly}
-                                        target="_blank" 
-                                        rel="noopener noreferrer" 
-                                        className="btn-primary py-2 px-5 text-[15px] xl:text-[17px] w-max mt-3"
-                                    >
-                                        Gespräch buchen
-                                    </a>
-                                </div>
-                            </div>
                         </div>
 
                     </div>
