@@ -18,8 +18,7 @@ export default function Schema() {
         "sameAs": [
             "https://www.facebook.com/BrainStorm.Werbeagentur",
             "https://www.linkedin.com/company/brainstorm-werbeagentur/",
-            "https://seitenstetten.gv.at/wirtschaft/company/brainstorm-werbeagentur",
-            "https://www.google.com/search?q=brainstorm+werbeagentur"
+            "https://seitenstetten.gv.at/wirtschaft/company/brainstorm-werbeagentur"
         ],
         "contactPoint": {
             "@type": "ContactPoint",
@@ -95,13 +94,12 @@ export default function Schema() {
             "https://www.facebook.com/BrainStorm.Werbeagentur",
             "https://www.linkedin.com/in/brainstorm-andi/",
             "https://www.linkedin.com/company/brainstorm-werbeagentur/",
-            "https://seitenstetten.gv.at/wirtschaft/company/brainstorm-werbeagentur",
-            "https://www.google.com/search?q=brainstorm+werbeagentur"
+            "https://seitenstetten.gv.at/wirtschaft/company/brainstorm-werbeagentur"
         ],
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5.0",
-            "reviewCount": "28",
+            "reviewCount": "32",
             "bestRating": "5",
             "worstRating": "1",
             "url": "https://share.google/8UoKWrgoWbfFIPX"
@@ -124,7 +122,8 @@ export default function Schema() {
     const personSchema = {
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": "Andi Sturm",
+        "name": "Andreas Sturm",
+        "alternateName": "Andi Sturm",
         "jobTitle": "Gründer & Visionär",
         "worksFor": {
             "@type": "Organization",
@@ -132,7 +131,7 @@ export default function Schema() {
         },
         "url": "https://www.linkedin.com/in/brainstorm-andi/",
         "image": "https://ki-marketingagentur.jetzt/bilder/andi-sturm.png",
-        "description": "Andi Sturm ist ein erfahrener Digital-Berater und Gründer der BrainStorm KI Werbeagentur mit über 32 Jahren Branchenerfahrung."
+        "description": "Andreas Sturm ist ein erfahrener Digital-Berater und Gründer der BrainStorm KI Werbeagentur mit über 32 Jahren Branchenerfahrung."
     };
 
     const serviceSchema = {
@@ -206,6 +205,19 @@ export default function Schema() {
         }))
     };
 
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Startseite",
+                "item": "https://ki-marketingagentur.jetzt/"
+            }
+        ]
+    };
+
     return (
         <>
             <script
@@ -243,6 +255,12 @@ export default function Schema() {
                 key="faq-schema-central"
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+            <script
+                id="breadcrumb-schema"
+                key="breadcrumb-schema"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
         </>
     );

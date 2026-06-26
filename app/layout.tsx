@@ -9,15 +9,15 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", weight: ["40
 const vollkorn = Vollkorn({ subsets: ["latin"], variable: "--font-vollkorn", weight: ["400", "500", "600", "700", "800", "900"], style: ["normal", "italic"] });
 
 export const metadata: Metadata = {
-  title: "Werbeagentur & Webagentur | SEO Agentur & Suchmaschinenoptimierung Niederösterreich",
-  description: "Als führende Webagentur und Werbeagentur erstellen wir deine verkaufsstarke Website. Deine SEO Agentur für Suchmaschinenoptimierung in Niederösterreich.",
+  title: "BrainStorm KI | Werbeagentur & SEO Agentur Niederösterreich",
+  description: "Moderne Webseiten, SEO & KI-Automatisierung für KMUs in Niederösterreich. Live in 5-7 Tagen. Jetzt kostenlosen Webseiten-Check sichern!",
   keywords: ["werbeagentur", "web agentur", "webagentur", "werbeagentur website", "seo agentur niederösterreich", "suchmaschinenoptimierung niederösterreich", "website werbeagentur", "KI Werbeagentur Österreich", "Webseite erstellen lassen KMU", "SEO Seitenstetten", "GEO Marketing"],
-  authors: [{ name: "Andi Sturm" }],
-  creator: "Andi Sturm",
+  authors: [{ name: "Andreas Sturm" }],
+  creator: "Andreas Sturm",
   publisher: "BrainStorm Werbeagentur",
   openGraph: {
-    title: "KI Werbeagentur Österreich | Webseiten, Landingpages & SEO",
-    description: "Wir erstellen moderne Webseiten, verkaufsstarke Landingpages und automatisierte KI-Lösungen für maximale Sichtbarkeit und Effizienz deines KMUs.",
+    title: "BrainStorm KI | Werbeagentur & SEO Agentur Niederösterreich",
+    description: "Moderne Webseiten, SEO & KI-Automatisierung für KMUs in Niederösterreich. Live in 5-7 Tagen. Jetzt kostenlosen Webseiten-Check sichern!",
     url: "https://ki-marketingagentur.jetzt",
     siteName: "BrainStorm Werbeagentur",
     locale: "de_AT",
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BrainStorm KI | Web & KI aus Seitenstetten",
-    description: "Professionelle Webseiten und KI-Lösungen für maximale Sichtbarkeit deines KMUs.",
+    title: "BrainStorm KI | Werbeagentur & SEO Agentur Niederösterreich",
+    description: "Moderne Webseiten, SEO & KI-Automatisierung für KMUs. Live in 5-7 Tagen.",
     creator: "@andi_sturm",
     images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
   },
@@ -59,10 +59,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" className="scroll-smooth" suppressHydrationWarning={true}>
+
       <body
         className={`${playfair.variable} ${inter.variable} ${vollkorn.variable} font-sans antialiased text-[#1C1C1C] bg-[#F5EFE6]`}
         suppressHydrationWarning={true}
       >
+        {/* #23: Skip Navigation für Barrierefreiheit (BFSG / WCAG 2.1) */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-[#F7C429] focus:text-[#1C1C1C] focus:font-bold focus:rounded-lg focus:shadow-lg"
+        >
+          Zum Hauptinhalt springen
+        </a>
         <Schema />
         {children}
         <StickyCTA />

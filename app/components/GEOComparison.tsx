@@ -4,26 +4,26 @@ import { Check, X } from 'lucide-react';
 
 const GEOComparison = () => {
     return (
-        <section className="py-32 bg-white text-gray-900 overflow-hidden relative">
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,rgba(247, 196, 41,0.05),transparent)] pointer-events-none"></div>
+        <section className="py-32 bg-[#F5EFE6] text-[#1C1C1C] overflow-hidden relative">
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,rgba(247,196,41,0.06),transparent)] pointer-events-none"></div>
 
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-20 animate-reveal-up">
-                    <h2 className="text-4xl sm:text-5xl font-[var(--font-playfair)] font-medium mb-6 tracking-wide bg-gradient-to-br from-white to-[#404040] bg-clip-text text-transparent">
-                        Was ist <span className="text-[#F7C429] [-webkit-text-fill-color:#F7C429]">GEO</span> & warum brauchst du es?
+                    <h2 className="text-4xl sm:text-5xl font-[var(--font-playfair)] font-medium mb-6 tracking-wide text-[#1C1C1C]">
+                        Was ist <span className="text-[#F7C429]">GEO</span> & warum brauchst du es?
                     </h2>
-                    <p className="text-xl text-gray-600 font-body max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-xl text-[#1C1C1C]/65 font-body max-w-3xl mx-auto leading-relaxed">
                         Die Welt der Suche verändert sich. Während klassisches SEO für Google optimiert, sorgt GEO (Generative Engine Optimization) dafür, dass du von KIs wie ChatGPT und Perplexity empfohlen wirst.
                     </p>
                 </div>
 
-                <div className="bg-gray-50/50 backdrop-blur-sm rounded-[3rem] border border-gray-200 overflow-hidden animate-reveal-up transition-all hover:border-[#F7C429]/50 hover:shadow-[0_0_30px_rgba(247, 196, 41,0.05)]">
+                <div className="bg-[#1C1C1C]/5 backdrop-blur-sm rounded-[3rem] border border-[#1C1C1C]/10 overflow-hidden animate-reveal-up transition-all hover:border-[#F7C429]/50 hover:shadow-[0_0_30px_rgba(247,196,41,0.08)]">
                     <div className="overflow-x-auto">
                         <table className="w-full text-left">
                             <thead>
-                                <tr className="border-b border-gray-200">
-                                    <th className="px-8 py-10 font-bold font-sans text-lg text-gray-600">Strategie</th>
-                                    <th className="px-8 py-10 font-bold font-sans text-2xl tracking-normal text-gray-900">Klassisches Marketing</th>
+                                <tr className="border-b border-[#1C1C1C]/10">
+                                    <th className="px-8 py-10 font-bold font-sans text-lg text-[#1C1C1C]/50">Strategie</th>
+                                    <th className="px-8 py-10 font-bold font-sans text-2xl tracking-normal text-[#1C1C1C]/70">Klassisches Marketing</th>
                                     <th className="px-8 py-10 font-bold font-[var(--font-playfair)] text-2xl tracking-wide text-[#F7C429]">BrainStorm KI & GEO</th>
                                 </tr>
                             </thead>
@@ -54,13 +54,13 @@ const GEOComparison = () => {
                 </div>
 
                 <div className="mt-16 grid sm:grid-cols-2 gap-8 animate-reveal-up reveal-delay-300">
-                    <div className="p-8 rounded-[2rem] bg-gray-50/50 border border-gray-200">
-                        <h4 className="font-[var(--font-playfair)] font-medium text-2xl tracking-wide mb-4 text-gray-900">Entity Recognition</h4>
-                        <p className="text-gray-600 font-body leading-relaxed">Durch saubere Schema.org Daten erkennt die KI dein Unternehmen als vertrauenswürdige Autorität in deiner Region.</p>
+                    <div className="p-8 rounded-[2rem] bg-[#1C1C1C]/5 border border-[#1C1C1C]/10">
+                        <h4 className="font-[var(--font-playfair)] font-medium text-2xl tracking-wide mb-4 text-[#1C1C1C]">Entity Recognition</h4>
+                        <p className="text-[#1C1C1C]/65 font-body leading-relaxed">Durch saubere Schema.org Daten erkennt die KI dein Unternehmen als vertrauenswürdige Autorität in deiner Region.</p>
                     </div>
-                    <div className="p-8 rounded-[2rem] bg-gray-50/50 border border-gray-200">
-                        <h4 className="font-[var(--font-playfair)] font-medium text-2xl tracking-wide mb-4 text-gray-900">Citation Strategy</h4>
-                        <p className="text-gray-600 font-body leading-relaxed">Wir optimieren deine Inhalte so, dass sie von KI-Modellen als Primärdatenquelle zitiert werden.</p>
+                    <div className="p-8 rounded-[2rem] bg-[#1C1C1C]/5 border border-[#1C1C1C]/10">
+                        <h4 className="font-[var(--font-playfair)] font-medium text-2xl tracking-wide mb-4 text-[#1C1C1C]">Citation Strategy</h4>
+                        <p className="text-[#1C1C1C]/65 font-body leading-relaxed">Wir optimieren deine Inhalte so, dass sie von KI-Modellen als Primärdatenquelle zitiert werden.</p>
                     </div>
                 </div>
             </div>

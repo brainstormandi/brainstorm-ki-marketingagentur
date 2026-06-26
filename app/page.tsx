@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <div className="min-h-screen relative bg-[#F5EFE6]">
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
         <ChallengeSection />
 

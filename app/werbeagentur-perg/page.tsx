@@ -46,7 +46,7 @@ export default function WerbeagenturPerg() {
     "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
-        "reviewCount": "28",
+        "reviewCount": "32",
         "bestRating": "5",
         "worstRating": "1",
         "url": "https://share.google/8UoKWrgoWbfFIPX"
