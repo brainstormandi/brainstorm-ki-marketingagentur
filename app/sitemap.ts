@@ -42,10 +42,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Dynamic Blog Posts from central data
+  // Note: post.date is in German format ("1. Juni 2026") which can't be parsed by new Date()
+  // Using LAST_CONTENT_UPDATE as a safe, consistent value
   const blogRoutes = blogPosts.map(post => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    // Blog-Posts: Datum aus den Post-Daten ableiten, Fallback auf Launch
-    lastModified: post.date ? new Date(post.date) : SITE_LAUNCH,
+    lastModified: LAST_CONTENT_UPDATE,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
