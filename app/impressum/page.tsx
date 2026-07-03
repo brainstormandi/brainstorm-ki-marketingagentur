@@ -87,8 +87,6 @@ export default function ImpressumPage() {
                                 <h2 className="text-xl font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] mb-4">Rechtlicher Hinweis zur Streitbeilegung</h2>
                                 <p className="text-[#1C1C1C]/70 leading-relaxed">
                                     Die EU hat ein Online-Verfahren zur Beilegung von Streitigkeiten zwischen Unternehmern und Verbrauchern geschaffen. Informationen dazu finden Sie unter <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-[#1C1C1C] underline font-medium hover:text-[#1C1C1C]/80">https://ec.europa.eu/consumers/odr/</a>.
-                                    <br /><br />
-                                    Sinzinger Schilfdachdeckungen beteiligt sich nicht an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle.
                                 </p>
                             </div>
                         </section>
