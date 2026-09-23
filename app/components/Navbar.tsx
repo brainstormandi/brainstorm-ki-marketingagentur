@@ -104,18 +104,18 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
                     />
                     
                     {/* Drawer Content */}
-                    <div className="relative ml-auto w-full max-w-[380px] h-full bg-[#F5EFE6] border-l border-[#1C1C1C]/10 flex flex-col p-5 sm:p-10 overflow-y-auto shadow-2xl justify-between">
+                    <div className="relative ml-auto w-full max-w-[380px] h-[100dvh] bg-[#F5EFE6] border-l border-[#1C1C1C]/10 flex flex-col p-5 sm:p-8 overflow-y-auto shadow-2xl justify-between">
                         
                         {/* Top Area: Logo and Close */}
-                        <div className="flex justify-between items-center pb-3 sm:pb-5 border-b border-[#1C1C1C]/10 shrink-0">
+                        <div className="flex justify-between items-center pb-3 sm:pb-4 border-b border-[#1C1C1C]/10 shrink-0">
                             <Link 
                                 href="/"
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className="relative h-12 w-48 sm:h-16 sm:w-60 select-none shrink-0"
+                                className="relative h-[68px] w-60 sm:h-20 sm:w-72 select-none shrink-0"
                             >
                                 <Image 
                                     src="/logo/logo.webp" 
-                                    alt="Brainstorm KI" 
+                                    alt="BrainStorm KI" 
                                     fill 
                                     className="object-contain object-left" 
                                     priority
@@ -123,21 +123,21 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
                             </Link>
                             <button 
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className="p-2 text-[#1C1C1C] rounded-full border border-[#1C1C1C]/15 hover:bg-[#F7C429] hover:border-[#F7C429] transition-all cursor-pointer shrink-0"
+                                className="p-2 sm:p-2.5 text-[#1C1C1C] rounded-full border border-[#1C1C1C]/15 hover:bg-[#F7C429] hover:border-[#F7C429] transition-all cursor-pointer shrink-0"
                                 aria-label="Menü schließen"
                             >
-                                <X className="w-4 h-4" />
+                                <X className="w-5 h-5" />
                             </button>
                         </div>
 
-                        {/* Middle Area: Links list with reduced gaps */}
-                        <div className="flex flex-col gap-2 sm:gap-3 py-3 sm:py-6 my-auto">
+                        {/* Middle Area: Links list */}
+                        <div className="flex flex-col gap-2 sm:gap-3 py-2 sm:py-4 my-auto">
                             {menuItems.map((item) => (
                                 <Link 
                                     key={item.name} 
                                     href={item.href}
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="font-[var(--font-vollkorn)] font-semibold text-lg sm:text-xl md:text-2xl tracking-tight text-[#1C1C1C] hover:text-[#F7C429] hover:translate-x-1 transition-all cursor-pointer leading-tight"
+                                    className="font-[var(--font-vollkorn)] font-semibold text-[22px] sm:text-2xl tracking-tight text-[#1C1C1C] hover:text-[#F7C429] hover:translate-x-1 transition-all cursor-pointer leading-tight"
                                 >
                                     {item.name}
                                 </Link>
@@ -145,27 +145,25 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
                             <Link 
                                 href="/#kontakt"
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className="font-[var(--font-vollkorn)] font-semibold text-lg sm:text-xl md:text-2xl tracking-tight text-[#1C1C1C] hover:text-[#F7C429] hover:translate-x-1 transition-all cursor-pointer leading-tight"
+                                className="font-[var(--font-vollkorn)] font-semibold text-[22px] sm:text-2xl tracking-tight text-[#1C1C1C] hover:text-[#F7C429] hover:translate-x-1 transition-all cursor-pointer leading-tight"
                             >
                                 Kontakt
                             </Link>
                         </div>
 
-                        {/* Contact Info (email & phone links) - compact & fully visible */}
-                        <div className="flex flex-col gap-2 sm:gap-3 pt-3 sm:pt-5 border-t border-[#1C1C1C]/10 font-[var(--font-inter)] text-xs sm:text-base shrink-0">
-                            <a 
-                                href={`mailto:${CONTACT_INFO.email}`} 
-                                className="flex items-center gap-2.5 text-[#1C1C1C] hover:text-[#1C1C1C]/75 transition-colors no-underline font-semibold whitespace-nowrap"
-                            >
-                                <span className="text-[#F7C429] text-base sm:text-lg">✉</span>
-                                <span className="truncate">{CONTACT_INFO.email}</span>
-                            </a>
+                        {/* Contact Info Buttons (Phone & Email) - styled like desktop version, no icons */}
+                        <div className="flex flex-col gap-2 sm:gap-2.5 pt-3 sm:pt-4 border-t border-[#1C1C1C]/10 font-[var(--font-inter)] shrink-0">
                             <a 
                                 href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`} 
-                                className="flex items-center gap-2.5 text-[#1C1C1C] hover:text-[#1C1C1C]/75 transition-colors no-underline font-semibold whitespace-nowrap"
+                                className="w-full py-2.5 sm:py-3 px-4 rounded-xl font-[var(--font-inter)] font-bold text-sm sm:text-base flex items-center justify-center bg-[#F7C429] text-[#1C1C1C] border-2 border-[#F7C429] hover:bg-[#1C1C1C] hover:text-[#F7C429] hover:border-[#1C1C1C] transition-all duration-200 shadow-sm cursor-pointer whitespace-nowrap"
                             >
-                                <span className="text-[#F7C429] text-base sm:text-lg">📞</span>
                                 <span>{CONTACT_INFO.phone}</span>
+                            </a>
+                            <a 
+                                href={`mailto:${CONTACT_INFO.email}`} 
+                                className="w-full py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl font-[var(--font-inter)] font-bold text-[13px] sm:text-sm md:text-base flex items-center justify-center bg-[#1C1C1C] text-white border-2 border-[#1C1C1C] hover:bg-[#F7C429] hover:text-[#1C1C1C] hover:border-[#F7C429] transition-all duration-200 shadow-sm cursor-pointer whitespace-nowrap tracking-tight sm:tracking-normal"
+                            >
+                                <span>{CONTACT_INFO.email}</span>
                             </a>
                         </div>
 
