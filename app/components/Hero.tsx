@@ -33,7 +33,7 @@ const Hero = () => {
             <div className="relative z-10 w-full px-6 md:px-12 flex flex-col justify-start pt-8 pb-16 lg:absolute lg:inset-0 lg:h-full lg:justify-center lg:py-0 order-2 lg:order-none">
                 <div className="max-w-4xl lg:pl-16 xl:pl-24">
                     <h1
-                        className="font-[var(--font-vollkorn)] font-bold text-[#1C1C1C] leading-[1.08] mb-6"
+                        className="font-[var(--font-vollkorn)] font-bold text-[#1C1C1C] leading-tight lg:leading-[1.08] mb-6"
                         style={{ fontSize: 'clamp(1.85rem, 5.8vw, 5rem)' }}
                     >
                         Mehr Zeit. <br />

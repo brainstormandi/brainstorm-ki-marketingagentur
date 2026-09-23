@@ -104,14 +104,14 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
                     />
                     
                     {/* Drawer Content */}
-                    <div className="relative ml-auto w-full max-w-[400px] h-full bg-[#F5EFE6] border-l border-[#1C1C1C]/10 flex flex-col p-8 sm:p-12 overflow-y-auto shadow-2xl justify-between">
+                    <div className="relative ml-auto w-full max-w-[380px] h-full bg-[#F5EFE6] border-l border-[#1C1C1C]/10 flex flex-col p-5 sm:p-10 overflow-y-auto shadow-2xl justify-between">
                         
                         {/* Top Area: Logo and Close */}
-                        <div className="flex justify-between items-center pb-6 border-b border-[#1C1C1C]/10">
+                        <div className="flex justify-between items-center pb-3 sm:pb-5 border-b border-[#1C1C1C]/10 shrink-0">
                             <Link 
                                 href="/"
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className="relative h-20 w-72 select-none shrink-0"
+                                className="relative h-12 w-48 sm:h-16 sm:w-60 select-none shrink-0"
                             >
                                 <Image 
                                     src="/logo/logo.webp" 
@@ -130,14 +130,14 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
                             </button>
                         </div>
 
-                        {/* Middle Area: Links list */}
-                        <div className="flex flex-col gap-4 py-8">
+                        {/* Middle Area: Links list with reduced gaps */}
+                        <div className="flex flex-col gap-2 sm:gap-3 py-3 sm:py-6 my-auto">
                             {menuItems.map((item) => (
                                 <Link 
                                     key={item.name} 
                                     href={item.href}
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="font-[var(--font-vollkorn)] font-semibold text-2xl tracking-tight text-[#1C1C1C] hover:text-[#F7C429] hover:translate-x-1 transition-all cursor-pointer"
+                                    className="font-[var(--font-vollkorn)] font-semibold text-lg sm:text-xl md:text-2xl tracking-tight text-[#1C1C1C] hover:text-[#F7C429] hover:translate-x-1 transition-all cursor-pointer leading-tight"
                                 >
                                     {item.name}
                                 </Link>
@@ -145,26 +145,26 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
                             <Link 
                                 href="/#kontakt"
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className="font-[var(--font-vollkorn)] font-semibold text-2xl tracking-tight text-[#1C1C1C] hover:text-[#F7C429] hover:translate-x-1 transition-all cursor-pointer"
+                                className="font-[var(--font-vollkorn)] font-semibold text-lg sm:text-xl md:text-2xl tracking-tight text-[#1C1C1C] hover:text-[#F7C429] hover:translate-x-1 transition-all cursor-pointer leading-tight"
                             >
                                 Kontakt
                             </Link>
                         </div>
 
-                        {/* Contact Info (email & phone links) - Enlarged size */}
-                        <div className="flex flex-col gap-4 py-8 border-t border-[#1C1C1C]/10 font-[var(--font-inter)] text-[16px] sm:text-[18px]">
+                        {/* Contact Info (email & phone links) - compact & fully visible */}
+                        <div className="flex flex-col gap-2 sm:gap-3 pt-3 sm:pt-5 border-t border-[#1C1C1C]/10 font-[var(--font-inter)] text-xs sm:text-base shrink-0">
                             <a 
                                 href={`mailto:${CONTACT_INFO.email}`} 
-                                className="flex items-center gap-3 text-[#1C1C1C] hover:text-[#1C1C1C]/75 transition-colors no-underline font-semibold"
+                                className="flex items-center gap-2.5 text-[#1C1C1C] hover:text-[#1C1C1C]/75 transition-colors no-underline font-semibold whitespace-nowrap"
                             >
-                                <span className="text-[#F7C429] text-[18px] sm:text-[20px]">✉</span>
-                                <span>{CONTACT_INFO.email}</span>
+                                <span className="text-[#F7C429] text-base sm:text-lg">✉</span>
+                                <span className="truncate">{CONTACT_INFO.email}</span>
                             </a>
                             <a 
                                 href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`} 
-                                className="flex items-center gap-3 text-[#1C1C1C] hover:text-[#1C1C1C]/75 transition-colors no-underline font-semibold"
+                                className="flex items-center gap-2.5 text-[#1C1C1C] hover:text-[#1C1C1C]/75 transition-colors no-underline font-semibold whitespace-nowrap"
                             >
-                                <span className="text-[#F7C429] text-[18px] sm:text-[20px]">📞</span>
+                                <span className="text-[#F7C429] text-base sm:text-lg">📞</span>
                                 <span>{CONTACT_INFO.phone}</span>
                             </a>
                         </div>
