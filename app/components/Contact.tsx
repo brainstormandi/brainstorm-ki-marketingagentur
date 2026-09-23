@@ -44,7 +44,7 @@ const Contact = () => {
                                     className="w-full py-3.5 px-6 rounded-xl font-[var(--font-inter)] font-bold text-base flex items-center justify-center gap-3 bg-[#F7C429] text-[#1C1C1C] border-2 border-[#F7C429] hover:bg-[#1C1C1C] hover:text-[#F7C429] hover:border-[#1C1C1C] transition-all duration-200 shadow-sm cursor-pointer"
                                 >
                                     <Phone className="w-5 h-5 shrink-0" />
-                                    <span>{CONTACT_INFO.phone} anrufen</span>
+                                    <span>{CONTACT_INFO.phone}</span>
                                 </a>
 
                                 {/* 2. Button: 2te BUTTON-FARBE (Anthrazit / Dunkel) */}
@@ -53,7 +53,7 @@ const Contact = () => {
                                     className="w-full py-3.5 px-6 rounded-xl font-[var(--font-inter)] font-bold text-base flex items-center justify-center gap-3 bg-[#1C1C1C] text-white border-2 border-[#1C1C1C] hover:bg-[#F7C429] hover:text-[#1C1C1C] hover:border-[#F7C429] transition-all duration-200 shadow-sm cursor-pointer"
                                 >
                                     <Mail className="w-5 h-5 shrink-0" />
-                                    <span>{CONTACT_INFO.email} schreiben</span>
+                                    <span>{CONTACT_INFO.email}</span>
                                 </a>
                             </div>
                         </div>
@@ -61,7 +61,7 @@ const Contact = () => {
 
                     {/* ── RIGHT: FOCUSED BOOKING CARD (50%, BÜNDIG MIT LINKS) ── */}
                     <ScrollReveal animation="reveal-left" delay={150} className="w-full h-full flex flex-col">
-                        <div className="bg-white p-7 sm:p-9 md:p-10 rounded-2xl border border-[#1C1C1C]/10 shadow-[0_10px_30px_-10px_rgba(28,28,28,0.06)] flex flex-col justify-between h-full">
+                        <div className="bg-white p-6 sm:p-9 md:p-10 rounded-2xl border border-[#1C1C1C]/10 shadow-[0_10px_30px_-10px_rgba(28,28,28,0.06)] flex flex-col justify-between h-full">
                             
                             <div>
                                 {/* Card Header with calendar icon & status */}
@@ -117,9 +117,10 @@ const Contact = () => {
                                     href={CONTACT_INFO.calendly} 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
-                                    className="btn-primary w-full py-4 px-6 text-center text-base sm:text-lg font-bold flex items-center justify-center gap-3 shadow-sm hover:-translate-y-0.5 transition-all"
+                                    className="btn-primary w-full py-3.5 sm:py-4 px-4 sm:px-6 text-center text-[15px] sm:text-base md:text-lg font-bold flex items-center justify-center gap-2 sm:gap-3 shadow-sm hover:-translate-y-0.5 transition-all whitespace-normal sm:whitespace-nowrap leading-snug"
                                 >
-                                    <span>Jetzt 15-Minuten-Gespräch sichern</span>
+                                    <span className="sm:hidden">15-Min.-Gespräch sichern</span>
+                                    <span className="hidden sm:inline">Jetzt 15-Minuten-Gespräch sichern</span>
                                     <ArrowRight className="w-5 h-5 shrink-0" />
                                 </a>
                                 <p className="font-[var(--font-inter)] text-xs text-[#1C1C1C]/60 text-center font-medium">
