@@ -332,8 +332,8 @@ export const FAQS: FAQItem[] = [
         category: "socialmedia"
     },
     {
-        question: "Muss ich für Social Media selbst Videos drehen oder Texte schreiben?",
-        answer: "Nein. In unserem Kombi-System übernehmen wir die Konzeption, ansprechende Grafiken, verkaufspsychologische Texte und die zielgerichtete Ausspielung komplett für dich. Du musst dich um nichts kümmern und profitierst von kontinuierlicher regionaler Reichweite.",
+        question: "Muss ich für Social Media selbst Bilder erstellen oder Texte schreiben?",
+        answer: "Nein, überhaupt nicht. Wenn du eigene Fotos von deinem Betrieb, deinen Projekten oder deinem Team hast, kannst du uns diese gerne beistellen. Falls nicht, ist das kein Problem: Wir generieren passende, professionelle Bilder und Grafiken einfach mit modernster KI. Auch alle verkaufspsychologischen Texte, die Themenplanung und die regionale Ausspielung übernehmen wir im Kombi-System komplett für dich.",
         category: "socialmedia"
     },
     {

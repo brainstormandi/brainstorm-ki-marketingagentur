@@ -41,18 +41,18 @@ const Contact = () => {
                                 {/* 1. Button: GELB */}
                                 <a 
                                     href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`}
-                                    className="w-full py-3.5 px-6 rounded-xl font-[var(--font-inter)] font-bold text-base flex items-center justify-center gap-3 bg-[#F7C429] text-[#1C1C1C] border-2 border-[#F7C429] hover:bg-[#1C1C1C] hover:text-[#F7C429] hover:border-[#1C1C1C] transition-all duration-200 shadow-sm cursor-pointer"
+                                    className="w-full py-3.5 px-4 sm:px-6 rounded-xl font-[var(--font-inter)] font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 sm:gap-3 bg-[#F7C429] text-[#1C1C1C] border-2 border-[#F7C429] hover:bg-[#1C1C1C] hover:text-[#F7C429] hover:border-[#1C1C1C] transition-all duration-200 shadow-sm cursor-pointer whitespace-nowrap"
                                 >
-                                    <Phone className="w-5 h-5 shrink-0" />
+                                    <Phone className="hidden sm:block w-5 h-5 shrink-0" />
                                     <span>{CONTACT_INFO.phone}</span>
                                 </a>
 
                                 {/* 2. Button: 2te BUTTON-FARBE (Anthrazit / Dunkel) */}
                                 <a 
                                     href={`mailto:${CONTACT_INFO.email}`}
-                                    className="w-full py-3.5 px-6 rounded-xl font-[var(--font-inter)] font-bold text-base flex items-center justify-center gap-3 bg-[#1C1C1C] text-white border-2 border-[#1C1C1C] hover:bg-[#F7C429] hover:text-[#1C1C1C] hover:border-[#F7C429] transition-all duration-200 shadow-sm cursor-pointer"
+                                    className="w-full py-3.5 px-3 sm:px-6 rounded-xl font-[var(--font-inter)] font-bold text-[13px] sm:text-base flex items-center justify-center gap-2.5 sm:gap-3 bg-[#1C1C1C] text-white border-2 border-[#1C1C1C] hover:bg-[#F7C429] hover:text-[#1C1C1C] hover:border-[#F7C429] transition-all duration-200 shadow-sm cursor-pointer whitespace-nowrap tracking-tight sm:tracking-normal"
                                 >
-                                    <Mail className="w-5 h-5 shrink-0" />
+                                    <Mail className="hidden sm:block w-5 h-5 shrink-0" />
                                     <span>{CONTACT_INFO.email}</span>
                                 </a>
                             </div>
