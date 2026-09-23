@@ -21,24 +21,25 @@ const Founder = () => {
     };
 
     return (
-        <section id="about" className="scroll-mt-20 bg-[#F7C429] text-[#1C1C1C] lg:min-h-screen lg:flex lg:flex-col lg:justify-between pb-0">
+        <section id="agentur" className="scroll-mt-20 bg-[#F7C429] text-[#1C1C1C] pt-16 md:pt-24 pb-0 relative">
+            <div id="about" className="sr-only" aria-hidden="true" />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
 
-            {/* ── TOP: BIG BELIEF STATEMENT ── */}
-            <div className="max-w-6xl mx-auto px-6 md:px-12 pt-20 lg:pt-28 pb-12">
-                <ScrollReveal animation="reveal-up">
-                    <h2
-                        className="font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] leading-[1.1] max-w-4xl"
-                        style={{ fontSize: 'clamp(2rem, 5vw, 4rem)' }}
-                    >
-                        KI ist das Werkzeug,<br />
-                        <span className="italic font-normal text-[#1C1C1C]/60">Marketing bleibt unser Handwerk.</span>
-                    </h2>
-                </ScrollReveal>
-            </div>
-
-            {/* ── BOTTOM: FOUNDER PHOTO + BIO (photo aligned at absolute bottom) ── */}
             <div className="max-w-6xl mx-auto px-6 md:px-12 pb-0">
+                {/* ── TOP: BIG BELIEF STATEMENT ── */}
+                <div className="mb-10 md:mb-14">
+                    <ScrollReveal animation="reveal-up">
+                        <h2
+                            className="font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] leading-[1.1] max-w-4xl"
+                            style={{ fontSize: 'clamp(2rem, 5vw, 4rem)' }}
+                        >
+                            KI ist das Werkzeug,<br />
+                            <span className="italic font-normal text-[#1C1C1C]/60">Marketing bleibt unser Handwerk.</span>
+                        </h2>
+                    </ScrollReveal>
+                </div>
+
+                {/* ── BOTTOM: FOUNDER PHOTO + BIO (photo aligned at absolute bottom) ── */}
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-end">
 
                     {/* Photo - self-end and pb-0 makes it align with the bottom margin of the section */}
@@ -68,11 +69,11 @@ const Founder = () => {
                                 <p className="font-[var(--font-inter)] text-[#1C1C1C] text-base leading-relaxed mb-6">
                                     Hallo, ich bin Andi Sturm. Seit über 32 Jahren begleite ich Betriebe in Österreich dabei, sichtbarer und erfolgreicher zu werden.
                                 </p>
-                                <p className="font-[var(--font-inter)] text-[#1C1C1C] text-base leading-relaxed mb-8">
-                                    Künstliche Intelligenz wirkt oft komplex oder gar bedrohlich. Doch du brauchst absolut kein technisches Vorwissen. Mein Team und ich übersetzen diese komplexe Technologie für dich in einfache, reibungslose Abläufe. Ich nenne das: <strong className="font-extrabold text-[#1C1C1C]">KI mit Handschlagqualität</strong>.
+                                <p className="font-[var(--font-inter)] text-[#1C1C1C]/80 text-base leading-relaxed mb-8">
+                                    KI kann Code und Text generieren. Aber KI versteht <strong className="font-bold text-[#1C1C1C]">weder den regionalen Markt noch deine Kunden</strong>. Ich verbinde die <strong className="font-bold text-[#1C1C1C]">Schnelligkeit modernster KI-Tools</strong> mit über drei Jahrzehnten <strong className="font-bold text-[#1C1C1C]">echter Unternehmer- und Marketingerfahrung</strong>.
                                 </p>
                             </div>
-                            <Link href="/#contact" className="btn-dark text-[15px] xl:text-[17px] py-2.5 px-6 w-max">
+                            <Link href="/#kontakt" className="btn-dark text-[15px] xl:text-[17px] py-2.5 px-6 w-max">
                                 Kontakt aufnehmen <ArrowRight className="w-4 h-4" />
                             </Link>
                         </ScrollReveal>

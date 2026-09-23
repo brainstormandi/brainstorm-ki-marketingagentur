@@ -24,7 +24,7 @@ const StickyCTA = () => {
       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
     }`}>
       <a 
-        href="/#contact" 
+        href="/#kontakt" 
         className="pointer-events-auto flex items-center justify-center gap-2 w-max max-w-full bg-white text-[#F7C429] border border-[#F7C429] font-bold py-4 px-6 rounded-full shadow-[0_4px_20px_rgba(247,196,41,0.3)] active:scale-95 transition-transform"
       >
         <PhoneCall className="w-5 h-5 flex-shrink-0" />

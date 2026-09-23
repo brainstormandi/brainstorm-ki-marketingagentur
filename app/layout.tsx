@@ -9,15 +9,83 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", weight: ["40
 const vollkorn = Vollkorn({ subsets: ["latin"], variable: "--font-vollkorn", weight: ["400", "500", "600", "700", "800", "900"], style: ["normal", "italic"] });
 
 export const metadata: Metadata = {
-  title: "BrainStorm KI | Werbeagentur & SEO Agentur Niederösterreich",
-  description: "Moderne Webseiten, SEO & KI-Automatisierung für KMUs in Niederösterreich. Live in 5-7 Tagen. Jetzt kostenlosen Webseiten-Check sichern!",
-  keywords: ["werbeagentur", "web agentur", "webagentur", "werbeagentur website", "seo agentur niederösterreich", "suchmaschinenoptimierung niederösterreich", "website werbeagentur", "KI Werbeagentur Österreich", "Webseite erstellen lassen KMU", "SEO Seitenstetten", "GEO Marketing"],
+  title: "BrainStorm KI | Werbeagentur, SEO & Social Recruiting Niederösterreich",
+  description: "Moderne Webseiten, Social Recruiting & Mitarbeitergewinnung, SEO/GEO & KI-Automatisierung für KMUs im Mostviertel & Niederösterreich. Live in 5-7 Tagen. Jetzt kostenlosen Webseiten-Check sichern!",
+  keywords: [
+    // Werbeagentur & Webdesign
+    "werbeagentur",
+    "web agentur",
+    "webagentur",
+    "werbeagentur website",
+    "website werbeagentur",
+    "werbeagentur niederösterreich",
+    "webdesign niederösterreich",
+    "homepage erstellen lassen niederösterreich",
+    "webseite erstellen lassen kmu",
+    "webdesign mostviertel",
+    "webdesigner seitenstetten",
+    "verkaufsstarke landingpage",
+    "sprint webseite 7 tage",
+    "barrierefreie website bfsg österreich",
+
+    // Social Recruiting & Mitarbeitergewinnung
+    "social recruiting",
+    "social recruiting österreich",
+    "social recruiting handwerk",
+    "mitarbeitergewinnung kmu",
+    "mitarbeiter finden niederösterreich",
+    "social recruiting mostviertel",
+    "fachkräfte finden handwerk",
+    "recruiting agentur niederösterreich",
+    "bewerber finden ohne ams willhaben",
+    "60 sekunden bewerbung handwerk",
+
+    // SEO, GEO & KI-Suche (AIO)
+    "seo agentur niederösterreich",
+    "suchmaschinenoptimierung niederösterreich",
+    "seo mostviertel",
+    "seo seitenstetten",
+    "seo agentur amstetten",
+    "local seo google maps",
+    "google maps optimieren mostviertel",
+    "geo marketing",
+    "generative engine optimization österreich",
+    "chatgpt optimierung österreich",
+    "ki suche ranking",
+    "perplexity optimierung",
+
+    // KI-Automatisierung & Lead-Gen
+    "ki werbeagentur österreich",
+    "ki agentur niederösterreich",
+    "ki prozessautomatisierung kmu",
+    "terminbuchung automatisieren",
+    "lead funnels kmu",
+    "kunden gewinnen autopilot",
+
+    // Social Media & Kampagnen
+    "social media agentur mostviertel",
+    "social media betreuung kmu",
+    "meta ads agentur niederösterreich",
+    "google ads agentur amstetten",
+    "online marketing mostviertel",
+
+    // Regionale Standorte & Mostviertel
+    "werbeagentur mostviertel",
+    "werbeagentur seitenstetten",
+    "werbeagentur amstetten",
+    "werbeagentur steyr",
+    "werbeagentur linz",
+    "werbeagentur perg",
+    "werbeagentur st pölten",
+    "werbeagentur waidhofen ybbs",
+    "werbeagentur haag"
+  ],
   authors: [{ name: "Andreas Sturm" }],
   creator: "Andreas Sturm",
   publisher: "BrainStorm Werbeagentur",
   openGraph: {
-    title: "BrainStorm KI | Werbeagentur & SEO Agentur Niederösterreich",
-    description: "Moderne Webseiten, SEO & KI-Automatisierung für KMUs in Niederösterreich. Live in 5-7 Tagen. Jetzt kostenlosen Webseiten-Check sichern!",
+    title: "BrainStorm KI | Werbeagentur, SEO & Social Recruiting Niederösterreich",
+    description: "Moderne Webseiten, Social Recruiting & Mitarbeitergewinnung, SEO/GEO & KI-Automatisierung für KMUs im Mostviertel & Niederösterreich. Live in 5-7 Tagen.",
     url: "https://ki-marketingagentur.jetzt",
     siteName: "BrainStorm Werbeagentur",
     locale: "de_AT",
@@ -29,8 +97,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BrainStorm KI | Werbeagentur & SEO Agentur Niederösterreich",
-    description: "Moderne Webseiten, SEO & KI-Automatisierung für KMUs. Live in 5-7 Tagen.",
+    title: "BrainStorm KI | Werbeagentur, SEO & Social Recruiting Niederösterreich",
+    description: "Moderne Webseiten, Social Recruiting, SEO/GEO & KI-Automatisierung für KMUs. Live in 5-7 Tagen.",
     creator: "@andi_sturm",
     images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
   },
@@ -49,6 +117,12 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  other: {
+    "geo.region": "AT-3",
+    "geo.placename": "Seitenstetten, Mostviertel, Niederösterreich",
+    "geo.position": "48.0353;14.6534",
+    "ICBM": "48.0353, 14.6534",
   },
 };
 

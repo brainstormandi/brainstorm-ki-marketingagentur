@@ -11,7 +11,7 @@ const Blog = () => {
     const recentPosts = blogPosts.slice(0, 2);
 
     return (
-        <section id="blog" className="scroll-mt-20 bg-[#F5EFE6] py-20 md:py-28 lg:py-0 lg:min-h-screen lg:flex lg:flex-col lg:justify-center">
+        <section id="blog" className="scroll-mt-20 bg-[#F5EFE6] pt-10 md:pt-14 pb-20 md:pb-28">
             <div className="max-w-6xl mx-auto px-6 md:px-12">
 
                 {/* ── HEADER ROW ── */}

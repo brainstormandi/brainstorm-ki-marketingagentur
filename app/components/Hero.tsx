@@ -23,26 +23,36 @@ const Hero = () => {
                         background: 'linear-gradient(to right, #F5EFE5 0%, #F5EFE5 30%, rgba(245, 239, 229, 0.95) 45%, rgba(245, 239, 229, 0.6) 70%, transparent 100%)' 
                     }} 
                 />
+                {/* Subtle indicator bottom right: KI-generiert */}
+                <span className="absolute bottom-3 right-3 sm:bottom-4 sm:right-6 px-2 py-0.5 rounded bg-black/35 backdrop-blur-xs text-[10px] font-[var(--font-inter)] font-normal text-white/65 border border-white/10 tracking-wider select-none z-10 pointer-events-none">
+                    KI-generiert
+                </span>
             </div>
 
             {/* Content Container (vertically centered on desktop, flows naturally on mobile) */}
             <div className="relative z-10 w-full px-6 md:px-12 flex flex-col justify-start pt-8 pb-16 lg:absolute lg:inset-0 lg:h-full lg:justify-center lg:py-0 order-2 lg:order-none">
                 <div className="max-w-4xl lg:pl-16 xl:pl-24">
                     <h1
-                        className="font-[var(--font-vollkorn)] font-semibold text-[#1C1C1C] leading-[1.05] mb-6"
-                        style={{ fontSize: 'clamp(1.85rem, 7vw, 6rem)' }}
+                        className="font-[var(--font-vollkorn)] font-bold text-[#1C1C1C] leading-[1.08] mb-6"
+                        style={{ fontSize: 'clamp(1.85rem, 5.8vw, 5rem)' }}
                     >
-                        Gewinne deine Zeit zurück und <br className="hidden sm:inline" />
-                        <span className="text-underline-yellow">dominiere</span> deinen lokalen Markt.
+                        Mehr Zeit. <br />
+                        <span className="whitespace-nowrap">Mehr Anfragen.</span> <br />
+                        Werde die <span className="text-underline-yellow">#1</span> in deiner Region.
                     </h1>
                     <p className="font-[var(--font-inter)] text-[#1C1C1C]/80 text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed mb-10 max-w-2xl">
-                        Große Konzerne haben riesige Abteilungen. Du hast jetzt Künstliche Intelligenz. Wir rüsten deinen Betrieb mit intelligenten, automatisierten Webseiten aus, die wie ein digitaler Top-Verkäufer rund um die Uhr für dich arbeiten – ohne Technik-Chaos, mit echter Handschlagqualität. <strong className="text-[#1C1C1C] font-bold">Finde heraus, wie viel Zeit du verlierst.</strong>
+                        Große Konzerne haben riesige Marketing-Budgets. <strong className="font-bold text-[#1C1C1C]">Du hast uns.</strong> Wir bauen Webseiten, die wie <strong className="font-bold text-[#1C1C1C]">dein bester Verkäufer</strong> rund um die Uhr verlässlich <strong className="font-bold text-[#1C1C1C]">neue Kunden und Mitarbeiter bringen</strong>. Modernste Technologie kombiniert mit <strong className="font-bold text-[#1C1C1C]">32 Jahren Marketing-Erfahrung</strong> und echter <strong className="font-bold text-[#1C1C1C]">Handschlagqualität</strong> – <strong className="font-bold text-[#1C1C1C]">schlüsselfertig in wenigen Tagen</strong>.
                     </p>
                     
-                    <div className="flex flex-wrap gap-4">
-                        <Link href="/#website-check" className="btn-primary text-center !whitespace-normal sm:!whitespace-nowrap text-sm sm:text-base py-4 px-6 sm:px-8 flex items-center justify-center gap-3 w-full sm:w-auto">
-                            <span>Hol dir den kostenlosen Webseiten-Check</span> <ArrowRight className="w-5 h-5 shrink-0" />
-                        </Link>
+                    <div className="flex flex-col items-center sm:items-start gap-2.5">
+                        <div className="flex flex-wrap gap-4 w-full sm:w-auto">
+                            <Link href="/#gratis-check" className="btn-primary text-center !whitespace-normal sm:!whitespace-nowrap text-sm sm:text-base py-4 px-6 sm:px-8 flex items-center justify-center gap-3 w-full sm:w-auto">
+                                <span>Kostenlosen Webseiten-Check sichern</span> <ArrowRight className="w-5 h-5 shrink-0" />
+                            </Link>
+                        </div>
+                        <p className="text-xs sm:text-[13px] text-[#1C1C1C]/70 font-[var(--font-inter)] font-medium text-center sm:text-left">
+                            Erhalte in 24h die 3 Hebel für mehr Anfragen
+                        </p>
                     </div>
 
                     {/* Trust Elements */}

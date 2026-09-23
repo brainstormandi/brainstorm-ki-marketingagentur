@@ -9,11 +9,24 @@ import { blogPosts } from '../data/blogData';
 import { ArrowRight, Calendar } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Blog | BrainStorm KI Werbeagentur',
-  description: 'Aktuelle Artikel, Insights und Trends zu Künstlicher Intelligenz im Marketing, Automatisierung und generativer Suchmaschinenoptimierung (GEO).',
+  title: 'Blog | BrainStorm KI Werbeagentur – Insights zu KI, Social Recruiting & Webdesign',
+  description: 'Praxis-Leitfäden & Strategien zu Social Recruiting für Handwerker & KMU, KI-Marketing, AI Act Transparenzregeln und GEO (Generative Engine Optimization).',
   alternates: {
     canonical: 'https://ki-marketingagentur.jetzt/blog',
   },
+  openGraph: {
+    title: 'Blog | BrainStorm KI Werbeagentur',
+    description: 'Praxis-Leitfäden & Strategien zu Social Recruiting für Handwerker & KMU, KI-Marketing und GEO.',
+    url: 'https://ki-marketingagentur.jetzt/blog',
+    type: 'website',
+    images: ['https://ki-marketingagentur.jetzt/bilder/logo.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog | BrainStorm KI Werbeagentur',
+    description: 'Praxis-Leitfäden zu Social Recruiting, KI-Marketing, AI Act und Webdesign.',
+    images: ['https://ki-marketingagentur.jetzt/bilder/logo.png'],
+  }
 };
 
 export default function BlogIndex() {
@@ -36,11 +49,28 @@ export default function BlogIndex() {
     ]
   };
 
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "BrainStorm KI Blog & Insights",
+    "description": "Praxis-Leitfäden & Strategien zu Social Recruiting für Handwerker & KMU, KI-Marketing, AI Act Transparenzregeln und GEO.",
+    "url": "https://ki-marketingagentur.jetzt/blog",
+    "hasPart": blogPosts.map(p => ({
+      "@type": "BlogPosting",
+      "headline": p.title,
+      "url": `https://ki-marketingagentur.jetzt/blog/${p.slug}`
+    }))
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-[#F5EFE6] text-[#1C1C1C]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
       />
       <Navbar />
       

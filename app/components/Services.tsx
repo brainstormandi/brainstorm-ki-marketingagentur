@@ -1,9 +1,7 @@
 "use client";
 import React from 'react';
 import { SERVICES } from '../constants';
-import Link from 'next/link';
 import ScrollReveal from './ScrollReveal';
-import { ArrowRight } from 'lucide-react';
 
 // ally.co Section 3: "We handle Everything for you." — dark section, numbered cards
 const Services = () => {
@@ -26,13 +24,14 @@ const Services = () => {
     };
 
     return (
-        <section id="services" className="scroll-mt-20 bg-[#1C1C1C] text-white py-20 md:py-28 lg:py-0 lg:min-h-screen lg:flex lg:flex-col lg:justify-center">
+        <section id="loesungen" className="scroll-mt-20 bg-[#1C1C1C] text-white py-24 md:py-32 lg:py-36 relative">
+            <div id="services" className="sr-only" aria-hidden="true" />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }} />
 
             <div className="max-w-6xl mx-auto px-6 md:px-12">
 
-                {/* ── HEADER ROW (ally: headline left, CTA right) ── */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
+                {/* ── HEADER ROW (headline left, subline right) ── */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16 items-end">
                     <ScrollReveal animation="reveal-right" className="lg:col-span-7">
                         <span className="font-[var(--font-inter)] text-[11px] font-bold uppercase tracking-[0.18em] text-white/40 mb-4 block">
                             Was wir für dich tun
@@ -41,22 +40,19 @@ const Services = () => {
                             className="font-[var(--font-vollkorn)] font-semibold text-white leading-tight"
                             style={{ fontSize: 'clamp(2rem, 4.5vw, 3.75rem)' }}
                         >
-                            Wir erledigen <span className="text-underline-yellow">alles</span> für dich.
+                            Das erledigen wir für <span className="text-underline-yellow">dich</span>.
                         </h2>
                     </ScrollReveal>
-                    <ScrollReveal animation="reveal-left" delay={150} className="lg:col-span-5 flex flex-col justify-end gap-6">
+                    <ScrollReveal animation="reveal-left" delay={150} className="lg:col-span-5 flex items-end">
                         <p className="font-[var(--font-inter)] text-white/55 text-base leading-relaxed">
                             Zukunftsweisende KI-Technologien, kombiniert mit 32 Jahren Marketing-Handwerk. So eroberst du deinen Markt.
                         </p>
-                        <Link href="/#contact" className="btn-secondary-light text-[15px] xl:text-[17px] py-2 px-5 w-max">
-                            Finde heraus wie <ArrowRight className="w-4 h-4" />
-                        </Link>
                     </ScrollReveal>
                 </div>
                            {/* ── NUMBERED SERVICE CARDS (3 columns, 1 and 3 highlighted subtly, giant numbers bottom-right) ── */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                     {SERVICES.map((service, index) => {
-                        const isHighlighted = index === 0 || index === 2;
+                        const isHighlighted = index === 0 || index === 2 || index === 4;
                         return (
                             <ScrollReveal key={index} delay={index * 80} animation="reveal-up">
                                 <div className={`relative overflow-hidden p-7 md:p-8 flex flex-col h-full min-h-[250px] rounded-2xl transition-all duration-200 ${

@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Feste Daten für statische Seiten – nicht immer today, damit Google den Cache respektiert
   const SITE_LAUNCH = new Date('2025-01-15');
-  const LAST_CONTENT_UPDATE = new Date('2026-06-01');
+  const LAST_CONTENT_UPDATE = new Date('2026-09-23');
   const LEGAL_LAST_UPDATED = new Date('2025-06-01');
 
   // Core pages
@@ -41,12 +41,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  const MONTH_MAP: Record<string, string> = {
+    'Januar': '01', 'Jänner': '01', 'Februar': '02', 'März': '03',
+    'April': '04', 'Mai': '05', 'Juni': '06', 'Juli': '07',
+    'August': '08', 'September': '09', 'Oktober': '10', 'November': '11', 'Dezember': '12'
+  };
+
+  const parseGermanDate = (dateStr: string): Date => {
+    try {
+      const parts = dateStr.trim().replace('.', '').split(/\s+/);
+      if (parts.length === 3) {
+        const day = parts[0].padStart(2, '0');
+        const month = MONTH_MAP[parts[1]] || '01';
+        const year = parts[2];
+        const parsed = new Date(`${year}-${month}-${day}T08:00:00Z`);
+        if (!isNaN(parsed.getTime())) return parsed;
+      }
+    } catch {
+      // fallback
+    }
+    return LAST_CONTENT_UPDATE;
+  };
+
   // Dynamic Blog Posts from central data
-  // Note: post.date is in German format ("1. Juni 2026") which can't be parsed by new Date()
-  // Using LAST_CONTENT_UPDATE as a safe, consistent value
   const blogRoutes = blogPosts.map(post => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: LAST_CONTENT_UPDATE,
+    lastModified: parseGermanDate(post.date),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));

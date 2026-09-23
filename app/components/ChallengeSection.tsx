@@ -41,7 +41,8 @@ const ChallengeSection = () => {
     ];
 
     return (
-        <section id="spielregeln" className="scroll-mt-20 bg-[#F5EFE6] py-20 md:py-28 lg:py-0 lg:min-h-screen lg:flex lg:flex-col lg:justify-center">
+        <section id="probleme" className="scroll-mt-20 bg-[#F5EFE6] py-20 md:py-28 lg:py-0 lg:min-h-screen lg:flex lg:flex-col lg:justify-center relative">
+            <div id="spielregeln" className="sr-only" aria-hidden="true" />
             <div className="max-w-6xl mx-auto px-6 md:px-12">
 
                 {/* ── MASSIVE HEADLINE ── */}

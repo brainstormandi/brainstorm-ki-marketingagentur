@@ -13,12 +13,12 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const menuItems = [
-        { name: 'Herausforderungen', href: '/#spielregeln' },
-        { name: 'Lösungen', href: '/#services' },
-        { name: 'Dein Partner', href: '/#about' },
-        { name: 'Erfolgsgeschichten', href: '/#success' },
-        { name: 'Fahrplan', href: '/#process' },
-        { name: 'Gratis Check', href: '/#website-check' },
+        { name: 'Probleme', href: '/#probleme' },
+        { name: 'Lösungen', href: '/#loesungen' },
+        { name: 'Agentur', href: '/#agentur' },
+        { name: 'Erfolgsgeschichten', href: '/#erfolge' },
+        { name: 'Angebote', href: '/#angebote' },
+        { name: 'Gratis-Check', href: '/#gratis-check' },
         { name: 'FAQ', href: '/#faq' },
         { name: 'Blog', href: '/#blog' }
     ];
@@ -70,7 +70,7 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
                         {/* Call to Action */}
                         <div className="hidden sm:flex items-center">
                             <Link 
-                                href="/#contact" 
+                                href="/#kontakt" 
                                 className="btn-primary py-2 px-6 text-[15px] xl:text-[17px] whitespace-nowrap"
                             >
                                 Kontakt
@@ -143,7 +143,7 @@ const Navbar = ({ theme = 'light' }: NavbarProps) => {
                                 </Link>
                             ))}
                             <Link 
-                                href="/#contact"
+                                href="/#kontakt"
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="font-[var(--font-vollkorn)] font-semibold text-2xl tracking-tight text-[#1C1C1C] hover:text-[#F7C429] hover:translate-x-1 transition-all cursor-pointer"
                             >

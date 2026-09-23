@@ -12,6 +12,34 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+const MONTH_MAP: Record<string, string> = {
+  'Januar': '01', 'Jänner': '01', 'Februar': '02', 'März': '03',
+  'April': '04', 'Mai': '05', 'Juni': '06', 'Juli': '07',
+  'August': '08', 'September': '09', 'Oktober': '10', 'November': '11', 'Dezember': '12'
+};
+
+function parseGermanDateToISO(germanDate: string): string {
+  try {
+    const parts = germanDate.trim().replace('.', '').split(/\s+/);
+    if (parts.length === 3) {
+      const day = parts[0].padStart(2, '0');
+      const month = MONTH_MAP[parts[1]] || '01';
+      const year = parts[2];
+      return `${year}-${month}-${day}T08:00:00+02:00`;
+    }
+  } catch {
+    // fallback
+  }
+  return '2026-06-01T08:00:00+02:00';
+}
+
+function getAbsoluteImageUrl(url: string): string {
+  if (url.startsWith('http://') || url.startsWith('https://')) {
+    return url;
+  }
+  return `https://ki-marketingagentur.jetzt${url.startsWith('/') ? '' : '/'}${url}`;
+}
+
 export async function generateMetadata(props: Props, parent: ResolvingMetadata): Promise<Metadata> {
   const params = await props.params;
   const post = blogPosts.find((p) => p.slug === params.slug);
@@ -19,6 +47,9 @@ export async function generateMetadata(props: Props, parent: ResolvingMetadata):
   if (!post) {
     return { title: 'Blog Post Not Found' };
   }
+
+  const absoluteImageUrl = getAbsoluteImageUrl(post.imageUrl);
+  const isoDate = parseGermanDateToISO(post.date);
 
   return {
     title: `${post.title} | BrainStorm KI Werbeagentur`,
@@ -29,16 +60,26 @@ export async function generateMetadata(props: Props, parent: ResolvingMetadata):
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      images: [post.imageUrl],
+      images: [
+        {
+          url: absoluteImageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        }
+      ],
       type: 'article',
       authors: [post.author],
-      publishedTime: post.date,
+      publishedTime: isoDate,
+      modifiedTime: isoDate,
+      locale: 'de_AT',
+      siteName: 'BrainStorm Werbeagentur',
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
-      images: [post.imageUrl],
+      images: [absoluteImageUrl],
     }
   };
 }
@@ -56,6 +97,9 @@ export default async function BlogPostPage(props: Props) {
   if (!post) {
     notFound();
   }
+
+  const absoluteImageUrl = getAbsoluteImageUrl(post.imageUrl);
+  const isoDate = parseGermanDateToISO(post.date);
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -86,17 +130,20 @@ export default async function BlogPostPage(props: Props) {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": post.title,
-    "image": [post.imageUrl],
-    "datePublished": post.date,
-    "dateModified": post.date,
+    "image": [absoluteImageUrl],
+    "datePublished": isoDate,
+    "dateModified": isoDate,
+    "inLanguage": "de-AT",
     "author": {
       "@type": "Person",
       "name": post.author,
+      "jobTitle": "Gründer & Geschäftsführer",
       "url": "https://www.linkedin.com/in/brainstorm-andi/"
     },
     "publisher": {
       "@type": "Organization",
       "name": "BrainStorm Werbeagentur",
+      "url": "https://ki-marketingagentur.jetzt",
       "logo": {
         "@type": "ImageObject",
         "url": "https://ki-marketingagentur.jetzt/bilder/logo.png"
@@ -135,6 +182,9 @@ export default async function BlogPostPage(props: Props) {
           />
           <div className="absolute inset-0 bg-[#1C1C1C]/80 mix-blend-multiply"></div>
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F5EFE6] to-transparent"></div>
+          <span className="absolute top-4 right-4 sm:top-6 sm:right-8 px-2 py-0.5 rounded bg-black/35 backdrop-blur-xs text-[10px] font-[var(--font-inter)] font-normal text-white/65 border border-white/10 tracking-wider select-none z-20 pointer-events-none">
+            KI-generiert
+          </span>
           
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full translate-y-8 sm:translate-y-12">

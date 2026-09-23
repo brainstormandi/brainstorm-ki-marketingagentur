@@ -10,6 +10,124 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'social-recruiting-fachkraefte-handwerk-kmu',
+    title: 'Keine Bewerber über AMS oder Willhaben? Warum Social Recruiting für regionale Betriebe heute der einzige Weg ist',
+    excerpt: 'Volle Auftragsbücher, aber keine Fachkräfte? Warum traditionelle Stellenanzeigen bei AMS und Willhaben verpuffen – und wie regionale Handwerker und KMUs mit Social Recruiting planbar neue Mitarbeiter gewinnen.',
+    date: '23. September 2026',
+    author: 'Andi Sturm',
+    imageUrl: '/bilder/social-recruiting-kmu.jpg',
+    content: `
+      <p class="font-[var(--font-inter)] text-[#1C1C1C] leading-relaxed mb-6 text-lg sm:text-xl">Die Auftragsbücher sind voll bis unters Dach, die Telefone stehen selten still – und trotzdem muss der Chef wieder selbst am Samstag auf der Baustelle oder in der Werkstatt mit anpacken. Es fehlen schlichtweg die Hände. Ob Geselle, Monteur, Techniker oder Bürokraft: Der Fachkräftemangel ist für kleine und mittlere Betriebe in Österreich längst zum größten Wachstums- und Zeitfresser geworden.</p>
+
+      <p class="font-[var(--font-inter)] text-[#1C1C1C] leading-relaxed mb-6 text-lg sm:text-xl">Als BrainStorm KI Werbeagentur begleiten wir seit über 32 Jahren Betriebe zwischen Mostviertel, Linz, Steyr und Amstetten. In unzähligen Gesprächen hören wir denselben Frust: <em>„Wir haben 2.000 Euro für Stellenanzeigen bei Regionalzeitungen, AMS oder Willhaben ausgegeben – und das Ergebnis waren null qualifizierte Bewerbungen.“</em> Warum das so ist und wie du durch intelligentes Social Recruiting und verkaufspsychologische Landingpages den Spieß komplett umdrehst, erfährst du in diesem Praxis-Leitfaden.</p>
+
+      <div class="not-prose bg-white border border-[#1C1C1C]/10 rounded-2xl p-6 sm:p-8 my-10 shadow-sm">
+        <p class="text-base font-bold text-[#1C1C1C] uppercase tracking-widest mb-4">Inhaltsverzeichnis</p>
+        <ol class="space-y-2 text-[#1C1C1C] font-[var(--font-inter)] text-base sm:text-lg">
+          <li>1. <a href="#paradoxon" class="underline decoration-[#F7C429]/40 hover:decoration-[#1C1C1C]">Das Fachkräfte-Paradoxon: Warum alte Methoden scheitern</a></li>
+          <li>2. <a href="#warum-ams-versagt" class="underline decoration-[#F7C429]/40 hover:decoration-[#1C1C1C]">Der Denkfehler: Gute Leute sind nicht arbeitslos</a></li>
+          <li>3. <a href="#passiv-suchende" class="underline decoration-[#F7C429]/40 hover:decoration-[#1C1C1C]">Der Schlüssel: Die „passiv Wechselwilligen“ in deiner Region</a></li>
+          <li>4. <a href="#60-sekunden-bewerbung" class="underline decoration-[#F7C429]/40 hover:decoration-[#1C1C1C]">Schluss mit Lebenslauf-Bürokratie: Die 60-Sekunden-Smartphone-Bewerbung</a></li>
+          <li>5. <a href="#das-trio" class="underline decoration-[#F7C429]/40 hover:decoration-[#1C1C1C]">Das perfekte Trio: Karriereseite, Social Media &amp; regionale SEO</a></li>
+          <li>6. <a href="#praxisbeispiel" class="underline decoration-[#F7C429]/40 hover:decoration-[#1C1C1C]">Reales Praxisbeispiel: 13 Bewerbungen in 30 Tagen</a></li>
+          <li>7. <a href="#fazit" class="underline decoration-[#F7C429]/40 hover:decoration-[#1C1C1C]">Fazit: Mitarbeitergewinnung auf Autopilot mit Handschlagqualität</a></li>
+        </ol>
+      </div>
+
+      <div class="not-prose bg-[#1C1C1C] border border-white/10 rounded-2xl p-6 sm:p-8 my-10 shadow-sm">
+        <p class="text-sm font-bold text-white/40 uppercase tracking-widest mb-5">Keypoints des Inhalts</p>
+        <ul class="space-y-4">
+          <li class="flex gap-3"><span class="text-white mt-1">→</span><p class="text-white/80 font-[var(--font-inter)] text-base leading-relaxed"><strong class="text-white">Gute Fachkräfte sind nicht arbeitslos:</strong> Wer nur auf Jobbörsen oder Zeitungen setzt, erreicht primär aktiv Suchende. Echte Top-Kräfte haben aber bereits einen Job und suchen nicht aktiv.</p></li>
+          <li class="flex gap-3"><span class="text-white mt-1">→</span><p class="text-white/80 font-[var(--font-inter)] text-base leading-relaxed"><strong class="text-white">Das Potenzial der passiv Wechselwilligen:</strong> Über 35 % der Beschäftigten in deiner Region sind bei ihrem aktuellen Arbeitgeber unzufrieden (fehlende Wertschätzung, schlechtes Betriebsklima, veraltete Ausrüstung) und offen für ein besseres Umfeld.</p></li>
+          <li class="flex gap-3"><span class="text-white mt-1">→</span><p class="text-white/80 font-[var(--font-inter)] text-base leading-relaxed"><strong class="text-white">Bewerbungshürde radikal senken:</strong> Niemand verfasst am Feierabend ein formelles Anschreiben oder formatiert einen Lebenslauf. Mit einer 60-Sekunden-Bewerbung per Daumen am Smartphone steigt die Bewerberquote drastisch.</p></li>
+          <li class="flex gap-3"><span class="text-white mt-1">→</span><p class="text-white/80 font-[var(--font-inter)] text-base leading-relaxed"><strong class="text-white">Psychologischer Auftritt statt Retorten-Anzeige:</strong> Erst wenn eine schnelle, mobil optimierte Karriereseite mit echten Teambildern und zielgerichteter regionaler Social-Media-Ausspielung (20–40 km Umkreis) zusammenspielt, entstehen planbare Bewerbungen.</p></li>
+        </ul>
+      </div>
+
+      <h2 id="paradoxon" class="text-2xl sm:text-3xl font-semibold text-[#1C1C1C] mb-6 font-[var(--font-vollkorn)] tracking-tight leading-[1.1] py-1 mt-12">1. Das Fachkräfte-Paradoxon: Warum alte Methoden scheitern</h2>
+      <p class="font-[var(--font-inter)] text-[#1C1C1C] leading-relaxed mb-6 text-lg sm:text-xl">In kaum einer anderen Region wird Handwerk und Qualität so großgeschrieben wie in Niederösterreich und Oberösterreich. Doch genau dieser Fleiß führt viele Betriebe in eine gefährliche Sackgasse: Es gibt mehr Kundenanfragen, als mit dem vorhandenen Team realistisch abgearbeitet werden können.</p>
+      <p class="font-[var(--font-inter)] text-[#1C1C1C] leading-relaxed mb-6 text-lg sm:text-xl">Die Folge: Aufträge müssen verschoben oder abgesagt werden, bestehende Mitarbeiter sind überlastet, und der Chef arbeitet statt 40 plötzlich 60 Stunden pro Woche. Wer in dieser Situation wie vor 15 Jahren reagiert – mit einem Inserat im Bezirksblatt oder einer Anzeige beim AMS – verbrennt schlichtweg sein hart verdientes Geld.</p>
+
+      <blockquote class="border-l-4 border-[#1C1C1C]/10 pl-6 my-8 font-[var(--font-inter)] text-[#1C1C1C]/60">Verwandter Artikel: <a href="/blog/ki-marketing-grundlagen-chancen-kmu" class="font-semibold text-[#1C1C1C] underline decoration-[#F7C429]/40 hover:decoration-[#1C1C1C]">KI im Marketing: Grundlagen, strategische Chancen und Effizienz-Revolution für KMU</a></blockquote>
+
+      <h2 id="warum-ams-versagt" class="text-2xl sm:text-3xl font-semibold text-[#1C1C1C] mb-6 font-[var(--font-vollkorn)] tracking-tight leading-[1.1] py-1 mt-12">2. Der Denkfehler: Gute Leute sind nicht arbeitslos</h2>
+      <p class="font-[var(--font-inter)] text-[#1C1C1C] leading-relaxed mb-6 text-lg sm:text-xl">Warum bringen Stellenanzeigen auf herkömmlichen Plattformen kaum noch brauchbare Ergebnisse? Die Antwort ist so einfach wie schmerzhaft: <strong>Ein gelernter Tischler, Zimmerer, Installateur, Elektriker oder Techniker mit Berufserfahrung ist heute in Österreich faktisch nie arbeitslos.</strong></p>
+      
+      <p class="font-[var(--font-inter)] text-[#1C1C1C] leading-relaxed mb-6 text-lg sm:text-xl">Wer auf AMS, Willhaben oder StepStone nach Jobs sucht, tut das meist aus akuter Not. Das führt dazu, dass du als Betrieb entweder gar keine Bewerbungen erhältst oder stapelweise unpassende Profile von Personen, die weder die fachliche Qualifikation noch die richtige Arbeitseinstellung mitbringen. Der Prüfaufwand im Büro ist riesig – das Ergebnis gleich null.</p>
+
+      <h2 id="passiv-suchende" class="text-2xl sm:text-3xl font-semibold text-[#1C1C1C] mb-6 font-[var(--font-vollkorn)] tracking-tight leading-[1.1] py-1 mt-12">3. Der Schlüssel: Die „passiv Wechselwilligen“ in deiner Region</h2>
+      <p class="font-[var(--font-inter)] text-[#1C1C1C] leading-relaxed mb-6 text-lg sm:text-xl">Bedeutet das, dass es keine wechselbereiten Fachkräfte gibt? Ganz im Gegenteil! Arbeitsmarktstudien zeigen übereinstimmend: <strong>Rund 35 bis 40 % aller Fachkräfte befinden sich im Zustand der passiven Wechselbereitschaft.</strong></p>
+      
+      <p class="font-[var(--font-inter)] text-[#1C1C1C] leading-relaxed mb-6 text-lg sm:text-xl">Was bedeutet das konkret? Diese Fachkräfte haben einen festen Job, sind aber insgeheim unzufrieden:</p>
+      <ul class="list-disc pl-6 sm:pl-8 mb-8 space-y-4 font-[var(--font-inter)] text-[#1C1C1C] marker:text-[#F7C429] text-lg sm:text-xl">
+        <li>Der Chef schätzt ihre Leistung nicht und kennt nur Druck statt Lob.</li>
+        <li>Das Werkzeug oder der Fuhrpark ist veraltet und macht die Arbeit mühsam.</li>
+        <li>Die Arbeitszeiten sind unzuverlässig und lassen kaum Zeit für Familie und Hobbys.</li>
+        <li>Die Kollegen streiten, das Betriebsklima ist giftig.</li>
+      </ul>
+      <p class="font-[var(--font-inter)] text-[#1C1C1C] leading-relaxed mb-6 text-lg sm:text-xl">Diese Menschen schreiben sonntags keinen Lebenslauf. Aber wenn sie nach Feierabend oder am Wochenende auf dem Sofa sitzen und durch Facebook oder Instagram scrollen, sind sie empfänglich für Betriebe aus ihrer direkten Nachbarschaft (20 bis 40 km Umkreis), die echte Handschlagqualität, ein faires Team und moderne Arbeitsbedingungen zeigen.</p>
+
+      <h2 id="60-sekunden-bewerbung" class="text-2xl sm:text-3xl font-semibold text-[#1C1C1C] mb-6 font-[var(--font-vollkorn)] tracking-tight leading-[1.1] py-1 mt-12">4. Schluss mit Lebenslauf-Bürokratie: Die 60-Sekunden-Smartphone-Bewerbung</h2>
+      <p class="font-[var(--font-inter)] text-[#1C1C1C] leading-relaxed mb-6 text-lg sm:text-xl">Selbst wenn ein unzufriedener Handwerker dein Jobangebot sieht und interessant findet, scheitert der Wechsel meist an der nächsten Hürde: dem traditionellen Bewerbungsprozess.</p>
+
+      <div class="not-prose bg-white border border-[#1C1C1C]/10 rounded-2xl p-6 sm:p-8 my-8 shadow-sm">
+        <p class="text-lg font-bold text-[#1C1C1C] mb-4">Der Vergleich: Alter Bewerbungsprozess vs. moderne 60-Sekunden-Lösung</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 font-[var(--font-inter)] text-base sm:text-lg">
+          <div class="p-5 rounded-xl bg-[#EDE7DB]/40 border border-[#1C1C1C]/10">
+            <span class="text-red-600 font-bold uppercase tracking-wider text-xs block mb-2">✗ Der alte Weg (Abbruchquote &gt; 90 %)</span>
+            <p class="text-[#1C1C1C]/75 text-sm leading-relaxed">
+              PDF-Lebenslauf formatieren, Zeugnisse einscannen, förmliches Anschreiben tippen, E-Mail an office@ schicken. Ein Arbeiter, der den ganzen Tag körperlich gearbeitet hat, schaltet am Abend keinen PC ein. Die Bewerbung wird vertagt – und nie abgeschickt.
+            </p>
+          </div>
+          <div class="p-5 rounded-xl bg-[#F7C429]/15 border border-[#F7C429]/50">
+            <span class="text-[#1C1C1C] font-bold uppercase tracking-wider text-xs block mb-2">✓ Der BrainStorm-Weg (Abschluss in 60 Sek.)</span>
+            <p class="text-[#1C1C1C]/85 text-sm leading-relaxed">
+              Direkt auf dem Smartphone 3 bis 4 einfache Multiple-Choice-Fragen anklicken (z. B. Führerschein, Erfahrung, Startzeitpunkt). Nur Vorname und Handynummer eintragen – Klick – fertig. Kein Lebenslauf, null Bürokratie.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p class="font-[var(--font-inter)] text-[#1C1C1C] leading-relaxed mb-6 text-lg sm:text-xl">Die Vorqualifizierung übernimmt das System im Hintergrund für dich. Du weißt sofort, ob der Bewerber grundsätzlich passt, und rufst ihn einfach am nächsten Tag kurz an. Ein 5-minütiges Telefonat von Mensch zu Mensch ersetzt 10 Seiten Papierkram.</p>
+
+      <h2 id="das-trio" class="text-2xl sm:text-3xl font-semibold text-[#1C1C1C] mb-6 font-[var(--font-vollkorn)] tracking-tight leading-[1.1] py-1 mt-12">5. Das perfekte Trio: Karriereseite, Social Media &amp; regionale SEO</h2>
+      <p class="font-[var(--font-inter)] text-[#1C1C1C] leading-relaxed mb-6 text-lg sm:text-xl">Social Recruiting funktioniert nicht als isolierte Insellösung. Ein guter Bewerbungsprozess braucht ein ineinandergreifendes digitales Fundament:</p>
+      
+      <ul class="list-disc pl-6 sm:pl-8 mb-8 space-y-4 font-[var(--font-inter)] text-[#1C1C1C] marker:text-[#F7C429] text-lg sm:text-xl">
+        <li><strong>Die blitzschnelle Karriereseite:</strong> Sie lädt auf dem Smartphone in unter 1 Sekunde, wirkt modern und spiegelt die Kultur deines Betriebs wider. Hier entscheidet sich im Bruchteil einer Sekunde, ob der Interessent Vertrauen fasst.</li>
+        <li><strong>Psychologisch optimierte Social-Media-Kampagnen:</strong> Statt dröger Stellenbeschreibungen („Wir suchen zum ehestmöglichen Eintritt...“) zeigen wir, warum es Spaß macht, bei dir zu arbeiten: Pünktlicher Feierabend, moderner Fuhrpark, echte Wertschätzung.</li>
+        <li><strong>Regionale SEO &amp; GEO-Sichtbarkeit:</strong> Wenn jemand in Google oder KI-Suchmaschinen (wie ChatGPT oder Perplexity) nach „Gute Arbeitgeber Handwerk Amstetten“ oder „Bester Tischler Betrieb Steyr“ sucht, muss dein Betrieb als führende Empfehlung gelistet sein.</li>
+      </ul>
+
+      <p class="font-[var(--font-inter)] text-[#1C1C1C] leading-relaxed mb-6 text-lg sm:text-xl">Genau dieses Zusammenspiel setzen wir bei der BrainStorm Werbeagentur schlüsselfertig für dich um. Du musst weder Videos selbst schneiden noch Texte schreiben – das übernehmen wir komplett.</p>
+
+      <h2 id="praxisbeispiel" class="text-2xl sm:text-3xl font-semibold text-[#1C1C1C] mb-6 font-[var(--font-vollkorn)] tracking-tight leading-[1.1] py-1 mt-12">6. Reales Praxisbeispiel: 13 Bewerbungen in 30 Tagen</h2>
+      <p class="font-[var(--font-inter)] text-[#1C1C1C] leading-relaxed mb-6 text-lg sm:text-xl">Dass dieser Ansatz in der Praxis exzellent funktioniert, beweisen die realen Rückmeldungen unserer Kunden. Stellvertretend dafür steht das Feedback eines Kunden auf Google:</p>
+
+      <div class="not-prose bg-[#EDE7DB]/50 border-l-4 border-[#F7C429] p-6 sm:p-8 my-8 rounded-r-2xl">
+        <p class="font-[var(--font-vollkorn)] italic text-[#1C1C1C] text-lg sm:text-xl leading-relaxed mb-4">
+          „Haben mit Andreas eine Kampagne gestartet, um neue Mitarbeiter für unser Unternehmen zu gewinnen. Nach einem kurzen Videodreh und einer guten Social Media Kampagne haben wir innerhalb eines Monats 13 Bewerbungen bekommen!“
+        </p>
+        <span class="font-[var(--font-inter)] text-xs font-bold uppercase tracking-wider text-[#1C1C1C]/60 block">
+          — Echte Google-Rezension eines regionalen Kunden
+        </span>
+      </div>
+
+      <p class="font-[var(--font-inter)] text-[#1C1C1C] leading-relaxed mb-6 text-lg sm:text-xl">13 qualifizierte Bewerbungen in nur 30 Tagen – während Mitbewerber seit Monaten vergeblich auf die nächste AMS-Zuweisung warten. Der Unterschied liegt nicht im Budget, sondern in der Strategie.</p>
+
+      <h2 id="fazit" class="text-2xl sm:text-3xl font-semibold text-[#1C1C1C] mb-6 font-[var(--font-vollkorn)] tracking-tight leading-[1.1] py-1 mt-12">7. Fazit: Mitarbeitergewinnung auf Autopilot mit Handschlagqualität</h2>
+      <p class="font-[var(--font-inter)] text-[#1C1C1C] leading-relaxed mb-6 text-lg sm:text-xl">Der Fachkräftemangel ist keine Naturgewalt, der man hilflos ausgeliefert ist. Er ist schlicht ein Signal dafür, dass die alten Rekrutierungswege endgültig ausgedient haben. Betriebe, die heute den Mut haben, wechselwillige Fachkräfte dort abzuholen, wo sie sich täglich aufhalten – am Smartphone in ihrer Freizeit –, haben keinen Personalmangel mehr.</p>
+      
+      <p class="font-[var(--font-inter)] text-[#1C1C1C] leading-relaxed mb-6 text-lg sm:text-xl">Mit unserem <a href="/#angebote" class="font-semibold text-[#1C1C1C] underline decoration-[#F7C429]/40 hover:decoration-[#1C1C1C]">Kombi-System (Webseite + Social Media)</a> oder dem vollautomatisierten <a href="/#angebote" class="font-semibold text-[#1C1C1C] underline decoration-[#F7C429]/40 hover:decoration-[#1C1C1C]">Wachstums-System</a> machen wir deinen Betrieb in deiner Region zum begehrtesten Arbeitgeber – ohne bürokratisches Kauderwelsch, zum transparenten Fixpreis und mit persönlicher Betreuung direkt vor Ort.</p>
+
+      <div class="not-prose bg-[#1C1C1C] p-8 sm:p-12 rounded-3xl mt-16 mb-8 relative overflow-hidden shadow-2xl">
+        <p class="text-2xl sm:text-3xl font-semibold text-white font-[var(--font-vollkorn)] tracking-tight mb-4 leading-[1.1] py-1">Brauchst du dringend Fachkräfte für deinen Betrieb?</p>
+        <p class="text-white/80 font-[var(--font-inter)] mb-8 text-base">Lass uns in einem unverbindlichen 15-Minuten-Gespräch prüfen, wie viele wechselwillige Fachkräfte es aktuell in deiner Region gibt und wie schnell wir deine Mitarbeitergewinnung aufsetzen können.</p>
+        <a href="/#kontakt" class="btn-primary text-base py-4 px-8 inline-flex items-center gap-3">Jetzt 15-Minuten-Gespräch sichern →</a>
+      </div>
+    `
+  },
+  {
     slug: 'ai-act-eu-transparenzregeln-kmu',
     title: 'AI Act 2026: Neue, strenge Transparenzregeln der EU – Was KMUs jetzt wissen müssen',
     excerpt: 'Ab August 2026 gelten die strengen Transparenzregeln des EU AI Acts. Wer künstliche Intelligenz für Marketing, Medien oder Text nutzt, muss kennzeichnen – andernfalls drohen Bußgelder bis zu 15 Mio. €.',

@@ -1,6 +1,14 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import { rateLimit, sanitize } from '../../lib/securityUtils';
+import { 
+    rateLimit, 
+    sanitize, 
+    isHoneypotTriggered, 
+    isTimingValid, 
+    isDisposableEmail, 
+    isValidEmail, 
+    isSpamContent 
+} from '../../lib/securityUtils';
 
 const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -23,20 +31,62 @@ export async function POST(req: Request) {
 
     try {
         // Get client IP for rate limiting
-        const ip = req.headers.get('x-forwarded-for') || 'unknown';
+        const ip = req.headers.get('x-forwarded-for')?.split(',')[0].trim() || 'unknown';
         if (!rateLimit(ip, 3)) {
-            return NextResponse.json({ error: 'Too many requests. Please wait a minute.' }, { status: 429 });
+            return NextResponse.json({ error: 'Zu viele Anfragen. Bitte warte einen Moment.' }, { status: 429 });
         }
 
         const body = await req.json();
-        const { targetUrl: rawUrl, clientEmail: rawEmail } = body;
+        const { 
+            targetUrl: rawUrl, 
+            clientEmail: rawEmail,
+            company_fax,     // Honeypot field 1
+            hp_check,        // Honeypot field 2
+            loadedAt,        // Form load timestamp
+        } = body;
+
+        // 1. INVISIBLE DEFENSE: Honeypot trap check
+        if (isHoneypotTriggered(company_fax) || isHoneypotTriggered(hp_check)) {
+            console.warn(`[AntiSpam Blocked] Honeypot triggered from IP ${ip}`);
+            // Return fake 200 OK so bots think they succeeded without alerting the spammer
+            return NextResponse.json({ success: true, message: 'Lead sent successfully' }, { status: 200 });
+        }
+
+        // 2. INVISIBLE DEFENSE: Submission Timing check (must take > 1.5s)
+        if (!isTimingValid(loadedAt, 1.5)) {
+            console.warn(`[AntiSpam Blocked] Impossibly fast submission from IP ${ip} (automated bot)`);
+            return NextResponse.json({ success: true, message: 'Lead sent successfully' }, { status: 200 });
+        }
 
         // Sanitize inputs
-        const targetUrl = sanitize(rawUrl || '');
-        const clientEmail = sanitize(rawEmail || '');
+        const targetUrl = sanitize(rawUrl || '').trim();
+        const clientEmail = sanitize(rawEmail || '').trim().toLowerCase();
 
         if (!targetUrl || !clientEmail) {
-            return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+            return NextResponse.json({ error: 'Bitte fülle alle Pflichtfelder aus.' }, { status: 400 });
+        }
+
+        // 3. INVISIBLE DEFENSE: Strict email structure check
+        if (!isValidEmail(clientEmail)) {
+            return NextResponse.json({ error: 'Bitte gib eine gültige E-Mail-Adresse ein.' }, { status: 400 });
+        }
+
+        // 4. INVISIBLE DEFENSE: Disposable / Burner email domains
+        if (isDisposableEmail(clientEmail)) {
+            console.warn(`[AntiSpam Blocked] Disposable email domain detected: ${clientEmail} from IP ${ip}`);
+            return NextResponse.json({ success: true, message: 'Lead sent successfully' }, { status: 200 });
+        }
+
+        // 5. INVISIBLE DEFENSE: Spam keywords & code patterns in URL or Email
+        if (isSpamContent(targetUrl) || isSpamContent(clientEmail)) {
+            console.warn(`[AntiSpam Blocked] Spam payload detected in URL/Email from IP ${ip}`);
+            return NextResponse.json({ success: true, message: 'Lead sent successfully' }, { status: 200 });
+        }
+
+        // 6. Plausible URL check (must contain a dot, valid domain format)
+        const cleanUrl = targetUrl.replace(/^https?:\/\//i, '').split('/')[0];
+        if (!cleanUrl.includes('.') || cleanUrl.length < 4) {
+            return NextResponse.json({ error: 'Bitte gib eine gültige Webseiten-URL ein (z. B. www.meine-seite.at).' }, { status: 400 });
         }
 
         // Email to Agency

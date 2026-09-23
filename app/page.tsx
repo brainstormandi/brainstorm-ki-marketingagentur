@@ -41,7 +41,8 @@ export default function Home() {
         <Founder />
 
         {/* ── ERFOLGE SECTION (ally: "Trusted by Industry Leaders") ── */}
-        <section id="success" className="scroll-mt-20 bg-[#F5EFE6] pt-20 md:pt-28 pb-10 md:pb-14">
+        <section id="erfolge" className="scroll-mt-20 bg-[#F5EFE6] pt-20 md:pt-28 pb-10 md:pb-14 relative">
+          <div id="success" className="sr-only" aria-hidden="true" />
           <div className="max-w-6xl mx-auto px-6 md:px-12">
 
             {/* Header row */}

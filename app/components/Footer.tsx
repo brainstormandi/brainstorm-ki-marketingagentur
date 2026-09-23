@@ -50,11 +50,11 @@ const Footer = () => {
                             <h4 className="font-[var(--font-inter)] text-[10px] font-bold uppercase tracking-[0.18em] text-[#1C1C1C]/35 mb-4">Navigation</h4>
                             <ul className="space-y-2.5">
                                 {[
-                                    { name: 'Leistungen', href: '/#services' },
-                                    { name: 'Über uns', href: '/#about' },
-                                    { name: 'Ablauf', href: '/#process' },
+                                    { name: 'Leistungen', href: '/#loesungen' },
+                                    { name: 'Über uns', href: '/#agentur' },
+                                    { name: 'Angebote', href: '/#angebote' },
                                     { name: 'FAQ', href: '/#faq' },
-                                    { name: 'Kontakt', href: '/#contact' }
+                                    { name: 'Kontakt', href: '/#kontakt' }
                                 ].map((l) => (
                                     <li key={l.name}>
                                         <Link href={l.href} className="font-[var(--font-inter)] text-sm text-[#1C1C1C]/55 hover:text-[#1C1C1C] font-medium transition-colors">
