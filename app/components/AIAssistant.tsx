@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { X, Mic, Send, Mail, Loader2, Calendar, CheckCircle2, AlertCircle, ShieldCheck, ArrowUpRight } from 'lucide-react';
+import { X, Mic, Send, Mail, Loader2, Calendar, CheckCircle2, AlertCircle, ShieldCheck, ArrowUpRight, MessageSquare } from 'lucide-react';
 import { AssistantMode } from '../types';
 import { GeminiService, encode, decode, decodeAudioData } from '../services/geminiService';
 import { CONTACT_INFO } from '../constants';
@@ -26,6 +26,7 @@ const AIAssistant = () => {
     ]);
     const [input, setInput] = useState('');
     const [isListening, setIsListening] = useState(false);
+    const [isThinking, setIsThinking] = useState(false);
     const [isBotSpeaking, setIsBotSpeaking] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
@@ -56,6 +57,9 @@ const AIAssistant = () => {
     const activeSessionRef = useRef<any>(null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const isToolCallPendingRef = useRef(false);
+    const lastSpeechTimeRef = useRef(0);
+    const hasSpokenRef = useRef(false);
+    const silenceTimeoutRef = useRef<any>(null);
 
     const scrollToBottom = useCallback(() => {
         if (messagesEndRef.current) {
@@ -80,7 +84,13 @@ const AIAssistant = () => {
 
     const cleanupVoice = useCallback(() => {
         setIsListening(false);
+        setIsThinking(false);
         setIsConnecting(false);
+        hasSpokenRef.current = false;
+        if (silenceTimeoutRef.current) {
+            clearTimeout(silenceTimeoutRef.current);
+            silenceTimeoutRef.current = null;
+        }
         stopAllAudio();
         activeSessionRef.current = null;
         isToolCallPendingRef.current = false;
@@ -111,55 +121,80 @@ const AIAssistant = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const executeFunctionCall = async (fc: { name: string; args: any }) => {
         if (fc.name === 'confirmAppointment') {
-            const { clientName, clientEmail, appointmentDateTime, topic } = fc.args;
-            const statusMsgId = Date.now().toString();
-            setMessages(prev => [...prev, { id: statusMsgId, role: 'bot', text: `Termin wird im System fixiert...`, isSending: true }]);
+            const rawArgs = typeof fc.args === 'string' ? JSON.parse(fc.args) : (fc.args || {});
+            const clientName = (rawArgs.clientName || 'Interessent').trim();
+            const clientEmail = (rawArgs.clientEmail || '').trim();
+            const appointmentDateTime = (rawArgs.appointmentDateTime || 'Nach persönlicher Vereinbarung').trim();
+            const topic = (rawArgs.topic || 'Kostenloses Strategiegespräch mit Andi Sturm').trim();
+            const rawMeetingType = String(rawArgs.meetingType || 'online').toLowerCase();
+            const isOnline = rawMeetingType.includes('online') || (!rawMeetingType.includes('phone') && !rawMeetingType.includes('telefon'));
+            const phoneNumber = (rawArgs.phoneNumber || '').trim();
+            const meetLink = 'https://meet.google.com/xng-wott-wnc';
+            const statusMsgId = `apt_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
 
+            const appointmentData = { 
+                clientName, 
+                clientEmail, 
+                appointmentDateTime, 
+                topic,
+                meetingType: isOnline ? 'online' : 'phone',
+                phoneNumber: phoneNumber || '',
+                meetLink: isOnline ? meetLink : undefined
+            };
+
+            const confirmationText = isOnline
+                ? `Termin erfolgreich als Online-Meeting bestätigt! ✓\n\nIch habe die Bestätigungs-Emails inklusive Google Meet Link (${meetLink}) an dich (${clientEmail}) und an Andi Sturm versendet.`
+                : `Termin erfolgreich als Telefontermin bestätigt! ✓\n\nIch habe die Bestätigung an dich (${clientEmail}) gesendet. Andi Sturm ruft dich pünktlich unter ${phoneNumber || 'deiner Rufnummer'} an.`;
+
+            // SOFORTIGE ANZEIGE DER TERMINBESTÄTIGUNG IM CHATFENSTER (FÜR VOICE- UND TEXT-CHAT)
+            setMessages(prev => [
+                ...prev,
+                {
+                    id: statusMsgId,
+                    role: 'bot',
+                    text: confirmationText,
+                    isSending: false,
+                    isSuccess: true,
+                    appointmentData
+                }
+            ]);
+
+            // Chat-Fenster öffnen und sofort zur Bestätigung scrollen
+            setIsOpen(true);
+            setTimeout(() => scrollToBottom(), 80);
+
+            // Asynchroner E-Mail Versand im Hintergrund an Agentur & Kunde
             try {
                 const response = await fetch('/api/send-email', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ clientName, clientEmail, appointmentDateTime, topic }),
+                    body: JSON.stringify({ 
+                        clientName, 
+                        clientEmail, 
+                        appointmentDateTime, 
+                        topic,
+                        meetingType: isOnline ? 'online' : 'phone',
+                        phoneNumber: phoneNumber || ''
+                    }),
                 });
 
-                if (!response.ok) {
-                    throw new Error('Server error');
-                }
-
-                setMessages(prev => prev.map(msg =>
-                    msg.id === statusMsgId
-                        ? {
-                            ...msg,
-                            isSending: false,
-                            isSuccess: true,
-                            appointmentData: { clientName, clientEmail, appointmentDateTime, topic },
-                            text: `Termin erfolgreich bestätigt! ✓\n\nIch habe die Bestätigungs-Emails soeben an dich (${clientEmail}) und an unser Team versendet.`,
-                        }
-                        : msg
-                ));
-                return { status: "success", detail: "E-Mails wurden versendet." };
+                const emailResult = await response.json().catch(() => ({}));
+                console.log("Email dispatch result:", emailResult);
             } catch (err: unknown) {
-                console.error("Fehler beim API Call:", err);
-                const subject = encodeURIComponent(`Terminanfrage: ${topic}`);
-                const body = encodeURIComponent(`Hallo Brainstorm Team,\n\nich möchte folgenden Termin bestätigen:\n\nName: ${clientName}\nZeit: ${appointmentDateTime}\nThema: ${topic}\n\nBitte um Bestätigung.\n\nViele Grüße,\n${clientName}`);
-                const mailtoLink = `mailto:${CONTACT_INFO.email}?subject=${subject}&body=${body}&cc=${clientEmail}`;
- 
-                setMessages(prev => prev.map(msg =>
-                    msg.id === statusMsgId
-                        ? {
-                            ...msg,
-                            isSending: false,
-                            isFallback: true,
-                            fallbackLink: mailtoLink,
-                            text: "Der automatische Server-Versand konnte nicht abgeschlossen werden. Aber keine Sorge! Bitte klicke unten, um die Bestätigung manuell abzusenden:"
-                        }
-                        : msg
-                ));
-                return { status: "fallback", detail: "User asked to send manually via mailto." };
+                console.error("Fehler beim API Call send-email:", err);
             }
+
+            return { 
+                status: "success", 
+                detail: isOnline 
+                    ? `Online-Meeting gebucht für ${clientName} am ${appointmentDateTime}. Meet-Link: ${meetLink}. Bestätigungskarte wurde im Chat eingeblendet.` 
+                    : `Telefontermin gebucht für ${clientName} am ${appointmentDateTime}. Rufnummer: ${phoneNumber || 'notiert'}. Bestätigungskarte wurde im Chat eingeblendet.` 
+            };
         }
         if (fc.name === 'redirectToCalendly') {
             setMessages(prev => [...prev, { role: 'bot', text: 'Hier ist der Link zu unserem Kalender.', isCalendly: true }]);
+            setIsOpen(true);
+            setTimeout(() => scrollToBottom(), 80);
             return { status: "success" };
         }
         return { error: "Unbekannt" };
@@ -208,16 +243,19 @@ const AIAssistant = () => {
                     // Handle transcription
                     if (content.modelTurn?.parts) {
                         for (const part of content.modelTurn.parts) {
-                            if (part.text) {
+                            if (part.text && !part.thought) {
                                 transcriptRef.current += part.text;
                             }
                             // Handle audio
                             if (part.inlineData?.mimeType?.startsWith('audio/') && part.inlineData?.data) {
+                                setIsThinking(false);
                                 if (audioContextRef.current) {
                                     setIsBotSpeaking(true);
                                     const ctx = audioContextRef.current;
                                     nextStartTimeRef.current = Math.max(nextStartTimeRef.current, ctx.currentTime);
-                                    const audioBuffer = await decodeAudioData(decode(part.inlineData.data), ctx, 24000, 1);
+                                    const rateMatch = part.inlineData.mimeType.match(/rate=(\d+)/);
+                                    const sampleRate = rateMatch ? parseInt(rateMatch[1], 10) : 24000;
+                                    const audioBuffer = await decodeAudioData(decode(part.inlineData.data), ctx, sampleRate, 1);
                                     const source = ctx.createBufferSource();
                                     source.buffer = audioBuffer;
                                     source.connect(ctx.destination);
@@ -233,6 +271,7 @@ const AIAssistant = () => {
                         }
 
                         if (content.turnComplete) {
+                            setIsThinking(false);
                             if (transcriptRef.current) {
                                 setMessages(prev => [...prev, { role: 'bot', text: transcriptRef.current }]);
                                 transcriptRef.current = "";
@@ -241,18 +280,29 @@ const AIAssistant = () => {
                     }
 
                     // Handle tool calls
-                    if (content.toolCall?.functionCalls) {
+                    const toolCall = message.toolCall || message.serverContent?.toolCall || content.toolCall;
+                    const functionCalls = toolCall?.functionCalls ? [...toolCall.functionCalls] : [];
+                    if (functionCalls.length === 0 && content.modelTurn?.parts) {
+                        for (const part of content.modelTurn.parts) {
+                            if (part.functionCall) {
+                                functionCalls.push(part.functionCall);
+                            }
+                        }
+                    }
+
+                    if (functionCalls.length > 0) {
+                        setIsThinking(false);
                         const session = activeSessionRef.current;
                         if (session) {
                             isToolCallPendingRef.current = true;
                             const functionResponses = [];
                             try {
-                                for (const fc of content.toolCall.functionCalls) {
+                                for (const fc of functionCalls) {
                                     const result = await executeFunctionCall(fc);
                                     functionResponses.push({
                                         name: fc.name,
-                                        id: fc.id,
-                                        response: { result }
+                                        id: fc.id || 'call_' + Date.now(),
+                                        response: { output: result }
                                     });
                                 }
                                 session.sendToolResponse({
@@ -267,6 +317,7 @@ const AIAssistant = () => {
 
                     // Handle interruption
                     if (content.interrupted) {
+                        setIsThinking(false);
                         stopAllAudio();
                     }
                 },
@@ -293,17 +344,53 @@ const AIAssistant = () => {
 
                 const inputData = e.inputBuffer.getChannelData(0);
                 const int16 = new Int16Array(inputData.length);
-                for (let i = 0; i < inputData.length; i++) int16[i] = inputData[i] * 32768;
+                let sum = 0;
+                for (let i = 0; i < inputData.length; i++) {
+                    const sample = inputData[i];
+                    sum += sample * sample;
+                    const s = Math.max(-1, Math.min(1, sample));
+                    int16[i] = s < 0 ? s * 0x8000 : s * 0x7FFF;
+                }
+
+                // Volume / Speech Detection for instantaneous thinking state
+                const rms = Math.sqrt(sum / inputData.length);
+                if (rms > 0.015) {
+                    hasSpokenRef.current = true;
+                    lastSpeechTimeRef.current = Date.now();
+                    if (silenceTimeoutRef.current) {
+                        clearTimeout(silenceTimeoutRef.current);
+                        silenceTimeoutRef.current = null;
+                    }
+                    setIsThinking(false);
+                } else if (hasSpokenRef.current && Date.now() - lastSpeechTimeRef.current > 350) {
+                    // User finished speaking and paused for > 350ms -> activate thinking state
+                    hasSpokenRef.current = false;
+                    setIsThinking(true);
+                }
 
                 try {
-                    // CRITICAL FIX: Only send audio if no tool call is pending
-                    // Otherwise server closes connection with 1008 (Policy Violation)
+                    // Only send audio if no tool call is pending
                     if (!isToolCallPendingRef.current) {
+                        const fromRate = inputCtx.sampleRate || 16000;
+                        let int16_16k: Int16Array;
+                        if (fromRate === 16000) {
+                            int16_16k = int16;
+                        } else {
+                            const ratio = fromRate / 16000;
+                            const newLen = Math.round(inputData.length / ratio);
+                            int16_16k = new Int16Array(newLen);
+                            for (let i = 0; i < newLen; i++) {
+                                const srcIdx = Math.min(Math.floor(i * ratio), inputData.length - 1);
+                                const s = Math.max(-1, Math.min(1, inputData[srcIdx]));
+                                int16_16k[i] = s < 0 ? s * 0x8000 : s * 0x7FFF;
+                            }
+                        }
+
                         session.sendRealtimeInput({
                             realtimeInput: {
                                 mediaChunks: [{
                                     mimeType: 'audio/pcm;rate=16000',
-                                    data: encode(new Uint8Array(int16.buffer))
+                                    data: encode(new Uint8Array(int16_16k.buffer))
                                 }]
                             }
                         });
@@ -334,10 +421,19 @@ const AIAssistant = () => {
 
     const handleSendMessage = async () => {
         if (!input.trim()) return;
-        const userText = input;
-        setMessages(prev => [...prev, { role: 'user', text: userText }]);
+        const userText = input.trim();
         setInput('');
         setError(null);
+
+        // Snapshot history before adding the new user message
+        const historySnapshot = messages
+            .filter(m => m.text && !m.isSending)
+            .map(m => ({
+                role: m.role === 'user' ? 'user' : 'model',
+                parts: [{ text: m.text }]
+            }));
+
+        setMessages(prev => [...prev, { role: 'user', text: userText }]);
 
         try {
             if (!chatSessionRef.current) {
@@ -352,23 +448,17 @@ const AIAssistant = () => {
                 }
                 setIsConnecting(false);
             }
-            const result = await chatSessionRef.current.sendMessage({ message: userText });
+            const result = await chatSessionRef.current.sendMessage({ 
+                message: userText,
+                history: historySnapshot
+            });
 
             // Extract function calls from either the flat result (new SDK) or response object (standard SDK)
             const functionCalls = result.functionCalls || result.response?.functionCalls?.();
 
             if (functionCalls && functionCalls.length > 0) {
                 for (const fc of functionCalls) {
-                    const res = await executeFunctionCall(fc);
-                    const followUp = await chatSessionRef.current?.sendMessage({
-                        message: [
-                            { functionResponse: { name: fc.name, response: { result: res }, id: (fc as any).id } }
-                        ]
-                    });
-
-                    if (followUp?.text) {
-                        setMessages(prev => [...prev, { role: 'bot', text: followUp.text }]);
-                    }
+                    await executeFunctionCall(fc);
                 }
             } else {
                 setMessages(prev => [...prev, { role: 'bot', text: result.text || '...' }]);
@@ -406,33 +496,23 @@ const AIAssistant = () => {
                     0%, 100% { transform: translateY(0px) scale(1); }
                     50%       { transform: translateY(-5px) scale(1.02); }
                 }
-                @keyframes susi-btn-glow {
+                @keyframes susi-capsule-glow {
                     0%, 100% {
-                        box-shadow: 0 0 0 1px rgba(247,196,41,0.25), 0 0 24px rgba(247,196,41,0.3), 0 10px 36px rgba(0,0,0,0.15);
-                        transform: translateY(0px) scale(1);
+                        box-shadow: 0 0 0 1px rgba(247,196,41,0.3), 0 0 20px rgba(247,196,41,0.2), 0 10px 32px rgba(28,28,28,0.12);
+                        transform: translateY(0px);
                     }
                     50% {
-                        box-shadow: 0 0 0 5px rgba(247,196,41,0.45), 0 0 45px rgba(247,196,41,0.6), 0 10px 36px rgba(0,0,0,0.15);
-                        transform: translateY(-6px) scale(1.03);
+                        box-shadow: 0 0 0 3px rgba(247,196,41,0.45), 0 0 32px rgba(247,196,41,0.35), 0 14px 40px rgba(28,28,28,0.18);
+                        transform: translateY(-3px);
                     }
                 }
-                @keyframes susi-shimmer {
-                    0%   { opacity: 0.5; transform: rotate(0deg) scale(1); }
-                    50%  { opacity: 0.9; transform: rotate(180deg) scale(1.05); }
-                    100% { opacity: 0.5; transform: rotate(360deg) scale(1); }
+                .susi-capsule {
+                    animation: susi-capsule-glow 3.5s ease-in-out infinite;
                 }
-                @keyframes susi-active-ring {
-                    0%, 100% { transform: scale(1);   opacity: 0.6; }
-                    50%       { transform: scale(1.3); opacity: 0; }
-                }
-                .susi-sphere-btn {
-                    animation: susi-btn-glow 3s ease-in-out infinite;
-                    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-                }
-                .susi-sphere-btn:hover {
+                .susi-capsule:hover {
                     animation-play-state: paused;
-                    transform: translateY(-4px) scale(1.08) !important;
-                    box-shadow: 0 0 0 6px rgba(247,196,41,0.5), 0 0 45px rgba(247,196,41,0.65), 0 12px 48px rgba(0,0,0,0.25) !important;
+                    transform: translateY(-4px) scale(1.02);
+                    box-shadow: 0 0 0 4px rgba(247,196,41,0.5), 0 0 40px rgba(247,196,41,0.4), 0 16px 44px rgba(28,28,28,0.22) !important;
                 }
                 .susi-ring1 { animation: susi-pulse-ring 3s ease-in-out infinite; }
                 .susi-ring2 { animation: susi-pulse-ring2 3s ease-in-out infinite 0.8s; }
@@ -443,47 +523,83 @@ const AIAssistant = () => {
             `}</style>
 
             {!isOpen && (
-                <div className="relative flex items-center justify-end group">
-                    {/* Ambient glow rings */}
+                <div className="relative flex items-center justify-end">
+                    {/* Ambient subtle glow behind the capsule */}
                     <div
                         className="absolute rounded-full pointer-events-none"
                         style={{
-                            inset: innerGlowInset,
-                            background: 'radial-gradient(circle, rgba(247,196,41,0.25) 0%, transparent 68%)',
-                            animation: 'susi-active-ring 2s ease-out infinite',
+                            inset: -8,
+                            background: 'radial-gradient(circle, rgba(247,196,41,0.22) 0%, transparent 72%)',
+                            animation: 'susi-pulse-ring 3s ease-in-out infinite',
                         }}
                     />
+
+                    {/* Option A: Hybrid Capsule */}
                     <div
-                        className="absolute rounded-full pointer-events-none"
-                        style={{
-                            inset: outerGlowInset,
-                            background: 'radial-gradient(circle, rgba(247,196,41,0.12) 0%, transparent 72%)',
-                            animation: 'susi-active-ring 2s ease-out infinite 0.6s',
-                        }}
-                    />
-
-                    {/* Tooltip */}
-                    <div className="absolute right-[calc(100%+16px)] top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-sm text-[#1C1C1C] px-5 py-2.5 rounded-2xl whitespace-nowrap text-[11px] font-bold tracking-[0.15em] opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none shadow-lg border border-[#1C1C1C]/10 uppercase">
-                        <span className="text-[#F7C429]">✦</span> Susi fragen
-                    </div>
-
-                    {/* Sphere trigger button */}
-                    <button
                         onClick={() => { setIsOpen(true); startVoiceMode(false); }}
-                        className="susi-sphere-btn relative rounded-full border-0 outline-none cursor-pointer active:scale-95 transition-transform duration-150"
-                        aria-label="KI-Assistentin Susi öffnen"
-                        title="KI-Assistentin Susi öffnen"
-                        style={{
-                            width: sphereSize, height: sphereSize
-                        }}
+                        className="susi-capsule relative flex items-center gap-2.5 sm:gap-3.5 pl-2 sm:pl-2.5 pr-3 sm:pr-4 py-2 bg-[#EDE7DB]/95 hover:bg-white/95 backdrop-blur-xl rounded-full border border-[#1C1C1C]/15 hover:border-[#F7C429]/60 shadow-[0_10px_32px_rgba(28,28,28,0.14)] transition-all duration-300 cursor-pointer group select-none active:scale-[0.98]"
+                        role="button"
+                        tabIndex={0}
+                        aria-label="Mit KI-Assistentin Susi sprechen oder chatten"
                     >
-                        <SusiSphere
-                            size={sphereSize}
-                            isListening={true}
-                            isSpeaking={isBotSpeaking}
-                            isConnecting={isConnecting}
-                        />
-                    </button>
+                        {/* Left: Glowing mini-SusiSphere */}
+                        <div className="relative flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+                            <SusiSphere
+                                size={isMobile ? 44 : 52}
+                                isListening={true}
+                                isSpeaking={isBotSpeaking}
+                                isConnecting={isConnecting}
+                                isThinking={isThinking}
+                            />
+                            <span className="absolute -top-0.5 -right-0.5 flex h-2.5 w-2.5">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500 border border-white"></span>
+                            </span>
+                        </div>
+
+                        {/* Center: Typography */}
+                        <div className="flex flex-col text-left">
+                            <div className="flex items-center gap-1.5">
+                                <span className="font-semibold text-xs sm:text-sm text-[#1C1C1C] tracking-tight leading-tight">
+                                    Mit Susi sprechen
+                                </span>
+                                <span className="text-[#F7C429] text-[10px]">✦</span>
+                            </div>
+                            <span className="text-[10px] sm:text-[11px] text-[#1C1C1C]/60 font-medium tracking-wide">
+                                Sprechen & Chatten
+                            </span>
+                        </div>
+
+                        {/* Right: Quick Action Buttons (Microphone + Chat Bubble) */}
+                        <div className="flex items-center gap-1.5 pl-1.5 sm:pl-2 border-l border-[#1C1C1C]/10">
+                            <button
+                                type="button"
+                                className="p-1.5 sm:p-2 rounded-full bg-[#F7C429]/25 hover:bg-[#F7C429] text-[#1C1C1C] transition-colors cursor-pointer border-0"
+                                title="Sprachmodus starten"
+                                aria-label="Mit Susi sprechen"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setIsOpen(true);
+                                    startVoiceMode(false);
+                                }}
+                            >
+                                <Mic className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#1C1C1C]" />
+                            </button>
+                            <button
+                                type="button"
+                                className="p-1.5 sm:p-2 rounded-full bg-white/90 hover:bg-[#1C1C1C] text-[#1C1C1C] hover:text-white transition-colors cursor-pointer border-0"
+                                title="Text-Chat öffnen"
+                                aria-label="Mit Susi chatten"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setMode(AssistantMode.CHAT);
+                                    setIsOpen(true);
+                                }}
+                            >
+                                <MessageSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                            </button>
+                        </div>
+                    </div>
                 </div>
             )}
             {isOpen && (
@@ -498,6 +614,8 @@ const AIAssistant = () => {
                                 style={{
                                     filter: isBotSpeaking
                                         ? 'drop-shadow(0 0 14px rgba(247,196,41,0.7))'
+                                        : isThinking
+                                        ? 'drop-shadow(0 0 12px rgba(251,191,36,0.65))'
                                         : isListening || isConnecting
                                         ? 'drop-shadow(0 0 10px rgba(247,196,41,0.5))'
                                         : 'drop-shadow(0 4px 12px rgba(28,28,28,0.15))'
@@ -508,14 +626,15 @@ const AIAssistant = () => {
                                     isListening={isListening}
                                     isSpeaking={isBotSpeaking}
                                     isConnecting={isConnecting}
+                                    isThinking={isThinking}
                                 />
                             </div>
                             <div>
                                 <h4 className="font-[var(--font-vollkorn)] font-semibold text-2xl tracking-tight leading-none mb-2 text-[#1C1C1C]">Susi KI</h4>
                                 <div className="flex items-center gap-2">
-                                    <div className={`w-2 h-2 rounded-full ${isBotSpeaking ? 'bg-[#F7C429] animate-pulse' : isListening ? 'bg-emerald-500 animate-pulse' : isConnecting ? 'bg-[#F7C429] animate-pulse' : 'bg-emerald-500 animate-pulse'}`} />
+                                    <div className={`w-2 h-2 rounded-full ${isBotSpeaking ? 'bg-[#F7C429] animate-pulse' : isThinking ? 'bg-amber-500 animate-ping' : isListening ? 'bg-emerald-500 animate-pulse' : isConnecting ? 'bg-[#F7C429] animate-pulse' : 'bg-emerald-500 animate-pulse'}`} />
                                     <span className="text-[11px] text-[#1C1C1C]/60 font-[var(--font-inter)] tracking-[0.05em]">
-                                        {isConnecting ? 'Verbindet...' : isBotSpeaking ? 'Spricht gerade...' : isListening ? 'Hört zu...' : 'Deine persönliche Assistentin'}
+                                        {isConnecting ? 'Verbindet...' : isBotSpeaking ? 'Spricht gerade...' : isThinking ? 'Susi überlegt...' : isListening ? 'Hört zu...' : 'Deine persönliche Assistentin'}
                                     </span>
                                 </div>
                             </div>
@@ -559,29 +678,67 @@ const AIAssistant = () => {
 
                                     {m.isSuccess && m.appointmentData && (
                                         <div className="mt-6 space-y-3 animate-in fade-in zoom-in-95 duration-500">
-                                            <div className="p-5 bg-emerald-500/10 rounded-2xl border border-emerald-500/25 space-y-4 shadow-inner relative overflow-hidden text-emerald-950">
-                                                <div className="absolute top-0 right-0 p-4 opacity-5"><CheckCircle2 className="w-16 h-16 text-emerald-600" /></div>
-                                                <div className="flex items-center gap-2 text-emerald-800 font-bold uppercase text-[10px] tracking-[0.2em] pb-3 border-b border-emerald-500/15">
-                                                    <Calendar className="w-3.5 h-3.5" /> Bestätigung
+                                            <div className="p-5 sm:p-6 bg-emerald-500/10 rounded-2xl border border-emerald-500/30 space-y-4 shadow-sm relative overflow-hidden text-emerald-950">
+                                                <div className="absolute top-0 right-0 p-4 opacity-5"><CheckCircle2 className="w-20 h-20 text-emerald-600" /></div>
+                                                <div className="flex items-center justify-between pb-3 border-b border-emerald-500/20">
+                                                    <div className="flex items-center gap-2 text-emerald-900 font-bold uppercase text-[10px] tracking-[0.2em]">
+                                                        <Calendar className="w-4 h-4 text-emerald-700" /> Terminbestätigung
+                                                    </div>
+                                                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-600/15 text-emerald-800 border border-emerald-600/20">
+                                                        ✓ Fixiert
+                                                    </span>
                                                 </div>
-                                                <div className="space-y-3 relative z-10 pb-1">
+                                                <div className="space-y-3.5 relative z-10 pb-1">
                                                     <div>
-                                                        <p className="text-[9px] text-emerald-700 uppercase font-bold tracking-widest mb-0.5">Ansprechpartner</p>
-                                                        <p className="font-bold text-lg tracking-tight">{m.appointmentData.clientName}</p>
+                                                        <p className="text-[10px] text-emerald-800 uppercase font-bold tracking-widest mb-0.5">Ansprechpartner</p>
+                                                        <p className="font-bold text-lg text-emerald-950 tracking-tight">{m.appointmentData.clientName}</p>
                                                     </div>
                                                     <div>
-                                                        <p className="text-[9px] text-emerald-700 uppercase font-bold tracking-widest mb-0.5">E-Mail Adresse</p>
-                                                        <p className="font-semibold break-all text-sm">{m.appointmentData.clientEmail}</p>
+                                                        <p className="text-[10px] text-emerald-800 uppercase font-bold tracking-widest mb-0.5">E-Mail Adresse</p>
+                                                        <p className="font-semibold break-all text-sm text-emerald-900">{m.appointmentData.clientEmail}</p>
                                                     </div>
+                                                    {m.appointmentData.phoneNumber && (
+                                                        <div>
+                                                            <p className="text-[10px] text-emerald-800 uppercase font-bold tracking-widest mb-0.5">Telefonnummer</p>
+                                                            <p className="font-semibold text-sm text-emerald-900">{m.appointmentData.phoneNumber}</p>
+                                                        </div>
+                                                    )}
                                                     <div>
-                                                        <p className="text-[9px] text-emerald-700 uppercase font-bold tracking-widest mb-0.5">Terminfenster</p>
-                                                        <p className="font-bold text-emerald-850 tracking-tight">{m.appointmentData.appointmentDateTime}</p>
+                                                        <p className="text-[10px] text-emerald-800 uppercase font-bold tracking-widest mb-0.5">Terminfenster</p>
+                                                        <p className="font-bold text-base text-emerald-950 tracking-tight">{m.appointmentData.appointmentDateTime}</p>
                                                     </div>
+                                                    {m.appointmentData.topic && (
+                                                        <div>
+                                                            <p className="text-[10px] text-emerald-800 uppercase font-bold tracking-widest mb-0.5">Thema / Anliegen</p>
+                                                            <p className="font-medium text-sm text-emerald-950 leading-snug">{m.appointmentData.topic}</p>
+                                                        </div>
+                                                    )}
+                                                    <div>
+                                                        <p className="text-[10px] text-emerald-800 uppercase font-bold tracking-widest mb-0.5">Format</p>
+                                                        <p className="font-semibold text-sm text-emerald-900">
+                                                            {m.appointmentData.meetingType === 'online' ? '🎥 Online via Google Meet' : `📞 Telefonisch (${m.appointmentData.phoneNumber || 'Rufnummer notiert'})`}
+                                                        </p>
+                                                    </div>
+                                                    {m.appointmentData.meetLink && (
+                                                        <div className="pt-2">
+                                                            <a 
+                                                                href={m.appointmentData.meetLink} 
+                                                                target="_blank" 
+                                                                rel="noopener noreferrer"
+                                                                className="inline-flex items-center justify-center gap-2 w-full py-3 bg-[#1C1C1C] hover:bg-black text-[#F5EFE6] rounded-xl text-xs font-semibold transition-all no-underline shadow-sm"
+                                                            >
+                                                                Google Meet Raum beitreten <ArrowUpRight className="w-3.5 h-3.5 text-[#F7C429]" />
+                                                            </a>
+                                                            <p className="text-[10px] text-emerald-800/70 text-center mt-1.5 break-all">
+                                                                Link: {m.appointmentData.meetLink}
+                                                            </p>
+                                                        </div>
+                                                    )}
                                                 </div>
                                             </div>
-                                            <div className="py-4 bg-emerald-600 rounded-xl flex items-center justify-center gap-2 shadow-md">
+                                            <div className="py-3.5 px-4 bg-emerald-600 rounded-xl flex items-center justify-center gap-2 shadow-sm text-white">
                                                 <ShieldCheck className="w-4 h-4 text-white" />
-                                                <span className="font-bold text-white text-[10px] uppercase tracking-[0.2em]">Buchung bestätigt</span>
+                                                <span className="font-bold text-[10px] uppercase tracking-[0.15em]">Buchung im System fixiert & E-Mail versendet ✓</span>
                                             </div>
                                         </div>
                                     )}

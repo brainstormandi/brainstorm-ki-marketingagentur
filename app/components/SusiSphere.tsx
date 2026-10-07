@@ -6,6 +6,7 @@ interface SusiSphereProps {
   isListening?: boolean;
   isSpeaking?: boolean;
   isConnecting?: boolean;
+  isThinking?: boolean;
   className?: string;
 }
 
@@ -22,6 +23,7 @@ const SusiSphere: React.FC<SusiSphereProps> = ({
   isListening = false,
   isSpeaking = false,
   isConnecting = false,
+  isThinking = false,
   className = "",
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -29,7 +31,7 @@ const SusiSphere: React.FC<SusiSphereProps> = ({
   const timeRef = useRef(0);
   const blobsRef = useRef<Blob[]>([]);
 
-  const isActive = isListening || isSpeaking || isConnecting;
+  const isActive = isListening || isSpeaking || isConnecting || isThinking;
 
   useEffect(() => {
     const cx = size / 2;
@@ -60,7 +62,7 @@ const SusiSphere: React.FC<SusiSphereProps> = ({
     const cy = h / 2;
     const R = w / 2 - 1;
 
-    timeRef.current += isActive ? 0.020 : 0.007;
+    timeRef.current += isThinking ? 0.038 : isActive ? 0.020 : 0.007;
     const t = timeRef.current;
 
     ctx.clearRect(0, 0, w * dpr, h * dpr);
@@ -188,13 +190,14 @@ const SusiSphere: React.FC<SusiSphereProps> = ({
       }
     }
 
-    // === CONNECTING inner pulse ===
-    if (isConnecting) {
-      const pulse = 0.5 + 0.5 * Math.sin(t * 6);
+    // === CONNECTING / THINKING inner pulse ===
+    if (isConnecting || isThinking) {
+      const pulseSpeed = isThinking ? 8 : 6;
+      const pulse = 0.5 + 0.5 * Math.sin(t * pulseSpeed);
       ctx.beginPath();
       ctx.arc(cx, cy, R * 0.65 + R * 0.22 * pulse, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(255,255,255,${0.45 * pulse})`;
-      ctx.lineWidth   = 2;
+      ctx.strokeStyle = isThinking ? `rgba(255,255,255,${0.65 * pulse})` : `rgba(255,255,255,${0.45 * pulse})`;
+      ctx.lineWidth   = isThinking ? 2.5 : 2;
       ctx.stroke();
     }
 
@@ -219,7 +222,7 @@ const SusiSphere: React.FC<SusiSphereProps> = ({
     ctx.fillRect(0, 0, w, h);
 
     ctx.restore();
-  }, [size, isListening, isSpeaking, isConnecting, isActive]);
+  }, [size, isListening, isSpeaking, isConnecting, isThinking, isActive]);
 
   useEffect(() => {
     const animate = () => {

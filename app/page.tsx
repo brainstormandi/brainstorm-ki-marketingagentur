@@ -13,6 +13,7 @@ import Process from './components/Process';
 import LeadMagnet from './components/LeadMagnet';
 import Footer from './components/Footer';
 import ScrollReveal from './components/ScrollReveal';
+import RegionalLocations from './components/RegionalLocations';
 
 const AIAssistant = dynamic(() => import('./components/AIAssistant'), { ssr: false });
 const TestimonialSlider = dynamic(() => import('./components/TestimonialSlider'), { ssr: false });
@@ -101,6 +102,7 @@ export default function Home() {
         <LeadMagnet />
         <FAQ />
         <Blog />
+        <RegionalLocations />
         <Contact />
         <IndustryMarquee />
       </main>

@@ -44,6 +44,9 @@ export default function Schema() {
         },
         "knowsAbout": [
             "Werbeagentur",
+            "Werbeagentur Amstetten",
+            "Webseite Amstetten",
+            "Webdesign Amstetten",
             "Webagentur",
             "Webdesign & Homepage-Erstellung",
             "Mitarbeitergewinnung",
@@ -104,7 +107,18 @@ export default function Schema() {
             { "@type": "AdministrativeArea", "name": "Oberösterreich" },
             { "@type": "AdministrativeArea", "name": "Wien" },
             { "@type": "City", "name": "Seitenstetten" },
-            { "@type": "City", "name": "Amstetten" },
+            { 
+                "@type": "City", 
+                "name": "Amstetten", 
+                "sameAs": "https://www.wikidata.org/wiki/Q251016",
+                "postalCode": "3300"
+            },
+            { 
+                "@type": "AdministrativeArea", 
+                "name": "Bezirk Amstetten", 
+                "sameAs": "https://www.wikidata.org/wiki/Q132997"
+            },
+            { "@type": "AdministrativeArea", "name": "Mostviertel" },
             { "@type": "City", "name": "Steyr" },
             { "@type": "City", "name": "Linz" },
             { "@type": "City", "name": "St. Pölten" },
@@ -139,6 +153,10 @@ export default function Schema() {
         },
         "knowsAbout": [
             "Werbeagentur",
+            "Werbeagentur Amstetten",
+            "Webseite Amstetten",
+            "Webdesign Amstetten",
+            "Homepage erstellen Amstetten",
             "Webdesign & Landingpages",
             "Mitarbeitergewinnung & Social Recruiting für Handwerker",
             "SEO Agentur Niederösterreich",

@@ -4,23 +4,25 @@ import { buildSystemInstruction } from '../utils/knowledgeBase';
 export const appointmentTools: FunctionDeclaration[] = [
     {
         name: 'confirmAppointment',
+        description: 'Bucht den Termin fest im System ein, blendet die Bestätigungskarte mit allen Kontaktdaten im Chat ein und versendet automatisch Bestätigungs-E-Mails an den Kunden und das BrainStorm-Team. Rufe dieses Tool verbindlich und unverzüglich auf, sobald Name, E-Mail und Wunschtermin vorliegen.',
         parameters: {
             type: Type.OBJECT,
-            description: 'Bucht den Termin fest im System ein und versendet automatisch Bestätigungs-E-Mails an den Kunden und das BrainStorm-Team. Nutze dieses Tool erst, wenn du Name, E-Mail, Datum und Uhrzeit vom Kunden hast.',
             properties: {
                 clientName: { type: Type.STRING, description: 'Vorname und Nachname des Kunden' },
-                clientEmail: { type: Type.STRING, description: 'E-Mail Adresse des Kunden' },
+                clientEmail: { type: Type.STRING, description: 'E-Mail-Adresse des Kunden' },
                 appointmentDateTime: { type: Type.STRING, description: 'Gewünschtes Datum und Uhrzeit des Termins (z.B. Mittwoch 14:00 Uhr)' },
-                topic: { type: Type.STRING, description: 'Kurze Zusammenfassung des Beratungs-Themas' },
+                topic: { type: Type.STRING, description: 'Kurze Zusammenfassung des Beratungs-Themas (Standard: Kostenloses Strategiegespräch mit Andi Sturm)' },
+                meetingType: { type: Type.STRING, description: "Format des Termins: 'online' (Google Meet) oder 'phone' (Telefonisch)" },
+                phoneNumber: { type: Type.STRING, description: 'Telefonnummer des Kunden (nur bei telefonischem Termin erforderlich)' },
             },
-            required: ['clientName', 'clientEmail', 'appointmentDateTime', 'topic'],
+            required: ['clientName', 'clientEmail', 'appointmentDateTime'],
         },
     },
     {
         name: 'redirectToCalendly',
+        description: 'Stellt dem Kunden den direkten Calendly-Link zur Verfügung, falls der Kunde dies ausdrücklich wünscht.',
         parameters: {
             type: Type.OBJECT,
-            description: 'Stellt dem Kunden den direkten Calendly-Link zur Verfügung, falls der Kunde dies ausdrücklich wünscht.',
             properties: {
                 reason: { type: Type.STRING, description: 'Grund für die Weiterleitung' },
             },
@@ -36,16 +38,20 @@ export class GeminiService {
     async startChat() {
         // Return a proxy object that mimics the chat session
         return {
-            sendMessage: async (args: any) => {
+            sendMessage: async (args: { message: any; history?: any[] }) => {
                 const response = await fetch('/api/chat', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         message: args.message,
+                        history: args.history || [],
                         tools: appointmentTools
                     }),
                 });
-                if (!response.ok) throw new Error('Chat API failed');
+                if (!response.ok) {
+                    const err = await response.json().catch(() => ({}));
+                    throw new Error(err.error || 'Chat API failed');
+                }
                 return await response.json();
             }
         };
@@ -69,111 +75,92 @@ export class GeminiService {
             return;
         }
 
-        const wsUrl = `wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent?key=${apiKey}`;
+        const connectWithModel = (modelName: string): Promise<any> => {
+            const wsUrl = `wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent?key=${apiKey}`;
 
-        return new Promise((resolve, reject) => {
-            const ws = new WebSocket(wsUrl);
-            let sessionActive = false;
-            let heartbeatInterval: any = null;
+            return new Promise((resolve, reject) => {
+                const ws = new WebSocket(wsUrl);
+                let sessionActive = false;
 
-            const session = {
-                sendRealtimeInput: (data: any) => {
-                    if (ws.readyState === WebSocket.OPEN) ws.send(JSON.stringify(data));
-                },
-                sendToolResponse: (data: any) => {
-                    if (ws.readyState === WebSocket.OPEN) ws.send(JSON.stringify(data));
-                },
-                close: () => {
-                    if (heartbeatInterval) {
-                        clearInterval(heartbeatInterval);
-                        heartbeatInterval = null;
-                    }
-                    ws.close();
-                }
-            };
-
-            ws.onopen = () => {
-                const setupMessage = {
-                    setup: {
-                        model: "models/gemini-2.5-flash-native-audio-latest",
-                        generationConfig: {
-                            responseModalities: ["AUDIO"],
-                            speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: "Kore" } } }
-                        },
-                        systemInstruction: {
-                            parts: [{ text: buildSystemInstruction() }]
-                        },
-                        tools: [{
-                            functionDeclarations: [{
-                                name: 'confirmAppointment',
-                                description: 'Bucht den Termin fest und versendet Bestätigungs-E-Mails.',
-                                parameters: {
-                                    type: "OBJECT",
-                                    properties: {
-                                        clientName: { type: "STRING" },
-                                        clientEmail: { type: "STRING" },
-                                        appointmentDateTime: { type: "STRING" },
-                                        topic: { type: "STRING" },
-                                    },
-                                    required: ['clientName', 'clientEmail', 'appointmentDateTime', 'topic'],
-                                }
-                            }]
-                        }]
+                const session = {
+                    sendRealtimeInput: (data: any) => {
+                        if (ws.readyState === WebSocket.OPEN) ws.send(JSON.stringify(data));
+                    },
+                    sendToolResponse: (data: any) => {
+                        if (ws.readyState === WebSocket.OPEN) {
+                            const payload = data?.toolResponse ? data : { toolResponse: data };
+                            ws.send(JSON.stringify(payload));
+                        }
+                    },
+                    close: () => {
+                        ws.close();
                     }
                 };
-                ws.send(JSON.stringify(setupMessage));
-                sessionActive = true;
 
-                // Start heartbeat interval to keep the WebSocket active
-                heartbeatInterval = setInterval(() => {
-                    if (ws.readyState === WebSocket.OPEN) {
-                        try {
-                            ws.send(JSON.stringify({
-                                clientContent: {
-                                    turnComplete: false
-                                }
-                            }));
-                        } catch (e) {
-                            console.error("Keep-alive heartbeat failed:", e);
+                ws.onopen = () => {
+                    const setupMessage = {
+                        setup: {
+                            model: modelName,
+                            generationConfig: {
+                                responseModalities: ["AUDIO"],
+                                speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: "Kore" } } }
+                            },
+                            systemInstruction: {
+                                parts: [{ text: buildSystemInstruction() }]
+                            },
+                            tools: [{
+                                functionDeclarations: [{
+                                    name: 'confirmAppointment',
+                                    description: 'Bucht den Termin fest im System ein, blendet die Bestätigungskarte mit allen Kontaktdaten im Chat ein und versendet automatisch Bestätigungs-E-Mails an den Kunden und das BrainStorm-Team. Rufe dieses Tool verbindlich und unverzüglich auf, sobald Name, E-Mail und Wunschtermin vorliegen.',
+                                    parameters: {
+                                        type: "OBJECT",
+                                        properties: {
+                                            clientName: { type: "STRING", description: "Vorname und Nachname des Kunden" },
+                                            clientEmail: { type: "STRING", description: "E-Mail-Adresse des Kunden" },
+                                            appointmentDateTime: { type: "STRING", description: "Gewünschtes Datum und Uhrzeit des Termins" },
+                                            topic: { type: "STRING", description: "Kurze Zusammenfassung des Beratungs-Themas (Standard: Kostenloses Strategiegespräch mit Andi Sturm)" },
+                                            meetingType: { type: "STRING", description: "Format des Termins: 'online' (Google Meet) oder 'phone' (Telefonisch)" },
+                                            phoneNumber: { type: "STRING", description: "Telefonnummer des Kunden (nur bei telefonischem Termin erforderlich)" },
+                                        },
+                                        required: ['clientName', 'clientEmail', 'appointmentDateTime'],
+                                    }
+                                }]
+                            }]
                         }
+                    };
+                    ws.send(JSON.stringify(setupMessage));
+                    sessionActive = true;
+                };
+
+                ws.onmessage = async (event) => {
+                    try {
+                        const text = event.data instanceof Blob ? await event.data.text() : event.data;
+                        const message = JSON.parse(text);
+                        if (message.setupComplete) {
+                            callbacks.onOpen(session);
+                            resolve(session);
+                            return;
+                        }
+                        callbacks.onMessage(message);
+                    } catch (err) {
+                        console.error("Failed to parse WebSocket message:", err);
                     }
-                }, 15000); // 15 seconds interval
-            };
+                };
 
-            ws.onmessage = async (event) => {
-                try {
-                    const text = event.data instanceof Blob ? await event.data.text() : event.data;
-                    const message = JSON.parse(text);
-                    if (message.setupComplete) {
-                        callbacks.onOpen(session);
-                        resolve(session);
-                        return;
+                ws.onerror = (error) => {
+                    callbacks.onError(new Error("WebSocket Verbindungsfehler"));
+                    reject(error);
+                };
+
+                ws.onclose = (event) => {
+                    if (event.code !== 1000 && sessionActive) {
+                        callbacks.onError(new Error(`${event.reason || "Verbindung unterbrochen"} (Code ${event.code})`));
                     }
-                    callbacks.onMessage(message);
-                } catch (err) {
-                    console.error("Failed to parse WebSocket message:", err);
-                }
-            };
+                };
+            });
+        };
 
-            ws.onerror = (error) => {
-                if (heartbeatInterval) {
-                    clearInterval(heartbeatInterval);
-                    heartbeatInterval = null;
-                }
-                callbacks.onError(new Error("WebSocket Verbindungsfehler"));
-                reject(error);
-            };
-
-            ws.onclose = (event) => {
-                if (heartbeatInterval) {
-                    clearInterval(heartbeatInterval);
-                    heartbeatInterval = null;
-                }
-                if (event.code !== 1000 && sessionActive) {
-                    callbacks.onError(new Error(`${event.reason || "Verbindung unterbrochen"} (Code ${event.code})`));
-                }
-            };
-        });
+        return connectWithModel("models/gemini-2.5-flash-native-audio-latest");
     }
 }
 
