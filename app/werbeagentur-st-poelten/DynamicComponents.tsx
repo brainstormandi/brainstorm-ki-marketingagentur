@@ -1,5 +1,6 @@
 "use client";
-import dynamic from 'next/dynamic';
+import ContactComponent from '../components/Contact';
 
-export const AIAssistant = dynamic(() => import('../components/AIAssistant'), { ssr: false });
-export const Contact = dynamic(() => import('../components/Contact'), { ssr: false });
+// KI Susi ist aktuell ausgeblendet (Code in ../components/AIAssistant.tsx bleibt vollständig erhalten)
+export const AIAssistant = () => null;
+export const Contact = ContactComponent;

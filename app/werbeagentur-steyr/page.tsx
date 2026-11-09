@@ -10,47 +10,221 @@ import SteyrFAQ from './SteyrFAQ';
 import { GOOGLE_REVIEW_LINK } from '../constants';
 
 export const metadata: Metadata = {
-  title: "Werbeagentur & Webdesign Steyr | deine neue Firmen-Homepage",
-  description: "Die Experten für Webseiten und Landingpages in Steyr. Wir vereinen hochmodernes Design mit KI-Sichtbarkeit für maximalen Umsatz. Jetzt Website anfragen!",
-  keywords: ["werbeagentur", "web agentur", "webagentur", "werbeagentur website", "seo agentur niederösterreich", "suchmaschinenoptimierung niederösterreich", "website werbeagentur", "werbeagentur steyr", "webdesign steyr", "homepage steyr"],
+  title: "Werbeagentur & Webdesign Steyr | Webseite, Landingpage, SEO & KI",
+  description: "Die Experten für Webseiten, verkaufsstarke Landingpages, Suchmaschinenoptimierung (SEO) und KI-Marketing in Steyr. Persönliche Vor-Ort-Betreuung & live in 5-7 Tagen. Jetzt Website anfragen!",
+  keywords: [
+    "werbeagentur steyr",
+    "webseite steyr",
+    "landingpage steyr",
+    "landingpage erstellen lassen steyr",
+    "webdesign steyr",
+    "homepage steyr",
+    "webseite erstellen lassen steyr",
+    "homepage erstellen lassen steyr",
+    "webagentur steyr",
+    "seo agentur steyr",
+    "suchmaschinenoptimierung steyr",
+    "seo steyr",
+    "geo steyr",
+    "ki suche steyr",
+    "ki werbeagentur steyr",
+    "ki agentur steyr",
+    "social recruiting steyr",
+    "mitarbeitergewinnung steyr",
+    "online marketing steyr",
+    "werbeagentur steyr-land",
+    "werbeagentur garsten"
+  ],
+  openGraph: {
+    title: "Werbeagentur & Webdesign Steyr | Webseite, Landingpage, SEO & KI",
+    description: "Die Experten für Webseiten, Landingpages, Suchmaschinenoptimierung (SEO) und KI-Sichtbarkeit (GEO) in Steyr. Persönliche Vor-Ort-Betreuung!",
+    url: "https://ki-marketingagentur.jetzt/werbeagentur-steyr",
+    siteName: "BrainStorm KI Werbeagentur",
+    locale: "de_AT",
+    type: "website",
+    images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Werbeagentur & Webdesign Steyr | Webseite, Landingpage, SEO & KI",
+    description: "Webseiten, Landingpages, SEO, GEO & KI-Marketing für Steyr & Steyr-Land.",
+    images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
+  },
   alternates: {
     canonical: "https://ki-marketingagentur.jetzt/werbeagentur-steyr",
   },
+  other: {
+    "geo.region": "AT-4",
+    "geo.placename": "Steyr, Oberösterreich",
+    "geo.position": "48.0427;14.4213",
+    "ICBM": "48.0427, 14.4213",
+  },
 };
+
+const STEYR_SCHEMA_FAQS = [
+  {
+    question: "Warum sollte ein Steyrer Unternehmen auf eine professionelle Homepage setzen?",
+    answer: "Weil die Konkurrenz im Raum Steyr extrem stark ist. Von der Eisenstraße über Garsten bis zum Stadtplatz: Konsumenten suchen online. Nur wenn deine Webseite modern ist und sofort überzeugt, konvertierst du hier Suchanfragen in echte Laufkundschaft oder B2B-Aufträge."
+  },
+  {
+    question: "Können wir uns für das Web-Projekt in Steyr persönlich treffen?",
+    answer: "Selbstverständlich! Wir haben unseren Sitz im nahen Mostviertel und sind in nur knapp 25 Minuten in Steyr. Wir lieben den direkten, unkomplizierten Kontakt vor Ort."
+  },
+  {
+    question: "Bietet ihr Landingpages oder vollumfängliche Firmen-Webseiten an?",
+    answer: "Ob ein kompakter, verkaufsstarker One-Pager für ein Event am Steyrer Stadtplatz oder eine umfassende Homepage für einen Industriebetrieb – wir realisieren Webseiten-Projekte in jeder Größe, immer mit Fokus auf KI und maximale Conversion."
+  },
+  {
+    question: "Wie läuft der Support nach Live-Gang der Website ab?",
+    answer: "Mit uns hast du aus der nahen Region einen verlässlichen Ansprechpartner. Wir kümmern uns um alle Updates, DSGVO-Anpassungen (Google Fonts, Cookies) und sind bei Rückfragen per kurzen Wegen in Steyr für dich da."
+  }
+];
 
 export default function WerbeagenturSteyr() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "BrainStorm Webdesign & Werbeagentur Steyr",
+    "@type": ["LocalBusiness", "AdvertisingAgency", "ProfessionalService"],
+    "name": "BrainStorm KI Werbeagentur, Webdesign & SEO Steyr",
+    "alternateName": [
+      "Werbeagentur Steyr",
+      "Webagentur Steyr",
+      "SEO Agentur Steyr",
+      "KI Werbeagentur Steyr"
+    ],
     "image": "https://ki-marketingagentur.jetzt/bilder/logo.png",
-    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-steyr",
+    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-steyr#localbusiness",
     "url": "https://ki-marketingagentur.jetzt/werbeagentur-steyr",
     "telephone": "+43 660 520 3171",
+    "email": "info@brainstorm-werbeagentur.at",
+    "priceRange": "€€",
+    "parentOrganization": {
+      "@id": "https://ki-marketingagentur.jetzt/#organization"
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Am Ziegelfeld 8",
       "addressLocality": "Seitenstetten",
       "postalCode": "3353",
+      "addressRegion": "Niederösterreich",
       "addressCountry": "AT"
     },
     "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 48.04,
-        "longitude": 14.41
+      "@type": "GeoCoordinates",
+      "latitude": 48.0427,
+      "longitude": 14.4213
     },
-    "serviceArea": {
-      "@type": "Place",
-      "name": "Steyr"
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Steyr",
+        "postalCode": "4400",
+        "sameAs": "https://www.wikidata.org/wiki/Q131632"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Bezirk Steyr-Land",
+        "sameAs": "https://www.wikidata.org/wiki/Q257029"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Oberösterreich",
+        "sameAs": "https://www.wikidata.org/wiki/Q41967"
+      }
+    ],
+    "knowsAbout": [
+      "Werbeagentur Steyr",
+      "Webseite Steyr",
+      "Landingpage Steyr",
+      "Webdesign Steyr",
+      "Homepage erstellen Steyr",
+      "Suchmaschinenoptimierung (SEO) Steyr",
+      "Generative Engine Optimization (GEO) Steyr",
+      "KI-Suche Optimierung (ChatGPT, Perplexity, Gemini)",
+      "KI-Marketing & Prozessautomatisierung Steyr",
+      "Social Recruiting & Mitarbeitergewinnung Steyr"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Leistungen für Unternehmen in Steyr & Steyr-Land",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Webseite & Landingpage erstellen lassen in Steyr",
+            "description": "Verkaufsstarke Firmen-Webseiten und High-Converting Landingpages in 5-7 Tagen inklusive persönlicher Vor-Ort-Beratung in Steyr."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Suchmaschinenoptimierung (SEO) & KI-Suche (GEO) Steyr",
+            "description": "Platz 1 Optimierung für Google Suche, Google Maps und KI-Suchmaschinen (ChatGPT, Perplexity, Claude, Gemini) im Raum Steyr."
+          }
+        }
+      ]
     },
     "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "50",
-        "bestRating": "5",
-        "worstRating": "1",
-        "url": "https://share.google/8UoKWrgoWbfFIPX"
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "50",
+      "bestRating": "5",
+      "worstRating": "1",
+      "url": "https://share.google/8UoKWrgoWbfFIPX"
     }
+  };
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-steyr#webpage",
+    "url": "https://ki-marketingagentur.jetzt/werbeagentur-steyr",
+    "name": "Werbeagentur & Webdesign Steyr | Webseite, Landingpage, SEO & KI",
+    "description": "Die Experten für Webseiten, verkaufsstarke Landingpages, Suchmaschinenoptimierung (SEO) und KI-Sichtbarkeit in Steyr.",
+    "inLanguage": "de-AT",
+    "isPartOf": {
+      "@id": "https://ki-marketingagentur.jetzt/#website"
+    },
+    "about": {
+      "@id": "https://ki-marketingagentur.jetzt/werbeagentur-steyr#localbusiness"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "h2", "p"]
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": STEYR_SCHEMA_FAQS.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
+  const breadcrumbsSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Startseite",
+        "item": "https://ki-marketingagentur.jetzt/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Werbeagentur Steyr",
+        "item": "https://ki-marketingagentur.jetzt/werbeagentur-steyr"
+      }
+    ]
   };
 
   return (
@@ -257,6 +431,9 @@ export default function WerbeagenturSteyr() {
       <Footer />
       <AIAssistant />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }} />
     </div>
   );
 }

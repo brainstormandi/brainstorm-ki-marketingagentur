@@ -8,24 +8,33 @@ export default function Schema() {
         "@id": "https://ki-marketingagentur.jetzt/#organization",
         "name": "BrainStorm Werbeagentur",
         "alternateName": [
-            "Brainstorm KI Werbeagentur", 
-            "BrainStorm Webagentur", 
-            "BrainStorm Web design & Marketing", 
-            "Brainstorm Website Werbeagentur",
-            "Werbeagentur Seitenstetten"
+            "BrainStorm KI Werbeagentur",
+            "BrainStorm Webagentur",
+            "BrainStorm Webdesign & Marketing",
+            "BrainStorm Website & Landingpage Agentur",
+            "Werbeagentur Seitenstetten",
+            "Werbeagentur Amstetten",
+            "Werbeagentur Steyr",
+            "Werbeagentur Linz",
+            "Werbeagentur Perg",
+            "Werbeagentur St. Pölten",
+            "Werbeagentur Salzburg",
+            "Werbeagentur Wien"
         ],
         "url": "https://ki-marketingagentur.jetzt",
         "logo": "https://ki-marketingagentur.jetzt/bilder/logo.png",
         "founder": {
             "@type": "Person",
             "name": "Andreas Sturm",
-            "jobTitle": "Gründer & Geschäftsführer"
+            "jobTitle": "Gründer & Geschäftsführer",
+            "@id": "https://ki-marketingagentur.jetzt/#andi-sturm"
         },
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Am Ziegelfeld 8",
             "addressLocality": "Seitenstetten",
             "postalCode": "3353",
+            "addressRegion": "Niederösterreich",
             "addressCountry": "AT"
         },
         "sameAs": [
@@ -39,41 +48,43 @@ export default function Schema() {
             "telephone": CONTACT_INFO.phone,
             "contactType": "customer service",
             "email": CONTACT_INFO.email,
-            "areaServed": "AT",
-            "availableLanguage": "German"
+            "areaServed": ["AT", "DE", "CH"],
+            "availableLanguage": ["German", "de-AT"]
         },
         "knowsAbout": [
             "Werbeagentur",
-            "Werbeagentur Amstetten",
-            "Webseite Amstetten",
-            "Webdesign Amstetten",
-            "Webagentur",
+            "Webseite erstellen lassen",
+            "Landingpage erstellen lassen",
             "Webdesign & Homepage-Erstellung",
-            "Mitarbeitergewinnung",
-            "Social Recruiting Handwerk & KMU",
             "Suchmaschinenoptimierung (SEO)",
             "Generative Engine Optimization (GEO)",
-            "KI-Marketing & Automatisierung",
-            "SEO Agentur Niederösterreich",
-            "Local SEO Mostviertel",
-            "Social Media Marketing",
-            "Meta & Google Ads",
-            "Barrierefreies Webdesign BFSG"
+            "KI-Suche Optimierung (ChatGPT, Perplexity, Claude, Gemini)",
+            "KI-Marketing & Prozessautomatisierung",
+            "Mitarbeitergewinnung & Social Recruiting Handwerk & KMU",
+            "Local SEO & Google Maps Optimierung",
+            "Barrierefreies Webdesign BFSG 2025 / WCAG 2.1",
+            "Werbeagentur Amstetten",
+            "Werbeagentur Steyr",
+            "Werbeagentur Linz",
+            "Werbeagentur Perg",
+            "Werbeagentur St. Pölten",
+            "Werbeagentur Salzburg",
+            "Werbeagentur Wien"
         ]
     };
 
     const localBusinessSchema = {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
+        "@type": ["LocalBusiness", "AdvertisingAgency", "ProfessionalService"],
         "@id": "https://ki-marketingagentur.jetzt/#localbusiness",
-        "name": "BrainStorm - KI Webdesign & Marketing",
+        "name": "BrainStorm - KI Webdesign, Werbeagentur & SEO",
         "alternateName": [
             "BrainStorm KI Webdesign & Marketing",
             "BrainStorm Werbeagentur Seitenstetten",
-            "SEO Agentur Niederösterreich",
+            "SEO & GEO Agentur Österreich",
             "Social Recruiting Agentur Mostviertel",
-            "Webagentur Mostviertel",
-            "Website Werbeagentur Niederösterreich"
+            "Webagentur & Landingpage Agentur Mostviertel",
+            "Website Werbeagentur Niederösterreich & Oberösterreich"
         ],
         "image": [
             "https://ki-marketingagentur.jetzt/bilder/logo.png",
@@ -81,11 +92,13 @@ export default function Schema() {
         ],
         "url": "https://ki-marketingagentur.jetzt",
         "telephone": CONTACT_INFO.phone,
+        "email": CONTACT_INFO.email,
         "priceRange": "€€",
         "currenciesAccepted": "EUR",
         "paymentAccepted": "Rechnung, Überweisung",
         "founder": {
             "@type": "Person",
+            "@id": "https://ki-marketingagentur.jetzt/#andi-sturm",
             "name": "Andreas Sturm",
             "image": "https://ki-marketingagentur.jetzt/bilder/andreas-sturm-profil.jpg",
             "jobTitle": "CEO & KI-Experte"
@@ -95,6 +108,7 @@ export default function Schema() {
             "streetAddress": "Am Ziegelfeld 8",
             "addressLocality": "Seitenstetten",
             "postalCode": "3353",
+            "addressRegion": "Niederösterreich",
             "addressCountry": "AT"
         },
         "geo": {
@@ -103,27 +117,74 @@ export default function Schema() {
             "longitude": 14.6534
         },
         "areaServed": [
-            { "@type": "AdministrativeArea", "name": "Niederösterreich" },
-            { "@type": "AdministrativeArea", "name": "Oberösterreich" },
-            { "@type": "AdministrativeArea", "name": "Wien" },
-            { "@type": "City", "name": "Seitenstetten" },
-            { 
-                "@type": "City", 
-                "name": "Amstetten", 
-                "sameAs": "https://www.wikidata.org/wiki/Q251016",
-                "postalCode": "3300"
+            {
+                "@type": "City",
+                "name": "Seitenstetten",
+                "postalCode": "3353",
+                "sameAs": "https://www.wikidata.org/wiki/Q664903"
             },
-            { 
-                "@type": "AdministrativeArea", 
-                "name": "Bezirk Amstetten", 
+            {
+                "@type": "City",
+                "name": "Amstetten",
+                "postalCode": "3300",
+                "sameAs": "https://www.wikidata.org/wiki/Q251016",
+                "url": "https://ki-marketingagentur.jetzt/werbeagentur-amstetten"
+            },
+            {
+                "@type": "AdministrativeArea",
+                "name": "Bezirk Amstetten",
                 "sameAs": "https://www.wikidata.org/wiki/Q132997"
             },
-            { "@type": "AdministrativeArea", "name": "Mostviertel" },
-            { "@type": "City", "name": "Steyr" },
-            { "@type": "City", "name": "Linz" },
-            { "@type": "City", "name": "St. Pölten" },
-            { "@type": "City", "name": "Perg" },
-            { "@type": "Country", "name": "Österreich" }
+            {
+                "@type": "AdministrativeArea",
+                "name": "Mostviertel",
+                "sameAs": "https://www.wikidata.org/wiki/Q266193"
+            },
+            {
+                "@type": "City",
+                "name": "Steyr",
+                "postalCode": "4400",
+                "sameAs": "https://www.wikidata.org/wiki/Q131632",
+                "url": "https://ki-marketingagentur.jetzt/werbeagentur-steyr"
+            },
+            {
+                "@type": "City",
+                "name": "Linz",
+                "postalCode": "4020",
+                "sameAs": "https://www.wikidata.org/wiki/Q41329",
+                "url": "https://ki-marketingagentur.jetzt/werbeagentur-linz"
+            },
+            {
+                "@type": "City",
+                "name": "Perg",
+                "postalCode": "4320",
+                "sameAs": "https://www.wikidata.org/wiki/Q256901",
+                "url": "https://ki-marketingagentur.jetzt/werbeagentur-perg"
+            },
+            {
+                "@type": "City",
+                "name": "St. Pölten",
+                "postalCode": "3100",
+                "sameAs": "https://www.wikidata.org/wiki/Q82500",
+                "url": "https://ki-marketingagentur.jetzt/werbeagentur-st-poelten"
+            },
+            {
+                "@type": "City",
+                "name": "Salzburg",
+                "postalCode": "5020",
+                "sameAs": "https://www.wikidata.org/wiki/Q34713",
+                "url": "https://ki-marketingagentur.jetzt/werbeagentur-salzburg"
+            },
+            {
+                "@type": "City",
+                "name": "Wien",
+                "postalCode": "1010",
+                "sameAs": "https://www.wikidata.org/wiki/Q1741",
+                "url": "https://ki-marketingagentur.jetzt/werbeagentur-wien"
+            },
+            { "@type": "AdministrativeArea", "name": "Niederösterreich", "sameAs": "https://www.wikidata.org/wiki/Q42497" },
+            { "@type": "AdministrativeArea", "name": "Oberösterreich", "sameAs": "https://www.wikidata.org/wiki/Q41967" },
+            { "@type": "Country", "name": "Österreich", "sameAs": "https://www.wikidata.org/wiki/Q40" }
         ],
         "openingHoursSpecification": {
             "@type": "OpeningHoursSpecification",
@@ -153,20 +214,42 @@ export default function Schema() {
         },
         "knowsAbout": [
             "Werbeagentur",
+            "Webseite erstellen lassen",
+            "Landingpage erstellen lassen",
+            "Suchmaschinenoptimierung (SEO)",
+            "Generative Engine Optimization (GEO)",
+            "KI-Suche Optimierung",
+            "KI-Werbeagentur",
             "Werbeagentur Amstetten",
             "Webseite Amstetten",
-            "Webdesign Amstetten",
-            "Homepage erstellen Amstetten",
-            "Webdesign & Landingpages",
+            "Landingpage Amstetten",
+            "Suchmaschinenoptimierung Amstetten",
+            "Werbeagentur Steyr",
+            "Webseite Steyr",
+            "Landingpage Steyr",
+            "Suchmaschinenoptimierung Steyr",
+            "Werbeagentur Linz",
+            "Webseite Linz",
+            "Landingpage Linz",
+            "Suchmaschinenoptimierung Linz",
+            "Werbeagentur Perg",
+            "Webseite Perg",
+            "Landingpage Perg",
+            "Suchmaschinenoptimierung Perg",
+            "Werbeagentur St. Pölten",
+            "Webseite St. Pölten",
+            "Landingpage St. Pölten",
+            "Suchmaschinenoptimierung St. Pölten",
+            "Werbeagentur Salzburg",
+            "Webseite Salzburg",
+            "Landingpage Salzburg",
+            "Suchmaschinenoptimierung Salzburg",
+            "Werbeagentur Wien",
+            "Webseite Wien",
+            "Landingpage Wien",
+            "Suchmaschinenoptimierung Wien",
             "Mitarbeitergewinnung & Social Recruiting für Handwerker",
-            "SEO Agentur Niederösterreich",
-            "Local SEO Mostviertel & Google Maps",
-            "Generative Engine Optimization (GEO)",
-            "Suchmaschinenoptimierung Mostviertel",
-            "KI-Marketing & Automatisierung",
-            "Social Media Kampagnen & Meta Ads",
-            "Google Ads Betreuung",
-            "Barrierefreie Webseiten BFSG"
+            "Barrierefreie Webseiten BFSG 2025"
         ]
     };
 
@@ -191,18 +274,18 @@ export default function Schema() {
         "provider": {
             "@id": "https://ki-marketingagentur.jetzt/#organization"
         },
-        "serviceType": "Webdesign, Social Recruiting, SEO, GEO, Social Media Marketing & KI-Automatisierung",
+        "serviceType": "Webdesign, Webseite, Landingpage, Social Recruiting, Suchmaschinenoptimierung (SEO), GEO, Social Media Marketing & KI-Automatisierung",
         "areaServed": "AT",
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Leistungen BrainStorm Werbeagentur",
+            "name": "Leistungen & Regionale Standorte BrainStorm KI Werbeagentur",
             "itemListElement": [
                 {
                     "@type": "ListItem",
                     "position": 1,
                     "item": {
                         "@type": "Service",
-                        "name": "Webseite & Landingpage (Sprint-Webseite in 7 Tagen)",
+                        "name": "Webseite & Landingpage (Sprint-Webseite in 5-7 Tagen)",
                         "description": "Erstellung von modernen, verkaufspsychologisch optimierten Webseiten und Landingpages mit Next.js. Barrierefrei nach BFSG und mobil optimiert."
                     }
                 },
@@ -220,8 +303,8 @@ export default function Schema() {
                     "position": 3,
                     "item": {
                         "@type": "Service",
-                        "name": "GEO - Generative Engine Optimization",
-                        "description": "Sichtbarkeit und Zitierung in modernen KI-Assistenten und Suchmaschinen wie ChatGPT, Perplexity, Claude und Gemini."
+                        "name": "GEO - Generative Engine Optimization & KI-Suche",
+                        "description": "Sichtbarkeit und Zitierung auf Position 1 in modernen KI-Assistenten und KI-Suchmaschinen wie ChatGPT, Perplexity, Claude und Google Gemini."
                     }
                 },
                 {
@@ -230,7 +313,7 @@ export default function Schema() {
                     "item": {
                         "@type": "Service",
                         "name": "SEO & Lokale Suchmaschinenoptimierung",
-                        "description": "Top-Platzierungen bei Google und Google Maps im Mostviertel, Niederösterreich und Oberösterreich durch datengetriebene Optimierung."
+                        "description": "Top-Platzierungen bei Google und Google Maps in Amstetten, Steyr, Linz, Perg, St. Pölten, Salzburg, Wien und im gesamten Mostviertel."
                     }
                 },
                 {
@@ -273,8 +356,8 @@ export default function Schema() {
         "@type": "WebPage",
         "@id": "https://ki-marketingagentur.jetzt/#webpage",
         "url": "https://ki-marketingagentur.jetzt",
-        "name": "Werbeagentur & Webagentur | SEO Agentur & Social Recruiting Niederösterreich",
-        "description": "BrainStorm KI Werbeagentur: Dein Partner für verkaufsstarke Webseiten, Social Recruiting & Mitarbeitergewinnung, SEO/GEO und KI-Automatisierung für KMUs im Mostviertel, NÖ & OÖ.",
+        "name": "Werbeagentur & Webagentur | Webseite, Landingpage, SEO, GEO & KI Niederösterreich",
+        "description": "BrainStorm KI Werbeagentur: Dein Partner für verkaufsstarke Webseiten, Landingpages, Social Recruiting, Suchmaschinenoptimierung (SEO), GEO und KI-Automatisierung für KMUs in Amstetten, Steyr, Linz, Perg, St. Pölten, Salzburg & Wien.",
         "isPartOf": {
             "@id": "https://ki-marketingagentur.jetzt/#website"
         },

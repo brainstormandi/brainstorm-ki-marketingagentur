@@ -4,29 +4,40 @@ import { blogPosts } from './data/blogData';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://ki-marketingagentur.jetzt";
 
-  // Feste Daten für statische Seiten – nicht immer today, damit Google den Cache respektiert
-  const SITE_LAUNCH = new Date('2025-01-15');
-  const LAST_CONTENT_UPDATE = new Date('2026-09-23');
+  // Feste Daten für statische Seiten – aktualisiert bei echtem SEO/Schema-Release
+  const LAST_CONTENT_UPDATE = new Date('2026-11-09');
   const LEGAL_LAST_UPDATED = new Date('2025-06-01');
 
-  // Core pages
-  const coreRoutes = [
+  // Core pages + AI Knowledge Base (llms.txt)
+  const coreRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}`,
       lastModified: LAST_CONTENT_UPDATE,
-      changeFrequency: 'weekly' as const,
+      changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
       url: `${baseUrl}/blog`,
       lastModified: LAST_CONTENT_UPDATE,
-      changeFrequency: 'weekly' as const,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/llms.txt`,
+      lastModified: LAST_CONTENT_UPDATE,
+      changeFrequency: 'weekly',
       priority: 0.8,
-    }
+    },
+    {
+      url: `${baseUrl}/llms-full.txt`,
+      lastModified: LAST_CONTENT_UPDATE,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
   ];
 
-  // All Regional Landing Pages
-  const regionalRoutes = [
+  // All 7 Regional Landing Pages (High Priority for Local SEO & GEO)
+  const regionalRoutes: MetadataRoute.Sitemap = [
     'amstetten',
     'steyr',
     'linz',
@@ -37,8 +48,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ].map(city => ({
     url: `${baseUrl}/werbeagentur-${city}`,
     lastModified: LAST_CONTENT_UPDATE,
-    changeFrequency: 'monthly' as const,
-    priority: 0.9,
+    changeFrequency: 'weekly',
+    priority: 0.95,
   }));
 
   const MONTH_MAP: Record<string, string> = {
@@ -64,25 +75,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   };
 
   // Dynamic Blog Posts from central data
-  const blogRoutes = blogPosts.map(post => ({
+  const blogRoutes: MetadataRoute.Sitemap = blogPosts.map(post => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: parseGermanDate(post.date),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
+    changeFrequency: 'monthly',
+    priority: 0.75,
   }));
 
   // Legal & Privacy Pages
-  const legalRoutes = [
+  const legalRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/impressum`,
       lastModified: LEGAL_LAST_UPDATED,
-      changeFrequency: 'yearly' as const,
+      changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
       url: `${baseUrl}/datenschutz`,
       lastModified: LEGAL_LAST_UPDATED,
-      changeFrequency: 'yearly' as const,
+      changeFrequency: 'yearly',
       priority: 0.3,
     }
   ];

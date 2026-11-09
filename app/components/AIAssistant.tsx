@@ -92,6 +92,7 @@ const AIAssistant = () => {
             silenceTimeoutRef.current = null;
         }
         stopAllAudio();
+        if (activeSessionRef.current) { try { activeSessionRef.current.close?.(); } catch (e) { } }
         activeSessionRef.current = null;
         isToolCallPendingRef.current = false;
 
@@ -328,7 +329,10 @@ const AIAssistant = () => {
                     cleanupVoice();
                 },
             });
-            sessionPromiseRef.current = sessionPromise;
+            sessionPromiseRef.current = sessionPromise.catch((err: any) => {
+                console.error("Voice Session Promise Error:", err);
+                cleanupVoice();
+            });
 
             // Setup Mic Input
             const inputCtx = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 16000 });
@@ -473,6 +477,11 @@ const AIAssistant = () => {
     const innerGlowInset = isMobile ? -14 : -20;
     const outerGlowInset = isMobile ? -24 : -34;
 
+    // KI Susi vorübergehend ausgeblendet (Gesamte Programmierung bleibt vollständig erhalten).
+    // Zum erneuten Einblenden einfach IS_SUSI_ENABLED auf true setzen:
+    const IS_SUSI_ENABLED = false;
+    if (!IS_SUSI_ENABLED) return null;
+
     return (
         <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-[100] font-sans flex flex-col items-end">
             <style>{`
@@ -561,7 +570,7 @@ const AIAssistant = () => {
                         <div className="flex flex-col text-left">
                             <div className="flex items-center gap-1.5">
                                 <span className="font-semibold text-xs sm:text-sm text-[#1C1C1C] tracking-tight leading-tight">
-                                    Mit Susi sprechen
+                                    Mit KI Susi
                                 </span>
                                 <span className="text-[#F7C429] text-[10px]">✦</span>
                             </div>

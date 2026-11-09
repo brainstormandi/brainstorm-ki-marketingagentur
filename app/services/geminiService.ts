@@ -80,7 +80,15 @@ export class GeminiService {
 
             return new Promise((resolve, reject) => {
                 const ws = new WebSocket(wsUrl);
-                let sessionActive = false;
+                let isSetupComplete = false;
+                let heartbeatInterval: ReturnType<typeof setInterval> | null = null;
+
+                const clearHeartbeat = () => {
+                    if (heartbeatInterval) {
+                        clearInterval(heartbeatInterval);
+                        heartbeatInterval = null;
+                    }
+                };
 
                 const session = {
                     sendRealtimeInput: (data: any) => {
@@ -93,6 +101,7 @@ export class GeminiService {
                         }
                     },
                     close: () => {
+                        clearHeartbeat();
                         ws.close();
                     }
                 };
@@ -129,7 +138,6 @@ export class GeminiService {
                         }
                     };
                     ws.send(JSON.stringify(setupMessage));
-                    sessionActive = true;
                 };
 
                 ws.onmessage = async (event) => {
@@ -137,6 +145,20 @@ export class GeminiService {
                         const text = event.data instanceof Blob ? await event.data.text() : event.data;
                         const message = JSON.parse(text);
                         if (message.setupComplete) {
+                            isSetupComplete = true;
+                            heartbeatInterval = setInterval(() => {
+                                if (ws.readyState === WebSocket.OPEN) {
+                                    try {
+                                        ws.send(JSON.stringify({
+                                            clientContent: {
+                                                turnComplete: false
+                                            }
+                                        }));
+                                    } catch (e) {
+                                        console.error("Keep-alive heartbeat failed:", e);
+                                    }
+                                }
+                            }, 15000);
                             callbacks.onOpen(session);
                             resolve(session);
                             return;
@@ -147,20 +169,44 @@ export class GeminiService {
                     }
                 };
 
-                ws.onerror = (error) => {
-                    callbacks.onError(new Error("WebSocket Verbindungsfehler"));
-                    reject(error);
+                ws.onerror = () => {
+                    clearHeartbeat();
+                    const err = new Error(`WebSocket Verbindungsfehler (${modelName})`);
+                    if (isSetupComplete) {
+                        callbacks.onError(err);
+                    } else {
+                        reject(err);
+                    }
                 };
 
                 ws.onclose = (event) => {
-                    if (event.code !== 1000 && sessionActive) {
+                    clearHeartbeat();
+                    if (!isSetupComplete) {
+                        reject(new Error(`${event.reason || "Setup fehlgeschlagen"} (Code ${event.code})`));
+                    } else if (event.code !== 1000) {
                         callbacks.onError(new Error(`${event.reason || "Verbindung unterbrochen"} (Code ${event.code})`));
                     }
                 };
             });
         };
 
-        return connectWithModel("models/gemini-2.5-flash-native-audio-latest");
+        const modelsToTry = [
+            "models/gemini-3.8-live",
+            "models/gemini-2.5-flash-native-audio-latest"
+        ];
+
+        let lastError: unknown = null;
+        for (const modelName of modelsToTry) {
+            try {
+                return await connectWithModel(modelName);
+            } catch (err) {
+                console.warn(`Voice model ${modelName} failed, trying fallback if available:`, err);
+                lastError = err;
+            }
+        }
+
+        callbacks.onError(lastError || new Error("Sprachverbindung konnte nicht hergestellt werden."));
+        return null;
     }
 }
 

@@ -11,15 +11,15 @@ import Services from './components/Services';
 import Founder from './components/Founder';
 import Process from './components/Process';
 import LeadMagnet from './components/LeadMagnet';
+import TestimonialSlider from './components/TestimonialSlider';
+import FAQ from './components/FAQ';
+import Blog from './components/Blog';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollReveal from './components/ScrollReveal';
-import RegionalLocations from './components/RegionalLocations';
 
-const AIAssistant = dynamic(() => import('./components/AIAssistant'), { ssr: false });
-const TestimonialSlider = dynamic(() => import('./components/TestimonialSlider'), { ssr: false });
-const FAQ = dynamic(() => import('./components/FAQ'), { ssr: false });
-const Blog = dynamic(() => import('./components/Blog'), { ssr: false });
-const Contact = dynamic(() => import('./components/Contact'), { ssr: false });
+// KI Susi ist aktuell ausgeblendet (Code in ./components/AIAssistant.tsx bleibt vollständig erhalten)
+const AIAssistant = () => null;
 
 const customerFaces = [
   "/bilder/testimonial-salzbug.png",
@@ -102,7 +102,6 @@ export default function Home() {
         <LeadMagnet />
         <FAQ />
         <Blog />
-        <RegionalLocations />
         <Contact />
         <IndustryMarquee />
       </main>

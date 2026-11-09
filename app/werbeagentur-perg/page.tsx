@@ -10,47 +10,227 @@ import PergFAQ from './PergFAQ';
 import { GOOGLE_REVIEW_LINK } from '../constants';
 
 export const metadata: Metadata = {
-  title: "Werbeagentur Perg | Premium Webdesign & Webseiten für das Mühlviertel",
-  description: "deine Werbeagentur für das Machland und Perg! KI-Sichtbarkeit und Webdesign, das Mitarbeiter und Kunden auf Knopfdruck anzieht. Jetzt anfragen!",
-  keywords: ["werbeagentur", "web agentur", "webagentur", "werbeagentur website", "seo agentur niederösterreich", "suchmaschinenoptimierung niederösterreich", "website werbeagentur", "werbeagentur perg", "webdesign perg", "homepage perg"],
+  title: "Werbeagentur Perg | Webseite, Landingpage, SEO & KI für das Mühlviertel",
+  description: "Deine KI-Werbeagentur für Perg, das Machland und das Mühlviertel! Moderne Webseiten, verkaufsstarke Landingpages, Suchmaschinenoptimierung (SEO) und KI-Sichtbarkeit (GEO). Jetzt anfragen!",
+  keywords: [
+    "werbeagentur perg",
+    "webseite perg",
+    "landingpage perg",
+    "landingpage erstellen lassen perg",
+    "webdesign perg",
+    "homepage perg",
+    "webseite erstellen lassen perg",
+    "homepage erstellen lassen perg",
+    "webagentur perg",
+    "seo agentur perg",
+    "suchmaschinenoptimierung perg",
+    "seo perg",
+    "geo perg",
+    "ki suche perg",
+    "ki werbeagentur perg",
+    "ki agentur perg",
+    "social recruiting perg",
+    "mitarbeitergewinnung perg",
+    "werbeagentur mühlviertel",
+    "werbeagentur machland",
+    "werbeagentur schwertberg",
+    "werbeagentur mauthausen"
+  ],
+  openGraph: {
+    title: "Werbeagentur Perg | Webseite, Landingpage, SEO & KI für das Mühlviertel",
+    description: "Deine KI-Werbeagentur für das Machland und Perg! Webseiten, Landingpages, Suchmaschinenoptimierung (SEO) und KI-Sichtbarkeit.",
+    url: "https://ki-marketingagentur.jetzt/werbeagentur-perg",
+    siteName: "BrainStorm KI Werbeagentur",
+    locale: "de_AT",
+    type: "website",
+    images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Werbeagentur Perg | Webseite, Landingpage, SEO & KI für das Mühlviertel",
+    description: "Webseiten, Landingpages, SEO, GEO & KI-Marketing für Perg & das Machland.",
+    images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
+  },
   alternates: {
     canonical: "https://ki-marketingagentur.jetzt/werbeagentur-perg",
   },
+  other: {
+    "geo.region": "AT-4",
+    "geo.placename": "Perg, Mühlviertel, Oberösterreich",
+    "geo.position": "48.2505;14.6353",
+    "ICBM": "48.2505, 14.6353",
+  },
 };
+
+const PERG_SCHEMA_FAQS = [
+  {
+    question: "Warum reicht eine günstige Baukasten-Homepage in der Region Perg heute oft nicht mehr?",
+    answer: "Weil der Markt im Machland und Mühlviertel hart umkämpft ist. Potenzielle Kunden oder neue Mitarbeiter entscheiden online in Millisekunden. Wenn deine Webseite langsam lädt, auf Smartphones schlecht funktioniert oder unprofessionell wirkt, wechseln Besucher im Raum Perg sofort und unwiederbringlich zu deinen Mitbewerbern."
+  },
+  {
+    question: "Arbeitest du als Online Agentur auch persönlich mit Betrieben im Bezirk?",
+    answer: "Ja! Virtuelle Effizienz ist gut, echte Nähe ist besser. Unser Außendienst ist im Gebiet Machland, Perg und bis nach Grein flexibel unterwegs. Wir lieben es, Webdesign-Ziele bei einem Kaffee direkt mit dir am Tisch zu skizzieren oder effizient via Video-Call abzuklären."
+  },
+  {
+    question: "Müssen wir die Texte für die neue Homepage selbst schreiben?",
+    answer: "Nein, ganz im Gegenteil. Als KI-Vorreiter nutzen wir als Werbeagentur modernste Technologien, um verkaufspsychologisch optimierte und branchenspezifische Inhalte für deine Region zu kreieren. Wir nehmen dir also die lästige Textarbeit vollständig ab."
+  },
+  {
+    question: "Ich haben bereits eine in die Jahre gekommene Webseite. Bietest du Relaunches an?",
+    answer: "Selbstverständlich. Wir analysieren deine alte Homepage, retten was für Google wichtig ist (Rankings), und verpacken den Rest in ein extrem schnelles, völlig neues und vor allem konvertierendes Web-Gewand."
+  }
+];
 
 export default function WerbeagenturPerg() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "BrainStorm Webdesign & Werbeagentur Perg",
+    "@type": ["LocalBusiness", "AdvertisingAgency", "ProfessionalService"],
+    "name": "BrainStorm KI Werbeagentur, Webdesign & SEO Perg",
+    "alternateName": [
+      "Werbeagentur Perg",
+      "Webagentur Perg",
+      "SEO Agentur Perg",
+      "KI Werbeagentur Perg"
+    ],
     "image": "https://ki-marketingagentur.jetzt/bilder/logo.png",
-    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-perg",
+    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-perg#localbusiness",
     "url": "https://ki-marketingagentur.jetzt/werbeagentur-perg",
     "telephone": "+43 660 520 3171",
+    "email": "info@brainstorm-werbeagentur.at",
+    "priceRange": "€€",
+    "parentOrganization": {
+      "@id": "https://ki-marketingagentur.jetzt/#organization"
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Am Ziegelfeld 8",
       "addressLocality": "Seitenstetten",
       "postalCode": "3353",
+      "addressRegion": "Niederösterreich",
       "addressCountry": "AT"
     },
     "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 48.25,
-        "longitude": 14.63
+      "@type": "GeoCoordinates",
+      "latitude": 48.2505,
+      "longitude": 14.6353
     },
-    "serviceArea": {
-      "@type": "Place",
-      "name": "Perg"
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Perg",
+        "postalCode": "4320",
+        "sameAs": "https://www.wikidata.org/wiki/Q256901"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Bezirk Perg",
+        "sameAs": "https://www.wikidata.org/wiki/Q256895"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Mühlviertel",
+        "sameAs": "https://www.wikidata.org/wiki/Q255447"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Oberösterreich",
+        "sameAs": "https://www.wikidata.org/wiki/Q41967"
+      }
+    ],
+    "knowsAbout": [
+      "Werbeagentur Perg",
+      "Webseite Perg",
+      "Landingpage Perg",
+      "Webdesign Perg",
+      "Homepage erstellen Perg",
+      "Suchmaschinenoptimierung (SEO) Perg",
+      "Generative Engine Optimization (GEO) Perg",
+      "KI-Suche Optimierung (ChatGPT, Perplexity, Gemini)",
+      "KI-Marketing & Prozessautomatisierung Perg",
+      "Social Recruiting & Mitarbeitergewinnung Perg"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Leistungen für Unternehmen im Bezirk Perg & Mühlviertel",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Webseite & Landingpage erstellen lassen in Perg",
+            "description": "Verkaufsstarke Firmen-Webseiten und High-Converting Landingpages für Betriebe in Perg, Schwertberg, Mauthausen und Grein in 5-7 Tagen."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Suchmaschinenoptimierung (SEO) & KI-Suche (GEO) Perg",
+            "description": "Platz 1 Optimierung für Google Suche, Google Maps und KI-Suchmaschinen (ChatGPT, Perplexity, Claude, Gemini) im Bezirk Perg."
+          }
+        }
+      ]
     },
     "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "50",
-        "bestRating": "5",
-        "worstRating": "1",
-        "url": "https://share.google/8UoKWrgoWbfFIPX"
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "50",
+      "bestRating": "5",
+      "worstRating": "1",
+      "url": "https://share.google/8UoKWrgoWbfFIPX"
     }
+  };
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-perg#webpage",
+    "url": "https://ki-marketingagentur.jetzt/werbeagentur-perg",
+    "name": "Werbeagentur Perg | Webseite, Landingpage, SEO & KI für das Mühlviertel",
+    "description": "Deine KI-Werbeagentur für das Machland und Perg! Moderne Webseiten, verkaufsstarke Landingpages, Suchmaschinenoptimierung (SEO) und KI-Sichtbarkeit.",
+    "inLanguage": "de-AT",
+    "isPartOf": {
+      "@id": "https://ki-marketingagentur.jetzt/#website"
+    },
+    "about": {
+      "@id": "https://ki-marketingagentur.jetzt/werbeagentur-perg#localbusiness"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "h2", "p"]
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": PERG_SCHEMA_FAQS.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
+  const breadcrumbsSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Startseite",
+        "item": "https://ki-marketingagentur.jetzt/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Werbeagentur Perg",
+        "item": "https://ki-marketingagentur.jetzt/werbeagentur-perg"
+      }
+    ]
   };
 
   return (
@@ -257,6 +437,9 @@ export default function WerbeagenturPerg() {
       <Footer />
       <AIAssistant />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }} />
     </div>
   );
 }

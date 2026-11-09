@@ -10,47 +10,222 @@ import StPoeltenFAQ from './StPoeltenFAQ';
 import { GOOGLE_REVIEW_LINK } from '../constants';
 
 export const metadata: Metadata = {
-  title: "Webagentur & Webdesign St. Pölten | Starke Firmen-Homepages",
-  description: "Webagentur aktiv in St. Pölten & Umgebung. Bessere Sichtbarkeit durch moderne Landingpages, künstliche Intelligenz und erstklassiges Webdesign.",
-  keywords: ["werbeagentur", "web agentur", "webagentur", "werbeagentur website", "seo agentur niederösterreich", "suchmaschinenoptimierung niederösterreich", "website werbeagentur", "werbeagentur st. pölten", "webdesign st. pölten", "homepage st. pölten"],
+  title: "Werbeagentur & Webdesign St. Pölten | Webseite, Landingpage, SEO & KI",
+  description: "Deine KI-Werbeagentur für St. Pölten & Niederösterreich. Moderne Webseiten, verkaufsstarke Landingpages, Suchmaschinenoptimierung (SEO) und KI-Suche (GEO) für mehr Kunden & Fachkräfte.",
+  keywords: [
+    "werbeagentur st. pölten",
+    "werbeagentur st pölten",
+    "webseite st. pölten",
+    "webseite st pölten",
+    "landingpage st. pölten",
+    "landingpage st pölten",
+    "landingpage erstellen lassen st. pölten",
+    "webdesign st. pölten",
+    "homepage st. pölten",
+    "webseite erstellen lassen st. pölten",
+    "webagentur st. pölten",
+    "seo agentur st. pölten",
+    "suchmaschinenoptimierung st. pölten",
+    "suchmaschinenoptimierung st pölten",
+    "seo st. pölten",
+    "geo st. pölten",
+    "ki suche st. pölten",
+    "ki werbeagentur st. pölten",
+    "ki agentur st. pölten",
+    "social recruiting st. pölten",
+    "mitarbeitergewinnung st. pölten",
+    "werbeagentur niederösterreich"
+  ],
+  openGraph: {
+    title: "Werbeagentur & Webdesign St. Pölten | Webseite, Landingpage, SEO & KI",
+    description: "Deine KI-Werbeagentur für St. Pölten & Umgebung. Moderne Webseiten, Landingpages, Suchmaschinenoptimierung (SEO) und KI-Sichtbarkeit (GEO).",
+    url: "https://ki-marketingagentur.jetzt/werbeagentur-st-poelten",
+    siteName: "BrainStorm KI Werbeagentur",
+    locale: "de_AT",
+    type: "website",
+    images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Werbeagentur & Webdesign St. Pölten | Webseite, Landingpage, SEO & KI",
+    description: "Webseiten, Landingpages, SEO, GEO & KI-Marketing für St. Pölten & NÖ.",
+    images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
+  },
   alternates: {
     canonical: "https://ki-marketingagentur.jetzt/werbeagentur-st-poelten",
   },
+  other: {
+    "geo.region": "AT-3",
+    "geo.placename": "St. Pölten, Niederösterreich",
+    "geo.position": "48.2047;15.6256",
+    "ICBM": "48.2047, 15.6256",
+  },
 };
+
+const STPOELTEN_SCHEMA_FAQS = [
+  {
+    question: "Was bringt kleinen Unternehmen aus dem Raum St. Pölten eine KI-gestützte Website?",
+    answer: "Künstliche Intelligenz kann teure Arbeitszeit sparen. Ob automatisierte Landingpages, die regionale Suchintentionen in St. Pölten abfangen, oder smarte Chatbots, die auf der Website als digitaler Verkäufer fungieren – wir rüsten dein KMU technisch an der obersten Liga aus."
+  },
+  {
+    question: "Kennst du den Markt im Zentralraum Niederösterreich?",
+    answer: "Ja, als Werbeagentur mit Basis an der Mostviertler Grenze sind wir geografisch optimal positioniert. Wir kennen die Strukturen – vom weiten Traisental bis direkt in das Regierungsviertel der Landeshauptstadt – und gestalten passgenaues Webdesign für deine Zielgruppen."
+  },
+  {
+    question: "Bietest du neben der Website auch laufende Suchmaschinenoptimierung an?",
+    answer: "Unbedingt. Eine schöne Seite bringt nichts, wenn sie auf Google nicht gefunden wird. Wir sichern deine Website technisch und redaktionell so ab, dass Firmen aus St. Pölten und Umgebung ideal für die passenden Dienstleistungssuchen ranken."
+  },
+  {
+    question: "Wie finden Termine vor Ort in St. Pölten statt?",
+    answer: "Wir arbeiten hybrid. Erste Touchpoints wickeln wir oft hoch-effizient per Zoom oder Teams ab. Für das Kick-Off des Website-Relaunches kommen wir selbstverständlich auch sehr gerne zu dir ins Unternehmen nach St. Pölten."
+  }
+];
 
 export default function WerbeagenturStPoelten() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "BrainStorm Webdesign & Werbeagentur St. Pölten",
+    "@type": ["LocalBusiness", "AdvertisingAgency", "ProfessionalService"],
+    "name": "BrainStorm KI Werbeagentur, Webdesign & SEO St. Pölten",
+    "alternateName": [
+      "Werbeagentur St. Pölten",
+      "Webagentur St. Pölten",
+      "SEO Agentur St. Pölten",
+      "KI Werbeagentur St. Pölten"
+    ],
     "image": "https://ki-marketingagentur.jetzt/bilder/logo.png",
-    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-st-poelten",
+    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-st-poelten#localbusiness",
     "url": "https://ki-marketingagentur.jetzt/werbeagentur-st-poelten",
     "telephone": "+43 660 520 3171",
+    "email": "info@brainstorm-werbeagentur.at",
+    "priceRange": "€€",
+    "parentOrganization": {
+      "@id": "https://ki-marketingagentur.jetzt/#organization"
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Am Ziegelfeld 8",
       "addressLocality": "Seitenstetten",
       "postalCode": "3353",
+      "addressRegion": "Niederösterreich",
       "addressCountry": "AT"
     },
     "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 48.20,
-        "longitude": 15.62
+      "@type": "GeoCoordinates",
+      "latitude": 48.2047,
+      "longitude": 15.6256
     },
-    "serviceArea": {
-      "@type": "Place",
-      "name": "St. Pölten"
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "St. Pölten",
+        "postalCode": "3100",
+        "sameAs": "https://www.wikidata.org/wiki/Q82500"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Bezirk St. Pölten-Land",
+        "sameAs": "https://www.wikidata.org/wiki/Q256465"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Niederösterreich",
+        "sameAs": "https://www.wikidata.org/wiki/Q42497"
+      }
+    ],
+    "knowsAbout": [
+      "Werbeagentur St. Pölten",
+      "Webseite St. Pölten",
+      "Landingpage St. Pölten",
+      "Webdesign St. Pölten",
+      "Homepage erstellen St. Pölten",
+      "Suchmaschinenoptimierung (SEO) St. Pölten",
+      "Generative Engine Optimization (GEO) St. Pölten",
+      "KI-Suche Optimierung (ChatGPT, Perplexity, Gemini)",
+      "KI-Marketing & Prozessautomatisierung St. Pölten",
+      "Social Recruiting & Mitarbeitergewinnung St. Pölten"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Leistungen für Unternehmen in St. Pölten & Niederösterreich",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Webseite & Landingpage erstellen lassen in St. Pölten",
+            "description": "Verkaufsstarke Firmen-Webseiten und High-Converting Landingpages für die Landeshauptstadt St. Pölten in 5-7 Tagen."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Suchmaschinenoptimierung (SEO) & KI-Suche (GEO) St. Pölten",
+            "description": "Platz 1 Optimierung für Google Suche, Google Maps und KI-Suchmaschinen (ChatGPT, Perplexity, Claude, Gemini) in St. Pölten."
+          }
+        }
+      ]
     },
     "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "50",
-        "bestRating": "5",
-        "worstRating": "1",
-        "url": "https://share.google/8UoKWrgoWbfFIPX"
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "50",
+      "bestRating": "5",
+      "worstRating": "1",
+      "url": "https://share.google/8UoKWrgoWbfFIPX"
     }
+  };
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-st-poelten#webpage",
+    "url": "https://ki-marketingagentur.jetzt/werbeagentur-st-poelten",
+    "name": "Werbeagentur & Webdesign St. Pölten | Webseite, Landingpage, SEO & KI",
+    "description": "Deine KI-Werbeagentur für St. Pölten & Umgebung. Moderne Webseiten, verkaufsstarke Landingpages, Suchmaschinenoptimierung (SEO) und KI-Suche (GEO).",
+    "inLanguage": "de-AT",
+    "isPartOf": {
+      "@id": "https://ki-marketingagentur.jetzt/#website"
+    },
+    "about": {
+      "@id": "https://ki-marketingagentur.jetzt/werbeagentur-st-poelten#localbusiness"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "h2", "p"]
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": STPOELTEN_SCHEMA_FAQS.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
+  const breadcrumbsSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Startseite",
+        "item": "https://ki-marketingagentur.jetzt/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Werbeagentur St. Pölten",
+        "item": "https://ki-marketingagentur.jetzt/werbeagentur-st-poelten"
+      }
+    ]
   };
 
   return (
@@ -258,6 +433,9 @@ export default function WerbeagenturStPoelten() {
       <Footer />
       <AIAssistant />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }} />
     </div>
   );
 }

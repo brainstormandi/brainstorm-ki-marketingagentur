@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Link from 'next/link';
 import { CONTACT_INFO } from '../constants';
 import { Mail, Phone, Calendar, CheckCircle2, ArrowRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
@@ -27,8 +28,19 @@ const Contact = () => {
                                     15 Minuten, die deinem Betrieb <span className="text-underline-yellow">Zeit und Kunden</span> bringen.
                                 </h2>
 
-                                <p className="font-[var(--font-inter)] text-[#1C1C1C]/65 text-base md:text-[17px] leading-relaxed mb-6">
+                                <p className="font-[var(--font-inter)] text-[#1C1C1C]/65 text-base md:text-[17px] leading-relaxed mb-5">
                                     Kein Verkaufsdruck, kein Fachchinesisch. Wir werfen gemeinsam einen Blick auf deinen aktuellen Auftritt und zeigen dir die 2–3 Hebel, mit denen du sofort Zeit sparst und mehr Anfragen gewinnst.
+                                </p>
+
+                                <p className="font-[var(--font-inter)] text-[#1C1C1C]/60 text-sm md:text-[15px] leading-relaxed mb-6">
+                                    <strong className="font-semibold text-[#1C1C1C]">Vor-Ort-Besuch oder Video-Call?</strong> Betriebe in{' '}
+                                    <Link href="/werbeagentur-amstetten" className="text-[#1C1C1C]/80 underline decoration-[#1C1C1C]/20 underline-offset-4 hover:decoration-[#F7C429] hover:text-[#1C1C1C] transition-colors">Amstetten</Link> und{' '}
+                                    <Link href="/werbeagentur-steyr" className="text-[#1C1C1C]/80 underline decoration-[#1C1C1C]/20 underline-offset-4 hover:decoration-[#F7C429] hover:text-[#1C1C1C] transition-colors">Steyr</Link> besuche ich auf Wunsch gerne persönlich vor Ort. Alle weiteren Regionen – wie{' '}
+                                    <Link href="/werbeagentur-linz" className="text-[#1C1C1C]/80 underline decoration-[#1C1C1C]/20 underline-offset-4 hover:decoration-[#F7C429] hover:text-[#1C1C1C] transition-colors">Linz</Link>,{' '}
+                                    <Link href="/werbeagentur-perg" className="text-[#1C1C1C]/80 underline decoration-[#1C1C1C]/20 underline-offset-4 hover:decoration-[#F7C429] hover:text-[#1C1C1C] transition-colors">Perg</Link>,{' '}
+                                    <Link href="/werbeagentur-st-poelten" className="text-[#1C1C1C]/80 underline decoration-[#1C1C1C]/20 underline-offset-4 hover:decoration-[#F7C429] hover:text-[#1C1C1C] transition-colors">St. Pölten</Link>,{' '}
+                                    <Link href="/werbeagentur-salzburg" className="text-[#1C1C1C]/80 underline decoration-[#1C1C1C]/20 underline-offset-4 hover:decoration-[#F7C429] hover:text-[#1C1C1C] transition-colors">Salzburg</Link> und{' '}
+                                    <Link href="/werbeagentur-wien" className="text-[#1C1C1C]/80 underline decoration-[#1C1C1C]/20 underline-offset-4 hover:decoration-[#F7C429] hover:text-[#1C1C1C] transition-colors">Wien</Link> – betreuen wir bequem und effizient per Video-Call.
                                 </p>
                             </div>
 

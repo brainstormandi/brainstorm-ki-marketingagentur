@@ -10,47 +10,221 @@ import LinzFAQ from './LinzFAQ';
 import { GOOGLE_REVIEW_LINK } from '../constants';
 
 export const metadata: Metadata = {
-  title: "Werbeagentur Linz | High-Performance Webdesign & Landingpages",
-  description: "deine KI-Webagentur für den Wirtschaftsraum Linz. Wir kreieren Business-Webseiten, die Besucher in Kunden und Fachkräfte verwandeln. Jetzt anfragen!",
-  keywords: ["werbeagentur", "web agentur", "webagentur", "werbeagentur website", "seo agentur niederösterreich", "suchmaschinenoptimierung niederösterreich", "website werbeagentur", "werbeagentur linz", "webdesign linz", "homepage linz"],
+  title: "Werbeagentur Linz | Webseite, Landingpage, SEO & KI-Marketing",
+  description: "Deine KI-Werbeagentur für den Wirtschaftsraum Linz & OÖ. Wir kreieren Business-Webseiten, verkaufsstarke Landingpages, Suchmaschinenoptimierung (SEO) und GEO, die Besucher in Kunden und Fachkräfte verwandeln.",
+  keywords: [
+    "werbeagentur linz",
+    "webseite linz",
+    "landingpage linz",
+    "landingpage erstellen lassen linz",
+    "webdesign linz",
+    "homepage linz",
+    "webseite erstellen lassen linz",
+    "homepage erstellen lassen linz",
+    "webagentur linz",
+    "seo agentur linz",
+    "suchmaschinenoptimierung linz",
+    "seo linz",
+    "geo linz",
+    "ki suche linz",
+    "ki werbeagentur linz",
+    "ki agentur linz",
+    "social recruiting linz",
+    "mitarbeitergewinnung linz",
+    "online marketing linz",
+    "werbeagentur oberösterreich",
+    "werbeagentur linz-land"
+  ],
+  openGraph: {
+    title: "Werbeagentur Linz | Webseite, Landingpage, SEO & KI-Marketing",
+    description: "Deine KI-Webagentur für den Wirtschaftsraum Linz. Business-Webseiten, Landingpages, Suchmaschinenoptimierung (SEO) und KI-Suche (GEO).",
+    url: "https://ki-marketingagentur.jetzt/werbeagentur-linz",
+    siteName: "BrainStorm KI Werbeagentur",
+    locale: "de_AT",
+    type: "website",
+    images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Werbeagentur Linz | Webseite, Landingpage, SEO & KI-Marketing",
+    description: "Webseiten, Landingpages, SEO, GEO & KI-Marketing für Linz & Oberösterreich.",
+    images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
+  },
   alternates: {
     canonical: "https://ki-marketingagentur.jetzt/werbeagentur-linz",
   },
+  other: {
+    "geo.region": "AT-4",
+    "geo.placename": "Linz, Oberösterreich",
+    "geo.position": "48.3069;14.2858",
+    "ICBM": "48.3069, 14.2858",
+  },
 };
+
+const LINZ_SCHEMA_FAQS = [
+  {
+    question: "Warum BrainStorm KI statt einer lokalen Linzer Werbeagentur?",
+    answer: "In Linz gibt es viele klassische Agenturen. Was uns unterscheidet, ist die konsequente Einbindung von künstlicher Intelligenz in den Webdesign-Prozess. Dadurch sind wir nicht nur schneller, sondern bauen Homepages, die bei Google extrem gut ranken und durch konvertierungsoptimerte Texte mehr Anfragen generieren als klassische Websites."
+  },
+  {
+    question: "Wo liegt der Schwerpunkt deiner Webprojekte im Raum Linz?",
+    answer: "Wir betreuen vom hochspezialisierten KMU in der Linzer Industriezeile bis hin zum modernen Dienstleister in Urfahr. Jeder Betrieb braucht heute eine digitale Infrastruktur, die Leads qualifiziert und Mitarbeiter anzieht. Genau das bauen wir."
+  },
+  {
+    question: "Bietest du auch regelmäßige Vor-Ort-Meetings im Zentralraum OÖ?",
+    answer: "Ja. Dank unserer Nähe (aus dem Mostviertel via A1) sind wir rasch in Linz. Viele unserer Kunden schätzen die Kombination aus effizienten Video-Calls für das Tagesgeschäft und strategischen, tiefgreifenden Terminen direkt an deren Firmenstandort."
+  },
+  {
+    question: "Was bringt mir eine KI-Agentur bei der Suche nach Fachkräften in Linz?",
+    answer: "Der Fachkräftemangel in Linz ist massiv. Wir konzipieren dezidierte Recruiting-Funnel und Karriere-Websites. Durch psychologisch fundiertes Copwriting und moderne Bewerbungsprozesse (z.B. One-Click-Bewerber-Bots) holen wir deine Traumkandidaten direkt auf dein Smartphone."
+  }
+];
 
 export default function WerbeagenturLinz() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "BrainStorm Webdesign & Werbeagentur Linz",
+    "@type": ["LocalBusiness", "AdvertisingAgency", "ProfessionalService"],
+    "name": "BrainStorm KI Werbeagentur, Webdesign & SEO Linz",
+    "alternateName": [
+      "Werbeagentur Linz",
+      "Webagentur Linz",
+      "SEO Agentur Linz",
+      "KI Werbeagentur Linz"
+    ],
     "image": "https://ki-marketingagentur.jetzt/bilder/logo.png",
-    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-linz",
+    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-linz#localbusiness",
     "url": "https://ki-marketingagentur.jetzt/werbeagentur-linz",
     "telephone": "+43 660 520 3171",
+    "email": "info@brainstorm-werbeagentur.at",
+    "priceRange": "€€",
+    "parentOrganization": {
+      "@id": "https://ki-marketingagentur.jetzt/#organization"
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Am Ziegelfeld 8",
       "addressLocality": "Seitenstetten",
       "postalCode": "3353",
+      "addressRegion": "Niederösterreich",
       "addressCountry": "AT"
     },
     "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 48.30,
-        "longitude": 14.28
+      "@type": "GeoCoordinates",
+      "latitude": 48.3069,
+      "longitude": 14.2858
     },
-    "serviceArea": {
-      "@type": "Place",
-      "name": "Linz"
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Linz",
+        "postalCode": "4020",
+        "sameAs": "https://www.wikidata.org/wiki/Q41329"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Bezirk Linz-Land",
+        "sameAs": "https://www.wikidata.org/wiki/Q256862"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Oberösterreich",
+        "sameAs": "https://www.wikidata.org/wiki/Q41967"
+      }
+    ],
+    "knowsAbout": [
+      "Werbeagentur Linz",
+      "Webseite Linz",
+      "Landingpage Linz",
+      "Webdesign Linz",
+      "Homepage erstellen Linz",
+      "Suchmaschinenoptimierung (SEO) Linz",
+      "Generative Engine Optimization (GEO) Linz",
+      "KI-Suche Optimierung (ChatGPT, Perplexity, Gemini)",
+      "KI-Marketing & Prozessautomatisierung Linz",
+      "Social Recruiting & Mitarbeitergewinnung Linz"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Leistungen für Unternehmen in Linz & Oberösterreich",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Webseite & Landingpage erstellen lassen in Linz",
+            "description": "High-Performance Business-Webseiten und verkaufsstarke Landingpages für den Wirtschaftsraum Linz in 5-7 Tagen."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Suchmaschinenoptimierung (SEO) & KI-Suche (GEO) Linz",
+            "description": "Platz 1 Optimierung für Google Suche, Google Maps und KI-Suchmaschinen (ChatGPT, Perplexity, Claude, Gemini) in Linz."
+          }
+        }
+      ]
     },
     "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "50",
-        "bestRating": "5",
-        "worstRating": "1",
-        "url": "https://share.google/8UoKWrgoWbfFIPX"
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "50",
+      "bestRating": "5",
+      "worstRating": "1",
+      "url": "https://share.google/8UoKWrgoWbfFIPX"
     }
+  };
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-linz#webpage",
+    "url": "https://ki-marketingagentur.jetzt/werbeagentur-linz",
+    "name": "Werbeagentur Linz | Webseite, Landingpage, SEO & KI-Marketing",
+    "description": "Deine KI-Werbeagentur für den Wirtschaftsraum Linz. Business-Webseiten, verkaufsstarke Landingpages, Suchmaschinenoptimierung (SEO) und GEO.",
+    "inLanguage": "de-AT",
+    "isPartOf": {
+      "@id": "https://ki-marketingagentur.jetzt/#website"
+    },
+    "about": {
+      "@id": "https://ki-marketingagentur.jetzt/werbeagentur-linz#localbusiness"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "h2", "p"]
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": LINZ_SCHEMA_FAQS.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
+  const breadcrumbsSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Startseite",
+        "item": "https://ki-marketingagentur.jetzt/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Werbeagentur Linz",
+        "item": "https://ki-marketingagentur.jetzt/werbeagentur-linz"
+      }
+    ]
   };
 
   return (
@@ -257,6 +431,9 @@ export default function WerbeagenturLinz() {
       <Footer />
       <AIAssistant />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }} />
     </div>
   );
 }

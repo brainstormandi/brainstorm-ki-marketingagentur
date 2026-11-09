@@ -8,6 +8,7 @@ const Services = () => {
     const servicesSchema = {
         "@context": "https://schema.org",
         "@type": "ItemList",
+        "@id": "https://ki-marketingagentur.jetzt/#services-list",
         "itemListElement": SERVICES.map((service, index) => ({
             "@type": "ListItem",
             "position": index + 1,
@@ -17,6 +18,7 @@ const Services = () => {
                 "description": service.description,
                 "provider": {
                     "@type": "LocalBusiness",
+                    "@id": "https://ki-marketingagentur.jetzt/#organization",
                     "name": "BrainStorm KI Werbeagentur"
                 }
             }

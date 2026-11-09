@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Link from 'next/link';
 
 const items = [
     "Gastronomie",
@@ -34,12 +35,51 @@ const items = [
     "Niederösterreich"
 ];
 
+const regionLinks: Record<string, string> = {
+    "Amstetten": "/werbeagentur-amstetten",
+    "Mostviertel": "/werbeagentur-amstetten",
+    "Steyr": "/werbeagentur-steyr",
+    "Linz": "/werbeagentur-linz",
+    "Salzburg": "/werbeagentur-salzburg",
+    "Perg": "/werbeagentur-perg",
+    "St. Pölten": "/werbeagentur-st-poelten",
+    "Wien": "/werbeagentur-wien",
+};
+
 const IndustryMarquee = () => {
+    const renderItem = (item: string) => {
+        const href = regionLinks[item];
+        const baseClass = "font-[var(--font-inter)] font-semibold text-sm text-[#1C1C1C]/35 uppercase tracking-[0.2em] whitespace-nowrap group-hover:text-[#1C1C1C]/70 transition-colors duration-300 px-6 sm:px-10 no-underline";
+
+        if (href) {
+            return (
+                <Link href={href} className={`${baseClass} cursor-pointer`} tabIndex={-1}>
+                    {item}
+                </Link>
+            );
+        }
+
+        return (
+            <span className={`${baseClass} cursor-default`}>
+                {item}
+            </span>
+        );
+    };
+
     return (
         <div className="py-6 bg-[#EDE7DB] border-y border-[#1C1C1C]/10 overflow-hidden relative flex flex-col items-center">
             <h2 id="marquee-heading" className="sr-only">Branchen & Fokus, die wir betreuen</h2>
             <div className="sr-only">
-                Wir betreuen folgende Branchen und Regionen: {items.join(', ')}
+                Wir betreuen folgende Branchen und Regionen:{' '}
+                {items.map((item, idx) => {
+                    const href = regionLinks[item];
+                    return (
+                        <React.Fragment key={item}>
+                            {idx > 0 && ', '}
+                            {href ? <Link href={href}>{item}</Link> : item}
+                        </React.Fragment>
+                    );
+                })}
             </div>
 
             <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-[#EDE7DB] to-transparent z-10 pointer-events-none"></div>
@@ -50,9 +90,7 @@ const IndustryMarquee = () => {
                 <div className="flex shrink-0 items-center gap-0">
                     {items.map((item, index) => (
                         <div key={`set1-${index}`} className="flex items-center justify-center group">
-                            <span className="font-[var(--font-inter)] font-semibold text-sm text-[#1C1C1C]/35 uppercase tracking-[0.2em] whitespace-nowrap group-hover:text-[#1C1C1C]/70 transition-colors duration-300 cursor-default px-6 sm:px-10">
-                                {item}
-                            </span>
+                            {renderItem(item)}
                             <span className="w-1 h-1 rounded-full bg-[#1C1C1C]/20"></span>
                         </div>
                     ))}
@@ -61,9 +99,7 @@ const IndustryMarquee = () => {
                 <div className="flex shrink-0 items-center gap-0">
                     {items.map((item, index) => (
                         <div key={`set2-${index}`} className="flex items-center justify-center group">
-                            <span className="font-[var(--font-inter)] font-semibold text-sm text-[#1C1C1C]/35 uppercase tracking-[0.2em] whitespace-nowrap group-hover:text-[#1C1C1C]/70 transition-colors duration-300 cursor-default px-6 sm:px-10">
-                                {item}
-                            </span>
+                            {renderItem(item)}
                             <span className="w-1 h-1 rounded-full bg-[#1C1C1C]/20"></span>
                         </div>
                     ))}

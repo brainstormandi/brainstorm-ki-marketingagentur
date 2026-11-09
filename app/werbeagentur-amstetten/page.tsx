@@ -11,48 +11,91 @@ import { AMSTETTEN_FAQS } from './amstettenData';
 import { GOOGLE_REVIEW_LINK } from '../constants';
 
 export const metadata: Metadata = {
-  title: "Werbeagentur Amstetten | Webseite & Webdesign Mostviertel | BrainStorm",
-  description: "Professionelle Webseite in Amstetten erstellen lassen. BrainStorm KI Werbeagentur: Dein lokaler Partner für Webdesign, SEO & KI-Marketing im Mostviertel. Live in 5-7 Tagen!",
+  title: "Werbeagentur Amstetten | Webseite, Landingpage, SEO & KI | BrainStorm",
+  description: "Professionelle Webseite & verkaufsstarke Landingpage in Amstetten erstellen lassen. BrainStorm KI Werbeagentur: Dein lokaler Partner für Webdesign, Suchmaschinenoptimierung (SEO), GEO & KI-Marketing im Mostviertel. Live in 5-7 Tagen!",
   keywords: [
     "werbeagentur amstetten",
     "webseite amstetten",
+    "landingpage amstetten",
+    "landingpage erstellen lassen amstetten",
     "webdesign amstetten",
     "homepage amstetten",
     "webseite erstellen lassen amstetten",
+    "homepage erstellen lassen amstetten",
     "webdesigner amstetten",
-    "werbeagentur website",
     "webagentur amstetten",
     "seo agentur amstetten",
     "suchmaschinenoptimierung amstetten",
+    "seo amstetten",
+    "geo amstetten",
+    "ki suche amstetten",
+    "ki werbeagentur amstetten",
+    "ki agentur amstetten",
+    "social recruiting amstetten",
+    "mitarbeitergewinnung amstetten",
+    "online marketing amstetten",
     "werbeagentur mostviertel",
+    "werbeagentur seitenstetten",
     "werbeagentur niederösterreich"
   ],
+  openGraph: {
+    title: "Werbeagentur Amstetten | Webseite, Landingpage, SEO & KI | BrainStorm",
+    description: "Professionelle Webseite & verkaufsstarke Landingpage in Amstetten erstellen lassen. Webdesign, Suchmaschinenoptimierung (SEO), GEO & KI-Marketing im Mostviertel.",
+    url: "https://ki-marketingagentur.jetzt/werbeagentur-amstetten",
+    siteName: "BrainStorm KI Werbeagentur",
+    locale: "de_AT",
+    type: "website",
+    images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Werbeagentur Amstetten | Webseite, Landingpage, SEO & KI | BrainStorm",
+    description: "Webseite & Landingpage in Amstetten erstellen lassen. SEO, GEO & KI-Marketing in 5-7 Tagen.",
+    images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
+  },
   alternates: {
     canonical: "https://ki-marketingagentur.jetzt/werbeagentur-amstetten",
+  },
+  other: {
+    "geo.region": "AT-3",
+    "geo.placename": "Amstetten, Mostviertel, Niederösterreich",
+    "geo.position": "48.1219;14.8721",
+    "ICBM": "48.1219, 14.8721",
   },
 };
 
 export default function WerbeagenturAmstetten() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "BrainStorm Webdesign & Werbeagentur Amstetten",
+    "@type": ["LocalBusiness", "AdvertisingAgency", "ProfessionalService"],
+    "name": "BrainStorm KI Werbeagentur, Webdesign & SEO Amstetten",
+    "alternateName": [
+      "Werbeagentur Amstetten",
+      "Webagentur Amstetten",
+      "SEO Agentur Amstetten",
+      "KI Werbeagentur Amstetten"
+    ],
     "image": "https://ki-marketingagentur.jetzt/bilder/logo.png",
-    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-amstetten",
+    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-amstetten#localbusiness",
     "url": "https://ki-marketingagentur.jetzt/werbeagentur-amstetten",
     "telephone": "+43 660 520 3171",
+    "email": "info@brainstorm-werbeagentur.at",
     "priceRange": "€€",
+    "parentOrganization": {
+      "@id": "https://ki-marketingagentur.jetzt/#organization"
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Am Ziegelfeld 8",
       "addressLocality": "Seitenstetten",
       "postalCode": "3353",
+      "addressRegion": "Niederösterreich",
       "addressCountry": "AT"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 48.0333,
-      "longitude": 14.65
+      "latitude": 48.1219,
+      "longitude": 14.8721
     },
     "areaServed": [
       {
@@ -68,23 +111,58 @@ export default function WerbeagenturAmstetten() {
       },
       {
         "@type": "AdministrativeArea",
-        "name": "Mostviertel"
+        "name": "Mostviertel",
+        "sameAs": "https://www.wikidata.org/wiki/Q266193"
       },
       {
         "@type": "AdministrativeArea",
-        "name": "Niederösterreich"
+        "name": "Niederösterreich",
+        "sameAs": "https://www.wikidata.org/wiki/Q42497"
       }
     ],
     "knowsAbout": [
       "Werbeagentur Amstetten",
       "Webseite Amstetten",
+      "Landingpage Amstetten",
       "Webdesign Amstetten",
       "Homepage erstellen Amstetten",
-      "Suchmaschinenoptimierung Mostviertel",
-      "Generative Engine Optimization (GEO)",
-      "Social Recruiting Mostviertel",
-      "Barrierefreie Webseiten BFSG"
+      "Suchmaschinenoptimierung (SEO) Amstetten",
+      "Generative Engine Optimization (GEO) Amstetten",
+      "KI-Suche Optimierung (ChatGPT, Perplexity, Gemini)",
+      "KI-Marketing & Prozessautomatisierung Amstetten",
+      "Social Recruiting & Mitarbeitergewinnung Mostviertel",
+      "Barrierefreie Webseiten BFSG 2025"
     ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Leistungen für Unternehmen in Amstetten & Mostviertel",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Webseite & Landingpage erstellen lassen in Amstetten",
+            "description": "Verkaufsstarke Firmen-Webseiten und High-Converting Landingpages in 5-7 Tagen (Next.js, Mobile-First, BFSG-barrierefrei)."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Suchmaschinenoptimierung (SEO) & KI-Suche (GEO) Amstetten",
+            "description": "Platz 1 Optimierung für Google Suche, Google Maps und KI-Suchmaschinen (ChatGPT, Perplexity, Claude, Gemini) im Raum Amstetten."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "KI-Automatisierung & Social Recruiting Amstetten",
+            "description": "Automatisierte Kundenanfragen und 60-Sekunden-Smartphone-Bewerbungsprozesse für Betriebe im Bezirk Amstetten."
+          }
+        }
+      ]
+    },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
@@ -92,6 +170,26 @@ export default function WerbeagenturAmstetten() {
       "bestRating": "5",
       "worstRating": "1",
       "url": "https://share.google/8UoKWrgoWbfFIPX"
+    }
+  };
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-amstetten#webpage",
+    "url": "https://ki-marketingagentur.jetzt/werbeagentur-amstetten",
+    "name": "Werbeagentur Amstetten | Webseite, Landingpage, SEO, GEO & KI | BrainStorm",
+    "description": "Professionelle Webseite & verkaufsstarke Landingpage in Amstetten erstellen lassen. Dein lokaler Partner für Webdesign, Suchmaschinenoptimierung (SEO), GEO & KI-Marketing im Mostviertel.",
+    "inLanguage": "de-AT",
+    "isPartOf": {
+      "@id": "https://ki-marketingagentur.jetzt/#website"
+    },
+    "about": {
+      "@id": "https://ki-marketingagentur.jetzt/werbeagentur-amstetten#localbusiness"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "h2", "#geo-fakten h3", "#geo-fakten p"]
     }
   };
 
@@ -435,6 +533,10 @@ export default function WerbeagenturAmstetten() {
       <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
       <script
           type="application/ld+json"

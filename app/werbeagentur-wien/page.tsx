@@ -10,47 +10,216 @@ import WienFAQ from './WienFAQ';
 import { GOOGLE_REVIEW_LINK } from '../constants';
 
 export const metadata: Metadata = {
-  title: "Webagentur & Webdesign Wien | Innovative Homepages & KI",
-  description: "Webseiten auf Großstadtniveau für Wien & Umgebung. Innovative KI-Strategien, konvertierende Premium-Landingpages. Stich in Wien heraus!",
-  keywords: ["werbeagentur", "web agentur", "webagentur", "werbeagentur website", "seo agentur niederösterreich", "suchmaschinenoptimierung niederösterreich", "website werbeagentur", "werbeagentur wien", "webdesign wien", "homepage wien"],
+  title: "Werbeagentur & Webdesign Wien | Webseite, Landingpage, SEO & KI",
+  description: "Webseiten und verkaufsstarke Landingpages auf Großstadtniveau für Wien & Umgebung. Innovative KI-Strategien, Suchmaschinenoptimierung (SEO) und KI-Suche (GEO) in 5-7 Tagen!",
+  keywords: [
+    "werbeagentur wien",
+    "webseite wien",
+    "landingpage wien",
+    "landingpage erstellen lassen wien",
+    "webdesign wien",
+    "homepage wien",
+    "webseite erstellen lassen wien",
+    "homepage erstellen lassen wien",
+    "webagentur wien",
+    "seo agentur wien",
+    "suchmaschinenoptimierung wien",
+    "seo wien",
+    "geo wien",
+    "ki suche wien",
+    "ki werbeagentur wien",
+    "ki agentur wien",
+    "social recruiting wien",
+    "mitarbeitergewinnung wien",
+    "online marketing wien",
+    "werbeagentur mödling",
+    "werbeagentur schwechat"
+  ],
+  openGraph: {
+    title: "Werbeagentur & Webdesign Wien | Webseite, Landingpage, SEO & KI",
+    description: "Webseiten und verkaufsstarke Landingpages auf Großstadtniveau für Wien & Umgebung. Suchmaschinenoptimierung (SEO) & KI-Sichtbarkeit (GEO).",
+    url: "https://ki-marketingagentur.jetzt/werbeagentur-wien",
+    siteName: "BrainStorm KI Werbeagentur",
+    locale: "de_AT",
+    type: "website",
+    images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Werbeagentur & Webdesign Wien | Webseite, Landingpage, SEO & KI",
+    description: "Webseiten, Landingpages, SEO, GEO & KI-Marketing für Wien & Umgebung.",
+    images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
+  },
   alternates: {
     canonical: "https://ki-marketingagentur.jetzt/werbeagentur-wien",
   },
+  other: {
+    "geo.region": "AT-9",
+    "geo.placename": "Wien, Österreich",
+    "geo.position": "48.2082;16.3738",
+    "ICBM": "48.2082, 16.3738",
+  },
 };
+
+const WIEN_SCHEMA_FAQS = [
+  {
+    question: "Warum eine Werbeagentur aus Niederösterreich für ein Wiener Unternehmen?",
+    answer: "Viele Webagenturen in Wien rufen hohe Großstadt-Stundensätze auf, bei gleichzeitig träger Projektbetreuung. Bei uns profitierst du vom perfekten Mix: Wir sind schnell, extrem innovativ durch KI-Technologien und bieten dir oberste Qualität zu fairen Konditionen."
+  },
+  {
+    question: "Können Web-Projekte rein digital abgewickelt werden?",
+    answer: "Absolut. Unsere Video-Calls und digitalen Abstimmungstools laufen derart reibungslos, dass viele unserer Kunden – sei es in der Inneren Stadt, in Floridsdorf oder im Speckgürtel Mödling – unsere Performance schätzen, ohne zeitraubende Jour-Fixe Termine vor Ort in Wien wahrnehmen zu müssen. Dennoch stehen wir auf Wunsch für Kick-Offs physisch bereit."
+  },
+  {
+    question: "Wie optimierst du für den umkämpften Wiener Suchmaschinen-Markt?",
+    answer: "In Wien reicht 'ein bisschen SEO' nicht. Wir konzipieren Webseiten mit perfekter technischer Performance, Schema.org Local Business Implementierungen und semantisch extrem starken Inhalten. deine Seite kommuniziert direkt mit KIs wie ChatGPT und den Google Algorithmen, um dich lokal sichtbar zu machen."
+  },
+  {
+    question: "Bietest du auch die Erstellung von KI-Chatbots für Wiener KMUs an?",
+    answer: "Ja, smarte Automatisierungen wie KI-Chatbots gehören zu unserer Kernkompetenz. Damit qualifizierst du Besucher deiner Homepage vor, beantworten Standardfragen automatisch und holen qualifizierte Leads für dein Unternehmen rein."
+  }
+];
 
 export default function WerbeagenturWien() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "BrainStorm Webdesign & Werbeagentur Wien / NÖ",
+    "@type": ["LocalBusiness", "AdvertisingAgency", "ProfessionalService"],
+    "name": "BrainStorm KI Werbeagentur, Webdesign & SEO Wien",
+    "alternateName": [
+      "Werbeagentur Wien",
+      "Webagentur Wien",
+      "SEO Agentur Wien",
+      "KI Werbeagentur Wien"
+    ],
     "image": "https://ki-marketingagentur.jetzt/bilder/logo.png",
-    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-wien",
+    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-wien#localbusiness",
     "url": "https://ki-marketingagentur.jetzt/werbeagentur-wien",
     "telephone": "+43 660 520 3171",
+    "email": "info@brainstorm-werbeagentur.at",
+    "priceRange": "€€",
+    "parentOrganization": {
+      "@id": "https://ki-marketingagentur.jetzt/#organization"
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Am Ziegelfeld 8",
       "addressLocality": "Seitenstetten",
       "postalCode": "3353",
+      "addressRegion": "Niederösterreich",
       "addressCountry": "AT"
     },
     "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 48.20,
-        "longitude": 16.37
+      "@type": "GeoCoordinates",
+      "latitude": 48.2082,
+      "longitude": 16.3738
     },
-    "serviceArea": {
-      "@type": "Place",
-      "name": "Wien"
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Wien",
+        "postalCode": "1010",
+        "sameAs": "https://www.wikidata.org/wiki/Q1741"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Metropolregion Wien",
+        "sameAs": "https://www.wikidata.org/wiki/Q1741"
+      }
+    ],
+    "knowsAbout": [
+      "Werbeagentur Wien",
+      "Webseite Wien",
+      "Landingpage Wien",
+      "Webdesign Wien",
+      "Homepage erstellen Wien",
+      "Suchmaschinenoptimierung (SEO) Wien",
+      "Generative Engine Optimization (GEO) Wien",
+      "KI-Suche Optimierung (ChatGPT, Perplexity, Gemini)",
+      "KI-Marketing & Prozessautomatisierung Wien",
+      "Social Recruiting & Mitarbeitergewinnung Wien"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Leistungen für Unternehmen in Wien & Umgebung",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Webseite & Landingpage erstellen lassen in Wien",
+            "description": "High-End Firmen-Webseiten und verkaufsstarke KI-Landingpages für den Wiener Markt in 5-7 Tagen."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Suchmaschinenoptimierung (SEO) & KI-Suche (GEO) Wien",
+            "description": "Platz 1 Optimierung für Google Suche, Google Maps und KI-Suchmaschinen (ChatGPT, Perplexity, Claude, Gemini) in Wien."
+          }
+        }
+      ]
     },
     "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "50",
-        "bestRating": "5",
-        "worstRating": "1",
-        "url": "https://share.google/8UoKWrgoWbfFIPX"
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "50",
+      "bestRating": "5",
+      "worstRating": "1",
+      "url": "https://share.google/8UoKWrgoWbfFIPX"
     }
+  };
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-wien#webpage",
+    "url": "https://ki-marketingagentur.jetzt/werbeagentur-wien",
+    "name": "Werbeagentur & Webdesign Wien | Webseite, Landingpage, SEO & KI",
+    "description": "Webseiten und verkaufsstarke Landingpages auf Großstadtniveau für Wien & Umgebung. Innovative KI-Strategien, Suchmaschinenoptimierung (SEO) und GEO.",
+    "inLanguage": "de-AT",
+    "isPartOf": {
+      "@id": "https://ki-marketingagentur.jetzt/#website"
+    },
+    "about": {
+      "@id": "https://ki-marketingagentur.jetzt/werbeagentur-wien#localbusiness"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "h2", "p"]
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": WIEN_SCHEMA_FAQS.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
+  const breadcrumbsSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Startseite",
+        "item": "https://ki-marketingagentur.jetzt/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Werbeagentur Wien",
+        "item": "https://ki-marketingagentur.jetzt/werbeagentur-wien"
+      }
+    ]
   };
 
   return (
@@ -257,6 +426,9 @@ export default function WerbeagenturWien() {
       <Footer />
       <AIAssistant />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }} />
     </div>
   );
 }

@@ -10,47 +10,221 @@ import SalzburgFAQ from './SalzburgFAQ';
 import { GOOGLE_REVIEW_LINK } from '../constants';
 
 export const metadata: Metadata = {
-  title: "Werbeagentur Salzburg | High-End Webdesign & KI-Marketing",
-  description: "deine Experten für Webseiten und Landingpages in Salzburg. Wir kombinieren innovatives KI-Marketing mit erstklassigem Webdesign für maximale Resultate. Jetzt anfragen!",
-  keywords: ["werbeagentur", "web agentur", "webagentur", "werbeagentur website", "seo agentur niederösterreich", "suchmaschinenoptimierung niederösterreich", "website werbeagentur", "werbeagentur salzburg", "webdesign salzburg", "homepage salzburg"],
+  title: "Werbeagentur Salzburg | Webseite, Landingpage, SEO & KI-Marketing",
+  description: "Deine Experten für Webseiten, verkaufsstarke Landingpages, Suchmaschinenoptimierung (SEO) und KI-Sichtbarkeit (GEO) in Salzburg. Live in 5-7 Tagen. Jetzt anfragen!",
+  keywords: [
+    "werbeagentur salzburg",
+    "webseite salzburg",
+    "landingpage salzburg",
+    "landingpage erstellen lassen salzburg",
+    "webdesign salzburg",
+    "homepage salzburg",
+    "webseite erstellen lassen salzburg",
+    "homepage erstellen lassen salzburg",
+    "webagentur salzburg",
+    "seo agentur salzburg",
+    "suchmaschinenoptimierung salzburg",
+    "seo salzburg",
+    "geo salzburg",
+    "ki suche salzburg",
+    "ki werbeagentur salzburg",
+    "ki agentur salzburg",
+    "social recruiting salzburg",
+    "mitarbeitergewinnung salzburg",
+    "online marketing salzburg",
+    "werbeagentur flachgau",
+    "werbeagentur hallein"
+  ],
+  openGraph: {
+    title: "Werbeagentur Salzburg | Webseite, Landingpage, SEO & KI-Marketing",
+    description: "Deine Experten für Webseiten, Landingpages, Suchmaschinenoptimierung (SEO) und KI-Sichtbarkeit (GEO) in Salzburg.",
+    url: "https://ki-marketingagentur.jetzt/werbeagentur-salzburg",
+    siteName: "BrainStorm KI Werbeagentur",
+    locale: "de_AT",
+    type: "website",
+    images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Werbeagentur Salzburg | Webseite, Landingpage, SEO & KI-Marketing",
+    description: "Webseiten, Landingpages, SEO, GEO & KI-Marketing für Salzburg & Region.",
+    images: ["https://ki-marketingagentur.jetzt/bilder/logo.png"],
+  },
   alternates: {
     canonical: "https://ki-marketingagentur.jetzt/werbeagentur-salzburg",
   },
+  other: {
+    "geo.region": "AT-5",
+    "geo.placename": "Salzburg, Österreich",
+    "geo.position": "47.8095;13.0550",
+    "ICBM": "47.8095, 13.0550",
+  },
 };
+
+const SALZBURG_SCHEMA_FAQS = [
+  {
+    question: "Warum eine Webagentur für Salzburg aus der Ferne wählen?",
+    answer: "In der digitalen Welt von heute zählt Kompetenz vor Postleitzahl. Wir kombinieren die Agilität und Innovationskraft einer KI-fokussierten Agentur mit der Zuverlässigkeit, die Salzburger Traditionsunternehmen schätzen. Durch effiziente Video-Calls sparst du Zeit und erhalten Ergebnisse auf Weltklasse-Niveau."
+  },
+  {
+    question: "Ist Vor-Ort-Betreuung in Salzburg möglich?",
+    answer: "Ja, für größere Projekte oder Strategie-Workshops kommen wir gerne in die Mozartstadt oder das Salzburger Umland. Die tägliche Abstimmung erfolgt jedoch hocheffizient digital, was die Projektdauer massiv verkürzt und die Kosten optimiert."
+  },
+  {
+    question: "Wie hilft KI meinem Salzburger Unternehmen konkret?",
+    answer: "Ob automatisierte Kundenanfragen, KI-generierte Fachartikel für dein SEO oder smarte Chatbots – wir implementieren Technologien, die deine Betriebskosten senken und gleichzeitig die Kundenerfahrung verbessern. Salzburg ist ein Innovations-Hub, und wir liefern die passenden Werkzeuge dazu."
+  },
+  {
+    question: "Bietest du spezielles SEO für die Region Salzburg an?",
+    answer: "Absolut. Wir optimieren deine Webseite gezielt auf lokale Suchanfragen (Local SEO), damit du in Salzburg und Umgebung von deiner Zielgruppe gefunden wirst, wenn diese nach deinen Dienstleistungen sucht. Dazu nutzen wir modernste Schema-Daten und KI-gestützte Content-Strategien."
+  }
+];
 
 export default function WerbeagenturSalzburg() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "BrainStorm Webdesign & Werbeagentur Salzburg",
+    "@type": ["LocalBusiness", "AdvertisingAgency", "ProfessionalService"],
+    "name": "BrainStorm KI Werbeagentur, Webdesign & SEO Salzburg",
+    "alternateName": [
+      "Werbeagentur Salzburg",
+      "Webagentur Salzburg",
+      "SEO Agentur Salzburg",
+      "KI Werbeagentur Salzburg"
+    ],
     "image": "https://ki-marketingagentur.jetzt/bilder/logo.png",
-    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-salzburg",
+    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-salzburg#localbusiness",
     "url": "https://ki-marketingagentur.jetzt/werbeagentur-salzburg",
     "telephone": "+43 660 520 3171",
+    "email": "info@brainstorm-werbeagentur.at",
+    "priceRange": "€€",
+    "parentOrganization": {
+      "@id": "https://ki-marketingagentur.jetzt/#organization"
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Am Ziegelfeld 8",
       "addressLocality": "Seitenstetten",
       "postalCode": "3353",
+      "addressRegion": "Niederösterreich",
       "addressCountry": "AT"
     },
     "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 47.81,
-        "longitude": 13.06
+      "@type": "GeoCoordinates",
+      "latitude": 47.8095,
+      "longitude": 13.0550
     },
-    "serviceArea": {
-      "@type": "Place",
-      "name": "Salzburg"
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Salzburg",
+        "postalCode": "5020",
+        "sameAs": "https://www.wikidata.org/wiki/Q34713"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Salzburg-Umgebung (Flachgau)",
+        "sameAs": "https://www.wikidata.org/wiki/Q255414"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Land Salzburg",
+        "sameAs": "https://www.wikidata.org/wiki/Q43325"
+      }
+    ],
+    "knowsAbout": [
+      "Werbeagentur Salzburg",
+      "Webseite Salzburg",
+      "Landingpage Salzburg",
+      "Webdesign Salzburg",
+      "Homepage erstellen Salzburg",
+      "Suchmaschinenoptimierung (SEO) Salzburg",
+      "Generative Engine Optimization (GEO) Salzburg",
+      "KI-Suche Optimierung (ChatGPT, Perplexity, Gemini)",
+      "KI-Marketing & Prozessautomatisierung Salzburg",
+      "Social Recruiting & Mitarbeitergewinnung Salzburg"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Leistungen für Unternehmen in Salzburg & Region",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Webseite & Landingpage erstellen lassen in Salzburg",
+            "description": "High-End Firmen-Webseiten und verkaufsstarke Landingpages für Salzburger Unternehmen in 5-7 Tagen."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Suchmaschinenoptimierung (SEO) & KI-Suche (GEO) Salzburg",
+            "description": "Platz 1 Optimierung für Google Suche, Google Maps und KI-Suchmaschinen (ChatGPT, Perplexity, Claude, Gemini) in Salzburg."
+          }
+        }
+      ]
     },
     "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "50",
-        "bestRating": "5",
-        "worstRating": "1",
-        "url": "https://share.google/8UoKWrgoWbfFIPX"
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "50",
+      "bestRating": "5",
+      "worstRating": "1",
+      "url": "https://share.google/8UoKWrgoWbfFIPX"
     }
+  };
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://ki-marketingagentur.jetzt/werbeagentur-salzburg#webpage",
+    "url": "https://ki-marketingagentur.jetzt/werbeagentur-salzburg",
+    "name": "Werbeagentur Salzburg | Webseite, Landingpage, SEO & KI-Marketing",
+    "description": "Deine Experten für Webseiten, verkaufsstarke Landingpages, Suchmaschinenoptimierung (SEO) und KI-Sichtbarkeit (GEO) in Salzburg.",
+    "inLanguage": "de-AT",
+    "isPartOf": {
+      "@id": "https://ki-marketingagentur.jetzt/#website"
+    },
+    "about": {
+      "@id": "https://ki-marketingagentur.jetzt/werbeagentur-salzburg#localbusiness"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "h2", "p"]
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": SALZBURG_SCHEMA_FAQS.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
+  const breadcrumbsSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Startseite",
+        "item": "https://ki-marketingagentur.jetzt/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Werbeagentur Salzburg",
+        "item": "https://ki-marketingagentur.jetzt/werbeagentur-salzburg"
+      }
+    ]
   };
 
   return (
@@ -257,6 +431,9 @@ export default function WerbeagenturSalzburg() {
       <Footer />
       <AIAssistant />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }} />
     </div>
   );
 }

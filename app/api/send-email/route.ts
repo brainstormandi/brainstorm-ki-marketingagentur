@@ -1,17 +1,26 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import { rateLimit, sanitize } from '../../lib/securityUtils';
+import {
+    getClientIp,
+    isValidOrigin,
+    rateLimit,
+    sanitize,
+    stripHeaderInjection,
+    isValidEmail,
+    isDisposableEmail,
+    isSpamContent
+} from '../../lib/securityUtils';
 
 const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'alfa3062.alfahosting-server.de',
-    port: Number(process.env.SMTP_PORT) || 465,
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT || 465),
     secure: Number(process.env.SMTP_PORT || 465) === 465,
     auth: {
-        user: process.env.SMTP_USER || 'web1802p3',
-        pass: process.env.SMTP_PASS || 'vtLyhHni',
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
     },
     tls: {
-        rejectUnauthorized: false
+        rejectUnauthorized: process.env.NODE_ENV === 'development' ? false : true
     }
 });
 
@@ -20,46 +29,61 @@ export async function POST(req: Request) {
         return NextResponse.json({ error: 'Method Not Allowed' }, { status: 405 });
     }
 
+    if (!isValidOrigin(req)) {
+        return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+    }
+
     try {
-        // Rate limiting (relaxed in dev for testing)
-        const ip = req.headers.get('x-forwarded-for') || 'unknown';
-        if (process.env.NODE_ENV !== 'development' && !rateLimit(ip, 15)) {
-            return NextResponse.json({ error: 'Too many requests. Please wait a minute.' }, { status: 429 });
+        const ip = getClientIp(req);
+        if (!rateLimit(`mail_${ip}`, 3, 60000)) {
+            return NextResponse.json({ error: 'Zu viele Anfragen. Bitte warte eine Minute.' }, { status: 429 });
+        }
+
+        if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+            return NextResponse.json({ error: 'Mail service not configured' }, { status: 503 });
         }
 
         const body = await req.json();
-        const { 
-            clientName: rawName, 
-            clientEmail: rawEmail, 
-            appointmentDateTime: rawTime, 
+        const {
+            clientName: rawName,
+            clientEmail: rawEmail,
+            appointmentDateTime: rawTime,
             topic: rawTopic,
             meetingType: rawMeetingType,
             phoneNumber: rawPhone
-        } = body;
+        } = body || {};
 
-        // Sanitize and apply reliable defaults
-        const clientName = sanitize(rawName || '').trim() || 'Interessent';
-        const clientEmail = sanitize(rawEmail || '').trim();
-        const appointmentDateTime = sanitize(rawTime || '').trim() || 'Nach persönlicher Absprache';
-        const topic = sanitize(rawTopic || '').trim() || 'Kostenloses Strategiegespräch mit Andi Sturm';
-        const meetingType = sanitize(rawMeetingType || 'online').toLowerCase().trim();
-        const phoneNumber = sanitize(rawPhone || '').trim();
-
-        if (!clientEmail) {
-            return NextResponse.json({ error: 'E-Mail-Adresse fehlt' }, { status: 400 });
+        const rawEmailStr = typeof rawEmail === 'string' ? rawEmail.trim().toLowerCase() : '';
+        if (!rawEmailStr || !isValidEmail(rawEmailStr) || isDisposableEmail(rawEmailStr)) {
+            return NextResponse.json({ error: 'Ungültige E-Mail-Adresse' }, { status: 400 });
         }
+
+        if (
+            isSpamContent(String(rawName || '')) ||
+            isSpamContent(rawEmailStr) ||
+            isSpamContent(String(rawTopic || '')) ||
+            isSpamContent(String(rawTime || ''))
+        ) {
+            return NextResponse.json({ error: 'Ungültige Anfrage' }, { status: 400 });
+        }
+
+        const clientName = sanitize(stripHeaderInjection(rawName || '', 100), 100) || 'Interessent';
+        const clientEmail = sanitize(rawEmailStr, 254);
+        const appointmentDateTime = sanitize(stripHeaderInjection(rawTime || '', 120), 120) || 'Nach persönlicher Absprache';
+        const topic = sanitize(stripHeaderInjection(rawTopic || '', 200), 200) || 'Kostenloses Strategiegespräch mit Andi Sturm';
+        const meetingType = sanitize(rawMeetingType || 'online', 30).toLowerCase().trim();
+        const phoneNumber = sanitize(stripHeaderInjection(rawPhone || '', 40), 40).replace(/[^\d+\s()-]/g, '');
 
         const isOnline = meetingType.includes('online') || (!meetingType.includes('phone') && !meetingType.includes('telefon'));
         const meetLink = 'https://meet.google.com/xng-wott-wnc';
 
-        const senderFrom = `"${process.env.SMTP_FROM_NAME || 'Brainstorm KI Marketingagentur'}" <${process.env.SMTP_FROM || 'info@brainstorm-werbeagentur.at'}>`;
+        const senderFrom = `"${stripHeaderInjection(process.env.SMTP_FROM_NAME || 'Brainstorm KI Marketingagentur', 80)}" <${process.env.SMTP_FROM || 'info@brainstorm-werbeagentur.at'}>`;
 
-        // 1. Email to Agency (Andi Sturm)
         const agencyMailOptions = {
             from: senderFrom,
             to: 'brainstorm.werbeagentur@gmail.com',
-            replyTo: clientEmail,
-            subject: `📆 Neuer KI-Termin (${isOnline ? 'Online Google Meet' : 'Telefontermin'}): ${clientName}`,
+            replyTo: rawEmailStr,
+            subject: `📆 Neuer KI-Termin (${isOnline ? 'Online Google Meet' : 'Telefontermin'}): ${stripHeaderInjection(rawName || 'Interessent', 80)}`,
             html: `
                 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; padding: 24px; color: #1C1C1C; max-width: 600px; background: #ffffff; border-radius: 12px; border: 1px solid #e5e7eb;">
                     <div style="border-bottom: 2px solid #F7C429; padding-bottom: 16px; margin-bottom: 20px;">
@@ -115,10 +139,9 @@ export async function POST(req: Request) {
             `,
         };
 
-        // 2. Confirmation to Client
         const clientMailOptions = {
             from: senderFrom,
-            to: clientEmail,
+            to: rawEmailStr,
             replyTo: 'brainstorm.werbeagentur@gmail.com',
             subject: `Terminbestätigung: Dein Strategiegespräch mit Andi Sturm (${isOnline ? 'Online' : 'Telefon'})`,
             html: `
@@ -167,41 +190,32 @@ export async function POST(req: Request) {
 
         let agencySent = false;
         let clientSent = false;
-        let agencyError: string | null = null;
-        let clientError: string | null = null;
 
         try {
-            const info = await transporter.sendMail(agencyMailOptions);
+            await transporter.sendMail(agencyMailOptions);
             agencySent = true;
-            console.log('Agency email sent successfully:', info.messageId);
-        } catch (agencyErr: any) {
-            agencyError = agencyErr?.message || 'Agency email failed';
+        } catch (agencyErr) {
             console.error('Agency Mail Error:', agencyErr);
         }
 
         try {
-            const info = await transporter.sendMail(clientMailOptions);
+            await transporter.sendMail(clientMailOptions);
             clientSent = true;
-            console.log('Client email sent successfully:', info.messageId);
-        } catch (clientErr: any) {
-            clientError = clientErr?.message || 'Client email failed';
+        } catch (clientErr) {
             console.warn('Client Confirmation Mail Error:', clientErr);
         }
 
-        return NextResponse.json({ 
-            success: true, 
+        return NextResponse.json({
+            success: true,
             message: 'Emails processed',
             agencySent,
-            clientSent,
-            agencyError,
-            clientError
+            clientSent
         }, { status: 200 });
 
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error('SMTP Processing Error:', error);
         return NextResponse.json({
-            error: 'Mail dispatch error',
-            details: error?.message || 'Unknown error'
+            error: 'Mail dispatch error'
         }, { status: 500 });
     }
 }

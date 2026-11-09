@@ -10,10 +10,12 @@ const Founder = () => {
     const personSchema = {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://ki-marketingagentur.jetzt/#andi-sturm",
         "name": "Andi Sturm",
         "jobTitle": "Gründer & Visionär",
         "worksFor": {
             "@type": "Organization",
+            "@id": "https://ki-marketingagentur.jetzt/#organization",
             "name": "BrainStorm KI Werbeagentur"
         },
         "sameAs": ["https://www.linkedin.com/in/brainstorm-andi/"],
