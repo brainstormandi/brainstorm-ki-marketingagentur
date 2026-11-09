@@ -6,24 +6,18 @@ const INDEXNOW_KEY = process.env.INDEXNOW_KEY || 'b79f1d4a721ee4b2b7b53fa718a819
 const HOST = 'ki-marketingagentur.jetzt';
 const BASE_URL = `https://${HOST}`;
 
-/**
- * IndexNow Instant-Indexing Endpoint für Bing, ChatGPT Search (OAI-SearchBot),
- * Microsoft Copilot, Perplexity & Yandex.
- *
- * Aufruf nach Vercel-Deploy (mit optionalem ADMIN_SECRET oder aus gleichem Origin):
- * POST /api/indexnow
- */
-export async function POST(req: NextRequest) {
+async function handleIndexNow(req: NextRequest) {
     const ip = getClientIp(req);
     if (!rateLimit(`indexnow:${ip}`, 3, 10 * 60 * 1000)) {
         return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
     }
 
-    // Optionaler Schutz über Authorization Header, falls INDEXNOW_SECRET in Vercel gesetzt ist
+    // Optionaler Schutz über Authorization Header oder ?secret= Parameter, falls INDEXNOW_SECRET in Vercel gesetzt ist
     const configuredSecret = process.env.INDEXNOW_SECRET;
     if (configuredSecret) {
         const authHeader = req.headers.get('authorization');
-        if (authHeader !== `Bearer ${configuredSecret}`) {
+        const querySecret = req.nextUrl.searchParams.get('secret');
+        if (authHeader !== `Bearer ${configuredSecret}` && querySecret !== configuredSecret) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
     }
@@ -64,6 +58,9 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({
             success: response.ok,
             status: response.status,
+            message: response.ok
+                ? 'Alle Seiten wurden erfolgreich per IndexNow an Bing, ChatGPT Search, Copilot, Perplexity & Yandex übermittelt.'
+                : `IndexNow hat mit Status ${response.status} geantwortet.`,
             submittedUrls: urlList.length,
             urls: urlList,
         });
@@ -73,4 +70,17 @@ export async function POST(req: NextRequest) {
             { status: 502 }
         );
     }
+}
+
+/**
+ * IndexNow Instant-Indexing Endpoint für Bing, ChatGPT Search (OAI-SearchBot),
+ * Microsoft Copilot, Perplexity & Yandex.
+ * Unterstützt sowohl direkten Browser-Aufruf (GET) als auch Webhook-Aufrufe (POST).
+ */
+export async function GET(req: NextRequest) {
+    return handleIndexNow(req);
+}
+
+export async function POST(req: NextRequest) {
+    return handleIndexNow(req);
 }
