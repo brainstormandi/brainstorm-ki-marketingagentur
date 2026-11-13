@@ -32,16 +32,19 @@ const Hero = () => {
             {/* Content Container (vertically centered on desktop, flows naturally on mobile) */}
             <div className="relative z-10 w-full px-6 md:px-12 flex flex-col justify-start pt-8 pb-16 lg:absolute lg:inset-0 lg:h-full lg:justify-center lg:py-0 order-2 lg:order-none">
                 <div className="max-w-4xl lg:pl-16 xl:pl-24">
+                    <span className="font-[var(--font-inter)] text-[11px] sm:text-xs font-bold uppercase tracking-[0.18em] text-[#1C1C1C]/60 mb-3 block">
+                        Deine KI-Werbeagentur für Webseiten, SEO &amp; GEO
+                    </span>
                     <h1
-                        className="font-[var(--font-vollkorn)] font-bold text-[#1C1C1C] leading-tight lg:leading-[1.08] mb-6"
-                        style={{ fontSize: 'clamp(1.85rem, 5.8vw, 5rem)' }}
+                        className="font-[var(--font-vollkorn)] font-bold text-[#1C1C1C] leading-tight lg:leading-[1.1] mb-5"
+                        style={{ fontSize: 'clamp(1.75rem, 4.2vw, 3.75rem)' }}
                     >
-                        Mehr Zeit. <br />
-                        <span className="whitespace-nowrap">Mehr Anfragen.</span> <br />
-                        Werde die <span className="text-underline-yellow">#1</span> in deiner Region.
+                        Gefunden bei Google. <br />
+                        Empfohlen von der KI. <br />
+                        Gewählt von deinen Kunden.
                     </h1>
-                    <p className="font-[var(--font-inter)] text-[#1C1C1C]/80 text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed mb-10 max-w-2xl">
-                        Große Konzerne haben riesige Marketing-Budgets. <strong className="font-bold text-[#1C1C1C]">Du hast uns.</strong> Wir bauen Webseiten, die wie <strong className="font-bold text-[#1C1C1C]">dein bester Verkäufer</strong> rund um die Uhr verlässlich <strong className="font-bold text-[#1C1C1C]">neue Kunden und Mitarbeiter bringen</strong>. Modernste Technologie kombiniert mit <strong className="font-bold text-[#1C1C1C]">32 Jahren Marketing-Erfahrung</strong> und echter <strong className="font-bold text-[#1C1C1C]">Handschlagqualität</strong> – <strong className="font-bold text-[#1C1C1C]">schlüsselfertig in wenigen Tagen</strong>.
+                    <p className="font-[var(--font-inter)] text-[#1C1C1C]/80 text-[16px] md:text-[18px] lg:text-[19px] leading-relaxed mb-8 max-w-2xl">
+                        Schluss mit schönen Online-Visitenkarten, die im Netz niemand findet. Als deine Werbeagentur entwickeln wir verkaufsstarke Webseiten, die durch gezielte SEO- und GEO-Optimierung sowohl bei Google als auch in der KI-Suche ganz oben stehen. <strong className="font-bold text-[#1C1C1C]">Dein bester digitaler Verkäufer</strong>, der rund um die Uhr verlässlich <strong className="font-bold text-[#1C1C1C]">neue Kunden und Mitarbeiter bringt</strong>: Modernste Technologie kombiniert mit <strong className="font-bold text-[#1C1C1C]">32 Jahren Marketing-Erfahrung</strong> und echter <strong className="font-bold text-[#1C1C1C]">Handschlagqualität</strong> – <strong className="font-bold text-[#1C1C1C]">schlüsselfertig in wenigen Tagen</strong>.
                     </p>
                     
                     <div className="flex flex-col items-center sm:items-start gap-2.5">
